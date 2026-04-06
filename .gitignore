@@ -1,0 +1,24 @@
+# Environment & secrets
+.env
+.env.*
+
+# Sensitive files
+その他/
+
+# Development & scraping tools
+*.py
+scraped_data/
+test_output.json
+fetch_quiz.html
+relay.html
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# Node modules (if added later)
+node_modules/

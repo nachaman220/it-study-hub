@@ -1,0 +1,282 @@
+var QUIZ_DATA_book_ch3 = {
+  "source": "book-az305",
+  "questions": [
+    {
+      "id": 1,
+      "question": "あなたは3つのワークロードの災害対策を計画しています。\n・ワークロードA: フェールオーバーが必要\n・ワークロードB: バックアップが必要でRTOは24時間以内\n・ワークロードC: 7年間のデータ保持が必要でRTOは10分以内\nそれぞれに適したAzureサービスの組み合わせはどれですか？",
+      "choices": [
+        "A. A: Azure Site Recovery、B: Azure Backup、C: Azure Backup + Azure Site Recovery",
+        "B. A: Azure Backup、B: Azure Site Recovery、C: Azure Backup",
+        "C. A: Azure Site Recovery、B: Azure Site Recovery、C: Azure Backup",
+        "D. A: Azure Backup、B: Azure Backup、C: Azure Site Recovery"
+      ],
+      "answer": 0,
+      "explanation": "Azure Site Recoveryはフェールオーバー機能を提供し、RTO数分でのリカバリが可能です（ワークロードA）。Azure BackupはRTO24時間以内のバックアップ要件に適しています（ワークロードB）。ワークロードCは7年保持（Backup）とRTO10分（Site Recovery）の両方が必要なため、Azure BackupとSite Recoveryの組み合わせが適切です。",
+      "category": "bcdr",
+      "tags": [
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery",
+        "storage-redundancy"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "あなたのオンプレミス環境にあるファイルサーバーが障害を起こした場合に、迅速にファイルアクセスを復旧させたいと考えています。クラウドとの同期も必要です。どのサービスの組み合わせを使用すべきですか？",
+      "choices": [
+        "A. Azure Blob Storage + Azure CDN",
+        "B. Azure Files + Azure File Sync",
+        "C. Azure Managed Disks + Azure Site Recovery",
+        "D. Azure NetApp Files + VPN Gateway"
+      ],
+      "answer": 1,
+      "explanation": "Azure FilesはSMBプロトコルでアクセスできるクラウドファイル共有を提供し、Azure File Syncはオンプレミスのファイルサーバーとクラウド間でファイルを同期します。障害時にはクラウド上のファイル共有に直接アクセスでき、迅速な復旧が可能です。クラウド階層化により頻繁にアクセスされるファイルをローカルにキャッシュし、パフォーマンスも確保できます。",
+      "category": "bcdr",
+      "tags": [
+        "entra-connect",
+        "blob-storage",
+        "site-recovery",
+        "file-sync",
+        "caching",
+        "on-premises-connectivity"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "あなたは80TBのデータを格納するAzure SQL Databaseを構築する必要があります。どのサービスティアを選択すべきですか？",
+      "choices": [
+        "A. General Purpose",
+        "B. Business Critical",
+        "C. Hyperscale",
+        "D. Basic"
+      ],
+      "answer": 2,
+      "explanation": "Azure SQL Database Hyperscaleティアは、最大100TBまでのデータベースサイズをサポートします。80TBのデータを格納するにはHyperscaleが必要です。General PurposeとBusiness Criticalは最大4TBまで（vCoreモデル、仮想コアの構成によっては最大16TB）のデータベースサイズをサポートします。BasicはDTUモデルの最小ティアで、データサイズの制限が非常に小さくなります。",
+      "category": "bcdr",
+      "tags": [
+        "sql-database"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "あなたはAzure SQL Databaseを可用性ゾーンの障害時にも使用可能にする必要があります。コストを最小限に抑えたい場合、どのサービスティアとモデルを選択すべきですか？",
+      "choices": [
+        "A. DTU Basic",
+        "B. 仮想コア General Purpose（ゾーン冗長構成）",
+        "C. 仮想コア Business Critical",
+        "D. DTU Premium"
+      ],
+      "answer": 1,
+      "explanation": "仮想コアモデルのGeneral Purposeティアはゾーン冗長構成をサポートしており、可用性ゾーン障害に対する保護を提供します。Business Criticalもゾーン冗長をサポートしますが、コストがGeneral Purposeより高くなります。DTUモデルのBasicやStandardはゾーン冗長をサポートしません。コスト最小の要件から、General Purposeのゾーン冗長が最適です。",
+      "category": "bcdr",
+      "tags": [
+        "sql-database",
+        "availability-zones"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "あなたはAzure SQL Databaseのバックアップを5年間保持する必要があります。Premiumティアの自動バックアップだけでこの要件を満たすことができますか？",
+      "choices": [
+        "A. はい",
+        "B. いいえ"
+      ],
+      "answer": 1,
+      "explanation": "Azure SQL Databaseの自動バックアップ（PITR: Point-In-Time Restore）の保持期間は最大35日間です。5年間のバックアップ保持には、長期保持（LTR: Long-Term Retention）ポリシーを別途構成する必要があります。LTRを使用すると、完全バックアップをAzure Blob Storageに最大10年間保持できます。Premiumティアの自動バックアップだけでは5年間の保持要件を満たせません。",
+      "category": "bcdr",
+      "tags": [
+        "blob-storage",
+        "sql-database",
+        "bcdr-fundamentals",
+        "azure-backup"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "あなたはAzureストレージアカウントをリージョン障害に対応させる必要があります。どの冗長性オプションを選択すべきですか？",
+      "choices": [
+        "A. LRS（ローカル冗長ストレージ）",
+        "B. ZRS（ゾーン冗長ストレージ）",
+        "C. GRS（geo冗長ストレージ）またはGZRS（geoゾーン冗長ストレージ）",
+        "D. Premium LRS"
+      ],
+      "answer": 2,
+      "explanation": "リージョン障害に対応するには、データを別のリージョンにレプリケートする必要があります。GRS（geo冗長ストレージ）はプライマリリージョンのLRSとセカンダリリージョンのLRSを組み合わせます。GZRS（geoゾーン冗長ストレージ）はプライマリリージョンのZRSとセカンダリリージョンのLRSを組み合わせます。LRSは単一データセンター内、ZRSは単一リージョン内の冗長性であり、リージョン障害には対応できません。",
+      "category": "bcdr",
+      "tags": [
+        "azure-storage"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Azure BackupのバックアップポリシーにおけるStandardとEnhancedの違いとして正しいものはどれですか？",
+      "choices": [
+        "A. Enhancedは1日に複数回のバックアップをサポートするが、Standardは1日1回のみ",
+        "B. StandardはAzure VMのバックアップをサポートするが、Enhancedはサポートしない",
+        "C. Enhancedはインスタントリストアのスナップショット保持期間が最大30日だが、Standardは最大5日",
+        "D. AとCの両方"
+      ],
+      "answer": 3,
+      "explanation": "Enhancedバックアップポリシーは、1日に複数回のバックアップ（4時間ごとなど）をサポートし、インスタントリストアのスナップショット保持期間が最大30日です。Standardポリシーは1日1回のバックアップで、スナップショット保持は最大5日です。両方ともAzure VMのバックアップをサポートしています。Enhancedはより低いRPOとRTOを実現できます。",
+      "category": "bcdr",
+      "tags": [
+        "bcdr-fundamentals",
+        "azure-backup"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Azure Site RecoveryでAzure VMをレプリケートする場合のレプリケーション方式として正しいものはどれですか？",
+      "choices": [
+        "A. 同期レプリケーション",
+        "B. 非同期レプリケーション",
+        "C. スナップショットベースのレプリケーション",
+        "D. バックアップベースのレプリケーション"
+      ],
+      "answer": 1,
+      "explanation": "Azure Site Recoveryは非同期レプリケーションを使用してAzure VMをセカンダリリージョンにレプリケートします。非同期レプリケーションにより、プライマリVMのパフォーマンスへの影響を最小限に抑えながら、継続的にデータを複製します。RPO（目標復旧時点）は通常数分程度です。同期レプリケーションはパフォーマンスへの影響が大きく、長距離レプリケーションには適しません。",
+      "category": "bcdr",
+      "tags": [
+        "entra-connect",
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "あなたは以下の要件に基づいて負荷分散サービスを選択する必要があります。グローバルなHTTP/HTTPSトラフィックの分散、WAF機能、SSL終端をサポートするサービスはどれですか？",
+      "choices": [
+        "A. Azure Load Balancer",
+        "B. Azure Application Gateway",
+        "C. Azure Traffic Manager",
+        "D. Azure Front Door"
+      ],
+      "answer": 3,
+      "explanation": "Azure Front Doorは、グローバルなHTTP/HTTPSトラフィックの負荷分散を提供し、WAF（Web Application Firewall）機能とSSL終端をサポートします。Application Gatewayはリージョナルなレイヤー7ロードバランサーでWAFをサポートしますが、グローバル分散には対応しません。Load Balancerはレイヤー4（TCP/UDP）でHTTP/HTTPS固有の機能はありません。Traffic ManagerはDNSベースのグローバル分散ですが、WAFやSSL終端はサポートしません。",
+      "category": "bcdr",
+      "tags": [
+        "load-balancers",
+        "network-security"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Azure Key Vaultでリージョン障害が発生した場合、フェールオーバー先はどこになりますか？",
+      "choices": [
+        "A. 最も近いリージョン",
+        "B. ペアリージョン",
+        "C. ユーザーが指定したリージョン",
+        "D. フェールオーバーはサポートされていない"
+      ],
+      "answer": 1,
+      "explanation": "Azure Key Vaultは、リージョン障害が発生した場合、自動的にペアリージョンにフェールオーバーします。ペアリージョンはAzureが事前に定義した地理的に近いリージョンのペアです（例：東日本と西日本）。フェールオーバーは自動的に行われ、ユーザーによる操作は不要です。フェールオーバー先をユーザーが選択することはできません。",
+      "category": "bcdr",
+      "tags": [
+        "key-vault",
+        "site-recovery",
+        "storage-redundancy"
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Azure Key Vaultのフェールオーバー中に使用できない操作はどれですか？",
+      "choices": [
+        "A. シークレットの読み取り",
+        "B. キーを使用した暗号化操作",
+        "C. シークレットの作成・更新・削除",
+        "D. 証明書の参照"
+      ],
+      "answer": 2,
+      "explanation": "Key Vaultのフェールオーバー中は、読み取り操作（シークレットの読み取り、キーの使用、証明書の参照など）は引き続き利用可能ですが、書き込み操作（作成・更新・削除）は使用できません。フェールオーバー中のKey Vaultは読み取り専用モードで動作します。フェールバック後に書き込み操作が再び可能になります。",
+      "category": "bcdr",
+      "tags": [
+        "key-vault",
+        "site-recovery",
+        "storage-redundancy"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Azure Database for MySQLで高可用性を実現するために必要な最小のサービスティアとオプションはどれですか？",
+      "choices": [
+        "A. Burstable + 単一ゾーン",
+        "B. General Purpose以上 + ゾーン冗長高可用性",
+        "C. Business Critical + geo冗長バックアップ",
+        "D. Burstable + ゾーン冗長高可用性"
+      ],
+      "answer": 1,
+      "explanation": "Azure Database for MySQL フレキシブルサーバーでゾーン冗長の高可用性を有効にするには、General Purpose以上のサービスティアが必要です。Burstableティアではゾーン冗長高可用性はサポートされません。Business Criticalでも対応可能ですが、最小のティアとしてはGeneral Purposeが適切です。geo冗長バックアップは災害復旧には有効ですが、高可用性（自動フェールオーバー）とは異なります。",
+      "category": "bcdr",
+      "tags": [
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery",
+        "storage-redundancy"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Azure SQL Databaseで、読み取りワークロードをセカンダリリージョンにオフロードしたい場合に使用する機能はどれですか？",
+      "choices": [
+        "A. 読み取りレプリカ",
+        "B. geoバックアップ",
+        "C. アクティブgeoレプリケーション",
+        "D. ポイントインタイムリストア"
+      ],
+      "answer": 2,
+      "explanation": "アクティブgeoレプリケーションは、Azure SQL Databaseのデータを別リージョンに非同期でレプリケートし、読み取り可能なセカンダリデータベースを提供します。読み取りワークロードをセカンダリにオフロードできます。geoバックアップは災害復旧用のバックアップであり、読み取りオフロードはできません。読み取りレプリカはMySQL/PostgreSQL向けの用語です。ポイントインタイムリストアは特定時点への復元機能です。",
+      "category": "bcdr",
+      "tags": [
+        "entra-connect",
+        "sql-database",
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Azure SQL Databaseで、自動フェールオーバーとフェールオーバー後の接続エンドポイント変更なしを実現するために使用する機能はどれですか？",
+      "choices": [
+        "A. アクティブgeoレプリケーション",
+        "B. 自動フェールオーバーグループ",
+        "C. geoバックアップ",
+        "D. ゾーン冗長構成"
+      ],
+      "answer": 1,
+      "explanation": "自動フェールオーバーグループは、自動フェールオーバー機能を提供し、読み書き用と読み取り専用のリスナーエンドポイントを提供します。フェールオーバー後もエンドポイントが変更されないため、アプリケーションの接続文字列を変更する必要がありません。アクティブgeoレプリケーションは手動フェールオーバーが必要で、接続先の変更も必要です。geoバックアップは復元操作であり自動フェールオーバーではありません。ゾーン冗長はリージョン内の冗長性です。",
+      "category": "bcdr",
+      "tags": [
+        "azure-storage",
+        "sql-database",
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery",
+        "storage-redundancy",
+        "sql-ha"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Azure Backupにおいて、バックアップの削除操作を保護するために使用するリソースはどれですか？",
+      "choices": [
+        "A. Azure Policy",
+        "B. Azure Resource Guard",
+        "C. Azure Key Vault",
+        "D. Microsoft Defender for Cloud"
+      ],
+      "answer": 1,
+      "explanation": "Azure Resource Guardは、Azure Backupの重要な操作（バックアップの削除、バックアップポリシーの変更、論理削除の無効化など）に対する追加の保護レイヤーを提供します。Resource Guardを使用すると、これらの操作には別のサブスクリプションに存在するResource Guardリソースへのアクセス権が必要になります。Azure Policyはコンプライアンスの監査・強制ですが、バックアップ操作の直接的な保護ではありません。Key Vaultは暗号化キーの管理です。",
+      "category": "bcdr",
+      "tags": [
+        "subscription-design",
+        "azure-policy",
+        "purview",
+        "key-vault",
+        "bcdr-fundamentals",
+        "azure-backup"
+      ]
+    }
+  ]
+};

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webサイト問題集 - Azure Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="../../index.html">Azure Certification Study Hub</a></h1>
+  </header>
+
+  <main style="padding: 32px 48px; max-width: 800px;">
+    <div class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>&gt;</span>
+      <a href="index.html">問題集</a>
+      <span>&gt;</span>
+      Webサイト問題集
+    </div>
+
+    <h1 style="font-size: 1.6rem; margin-bottom: 24px;">Webサイト問題集（151問）</h1>
+
+    <div id="quiz-container"></div>
+  </main>
+
+  <script src="../../questions/website/website-01-10.js"></script>
+  <script src="../../questions/website/website-11-20.js"></script>
+  <script src="../../questions/website/website-21-30.js"></script>
+  <script src="../../questions/website/website-31-40.js"></script>
+  <script src="../../questions/website/website-41-50.js"></script>
+  <script src="../../questions/website/website-51-60.js"></script>
+  <script src="../../questions/website/website-61-70.js"></script>
+  <script src="../../questions/website/website-71-80.js"></script>
+  <script src="../../questions/website/website-81-90.js"></script>
+  <script src="../../questions/website/website-91-100.js"></script>
+  <script src="../../questions/website/website-101-110.js"></script>
+  <script src="../../questions/website/website-111-120.js"></script>
+  <script src="../../questions/website/website-121-130.js"></script>
+  <script src="../../questions/website/website-131-140.js"></script>
+  <script src="../../questions/website/website-141-150.js"></script>
+  <script src="../../questions/website/website-151.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script>
+    const quiz = new Quiz('quiz-container');
+    quiz.loadQuestionsFromData([
+      QUIZ_DATA_website_01_10,
+      QUIZ_DATA_website_11_20,
+      QUIZ_DATA_website_21_30,
+      QUIZ_DATA_website_31_40,
+      QUIZ_DATA_website_41_50,
+      QUIZ_DATA_website_51_60,
+      QUIZ_DATA_website_61_70,
+      QUIZ_DATA_website_71_80,
+      QUIZ_DATA_website_81_90,
+      QUIZ_DATA_website_91_100,
+      QUIZ_DATA_website_101_110,
+      QUIZ_DATA_website_111_120,
+      QUIZ_DATA_website_121_130,
+      QUIZ_DATA_website_131_140,
+      QUIZ_DATA_website_141_150,
+      QUIZ_DATA_website_151
+    ]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{
+  "source": "it-concepts-japan.com",
+  "questions": [
+    {
+      "id": 21,
+      "question": "Azure BlueprintsとARMテンプレートの違いについて正しい記述はどれですか？",
+      "choices": [
+        "A. ARMテンプレートはデプロイ後もリソースとの接続を維持する",
+        "B. Azure Blueprintsはデプロイ後もリソースとの接続を維持する",
+        "C. ARMテンプレートのみがAzure Policyをデプロイできる",
+        "D. Azure BlueprintsのみがAzure Policyをデプロイできる"
+      ],
+      "answer": 1,
+      "explanation": "Azure Blueprintsはデプロイ後もリソースとの接続（リレーションシップ）を維持します。これにより、ブループリントの更新がデプロイ済みリソースにも反映されます。一方、ARMテンプレートはデプロイ後にリソースとの接続を持たず、テンプレートを更新してもデプロイ済みリソースには影響しません。ARMテンプレートもAzure Policyのデプロイが可能なため、選択肢CとDは不正確です。",
+      "category": "governance"
+    },
+    {
+      "id": 22,
+      "question": "SQL Server（SQL1）上の50個のデータベースをAzureにオフラインで移行する必要があります。管理の労力を最小化するサービスはどれですか？",
+      "choices": [
+        "A. Data Migration Assistant (DMA)",
+        "B. Azure Migrate",
+        "C. SQL Server Migration Assistant (SSMA)",
+        "D. Azure Database Migration Service (DMS)"
+      ],
+      "answer": 3,
+      "explanation": "Azure Database Migration Service（DMS）は、大規模なデータベース移行を管理するためのフルマネージドサービスです。50個のデータベースのオフライン移行を効率的に実行でき、管理の労力を最小化できます。DMAは移行前の評価ツールであり、大規模な移行の実行には適していません。Azure Migrateはサーバーやアプリケーション全体の移行評価・実行ツールですが、データベース固有の移行にはDMSの方が適切です。SSMAはOracle、MySQL等の非SQL ServerデータベースからSQL Serverへの移行ツールであり、SQL Server間の移行には使用しません。",
+      "category": "migration"
+    },
+    {
+      "id": 23,
+      "question": "3Dジオメトリの計算を実行する必要があります。大規模な並列コンピューティングを実現するために使用すべき2つの機能/サービスはどれですか？（2つ選択）",
+      "choices": [
+        "A. 並列タスクの有効化",
+        "B. Azure Batch",
+        "C. 並列ファイルシステム",
+        "D. Virtual Machine Scale Sets (VMSS)",
+        "E. 仮想マシン"
+      ],
+      "answer": [0, 1],
+      "explanation": "Azure Batchは大規模な並列コンピューティングとHPCワークロードを実行するためのサービスです。並列タスクの有効化と組み合わせることで、3Dジオメトリの計算を複数のノードで並列処理できます。VMSSはスケーラブルなVM群を提供しますが、バッチジョブの管理機能はありません。並列ファイルシステムはストレージの観点ですが、計算の並列化には直接関係しません。単一のVMでは大規模な並列計算には不十分です。",
+      "category": "compute"
+    },
+    {
+      "id": 24,
+      "question": "Azure Batchで最初のジョブ（Linux、開発/テスト用）を実行する必要があります。コストを最小化する構成はどれですか？",
+      "choices": [
+        "A. ユーザーサブスクリプションモード + 低優先度VM",
+        "B. Batchサービスモード + 専用VM",
+        "C. ユーザーサブスクリプションモード + 専用VM"
+      ],
+      "answer": 0,
+      "explanation": "開発/テスト用途でコストを最小化するには、低優先度VMを使用するのが最適です。低優先度VMはAzureの余剰キャパシティを利用するため、通常のVMと比較して最大80%のコスト削減が可能です。ユーザーサブスクリプションモードでは低優先度VMが利用可能です。専用VMは高い可用性を提供しますが、開発/テストではその必要性は低く、コストが高くなります。LinuxではAzure Hybrid Benefitは適用されないため、その観点でのコスト削減はありません。",
+      "category": "compute"
+    },
+    {
+      "id": 25,
+      "question": "Azure Batchで2番目のジョブ（本番環境、MPI対応の長時間実行タスク）を実行する必要があります。適切な構成はどれですか？",
+      "choices": [
+        "A. ユーザーサブスクリプションモード + 低優先度VM",
+        "B. Batchサービスモード + 専用VM",
+        "C. ユーザーサブスクリプションモード + 専用VM"
+      ],
+      "answer": 2,
+      "explanation": "本番環境のMPI（Message Passing Interface）対応の長時間実行タスクには、専用VMが必要です。低優先度VMは突然の中断の可能性があり、長時間実行タスクや本番ワークロードには適していません。ユーザーサブスクリプションモードを使用することで、VNetへのデプロイやカスタムイメージの使用が可能になり、MPI通信に必要なネットワーク構成を柔軟に設定できます。",
+      "category": "compute"
+    },
+    {
+      "id": 26,
+      "question": ".NETで開発されたWebサービスをホストする必要があります。要件は一時ファイルの書き込み、イベントログの記録、コストの最小化です。どのサービスを使用すべきですか？",
+      "choices": [
+        "A. Azure Functions",
+        "B. Virtual Machine Scale Sets (VMSS)",
+        "C. App Service Environment (ASE)",
+        "D. App Service Web Apps"
+      ],
+      "answer": 3,
+      "explanation": "App Service Web Appsは.NET Webサービスのホスティングに最適で、一時ファイルの書き込み（一時ストレージ提供）やイベントログの記録に対応しています。コストもVMSSやASEと比較して低く抑えられます。Azure Functionsはイベント駆動のサーバーレスサービスで、Webサービスの常時ホスティングには最適ではありません。VMSSは高いスケーラビリティを提供しますが、管理コストが高くなります。ASEは専用環境を提供しますが、最もコストが高いオプションです。",
+      "category": "compute"
+    },
+    {
+      "id": 27,
+      "question": "Azure Functionsで5〜20分かかる処理を実行する必要があります。イベント駆動のスケーリングも必要です。どのホスティングプランを使用すべきですか？",
+      "choices": [
+        "A. 従量課金プラン",
+        "B. 専用（App Service）プラン",
+        "C. Premiumプラン",
+        "D. App Serviceプラン"
+      ],
+      "answer": 2,
+      "explanation": "Premiumプランは、実行時間の制限が事実上なく（デフォルト30分、最大60分に設定可能）、イベント駆動のスケーリングもサポートしています。従量課金プランは実行時間が最大10分（デフォルト5分）に制限されており、20分の処理には対応できません。専用（App Service）プランは実行時間の制限はありませんが、イベント駆動のスケーリングはサポートしておらず、手動またはスケジュールベースのスケーリングとなります。",
+      "category": "compute"
+    },
+    {
+      "id": 28,
+      "question": "Azure Blob Storageのデータを変換してAzure Data Lake Storageに格納する必要があります。マッピングデータフローを使用したい場合、どのサービスを使用すべきですか？",
+      "choices": [
+        "A. Azure Storage Sync",
+        "B. Azure Data Factory",
+        "C. Azure Databricks",
+        "D. Azure Data Box Gateway"
+      ],
+      "answer": 1,
+      "explanation": "Azure Data Factoryは、マッピングデータフロー機能を提供しており、コードを書かずにデータ変換をビジュアルに設計できます。Blob StorageからData Lake Storageへのデータの移動と変換を効率的に実行できます。Azure Storage Syncはオンプレミスとクラウド間のファイル同期サービスです。Azure Databricksはコードベースのデータ処理プラットフォームであり、マッピングデータフローは提供していません。Data Box Gatewayはオンプレミスからクラウドへのデータ転送デバイスです。",
+      "category": "data"
+    },
+    {
+      "id": 29,
+      "question": "データベース内の電話番号の下4桁のみを表示し、残りをマスクする必要があります。どの機能を使用すべきですか？",
+      "choices": [
+        "A. 列の暗号化",
+        "B. 透過的データ暗号化（TDE）",
+        "C. 動的データマスキング",
+        "D. Always Encrypted"
+      ],
+      "answer": 2,
+      "explanation": "動的データマスキングは、クエリ結果でデータの一部をマスクして表示する機能です。電話番号の下4桁のみ表示するようなカスタムマスキングルールを設定できます。データ自体は暗号化されず、表示時にのみマスクが適用されます。列の暗号化はデータを暗号化しますが、部分的な表示の制御はできません。TDEはデータベース全体の保存時暗号化であり、表示の制御とは無関係です。Always Encryptedはクライアント側の暗号化であり、部分的なデータ表示の制御には使用しません。",
+      "category": "security"
+    },
+    {
+      "id": 30,
+      "question": "データベース内のSSN（社会保障番号）を、データベース管理者を含め誰にも閲覧できないようにする必要があります。どの機能を使用すべきですか？",
+      "choices": [
+        "A. 列の暗号化",
+        "B. 透過的データ暗号化（TDE）",
+        "C. 動的データマスキング",
+        "D. Always Encrypted"
+      ],
+      "answer": 3,
+      "explanation": "Always Encryptedは、データをクライアント側で暗号化し、データベースエンジン側では暗号化されたままの状態で保持する機能です。暗号化キーはクライアントアプリケーション側に保管されるため、データベース管理者でもデータを復号して閲覧することができません。列の暗号化やTDEはサーバー側でデータを暗号化しますが、管理者はデータにアクセスできます。動的データマスキングは表示をマスクしますが、管理者はマスクを解除できるため、「管理者を含め閲覧不可」の要件を満たしません。",
+      "category": "security"
+    }
+  ]
+}

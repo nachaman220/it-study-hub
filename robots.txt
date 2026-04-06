@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /questions/
+Disallow: /js/
+Disallow: /supabase/
+Disallow: /docs/
+
+Sitemap: https://nachaman220.github.io/it-study-hub/sitemap.xml

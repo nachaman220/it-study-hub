@@ -1,0 +1,193 @@
+var QUIZ_DATA_website_31_40 = {
+  "source": "it-concepts-japan.com",
+  "questions": [
+    {
+      "id": 31,
+      "question": "Azure Logic Appsからオンプレミスに配置されたSQL Serverに接続する必要があります。VPN接続はありません。オンプレミス側に必要なコンポーネントはどれですか？",
+      "choices": [
+        "A. Azure AD アプリケーション プロキシ コネクタ",
+        "B. オンプレミス データ ゲートウェイ",
+        "C. Hybrid Connection Manager (HCM)",
+        "D. Web Application Proxy"
+      ],
+      "answer": 1,
+      "explanation": "オンプレミスデータゲートウェイは、Logic AppsなどのAzureサービスからオンプレミスのデータソース（SQL Serverなど）に安全に接続するためのブリッジとして機能します。VPN接続なしでHTTPS経由でAzure Service Busリレーを通じて通信します。Azure ADアプリケーションプロキシコネクタはWebアプリケーションの公開に使用され、データベース接続には使用しません。HCMはApp Serviceのハイブリッド接続用であり、Logic Appsでは使用しません。Web Application ProxyはAD FS関連のサービスです。",
+      "category": "data",
+      "tags": [
+        "entra-id",
+        "app-proxy",
+        "data-sources",
+        "app-service",
+        "messaging",
+        "api-management"
+      ]
+    },
+    {
+      "id": 32,
+      "question": "同じシナリオで、Azure側に必要なコンポーネントはどれですか？",
+      "choices": [
+        "A. Application Gateway",
+        "B. データ ゲートウェイ リソース",
+        "C. Azure Event Grid",
+        "D. エンタープライズ アプリケーション"
+      ],
+      "answer": 1,
+      "explanation": "Azure側にはデータゲートウェイリソースを作成する必要があります。これはオンプレミスにインストールされたデータゲートウェイとAzureサービス（Logic Apps）を関連付けるためのAzureリソースです。Application GatewayはL7ロードバランサーであり、オンプレミス接続には使用しません。Event Gridはイベントルーティングサービスです。エンタープライズアプリケーションはAzure ADでのアプリケーション登録に使用されます。",
+      "category": "data",
+      "tags": [
+        "entra-id",
+        "app-registration",
+        "load-balancers",
+        "event-driven",
+        "api-management",
+        "on-premises-connectivity"
+      ]
+    },
+    {
+      "id": 33,
+      "question": "北ヨーロッパリージョンを優先的に使用し、障害時にフェールオーバーするルーティングを構成する必要があります。どのサービスを使用すべきですか？",
+      "choices": [
+        "A. Azure Load Balancer",
+        "B. Application Gateway",
+        "C. Azure Traffic Manager"
+      ],
+      "answer": 2,
+      "explanation": "Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数リージョン間でのトラフィックルーティングが可能です。Azure Load BalancerはL4ロードバランサーでリージョン内の分散のみに対応しています。Application GatewayもL7ロードバランサーですが、単一リージョン内のサービスであり、リージョン間のフェールオーバーには使用できません。",
+      "category": "network",
+      "tags": [
+        "site-recovery",
+        "storage-redundancy",
+        "load-balancers"
+      ]
+    },
+    {
+      "id": 34,
+      "question": "北ヨーロッパを優先リージョンとして構成するために、Traffic Managerで使用すべきルーティング方法はどれですか？",
+      "choices": [
+        "A. Cookieベースのアフィニティ",
+        "B. 加重ルーティング",
+        "C. パフォーマンスルーティング",
+        "D. 優先順位ルーティング"
+      ],
+      "answer": 3,
+      "explanation": "優先順位ルーティングを使用すると、プライマリエンドポイント（北ヨーロッパ）に最高の優先順位を設定し、障害時にセカンダリエンドポイントに自動的にフェールオーバーできます。加重ルーティングはトラフィックを重み付けで分散しますが、特定のリージョンを優先する設定はできません。パフォーマンスルーティングはユーザーに最も近いエンドポイントにルーティングしますが、特定リージョンの優先は保証できません。Cookieベースのアフィニティはセッション維持のための機能であり、リージョン優先のルーティングとは無関係です。",
+      "category": "network",
+      "tags": [
+        "site-recovery",
+        "storage-redundancy",
+        "load-balancers"
+      ]
+    },
+    {
+      "id": 35,
+      "question": "Azure Front Doorは、レート制限、負荷分散、および地域障害からの保護を提供しますか？",
+      "choices": [
+        "A. はい",
+        "B. いいえ"
+      ],
+      "answer": 0,
+      "explanation": "はい、Azure Front Doorはこれらすべての機能を提供します。WAF（Web Application Firewall）ポリシーによるレート制限、グローバルなL7負荷分散、複数リージョンのバックエンドへの自動フェールオーバーによる地域障害からの保護が可能です。Front Doorはグローバルサービスとして設計されており、これらの機能を統合的に提供しています。",
+      "category": "network",
+      "tags": [
+        "site-recovery",
+        "storage-redundancy",
+        "load-balancers",
+        "network-security"
+      ]
+    },
+    {
+      "id": 36,
+      "question": "400GBのデータベースがあり、月に1日だけ使用されます。コストを最小化するAzure SQLのサービスティアとモデルはどれですか？",
+      "choices": [
+        "A. Business Critical vCoreモデル",
+        "B. General Purpose vCoreモデル",
+        "C. Basic DTUモデル",
+        "D. Standard DTUモデル"
+      ],
+      "answer": 1,
+      "explanation": "General Purpose vCoreモデルでは、サーバーレスコンピューティングティアを使用できます。サーバーレスでは、使用していない時間は自動的に一時停止し、コンピューティング課金が発生しません（ストレージのみ課金）。月1日の使用であれば、大幅なコスト削減が可能です。Business CriticalはGPより高コストです。Basic DTUは最大2GBのデータベースサイズ制限があり、400GBには対応できません。Standard DTUも250GB制限があるため不適切です。",
+      "category": "data",
+      "tags": [
+        "sql-database",
+        "azure-functions"
+      ]
+    },
+    {
+      "id": 37,
+      "question": "Azure Front Doorが提供する機能はどれですか？",
+      "choices": [
+        "A. IPフィルタリング",
+        "B. Azure AD B2C JWT検証",
+        "C. OWASP保護"
+      ],
+      "answer": 2,
+      "explanation": "Azure Front DoorはWAF（Web Application Firewall）を統合しており、OWASPコアルールセットに基づく保護を提供します。これにより、SQLインジェクション、クロスサイトスクリプティング（XSS）などの一般的なWeb攻撃から保護されます。IPフィルタリングはFront Door WAFでもカスタムルールとして設定可能ですが、この問題ではOWASP保護が最も適切な回答です。B2C JWT検証はAPI Managementの機能であり、Front Doorでは提供されていません。",
+      "category": "security",
+      "tags": [
+        "entra-id",
+        "external-users",
+        "load-balancers",
+        "api-management",
+        "network-security"
+      ]
+    },
+    {
+      "id": 38,
+      "question": "Azure API Managementが提供する機能はどれですか？",
+      "choices": [
+        "A. IPフィルタリング",
+        "B. Azure AD B2C JWT検証",
+        "C. OWASP保護"
+      ],
+      "answer": 1,
+      "explanation": "Azure API Managementは、ポリシーを使用してJWTトークン（Azure AD B2C発行を含む）の検証を行う機能を提供しています。validate-jwtポリシーにより、APIへのアクセス時にトークンの有効性、クレーム、発行者などを検証できます。IPフィルタリングもAPI Managementで可能ですが、この問題ではB2C JWT検証が最も特徴的な機能です。OWASP保護はWAF（Front DoorやApplication Gateway）の機能であり、API Managementの標準機能ではありません。",
+      "category": "security",
+      "tags": [
+        "entra-id",
+        "external-users",
+        "load-balancers",
+        "api-management",
+        "network-security"
+      ]
+    },
+    {
+      "id": 39,
+      "question": "AKSを2つのリージョンにデプロイしています。SSL終端を含むグローバルなルーティングソリューションを選択してください。",
+      "choices": [
+        "A. Azure Load Balancer",
+        "B. Azure Front Door",
+        "C. イングレスコントローラー",
+        "D. Azure Traffic Manager"
+      ],
+      "answer": 1,
+      "explanation": "Azure Front Doorは、複数リージョンへのグローバルL7ロードバランシングとSSL終端（TLSオフロード）を提供します。2つのリージョンのAKSクラスターへのトラフィック分散と障害時のフェールオーバーが可能です。Azure Load BalancerはL4でリージョン内のみです。イングレスコントローラーはクラスター内の機能であり、リージョン間のルーティングはできません。Traffic ManagerはDNSベースのルーティングですが、SSL終端機能は提供しません。",
+      "category": "network",
+      "tags": [
+        "site-recovery",
+        "storage-redundancy",
+        "load-balancers",
+        "containers"
+      ]
+    },
+    {
+      "id": 40,
+      "question": "Azure Database for MySQLでペアリージョンへのフェールオーバーを実現する必要があります。どの機能を使用すべきですか？",
+      "choices": [
+        "A. Premiumファイル共有",
+        "B. 読み取りレプリカ",
+        "C. ネイティブレプリケーション",
+        "D. Geoバックアップ復元"
+      ],
+      "answer": 1,
+      "explanation": "Azure Database for MySQLの読み取りレプリカは、ペアリージョンに非同期レプリカを作成でき、障害時にレプリカをスタンドアロンサーバーに昇格させてフェールオーバーできます。Premiumファイル共有はAzure Filesの機能であり、MySQLには関係ありません。ネイティブレプリケーションはマネージドサービスではサポートされていない場合があります。Geoバックアップ復元も可能ですが、読み取りレプリカの方がRPO（Recovery Point Objective）が短く、フェールオーバー時間も短縮されます。",
+      "category": "business-continuity",
+      "tags": [
+        "entra-connect",
+        "bcdr-fundamentals",
+        "azure-backup",
+        "site-recovery",
+        "storage-redundancy"
+      ]
+    }
+  ]
+};

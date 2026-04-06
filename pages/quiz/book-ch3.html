@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第3章 問題集 - Azure Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="../../index.html">Azure Certification Study Hub</a></h1>
+  </header>
+  <main style="padding: 32px 48px; max-width: 800px;">
+    <div class="breadcrumb">
+      <a href="../../index.html">Home</a><span>&gt;</span>
+      <a href="index.html">問題集</a><span>&gt;</span>
+      第3章 事業継続性
+    </div>
+    <h1 style="font-size: 1.6rem; margin-bottom: 24px;">第3章 事業継続性（15問）</h1>
+    <div id="quiz-container"></div>
+  </main>
+  <script src="../../questions/book/book-ch3.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script>
+    const quiz = new Quiz('quiz-container');
+    quiz.loadQuestionsFromData([QUIZ_DATA_book_ch3]);
+  </script>
+</body>
+</html>

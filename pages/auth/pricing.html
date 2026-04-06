@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src https://checkout.stripe.com https://billing.stripe.com; img-src 'self' data:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>料金プラン - Azure Certification Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .pricing-container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .pricing-header h2 {
+      font-size: 1.6rem;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      border: none;
+    }
+    .pricing-header p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .free-tier {
+      background: #f0f6ff;
+      border: 1px solid #b8d4f0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .free-tier h3 {
+      font-size: 1rem;
+      color: #0078d4;
+      margin-bottom: 6px;
+    }
+    .free-tier p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .free-tier a {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid #0078d4;
+      border-radius: 6px;
+      color: #0078d4;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.15s;
+    }
+    .free-tier a:hover {
+      background: #e0ecf7;
+      text-decoration: none;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pricing-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      background: #fff;
+    }
+    .pricing-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-color: #0078d4;
+    }
+    .pricing-card.featured {
+      border-color: #0078d4;
+      border-width: 2px;
+      box-shadow: 0 4px 16px rgba(0, 120, 212, 0.15);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0078d4;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .pricing-plan-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0078d4;
+      margin-bottom: 2px;
+    }
+    .pricing-price-sub {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .pricing-discount {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #107c10;
+      margin-bottom: 16px;
+      min-height: 20px;
+    }
+    .pricing-features {
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .pricing-features li {
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+    }
+    .pricing-features li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #0078d4;
+      font-weight: 700;
+    }
+    .pricing-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #0078d4;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .pricing-btn:hover {
+      background: #005a9e;
+    }
+    .pricing-btn:disabled {
+      background: #a0c4e8;
+      cursor: not-allowed;
+    }
+    .pricing-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body data-access="free">
+  <header class="site-header">
+    <h1><a href="../../index.html">Azure Certification Study Hub</a></h1>
+  </header>
+
+  <div class="pricing-container">
+    <div class="pricing-header">
+      <h2>料金プラン</h2>
+      <p>AZ-305試験の合格に必要なすべての教材と問題集にアクセスできます</p>
+    </div>
+
+    <div class="free-tier">
+      <h3>無料プラン</h3>
+      <p>第1章の教材と10問の練習問題</p>
+      <a href="login.html?tab=register">無料で始める</a>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- 1 month -->
+      <div class="pricing-card" data-plan="1month">
+        <div class="pricing-plan-name">1ヶ月プラン</div>
+        <div class="pricing-price">&yen;980</div>
+        <div class="pricing-price-sub">/月</div>
+        <div class="pricing-discount">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>全4章の教材</li>
+          <li>全234問の問題集</li>
+          <li>解説付きクイズ</li>
+        </ul>
+        <button class="pricing-btn" onclick="startCheckout('1month')">登録する</button>
+      </div>
+
+      <!-- 3 months (featured) -->
+      <div class="pricing-card featured" data-plan="3months">
+        <span class="pricing-badge">おすすめ</span>
+        <div class="pricing-plan-name">3ヶ月プラン</div>
+        <div class="pricing-price">&yen;2,480</div>
+        <div class="pricing-price-sub">&yen;827/月</div>
+        <div class="pricing-discount">16% OFF</div>
+        <ul class="pricing-features">
+          <li>全4章の教材</li>
+          <li>全234問の問題集</li>
+          <li>解説付きクイズ</li>
+        </ul>
+        <button class="pricing-btn" onclick="startCheckout('3months')">登録する</button>
+      </div>
+
+      <!-- 6 months -->
+      <div class="pricing-card" data-plan="6months">
+        <div class="pricing-plan-name">6ヶ月プラン</div>
+        <div class="pricing-price">&yen;4,480</div>
+        <div class="pricing-price-sub">&yen;747/月</div>
+        <div class="pricing-discount">24% OFF</div>
+        <ul class="pricing-features">
+          <li>全4章の教材</li>
+          <li>全234問の問題集</li>
+          <li>解説付きクイズ</li>
+        </ul>
+        <button class="pricing-btn" onclick="startCheckout('6months')">登録する</button>
+      </div>
+
+      <!-- 1 year -->
+      <div class="pricing-card" data-plan="1year">
+        <div class="pricing-plan-name">1年プラン</div>
+        <div class="pricing-price">&yen;7,980</div>
+        <div class="pricing-price-sub">&yen;665/月</div>
+        <div class="pricing-discount">32% OFF</div>
+        <ul class="pricing-features">
+          <li>全4章の教材</li>
+          <li>全234問の問題集</li>
+          <li>解説付きクイズ</li>
+        </ul>
+        <button class="pricing-btn" onclick="startCheckout('1year')">登録する</button>
+      </div>
+    </div>
+
+    <p class="pricing-note">
+      決済はStripeで安全に処理されます。<br>
+      プラン期間終了後は自動的に無料プランに戻ります。
+    </p>
+  </div>
+
+  <div id="checkout-message" style="display:none;max-width:880px;margin:0 auto 20px;padding:16px 20px;border-radius:8px;font-size:0.95rem;text-align:center;"></div>
+
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
+  <script>
+    // Show checkout result message
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var msgEl = document.getElementById('checkout-message');
+      if (params.get('success') === 'true') {
+        msgEl.style.display = 'block';
+        msgEl.style.background = '#e8f5e9';
+        msgEl.style.color = '#107c10';
+        msgEl.style.border = '1px solid #a3d9a5';
+        msgEl.textContent = '決済が完了しました。有料コンテンツをご利用いただけます。';
+        // Clean up URL
+        window.history.replaceState({}, '', window.location.pathname);
+      } else if (params.get('cancelled') === 'true') {
+        msgEl.style.display = 'block';
+        msgEl.style.background = '#fff3e0';
+        msgEl.style.color = '#e65100';
+        msgEl.style.border = '1px solid #ffcc80';
+        msgEl.textContent = '決済がキャンセルされました。';
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    })();
+
+    var CHECKOUT_URL = 'https://wvwhareffgblvwureyqn.supabase.co/functions/v1/create-checkout-session';
+
+    // TODO: Replace with your actual Stripe Price IDs from the Stripe Dashboard
+    var PRICE_IDS = {
+      '1month':  'price_XXXXXXXXXXXXXXXXXXXX',  // ¥980/月
+      '3months': 'price_XXXXXXXXXXXXXXXXXXXX',  // ¥2,480/3ヶ月
+      '6months': 'price_XXXXXXXXXXXXXXXXXXXX',  // ¥4,480/6ヶ月
+      '1year':   'price_XXXXXXXXXXXXXXXXXXXX',  // ¥7,980/年
+    };
+
+    async function startCheckout(plan) {
+      var priceId = PRICE_IDS[plan];
+      if (!priceId || priceId.startsWith('price_XXXX')) {
+        alert('この料金プランはまだ設定されていません。');
+        return;
+      }
+
+      // Ensure user is logged in
+      var session = await window.getSession();
+      if (!session) {
+        window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+      }
+
+      // Disable all buttons
+      var buttons = document.querySelectorAll('.pricing-btn');
+      buttons.forEach(function (btn) { btn.disabled = true; btn.textContent = '処理中...'; });
+
+      try {
+        var response = await fetch(CHECKOUT_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + session.access_token
+          },
+          body: JSON.stringify({
+            priceId: priceId
+          })
+        });
+
+        var data = await response.json();
+
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || 'チェックアウトセッションの作成に失敗しました');
+        }
+      } catch (err) {
+        alert('エラー: ' + err.message);
+        buttons.forEach(function (btn) { btn.disabled = false; btn.textContent = '登録する'; });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src https://checkout.stripe.com https://billing.stripe.com; img-src 'self' data:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>ログイン - Azure Certification Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .auth-container {
+      max-width: 440px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+    .auth-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .auth-card h2 {
+      font-size: 1.4rem;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+      text-align: center;
+      border: none;
+    }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 24px;
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #888;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .auth-tab:hover {
+      color: #0078d4;
+    }
+    .auth-tab.active {
+      color: #0078d4;
+      border-bottom-color: #0078d4;
+    }
+    .auth-form {
+      display: none;
+    }
+    .auth-form.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus {
+      border-color: #0078d4;
+      box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+    }
+    .auth-submit {
+      width: 100%;
+      padding: 12px;
+      background: #0078d4;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+    .auth-submit:hover {
+      background: #005a9e;
+    }
+    .auth-submit:disabled {
+      background: #a0c4e8;
+      cursor: not-allowed;
+    }
+    .auth-error {
+      display: none;
+      background: #fce4ec;
+      color: #d13438;
+      border: 1px solid #f5b7b1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .auth-success {
+      display: none;
+      background: #e8f5e9;
+      color: #107c10;
+      border: 1px solid #a3d9a5;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .auth-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .auth-footer a {
+      color: #0078d4;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body data-access="free">
+  <header class="site-header">
+    <h1><a href="../../index.html">Azure Certification Study Hub</a></h1>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>アカウント</h2>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">ログイン</button>
+        <button class="auth-tab" data-tab="register">新規登録</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form active" autocomplete="on">
+        <div id="login-error" class="auth-error"></div>
+        <div class="form-group">
+          <label for="login-email">メールアドレス</label>
+          <input type="email" id="login-email" name="email" required placeholder="example@email.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="login-password">パスワード</label>
+          <input type="password" id="login-password" name="password" required placeholder="パスワード" autocomplete="current-password">
+        </div>
+        <button type="submit" class="auth-submit" id="login-submit">ログイン</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form" autocomplete="on">
+        <div id="register-error" class="auth-error"></div>
+        <div id="register-success" class="auth-success"></div>
+        <div class="form-group">
+          <label for="register-email">メールアドレス</label>
+          <input type="email" id="register-email" name="email" required placeholder="example@email.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="register-password">パスワード</label>
+          <input type="password" id="register-password" name="new-password" required placeholder="8文字以上" minlength="8" autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="register-password-confirm">パスワード（確認）</label>
+          <input type="password" id="register-password-confirm" name="new-password-confirm" required placeholder="もう一度入力" minlength="8" autocomplete="new-password">
+        </div>
+        <button type="submit" class="auth-submit" id="register-submit">新規登録</button>
+      </form>
+
+      <div class="auth-footer">
+        <a href="pricing.html">料金プランを見る &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
+  <script>
+    (function () {
+      // Tab switching
+      var tabs = document.querySelectorAll('.auth-tab');
+      var forms = document.querySelectorAll('.auth-form');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.getAttribute('data-tab');
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          forms.forEach(function (f) { f.classList.remove('active'); });
+          tab.classList.add('active');
+          document.getElementById(target + '-form').classList.add('active');
+        });
+      });
+
+      // Redirect URL from query params (validated to prevent open redirect)
+      var params = new URLSearchParams(window.location.search);
+      var rawRedirect = params.get('redirect') || '../../index.html';
+      // Only allow same-origin or relative redirects
+      var redirectUrl = '../../index.html';
+      try {
+        var url = new URL(rawRedirect, window.location.origin);
+        if (url.origin === window.location.origin) {
+          redirectUrl = rawRedirect;
+        }
+      } catch (e) {
+        // If URL parsing fails, it's a relative path — safe to use
+        if (!rawRedirect.startsWith('//') && !rawRedirect.match(/^https?:/i)) {
+          redirectUrl = rawRedirect;
+        }
+      }
+
+      // If the tab param says register, switch to register
+      if (params.get('tab') === 'register') {
+        tabs[1].click();
+      }
+
+      function showError(id, msg) {
+        var el = document.getElementById(id);
+        el.textContent = msg;
+        el.style.display = 'block';
+      }
+      function hideError(id) {
+        document.getElementById(id).style.display = 'none';
+      }
+      function showSuccess(id, msg) {
+        var el = document.getElementById(id);
+        el.textContent = msg;
+        el.style.display = 'block';
+      }
+
+      // Wait for supabase
+      function onReady(fn) {
+        if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
+      }
+
+      onReady(function () {
+        // If already logged in, redirect
+        window.getSession().then(function (session) {
+          if (session) {
+            window.location.href = redirectUrl;
+          }
+        });
+      });
+
+      // Login
+      document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideError('login-error');
+        var email = document.getElementById('login-email').value.trim();
+        var password = document.getElementById('login-password').value;
+        var btn = document.getElementById('login-submit');
+        btn.disabled = true;
+        btn.textContent = 'ログイン中...';
+
+        function doLogin() {
+          if (!window.supabaseClient) {
+            setTimeout(doLogin, 200);
+            return;
+          }
+          window.supabaseClient.auth.signInWithPassword({ email: email, password: password })
+            .then(function (result) {
+              btn.disabled = false;
+              btn.textContent = 'ログイン';
+              if (result.error) {
+                showError('login-error', result.error.message || 'ログインに失敗しました');
+              } else {
+                window.location.href = redirectUrl;
+              }
+            })
+            .catch(function (err) {
+              btn.disabled = false;
+              btn.textContent = 'ログイン';
+              showError('login-error', 'エラーが発生しました: ' + err.message);
+            });
+        }
+        doLogin();
+      });
+
+      // Register
+      document.getElementById('register-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideError('register-error');
+        var email = document.getElementById('register-email').value.trim();
+        var password = document.getElementById('register-password').value;
+        var confirm = document.getElementById('register-password-confirm').value;
+        var btn = document.getElementById('register-submit');
+
+        if (password !== confirm) {
+          showError('register-error', 'パスワードが一致しません');
+          return;
+        }
+        if (password.length < 8) {
+          showError('register-error', 'パスワードは8文字以上で入力してください');
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = '登録中...';
+
+        function doRegister() {
+          if (!window.supabaseClient) {
+            setTimeout(doRegister, 200);
+            return;
+          }
+          window.supabaseClient.auth.signUp({ email: email, password: password })
+            .then(function (result) {
+              btn.disabled = false;
+              btn.textContent = '新規登録';
+              if (result.error) {
+                showError('register-error', result.error.message || '登録に失敗しました');
+              } else if (result.data && result.data.user && !result.data.session) {
+                // Email confirmation required
+                showSuccess('register-success', '確認メールを送信しました。メール内のリンクをクリックして登録を完了してください。');
+              } else {
+                window.location.href = redirectUrl;
+              }
+            })
+            .catch(function (err) {
+              btn.disabled = false;
+              btn.textContent = '新規登録';
+              showError('register-error', 'エラーが発生しました: ' + err.message);
+            });
+        }
+        doRegister();
+      });
+    })();
+  </script>
+</body>
+</html>
