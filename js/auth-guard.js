@@ -194,12 +194,12 @@
     if (window._siteRelativePath) {
       return window._siteRelativePath(target);
     }
+    // Count depth from site root by finding how many /pages/xxx/ segments are in the path
     var path = window.location.pathname;
-    if (path.includes('/pages/auth/') || path.includes('/pages/quiz/') ||
-        path.includes('/pages/identity/') || path.includes('/pages/data/') ||
-        path.includes('/pages/business-continuity/') || path.includes('/pages/infrastructure/') ||
-        path.includes('/pages/az-900/') || path.includes('/pages/az-305/') ||
-        path.includes('/pages/legal/')) {
+    // Match everything after the site root (e.g., /it-study-hub/)
+    var match = path.match(/\/pages\/[^\/]+\//);
+    if (match) {
+      // We're at depth 2 (pages/something/) — go up 2 levels
       return '../../' + target;
     } else if (path.includes('/pages/')) {
       return '../' + target;
