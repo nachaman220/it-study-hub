@@ -191,6 +191,17 @@
 
         <a href="#" id="delete-account-link" class="delete-link">アカウントの削除</a>
 
+        <!-- Admin view toggle (管理者のみ表示) -->
+        <div id="admin-view-section" style="display:none;margin-bottom:24px;padding:20px;background:#1a1a2e;border-radius:8px;color:#fff;">
+          <div style="font-weight:700;margin-bottom:12px;font-size:0.95rem;">管理者パネル — 表示モード切り替え</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="admin-view-btn" data-mode="premium" style="padding:8px 20px;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;font-weight:600;">有料会員</button>
+            <button class="admin-view-btn" data-mode="free" style="padding:8px 20px;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;font-weight:600;">無料会員</button>
+            <button class="admin-view-btn" data-mode="guest" style="padding:8px 20px;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;font-weight:600;">非会員</button>
+          </div>
+          <div id="admin-current-mode" style="margin-top:8px;font-size:0.8rem;color:#aaa;"></div>
+        </div>
+
         <button type="button" id="logout-btn" class="logout-btn">ログアウト</button>
       </div>
     </div>
@@ -242,6 +253,9 @@
           } else {
             document.getElementById('profile-membership').textContent = '無料会員';
           }
+
+          // Show admin panel if admin user
+          setupAdminPanel(user.email);
         });
       });
 
@@ -295,6 +309,52 @@
             showError('エラーが発生しました: ' + err.message);
           });
       });
+
+      // Admin view toggle
+      function setupAdminPanel(email) {
+        var ADMIN_HASHES = ['c001b6c7cfd7fd0341edb9ac419f619daf3d774ff1fbfd9603fd0f018ff50aab'];
+        async function sha256(str) {
+          var buf = new TextEncoder().encode(str);
+          var hash = await crypto.subtle.digest('SHA-256', buf);
+          return Array.from(new Uint8Array(hash)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        }
+
+        sha256(email.toLowerCase()).then(function (hash) {
+          if (ADMIN_HASHES.indexOf(hash) === -1) return;
+
+          var section = document.getElementById('admin-view-section');
+          section.style.display = 'block';
+
+          var currentMode = localStorage.getItem('adminViewMode') || 'premium';
+          var modeLabels = { premium: '有料会員', free: '無料会員', guest: '非会員' };
+          var modeColors = { premium: '#0078d4', free: '#28a745', guest: '#6c757d' };
+
+          function updateButtons() {
+            var btns = document.querySelectorAll('.admin-view-btn');
+            btns.forEach(function (btn) {
+              var m = btn.getAttribute('data-mode');
+              if (m === currentMode) {
+                btn.style.background = modeColors[m];
+                btn.style.color = '#fff';
+              } else {
+                btn.style.background = '#444';
+                btn.style.color = '#aaa';
+              }
+            });
+            document.getElementById('admin-current-mode').textContent = '現在: ' + modeLabels[currentMode] + 'として閲覧中';
+          }
+
+          updateButtons();
+
+          document.querySelectorAll('.admin-view-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              currentMode = btn.getAttribute('data-mode');
+              localStorage.setItem('adminViewMode', currentMode);
+              updateButtons();
+            });
+          });
+        });
+      }
 
       // Logout
       document.getElementById('logout-btn').addEventListener('click', function () {
