@@ -16,6 +16,28 @@
 
   onReady(async function () {
     var session = await window.getSession();
+
+    // Concurrent session check: verify session token matches
+    if (session && window.supabaseClient) {
+      var localToken = localStorage.getItem('session_token');
+      if (localToken) {
+        try {
+          var userResult = await window.supabaseClient.auth.getUser();
+          if (userResult.data && userResult.data.user) {
+            var metaToken = userResult.data.user.user_metadata && userResult.data.user.user_metadata.session_token;
+            if (metaToken && localToken !== metaToken) {
+              // Another device logged in - sign out this session
+              localStorage.removeItem('session_token');
+              await window.supabaseClient.auth.signOut();
+              session = null;
+            }
+          }
+        } catch (e) {
+          console.error('Session check error:', e);
+        }
+      }
+    }
+
     var subscription = session ? await window.getSubscriptionStatus() : null;
     var accessLevel = document.body.getAttribute('data-access') || 'free';
 
@@ -57,30 +79,19 @@
 
     var menu = document.createElement('div');
     menu.className = 'user-menu';
-    menu.style.cssText = 'display:flex;align-items:center;gap:12px;font-size:0.85rem;';
+    menu.style.cssText = 'display:flex;align-items:center;gap:10px;font-size:0.85rem;';
 
     if (session && session.user) {
-      var email = session.user.email || '';
-      var shortEmail = email.length > 20 ? email.substring(0, 18) + '...' : email;
-      var safeEmail = escapeHtml(email);
-      var safeShortEmail = escapeHtml(shortEmail);
-
       menu.innerHTML =
-        '<span style="color:rgba(255,255,255,0.85);" title="' + safeEmail + '">' + safeShortEmail + '</span>' +
-        '<a href="' + rel('pages/auth/login.html') + '" style="color:#fff;padding:4px 10px;border:1px solid rgba(255,255,255,0.4);border-radius:4px;font-size:0.8rem;white-space:nowrap;" ' +
-        'onmouseover="this.style.background=\'rgba(255,255,255,0.15)\'" onmouseout="this.style.background=\'none\'">マイページ</a>' +
-        '<button id="auth-logout-btn" style="color:#fff;background:none;border:1px solid rgba(255,255,255,0.4);border-radius:4px;padding:4px 10px;cursor:pointer;font-size:0.8rem;white-space:nowrap;" ' +
-        'onmouseover="this.style.background=\'rgba(255,255,255,0.15)\'" onmouseout="this.style.background=\'none\'">ログアウト</button>';
-
+        '<a href="' + rel('pages/auth/mypage.html') + '" style="color:#fff;padding:6px 18px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.6);border-radius:4px;font-size:0.85rem;white-space:nowrap;text-decoration:none;font-weight:600;" ' +
+        'onmouseover="this.style.background=\'rgba(255,255,255,0.25)\'" onmouseout="this.style.background=\'rgba(255,255,255,0.15)\'">マイページ &gt;</a>';
       header.appendChild(menu);
-
-      document.getElementById('auth-logout-btn').addEventListener('click', function () {
-        window.signOut();
-      });
     } else {
       menu.innerHTML =
-        '<a href="' + rel('pages/auth/login.html') + '" style="color:#fff;padding:6px 16px;border:1px solid rgba(255,255,255,0.6);border-radius:4px;font-size:0.85rem;white-space:nowrap;" ' +
-        'onmouseover="this.style.background=\'rgba(255,255,255,0.15)\'" onmouseout="this.style.background=\'none\'">ログイン</a>';
+        '<a href="' + rel('pages/auth/login.html') + '" style="color:#fff;padding:6px 16px;border:1px solid rgba(255,255,255,0.6);border-radius:4px;font-size:0.85rem;white-space:nowrap;text-decoration:none;" ' +
+        'onmouseover="this.style.background=\'rgba(255,255,255,0.15)\'" onmouseout="this.style.background=\'none\'">ログイン &gt;</a>' +
+        '<a href="' + rel('pages/auth/register.html') + '" style="color:#0078d4;padding:6px 16px;background:#fff;border:1px solid #fff;border-radius:4px;font-size:0.85rem;white-space:nowrap;text-decoration:none;font-weight:600;" ' +
+        'onmouseover="this.style.background=\'#e0ecf7\'" onmouseout="this.style.background=\'#fff\'">無料会員登録 &gt;</a>';
       header.appendChild(menu);
     }
   }

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>無料会員登録 - IT Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .auth-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .auth-card {
+      background: #eef2f7;
+      border-radius: 4px;
+      padding: 0;
+    }
+    .auth-title {
+      background: #3f4a9e;
+      color: #fff;
+      padding: 18px 28px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 4px 4px 0 0;
+      border: none;
+    }
+    .auth-body {
+      padding: 28px 32px;
+    }
+    .auth-notes {
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.8;
+    }
+    .auth-notes .warn {
+      color: #d35400;
+      font-weight: 700;
+    }
+    .reg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .reg-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #d0d0d0;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+    .reg-table td:first-child {
+      width: 180px;
+      font-weight: 600;
+      color: #333;
+      background: #fff;
+    }
+    .reg-table td:last-child {
+      background: #fff;
+    }
+    .reg-table input[type="text"],
+    .reg-table input[type="email"],
+    .reg-table input[type="password"] {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .reg-table input:focus {
+      border-color: #3f4a9e;
+      box-shadow: 0 0 0 2px rgba(63, 74, 158, 0.15);
+    }
+    .terms-check {
+      text-align: center;
+      padding: 16px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #d0d0d0;
+      background: #fff;
+    }
+    .terms-check a {
+      color: #d35400;
+      font-weight: 600;
+    }
+    .captcha-box {
+      margin: 24px 0;
+      text-align: center;
+    }
+    .captcha-checkbox {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      padding: 12px 16px;
+      background: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+    .captcha-checkbox input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
+    .captcha-checkbox span {
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .auth-submit {
+      width: 100%;
+      padding: 12px;
+      background: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .auth-submit:hover {
+      background: #d0d0d0;
+    }
+    .auth-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .auth-error {
+      display: none;
+      background: #fce4ec;
+      color: #d13438;
+      border: 1px solid #f5b7b1;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .auth-success {
+      display: none;
+      background: #e8f5e9;
+      color: #107c10;
+      border: 1px solid #a3d9a5;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .pw-rules {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    .pw-rules li {
+      color: #999;
+    }
+  </style>
+</head>
+<body data-access="free">
+  <header class="site-header">
+    <h1><a href="../../index.html">IT Study Hub</a></h1>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">無料会員登録</h2>
+      <div class="auth-body">
+        <div class="auth-notes">
+          <p>* ユーザー名はメールアドレス以外を入力してください。</p>
+          <p>* 「登録」ボタンをクリックすることで、作成した情報で自動的にログインされます。</p>
+          <p>* <span class="warn">メールアドレスの入力間違いが多発しております。</span>入力内容に誤りがないか十分にご確認の上、ご登録をお願いいたします。</p>
+        </div>
+
+        <div id="register-error" class="auth-error"></div>
+        <div id="register-success" class="auth-success"></div>
+
+        <form id="register-form" autocomplete="on">
+          <table class="reg-table">
+            <tr>
+              <td>ユーザー名</td>
+              <td><input type="text" id="reg-username" name="username" required placeholder="ユーザー名" autocomplete="username" minlength="2" maxlength="30"></td>
+            </tr>
+            <tr>
+              <td>メール</td>
+              <td><input type="email" id="reg-email" name="email" required placeholder="example@email.com" autocomplete="email"></td>
+            </tr>
+            <tr>
+              <td>パスワード</td>
+              <td>
+                <input type="password" id="reg-password" name="new-password" required placeholder="8文字以上" minlength="8" autocomplete="new-password">
+                <ul class="pw-rules">
+                  <li id="pw-length">&#10005; 8文字以上</li>
+                  <li id="pw-upper">&#10005; 大文字（A-Z）を含む</li>
+                  <li id="pw-lower">&#10005; 小文字（a-z）を含む</li>
+                  <li id="pw-digit">&#10005; 数字（0-9）を含む</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>パスワードを再入力</td>
+              <td>
+                <input type="password" id="reg-password-confirm" name="new-password-confirm" required placeholder="もう一度入力" minlength="8" autocomplete="new-password">
+                <div id="pw-match" style="font-size:0.8rem;margin-top:4px;display:none;"></div>
+              </td>
+            </tr>
+          </table>
+
+          <div class="terms-check">
+            <label><input type="checkbox" id="terms-check"> 了承します <a href="../legal/terms.html" target="_blank">利用規約</a></label>
+          </div>
+
+          <div class="captcha-box">
+            <label class="captcha-checkbox">
+              <input type="checkbox" id="captcha-check">
+              <span>私はロボットではありません</span>
+            </label>
+          </div>
+
+          <button type="submit" class="auth-submit" id="register-submit" disabled>登録</button>
+        </form>
+
+        <div style="margin-top:20px;font-size:0.85rem;">
+          <a href="login.html" style="color:#0078d4;font-weight:600;">既にアカウントをお持ちの方はログイン</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/admin-toggle.js"></script>
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
+  <script>
+    (function () {
+      var pwInput = document.getElementById('reg-password');
+      var pwConfirm = document.getElementById('reg-password-confirm');
+      var registerBtn = document.getElementById('register-submit');
+      var termsCheck = document.getElementById('terms-check');
+      var captchaCheck = document.getElementById('captcha-check');
+
+      var rules = {
+        length: { el: document.getElementById('pw-length'), test: function (p) { return p.length >= 8; } },
+        upper:  { el: document.getElementById('pw-upper'),  test: function (p) { return /[A-Z]/.test(p); } },
+        lower:  { el: document.getElementById('pw-lower'),  test: function (p) { return /[a-z]/.test(p); } },
+        digit:  { el: document.getElementById('pw-digit'),  test: function (p) { return /[0-9]/.test(p); } },
+      };
+
+      function checkForm() {
+        var pw = pwInput.value;
+        var allPass = true;
+
+        Object.keys(rules).forEach(function (key) {
+          var r = rules[key];
+          var pass = r.test(pw);
+          r.el.style.color = pass ? '#107c10' : '#999';
+          r.el.innerHTML = (pass ? '&#10003; ' : '&#10005; ') + r.el.textContent.replace(/^[^\s]\s*/, '');
+          if (!pass) allPass = false;
+        });
+
+        var matchEl = document.getElementById('pw-match');
+        var confirmVal = pwConfirm.value;
+        if (confirmVal.length > 0) {
+          matchEl.style.display = 'block';
+          if (pw === confirmVal) {
+            matchEl.style.color = '#107c10';
+            matchEl.textContent = '\u2713 パスワードが一致しています';
+          } else {
+            matchEl.style.color = '#d13438';
+            matchEl.textContent = '\u2717 パスワードが一致しません';
+            allPass = false;
+          }
+        } else {
+          matchEl.style.display = 'none';
+          allPass = false;
+        }
+
+        var usernameOk = document.getElementById('reg-username').value.trim().length >= 2;
+        var emailOk = document.getElementById('reg-email').value.includes('@');
+
+        registerBtn.disabled = !(allPass && usernameOk && emailOk && termsCheck.checked && captchaCheck.checked);
+      }
+
+      pwInput.addEventListener('input', checkForm);
+      pwConfirm.addEventListener('input', checkForm);
+      document.getElementById('reg-username').addEventListener('input', checkForm);
+      document.getElementById('reg-email').addEventListener('input', checkForm);
+      termsCheck.addEventListener('change', checkForm);
+      captchaCheck.addEventListener('change', checkForm);
+
+      function showError(msg) {
+        var el = document.getElementById('register-error');
+        el.textContent = msg;
+        el.style.display = 'block';
+      }
+      function hideError() {
+        document.getElementById('register-error').style.display = 'none';
+      }
+      function showSuccess(msg) {
+        var el = document.getElementById('register-success');
+        el.textContent = msg;
+        el.style.display = 'block';
+      }
+
+      function onReady(fn) {
+        if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
+      }
+
+      // If already logged in, redirect
+      onReady(function () {
+        window.getSession().then(function (session) {
+          if (session) {
+            window.location.href = '../../index.html';
+          }
+        });
+      });
+
+      document.getElementById('register-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideError();
+
+        var username = document.getElementById('reg-username').value.trim();
+        var email = document.getElementById('reg-email').value.trim();
+        var password = pwInput.value;
+        var confirm = pwConfirm.value;
+
+        if (password !== confirm) {
+          showError('パスワードが一致しません');
+          return;
+        }
+        if (!termsCheck.checked) {
+          showError('利用規約に同意してください');
+          return;
+        }
+        if (!captchaCheck.checked) {
+          showError('「私はロボットではありません」にチェックを入れてください');
+          return;
+        }
+
+        var btn = registerBtn;
+        btn.disabled = true;
+        btn.textContent = '登録中...';
+
+        function doRegister() {
+          if (!window.supabaseClient) {
+            setTimeout(doRegister, 200);
+            return;
+          }
+          window.supabaseClient.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+              data: { username: username }
+            }
+          })
+            .then(function (result) {
+              btn.disabled = false;
+              btn.textContent = '登録';
+              if (result.error) {
+                showError(result.error.message || '登録に失敗しました');
+              } else if (result.data && result.data.user && !result.data.session) {
+                showSuccess('確認メールを送信しました。メール内のリンクをクリックして登録を完了してください。');
+              } else {
+                // Auto-login: set session token
+                var sessionToken = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2);
+                localStorage.setItem('session_token', sessionToken);
+                window.supabaseClient.auth.updateUser({
+                  data: { session_token: sessionToken }
+                }).then(function () {
+                  window.location.href = '../../index.html';
+                });
+              }
+            })
+            .catch(function (err) {
+              btn.disabled = false;
+              btn.textContent = '登録';
+              showError('エラーが発生しました: ' + err.message);
+            });
+        }
+        doRegister();
+      });
+    })();
+  </script>
+
+  <footer style="background: #f7f9fb; border-top: 1px solid #e0e0e0; padding: 20px 48px; margin-top: 40px; text-align: center; font-size: 0.85rem; color: #888;">
+    <a href="../../pages/legal/tokushoho.html" style="color: #0078d4; margin: 0 12px;">特定商取引法に基づく表記</a>
+    <a href="../../pages/legal/privacy.html" style="color: #0078d4; margin: 0 12px;">プライバシーポリシー</a>
+    <a href="../../pages/legal/terms.html" style="color: #0078d4; margin: 0 12px;">利用規約</a>
+    <p style="margin-top: 8px;">&copy; 2026 IT Study Hub</p>
+  </footer>
+</body>
+</html>

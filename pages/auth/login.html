@@ -3,61 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src https://checkout.stripe.com https://billing.stripe.com; img-src 'self' data:;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>ログイン - IT Study Hub</title>
   <link rel="stylesheet" href="../../css/style.css">
   <style>
     .auth-container {
-      max-width: 440px;
-      margin: 48px auto;
-      padding: 0 20px;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
     .auth-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 36px 32px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      background: #eef2f7;
+      border-radius: 4px;
+      padding: 0;
     }
-    .auth-card h2 {
-      font-size: 1.4rem;
-      color: #1a1a1a;
-      margin-bottom: 24px;
-      text-align: center;
+    .auth-title {
+      background: #3f4a9e;
+      color: #fff;
+      padding: 18px 28px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 4px 4px 0 0;
       border: none;
     }
-    .auth-tabs {
-      display: flex;
-      border-bottom: 2px solid #e0e0e0;
-      margin-bottom: 24px;
+    .auth-body {
+      padding: 28px 32px;
     }
-    .auth-tab {
-      flex: 1;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 0.95rem;
+    .auth-notes {
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.8;
+    }
+    .auth-notes a {
+      color: #d35400;
       font-weight: 600;
-      color: #888;
-      background: none;
-      border: none;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .auth-tab:hover {
-      color: #0078d4;
-    }
-    .auth-tab.active {
-      color: #0078d4;
-      border-bottom-color: #0078d4;
-    }
-    .auth-form {
-      display: none;
-    }
-    .auth-form.active {
-      display: block;
     }
     .form-group {
       margin-bottom: 18px;
@@ -73,34 +53,63 @@
       width: 100%;
       padding: 10px 14px;
       border: 1px solid #d0d0d0;
-      border-radius: 6px;
+      border-radius: 4px;
       font-size: 0.95rem;
       outline: none;
-      transition: border-color 0.2s;
+      background: #f0f4ff;
       box-sizing: border-box;
     }
     .form-group input:focus {
-      border-color: #0078d4;
-      box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+      border-color: #3f4a9e;
+      box-shadow: 0 0 0 2px rgba(63, 74, 158, 0.15);
+    }
+    .remember-me {
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+    .remember-me label {
+      cursor: pointer;
+    }
+    .captcha-box {
+      margin-bottom: 20px;
+    }
+    .captcha-checkbox {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      padding: 12px 16px;
+      background: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+    .captcha-checkbox input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
+    .captcha-checkbox span {
+      font-size: 0.9rem;
+      color: #333;
     }
     .auth-submit {
       width: 100%;
       padding: 12px;
-      background: #0078d4;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
+      background: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.15s;
-      margin-top: 4px;
     }
     .auth-submit:hover {
-      background: #005a9e;
+      background: #d0d0d0;
     }
     .auth-submit:disabled {
-      background: #a0c4e8;
+      opacity: 0.6;
       cursor: not-allowed;
     }
     .auth-error {
@@ -108,32 +117,29 @@
       background: #fce4ec;
       color: #d13438;
       border: 1px solid #f5b7b1;
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 10px 14px;
       font-size: 0.85rem;
       margin-bottom: 16px;
       line-height: 1.5;
     }
-    .auth-success {
-      display: none;
-      background: #e8f5e9;
-      color: #107c10;
-      border: 1px solid #a3d9a5;
-      border-radius: 6px;
-      padding: 10px 14px;
+    .auth-links {
+      margin-top: 20px;
       font-size: 0.85rem;
-      margin-bottom: 16px;
-      line-height: 1.5;
+      line-height: 2;
     }
-    .auth-footer {
-      text-align: center;
-      margin-top: 24px;
-      font-size: 0.85rem;
-      color: #666;
-    }
-    .auth-footer a {
+    .auth-links a {
       color: #0078d4;
       font-weight: 600;
+      display: block;
+    }
+    .account-info dt {
+      font-weight: 700;
+      margin-top: 16px;
+    }
+    .account-info dd {
+      margin-left: 0;
+      margin-bottom: 4px;
     }
   </style>
 </head>
@@ -144,55 +150,57 @@
 
   <div class="auth-container">
     <div class="auth-card">
-      <h2>アカウント</h2>
+      <h2 class="auth-title">ログイン</h2>
+      <div class="auth-body">
+        <div class="auth-notes">
+          <p>* 会員アカウントを所有していない方は、まずは簡単な<a href="register.html">無料会員登録</a>することで、無期限に模擬問題集をお試しいただくことが可能です。</p>
+          <p>* アカウント毎の同時ログイン数は"1"となっています。新しくログインされた場合、古い場所(ブラウザ)から自動的にログアウトされます。</p>
+        </div>
 
-      <div class="auth-tabs">
-        <button class="auth-tab active" data-tab="login">ログイン</button>
-        <button class="auth-tab" data-tab="register">新規登録</button>
-      </div>
+        <!-- Login form (shown when not logged in) -->
+        <div id="login-section">
+          <div id="login-error" class="auth-error"></div>
+          <form id="login-form" autocomplete="on">
+            <div class="form-group">
+              <label for="login-email">メールアドレス</label>
+              <input type="email" id="login-email" name="email" required placeholder="example@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="login-password">パスワード</label>
+              <input type="password" id="login-password" name="password" required placeholder="パスワード" autocomplete="current-password">
+            </div>
+            <div class="remember-me">
+              <label><input type="checkbox" id="remember-check"> ログイン情報を保存</label>
+            </div>
+            <div class="captcha-box">
+              <label class="captcha-checkbox">
+                <input type="checkbox" id="captcha-check">
+                <span>私はロボットではありません</span>
+              </label>
+            </div>
+            <button type="submit" class="auth-submit" id="login-submit">Log In</button>
+          </form>
+          <div class="auth-links">
+            <a href="register.html">無料会員登録</a>
+          </div>
+        </div>
 
-      <!-- Login Form -->
-      <form id="login-form" class="auth-form active" autocomplete="on">
-        <div id="login-error" class="auth-error"></div>
-        <div class="form-group">
-          <label for="login-email">メールアドレス</label>
-          <input type="email" id="login-email" name="email" required placeholder="example@email.com" autocomplete="email">
+        <!-- Account info (shown when logged in) -->
+        <div id="account-section" style="display:none;">
+          <dl class="account-info">
+            <dt>ログイン中:</dt>
+            <dd id="account-username"></dd>
+            <dt>アカウント状態</dt>
+            <dd id="account-status"></dd>
+            <dt>メンバーシップ</dt>
+            <dd id="account-membership"></dd>
+          </dl>
+          <div style="margin-top:24px;">
+            <a href="mypage.html" style="color:#0078d4;font-weight:600;">プロフィールを編集</a><br>
+            <a href="#" id="logout-link" style="color:#0078d4;font-weight:600;">ログアウト</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="login-password">パスワード</label>
-          <input type="password" id="login-password" name="password" required placeholder="パスワード" autocomplete="current-password">
-        </div>
-        <button type="submit" class="auth-submit" id="login-submit">ログイン</button>
-      </form>
 
-      <!-- Register Form -->
-      <form id="register-form" class="auth-form" autocomplete="on">
-        <div id="register-error" class="auth-error"></div>
-        <div id="register-success" class="auth-success"></div>
-        <div class="form-group">
-          <label for="register-email">メールアドレス</label>
-          <input type="email" id="register-email" name="email" required placeholder="example@email.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label for="register-password">パスワード</label>
-          <input type="password" id="register-password" name="new-password" required placeholder="条件を満たすパスワード" minlength="8" autocomplete="new-password">
-          <ul id="pw-rules" style="list-style:none;padding:0;margin:8px 0 0;font-size:0.8rem;line-height:1.8;">
-            <li id="pw-length" style="color:#999;">&#10005; 8文字以上</li>
-            <li id="pw-upper" style="color:#999;">&#10005; 大文字（A-Z）を含む</li>
-            <li id="pw-lower" style="color:#999;">&#10005; 小文字（a-z）を含む</li>
-            <li id="pw-digit" style="color:#999;">&#10005; 数字（0-9）を含む</li>
-          </ul>
-        </div>
-        <div class="form-group">
-          <label for="register-password-confirm">パスワード（確認）</label>
-          <input type="password" id="register-password-confirm" name="new-password-confirm" required placeholder="もう一度入力" minlength="8" autocomplete="new-password">
-          <div id="pw-match" style="font-size:0.8rem;margin-top:4px;display:none;"></div>
-        </div>
-        <button type="submit" class="auth-submit" id="register-submit" disabled>新規登録</button>
-      </form>
-
-      <div class="auth-footer">
-        <a href="pricing.html">料金プランを見る &rarr;</a>
       </div>
     </div>
   </div>
@@ -202,23 +210,8 @@
   <script src="../../js/auth-guard.js"></script>
   <script>
     (function () {
-      // Tab switching
-      var tabs = document.querySelectorAll('.auth-tab');
-      var forms = document.querySelectorAll('.auth-form');
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var target = tab.getAttribute('data-tab');
-          tabs.forEach(function (t) { t.classList.remove('active'); });
-          forms.forEach(function (f) { f.classList.remove('active'); });
-          tab.classList.add('active');
-          document.getElementById(target + '-form').classList.add('active');
-        });
-      });
-
-      // Redirect URL from query params (validated to prevent open redirect)
       var params = new URLSearchParams(window.location.search);
       var rawRedirect = params.get('redirect') || '../../index.html';
-      // Only allow same-origin or relative redirects
       var redirectUrl = '../../index.html';
       try {
         var url = new URL(rawRedirect, window.location.origin);
@@ -226,49 +219,60 @@
           redirectUrl = rawRedirect;
         }
       } catch (e) {
-        // If URL parsing fails, it's a relative path — safe to use
         if (!rawRedirect.startsWith('//') && !rawRedirect.match(/^https?:/i)) {
           redirectUrl = rawRedirect;
         }
       }
 
-      // If the tab param says register, switch to register
-      if (params.get('tab') === 'register') {
-        tabs[1].click();
-      }
-
-      function showError(id, msg) {
-        var el = document.getElementById(id);
+      function showError(msg) {
+        var el = document.getElementById('login-error');
         el.textContent = msg;
         el.style.display = 'block';
       }
-      function hideError(id) {
-        document.getElementById(id).style.display = 'none';
-      }
-      function showSuccess(id, msg) {
-        var el = document.getElementById(id);
-        el.textContent = msg;
-        el.style.display = 'block';
+      function hideError() {
+        document.getElementById('login-error').style.display = 'none';
       }
 
-      // Wait for supabase
       function onReady(fn) {
         if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
       }
 
       onReady(function () {
-        // If already logged in, redirect
-        window.getSession().then(function (session) {
+        window.getSession().then(async function (session) {
           if (session) {
-            window.location.href = redirectUrl;
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('account-section').style.display = 'block';
+
+            var user = session.user;
+            var username = (user.user_metadata && user.user_metadata.username) || user.email;
+            document.getElementById('account-username').textContent = username;
+            document.getElementById('account-status').textContent = '有効';
+
+            var sub = await window.getSubscriptionStatus();
+            if (sub && sub.status === 'active') {
+              document.getElementById('account-membership').textContent = sub.plan || 'プレミアム会員';
+            } else {
+              document.getElementById('account-membership').textContent = '無料会員';
+            }
+
+            document.getElementById('logout-link').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.signOut();
+            });
           }
         });
       });
 
-      // Login
+      // Login form
       document.getElementById('login-form').addEventListener('submit', function (e) {
         e.preventDefault();
-        hideError('login-error');
+        hideError();
+
+        if (!document.getElementById('captcha-check').checked) {
+          showError('「私はロボットではありません」にチェックを入れてください。');
+          return;
+        }
+
         var email = document.getElementById('login-email').value.trim();
         var password = document.getElementById('login-password').value;
         var btn = document.getElementById('login-submit');
@@ -283,118 +287,27 @@
           window.supabaseClient.auth.signInWithPassword({ email: email, password: password })
             .then(function (result) {
               btn.disabled = false;
-              btn.textContent = 'ログイン';
+              btn.textContent = 'Log In';
               if (result.error) {
-                showError('login-error', result.error.message || 'ログインに失敗しました');
+                showError(result.error.message || 'ログインに失敗しました');
               } else {
-                window.location.href = redirectUrl;
+                // Set session token for concurrent login control
+                var sessionToken = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2);
+                localStorage.setItem('session_token', sessionToken);
+                window.supabaseClient.auth.updateUser({
+                  data: { session_token: sessionToken }
+                }).then(function () {
+                  window.location.href = redirectUrl;
+                });
               }
             })
             .catch(function (err) {
               btn.disabled = false;
-              btn.textContent = 'ログイン';
-              showError('login-error', 'エラーが発生しました: ' + err.message);
+              btn.textContent = 'Log In';
+              showError('エラーが発生しました: ' + err.message);
             });
         }
         doLogin();
-      });
-
-      // Password validation
-      var pwInput = document.getElementById('register-password');
-      var pwConfirm = document.getElementById('register-password-confirm');
-      var registerBtn = document.getElementById('register-submit');
-
-      var rules = {
-        length: { el: document.getElementById('pw-length'), test: function (p) { return p.length >= 8; } },
-        upper:  { el: document.getElementById('pw-upper'),  test: function (p) { return /[A-Z]/.test(p); } },
-        lower:  { el: document.getElementById('pw-lower'),  test: function (p) { return /[a-z]/.test(p); } },
-        digit:  { el: document.getElementById('pw-digit'),  test: function (p) { return /[0-9]/.test(p); } },
-      };
-
-      function checkPassword() {
-        var pw = pwInput.value;
-        var allPass = true;
-        Object.keys(rules).forEach(function (key) {
-          var r = rules[key];
-          if (r.test(pw)) {
-            r.el.style.color = '#107c10';
-            r.el.innerHTML = '&#10003; ' + r.el.textContent.replace(/^[✓✗]\s*/, '');
-          } else {
-            r.el.style.color = '#999';
-            r.el.innerHTML = '&#10005; ' + r.el.textContent.replace(/^[✓✗]\s*/, '');
-            allPass = false;
-          }
-        });
-
-        var matchEl = document.getElementById('pw-match');
-        var confirmVal = pwConfirm.value;
-        if (confirmVal.length > 0) {
-          matchEl.style.display = 'block';
-          if (pw === confirmVal) {
-            matchEl.style.color = '#107c10';
-            matchEl.textContent = '\u2713 パスワードが一致しています';
-          } else {
-            matchEl.style.color = '#d13438';
-            matchEl.textContent = '\u2717 パスワードが一致しません';
-            allPass = false;
-          }
-        } else {
-          matchEl.style.display = 'none';
-          allPass = false;
-        }
-
-        registerBtn.disabled = !allPass;
-      }
-
-      pwInput.addEventListener('input', checkPassword);
-      pwConfirm.addEventListener('input', checkPassword);
-
-      // Register
-      document.getElementById('register-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        hideError('register-error');
-        var email = document.getElementById('register-email').value.trim();
-        var password = pwInput.value;
-        var confirm = pwConfirm.value;
-        var btn = registerBtn;
-
-        if (password !== confirm) {
-          showError('register-error', 'パスワードが一致しません');
-          return;
-        }
-        if (btn.disabled) {
-          showError('register-error', 'パスワードの条件を満たしてください');
-          return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = '登録中...';
-
-        function doRegister() {
-          if (!window.supabaseClient) {
-            setTimeout(doRegister, 200);
-            return;
-          }
-          window.supabaseClient.auth.signUp({ email: email, password: password })
-            .then(function (result) {
-              btn.disabled = false;
-              btn.textContent = '新規登録';
-              if (result.error) {
-                showError('register-error', result.error.message || '登録に失敗しました');
-              } else if (result.data && result.data.user && !result.data.session) {
-                // Email confirmation required
-                showSuccess('register-success', '確認メールを送信しました。メール内のリンクをクリックして登録を完了してください。');
-              } else {
-                window.location.href = redirectUrl;
-              }
-            })
-            .catch(function (err) {
-              btn.disabled = false;
-              btn.textContent = '新規登録';
-              showError('register-error', 'エラーが発生しました: ' + err.message);
-            });
-        }
-        doRegister();
       });
     })();
   </script>

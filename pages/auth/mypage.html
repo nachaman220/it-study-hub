@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>マイページ - IT Study Hub</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .auth-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .auth-card {
+      background: #eef2f7;
+      border-radius: 4px;
+      padding: 0;
+    }
+    .auth-title {
+      background: #3f4a9e;
+      color: #fff;
+      padding: 18px 28px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 4px 4px 0 0;
+      border: none;
+    }
+    .auth-body {
+      padding: 28px 32px;
+    }
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .profile-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #d0d0d0;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+    .profile-table td:first-child {
+      width: 180px;
+      font-weight: 600;
+      color: #333;
+      background: #fff;
+    }
+    .profile-table td:last-child {
+      background: #fff;
+    }
+    .profile-table input[type="text"],
+    .profile-table input[type="email"],
+    .profile-table input[type="password"] {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .profile-table input:focus {
+      border-color: #3f4a9e;
+      box-shadow: 0 0 0 2px rgba(63, 74, 158, 0.15);
+    }
+    .profile-table input:read-only {
+      background: #f5f5f5;
+      border-color: #e0e0e0;
+      color: #666;
+    }
+    .auth-submit {
+      width: 100%;
+      padding: 12px;
+      background: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-bottom: 16px;
+    }
+    .auth-submit:hover {
+      background: #d0d0d0;
+    }
+    .auth-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .delete-link {
+      display: block;
+      text-align: center;
+      color: #d13438;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+    .delete-link:hover {
+      text-decoration: underline;
+    }
+    .logout-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #2c3e8c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+    }
+    .logout-btn:hover {
+      background: #1e2d6a;
+    }
+    .logout-btn::after {
+      content: '>';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+    }
+    .auth-error {
+      display: none;
+      background: #fce4ec;
+      color: #d13438;
+      border: 1px solid #f5b7b1;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .auth-success {
+      display: none;
+      background: #e8f5e9;
+      color: #107c10;
+      border: 1px solid #a3d9a5;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body data-access="free">
+  <header class="site-header">
+    <h1><a href="../../index.html">IT Study Hub</a></h1>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">マイページ</h2>
+      <div class="auth-body">
+        <div id="mypage-error" class="auth-error"></div>
+        <div id="mypage-success" class="auth-success"></div>
+
+        <form id="profile-form">
+          <table class="profile-table">
+            <tr>
+              <td>ユーザー名</td>
+              <td><input type="text" id="profile-username" required minlength="2" maxlength="30"></td>
+            </tr>
+            <tr>
+              <td>メール</td>
+              <td><input type="email" id="profile-email" readonly></td>
+            </tr>
+            <tr>
+              <td>パスワード</td>
+              <td><input type="password" id="profile-password" placeholder="現在のパスワードのままにする場合は、空欄にしてください" autocomplete="new-password"></td>
+            </tr>
+            <tr>
+              <td>パスワードを再入力</td>
+              <td><input type="password" id="profile-password-confirm" placeholder="現在のパスワードのままにする場合は、空欄にしてください" autocomplete="new-password"></td>
+            </tr>
+            <tr>
+              <td>会員レベル</td>
+              <td><span id="profile-membership">-</span></td>
+            </tr>
+          </table>
+
+          <button type="submit" class="auth-submit" id="profile-submit">更新</button>
+        </form>
+
+        <a href="#" id="delete-account-link" class="delete-link">アカウントの削除</a>
+
+        <button type="button" id="logout-btn" class="logout-btn">ログアウト</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/admin-toggle.js"></script>
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
+  <script>
+    (function () {
+      function showError(msg) {
+        var el = document.getElementById('mypage-error');
+        el.textContent = msg;
+        el.style.display = 'block';
+        document.getElementById('mypage-success').style.display = 'none';
+      }
+      function showSuccess(msg) {
+        var el = document.getElementById('mypage-success');
+        el.textContent = msg;
+        el.style.display = 'block';
+        document.getElementById('mypage-error').style.display = 'none';
+      }
+
+      function onReady(fn) {
+        if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
+      }
+
+      onReady(function () {
+        window.getSession().then(async function (session) {
+          if (!session) {
+            window.location.href = 'login.html';
+            return;
+          }
+
+          var user = session.user;
+          var username = (user.user_metadata && user.user_metadata.username) || '';
+          document.getElementById('profile-username').value = username;
+          document.getElementById('profile-email').value = user.email || '';
+
+          var sub = await window.getSubscriptionStatus();
+          if (sub && sub.status === 'active') {
+            var planText = sub.plan || 'プレミアム会員';
+            if (sub.expires_at) {
+              var d = new Date(sub.expires_at);
+              planText += '（' + d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日まで）';
+            }
+            document.getElementById('profile-membership').textContent = planText;
+          } else {
+            document.getElementById('profile-membership').textContent = '無料会員';
+          }
+        });
+      });
+
+      // Update profile
+      document.getElementById('profile-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var username = document.getElementById('profile-username').value.trim();
+        var password = document.getElementById('profile-password').value;
+        var passwordConfirm = document.getElementById('profile-password-confirm').value;
+        var btn = document.getElementById('profile-submit');
+
+        if (username.length < 2) {
+          showError('ユーザー名は2文字以上で入力してください');
+          return;
+        }
+
+        if (password && password !== passwordConfirm) {
+          showError('パスワードが一致しません');
+          return;
+        }
+
+        if (password && password.length < 8) {
+          showError('パスワードは8文字以上で入力してください');
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = '更新中...';
+
+        var updateData = { data: { username: username } };
+        if (password) {
+          updateData.password = password;
+        }
+
+        window.supabaseClient.auth.updateUser(updateData)
+          .then(function (result) {
+            btn.disabled = false;
+            btn.textContent = '更新';
+            if (result.error) {
+              showError(result.error.message || '更新に失敗しました');
+            } else {
+              showSuccess('プロフィールを更新しました');
+              document.getElementById('profile-password').value = '';
+              document.getElementById('profile-password-confirm').value = '';
+            }
+          })
+          .catch(function (err) {
+            btn.disabled = false;
+            btn.textContent = '更新';
+            showError('エラーが発生しました: ' + err.message);
+          });
+      });
+
+      // Logout
+      document.getElementById('logout-btn').addEventListener('click', function () {
+        window.signOut();
+      });
+
+      // Delete account
+      document.getElementById('delete-account-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        if (confirm('本当にアカウントを削除しますか？この操作は取り消せません。')) {
+          showError('アカウント削除は管理者にお問い合わせください。');
+        }
+      });
+    })();
+  </script>
+
+  <footer style="background: #f7f9fb; border-top: 1px solid #e0e0e0; padding: 20px 48px; margin-top: 40px; text-align: center; font-size: 0.85rem; color: #888;">
+    <a href="../../pages/legal/tokushoho.html" style="color: #0078d4; margin: 0 12px;">特定商取引法に基づく表記</a>
+    <a href="../../pages/legal/privacy.html" style="color: #0078d4; margin: 0 12px;">プライバシーポリシー</a>
+    <a href="../../pages/legal/terms.html" style="color: #0078d4; margin: 0 12px;">利用規約</a>
+    <p style="margin-top: 8px;">&copy; 2026 IT Study Hub</p>
+  </footer>
+</body>
+</html>
