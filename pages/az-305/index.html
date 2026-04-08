@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; frame-src https://checkout.stripe.com https://billing.stripe.com; img-src 'self' data:;">
+  <title>AZ-305: Azure Solutions Architect Expert - Azure Certification Study Hub</title>
+  <meta name="description" content="AZ-305 Microsoft Azure Infrastructure Solutions 試験対策。教材と234問の問題集で効率的に学習。">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .exam-hero { max-width: 960px; margin: 0 auto; padding: 32px 48px; }
+    .exam-hero h2 { font-size: 1.6rem; margin-bottom: 4px; }
+    .exam-hero p { color: #555; margin-bottom: 24px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; transition: box-shadow .2s; }
+    .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.1); }
+    .card h3 { color: #0078d4; font-size: 1.1rem; margin-bottom: 8px; }
+    .card p { color: #555; font-size: 0.9rem; line-height: 1.5; }
+    .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; background: #e0ecf7; color: #0078d4; }
+    .badge-premium { background: #fff3cd; color: #856404; }
+    .badge-free { background: #d4edda; color: #155724; }
+    .free-note { font-size: 0.85rem; color: #555; margin-top: 6px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="../../index.html">Azure Certification Study Hub</a></h1>
+    <div class="user-menu" style="display:flex;align-items:center;gap:12px;font-size:0.85rem;">
+      <a href="../auth/login.html" style="color:#fff;padding:6px 16px;border:1px solid rgba(255,255,255,0.6);border-radius:4px;font-size:0.85rem;white-space:nowrap;text-decoration:none;">ログイン</a>
+    </div>
+  </header>
+
+  <div class="exam-hero">
+    <div class="breadcrumb" style="font-size:0.85rem;color:#888;margin-bottom:20px;">
+      <a href="../../index.html" style="color:#0078d4;">Home</a> &gt; AZ-305
+    </div>
+
+    <h2>AZ-305: Azure Solutions Architect Expert</h2>
+    <p>Microsoft Azure ソリューションアーキテクト エキスパート試験 | 教材 + 234問の問題集</p>
+
+    <h3 style="font-size:1.2rem; margin-bottom:16px;">教材</h3>
+    <div class="card-grid">
+      <a href="../identity/entra-id.html" class="card" style="text-decoration:none;">
+        <h3>第1章 ID・ガバナンス・監視</h3>
+        <p>認証・認可、ガバナンス、監視ソリューションの設計</p>
+        <div style="margin-top:10px;">
+          <span class="badge badge-free">1.1 誰でも閲覧可</span>
+          <span class="badge" style="background:#e0ecf7;color:#0056a0;">1.2〜1.7 無料会員から</span>
+        </div>
+      </a>
+      <a href="../data/storage.html" class="card" style="text-decoration:none;">
+        <h3>第2章 データソリューション</h3>
+        <p>Storage、SQL Database、Cosmos DB、データ分析</p>
+        <div style="margin-top:10px;"><span class="badge badge-premium">有料会員のみ</span></div>
+      </a>
+      <a href="../business-continuity/fundamentals.html" class="card" style="text-decoration:none;">
+        <h3>第3章 事業継続性</h3>
+        <p>バックアップ、レプリケーション、RPO/RTO/RLO</p>
+        <div style="margin-top:10px;"><span class="badge badge-premium">有料会員のみ</span></div>
+      </a>
+      <a href="../infrastructure/compute.html" class="card" style="text-decoration:none;">
+        <h3>第4章 インフラストラクチャ</h3>
+        <p>コンピューティング、ネットワーク、移行、アプリケーションアーキテクチャ</p>
+        <div style="margin-top:10px;"><span class="badge badge-premium">有料会員のみ</span></div>
+      </a>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-bottom:16px;">問題集</h3>
+    <div class="card-grid">
+      <a href="../quiz/all.html" class="card" style="text-decoration:none;">
+        <h3>問題集（ランダム出題）</h3>
+        <p>全234問からランダム順で出題</p>
+        <span class="badge">234問</span>
+        <p class="free-note">1.1関連(18問): 誰でも | 第1章全体(56問): 無料会員から | 全234問: 有料会員</p>
+      </a>
+    </div>
+  </div>
+
+  <footer style="background: #f7f9fb; border-top: 1px solid #e0e0e0; padding: 20px 48px; margin-top: 40px; text-align: center; font-size: 0.85rem; color: #888;">
+    <a href="../legal/tokushoho.html" style="color: #0078d4; margin: 0 12px;">特定商取引法に基づく表記</a>
+    <a href="../legal/privacy.html" style="color: #0078d4; margin: 0 12px;">プライバシーポリシー</a>
+    <a href="../legal/terms.html" style="color: #0078d4; margin: 0 12px;">利用規約</a>
+    <p style="margin-top: 8px;">&copy; 2026 Azure Certification Study Hub</p>
+  </footer>
+</body>
+</html>
