@@ -31,8 +31,14 @@
         .single();
 
       if (result.error) {
-        if (result.error.code === 'PGRST116' || result.error.message.includes('0 rows')) {
-          // RLS blocked - user doesn't have access
+        // Admin premium mode: bypass RLS restrictions
+        var adminMode = typeof window.adminViewMode === 'function' ? window.adminViewMode() : null;
+        if (adminMode === 'premium' && (result.error.code === 'PGRST116' || (result.error.message && result.error.message.includes('0 rows')))) {
+          // Retry with service-level access hint — for now, show content is restricted by DB
+          contentArea.innerHTML = '<p style="color:#888;padding:40px 0;text-align:center;">管理者モード: このコンテンツはSupabaseのRLSにより保護されています。<br>SQL Editorで該当ユーザーにsubscriptionを付与するか、RLSポリシーを調整してください。</p>';
+          return;
+        }
+        if (result.error.code === 'PGRST116' || (result.error.message && result.error.message.includes('0 rows'))) {
           showPremiumWall(contentArea);
         } else {
           contentArea.innerHTML = '<p style="color:#d13438;">コンテンツの読み込みに失敗しました。</p>';
