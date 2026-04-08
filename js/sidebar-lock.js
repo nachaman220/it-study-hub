@@ -78,12 +78,7 @@
         link.style.opacity = '0.5';
         link.style.pointerEvents = 'none';
         link.style.position = 'relative';
-        // Add lock icon
-        var lock = document.createElement('span');
-        lock.style.cssText = 'font-size:0.7rem;color:#999;margin-left:4px;';
-        lock.textContent = '🔒';
-        lock.title = reason;
-        link.appendChild(lock);
+        link.title = reason;
       }
     });
 
@@ -93,9 +88,9 @@
       var legend = document.createElement('div');
       legend.style.cssText = 'padding:12px 16px;font-size:0.75rem;color:#999;border-top:1px solid #e0e0e0;margin-top:8px;';
       if (isGuest) {
-        legend.innerHTML = '🔒 = アクセス制限あり<br><a href="' + (isAZ900 ? '../auth/login.html' : '../auth/login.html') + '?tab=register" style="color:#0078d4;">無料会員登録</a>で一部解放';
+        legend.innerHTML = '<a href="../auth/login.html?tab=register" style="color:#0078d4;">無料会員登録</a>で一部コンテンツが解放されます';
       } else {
-        legend.innerHTML = '🔒 = 有料会員限定<br><a href="' + (isAZ900 ? '../auth/pricing.html' : '../auth/pricing.html') + '" style="color:#0078d4;">プランを見る</a>';
+        legend.innerHTML = '<a href="../auth/pricing.html" style="color:#0078d4;">有料プラン</a>で全コンテンツが解放されます';
       }
       sidebar.appendChild(legend);
     }

@@ -64,7 +64,6 @@
         var overlay = document.createElement('div');
         overlay.style.cssText = 'position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.5);border-radius:8px;';
         overlay.innerHTML = '<div style="background:#6c757d;color:#fff;padding:6px 16px;border-radius:20px;font-size:0.85rem;font-weight:600;">' +
-          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>' +
           reason + '</div>';
         card.appendChild(overlay);
 
