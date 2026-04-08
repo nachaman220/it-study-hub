@@ -35,9 +35,11 @@
     // Admin view mode override
     if (typeof window.adminViewMode === 'function') {
       var viewMode = window.adminViewMode();
-      if (viewMode === 'premium') { subscription = { status: 'active', plan: 'premium', expires_at: null }; }
-      else if (viewMode === 'free') { subscription = null; }
-      else if (viewMode === 'guest') { session = null; subscription = null; }
+      if (viewMode) {
+        if (viewMode === 'premium') { subscription = { status: 'active', plan: 'premium', expires_at: null }; }
+        else if (viewMode === 'free') { subscription = null; }
+        else if (viewMode === 'guest') { session = null; subscription = null; }
+      }
     }
 
     var isPremium = subscription && subscription.status === 'active';

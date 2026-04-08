@@ -20,10 +20,10 @@
     return Array.from(new Uint8Array(hash)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
   }
 
-  // View modes: 'premium', 'free', 'guest'
+  // View modes: 'premium', 'free', 'guest', or null (no override)
+  // Returns localStorage value directly — non-admins have it cleared by checkAdmin.
   function getViewMode() {
-    if (!isAdminUser) return 'premium';
-    return localStorage.getItem('adminViewMode') || 'premium';
+    return localStorage.getItem('adminViewMode') || null;
   }
 
   function setViewMode(mode) {
