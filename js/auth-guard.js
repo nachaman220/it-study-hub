@@ -197,7 +197,9 @@
     var path = window.location.pathname;
     if (path.includes('/pages/auth/') || path.includes('/pages/quiz/') ||
         path.includes('/pages/identity/') || path.includes('/pages/data/') ||
-        path.includes('/pages/business-continuity/') || path.includes('/pages/infrastructure/')) {
+        path.includes('/pages/business-continuity/') || path.includes('/pages/infrastructure/') ||
+        path.includes('/pages/az-900/') || path.includes('/pages/az-305/') ||
+        path.includes('/pages/legal/')) {
       return '../../' + target;
     } else if (path.includes('/pages/')) {
       return '../' + target;
