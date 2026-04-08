@@ -1,16 +1,16 @@
 var QUIZ_DATA_website_71_80 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 71,
-      "question": "ルート管理グループと 10 個の子管理グループを含む Azure 環境を作成する予定です。各子管理グループには 5 つの Azure サブスクリプションが含まれます。各サブスクリプションに 10 ～ 30 のリソース グループを含める予定です。 Azure ガバナンス ソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 ブループリントを定義するレベル:・ Azure Blueprints を使用して、すべてのサブスクリプションとリソース グループにわたるガバナンスを制御する。・ ブループリント ベースの構成がすべてのサブスクリプションとリソース グループにわたって一貫していることを確認する。・ ブループリントの定義と割り当ての数を最小限に抑える。",
+      "question": "ルート管理グループと10個の子管理グループで構成されるAzure環境を構築予定です。各子管理グループに5つのサブスクリプションを配置し、各サブスクリプションに10～30個のリソースグループを含める計画です。Azure Blueprintsによるガバナンス制御を全サブスクリプション・リソースグループに適用し、構成の一貫性を確保しつつ、ブループリントの定義数と割り当て数を最小化する場合、ブループリントを定義すべきレベルはどれですか？",
       "choices": [
         "ルート管理グループ",
         "子管理グループ",
         "サブスクリプション"
       ],
       "answer": 0,
-      "explanation": "ルート管理グループブループリント定義を作成するときは、ブループリントの保存場所を定義します。ブループリントは、所有している管理グループまたはサブスクリプションに保存できます。寄稿者のアクセス権。場所が管理グループの場合、ブループリントをその管理グループの子サブスクリプションに割り当てることができます。ルート管理グループは階層に組み込まれており、すべての管理グループとサブスクリプションがそれに組み込まれます。このルート管理グループにより、グローバル ポリシーと Azure ロールの割り当てをディレクトリ レベルで適用できます。https://learn.microsoft.com/ja-jp/azure/governance/management-groups/overview",
+      "explanation": "ブループリント定義の保存先として管理グループまたはサブスクリプションを指定できます。保存先が管理グループの場合、そのグループ配下の子サブスクリプションにブループリントを割り当て可能です。ルート管理グループは階層の最上位であり、全管理グループ・全サブスクリプションを包含します。このレベルでブループリントを定義することにより、グローバルなポリシーやロール割り当てをディレクトリ全体に適用できます。",
       "category": "",
       "tags": [
         "rbac",
@@ -22,14 +22,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 72,
-      "question": "ルート管理グループと 10 個の子管理グループを含む Azure 環境を作成する予定です。各子管理グループには 5 つの Azure サブスクリプションが含まれます。各サブスクリプションに 10 ～ 30 のリソース グループを含める予定です。 Azure ガバナンス ソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 ブループリント割り当てを作成するレベル:・ Azure Blueprints を使用して、すべてのサブスクリプションとリソース グループにわたるガバナンスを制御する。・ ブループリント ベースの構成がすべてのサブスクリプションとリソース グループにわたって一貫していることを確認する。・ ブループリントの定義と割り当ての数を最小限に抑える。",
+      "question": "ルート管理グループ配下に10個の子管理グループがあるAzure環境を計画中です。各子管理グループに5サブスクリプション、各サブスクリプションに10～30のリソースグループを含めます。Azure Blueprintsで全体のガバナンスを統一し、定義・割り当て数を最小化する方針において、ブループリントの割り当てを作成するレベルはどこですか？",
       "choices": [
         "ルート管理グループ",
         "子管理グループ",
         "サブスクリプション"
       ],
       "answer": 2,
-      "explanation": "ブループリントの個々の発行済みバージョンを既存の管理グループまたはサブスクリプションに割り当てることができます (名前の最大長は 90 文字)。 ポータルにおいて、ブループリントの既定のバージョンは、直近の発行済みになったバージョンになります。 アーティファクトのパラメーターまたはブループリントのパラメーターがある場合、そのパラメーターは割り当て処理時に定義されます。https://learn.microsoft.com/ja-jp/azure/governance/blueprints/overview#blueprint-assignment",
+      "explanation": "ブループリントの発行済みバージョンは、既存の管理グループまたはサブスクリプションに割り当てることが可能です（割り当て名は最大90文字）。ポータル上ではデフォルトで直近の発行バージョンが選択されます。アーティファクトパラメーターやブループリントパラメーターがある場合は、割り当て時に値を定義します。",
       "category": "",
       "tags": [
         "resource-hierarchy",
@@ -40,13 +40,13 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 73,
-      "question": "Azure サブスクリプションでステートレス Web アプリをホストするには、リソースをデプロイする必要があります。ソリューションは次の要件を満たす必要があります。 解決策: 自動スケーリングを使用する Virtual Machine Scale Setsをデプロイします。 これは目標を達成していますか。・ 完全な .NET Frameworkへのアクセスを提供する。・ Azure リージョンに障害が発生した場合に冗長性を提供する。・ カスタム アプリケーションの依存関係をインストールするためのオペレーティング システムへのアクセスを管理者に許可する。",
+      "question": "Azureサブスクリプション上でステートレスWebアプリをホストするリソースをデプロイします。要件：完全な.NET Frameworkが利用できる／Azureリージョン障害時にも冗長性がある／管理者がOSにアクセスしてカスタムアプリ依存関係をインストールできる。解決策として、自動スケーリング付きのVirtual Machine Scale Setsをデプロイすることを提案します。これで目標を達成できますか？",
       "choices": [
         "はい",
         "いいえ"
       ],
       "answer": 1,
-      "explanation": "この解決策では目標を達成することはできません。代わりに、2 つの Azure 仮想マシンを 2 つの Azure リージョンにデプロイし、Traffic Manager プロファイルを作成する必要があります。Azure Traffic Manager は、DNS ベースのトラフィック ロード バランサーです。 このサービスを使用すると、パブリックに公開されているアプリケーションへのトラフィックを世界各国の Azure リージョン全体に分散することができます。 また、Traffic Manager によって、パブリック エンドポイントには高可用性と高い応答速度が確保されます。https://docs.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-overview",
+      "explanation": "この解決策では要件を満たせません。VMSSは単一リージョン内で動作するため、リージョン障害時の冗長性を確保できません。代替策として、2つのAzureリージョンにそれぞれVMをデプロイし、Traffic Managerプロファイルで負荷分散する構成が必要です。Azure Traffic ManagerはDNSベースのトラフィックロードバランサーとして、パブリックアプリケーションへのトラフィックを複数リージョンに分散し、高可用性と高応答性を実現します。",
       "category": "",
       "tags": [
         "subscription-design",
@@ -59,14 +59,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 74,
-      "question": "Azure Cosmos DB と Azure Synapse を統合するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 Azure Synapse ワークスペースをプロビジョニングするとき:・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、Microsoft バックボーン ネットワーク経由で送信される必要がある。・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、インターネット経由でルーティングしてはならない。・ 導入の労力は最小限に抑える必要がある。",
+      "question": "Azure Cosmos DBとAzure Synapseの統合ソリューションを設計しています。要件：SynapseワークスペースからCosmos DBへの通信はMicrosoftバックボーンネットワーク経由とする／インターネット経由のルーティングは禁止／導入工数を最小化する。Synapseワークスペースのプロビジョニング時にどの設定を行うべきですか？",
       "choices": [
         "Microsoft Entra ID 認証の使用を有効にする。",
         "ワークスペース エンドポイントへのパブリック ネットワーク アクセスを無効にする。",
         "専用の仮想ネットワークを構成する。"
       ],
       "answer": 2,
-      "explanation": "専用のマネージド仮想ネットワークを構成するマネージド プライベート エンドポイントは、マネージド ワークスペース仮想ネットワークを使用した Azure Synapse ワークスペースでのみサポートされます。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/security/synapse-workspace-managed-private-endpoints#managed-private-endpoints",
+      "explanation": "マネージドプライベートエンドポイントを使用するには、マネージドワークスペース仮想ネットワークが有効なSynapseワークスペースが必要です。専用のマネージド仮想ネットワークを構成することで、プライベートエンドポイントを通じた安全な通信が可能になります。",
       "category": "",
       "tags": [
         "entra-id",
@@ -79,14 +79,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 75,
-      "question": "Azure Cosmos DB と Azure Synapse を統合するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 Azure Cosmos DB アカウントを構成するときに、次を有効にする:・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、Microsoft バックボーン ネットワーク経由で送信される必要がある。・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、インターネット経由でルーティングしてはならない。・ 導入の労力は最小限に抑える必要がある。",
+      "question": "Azure Cosmos DBとAzure Synapseの統合ソリューションの設計において、次の条件を満たす必要があります。条件：SynapseからCosmos DBへの通信をMicrosoftバックボーン経由にする／インターネット経由は不可／導入労力を最小にする。Cosmos DBアカウントの設定時に何を有効化すべきですか？",
       "choices": [
         "マネージド プライベート エンドポイント",
         "サービス エンドポイント ポリシー",
         "サーバーレベルのファイアウォール規則"
       ],
       "answer": 0,
-      "explanation": "マネージドプライベートエンドポイントマネージド プライベート エンドポイントを使用すると、Azure Synapse ワークスペースと他の Azure リソース間のトラフィックは、完全に Microsoft バックボーン ネットワーク上を通過します。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/security/synapse-workspace-managed-vnet",
+      "explanation": "マネージドプライベートエンドポイントを利用すれば、SynapseワークスペースとAzureリソース間のトラフィックが全てMicrosoftバックボーンネットワーク上で完結します。インターネットを経由しないため、セキュリティ要件を満たしつつ導入も容易です。",
       "category": "",
       "tags": [
         "log-analytics",
@@ -97,14 +97,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 76,
-      "question": "オンプレミス ネットワークには、500 GB のデータを保存する Server1 という名前のファイル サーバーが含まれています。 Azure Data Factory を使用して、Server1 から Azure Storage にデータをコピーする必要があります。 新しいデータ ファクトリを追加します。 次に何をすべきでしょうか。 Server1:",
+      "question": "オンプレミスネットワーク内の500GBのデータを保持するファイルサーバーServer1から、Azure Data Factoryを使ってAzure Storageへデータコピーする計画です。新しいData Factoryを作成した後、Server1側で行うべき次の手順は何ですか？",
       "choices": [
         "セルフホステッド統合ランタイムをインストールする。",
         "Azure File Sync エージェントをインストールする。",
         "ファイル サーバー リソース マネージャーの役​​割サービスをインストールする。"
       ],
       "answer": 0,
-      "explanation": "セルフホステッド統合ランタイムをインストールします。データ ストアがオンプレミス ネットワーク、Azure 仮想ネットワーク、または Amazon Virtual Private Cloud 内にある場合は、それに接続するようにセルフホステッド統合ランタイムを構成する必要があります。データ ストアに接続するために使用される統合ランタイム。 Azure Integration Runtime またはセルフホステッド Integration Runtime (データ ストアがプライベート ネットワークにある場合) を使用できます。指定しない場合は、デフォルトの Azure 統合ランタイムが使用されます。https://learn.microsoft.com/ja-jp/azure/data-factory/connector-file-system?tabs=data-factory",
+      "explanation": "データストアがオンプレミスネットワーク内、Azure仮想ネットワーク内、またはAmazon VPC内にある場合は、セルフホステッド統合ランタイムの構成が必要です。これにより、Data Factoryがプライベートネットワーク内のデータストアへアクセスできるようになります。指定しなければデフォルトのAzure統合ランタイムが使われますが、プライベートネットワーク内のデータには到達できません。",
       "category": "",
       "tags": [
         "data-analytics",
@@ -114,14 +114,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 77,
-      "question": "オンプレミス ネットワークには、500 GB のデータを保存する Server1 という名前のファイル サーバーが含まれています。 Azure Data Factory を使用して、Server1 から Azure Storage にデータをコピーする必要があります。 新しいデータ ファクトリーを追加します。 次に何をすべきでしょうか。 データ ファクトリー:",
+      "question": "オンプレミスのファイルサーバーServer1（データ量500GB）からAzure Data Factoryを使ってAzure Storageにデータをコピーします。新規Data Factoryの追加後、Data Factory側で次に実施すべき操作は何ですか？",
       "choices": [
         "Azure Import/Export ジョブを作成する。",
         "Azure-SQL Server Integration Services (SSIS) 統合ランタイム (IR) をプロビジョニングする。",
         "パイプラインを作成する。"
       ],
       "answer": 2,
-      "explanation": "パイプラインを作成します。パイプラインを使用してコピー アクティビティを実行します。パイプラインでコピー アクティビティを実行するには、次のいずれかのツールまたは SDK を使用します。・データ コピー ツール・Azure ポータル・.NET SDK・Python SDK・Azure PowerShell・REST API・Azure Resource Manager テンプレートhttps://learn.microsoft.com/ja-jp/azure/data-factory/connector-file-system?tabs=data-factory",
+      "explanation": "Data Factory内でコピーアクティビティを実行するにはパイプラインを作成します。パイプラインのコピーアクティビティは、データコピーツール、Azureポータル、各種SDK（.NET、Python）、Azure PowerShell、REST API、ARMテンプレートなどを使って構成・実行できます。",
       "category": "",
       "tags": [
         "data-analytics",
@@ -130,14 +130,14 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 78,
-      "question": "Azure SQL をデータベース プラットフォームとして使用する予定です。 次の要件を満たす Azure SQL 製品とサービス レベルを推奨する必要があります。 ・ ワークロードの需要に基づいてコンピューティング リソースを自動的にスケーリングする ・ 秒単位の課金を提供する このとき、何を勧めるべきですか。 Azure SQL 製品:",
+      "question": "Azure SQLをデータベース基盤として採用する予定です。次の要件を満たすAzure SQL製品を選んでください。要件：ワークロード需要に応じてコンピューティングリソースが自動スケーリングされる／秒単位の課金に対応する。推奨すべきAzure SQL製品はどれですか？",
       "choices": [
         "Azure SQL Database の単一データベース",
         "Azure SQL Managed Instance",
         "An Azure SQL Database elastic pool"
       ],
       "answer": 0,
-      "explanation": "サーバーレスは、ワークロードの需要に基づいてコンピューティングが自動的にスケーリングされ、1 秒あたりのコンピューティング使用量に対して請求される、Azure SQL Database の単一データベース用のコンピューティング レベルです。 またサーバーレス コンピューティング レベルでは、アイドル期間にデータベースを自動的に一時停止します。このときはストレージのみに課金され、再びアクティブになると自動的にデータベースが再開されます。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/serverless-tier-overview?view=azuresql&tabs=general-purpose",
+      "explanation": "サーバーレスコンピューティングレベルはAzure SQL Databaseの単一データベース向けに提供されており、ワークロード量に基づいてコンピューティングが自動スケーリングされ、秒単位で課金されます。アイドル時にはデータベースが自動停止してストレージのみの課金となり、アクティビティ再開時に自動復帰します。サーバーレスはGeneral Purposeサービスレベルで一般提供中で、HyperscaleではプレビューS段階です。",
       "category": "",
       "tags": [
         "sql-database",
@@ -146,7 +146,7 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 79,
-      "question": "Azure SQL をデータベース プラットフォームとして使用する予定です。 次の要件を満たす Azure SQL 製品とサービス レベルを推奨する必要があります。 このとき、何を勧めるべきですか。 サービスレベル:・ ワークロードの需要に基づいてコンピューティング リソースを自動的にスケーリングする・ 秒単位の課金を提供する",
+      "question": "Azure SQLの導入を計画しています。ワークロード需要に応じたコンピューティングの自動スケーリングと秒単位課金を実現するために、どのサービスレベルを選択すべきですか？",
       "choices": [
         "Business Critical",
         "General Purpose",
@@ -155,7 +155,7 @@ var QUIZ_DATA_website_71_80 = {
         "Hyperscale"
       ],
       "answer": 1,
-      "explanation": "サーバーレスは、ワークロードの需要に基づいてコンピューティングが自動的にスケーリングされ、1 秒あたりのコンピューティング使用量に対して請求される、Azure SQL Database の単一データベース用のコンピューティング レベルです。 またサーバーレス コンピューティング レベルでは、アイドル期間にデータベースを自動的に一時停止します。このときはストレージのみに課金され、再びアクティブになると自動的にデータベースが再開されます。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/serverless-tier-overview?view=azuresql&tabs=general-purpose",
+      "explanation": "サーバーレスコンピューティングレベルは、General Purposeサービスレベルにおいて一般提供されています。ワークロード需要に合わせてコンピューティングを自動スケーリングし、秒単位で使用量に応じた課金を行います。アイドル状態ではデータベースが自動一時停止されストレージのみの課金に切り替わり、アクティビティ発生時に自動再開されます。Hyperscaleでのサーバーレスは現在プレビュー段階です。",
       "category": "",
       "tags": [
         "sql-database",
@@ -164,7 +164,7 @@ var QUIZ_DATA_website_71_80 = {
     },
     {
       "id": 80,
-      "question": "パフォーマンス データを Azure Blob Storage に書き込むデバイスが 100 台あります。 パフォーマンス データを Azure SQL データベースに保存して分析することを計画しています。 パフォーマンス データを Azure SQL データベースに継続的にコピーするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+      "question": "100台のデバイスがパフォーマンスデータをAzure Blob Storageに書き込んでいます。このデータをAzure SQL Databaseに格納して分析する計画であり、継続的にデータをコピーするソリューションが必要です。どのサービスを推奨すべきですか？",
       "choices": [
         "Azure Database Migration Service",
         "Azure Data Factory",
@@ -172,7 +172,7 @@ var QUIZ_DATA_website_71_80 = {
         "Azure Data Box"
       ],
       "answer": 1,
-      "explanation": "Azure Data Factory は、データ パイプラインの作成、スケジュール、管理を可能にするクラウドベースのデータ統合サービスです。これを使用すると、Azure Blob Storage などのさまざまなソースから Azure SQL Database などの複数の宛先にデータを継続的にコピーできます。他の選択肢は、説明したシナリオでの継続的なデータ コピーには適していません。https://learn.microsoft.com/ja-jp/azure/data-factory/introduction",
+      "explanation": "Azure Data Factoryはデータパイプラインの構築・スケジュール・管理が可能なクラウドベースのデータ統合サービスです。Blob StorageからSQL Databaseなど、多様なソースからターゲットへの継続的なデータコピーに対応しています。他の選択肢は、このシナリオのような継続的なデータ転送には適していません。",
       "category": "",
       "tags": [
         "blob-storage",

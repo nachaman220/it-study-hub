@@ -1,16 +1,16 @@
 var QUIZ_DATA_website_121_130 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 121,
-      "question": "あなたは、Contoso, Ltd. という名前の Microsoft ボリューム ライセンスのお客様の、データベース環境を管理しています。Contoso はソフトウェア アシュアランスによるライセンス モビリティを使用しています。 50 個のデータベースをデプロイする必要があります。 ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 購入ケースモデル:・ 自動スケーリングをサポートする。・ Microsoft SQL Server のライセンス コストを最小限に抑える。",
+      "question": "Contoso, Ltd. という Microsoft ボリュームライセンス顧客のデータベース環境を管理しています。Contoso はソフトウェアアシュアランスのライセンスモビリティを活用しています。50 個のデータベースをデプロイする際、以下の要件を満たす購入モデルとして適切なものはどれですか。・ 自動スケーリングに対応する。・ Microsoft SQL Server のライセンス費用を最小化する。",
       "choices": [
         "仮想コア",
         "DTU",
         "Azure 予約仮想マシン インスタンス"
       ],
       "answer": 0,
-      "explanation": "Azure ハイブリッド ライセンス モデルを適用できるのは、Azure SQL Database に対して、仮想コア ベースの購入モデルとプロビジョニングされたコンピューティング レベルを選択した場合に限られます。 Azure ハイブリッド特典は、DTU ベースの購入モデル下のサービス レベル、またはサーバーレス コンピューティング レベルでは利用できません。https://docs.microsoft.com/ja-jp/azure/azure-sql/azure-hybrid-benefit",
+      "explanation": "Azure ハイブリッド特典を Azure SQL Database に適用するには、仮想コアベースの購入モデルとプロビジョニング済みコンピューティングレベルを選択する必要があります。DTU ベースの購入モデルやサーバーレスコンピューティングレベルでは Azure ハイブリッド特典を利用できません。ソフトウェアアシュアランスを持つ顧客にとって、仮想コアモデルが最もライセンスコストを抑える選択です。https://docs.microsoft.com/ja-jp/azure/azure-sql/azure-hybrid-benefit",
       "category": "",
       "tags": [
         "entra-license",
@@ -22,14 +22,14 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 122,
-      "question": "あなたは、Contoso, Ltd. という名前の Microsoft ボリューム ライセンスのお客様の、データベース環境を管理しています。Contoso はソフトウェア アシュアランスによるライセンス モビリティを使用しています。 50 個のデータベースをデプロイする必要があります。 ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 デプロイメント オプション:・ 自動スケーリングをサポートする。・ Microsoft SQL Server のライセンス コストを最小限に抑える。",
+      "question": "Contoso, Ltd. という Microsoft ボリュームライセンス顧客のデータベース環境を管理しています。Contoso はソフトウェアアシュアランスのライセンスモビリティを活用しています。50 個のデータベースをデプロイする際、以下の要件を満たすデプロイオプションとして適切なものはどれですか。・ 自動スケーリングに対応する。・ Microsoft SQL Server のライセンス費用を最小化する。",
       "choices": [
         "Azure SQL Managed Instance",
         "SQL Server Always On 可用性グループ",
         "Azure SQL Database エラスティック プール"
       ],
       "answer": 2,
-      "explanation": "Azure SQL Database のエラスティック プールは、使用ニーズが多様で予測不可能な複数のデータベースを管理およびスケーリングするための、シンプルでコスト効率に優れたソリューションです。 エラスティック プール内のデータベースは、単一のサーバー上にあり、設定された数のリソースを設定価格で共有します。 SQL Database のエラスティック プールを使用すると、サービスとしてのソフトウェア (SaaS) の開発者は、各データベースのパフォーマンスに弾力性を持たせながら、データベース グループの価格に対するパフォーマンスを所定の予算内で最適化できます。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/elastic-pool-overview?view=azuresql",
+      "explanation": "Azure SQL Database のエラスティックプールは、利用パターンが多様で予測が難しい複数のデータベースを効率よく管理・スケーリングするためのコスト効率に優れたソリューションです。プール内のデータベースは単一サーバー上でリソースを共有し、SaaS 開発者はデータベースごとの弾力的なパフォーマンスを確保しながら、全体の費用を予算内に収められます。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/elastic-pool-overview?view=azuresql",
       "category": "",
       "tags": [
         "entra-license",
@@ -41,14 +41,14 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 123,
-      "question": "Contoso, Ltd. という名前の会社は、※1のリソースを含む Azure サブスクリプションを持っています。 Contoso の製品データが contososql1 から contosolake1 にコピーされました。 Contoso には、Fabrikam Inc. というパートナー会社があります。Fabrikam には、※2のリソースを含む Azure サブスクリプションがあります。 Contoso は、FabrikamVM1 の研究データを contosolake1 にアップロードする予定です。アップロード中に、研究データを Contoso が使用するデータ形式に変換する必要があります。 contosolake1 のデータは contosoworkspace1 を使用して分析されます。 このとき、※3の要件を満たすソリューションを推奨する必要があります。 それぞれの要件に対して何を推奨する必要がありますか。 データをアップロードして変換する:※1・ contosoworkspace1 という名前の Azure Synapse Analytics ワークスペース・ contosolake1 という名前の Azure Data Lake Storage アカウント・ contososql1 という名前の Azure SQL データベース※2・ Microsoft SQL Server 2019 を実行する FabrikamVM1 という名前の仮想マシン・ fabrikamsa1 という名前の Azure ストレージ アカウント※3・ FabrikamVM1 研究データをアップロードして変換する。・ contosoworkspace1 内のデータのスナップショットへの制限付きアクセスを Fabrikam に提供する。",
+      "question": "Contoso, Ltd. は以下のリソース（※1）を持つ Azure サブスクリプションを運用しています。Contoso の製品データは contososql1 から contosolake1 にコピー済みです。パートナー企業 Fabrikam Inc. は以下のリソース（※2）を持つ Azure サブスクリプションを所有しています。Contoso は FabrikamVM1 上の研究データを contosolake1 にアップロードし、その過程で Contoso の利用するデータ形式へ変換する必要があります。contosolake1 に格納されたデータは contosoworkspace1 で分析します。以下の要件（※3）を満たすソリューションとして、データのアップロードと変換にはどの方法を推奨しますか。※1 contosoworkspace1（Azure Synapse Analytics ワークスペース）、contosolake1（Azure Data Lake Storage アカウント）、contososql1（Azure SQL データベース） ※2 FabrikamVM1（SQL Server 2019 搭載の仮想マシン）、fabrikamsa1（Azure ストレージアカウント） ※3 FabrikamVM1 の研究データのアップロードおよび変換、contosoworkspace1 内のデータスナップショットへの限定的なアクセスを Fabrikam に付与",
       "choices": [
         "Azure Data Box Gateway",
         "Azure Data Share",
         "Azure Synapse パイプライン"
       ],
       "answer": 2,
-      "explanation": "ETL 操作を実現するには Azure Data Factory を使用する必要があります。Azure Synapse Analytics の Synapse パイプラインやデータ フローなどのデータ統合機能は、Azure Data Factory の機能に基づいています。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/data-integration/concepts-data-factory-differences",
+      "explanation": "データのアップロードと変換（ETL 操作）には Azure Data Factory ベースの機能が適しています。Azure Synapse Analytics の Synapse パイプラインは Azure Data Factory の機能を基盤としており、データ統合やデータフローの処理を Synapse ワークスペース内で直接実行できます。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/data-integration/concepts-data-factory-differences",
       "category": "",
       "tags": [
         "subscription-design",
@@ -62,14 +62,14 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 124,
-      "question": "Contoso, Ltd. という名前の会社は、※1のリソースを含む Azure サブスクリプションを持っています。 Contoso の製品データが contososql1 から contosolake1 にコピーされました。 Contoso には、Fabrikam Inc. というパートナー会社があります。Fabrikam には、※2のリソースを含む Azure サブスクリプションがあります。 Contoso は、FabrikamVM1 の研究データを contosolake1 にアップロードする予定です。アップロード中に、研究データを Contoso が使用するデータ形式に変換する必要があります。 contosolake1 のデータは contosoworkspace1 を使用して分析されます。 このとき、※3の要件を満たすソリューションを推奨する必要があります。 それぞれの要件に対して何を推奨する必要がありますか。 制限付きアクセスを提供する:※1・ contosoworkspace1 という名前の Azure Synapse Analytics ワークスペース・ contosolake1 という名前の Azure Data Lake Storage アカウント・ contososql1 という名前の Azure SQL データベース※2・ Microsoft SQL Server 2019 を実行する FabrikamVM1 という名前の仮想マシン・ fabrikamsa1 という名前の Azure ストレージ アカウント※3・ FabrikamVM1 研究データをアップロードして変換する。・ contosoworkspace1 内のデータのスナップショットへの制限付きアクセスを Fabrikam に提供する。",
+      "question": "Contoso, Ltd. は以下のリソース（※1）を持つ Azure サブスクリプションを運用しています。Contoso の製品データは contososql1 から contosolake1 にコピー済みです。パートナー企業 Fabrikam Inc. は以下のリソース（※2）を持つ Azure サブスクリプションを所有しています。Contoso は FabrikamVM1 上の研究データを contosolake1 にアップロードし、その過程で Contoso の利用するデータ形式へ変換する必要があります。contosolake1 に格納されたデータは contosoworkspace1 で分析します。以下の要件（※3）を満たすソリューションとして、制限付きアクセスの提供にはどの方法を推奨しますか。※1 contosoworkspace1（Azure Synapse Analytics ワークスペース）、contosolake1（Azure Data Lake Storage アカウント）、contososql1（Azure SQL データベース） ※2 FabrikamVM1（SQL Server 2019 搭載の仮想マシン）、fabrikamsa1（Azure ストレージアカウント） ※3 FabrikamVM1 の研究データのアップロードおよび変換、contosoworkspace1 内のデータスナップショットへの限定的なアクセスを Fabrikam に付与",
       "choices": [
         "Azure Data Box Gateway",
         "Azure Synapse パイプライン",
         "Azure Data Share"
       ],
       "answer": 2,
-      "explanation": "Azure Data Share を使用すると、組織は複数のお客様やパートナーとデータを安全に共有できます。 データ プロバイダーでは共有したデータが常に管理下に置かれるため、Azure Data Share を使用すると、どのデータが、いつ、誰によって共有されたかを簡単に管理し、監視することができます。この場合、スナップショットベースの共有を使用する必要があります。https://learn.microsoft.com/ja-jp/azure/data-share/overview",
+      "explanation": "Azure Data Share を利用すると、複数の顧客やパートナーとデータを安全に共有できます。データプロバイダーは共有データの管理権限を保持したまま、誰がいつどのデータにアクセスしたかを監視・管理できます。このケースではスナップショットベースの共有方式を使って、Fabrikam に対して contosoworkspace1 のデータへの限定的なアクセスを提供します。https://learn.microsoft.com/ja-jp/azure/data-share/overview",
       "category": "",
       "tags": [
         "subscription-design",
@@ -84,7 +84,7 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 125,
-      "question": "ミッションクリティカルなアプリケーションの記録用のストレージ ソリューションを推奨する必要があります。ソリューションでは、書き込み操作の待ち時間とスループットに関するサービス レベル アグリーメント (SLA) を提供する必要があります。 推奨事項には何を含めるべきですか。",
+      "question": "ミッションクリティカルなアプリケーションの記録データを保存するストレージソリューションを選定する必要があります。書き込み操作のレイテンシおよびスループットに関する SLA を提供するサービスとして、最も適切なものはどれですか。",
       "choices": [
         "Azure Data Lake Storage Gen2",
         "Azure Cosmos DB",
@@ -92,7 +92,7 @@ var QUIZ_DATA_website_121_130 = {
         "Azure Blob Storage"
       ],
       "answer": 1,
-      "explanation": "Azure Cosmos DB は、グローバルに分散されたマルチモデル データベース サービスです。スループット、遅延、可用性、一貫性をカバーする包括的なサービス レベル アグリーメント (SLA) を提供します。他の選択肢では、レイテンシーとスループットの両方に対する SLA は提供されません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction",
+      "explanation": "Azure Cosmos DB は、グローバル分散型のマルチモデルデータベースサービスであり、スループット、レイテンシ、可用性、整合性を網羅する包括的な SLA を提供する唯一の選択肢です。他のサービスではレイテンシとスループットの両方に対する SLA は保証されません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction",
       "category": "",
       "tags": [
         "blob-storage",
@@ -102,7 +102,7 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 126,
-      "question": "あなたの会社には、次の表に示す部門があります。 Sub1 には、App1 という名前の Azure App Service Web アプリが含まれています。 App1 は、シングルテナントのユーザー認証に Microsoft Entra ID を使用します。 contoso.com のユーザーは App1 に対して認証できます。 fabrikam.com テナント内のユーザーが App1 に対して認証できるようにするソリューションを推奨する必要があります。 何を勧めるべきですか。部門 | Azure サブスクリプション | Microsoft Entra テナント-------------------------------------------------- -------------East | Sub1 | Contoso.comWest | Sub2 | Fabrikam.com",
+      "question": "以下の表に示す部門構成を持つ企業があります。Sub1 には App1 という Azure App Service Web アプリが含まれ、シングルテナント構成で Microsoft Entra ID を使ったユーザー認証を行っています。現在 contoso.com のユーザーのみが App1 に認証可能です。fabrikam.com テナントのユーザーにも App1 への認証を許可するには、どのソリューションを推奨すべきですか。部門 | Azure サブスクリプション | Microsoft Entra テナント-----East | Sub1 | Contoso.com West | Sub2 | Fabrikam.com",
       "choices": [
         "Microsoft Entra ID Protection を構成する。",
         "条件付きアクセス ポリシーを構成する。",
@@ -110,7 +110,7 @@ var QUIZ_DATA_website_121_130 = {
         "Microsoft Entra ID プロビジョニング サービスを構成する。"
       ],
       "answer": 2,
-      "explanation": "エンタイトルメント管理接続先の組織を選択して、その組織のユーザーがアクセス権を要求できるようにすることができます。 ディレクトリにまだ存在しないユーザーがアクセス権を要求し、それが承認されると、そのユーザーは自動的にディレクトリに招待され、アクセス権を割り当てられます。 アクセス権の有効期限が切れ、かつ他のアクセス パッケージが割り当てられていない場合には、ディレクトリ内の B2B アカウントを自動的に削除できます。https://learn.microsoft.com/ja-jp/entra/id-governance/entitlement-management-overview",
+      "explanation": "エンタイトルメント管理では、接続先組織を指定してそのユーザーがアクセス権を要求できるようにします。ディレクトリに未登録のユーザーがアクセスを要求し承認されると、自動的に B2B ゲストとして招待されアクセス権が付与されます。アクセス権の期限切れ後、他のアクセスパッケージが割り当てられていなければ B2B アカウントも自動削除されます。https://learn.microsoft.com/ja-jp/entra/id-governance/entitlement-management-overview",
       "category": "",
       "tags": [
         "entra-id",
@@ -123,7 +123,7 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 127,
-      "question": "オンプレミス ネットワークと Azure サブスクリプションがあります。オンプレミス ネットワークには複数のブランチ オフィスがあります。 トロント支社のオフィスには、ファイル サーバーとして構成された VM1 という名前の仮想マシンがあります。ユーザーはすべてのオフィスから VM1 上の共有ファイルにアクセスします。 トロント支社にアクセスできない場合に、ユーザーが共有ファイルにできるだけ早くアクセスできるようにするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+      "question": "オンプレミスネットワークと Azure サブスクリプションを利用しており、複数のブランチオフィスが存在します。トロントのブランチオフィスにはファイルサーバーとして機能する VM1 があり、全オフィスのユーザーが VM1 の共有ファイルにアクセスしています。トロントオフィスへのアクセスが不能になった場合に、ユーザーが共有ファイルへ可能な限り早くアクセスできるようにするソリューションはどれですか。",
       "choices": [
         "Azure File 共有 と Azure File Sync",
         "Recovery Services コンテナーと Windows Server バックアップ",
@@ -131,7 +131,7 @@ var QUIZ_DATA_website_121_130 = {
         "Azure BLOB コンテナーと Azure File Sync"
       ],
       "answer": 0,
-      "explanation": "オンプレミス ネットワークと Azure サブスクリプションがあります。オンプレミス ネットワークには複数のブランチ オフィスがあります。 トロント支社のオフィスには、ファイル サーバーとして構成された VM1 という名前の仮想マシンがあります。ユーザーはすべてのオフィスから VM1 上の共有ファイルにアクセスします。 トロント支社にアクセスできない場合に、ユーザーが共有ファイルにできるだけ早くアクセスできるようにするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+      "explanation": "Azure File Sync と Azure ファイル共有を組み合わせることで、オンプレミスのファイルサーバーのデータをクラウドに同期できます。トロントのオフィスがアクセス不能になった場合でも、Azure 上の同期済みファイル共有から迅速にファイルを提供できるため、ダウンタイムを最小化できます。",
       "category": "",
       "tags": [
         "subscription-design",
@@ -144,7 +144,7 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 128,
-      "question": "ある企業は、Web アプリをサポートするために HTTP ベースの API を実装することを計画しています。 Web アプリを使用すると、顧客は注文のステータスを確認できます。 API は次の要件を満たす必要があります。 どの HTTP メソッドと認証レベルを構成するかを推奨する必要があります。 何を勧めるべきですか。 HTTP メソッド:・ Azure Functions を実装する。・ パブリック (読み取り専用)を提供する。・ 書き込み操作を禁止する。",
+      "question": "ある企業が Web アプリケーションをサポートする HTTP ベースの API を実装予定です。この Web アプリでは顧客が注文ステータスを確認できます。以下の要件を満たすために、どの HTTP メソッドを構成すべきですか。・ Azure Functions で実装する。・ パブリックな読み取り専用アクセスを提供する。・ 書き込み操作は許可しない。",
       "choices": [
         "GET と POST のみ",
         "GET、POST、OPTIONSのみ",
@@ -152,7 +152,7 @@ var QUIZ_DATA_website_121_130 = {
         "GETのみ"
       ],
       "answer": 3,
-      "explanation": "GET API はパブリック読み取り専用操作を提供するだけであるため、データを取得するには GET メソッドで十分です。",
+      "explanation": "読み取り専用のパブリックアクセスのみが求められるため、データ取得用の GET メソッドだけで十分です。POST など書き込みを伴うメソッドは不要です。",
       "category": "",
       "tags": [
         "app-service",
@@ -161,14 +161,14 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 129,
-      "question": "ある企業は、Web アプリをサポートするために HTTP ベースの API を実装することを計画しています。 Web アプリを使用すると、顧客は注文のステータスを確認できます。 API は次の要件を満たす必要があります。 どの HTTP メソッドと認証レベルを構成するかを推奨する必要があります。 何を勧めるべきですか。 認証レベル:・ Azure Functions を実装する。・ パブリック (読み取り専用)を提供する。・ 書き込み操作を禁止する。",
+      "question": "ある企業が Web アプリケーションをサポートする HTTP ベースの API を実装予定です。この Web アプリでは顧客が注文ステータスを確認できます。以下の要件を満たすために、どの認証レベルを構成すべきですか。・ Azure Functions で実装する。・ パブリックな読み取り専用アクセスを提供する。・ 書き込み操作は許可しない。",
       "choices": [
         "匿名",
         "管理者",
         "関数"
       ],
       "answer": 0,
-      "explanation": "認証レベル: 匿名API は読み取り専用操作のためにパブリックにアクセスできる必要があるため、認証や承認を必要とせずに無制限のアクセスを許可するには、匿名承認レベルを使用する必要があります。",
+      "explanation": "API は読み取り専用でパブリックにアクセス可能である必要があるため、認証や承認を必要としない匿名レベルを使用します。これにより制限なしのアクセスが実現されます。",
       "category": "",
       "tags": [
         "app-service",
@@ -177,7 +177,7 @@ var QUIZ_DATA_website_121_130 = {
     },
     {
       "id": 130,
-      "question": "Application1 と Application2 という 2 つのアプリケーションに対して Azure ストレージ アカウント構成を推奨する必要があります。構成は次の要件を満たす必要があります。 このとき、何を勧めるべきですか。 Application1:・ Application1 のストレージは、可能な限り高いトランザクション レートと可能な限り低い遅延を提供する必要がある。・ Application2 のストレージは、GB あたりのストレージ コストを可能な限り低くする必要がある。・ データセンターに障害が発生した場合でも、両方のアプリケーションのストレージが利用可能でなければならない。・ 両方のアプリケーションのストレージは、アップロードとダウンロード用に最適化する必要がある。",
+      "question": "Application1 と Application2 の 2 つのアプリケーション向けに Azure ストレージアカウントの構成を推奨する必要があります。以下の要件を踏まえ、Application1 に適した構成はどれですか。・ Application1 は最大限のトランザクションレートと最小限のレイテンシが必要。・ Application2 は GB あたりのストレージコストを最低限にする必要がある。・ どちらもデータセンター障害時に利用継続できなければならない。・ どちらもアップロード・ダウンロード処理に最適化される必要がある。",
       "choices": [
         "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ",
         "Standard パフォーマンス、ホット アクセス層、ローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v2",
@@ -185,7 +185,7 @@ var QUIZ_DATA_website_121_130 = {
         "Premium パフォーマンスとローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v1"
       ],
       "answer": 0,
-      "explanation": "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージApplication1 は、高いトランザクション レートと可能な限り低い遅延を必要とします。 Standard ではなく、Premium を使用する必要があります。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
+      "explanation": "Application1 には高トランザクションレートと低レイテンシが求められるため、Standard ではなく Premium パフォーマンスを選択する必要があります。また、データセンター障害時の可用性を確保するため ZRS レプリケーションを組み合わせたブロック BLOB ストレージが最適です。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
       "category": "",
       "tags": [
         "resource-locks",

@@ -1,16 +1,16 @@
 var QUIZ_DATA_website_01_10 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 1,
-      "question": "あなたはデータウェアハウス（DWH）を実装するためのAzureサービスを選択する必要があります。大量のデータの並列読み込みに対応し、DWHとして最適なサービスはどれですか？",
+      "question": "データウェアハウス（DWH）の構築にあたり、最適なAzureサービスを決定する必要があります。大規模データの並列取り込みに適したDWH向けサービスはどれですか？",
       "choices": [
         "A. Azure Data Lake Analytics",
         "B. Azure Synapse Analytics Sparkプール",
         "C. Azure Synapse Analytics 専用SQLプール"
       ],
       "answer": 2,
-      "explanation": "Azure Synapse Analytics 専用SQLプールは、エンタープライズデータウェアハウスに最適化されたサービスです。超並列処理（MPP）アーキテクチャを採用しており、大量のデータの並列読み込みと高速クエリ処理が可能です。Azure Data Lake Analyticsはビッグデータ分析用のオンデマンドジョブサービスであり、DWHとしての用途には適していません。Synapse Sparkプールはビッグデータ処理やMLに適していますが、構造化データのDWHとしては専用SQLプールの方が適切です。",
+      "explanation": "Azure Synapse Analytics 専用SQLプールは、企業規模のデータウェアハウス向けに設計されたサービスです。超並列処理（MPP）のアーキテクチャにより、大量データの並列読み込みや高速なクエリ実行が実現できます。Azure Data Lake Analyticsはオンデマンド型のビッグデータ分析ジョブ向けサービスであり、DWH用途には向いていません。Synapse Sparkプールはビッグデータ処理や機械学習に強みがありますが、構造化データのDWHとしては専用SQLプールがより適しています。",
       "category": "data",
       "tags": [
         "data-fundamentals",
@@ -19,14 +19,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 2,
-      "question": "数千人のユーザーに対してOLAP（オンライン分析処理）のサービング レイヤーを実装する必要があります。どのサービスを使用すべきですか？",
+      "question": "数千人規模のユーザーに向けてOLAP（オンライン分析処理）のサービングレイヤーを構築する必要があります。最も適したサービスはどれですか？",
       "choices": [
         "A. Azure Synapse Analytics Sparkプール",
         "B. Azure Synapse Analytics 専用SQLプール",
         "C. Azure Analysis Services"
       ],
       "answer": 2,
-      "explanation": "Azure Analysis Servicesは、エンタープライズグレードのOLAPエンジンであり、数千人のユーザーへのサービングレイヤーとして設計されています。セマンティックモデルを作成し、高速なクエリ応答を提供します。Synapse Sparkプールはビッグデータ処理向けであり、サービングレイヤーとしては適していません。Synapse専用SQLプールはDWHとしては優秀ですが、多数のユーザーへのOLAPサービングレイヤーとしてはAnalysis Servicesの方がコスト効率が高く適切です。",
+      "explanation": "Azure Analysis Servicesは、エンタープライズレベルのOLAPエンジンとして、大人数のユーザーへのサービングレイヤーに適した設計となっています。セマンティックモデルの構築を通じて高速なクエリ応答を実現します。Synapse Sparkプールはビッグデータ処理に特化しており、サービングレイヤーとしての利用には向きません。Synapse専用SQLプールはDWHとして優れていますが、大規模ユーザー向けのOLAPサービングにはAnalysis Servicesの方がコスト効率に優れています。",
       "category": "data",
       "tags": [
         "data-analytics"
@@ -34,7 +34,7 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 3,
-      "question": "Azure Resource Managerのデプロイメントに関する月次レポートを作成する必要があります。リソースのデプロイ履歴を確認するために使用すべきサービスはどれですか？",
+      "question": "Azure Resource Managerによるデプロイメントの月次レポートを作成したいと考えています。リソースのデプロイ履歴を把握するのに適切なサービスはどれですか？",
       "choices": [
         "A. Azure Analysis Services",
         "B. Azure Monitor アクション グループ",
@@ -42,7 +42,7 @@ var QUIZ_DATA_website_01_10 = {
         "D. Azure Arc"
       ],
       "answer": 2,
-      "explanation": "Azure Monitorアクティビティログは、サブスクリプションレベルのイベント（リソースの作成、更新、削除などのARMデプロイメント操作）を記録します。月次レポートに必要なデプロイ履歴を確認できます。Analysis Servicesはデータ分析サービスでありデプロイ追跡には関係ありません。アクショングループはアラート発生時の通知/アクション設定であり、履歴の記録ではありません。Azure Arcはハイブリッド環境のリソース管理サービスであり、デプロイ履歴の記録には使用しません。",
+      "explanation": "Azure Monitorのアクティビティログには、サブスクリプション内で発生したイベント（リソースの作成・更新・削除などARMのデプロイ操作）が記録されています。これを活用すれば、月次レポートに必要なデプロイ履歴が確認できます。Analysis Servicesはデータ分析向けのサービスであり、デプロイの追跡には関係がありません。アクショングループはアラート発報時の通知やアクションを構成するもので、履歴の記録機能ではありません。Azure Arcはハイブリッド環境のリソースを一元管理するサービスで、デプロイ履歴の記録用途とは異なります。",
       "category": "monitoring",
       "tags": [
         "subscription-design",
@@ -55,14 +55,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 4,
-      "question": "SQL Serverをホストするために最適なAzure仮想マシンシリーズを選択してください。要件は15,000 IOPSのサポート、SR-IOV対応、およびコスト最小化です。",
+      "question": "SQL Serverの稼働に最適なAzure仮想マシンシリーズを選んでください。条件として15,000 IOPSへの対応、SR-IOVのサポート、そしてコストの最小化が求められます。",
       "choices": [
         "A. NCシリーズ",
         "B. NVシリーズ",
         "C. DSシリーズ"
       ],
       "answer": 2,
-      "explanation": "DSシリーズは汎用VMであり、Premium Storageをサポートし、15,000 IOPSの要件を満たすことができます。SR-IOV（Single Root I/O Virtualization）にも対応しており、SQL Serverのホスティングに適しています。NCシリーズはGPUコンピューティング（AI/ML）向けであり、SQL Serverには過剰でコストが高くなります。NVシリーズはGPUによるビジュアライゼーション/リモートデスクトップ向けであり、データベースワークロードには適していません。",
+      "explanation": "DSシリーズは汎用的なVMで、Premium Storageに対応しており、15,000 IOPSの要件を満たせます。SR-IOV（Single Root I/O Virtualization）もサポートされているため、SQL Serverの運用に適しています。NCシリーズはGPUコンピューティング（AI/ML）用途向けで、SQL Serverにはオーバースペックかつ高コストになります。NVシリーズはGPUベースの可視化やリモートデスクトップ向けであり、データベースワークロードには不向きです。",
       "category": "compute",
       "tags": [
         "virtual-machines"
@@ -70,14 +70,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 5,
-      "question": "SQL Server VMに使用するディスクの種類を選択してください。要件は15,000 IOPSのサポートで、コストを最小化する必要があります。",
+      "question": "SQL Server VMに適用するディスク種類を選んでください。15,000 IOPSの対応が必要で、なるべくコストを抑えたい場合に最適なのはどれですか？",
       "choices": [
         "A. Ultra Disk",
         "B. Premium SSD",
         "C. Standard SSD"
       ],
       "answer": 1,
-      "explanation": "Premium SSDは最大20,000 IOPSをサポートし、15,000 IOPSの要件を満たすことができます。コスト面でもUltra Diskより安価です。Ultra Diskは最大160,000 IOPSをサポートしますが、この要件に対しては過剰でコストが高くなります。Standard SSDは最大6,000 IOPS程度であり、15,000 IOPSの要件を満たせません。",
+      "explanation": "Premium SSDは最大20,000 IOPSに対応しており、15,000 IOPSの条件を十分に満たします。コスト面でもUltra Diskより経済的です。Ultra Diskは最大160,000 IOPSまで対応可能ですが、この要件には過剰なスペックとなりコスト増になります。Standard SSDは最大約6,000 IOPS程度の対応にとどまるため、15,000 IOPSの条件をクリアできません。",
       "category": "compute",
       "tags": [
         "virtual-machines"
@@ -85,14 +85,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 6,
-      "question": "Azure Blob Storageでポイントインタイムリストアを使用する場合、対応しているBlobの種類はどれですか？",
+      "question": "Azure Blob StorageにおけるポイントインタイムリストアがサポートするBlobの種類として正しいのはどれですか？",
       "choices": [
         "A. ブロックBlob",
         "B. ページBlob",
         "C. 追加Blob"
       ],
       "answer": 0,
-      "explanation": "ポイントインタイムリストアは、ブロックBlobのみをサポートしています。ブロックBlobのデータを特定の時点の状態に復元することができます。ページBlobは仮想マシンのディスクなどに使用されますが、ポイントインタイムリストアには対応していません。追加Blobはログデータなどの追記専用シナリオに使用されますが、同様にポイントインタイムリストアには対応していません。",
+      "explanation": "ポイントインタイムリストアで対応しているのはブロックBlobのみです。ブロックBlobのデータを指定した時点の状態へ復元できます。ページBlobはVMディスクなどの用途で使われますが、ポイントインタイムリストアの対象外です。追加Blobはログデータなど追記のみのシナリオで利用されますが、こちらも同機能のサポート対象ではありません。",
       "category": "data",
       "tags": [
         "resource-locks",
@@ -102,7 +102,7 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 7,
-      "question": "ポイントインタイムリストアを有効にするために、事前に有効化が必要な機能はどれですか？",
+      "question": "ポイントインタイムリストアを利用するために、あらかじめ有効化しておくべき機能はどれですか？",
       "choices": [
         "A. アクセスポリシー",
         "B. 変更フィード",
@@ -110,7 +110,7 @@ var QUIZ_DATA_website_01_10 = {
         "D. オブジェクトレプリケーション"
       ],
       "answer": 1,
-      "explanation": "ポイントインタイムリストアを使用するには、変更フィード（Change Feed）を有効にする必要があります。変更フィードはBlobに対する作成、変更、削除の操作ログを提供し、これによりポイントインタイムリストアが特定時点の状態を再構築できます。また、Blobのバージョン管理と論理的な削除も同時に有効化が必要です。アクセスポリシーはアクセス制御に関する機能です。不変ストレージはデータの変更・削除を防ぐ機能です。オブジェクトレプリケーションはBlob間の非同期コピーの機能であり、ポイントインタイムリストアの前提条件ではありません。",
+      "explanation": "ポイントインタイムリストアの利用には、変更フィード（Change Feed）の有効化が前提条件となります。変更フィードはBlobの作成・変更・削除に関する操作ログを提供し、特定時点の状態を復元するための情報源となります。なお、Blobのバージョン管理と論理的な削除も併せて有効にする必要があります。アクセスポリシーはアクセス制御の設定です。不変ストレージはデータの改変・削除を防止する機能です。オブジェクトレプリケーションはBlob間の非同期コピー機能であり、ポイントインタイムリストアの前提条件には含まれません。",
       "category": "data",
       "tags": [
         "entra-connect",
@@ -121,7 +121,7 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 8,
-      "question": "AKSでホストされるマイクロサービスを外部に公開する必要があります。要件はプライベートIPアドレスでの接続、MTLS（相互TLS）認証、レート制限です。どの構成を使用すべきですか？",
+      "question": "AKS上で動作するマイクロサービスを外部公開する必要があります。プライベートIPアドレスでの接続、MTLS（相互TLS）認証、レート制限が要件です。どの構成を採用すべきですか？",
       "choices": [
         "A. Application Gateway + WAF",
         "B. API Management Standard + セルフホステッドゲートウェイ",
@@ -129,7 +129,7 @@ var QUIZ_DATA_website_01_10 = {
         "D. API Management Premium + VNet統合"
       ],
       "answer": 3,
-      "explanation": "API Management PremiumティアはVNet統合をサポートし、プライベートIPアドレスでの接続が可能です。また、MTLS（相互TLS認証）とレート制限（スロットリング）の機能を標準で提供しています。Application Gateway + WAFはL7ロードバランシングとWAF保護を提供しますが、MTLSやレート制限の高度な管理はAPI Managementの方が適しています。API Management StandardティアはVNet統合をサポートしていないため、プライベートIPの要件を満たせません。Front Door + WAFはグローバルなL7ロードバランシングですが、プライベートIP接続やMTLSの要件には適していません。",
+      "explanation": "API Management PremiumティアはVNet統合に対応しており、プライベートIPアドレス経由での接続を実現できます。加えて、MTLS（相互TLS認証）やレート制限（スロットリング）の機能も標準装備されています。Application Gateway + WAFはL7のロードバランシングとWAF保護を提供しますが、MTLSやレート制限の細かな制御にはAPI Managementの方が優れています。API Management StandardティアではVNet統合がサポートされないため、プライベートIPの条件を満たせません。Front Door + WAFはグローバルL7ロードバランシングを担いますが、プライベートIP接続やMTLSの要件には合致しません。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -141,14 +141,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 9,
-      "question": "ExpressRoute Global Reachを使用する場合、動的ルーティングを実現し、障害時の自動再ルーティングを可能にするプロトコルはどれですか？",
+      "question": "ExpressRoute Global Reachを利用する際に、動的ルーティングを実現し、障害発生時に自動で経路を切り替えられるプロトコルはどれですか？",
       "choices": [
         "A. BGP",
         "B. デフォルトルート",
         "C. ユーザー定義ルート"
       ],
       "answer": 0,
-      "explanation": "BGP（Border Gateway Protocol）は、ExpressRouteで使用される動的ルーティングプロトコルです。BGPによりルート情報が自動的に交換され、障害発生時には自動的に経路の再計算と再ルーティングが行われます。デフォルトルートは静的な設定であり、動的なルーティングや障害時の自動再ルーティングはできません。ユーザー定義ルート（UDR）も静的なルーティング設定であり、動的な経路変更には対応していません。",
+      "explanation": "BGP（Border Gateway Protocol）は、ExpressRouteにおいて使用される動的ルーティングプロトコルです。BGPによってルート情報が自動交換され、障害が起きた場合には経路の再計算と自動切り替えが実行されます。デフォルトルートは静的設定であり、動的なルーティングや障害時の自動切り替えには対応しません。ユーザー定義ルート（UDR）も静的に設定するルーティングのため、動的な経路変更は行えません。",
       "category": "network",
       "tags": [
         "on-premises-connectivity"
@@ -156,14 +156,14 @@ var QUIZ_DATA_website_01_10 = {
     },
     {
       "id": 10,
-      "question": "フェールオーバー後にトラフィックを自動的にルーティングするために使用すべきプロトコルはどれですか？",
+      "question": "フェールオーバーが発生した後、トラフィックを自動的に適切な経路へ振り分けるために採用すべきプロトコルはどれですか？",
       "choices": [
         "A. HSRP",
         "B. VRRP",
         "C. BGP"
       ],
       "answer": 2,
-      "explanation": "BGP（Border Gateway Protocol）は、Azureのネットワーク環境でフェールオーバー後のトラフィック自動ルーティングに使用されるプロトコルです。ExpressRouteやVPN Gatewayで使用され、ネットワーク障害時に代替経路を自動的に検出して切り替えます。HSRP（Hot Standby Router Protocol）はCisco独自のプロトコルであり、Azureでは使用されません。VRRP（Virtual Router Redundancy Protocol）はオンプレミスのルーター冗長化プロトコルであり、Azureのクラウド環境では直接使用されません。",
+      "explanation": "BGP（Border Gateway Protocol）は、Azureネットワーク環境においてフェールオーバー後の自動トラフィックルーティングに用いられるプロトコルです。ExpressRouteやVPN Gatewayと連携し、障害発生時に代替経路を自動検出して切り替えを行います。HSRP（Hot Standby Router Protocol）はCisco独自のプロトコルで、Azure環境では利用されません。VRRP（Virtual Router Redundancy Protocol）はオンプレミスのルーター冗長化向けプロトコルであり、Azureクラウド環境では直接的に使われません。",
       "category": "network",
       "tags": [
         "bcdr-fundamentals",

@@ -1,40 +1,38 @@
 var ALL_QUIZ_QUESTIONS = [
   {
     "id": 1,
-    "question": "あなたはデータウェアハウス（DWH）を実装するためのAzureサービスを選択する必要があります。大量のデータの並列読み込みに対応し、DWHとして最適なサービスはどれですか？",
+    "question": "データウェアハウス（DWH）の構築にあたり、最適なAzureサービスを決定する必要があります。大規模データの並列取り込みに適したDWH向けサービスはどれですか？",
     "choices": [
       "A. Azure Data Lake Analytics",
       "B. Azure Synapse Analytics Sparkプール",
       "C. Azure Synapse Analytics 専用SQLプール"
     ],
     "answer": 2,
-    "explanation": "Azure Synapse Analytics 専用SQLプールは、エンタープライズデータウェアハウスに最適化されたサービスです。超並列処理（MPP）アーキテクチャを採用しており、大量のデータの並列読み込みと高速クエリ処理が可能です。Azure Data Lake Analyticsはビッグデータ分析用のオンデマンドジョブサービスであり、DWHとしての用途には適していません。Synapse Sparkプールはビッグデータ処理やMLに適していますが、構造化データのDWHとしては専用SQLプールの方が適切です。",
+    "explanation": "Azure Synapse Analytics 専用SQLプールは、企業規模のデータウェアハウス向けに設計されたサービスです。超並列処理（MPP）のアーキテクチャにより、大量データの並列読み込みや高速なクエリ実行が実現できます。Azure Data Lake Analyticsはオンデマンド型のビッグデータ分析ジョブ向けサービスであり、DWH用途には向いていません。Synapse Sparkプールはビッグデータ処理や機械学習に強みがありますが、構造化データのDWHとしては専用SQLプールがより適しています。",
     "category": "data",
     "tags": [
       "data-fundamentals",
       "data-analytics"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 2,
-    "question": "数千人のユーザーに対してOLAP（オンライン分析処理）のサービング レイヤーを実装する必要があります。どのサービスを使用すべきですか？",
+    "question": "数千人規模のユーザーに向けてOLAP（オンライン分析処理）のサービングレイヤーを構築する必要があります。最も適したサービスはどれですか？",
     "choices": [
       "A. Azure Synapse Analytics Sparkプール",
       "B. Azure Synapse Analytics 専用SQLプール",
       "C. Azure Analysis Services"
     ],
     "answer": 2,
-    "explanation": "Azure Analysis Servicesは、エンタープライズグレードのOLAPエンジンであり、数千人のユーザーへのサービングレイヤーとして設計されています。セマンティックモデルを作成し、高速なクエリ応答を提供します。Synapse Sparkプールはビッグデータ処理向けであり、サービングレイヤーとしては適していません。Synapse専用SQLプールはDWHとしては優秀ですが、多数のユーザーへのOLAPサービングレイヤーとしてはAnalysis Servicesの方がコスト効率が高く適切です。",
+    "explanation": "Azure Analysis Servicesは、エンタープライズレベルのOLAPエンジンとして、大人数のユーザーへのサービングレイヤーに適した設計となっています。セマンティックモデルの構築を通じて高速なクエリ応答を実現します。Synapse Sparkプールはビッグデータ処理に特化しており、サービングレイヤーとしての利用には向きません。Synapse専用SQLプールはDWHとして優れていますが、大規模ユーザー向けのOLAPサービングにはAnalysis Servicesの方がコスト効率に優れています。",
     "category": "data",
     "tags": [
       "data-analytics"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 3,
-    "question": "Azure Resource Managerのデプロイメントに関する月次レポートを作成する必要があります。リソースのデプロイ履歴を確認するために使用すべきサービスはどれですか？",
+    "question": "Azure Resource Managerによるデプロイメントの月次レポートを作成したいと考えています。リソースのデプロイ履歴を把握するのに適切なサービスはどれですか？",
     "choices": [
       "A. Azure Analysis Services",
       "B. Azure Monitor アクション グループ",
@@ -42,7 +40,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Arc"
     ],
     "answer": 2,
-    "explanation": "Azure Monitorアクティビティログは、サブスクリプションレベルのイベント（リソースの作成、更新、削除などのARMデプロイメント操作）を記録します。月次レポートに必要なデプロイ履歴を確認できます。Analysis Servicesはデータ分析サービスでありデプロイ追跡には関係ありません。アクショングループはアラート発生時の通知/アクション設定であり、履歴の記録ではありません。Azure Arcはハイブリッド環境のリソース管理サービスであり、デプロイ履歴の記録には使用しません。",
+    "explanation": "Azure Monitorのアクティビティログには、サブスクリプション内で発生したイベント（リソースの作成・更新・削除などARMのデプロイ操作）が記録されています。これを活用すれば、月次レポートに必要なデプロイ履歴が確認できます。Analysis Servicesはデータ分析向けのサービスであり、デプロイの追跡には関係がありません。アクショングループはアラート発報時の通知やアクションを構成するもので、履歴の記録機能ではありません。Azure Arcはハイブリッド環境のリソースを一元管理するサービスで、デプロイ履歴の記録用途とは異なります。",
     "category": "monitoring",
     "tags": [
       "subscription-design",
@@ -51,62 +49,58 @@ var ALL_QUIZ_QUESTIONS = [
       "activity-log",
       "data-analytics",
       "event-driven"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 4,
-    "question": "SQL Serverをホストするために最適なAzure仮想マシンシリーズを選択してください。要件は15,000 IOPSのサポート、SR-IOV対応、およびコスト最小化です。",
+    "question": "SQL Serverの稼働に最適なAzure仮想マシンシリーズを選んでください。条件として15,000 IOPSへの対応、SR-IOVのサポート、そしてコストの最小化が求められます。",
     "choices": [
       "A. NCシリーズ",
       "B. NVシリーズ",
       "C. DSシリーズ"
     ],
     "answer": 2,
-    "explanation": "DSシリーズは汎用VMであり、Premium Storageをサポートし、15,000 IOPSの要件を満たすことができます。SR-IOV（Single Root I/O Virtualization）にも対応しており、SQL Serverのホスティングに適しています。NCシリーズはGPUコンピューティング（AI/ML）向けであり、SQL Serverには過剰でコストが高くなります。NVシリーズはGPUによるビジュアライゼーション/リモートデスクトップ向けであり、データベースワークロードには適していません。",
+    "explanation": "DSシリーズは汎用的なVMで、Premium Storageに対応しており、15,000 IOPSの要件を満たせます。SR-IOV（Single Root I/O Virtualization）もサポートされているため、SQL Serverの運用に適しています。NCシリーズはGPUコンピューティング（AI/ML）用途向けで、SQL Serverにはオーバースペックかつ高コストになります。NVシリーズはGPUベースの可視化やリモートデスクトップ向けであり、データベースワークロードには不向きです。",
     "category": "compute",
     "tags": [
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 5,
-    "question": "SQL Server VMに使用するディスクの種類を選択してください。要件は15,000 IOPSのサポートで、コストを最小化する必要があります。",
+    "question": "SQL Server VMに適用するディスク種類を選んでください。15,000 IOPSの対応が必要で、なるべくコストを抑えたい場合に最適なのはどれですか？",
     "choices": [
       "A. Ultra Disk",
       "B. Premium SSD",
       "C. Standard SSD"
     ],
     "answer": 1,
-    "explanation": "Premium SSDは最大20,000 IOPSをサポートし、15,000 IOPSの要件を満たすことができます。コスト面でもUltra Diskより安価です。Ultra Diskは最大160,000 IOPSをサポートしますが、この要件に対しては過剰でコストが高くなります。Standard SSDは最大6,000 IOPS程度であり、15,000 IOPSの要件を満たせません。",
+    "explanation": "Premium SSDは最大20,000 IOPSに対応しており、15,000 IOPSの条件を十分に満たします。コスト面でもUltra Diskより経済的です。Ultra Diskは最大160,000 IOPSまで対応可能ですが、この要件には過剰なスペックとなりコスト増になります。Standard SSDは最大約6,000 IOPS程度の対応にとどまるため、15,000 IOPSの条件をクリアできません。",
     "category": "compute",
     "tags": [
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 6,
-    "question": "Azure Blob Storageでポイントインタイムリストアを使用する場合、対応しているBlobの種類はどれですか？",
+    "question": "Azure Blob StorageにおけるポイントインタイムリストアがサポートするBlobの種類として正しいのはどれですか？",
     "choices": [
       "A. ブロックBlob",
       "B. ページBlob",
       "C. 追加Blob"
     ],
     "answer": 0,
-    "explanation": "ポイントインタイムリストアは、ブロックBlobのみをサポートしています。ブロックBlobのデータを特定の時点の状態に復元することができます。ページBlobは仮想マシンのディスクなどに使用されますが、ポイントインタイムリストアには対応していません。追加Blobはログデータなどの追記専用シナリオに使用されますが、同様にポイントインタイムリストアには対応していません。",
+    "explanation": "ポイントインタイムリストアで対応しているのはブロックBlobのみです。ブロックBlobのデータを指定した時点の状態へ復元できます。ページBlobはVMディスクなどの用途で使われますが、ポイントインタイムリストアの対象外です。追加Blobはログデータなど追記のみのシナリオで利用されますが、こちらも同機能のサポート対象ではありません。",
     "category": "data",
     "tags": [
       "resource-locks",
       "blob-storage",
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 7,
-    "question": "ポイントインタイムリストアを有効にするために、事前に有効化が必要な機能はどれですか？",
+    "question": "ポイントインタイムリストアを利用するために、あらかじめ有効化しておくべき機能はどれですか？",
     "choices": [
       "A. アクセスポリシー",
       "B. 変更フィード",
@@ -114,19 +108,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. オブジェクトレプリケーション"
     ],
     "answer": 1,
-    "explanation": "ポイントインタイムリストアを使用するには、変更フィード（Change Feed）を有効にする必要があります。変更フィードはBlobに対する作成、変更、削除の操作ログを提供し、これによりポイントインタイムリストアが特定時点の状態を再構築できます。また、Blobのバージョン管理と論理的な削除も同時に有効化が必要です。アクセスポリシーはアクセス制御に関する機能です。不変ストレージはデータの変更・削除を防ぐ機能です。オブジェクトレプリケーションはBlob間の非同期コピーの機能であり、ポイントインタイムリストアの前提条件ではありません。",
+    "explanation": "ポイントインタイムリストアの利用には、変更フィード（Change Feed）の有効化が前提条件となります。変更フィードはBlobの作成・変更・削除に関する操作ログを提供し、特定時点の状態を復元するための情報源となります。なお、Blobのバージョン管理と論理的な削除も併せて有効にする必要があります。アクセスポリシーはアクセス制御の設定です。不変ストレージはデータの改変・削除を防止する機能です。オブジェクトレプリケーションはBlob間の非同期コピー機能であり、ポイントインタイムリストアの前提条件には含まれません。",
     "category": "data",
     "tags": [
       "entra-connect",
       "blob-storage",
       "bcdr-fundamentals",
       "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 8,
-    "question": "AKSでホストされるマイクロサービスを外部に公開する必要があります。要件はプライベートIPアドレスでの接続、MTLS（相互TLS）認証、レート制限です。どの構成を使用すべきですか？",
+    "question": "AKS上で動作するマイクロサービスを外部公開する必要があります。プライベートIPアドレスでの接続、MTLS（相互TLS）認証、レート制限が要件です。どの構成を採用すべきですか？",
     "choices": [
       "A. Application Gateway + WAF",
       "B. API Management Standard + セルフホステッドゲートウェイ",
@@ -134,7 +127,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. API Management Premium + VNet統合"
     ],
     "answer": 3,
-    "explanation": "API Management PremiumティアはVNet統合をサポートし、プライベートIPアドレスでの接続が可能です。また、MTLS（相互TLS認証）とレート制限（スロットリング）の機能を標準で提供しています。Application Gateway + WAFはL7ロードバランシングとWAF保護を提供しますが、MTLSやレート制限の高度な管理はAPI Managementの方が適しています。API Management StandardティアはVNet統合をサポートしていないため、プライベートIPの要件を満たせません。Front Door + WAFはグローバルなL7ロードバランシングですが、プライベートIP接続やMTLSの要件には適していません。",
+    "explanation": "API Management PremiumティアはVNet統合に対応しており、プライベートIPアドレス経由での接続を実現できます。加えて、MTLS（相互TLS認証）やレート制限（スロットリング）の機能も標準装備されています。Application Gateway + WAFはL7のロードバランシングとWAF保護を提供しますが、MTLSやレート制限の細かな制御にはAPI Managementの方が優れています。API Management StandardティアではVNet統合がサポートされないため、プライベートIPの条件を満たせません。Front Door + WAFはグローバルL7ロードバランシングを担いますが、プライベートIP接続やMTLSの要件には合致しません。",
     "category": "network",
     "tags": [
       "load-balancers",
@@ -142,247 +135,44 @@ var ALL_QUIZ_QUESTIONS = [
       "api-management",
       "vnet",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 9,
-    "question": "ExpressRoute Global Reachを使用する場合、動的ルーティングを実現し、障害時の自動再ルーティングを可能にするプロトコルはどれですか？",
+    "question": "ExpressRoute Global Reachを利用する際に、動的ルーティングを実現し、障害発生時に自動で経路を切り替えられるプロトコルはどれですか？",
     "choices": [
       "A. BGP",
       "B. デフォルトルート",
       "C. ユーザー定義ルート"
     ],
     "answer": 0,
-    "explanation": "BGP（Border Gateway Protocol）は、ExpressRouteで使用される動的ルーティングプロトコルです。BGPによりルート情報が自動的に交換され、障害発生時には自動的に経路の再計算と再ルーティングが行われます。デフォルトルートは静的な設定であり、動的なルーティングや障害時の自動再ルーティングはできません。ユーザー定義ルート（UDR）も静的なルーティング設定であり、動的な経路変更には対応していません。",
+    "explanation": "BGP（Border Gateway Protocol）は、ExpressRouteにおいて使用される動的ルーティングプロトコルです。BGPによってルート情報が自動交換され、障害が起きた場合には経路の再計算と自動切り替えが実行されます。デフォルトルートは静的設定であり、動的なルーティングや障害時の自動切り替えには対応しません。ユーザー定義ルート（UDR）も静的に設定するルーティングのため、動的な経路変更は行えません。",
     "category": "network",
     "tags": [
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 10,
-    "question": "フェールオーバー後にトラフィックを自動的にルーティングするために使用すべきプロトコルはどれですか？",
+    "question": "フェールオーバーが発生した後、トラフィックを自動的に適切な経路へ振り分けるために採用すべきプロトコルはどれですか？",
     "choices": [
       "A. HSRP",
       "B. VRRP",
       "C. BGP"
     ],
     "answer": 2,
-    "explanation": "BGP（Border Gateway Protocol）は、Azureのネットワーク環境でフェールオーバー後のトラフィック自動ルーティングに使用されるプロトコルです。ExpressRouteやVPN Gatewayで使用され、ネットワーク障害時に代替経路を自動的に検出して切り替えます。HSRP（Hot Standby Router Protocol）はCisco独自のプロトコルであり、Azureでは使用されません。VRRP（Virtual Router Redundancy Protocol）はオンプレミスのルーター冗長化プロトコルであり、Azureのクラウド環境では直接使用されません。",
+    "explanation": "BGP（Border Gateway Protocol）は、Azureネットワーク環境においてフェールオーバー後の自動トラフィックルーティングに用いられるプロトコルです。ExpressRouteやVPN Gatewayと連携し、障害発生時に代替経路を自動検出して切り替えを行います。HSRP（Hot Standby Router Protocol）はCisco独自のプロトコルで、Azure環境では利用されません。VRRP（Virtual Router Redundancy Protocol）はオンプレミスのルーター冗長化向けプロトコルであり、Azureクラウド環境では直接的に使われません。",
     "category": "network",
     "tags": [
       "bcdr-fundamentals",
       "site-recovery",
       "storage-redundancy",
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 101,
-    "question": "contoso.com と fabrikam.com という名前の 2 つの Microsoft Entra IDD テナントがあります。各テナントは 50 の Azure サブスクリプションにリンクされています。 Contoso.com には、User1 と User2 という名前の 2 人のユーザーが含まれています。 次の要件を満たす必要があります。 ソリューションでは、最小特権の原則を使用する必要があります。 各ユーザーにどの役割を割り当てる必要がありますか。 User1:・ User1 は、特定の Azure サブスクリプションにリンクされた Microsoft Entra テナントを変更できることを確認する。・ Azure サブスクリプションが新しい Microsoft Entra テナントに関連付けられており、そのサブスクリプションに対する完全なサブスクリプション レベルのアクセス許可を持つ使用可能な Microsoft Entra ID アカウントがない場合は、User2 のアクセスをサブスクリプションに昇格させる。",
-    "choices": [
-      "サービス管理者",
-      "共同管理者",
-      "所有者"
-    ],
-    "answer": 2,
-    "explanation": "特定の Azure サブスクリプションにリンクされた Microsoft Entra テナントを変更する必要がある User1 には、「所有者」のロールを割り当てる必要があります。サブスクリプションにリンクされている Microsoft Entra テナントを変更するには、ユーザーが所有者レベルで使用できる十分なアクセス許可を持っている必要があるためです。https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory#before-you-begin",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "rbac",
-      "pim",
-      "subscription-design"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 102,
-    "question": "contoso.com と fabrikam.com という名前の 2 つの Microsoft Entra IDD テナントがあります。各テナントは 50 の Azure サブスクリプションにリンクされています。 Contoso.com には、User1 と User2 という名前の 2 人のユーザーが含まれています。 次の要件を満たす必要があります。 ソリューションでは、最小特権の原則を使用する必要があります。 各ユーザーにどの役割を割り当てる必要がありますか。 User2:・ User1 は、特定の Azure サブスクリプションにリンクされた Microsoft Entra テナントを変更できることを確認する。・ Azure サブスクリプションが新しい Microsoft Entra テナントに関連付けられており、そのサブスクリプションに対する完全なサブスクリプション レベルのアクセス許可を持つ使用可能な Microsoft Entra ID アカウントがない場合は、User2 のアクセスをサブスクリプションに昇格させる。",
-    "choices": [
-      "サービス管理者",
-      "共同管理者",
-      "所有者"
-    ],
-    "answer": 2,
-    "explanation": "利用可能な Microsoft Entra ID アカウントにサブスクリプションに対する完全なサブスクリプション レベルのアクセス許可がない場合に、サブスクリプションに昇格されたアクセス権が必要な User2 には、「所有者」ロールも割り当てる必要があります。この役割は、他のリソースにアクセスを委任する権利を含む、すべてのリソースへの完全なアクセスを提供します。このシナリオでは、「所有者」ロールにより、完全な権限を持つ他のアカウントが存在しない場合でも、User2 がサブスクリプションにアクセスできるようになります。https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory#before-you-begin",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "rbac",
-      "pim",
-      "subscription-design"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 103,
-    "question": "Windows Server を実行するオンプレミス サーバーが 10 台あります。 Recovery Services コンテナーへのサーバーのバックアップを毎日実行する必要があります。ソリューションは次の要件を満たす必要があります。 何を設定すればよいでしょうか。 サーバー:・ サーバー上のすべてのファイルとフォルダーをバックアップする。・ Azure にバックアップのコピーを 3 つ保持する。・ コストを最小限に抑える。",
-    "choices": [
-      "Azure Site Recovery モビリティ サービス",
-      "ボリューム シャドウ コピー サービス (VSS)",
-      "Microsoft Azure Recovery Service (MARS) エージェント"
-    ],
-    "answer": 2,
-    "explanation": "・ サーバー上のすべてのファイルとフォルダーをバックアップする。・ Azure にバックアップのコピーを 3 つ保持する。・ コストを最小限に抑える。",
-    "category": "",
-    "tags": [
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 104,
-    "question": "Windows Server を実行するオンプレミス サーバーが 10 台あります。 Recovery Services コンテナーへのサーバーのバックアップを毎日実行する必要があります。ソリューションは次の要件を満たす必要があります。 何を設定すればよいでしょうか。 ストレージ:・ サーバー上のすべてのファイルとフォルダーをバックアップする。・ Azure にバックアップのコピーを 3 つ保持する。・ コストを最小限に抑える。",
-    "choices": [
-      "ローカル冗長ストレージ (LRS)",
-      "Geo 冗長ストレージ (GRS)",
-      "ゾーン冗長ストレージ (ZRS)"
-    ],
-    "answer": 0,
-    "explanation": "ローカル冗長ストレージ (LRS)LRS は、Azure Backup にとって最もコスト効率の高いストレージ オプションです。プライマリ リージョンの単一データ センター内でデータを 3 回レプリケートするため、ほとんどのワークロードに対して十分な耐久性が提供されます。",
-    "category": "",
-    "tags": [
-      "azure-storage",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 105,
-    "question": "次の要件を満たすデータ ストレージ ソリューションを推奨する必要があります。 何を勧めるべきですか。・ アプリケーションが REST 接続を使用してデータにアクセスできることを保証します。・ さまざまなサイズと使用パターンの 20 の独立したテーブルをホスト・ データを 2 番目の Azure リージョンに自動的にレプリケートします・ コストを最小限に抑える",
-    "choices": [
-      "geo 冗長ストレージ (GRS) を使用する Azure ストレージ アカウント内のテーブル",
-      "アクティブな geo レプリケーションを使用する Azure SQL Database エラスティック プール",
-      "アクティブ geo レプリケーションを使用する Azure SQL データベース",
-      "読み取りアクセス geo 冗長ストレージ (RA-GRS) を使用する Azure ストレージ アカウント内のテーブル"
-    ],
-    "answer": 0,
-    "explanation": "geo 冗長ストレージ (GRS) を使用する Azure ストレージ アカウント内のテーブルAzure Table Storage は NoSQL 機能を提供し、スキーマレス設計のキー属性ストアを提供します。そのため、さまざまなサイズや使用パターンの独立したテーブルをホストするのに適しています。 Table Storage データには REST API 経由でアクセスでき、GRS はデータをセカンダリ リージョンに自動的にレプリケートして、リージョンの停止から保護します。コスト最小化の要件に従って、GRS は RA-GRS よりも安価であり、一般に Azure Table Storage は Azure SQL Database オプションよりもコスト効率が高くなります。https://learn.microsoft.com/ja-jp/azure/storage/common/geo-redundant-design",
-    "category": "",
-    "tags": [
-      "data-fundamentals",
-      "azure-storage",
-      "sql-database",
-      "bcdr-fundamentals",
-      "sql-ha"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 106,
-    "question": "次の要件を満たす Azure Storage ソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。・ ストレージは 1 PB のデータをサポートする必要がある。・ データは BLOB ストレージに保存する必要がある。・ ストレージは 3 レベルのサブフォルダーをサポートする必要がある。・ ストレージはアクセス制御リスト (ACL) をサポートする必要がある。",
-    "choices": [
-      "ページ BLOB 用に構成された Premium ストレージ アカウント",
-      "ブロック BLOB 用に構成された Premium ストレージ アカウント",
-      "ファイル共有用に構成され、大規模なファイル共有をサポートする Premium ストレージ アカウント",
-      "階層名前空間が有効になっている汎用 v2 ストレージ アカウント"
-    ],
-    "answer": 3,
-    "explanation": "Azure Blob Storage は、テキスト データやバイナリ データなどの大量の非構造化オブジェクト データを保存するように設計されており、ペタバイト規模のデータを保存できます。汎用 v2 アカウントは、Azure Storage のギガバイトあたりの容量料金が最も低く、業界競争力のあるトランザクション価格を提供します。階層名前空間を使用すると、BLOB ストレージで複数のレベルのディレクトリとサブフォルダーをサポートできます。さらに、階層名前空間を有効にすると、アカウント内のデータは、きめ細かいアクセス許可のアクセス制御リスト (ACL) をサポートする Azure Data Lake Storage Gen2 を通じてアクセスできるようになります。https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/azure-subscription-service-limits#storage-limits",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage",
-      "data-analytics"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 107,
-    "question": "2 TB のデータ ファイルを保存するオンプレミスのファイル サーバーがあります。 データ ファイルを西ヨーロッパ Azure リージョンの Azure Blob Storage に移動する予定です。 データ ファイルを保存するためのストレージ アカウントの種類と、ストレージ アカウントのレプリケーション ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 何を勧めるべきですか。 ストレージ アカウントの種類:・ 単一の Azure データセンターに障害が発生した場合でも利用できるようにする。・ ストレージ階層をサポートする。・ コストを最小限に抑える。",
-    "choices": [
-      "Standard 汎用 v2",
-      "Premium ブロック BLOB",
-      "Standard 汎用 v1"
-    ],
-    "answer": 0,
-    "explanation": "Standard 汎用 v2BLOB、ファイル共有、キュー、テーブル用の Standard タイプのストレージ アカウント。 Azure Storage を使用するほとんどのシナリオにお勧めします。 Azure Files の ネットワーク ファイル システム (NFS) のサポートが必要な場合は、Premium ファイル共有タイプのアカウントを使用してください。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage",
-      "bcdr-fundamentals",
-      "messaging"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 108,
-    "question": "2 TB のデータ ファイルを保存するオンプレミスのファイル サーバーがあります。 データ ファイルを西ヨーロッパ Azure リージョンの Azure Blob Storage に移動する予定です。 データ ファイルを保存するためのストレージ アカウントの種類と、ストレージ アカウントのレプリケーション ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 何を勧めるべきですか。 冗長性:・ 単一の Azure データセンターに障害が発生した場合でも利用できるようにする。・ ストレージ階層をサポートする。・ コストを最小限に抑える。",
-    "choices": [
-      "ゾーン冗長ストレージ (ZRS)",
-      "Geo 冗長ストレージ (GRS)",
-      "読み取りアクセス geo 冗長ストレージ (RA-GRS)",
-      "ローカル冗長ストレージ (LRS)"
-    ],
-    "answer": 0,
-    "explanation": "ゾーン冗長ストレージ (ZRS) は、プライマリ リージョンの 3 つの Azure 可用性ゾーン間でストレージ アカウントを同期的にレプリケートします。 各可用性ゾーンは、独立した電源、冷却装置、ネットワークを備えた独立した物理的な場所です。 ZRS は、ストレージ リソースに年間 99.9999999999% (トゥエルブ ナイン) 以上の持続性を実現します。ZRS はコストを最小限に抑えながら、データセンターの障害から保護します。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
-    "category": "",
-    "tags": [
-      "entra-connect",
-      "azure-storage",
-      "blob-storage",
-      "bcdr-fundamentals",
-      "availability-zones"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 109,
-    "question": "\"オンプレミスの Microsoft SQL Server データベースを Azure に移行することを計画しています。 次の要件を満たす展開および復元ソリューションを推奨する必要があります。 何を勧めるべきですか。 デプロイメント ソリューション:\"・ ユーザー開始のバックアップをサポートする。・ Azure リージョン間で自動的にレプリケートされる複数のインスタンスをサポートする。・ ビジネス継続性を実装および維持するための管理労力を最小限に抑える。",
-    "choices": [
-      "Azure SQL Managed Instance",
-      "Azure SQL Database の単一データベース",
-      "Azure Virtual Machines 上の SQL Server"
-    ],
-    "answer": 0,
-    "explanation": "キーワードが「複数の自動的にレプリケートされたインスタンスをサポート」です。また、ユーザーが開始したバックアップもサポートする唯一の選択肢はAzure SQL Managed Instanceになります。https://learn.microsoft.com/ja-jp/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview?view=azuresql",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "virtual-machines",
-      "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 110,
-    "question": "オンプレミスの Microsoft SQL Server データベースを Azure に移行することを計画しています。 次の要件を満たす展開および復元ソリューションを推奨する必要があります。 何を勧めるべきですか。 回復力 ソリューション:・ ユーザー開始のバックアップをサポートする。・ Azure リージョン間で自動的にレプリケートされる複数のインスタンスをサポートする。・ ビジネス継続性を実装および維持するための管理労力を最小限に抑える。",
-    "choices": [
-      "自動フェールオーバー グループ",
-      "アクティブ geo レプリケーション",
-      "ゾーン冗長デプロイメント"
-    ],
-    "answer": 0,
-    "explanation": "Azure SQL Managed Instanceがアクティブな geo レプリケーションをサポートしていないため、自動フェールオーバーが正解です。https://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-sql-managed-instance/reliability",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "storage-redundancy",
-      "sql-ha",
-      "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 11,
-    "question": "SAML SSOを実装し、不明な場所からのサインインに対してMFA（多要素認証）を要求する必要があります。どの2つのサービスを使用すべきですか？（2つ選択）",
+    "question": "SAML SSOの導入に加え、認識されていない場所からのサインイン時にMFA（多要素認証）を適用する必要があります。利用すべき2つのサービスはどれですか？（2つ選択）",
     "choices": [
       "A. エンタープライズ アプリケーション",
       "B. Application Gateway",
@@ -394,7 +184,7 @@ var ALL_QUIZ_QUESTIONS = [
       0,
       3
     ],
-    "explanation": "エンタープライズアプリケーションでSAML SSOを構成し、条件付きアクセスポリシーで「不明な場所からのサインイン」に対してMFAを要求する条件を設定します。エンタープライズアプリケーションはSAML SSOの設定に必要であり、条件付きアクセスは場所ベースの条件でMFAを要求できます。Application GatewayはL7ロードバランサーであり、SSO/MFAの設定には使用しません。PIMは特権ロールの管理サービスです。Identity Protectionはリスクベースのポリシーを提供しますが、「不明な場所」という条件には条件付きアクセスの方が直接的に対応できます。",
+    "explanation": "エンタープライズアプリケーションでSAML SSOの構成を行い、条件付きアクセスポリシーによって「認識されていない場所からのサインイン」に対しMFAを求める条件を設定します。エンタープライズアプリケーションはSAML SSO設定の基盤となり、条件付きアクセスは場所条件に基づくMFA要求が可能です。Application GatewayはL7ロードバランサーであり、SSO/MFAの設定用途には該当しません。PIMは特権ロールの管理向けサービスです。Identity Protectionはリスクベースのポリシーを提供しますが、「認識されていない場所」に対する条件設定には条件付きアクセスの方がより直接的です。",
     "category": "identity",
     "tags": [
       "auth-methods",
@@ -403,12 +193,11 @@ var ALL_QUIZ_QUESTIONS = [
       "conditional-access",
       "pim",
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 12,
-    "question": "AKSで使用するコンテナイメージを複数のリージョンに自動的にレプリケーションする必要があります。どのサービスを使用すべきですか？",
+    "question": "AKSで利用するコンテナイメージを複数リージョンへ自動的にレプリケートしたい場合、どのサービスを選択すべきですか？",
     "choices": [
       "A. Azure Cache for Redis",
       "B. GRS（Geo冗長ストレージ）",
@@ -416,19 +205,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Container Registry Premium"
     ],
     "answer": 3,
-    "explanation": "Azure Container Registry（ACR）Premiumティアは、Geoレプリケーション機能を提供し、コンテナイメージを複数のリージョンに自動的にレプリケートできます。これにより、各リージョンのAKSクラスターが最寄りのレジストリからイメージをプルでき、デプロイの高速化が可能です。Azure Cache for Redisはキャッシュサービスでありコンテナイメージの管理には使用しません。GRSはストレージアカウントの冗長化であり、コンテナレジストリには直接適用できません。CDNは静的コンテンツの配信であり、コンテナイメージのレプリケーションには適していません。",
+    "explanation": "Azure Container Registry（ACR）のPremiumティアには、Geoレプリケーション機能があり、コンテナイメージを複数リージョンへ自動で複製できます。各リージョンのAKSクラスターが最寄りのレジストリからイメージを取得でき、デプロイ速度が向上します。Azure Cache for Redisはキャッシングサービスであり、コンテナイメージ管理には使いません。GRSはストレージアカウント向けの冗長化機能で、コンテナレジストリへの直接適用はできません。CDNは静的コンテンツ配信向けであり、コンテナイメージのレプリケーション用途には合いません。",
     "category": "compute",
     "tags": [
       "azure-storage",
       "bcdr-fundamentals",
       "containers",
       "caching"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 13,
-    "question": "XMLメッセージを使用した非同期通信を実装する必要があります。どのサービスを使用すべきですか？",
+    "question": "XMLメッセージによる非同期通信を実現する必要があります。適切なサービスはどれですか？",
     "choices": [
       "A. Azure Traffic Manager",
       "B. Azure Notification Hubs",
@@ -436,19 +224,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Service Fabric"
     ],
     "answer": 2,
-    "explanation": "Azure Queue Storageは、大量のメッセージを格納できるシンプルなキューサービスであり、XMLメッセージを含む非同期通信に適しています。メッセージの最大サイズは64KBで、キューには数百万のメッセージを格納できます。Traffic Managerはトラフィック分散のDNSベースのサービスであり、メッセージングには使用しません。Notification Hubsはプッシュ通知サービスであり、一般的な非同期メッセージングには適していません。Service Fabricはマイクロサービスプラットフォームであり、メッセージキューではありません。",
+    "explanation": "Azure Queue Storageは、大量メッセージの格納に対応するシンプルなキューサービスで、XMLメッセージを用いた非同期通信に最適です。メッセージは最大64KBまで、キュー全体では数百万件の格納が可能です。Traffic ManagerはDNSベースのトラフィック分散サービスで、メッセージングとは異なります。Notification Hubsはプッシュ通知に特化したサービスで、一般的な非同期メッセージ処理向けではありません。Service Fabricはマイクロサービスプラットフォームであり、メッセージキューの機能は持ちません。",
     "category": "compute",
     "tags": [
       "entra-connect",
       "load-balancers",
       "containers",
       "messaging"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 14,
-    "question": "オンプレミスネットワーク（172.16.0.0/16）と接続するAzure仮想ネットワークのサブネット設計を行います。30台のVMを収容するSubnet1のアドレス範囲として適切なものはどれですか？",
+    "question": "オンプレミスネットワーク（172.16.0.0/16）と接続するAzure仮想ネットワークのサブネット設計を行っています。30台のVMを収容するSubnet1に適切なアドレス範囲はどれですか？",
     "choices": [
       "A. 192.168.0.0/24",
       "B. 172.16.0.0/16",
@@ -456,16 +243,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 192.168.1.0/27"
     ],
     "answer": 0,
-    "explanation": "192.168.0.0/24が正解です。オンプレミスネットワークが172.16.0.0/16を使用しているため、172.16.x.xのアドレス範囲は重複するため使用できません（選択肢BとCは不可）。30台のVMを収容するには、Azureの各サブネットで予約される5つのIPアドレスを考慮し、最低35個のIPアドレスが必要です。192.168.1.0/27は32個のIPアドレス（利用可能は27個）しか提供できず、30台のVMを収容できません。192.168.0.0/24は256個のIPアドレス（利用可能は251個）を提供し、30台のVMを十分に収容できます。",
+    "explanation": "正解は192.168.0.0/24です。オンプレミスが172.16.0.0/16を使っているため、172.16.x.xの範囲は重複するため選べません（選択肢BとCは不可）。30台のVMを配置するにはAzureの各サブネットで予約される5個のIPを加味し、少なくとも35個のIPが必要です。192.168.1.0/27は32個（利用可能27個）しかなく、30台を収容できません。192.168.0.0/24は256個（利用可能251個）のIPを提供し、30台のVMを十分に受け入れられます。",
     "category": "network",
     "tags": [
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 15,
-    "question": "同じ仮想ネットワークのゲートウェイサブネットのアドレス範囲として適切なものはどれですか？",
+    "question": "同一仮想ネットワークのゲートウェイサブネットに割り当てるアドレス範囲として適切なのはどれですか？",
     "choices": [
       "A. 192.168.0.0/24",
       "B. 172.16.0.0/16",
@@ -473,16 +259,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 192.168.1.0/27"
     ],
     "answer": 3,
-    "explanation": "192.168.1.0/27がゲートウェイサブネットに適切です。ゲートウェイサブネットにはMicrosoftが/27以上のサイズを推奨しています。172.16.x.xのアドレス範囲はオンプレミス（172.16.0.0/16）と重複するため使用できません。192.168.0.0/24はSubnet1で使用されているため重複します。192.168.1.0/27は/27のサイズ（Microsoftの推奨最小サイズ）で、オンプレミスやSubnet1とも重複せず、ゲートウェイサブネットとして適切です。",
+    "explanation": "ゲートウェイサブネットとしては192.168.1.0/27が妥当です。Microsoftはゲートウェイサブネットに/27以上のサイズを推奨しています。172.16.x.xの範囲はオンプレミス（172.16.0.0/16）との重複があるため使えません。192.168.0.0/24はSubnet1として既に利用中のため競合します。192.168.1.0/27は/27サイズ（推奨最小）であり、オンプレミスやSubnet1のいずれとも重複しないため、ゲートウェイサブネットとして適切です。",
     "category": "network",
     "tags": [
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 16,
-    "question": "複数のデータベースを使用するアプリケーションをAzureに移行する必要があります。アプリケーションは「サーバー名.データベース名.テーブル名」の形式でデータにアクセスしています。どのサービスの組み合わせを使用すべきですか？",
+    "question": "複数データベースを持つアプリケーションのAzure移行を検討中です。アプリケーションは「サーバー名.データベース名.テーブル名」の形式でデータにアクセスしています。利用すべきサービスの組み合わせはどれですか？",
     "choices": [
       "A. SQL Server on Azure VM",
       "B. SQL Server Stretch Database",
@@ -493,17 +278,16 @@ var ALL_QUIZ_QUESTIONS = [
       0,
       3
     ],
-    "explanation": "「サーバー名.データベース名.テーブル名」の3パート名でアクセスするには、SQL Serverのインスタンスレベルの機能が必要です。Azure SQL Managed Instance（MI）はSQL Serverとほぼ100%の互換性を持ち、クロスデータベースクエリをサポートします。SQL Server on Azure VMも完全なSQL Serverインスタンスを提供するため、この形式のアクセスが可能です。Azure SQL Databaseは単一データベースのサービスであり、クロスデータベースクエリ（3パート名）をネイティブにサポートしていません。Stretch Databaseはオンプレミスのデータをクラウドに拡張する機能であり、移行シナリオには適していません。",
+    "explanation": "「サーバー名.データベース名.テーブル名」という3パート名形式でのアクセスには、SQL Serverインスタンスレベルの機能が不可欠です。Azure SQL Managed Instance（MI）はSQL Serverとほぼ完全な互換性があり、クロスデータベースクエリに対応します。SQL Server on Azure VMもフルインスタンスを提供するため、同形式でのアクセスが可能です。Azure SQL Databaseは単一データベースサービスであり、3パート名によるクロスデータベースクエリをネイティブにはサポートしません。Stretch Databaseはオンプレミスのデータをクラウドへ拡張する機能で、移行シナリオには向いていません。",
     "category": "data",
     "tags": [
       "sql-database",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 17,
-    "question": "AKSとAPI Management Standardを使用しています。MTLS（相互TLS）認証を実装し、コストを最小化する必要があります。どうすべきですか？",
+    "question": "AKSとAPI Management Standardを運用しています。MTLS（相互TLS）認証の実装が必要で、かつコストを最小限に抑えたい場合の対応策はどれですか？",
     "choices": [
       "A. ExternalNameサービスを構成する",
       "B. 外部ロードバランサーを使用する",
@@ -511,19 +295,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. API Managementを再デプロイする"
     ],
     "answer": 2,
-    "explanation": "イングレスコントローラー（例: NGINX Ingress Controller）をAKSに導入することで、MTLS認証を実装できます。これはコスト最小化の要件も満たします。API ManagementをPremiumティアに再デプロイすればVNet統合でMTLSも可能ですが、コストが大幅に増加します。ExternalNameサービスは外部DNSへのマッピングであり、MTLS認証は提供しません。外部ロードバランサーはL4レベルであり、MTLS認証の機能は提供しません。",
+    "explanation": "イングレスコントローラー（例：NGINX Ingress Controller）をAKSに導入すれば、MTLS認証を実装できます。コスト最小化の条件も満たせます。API ManagementをPremiumティアに再デプロイすればVNet統合経由でMTLSも実現可能ですが、コストが大きく増加します。ExternalNameサービスは外部DNSへのマッピング機能で、MTLSの認証は提供しません。外部ロードバランサーはL4レベルで動作するため、MTLSの認証機能を備えていません。",
     "category": "network",
     "tags": [
       "load-balancers",
       "containers",
       "api-management",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 18,
-    "question": "Azure SQL Managed InstanceでTDE（透過的データ暗号化）を使用する場合、暗号化の強度を最大化するためのTDEプロテクターのキーサイズはどれですか？",
+    "question": "Azure SQL Managed InstanceにおいてTDE（透過的データ暗号化）を利用する際、暗号化強度を最大にするにはTDEプロテクターのキーサイズとしてどれを選ぶべきですか？",
     "choices": [
       "A. RSA 4096",
       "B. RSA 3072",
@@ -531,33 +314,31 @@ var ALL_QUIZ_QUESTIONS = [
       "D. RSA 2048"
     ],
     "answer": 1,
-    "explanation": "Azure SQL Managed InstanceのTDEプロテクター（カスタマーマネージドキー）は、RSA 3072ビットが最大サポートサイズです。RSA 4096はAzure SQL MIのTDEプロテクターとしてはサポートされていません。AES 256はデータ暗号化キー（DEK）として使用されますが、TDEプロテクターのキータイプとしてはRSAが使用されます。RSA 2048もサポートされていますが、暗号化強度の最大化の要件にはRSA 3072が適切です。",
+    "explanation": "Azure SQL Managed InstanceのTDEプロテクター（カスタマーマネージドキー）がサポートする最大キーサイズはRSA 3072ビットです。RSA 4096はAzure SQL MIのTDEプロテクターとしてはサポート対象外です。AES 256はデータ暗号化キー（DEK）に用いられるタイプであり、TDEプロテクターとしてはRSAが使われます。RSA 2048もサポートされますが、暗号化強度の最大化にはRSA 3072が最も適しています。",
     "category": "security",
     "tags": [
       "sql-database",
       "sql-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 19,
-    "question": "Azure Database for MySQLでデータセンター障害に備える必要があります。コストを最小化するサービスティアはどれですか？",
+    "question": "Azure Database for MySQLにおいてデータセンター障害への備えが必要です。コストを最も抑えられるサービスティアはどれですか？",
     "choices": [
       "A. メモリ最適化",
       "B. バースト可能（Burstable）",
       "C. 汎用（General Purpose）"
     ],
     "answer": 2,
-    "explanation": "汎用（General Purpose）ティアは、ゾーン冗長高可用性（HA）をサポートしており、データセンター障害に備えることができます。メモリ最適化ティアもゾーン冗長HAをサポートしていますが、汎用より高コストです。バースト可能（Burstable）ティアはゾーン冗長HAをサポートしていないため、データセンター障害に対する保護ができません。コスト最小化の要件を考慮すると、ゾーン冗長HAをサポートする最も安価なティアである汎用が正解です。",
+    "explanation": "汎用（General Purpose）ティアはゾーン冗長高可用性（HA）に対応しており、データセンター障害からの保護が可能です。メモリ最適化ティアもゾーン冗長HAをサポートしていますが、汎用ティアよりコストが高くなります。バースト可能（Burstable）ティアはゾーン冗長HAに非対応のため、データセンター障害への保護を実現できません。コスト最小化を考えると、ゾーン冗長HAをサポートする中で最も安価な汎用ティアが正解です。",
     "category": "data",
     "tags": [
       "sql-database"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 20,
-    "question": "Blobストレージ内の重複ファイルを検出し、管理者の承認メールを送信してから削除するサーバーレスソリューションを設計する必要があります。どのサービスの組み合わせを使用すべきですか？",
+    "question": "Blobストレージ内にある重複ファイルを検知し、管理者へ承認メールを送った上で削除を行うサーバーレスソリューションを構築したいと考えています。どのサービスの組み合わせが適していますか？",
     "choices": [
       "A. Azure Logic Apps + Azure Functions",
       "B. Azure Functions + Azure Batch",
@@ -565,7 +346,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Logic Apps + Azure Event Grid"
     ],
     "answer": 0,
-    "explanation": "Azure Logic Appsはスケジュール実行と承認メールのワークフローをノーコードで構築でき、Azure Functionsは重複ファイルの検出と削除のカスタムスクリプトを実行できます。両方ともサーバーレスです。Azure Batchはバッチ処理サービスですがサーバーレスではありません。Azure PipelinesはCI/CDツールであり、このシナリオには適していません。Service Fabricはマイクロサービスプラットフォームでありサーバーレスではありません。Event Gridはイベントルーティングサービスですが、承認メールのワークフローには対応していません。",
+    "explanation": "Azure Logic Appsでスケジュール実行や承認メールのワークフローをノーコードで組み立て、Azure Functionsで重複ファイルの検出・削除ロジックをカスタムスクリプトとして実行できます。いずれもサーバーレスで提供されるサービスです。Azure Batchはバッチ処理向けですがサーバーレスではありません。Azure PipelinesはCI/CDのツールであり、このユースケースには不向きです。Service Fabricはマイクロサービス基盤でサーバーレスではありません。Event Gridはイベントルーティングを担いますが、承認メールのワークフローには対応しません。",
     "category": "compute",
     "tags": [
       "containers",
@@ -573,834 +354,11 @@ var ALL_QUIZ_QUESTIONS = [
       "batch",
       "event-driven",
       "api-management"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 111,
-    "question": "Azure サブスクリプションでステートレス Web アプリをホストするには、リソースをデプロイする必要があります。ソリューションは次の要件を満たす必要があります。 解決策: Web アプリを Isolated App Service プランにデプロイします。 これは目標を達成していますか。・ 完全な .NET Frameworkへのアクセスを提供する。・ Azure リージョンに障害が発生した場合に冗長性を提供する。・ カスタム アプリケーションの依存関係をインストールするためのオペレーティング システムへのアクセスを管理者に許可する。",
-    "choices": [
-      "はい",
-      "いいえ"
-    ],
-    "answer": 1,
-    "explanation": "解決策の代わりに、2 つの Azure 仮想マシンを 2 つの Azure リージョンにデプロイし、Azure Traffic Manager プロファイルを作成します。https://docs.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-overview",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "azure-storage",
-      "load-balancers",
-      "virtual-machines",
-      "app-service"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 112,
-    "question": "次の表に示すリソースを含む Azure サブスクリプションを持っています。 VNet1 と VNet2 の間、および VNet1 と VNet3 の間にピアリングを作成します。 仮想マシンは HTTPS ベースのクライアント/サーバー アプリケーションをホストし、各仮想マシンのプライベート IP アドレスを介してのみアクセスできます。 VM2 と VM3 の負荷分散ソリューションを実装する必要があります。ソリューションでは、VM2 に障害が発生した場合にはリクエストが自動的に VM3 にルーティングされ、VM3 に障害が発生した場合にはリクエストが自動的に VM2 にルーティングされるようにする必要があります。 ソリューションには何を含めるべきでしょうか。名前 | タイプ | 説明------------------------------VM1 | 仮想マシン | 米国中部 Azure リージョンのフロントエンド コンポーネントVM2 | 仮想マシン | 米国東部 Azure リージョンのバックエンド コンポーネントVM3 | 仮想マシン | 米国西部 2 Azure リージョンのバックエンド コンポーネントVNet1 |仮想ネットワーク | VM1にホストVNet2 |仮想ネットワーク | VM2にホストVNet3 | 仮想ネットワーク | VM3にホスト",
-    "choices": [
-      "リージョン間のロード バランサー",
-      "Azure Firewall Premium",
-      "Azure Application Gateway v2",
-      "Azure Front Door Premium"
-    ],
-    "answer": 3,
-    "explanation": "Azure Front Door Premium は、仮想ネットワークから Azure で実行されているサービスへのプライベート接続を可能にする Private Link をサポートします。この機能を使用すると、リージョン間のサービスにプライベートに接続できるため、VM2 が米国東部にあり、VM3 が米国西部にあるユースケースで機能します。Azure Front Door Premium は、Private Link を使用してセットアップして、地域ネットワーク内にプライベート エンドポイントを作成できます。このネットワークは、パブリック インターネットに公開することなく、Microsoft バックボーン ネットワーク上のプライベート リンクを介して VM2 および VM3 にトラフィックをルーティングできます。 1 つの VM に障害が発生した場合、Azure Front Door は自動的にトラフィックを他の VM にルーティングし、アプリケーションの可用性を維持します。https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-faq#azure-front-door---azure-application-gateway----------",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "load-balancers",
-      "virtual-machines",
-      "vnet",
-      "private-link",
-      "network-security"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 113,
-    "question": "あなたの会社は、Azure SQL データベースを使用するさまざまな Azure App Service インスタンスをデプロイすることを計画しています。 App Service インスタンスは、Azure SQL データベースと同時にデプロイされます。 同社には、App Service インスタンスを特定の Azure リージョンにのみデプロイするという規制要件があります。 App Service インスタンスのリソースは同じリージョンに存在する必要があります。 規制要件を満たすソリューションを推奨する必要があります。 解決策: Azure Policy イニシアチブを使用して、リソース グループの場所を強制することをお勧めします。 これは目標を達成していますか。",
-    "choices": [
-      "はい",
-      "いいえ"
-    ],
-    "answer": 1,
-    "explanation": "リソースグループ の場所は、リソースグループ 内のリソースの場所とは関係ありません。リソース グループは、「許可された場所」ポリシーから除外されます。 リソース グループを作成できる場所を制限する場合は、「リソース グループに許可された場所」ポリシーを使用してください。参考として、許可された場所のポリシー定義の説明を以下に示します。このポリシーを使用すると、リソースを展開するときに組織が指定できる場所を制限できます。 地理的コンプライアンス要件を強制するために使用します。 リソース グループ、Microsoft.AzureActiveDirectory/b2cDirectories、および「グローバル」リージョンを使用するリソースは除外されます。",
-    "category": "",
-    "tags": [
-      "azure-policy",
-      "purview",
-      "sql-database",
-      "app-service"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 114,
-    "question": "サードパーティのスケジューラを使用するハイ パフォーマンス コンピューティング (HPC) クラスターを Azure にプロビジョニングする予定です。 HPC クラスター ノードをプロビジョニングおよび管理するためのソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
-    "choices": [
-      "Azure Purview",
-      "Azure Automation",
-      "Azure Lighthouse",
-      "Azure CycleCloud"
-    ],
-    "answer": 3,
-    "explanation": "Azure CycleCloud を使用して Azure HPC クラスターを動的にプロビジョニングできます。Azure CycleCloud は、Azure 上のハイ パフォーマンス コンピューティング (HPC) 環境を調整および管理するためのエンタープライズ向けツールです。 CycleCloud を使用すると、ユーザーは HPC システムのインフラストラクチャをプロビジョニングし、使い慣れた HPC スケジューラをデプロイし、インフラストラクチャを自動的にスケーリングして、任意の規模でジョブを効率的に実行できます。 CycleCloud を使用して、ユーザーはさまざまな種類のファイル システムを作成し、コンピューティング クラスター ノードにマウントして HPC ワークロードをサポートできます。https://learn.microsoft.com/ja-jp/azure/cyclecloud/overview?view=cyclecloud-8",
-    "category": "",
-    "tags": [
-      "lighthouse",
-      "purview",
-      "batch",
-      "automation-deploy"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 115,
-    "question": "あなたの会社は、ニューヨーク市、シドニー、パリ、ヨハネスブルグにオフィスを構えています。 会社は Azure サブスクリプションを持っています。 次の要件を満たす新しい Azure ネットワーク ソリューションをデプロイする予定です。 デプロイする必要がある Azure 仮想 WAN ハブの最小数と、使用する仮想 WAN SKU を特定する必要があります。 次のうちどれを選択しますか。 仮想 WAN ハブの数:・ 米国東部、東南アジア、北ヨーロッパ、南アフリカの Azure リージョンの ExpressRoute 回線に接続する。・ 3 つのリージョンでの接続をサポートすることで遅延を最小限に抑える。・ サイト間 VPN 接続をサポートする。・ コストを最小限に抑える。",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ],
-    "answer": 3,
-    "explanation": "「3 つのリージョンでの接続をサポートすることで遅延を最小限に抑える」という要件は、3 つのリージョン間で接続を最適化する必要があることを示唆しています。ただし、ソリューションは、米国東部、東南アジア、北ヨーロッパ、南アフリカの 4 つの特定の Azure リージョンの ExpressRoute 回線にも接続する必要があります。これらすべての要件を満たすには、これら 4 つのリージョンのそれぞれにハブをデプロイする必要があります。これにより、各リージョンにローカル接続ポイントが確保され、待ち時間が短縮されます。接続は 3 つのリージョンにわたって最適化されていますが、4 つのリージョンにローカル接続ポイントを提供するには 4 つのハブが必要です。1 つの要件に基づくと 3 つのハブで十分であるように考えられますが、すべての要件を考慮すると 4 つのハブが必要です。",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 116,
-    "question": "あなたの会社は、ニューヨーク市、シドニー、パリ、ヨハネスブルグにオフィスを構えています。 会社は Azure サブスクリプションを持っています。 次の要件を満たす新しい Azure ネットワーク ソリューションをデプロイする予定です。 デプロイする必要がある Azure 仮想 WAN ハブの最小数と、使用する仮想 WAN SKU を特定する必要があります。 次のうちどれを選択しますか。 仮想 WAN SKU:・ 米国東部、東南アジア、北ヨーロッパ、南アフリカの Azure リージョンの ExpressRoute 回線に接続する。・ 3 つのリージョンでの接続をサポートすることで遅延を最小限に抑える。・ サイト間 VPN 接続をサポートする。・ コストを最小限に抑える。",
-    "choices": [
-      "Standard",
-      "Basic"
-    ],
-    "answer": 0,
-    "explanation": "Basic: サイト間 VPN のみサポートします。Standard: 以下をサポートします。ExpressRouteユーザー VPN (P2S)VPN (サイト対サイト)仮想ハブを経由したハブ間および VNet 対 VNet トランジットAzure Firewall仮想 WAN の NVAhttps://learn.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about#basicstandard",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "vnet",
-      "on-premises-connectivity",
-      "network-security"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 117,
-    "question": "あなたは、Azure サブスクリプションを持っています。 Linux ノードを使用する Azure Kubernetes Service (AKS) ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 どのスケーリング オプションをお勧めしますか。・ スケールアウト操作中にコンピューティング リソースをプロビジョニングするのにかかる時間を最小限に抑える。・ Linux コンテナの自動スケーリングをサポートする。・ 管理労力を最小限に抑える。",
-    "choices": [
-      "クラスターオートスケーラー",
-      "Virtual Kubelet",
-      "水平 Pod オートスケーラー",
-      "仮想ノード"
-    ],
-    "answer": 3,
-    "explanation": "AKS クラスターでアプリケーション ワークロードをすばやくスケーリングするには、仮想ノードを使用します。 仮想ノードを使用すると、ポッドを短時間でプロビジョニングできるため、ポッドの実行時間に対して秒単位の支払いだけで済みます。 Kubernetes クラスターのオートスケーラーが VM コンピューティング ノードをデプロイしてより多くのポッドを実行するのを待つ必要はありません。 仮想ノードは、Linux のポッドとノードでのみサポートされます。https://learn.microsoft.com/ja-jp/azure/aks/virtual-nodes",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "vmss",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 118,
-    "question": "あなたは、Microsoft Entra ID ユーザーがオンライン アンケートを作成して公開できるようにする、サービスとしてのソフトウェア (SaaS) アプリケーションを設計しています。 SaaS アプリケーションにはフロントエンド Web アプリとバックエンド Web API があります。 Web アプリは、Web API を利用して顧客調査の更新を処理します。 SaaS アプリケーションの認証フローを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 アクセス トークンは次によって生成される。・ バックエンド Web API にアクセスするには、Web アプリは OAuth 2.0ベアラートークンを使用して認証する必要がある。・ Web アプリは、個々のユーザーの ID を使用して認証する必要がある。",
-    "choices": [
-      "ウェブアプリ",
-      "Web API",
-      "Microsoft Entra ID"
-    ],
-    "answer": 2,
-    "explanation": "Auth 2.0 は、認可用の業界プロトコルです。 ユーザーは保護されたリソースへの制限付きアクセスを許可できます。 OAuth は、特にハイパーテキスト転送プロトコル (HTTP) を使用するように設計されているため、クライアントの役割がリソース所有者から分離されます。 クライアントでは、リソース所有者によって制御され、リソース サーバーでホストされるリソースへのアクセスが要求されます。 リソース サーバーでは、リソース所有者の承認を使用してアクセス トークンが発行されます。 クライアントはアクセス トークンを使用して、リソース サーバーでホストされる保護されたリソースにアクセスします。OAuth 2.0 は、OpenID Connect (OIDC) に直接関連しています。 OIDC は OAuth 2.0 上に構築された認証と認可の層であるため、OAuth 1.0 との下位互換性がありません。 Microsoft Entra ID では、すべての OAuth 2.0 フローがサポートされています。https://learn.microsoft.com/ja-jp/entra/architecture/auth-oauth2",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "alerts",
-      "app-service"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 119,
-    "question": "あなたは、Microsoft Entra ID ユーザーがオンライン アンケートを作成して公開できるようにする、サービスとしてのソフトウェア (SaaS) アプリケーションを設計しています。 SaaS アプリケーションにはフロントエンド Web アプリとバックエンド Web API があります。 Web アプリは、Web API を利用して顧客調査の更新を処理します。 SaaS アプリケーションの認証フローを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 認可の決定は以下によって実行される。・ バックエンド Web API にアクセスするには、Web アプリは OAuth 2.0ベアラートークンを使用して認証する必要がある。・ Web アプリは、個々のユーザーの ID を使用して認証する必要がある。",
-    "choices": [
-      "ウェブアプリ",
-      "Web API",
-      "Microsoft Entra ID"
-    ],
-    "answer": 1,
-    "explanation": "委任されたアクセスが使用されます。Web API に送信されるベアラー トークンには、ユーザー ID が含まれています。Web API は、ユーザー ID に基づいて認可を決定します。https://learn.microsoft.com/ja-jp/azure/architecture/guide/multitenant/considerations/identity",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "alerts",
-      "app-service"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 120,
-    "question": "次の要件を満たす高可用性 Azure SQL データベースを設計する必要があります。 どのデプロイ オプションを使用する必要がありますか。・ データベースのレプリカ間のフェイルオーバーは、データを失わずに実行する必要がある。・ ゾーンが停止した場合でも、データベースは利用可能な状態を維持する必要がある。・ コストは最小限に抑える必要がある。",
-    "choices": [
-      "Azure SQL Database Business Critical",
-      "Azure SQL Database Basic",
-      "Azure SQL Managed Instance General Purpose",
-      "Azure SQL Database Standard"
-    ],
-    "answer": 0,
-    "explanation": "Azure SQL Database Business Critical レベルは、フェールオーバー中にデータ損失がゼロで高可用性を提供するように設計されており、シナリオの主な要件の 1 つを満たします。さらに、Azure SQL Database Business Critical レベルではゾーン冗長構成が提供されます。これは、データのレプリカが異なる可用性ゾーンに保存されることを意味します。これは、ゾーンが停止した場合でもデータベースが利用可能な状態を維持し、シナリオの別の要件を満たしていることを意味します。Azure SQL Managed Instance General Purpose は、単一リージョン内で自動バックアップと高可用性を提供しますが、必要なゾーン冗長性はサポートしていません。Business Critical レベルは高価に見えるかもしれませんが、要件はコストを最小限に抑えることであり、最も安価なオプションを選択することではないことに注意してください。高可用性とデータ損失ゼロの要件を考慮すると、Business Critical 層が最もコスト効率の高い選択肢となります。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/sql-database-paas-overview?view=azuresql#service-tiers",
-    "category": "",
-    "tags": [
-      "azure-storage",
-      "sql-database",
-      "bcdr-fundamentals",
-      "availability-zones",
-      "azure-backup",
-      "site-recovery",
-      "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 121,
-    "question": "あなたは、Contoso, Ltd. という名前の Microsoft ボリューム ライセンスのお客様の、データベース環境を管理しています。Contoso はソフトウェア アシュアランスによるライセンス モビリティを使用しています。 50 個のデータベースをデプロイする必要があります。 ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 購入ケースモデル:・ 自動スケーリングをサポートする。・ Microsoft SQL Server のライセンス コストを最小限に抑える。",
-    "choices": [
-      "仮想コア",
-      "DTU",
-      "Azure 予約仮想マシン インスタンス"
-    ],
-    "answer": 0,
-    "explanation": "Azure ハイブリッド ライセンス モデルを適用できるのは、Azure SQL Database に対して、仮想コア ベースの購入モデルとプロビジョニングされたコンピューティング レベルを選択した場合に限られます。 Azure ハイブリッド特典は、DTU ベースの購入モデル下のサービス レベル、またはサーバーレス コンピューティング レベルでは利用できません。https://docs.microsoft.com/ja-jp/azure/azure-sql/azure-hybrid-benefit",
-    "category": "",
-    "tags": [
-      "entra-license",
-      "sql-database",
-      "vmss",
-      "virtual-machines",
-      "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 122,
-    "question": "あなたは、Contoso, Ltd. という名前の Microsoft ボリューム ライセンスのお客様の、データベース環境を管理しています。Contoso はソフトウェア アシュアランスによるライセンス モビリティを使用しています。 50 個のデータベースをデプロイする必要があります。 ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 デプロイメント オプション:・ 自動スケーリングをサポートする。・ Microsoft SQL Server のライセンス コストを最小限に抑える。",
-    "choices": [
-      "Azure SQL Managed Instance",
-      "SQL Server Always On 可用性グループ",
-      "Azure SQL Database エラスティック プール"
-    ],
-    "answer": 2,
-    "explanation": "Azure SQL Database のエラスティック プールは、使用ニーズが多様で予測不可能な複数のデータベースを管理およびスケーリングするための、シンプルでコスト効率に優れたソリューションです。 エラスティック プール内のデータベースは、単一のサーバー上にあり、設定された数のリソースを設定価格で共有します。 SQL Database のエラスティック プールを使用すると、サービスとしてのソフトウェア (SaaS) の開発者は、各データベースのパフォーマンスに弾力性を持たせながら、データベース グループの価格に対するパフォーマンスを所定の予算内で最適化できます。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/elastic-pool-overview?view=azuresql",
-    "category": "",
-    "tags": [
-      "entra-license",
-      "cost-management",
-      "sql-database",
-      "vmss",
-      "sql-ha"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 123,
-    "question": "Contoso, Ltd. という名前の会社は、※1のリソースを含む Azure サブスクリプションを持っています。 Contoso の製品データが contososql1 から contosolake1 にコピーされました。 Contoso には、Fabrikam Inc. というパートナー会社があります。Fabrikam には、※2のリソースを含む Azure サブスクリプションがあります。 Contoso は、FabrikamVM1 の研究データを contosolake1 にアップロードする予定です。アップロード中に、研究データを Contoso が使用するデータ形式に変換する必要があります。 contosolake1 のデータは contosoworkspace1 を使用して分析されます。 このとき、※3の要件を満たすソリューションを推奨する必要があります。 それぞれの要件に対して何を推奨する必要がありますか。 データをアップロードして変換する:※1・ contosoworkspace1 という名前の Azure Synapse Analytics ワークスペース・ contosolake1 という名前の Azure Data Lake Storage アカウント・ contososql1 という名前の Azure SQL データベース※2・ Microsoft SQL Server 2019 を実行する FabrikamVM1 という名前の仮想マシン・ fabrikamsa1 という名前の Azure ストレージ アカウント※3・ FabrikamVM1 研究データをアップロードして変換する。・ contosoworkspace1 内のデータのスナップショットへの制限付きアクセスを Fabrikam に提供する。",
-    "choices": [
-      "Azure Data Box Gateway",
-      "Azure Data Share",
-      "Azure Synapse パイプライン"
-    ],
-    "answer": 2,
-    "explanation": "ETL 操作を実現するには Azure Data Factory を使用する必要があります。Azure Synapse Analytics の Synapse パイプラインやデータ フローなどのデータ統合機能は、Azure Data Factory の機能に基づいています。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/data-integration/concepts-data-factory-differences",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "log-analytics",
-      "azure-storage",
-      "sql-database",
-      "data-analytics",
-      "virtual-machines",
-      "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 124,
-    "question": "Contoso, Ltd. という名前の会社は、※1のリソースを含む Azure サブスクリプションを持っています。 Contoso の製品データが contososql1 から contosolake1 にコピーされました。 Contoso には、Fabrikam Inc. というパートナー会社があります。Fabrikam には、※2のリソースを含む Azure サブスクリプションがあります。 Contoso は、FabrikamVM1 の研究データを contosolake1 にアップロードする予定です。アップロード中に、研究データを Contoso が使用するデータ形式に変換する必要があります。 contosolake1 のデータは contosoworkspace1 を使用して分析されます。 このとき、※3の要件を満たすソリューションを推奨する必要があります。 それぞれの要件に対して何を推奨する必要がありますか。 制限付きアクセスを提供する:※1・ contosoworkspace1 という名前の Azure Synapse Analytics ワークスペース・ contosolake1 という名前の Azure Data Lake Storage アカウント・ contososql1 という名前の Azure SQL データベース※2・ Microsoft SQL Server 2019 を実行する FabrikamVM1 という名前の仮想マシン・ fabrikamsa1 という名前の Azure ストレージ アカウント※3・ FabrikamVM1 研究データをアップロードして変換する。・ contosoworkspace1 内のデータのスナップショットへの制限付きアクセスを Fabrikam に提供する。",
-    "choices": [
-      "Azure Data Box Gateway",
-      "Azure Synapse パイプライン",
-      "Azure Data Share"
-    ],
-    "answer": 2,
-    "explanation": "Azure Data Share を使用すると、組織は複数のお客様やパートナーとデータを安全に共有できます。 データ プロバイダーでは共有したデータが常に管理下に置かれるため、Azure Data Share を使用すると、どのデータが、いつ、誰によって共有されたかを簡単に管理し、監視することができます。この場合、スナップショットベースの共有を使用する必要があります。https://learn.microsoft.com/ja-jp/azure/data-share/overview",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "azure-monitor",
-      "log-analytics",
-      "azure-storage",
-      "sql-database",
-      "data-analytics",
-      "virtual-machines",
-      "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 125,
-    "question": "ミッションクリティカルなアプリケーションの記録用のストレージ ソリューションを推奨する必要があります。ソリューションでは、書き込み操作の待ち時間とスループットに関するサービス レベル アグリーメント (SLA) を提供する必要があります。 推奨事項には何を含めるべきですか。",
-    "choices": [
-      "Azure Data Lake Storage Gen2",
-      "Azure Cosmos DB",
-      "Azure SQL",
-      "Azure Blob Storage"
-    ],
-    "answer": 1,
-    "explanation": "Azure Cosmos DB は、グローバルに分散されたマルチモデル データベース サービスです。スループット、遅延、可用性、一貫性をカバーする包括的なサービス レベル アグリーメント (SLA) を提供します。他の選択肢では、レイテンシーとスループットの両方に対する SLA は提供されません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction",
-    "category": "",
-    "tags": [
-      "blob-storage",
-      "cosmosdb",
-      "data-analytics"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 126,
-    "question": "あなたの会社には、次の表に示す部門があります。 Sub1 には、App1 という名前の Azure App Service Web アプリが含まれています。 App1 は、シングルテナントのユーザー認証に Microsoft Entra ID を使用します。 contoso.com のユーザーは App1 に対して認証できます。 fabrikam.com テナント内のユーザーが App1 に対して認証できるようにするソリューションを推奨する必要があります。 何を勧めるべきですか。部門 | Azure サブスクリプション | Microsoft Entra テナント-------------------------------------------------- -------------East | Sub1 | Contoso.comWest | Sub2 | Fabrikam.com",
-    "choices": [
-      "Microsoft Entra ID Protection を構成する。",
-      "条件付きアクセス ポリシーを構成する。",
-      "Microsoft Entra ID エンタイトルメント管理を使用して外部ユーザーを管理する。",
-      "Microsoft Entra ID プロビジョニング サービスを構成する。"
-    ],
-    "answer": 2,
-    "explanation": "エンタイトルメント管理接続先の組織を選択して、その組織のユーザーがアクセス権を要求できるようにすることができます。 ディレクトリにまだ存在しないユーザーがアクセス権を要求し、それが承認されると、そのユーザーは自動的にディレクトリに招待され、アクセス権を割り当てられます。 アクセス権の有効期限が切れ、かつ他のアクセス パッケージが割り当てられていない場合には、ディレクトリ内の B2B アカウントを自動的に削除できます。https://learn.microsoft.com/ja-jp/entra/id-governance/entitlement-management-overview",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "external-users",
-      "entra-governance",
-      "conditional-access",
-      "subscription-design",
-      "app-service"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 127,
-    "question": "オンプレミス ネットワークと Azure サブスクリプションがあります。オンプレミス ネットワークには複数のブランチ オフィスがあります。 トロント支社のオフィスには、ファイル サーバーとして構成された VM1 という名前の仮想マシンがあります。ユーザーはすべてのオフィスから VM1 上の共有ファイルにアクセスします。 トロント支社にアクセスできない場合に、ユーザーが共有ファイルにできるだけ早くアクセスできるようにするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
-    "choices": [
-      "Azure File 共有 と Azure File Sync",
-      "Recovery Services コンテナーと Windows Server バックアップ",
-      "Recovery Services コンテナーと Azure Backup",
-      "Azure BLOB コンテナーと Azure File Sync"
-    ],
-    "answer": 0,
-    "explanation": "オンプレミス ネットワークと Azure サブスクリプションがあります。オンプレミス ネットワークには複数のブランチ オフィスがあります。 トロント支社のオフィスには、ファイル サーバーとして構成された VM1 という名前の仮想マシンがあります。ユーザーはすべてのオフィスから VM1 上の共有ファイルにアクセスします。 トロント支社にアクセスできない場合に、ユーザーが共有ファイルにできるだけ早くアクセスできるようにするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "file-sync",
-      "virtual-machines",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 128,
-    "question": "ある企業は、Web アプリをサポートするために HTTP ベースの API を実装することを計画しています。 Web アプリを使用すると、顧客は注文のステータスを確認できます。 API は次の要件を満たす必要があります。 どの HTTP メソッドと認証レベルを構成するかを推奨する必要があります。 何を勧めるべきですか。 HTTP メソッド:・ Azure Functions を実装する。・ パブリック (読み取り専用)を提供する。・ 書き込み操作を禁止する。",
-    "choices": [
-      "GET と POST のみ",
-      "GET、POST、OPTIONSのみ",
-      "APIメソッド",
-      "GETのみ"
-    ],
-    "answer": 3,
-    "explanation": "GET API はパブリック読み取り専用操作を提供するだけであるため、データを取得するには GET メソッドで十分です。",
-    "category": "",
-    "tags": [
-      "app-service",
-      "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 129,
-    "question": "ある企業は、Web アプリをサポートするために HTTP ベースの API を実装することを計画しています。 Web アプリを使用すると、顧客は注文のステータスを確認できます。 API は次の要件を満たす必要があります。 どの HTTP メソッドと認証レベルを構成するかを推奨する必要があります。 何を勧めるべきですか。 認証レベル:・ Azure Functions を実装する。・ パブリック (読み取り専用)を提供する。・ 書き込み操作を禁止する。",
-    "choices": [
-      "匿名",
-      "管理者",
-      "関数"
-    ],
-    "answer": 0,
-    "explanation": "認証レベル: 匿名API は読み取り専用操作のためにパブリックにアクセスできる必要があるため、認証や承認を必要とせずに無制限のアクセスを許可するには、匿名承認レベルを使用する必要があります。",
-    "category": "",
-    "tags": [
-      "app-service",
-      "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 130,
-    "question": "Application1 と Application2 という 2 つのアプリケーションに対して Azure ストレージ アカウント構成を推奨する必要があります。構成は次の要件を満たす必要があります。 このとき、何を勧めるべきですか。 Application1:・ Application1 のストレージは、可能な限り高いトランザクション レートと可能な限り低い遅延を提供する必要がある。・ Application2 のストレージは、GB あたりのストレージ コストを可能な限り低くする必要がある。・ データセンターに障害が発生した場合でも、両方のアプリケーションのストレージが利用可能でなければならない。・ 両方のアプリケーションのストレージは、アップロードとダウンロード用に最適化する必要がある。",
-    "choices": [
-      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ",
-      "Standard パフォーマンス、ホット アクセス層、ローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v2",
-      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス地理冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
-      "Premium パフォーマンスとローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v1"
-    ],
-    "answer": 0,
-    "explanation": "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージApplication1 は、高いトランザクション レートと可能な限り低い遅延を必要とします。 Standard ではなく、Premium を使用する必要があります。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage",
-      "bcdr-fundamentals"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 131,
-    "question": "Application1 と Application2 という 2 つのアプリケーションに対して Azure ストレージ アカウント構成を推奨する必要があります。構成は次の要件を満たす必要があります。 このとき、何を勧めるべきですか。 Application1:・ Application1 のストレージは、可能な限り高いトランザクション レートと可能な限り低い遅延を提供する必要がある。・ Application2 のストレージは、GB あたりのストレージ コストを可能な限り低くする必要がある。・ データセンターに障害が発生した場合でも、両方のアプリケーションのストレージが利用可能でなければならない。・ 両方のアプリケーションのストレージは、アップロードとダウンロード用に最適化する必要がある。",
-    "choices": [
-      "Premium パフォーマンスとローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v1",
-      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス地理冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
-      "Standard パフォーマンス、ホット アクセス層、ローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v2",
-      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ"
-    ],
-    "answer": 3,
-    "explanation": "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージApplication1 は、高いトランザクション レートと可能な限り低い遅延を必要とします。 Standard ではなく、Premium を使用する必要があります。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage",
-      "bcdr-fundamentals"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 132,
-    "question": "Application1 と Application2 という 2 つのアプリケーションに対して Azure ストレージ アカウント構成を推奨する必要があります。構成は次の要件を満たす必要があります。 このとき、何を勧めるべきですか。 Application2:・ Application1 のストレージは、可能な限り高いトランザクション レートと可能な限り低い遅延を提供する必要がある。・ Application2 のストレージは、GB あたりのストレージ コストを可能な限り低くする必要がある。・ データセンターに障害が発生した場合でも、両方のアプリケーションのストレージが利用可能でなければならない。・ 両方のアプリケーションのストレージは、アップロードとダウンロード用に最適化する必要がある。",
-    "choices": [
-      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス geo 冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
-      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス geo 冗長ソストレージ (RA-GRS) レプリケーションを備えた BLOBストレージ",
-      "Standard パフォーマンス、クール アクセス層、読み取りアクセス geo 冗長ストレージ (RA-GRS) レプリケーションを備えた汎用 v2",
-      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ"
-    ],
-    "answer": 2,
-    "explanation": "Standard パフォーマンスの汎用 v2、..汎用 v2 ストレージ アカウントは、最新の Azure Storage の機能をサポートし、汎用 v1 と BLOB ストレージ アカウントのすべての機能が組み込まれています。 ほとんどのストレージ シナリオに汎用 v2 アカウントをお勧めします。 汎用 v2 アカウントは、業界内の他社に引けを取らないトランザクション料金で、Azure Storage に対してギガバイトあたり容量の最低価格を提供しています。 汎用 v2 アカウントでは、ホットまたはクールの既定のアカウント アクセス層と、ホット、クール、またはアーカイブ間の BLOB レベル階層がサポートされます。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage",
-      "bcdr-fundamentals"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 133,
-    "question": "ファイル共有をホストする Azure ストレージ アカウントを作成する予定です。共有には、トランザクション集中型のオンプレミス アプリケーションからアクセスします。 ファイル共有にアクセスする際の遅延を最小限に抑えるソリューションを推奨する必要があります。ソリューションは、選択したストレージ層に最高レベルの復元力を提供する必要があります。 推奨事項には何を含めるべきですか。 ストレージ層:",
-    "choices": [
-      "Premium",
-      "ホット",
-      "トランザクション 最適化"
-    ],
-    "answer": 0,
-    "explanation": "Premium:Premium ファイル共有は、ソリッド ステート ドライブ (SSD) によってサポートされており、IO 集中型ワークロードで一貫した優れたパフォーマンスと待機時間 (ほとんどの IO 操作で 1 桁のミリ秒以内の低待機時間) を提供します。 Premium ファイル共有は、データベース、Web サイトのホスティング、開発環境など、幅広い種類のワークロードに適しています。 Premium ファイル共有は、サーバー メッセージ ブロック (SMB) プロトコルとネットワーク ファイル システム (NFS) プロトコルの両方で使用できます。 トランザクション最適化:トランザクション最適化ファイル共有は、Premium ファイル共有が提供する待機時間を必要としない、トランザクション負荷の高いワークロードを可能にします。 トランザクション最適化ファイル共有は、ハード ディスク ドライブ (HDD) によってサポートされている標準ストレージ ハードウェアで提供されます。 トランザクション最適化は、従来は \"Standard\" と呼ばれていましたが、これはサービス レベル自体ではなく、ストレージ メディアの種類を指しています (ホットおよびクールも、標準ストレージ ハードウェア上にあるため、\"Standard\" サービス レベルです)。 Hot:ホット ファイル共有は、チーム共有などの汎用ファイル共有シナリオに最適化されたストレージを提供します。 ホット ファイル共有は、HDD によってサポートされている標準ストレージ ハードウェアで提供されます。 Cool:クール ファイル共有は、オンライン アーカイブ ストレージのシナリオ向けに最適化された、コスト効率に優れたストレージを提供します。 クール ファイル共有は、HDD によってサポートされている標準ストレージ ハードウェアで提供されます。https://docs.microsoft.com/ja-jp/azure/storage/files/storage-files-planning",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 134,
-    "question": "ファイル共有をホストする Azure ストレージ アカウントを作成する予定です。共有には、トランザクション集中型のオンプレミス アプリケーションからアクセスします。 ファイル共有にアクセスする際の遅延を最小限に抑えるソリューションを推奨する必要があります。ソリューションは、選択したストレージ層に最高レベルの復元力を提供する必要があります。 推奨事項には何を含めるべきですか。 冗長性:",
-    "choices": [
-      "ローカル冗長ストレージ (LRS)",
-      "Geo 冗長ストレージ (GRS)",
-      "ゾーン冗長ストレージ (ZRS)"
-    ],
-    "answer": 2,
-    "explanation": "ローカル冗長ストレージ (LRS) : LRS では、すべてのファイルが Azure ストレージ クラスター内に 3 回保存されます。 これにより、不良ディスク ドライブなどのハードウェア障害によるデータ損失を防ぐことができます。 ただし、データ センター内で火災や洪水などの災害が発生した場合は、LRS を使用しているストレージ アカウントのすべてのレプリカが失われたり、回復不能になったりする可能性があります。ゾーン冗長ストレージ (ZRS): ZRS では、各ファイルのコピーが 3 つ格納されます。 ただし、これらのコピーは物理的に異なる Azure 可用性ゾーン にある 3 つの異なるストレージ クラスターに分離されます。 可用性ゾーンは、Azure リージョン内の一意の物理的な場所です。 それぞれのゾーンは、独立した電源、冷却手段、ネットワークを備えた 1 つまたは複数のデータ センターで構成されています。 3 つの可用性ゾーンすべてのストレージ クラスターに書き込まれるまで、ストレージに書き込むことはできません。Geo 冗長ストレージ (GRS): GRS では、プライマリ リージョンとセカンダリ リージョンの 2 つのリージョンがあります。 ファイルは、プライマリ リージョンの Azure ストレージ クラスター内に 3 回保存されます。 書き込みは、Microsoft によって定義されたセカンダリ リージョンに非同期的にレプリケートされます。 GRS では、データの 6 つのコピーが 2 つの Azure リージョン間で分散して作成されます。 自然災害や他の同様の事象により Azure リージョンが完全に失われる場合など、重大な災害が発生した場合は、Microsoft によってフェールオーバーが実行されます。 この場合は、セカンダリがプライマリになり、すべての操作が行われます。 プライマリ リージョンとセカンダリ リージョンの間のレプリケーションは非同期であるため、重大な災害が発生した場合、セカンダリ リージョンにまだレプリケートされていないデータは失われます。 geo 冗長ストレージ アカウントのフェールオーバーは、手動で実行することもできます。https://docs.microsoft.com/ja-jp/azure/storage/files/storage-files-planning",
-    "category": "",
-    "tags": [
-      "entra-connect",
-      "azure-storage",
-      "bcdr-fundamentals",
-      "availability-zones",
-      "site-recovery",
-      "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 135,
-    "question": "10 個のオンプレミス SQL Server データベースを宛先として使用するように構成された 100 個の Microsoft SQL Server Integration Services (SSIS) パッケージがあります。 10 個のオンプレミス データベースを Azure SQL Database に移行することを計画しています。 Azure-SQL Server Integration Services (SSIS) パッケージを作成するためのソリューションを推奨する必要があります。ソリューションでは、パッケージが以下をターゲットにできることを保証する必要があります。 SQL Database インスタンスを宛先として使用します。 推奨事項には何を含めるべきですか。",
-    "choices": [
-      "SQL Server Migration Assistant (SSMA)",
-      "Data Migration Assistant (DMA)",
-      "Azure Data Catalog",
-      "Azure Data Factory"
-    ],
-    "answer": 3,
-    "explanation": "データベース ワークロードをオンプレミスの SQL Server から Azure データベース サービス (つまり Azure SQL Database または Azure SQL Database Managed Instance) に移行する場合、主要な付加価値サービスの 1 つとして SQL Server Integration Services (SSIS) の ETL ワークロードも同様に移行する必要があります。 Azure Data Factory (ADF) またはシナプス パイプラインの Azure-SSIS Integration Runtime (IR) では、SSIS パッケージの実行をサポートしています。 Azure-SSIS IR がプロビジョニングされると、SQL Server Data Tools (SSDT)/SQL Server Management Studio (SSMS) などの使い慣れたツールや dtinstall/dtutil/dtexec などのコマンドライン ユーティリティを使用して、Azure でパッケージをデプロイして実行できます。 https://learn.microsoft.com/ja-jp/azure/data-factory/scenario-ssis-migration-overview",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "data-analytics",
-      "data-migration",
-      "db-migration"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 136,
-    "question": "あなたは、複数の Azure クラウド サービスを含み、トランザクションのさまざまなコンポーネントを処理する販売アプリケーションを開発しています。さまざまなクラウド サービスが顧客の注文、請求、支払い、在庫、発送を処理します。 XML メッセージを使用してクラウド サービスがトランザクション情報を非同期に通信できるようにするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
-    "choices": [
-      "Azure Data Lake",
-      "Azure Service Fabric",
-      "Azure Traffic Manager",
-      "Azure Service Bus"
-    ],
-    "answer": 3,
-    "explanation": "Azure Service Bus は、メッセージ キューとパブリッシュとサブスクライブ トピックを (名前空間内に) 備えたフル マネージド エンタープライズ統合メッセージ ブローカーです。 Service Bus は、アプリケーションとサービスを相互に分離するために使用され、次のような利点があります。 競合する worker 間での作業の負荷分散 サービスやアプリケーションの境界を越えたデータと制御の安全なルーティングおよび転送 高い信頼性を必要とするトランザクション作業の調整 https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-messaging-overview",
-    "category": "",
-    "tags": [
-      "entra-connect",
-      "data-analytics",
-      "load-balancers",
-      "containers",
-      "messaging"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 137,
-    "question": "米国西部 Azure リージョンに KeyVault1 という名前の Azure Key Vault を使用する Azure Web アプリがあります。 あなたは、KeyVault1 の災害復旧計画を設計しています。 KeyVault1 にキーをバックアップする予定です。 バックアップをどこに復元できるかを特定する必要があります。 次のうちどれを選択する必要がありますか。",
-    "choices": [
-      "同じリージョンのみ",
-      "KeyVault1のみ",
-      "世界中全てのリージョン",
-      "同じ地域のみ"
-    ],
-    "answer": 3,
-    "explanation": "キー コンテナー オブジェクト (シークレット、キー、証明書など) をバックアップすると、そのオブジェクトは、バックアップ操作によって、暗号化された BLOB としてダウンロードされます。 Azure の外部でこの BLOB の暗号化を解除することはできません。 この BLOB から有効なデータを取得するには、同じ Azure サブスクリプションと Azure 地域内のキー コンテナーに BLOB を復元する必要があります。https://learn.microsoft.com/ja-jp/azure/key-vault/general/backup?tabs=azure-cli",
-    "category": "",
-    "tags": [
-      "subscription-design",
-      "key-vault",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "app-service",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 138,
-    "question": "複数の Azure リージョンにわたって複数のインスタンスを持つ Azure App Service Web アプリをデプロイすることを計画しています。 計画された展開に対して負荷分散サービスを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ 地域的な停電が発生した場合でも、アプリへのアクセスを維持する。・ Azure Web アプリケーション ファイアウォール (WAF) をサポートする。・ Cookie ベースのアフィニティをサポートする。・ URL ルーティングをサポートする。",
-    "choices": [
-      "Azure Front Door",
-      "Azure Load Balancer",
-      "Azure Traffic Manager",
-      "Azure Application Gateway"
-    ],
-    "answer": 0,
-    "explanation": "Azure Application Gateway はリージョン内のトラフィックを分散するリージョン サービスであるのに対し、Azure Front Door はリージョン間でトラフィックを分散するグローバル サービスです。Azure Application Gateway と Azure Front Door は両方ともほとんどの要件を満たしていますが、重要な要件はクロスリージョンのサポートです。https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-faq#what-is-the-difference-between-azure-front-door-and-azure-application-gateway",
-    "category": "",
-    "tags": [
-      "load-balancers",
-      "app-service",
-      "network-security"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 139,
-    "question": "DB1 という名前の Azure SQL データベースに接続する、Webapp1 という名前の Azure App Service Web アプリがあります。 Webapp1 と DB1 は米国東部の Azure リージョンにデプロイされます。 Webapp1 と DB1 間のすべてのトラフィックがプライベート接続経由で送信されるようにする必要があります。 あなたは何をするべきですか。 少なくとも[選択肢]のサブネットを含む仮想ネットワークを作成します。",
-    "choices": [
-      "1",
-      "2",
-      "3"
-    ],
-    "answer": 1,
-    "explanation": "少なくとも 2 つのサブネットを含む仮想ネットワークを作成する必要があります。 1 つは Azure App Service VNet 統合用で、もう 1 つは Azure Private Link 用です。仮想ネットワーク統合は、専用サブネットに依存します。 サブネットを作成すると、Azure サブネットは先頭から 5 つの IP を使います。 App Service プラン インスタンスごとに、統合サブネットから 1 つのアドレスが使用されます。 アプリを 4 つのインスタンスにスケールする場合は、4 つのアドレスが使用されます。https://learn.microsoft.com/ja-jp/azure/app-service/overview-vnet-integration#subnet-requirements",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "app-service",
-      "vnet",
-      "private-link"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 140,
-    "question": "DB1 という名前の Azure SQL データベースに接続する、Webapp1 という名前の Azure App Service Web アプリがあります。 Webapp1 と DB1 は米国東部の Azure リージョンにデプロイされます。 Webapp1 と DB1 間のすべてのトラフィックがプライベート接続経由で送信されるようにする必要があります。 あなたは何をするべきですか。 仮想ネットワークから、[選択肢]を使用する名前解決を構成します。",
-    "choices": [
-      "Azure DNS Private Resolver",
-      "プライベートDNSゾーン",
-      "パブリックDNSゾーン"
-    ],
-    "answer": 1,
-    "explanation": "プライベート DNS ゾーンを使用するように名前解決を構成します。これは、Web Apps が Azure DNS プライベート ゾーンと連携するために必要です。",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "app-service",
-      "vnet"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 141,
-    "question": "あなたは機密データ用の Azure Storage ソリューションを計画しています。データは毎日アクセスされます。データセットは 10 GB 未満です。 次の要件を満たすストレージ ソリューションを推奨する必要があります。 何を勧めるべきですか。 ストレージ アカウントの種類:・ ストレージに書き込まれたすべてのデータは 5 年間保持する必要がある。・ データが書き込まれた後は、データの読み取りのみが可能になる。変更と削除は防止する必要がある。・ 5 年が経過すると、データは削除できるが、変更することはできない。・ データアクセス料金は最小限に抑える必要がある。",
-    "choices": [
-      "BLOB のクール アクセス層を備えた汎用 v2",
-      "Premium ブロック BLOB",
-      "BLOB のホット アクセス層を備えた汎用 v2"
-    ],
-    "answer": 2,
-    "explanation": "ホット アクセス層は、クール アクセス層に比べてデータ アクセス コストが低いため、毎日データにアクセスする場合の料金を最小限に抑えるのに適しています。クール層はストレージ コストが低くなりますが、データ アクセス料金が高くなるため、お客様のシナリオには理想的ではありません。 Premium ブロック BLOB は高パフォーマンスのシナリオ向けであり、10 GB 未満の小さなデータセットには必要ありません。https://azure.microsoft.com/ja-jp/pricing/details/storage/blobs/",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "blob-storage"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 142,
-    "question": "あなたは機密データ用の Azure Storage ソリューションを計画しています。データは毎日アクセスされます。データセットは 10 GB 未満です。 次の要件を満たすストレージ ソリューションを推奨する必要があります。 何を勧めるべきですか。 変更と削除を防ぐための構成:・ ストレージに書き込まれたすべてのデータは 5 年間保持する必要がある。・ データが書き込まれた後は、データの読み取りのみが可能になる。変更と削除は防止する必要がある。・ 5 年が経過すると、データは削除できるが、変更することはできない。・ データアクセス料金は最小限に抑える必要がある。",
-    "choices": [
-      "ストレージ アカウントのリソース ロック",
-      "不変ポリシー",
-      "コンテナーのアクセス レベル"
-    ],
-    "answer": 1,
-    "explanation": "特定のアクセス許可 (この場合は読み取り専用) を持つ不変ポリシーを作成し、5 年の有効期限を設定できます。このポリシーは、データの読み取りを許可しながら、変更や削除を防ぎます。 5 年後にポリシーは期限切れになり、データは削除できますが、変更することはできません。ストレージ アカウントのリソース ロックとコンテナーのアクセス レベル設定では、コンテナー アクセス ポリシーと同じ粒度でデータを制御できません。https://learn.microsoft.com/ja-jp/azure/storage/blobs/immutable-storage-overview",
-    "category": "",
-    "tags": [
-      "resource-locks",
-      "azure-storage",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 143,
-    "question": "※1の表に示す Azure サブスクリプションがあります。 Contoso.onmicrosft.com には、User1 という名前のユーザーが含まれています。 ランサムウェア攻撃から保護するソリューションを展開する必要があります。ソリューションは※2の要件を満たす必要があります。 各サブスクリプションで何を作成する必要がありますか。 Sub1:※1名前 | ロケーション | Microsoft Entra テナント--------------------------------------------------Sub1 | 米国東部 | contoso.onmicrosoft.comSub2 | 米国東部 | contoso-recovery.onmicrosoft.com※2・ Sub1 のすべてのリソースが Azure Backup を使用してバックアップされていることを確認する。・ ユーザーがバックアップ構成に大きな変更を加える前に、まず User1 に Sub2 のロールを割り当てる必要がある。",
-    "choices": [
-      "Azure Site Recovery ジョブ",
-      "Microsoft Azure Backup Server (MABS)",
-      "Recovery Services コンテナー",
-      "Microsoft Azure Recovery Services (MARS) エージェント",
-      "Resource Guard"
-    ],
-    "answer": 2,
-    "explanation": "※1名前 | ロケーション | Microsoft Entra テナント--------------------------------------------------Sub1 | 米国東部 | contoso.onmicrosoft.comSub2 | 米国東部 | contoso-recovery.onmicrosoft.com※2・ Sub1 のすべてのリソースが Azure Backup を使用してバックアップされていることを確認する。・ ユーザーがバックアップ構成に大きな変更を加える前に、まず User1 に Sub2 のロールを割り当てる必要がある。",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "rbac",
-      "subscription-design",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 144,
-    "question": "※1の表に示す Azure サブスクリプションがあります。 Contoso.onmicrosft.com には、User1 という名前のユーザーが含まれています。 ランサムウェア攻撃から保護するソリューションを展開する必要があります。ソリューションは※2の要件を満たす必要があります。 各サブスクリプションで何を作成する必要がありますか。 Sub2:※1名前 | ロケーション | Microsoft Entra テナント--------------------------------------------------Sub1 | 米国東部 | contoso.onmicrosoft.comSub2 | 米国東部 | contoso-recovery.onmicrosoft.com※2・ Sub1 のすべてのリソースが Azure Backup を使用してバックアップされていることを確認する。・ ユーザーがバックアップ構成に大きな変更を加える前に、まず User1 に Sub2 のロールを割り当てる必要がある。",
-    "choices": [
-      "Azure Site Recovery ジョブ",
-      "Microsoft Azure Backup Server (MABS)",
-      "Recovery Services コンテナー",
-      "Microsoft Azure Recovery Services (MARS) エージェント",
-      "Resource Guard"
-    ],
-    "answer": 4,
-    "explanation": "この記事では、Azure Backup のマルチユーザー承認 (MUA) を構成して、Recovery Services コンテナーに対する重要な操作に保護レイヤーを追加する方法について説明します。 この記事では、最大限の保護を提供する別のテナントでの Resource Guard の作成について説明します。 Resource Guard を収容するテナントで Microsoft Entra Privileged Identity Management を使用して、重要な操作を実行するための要求を行う方法と、その要求を承認する方法についても説明します。 必要に応じて、他のメカニズムを使用して、設定に従って Resource Guard に対する JIT アクセス許可を管理できます。https://learn.microsoft.com/ja-jp/azure/backup/multi-user-authorization?tabs=azure-portal&pivots=vaults-recovery-services-vault",
-    "category": "",
-    "tags": [
-      "entra-id",
-      "rbac",
-      "pim",
-      "subscription-design",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 145,
-    "question": "オンプレミスのストレージ ソリューションがあります。 ソリューションを Azure に移行する必要があります。ソリューションは Hadoop 分散ファイル システム (HDFS) をサポートする必要があります。 何を使えばよいですか。",
-    "choices": [
-      "Azure Data Share",
-      "Azure Data Lake Storage Gen2",
-      "Azure Table Storage",
-      "Azure NetApp Files"
-    ],
-    "answer": 1,
-    "explanation": "オンプレミスのストレージ ソリューションがあります。 ソリューションを Azure に移行する必要があります。ソリューションは Hadoop 分散ファイル システム (HDFS) をサポートする必要があります。 何を使えばよいですか。",
-    "category": "",
-    "tags": [
-      "data-analytics",
-      "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 146,
-    "question": "あなたは、Web アプリケーションをサポートするマイクロサービス アーキテクチャを設計しています。 ソリューションは次の要件を満たす必要があります。 テクノロジーを推奨する必要があります。 何を勧めるべきですか。・ ソリューションをオンプレミスと Azure にデプロイする。・ 低遅延およびハイパースケールの操作をサポートする。・ 各マイクロサービスへの独立したアップグレードを許可する。・ マイクロサービスの自動修復を実行するためのポリシーを設定する。",
-    "choices": [
-      "Azure Service Fabric",
-      "Azure Container Instance",
-      "Azure Logic App",
-      "Azure Virtual Machine Scale Sets"
-    ],
-    "answer": 0,
-    "explanation": "Azure Service Fabric を使用すると、オンプレミスまたは他のクラウドに Service Fabric クラスターを作成できます。Azure Service Fabric は待機時間が短く、数千台のマシンまでスケールアップできます。https://azure.microsoft.com/ja-jp/products/service-fabric/",
-    "category": "",
-    "tags": [
-      "sql-database",
-      "vmss",
-      "virtual-machines",
-      "app-service",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 147,
-    "question": "あなたの会社は、社内のオンプレミス データ センターで販売、財務、およびレポート アプリケーションをホストする仮想マシンのビジネス継続性とディザスタ リカバリの次の目標を特定しています。 ビジネス継続性と災害復旧の目標を満たすサービスを推奨する必要があります。 ソリューションではコストを最小限に抑える必要があります。 それぞれのアプリケーションに何を推奨する必要がありますか。 販売アプリケーション:・ 販売アプリケーションは、2 番目のオンプレミス データ センターにフェイルオーバーできる必要があります。・ レポート アプリケーションは、毎日の粒度でポイントインタイム データを回復できなければなりません。 RTO は 8 時間です。・ 財務アプリケーションでは、データを 7 年間保持する必要があります。災害が発生した場合、アプリケーションは Azure から実行できる必要があります。目標復旧時間 (RTO) は 10 分です。",
-    "choices": [
-      "Azure Site Recovery のみ",
-      "Azure Backupのみ",
-      "Azure Site Recovery と Azure Backup"
-    ],
-    "answer": 0,
-    "explanation": "Azure Site Recovery 仮想マシンと物理サーバーのレプリケーション、フェイルオーバー、フルバックを調整します。 DR ソリューションの目標復旧時点は低いです。 DR コピーは数秒/数分遅れる可能性があります。 DR には運用上のリカバリ データのみが必要ですが、これには数時間から 1 日かかる場合があります。きめ細かいデータキャプチャが行われるため、DR データを長期保存に使用することはお勧めできません。 災害復旧ソリューションは、ソースとの同期がより高いため、目標復旧時間は短くなります。 マシンの状態をリモート監視し、カスタマイズ可能な復旧計画を作成します。https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-overview",
-    "category": "",
-    "tags": [
-      "entra-connect",
-      "azure-monitor",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 148,
-    "question": "あなたの会社は、社内のオンプレミス データ センターで販売、財務、およびレポート アプリケーションをホストする仮想マシンのビジネス継続性とディザスタ リカバリの次の目標を特定しています。 ビジネス継続性と災害復旧の目標を満たすサービスを推奨する必要があります。 ソリューションではコストを最小限に抑える必要があります。 それぞれのアプリケーションに何を推奨する必要がありますか。 レポートアプリケーション:・ 販売アプリケーションは、2 番目のオンプレミス データ センターにフェイルオーバーできる必要があります。・ レポート アプリケーションは、毎日の粒度でポイントインタイム データを回復できなければなりません。 RTO は 8 時間です。・ 財務アプリケーションでは、データを 7 年間保持する必要があります。災害が発生した場合、アプリケーションは Azure から実行できる必要があります。目標復旧時間 (RTO) は 10 分です。",
-    "choices": [
-      "Azure Site Recovery のみ",
-      "Azure Backupのみ",
-      "Azure Site Recovery と Azure Backup"
-    ],
-    "answer": 1,
-    "explanation": "Azure Backup は、オンプレミスとクラウドのデータをバックアップします。許容可能な目標復旧時点には大きなばらつきがあります。 VM のバックアップは通常 1 日ですが、データベースのバックアップは最短 15 分です。バックアップ データは通常 30 日以内に保持されます。コンプライアンスの観点から、データは何年にもわたって保存する必要がある場合があります。このような場合のアーカイブには、バックアップ データが最適です。目標復旧時点が大きいため、バックアップ ソリューションで処理する必要があるデータの量は通常より多くなり、目標復旧時間も長くなります。",
-    "category": "",
-    "tags": [
-      "purview",
-      "blob-storage",
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 149,
-    "question": "あなたの会社は、社内のオンプレミス データ センターで販売、財務、およびレポート アプリケーションをホストする仮想マシンのビジネス継続性とディザスタ リカバリの次の目標を特定しています。 ビジネス継続性と災害復旧の目標を満たすサービスを推奨する必要があります。 ソリューションではコストを最小限に抑える必要があります。 それぞれのアプリケーションに何を推奨する必要がありますか。 財務アプリケーション:・ 販売アプリケーションは、2 番目のオンプレミス データ センターにフェイルオーバーできる必要があります。・ レポート アプリケーションは、毎日の粒度でポイントインタイム データを回復できなければなりません。 RTO は 8 時間です。・ 財務アプリケーションでは、データを 7 年間保持する必要があります。災害が発生した場合、アプリケーションは Azure から実行できる必要があります。目標復旧時間 (RTO) は 10 分です。",
-    "choices": [
-      "Azure Site Recovery のみ",
-      "Azure Backupのみ",
-      "Azure Site Recovery と Azure Backup"
-    ],
-    "answer": 2,
-    "explanation": "Azure Site Recovery と Azure BackupAzure Backupにより、データの安全性と回復可能性が確保され、Site Recovery により、停止が発生した場合でもワークロードを利用できる状態が維持されます。",
-    "category": "",
-    "tags": [
-      "bcdr-fundamentals",
-      "azure-backup",
-      "site-recovery",
-      "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 150,
-    "question": "あなたは、Azure Cosmos DB を使用して複数の国からの売上を照合するアプリを設計しています。 アプリの API を推奨する必要があります。ソリューションは次の要件を満たす必要があります。 どの API をお勧めしますか。・ SQL クエリをサポートする。・ geo レプリケーションをサポートする。・ データをリレーショナルに保存し、アクセスする。",
-    "choices": [
-      "MongoDB",
-      "Apache Cassandra",
-      "PostgreSQL",
-      "NoSQL"
-    ],
-    "answer": 2,
-    "explanation": "Azure Cosmos DB の PostgreSQL 用 API は、SQL クエリ、geo レプリケーションを完全にサポートし、データをリレーショナルに保存してアクセスできるようにします。これは、自動かつ即時のスケーラビリティ、グローバル分散、Azure リージョン間でのデータの簡単なレプリケーションを提供するため、要件をすべて満たします。Apache Cassandra は、SQL クエリをネイティブにサポートしない NoSQL データベースです。 SQL に似た機能をいくつか提供していますが、完全なリレーショナル データベースではありません。MongoDB は NoSQL データベースであり、SQL に似たクエリ言語を提供しますが、リレーショナル データ モデルをサポートしません。NoSQL はデータを保存および取得できるデータベース設計の一種ですが、特定の API ではありません。また、すべての NoSQL データベースが SQL クエリとリレーショナル データ ストレージをサポートしているわけではありません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/choose-api",
-    "category": "",
-    "tags": [
-      "data-fundamentals",
-      "sql-database",
-      "cosmosdb",
-      "bcdr-fundamentals",
-      "sql-ha"
-    ],
-    "source": "it-concepts-japan.com"
-  },
-  {
-    "id": 151,
-    "question": "次の表に示すリソースがあります。 CDB1 は、継続的に更新される運用データを保存するコンテナをホストします。 あなたは、AS1 を使用して運用データを毎日分析するソリューションを設計しています。 運用データ ストアのパフォーマンスに影響を与えずにデータを分析するソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。名前 | タイプ------------------AS1 | Azure Synapse Analytics インスタンスCDB1 | NoSQL アカウント用の Azure Cosmos DB",
-    "choices": [
-      "Azure Synapse Link for Azure Cosmos DB",
-      "Azure Cosmos DB および Azure Synapse Analytics コネクタを備えた Azure Data Factory",
-      "Azure Cosmos DB 変更フィード",
-      "PolyBase データ読み込みを使用した Azure Synapse Analytics"
-    ],
-    "answer": 0,
-    "explanation": "Azure Synapse Link for Azure Cosmos DB は、Azure Cosmos DB と Azure Synapse Analytics の間に緊密な統合を作成し、Azure Cosmos DB の運用データに対してほぼリアルタイムの分析を実行できるようにします。これにより、トランザクション ワークロードのパフォーマンスに影響を与えることなくデータを直接分析できる「非 ETL(抽出、変換、読込」 環境が作成されます。Azure Cosmos DB および Azure Synapse Analytics コネクタを備えた Azure Data Factory には ETL 操作が必要となり、運用データ ストアのパフォーマンスに影響を与える可能性があります。PolyBase データ読み込みを備えた Azure Synapse Analytics は、Azure Blob Storage や Azure Data Lake Storage などの外部データ ソースからのデータの読み込みに適しています。Azure Cosmos DB 変更フィードは、運用データ ストアのパフォーマンスに影響を与えることなく、分析のニーズに直接対処するものではありません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/synapse-link",
-    "category": "",
-    "tags": [
-      "data-fundamentals",
-      "blob-storage",
-      "cosmosdb",
-      "data-analytics",
-      "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 21,
-    "question": "Azure BlueprintsとARMテンプレートの違いについて正しい記述はどれですか？",
+    "question": "Azure BlueprintsとARMテンプレートの相違点について、正しいのはどれですか？",
     "choices": [
       "A. ARMテンプレートはデプロイ後もリソースとの接続を維持する",
       "B. Azure Blueprintsはデプロイ後もリソースとの接続を維持する",
@@ -1408,17 +366,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure BlueprintsのみがAzure Policyをデプロイできる"
     ],
     "answer": 1,
-    "explanation": "Azure Blueprintsはデプロイ後もリソースとの接続（リレーションシップ）を維持します。これにより、ブループリントの更新がデプロイ済みリソースにも反映されます。一方、ARMテンプレートはデプロイ後にリソースとの接続を持たず、テンプレートを更新してもデプロイ済みリソースには影響しません。ARMテンプレートもAzure Policyのデプロイが可能なため、選択肢CとDは不正確です。",
+    "explanation": "Azure Blueprintsはデプロイ後もリソースとのリレーションシップ（接続）を保持し続けます。そのため、ブループリントを更新するとデプロイ済みのリソースにも反映されます。一方、ARMテンプレートはデプロイ完了後にリソースとの関連を持たず、テンプレートの変更が既存リソースに影響することはありません。なお、ARMテンプレートでもAzure Policyのデプロイは可能なため、選択肢CとDは正しくありません。",
     "category": "governance",
     "tags": [
       "azure-policy",
       "blueprints"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 22,
-    "question": "SQL Server（SQL1）上の50個のデータベースをAzureにオフラインで移行する必要があります。管理の労力を最小化するサービスはどれですか？",
+    "question": "SQL Server（SQL1）上にある50個のデータベースをオフラインでAzureへ移行する必要があります。管理負荷を最も軽減できるサービスはどれですか？",
     "choices": [
       "A. Data Migration Assistant (DMA)",
       "B. Azure Migrate",
@@ -1426,17 +383,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Database Migration Service (DMS)"
     ],
     "answer": 3,
-    "explanation": "Azure Database Migration Service（DMS）は、大規模なデータベース移行を管理するためのフルマネージドサービスです。50個のデータベースのオフライン移行を効率的に実行でき、管理の労力を最小化できます。DMAは移行前の評価ツールであり、大規模な移行の実行には適していません。Azure Migrateはサーバーやアプリケーション全体の移行評価・実行ツールですが、データベース固有の移行にはDMSの方が適切です。SSMAはOracle、MySQL等の非SQL ServerデータベースからSQL Serverへの移行ツールであり、SQL Server間の移行には使用しません。",
+    "explanation": "Azure Database Migration Service（DMS）は、大規模データベース移行を行うためのフルマネージドサービスです。50個のデータベースをオフライン移行する場合も効率的に処理でき、管理負荷を最小限に抑えられます。DMAは移行前のアセスメントツールで、大量移行の実行には向きません。Azure Migrateはサーバーやアプリ全般の移行評価・実行向けですが、データベース専用の移行にはDMSがより適しています。SSMAはOracle・MySQLなど非SQL ServerのDBからSQL Serverへ移行するためのツールであり、SQL Server間の移行には使いません。",
     "category": "migration",
     "tags": [
       "data-migration",
       "db-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 23,
-    "question": "3Dジオメトリの計算を実行する必要があります。大規模な並列コンピューティングを実現するために使用すべき2つの機能/サービスはどれですか？（2つ選択）",
+    "question": "3Dジオメトリの演算処理を実行したい場合、大規模並列コンピューティングを実現するために利用すべき2つの機能やサービスはどれですか？（2つ選択）",
     "choices": [
       "A. 並列タスクの有効化",
       "B. Azure Batch",
@@ -1448,53 +404,50 @@ var ALL_QUIZ_QUESTIONS = [
       0,
       1
     ],
-    "explanation": "Azure Batchは大規模な並列コンピューティングとHPCワークロードを実行するためのサービスです。並列タスクの有効化と組み合わせることで、3Dジオメトリの計算を複数のノードで並列処理できます。VMSSはスケーラブルなVM群を提供しますが、バッチジョブの管理機能はありません。並列ファイルシステムはストレージの観点ですが、計算の並列化には直接関係しません。単一のVMでは大規模な並列計算には不十分です。",
+    "explanation": "Azure Batchは大規模並列コンピューティングやHPCワークロードの実行に適したサービスです。並列タスクの有効化と組み合わせることで、3Dジオメトリの演算を複数ノードで並列に処理できます。VMSSはスケーラブルなVM群を構成できますが、バッチジョブの管理機能は備えていません。並列ファイルシステムはストレージ面の話であり、演算の並列化とは直接関係しません。単体のVMでは大規模な並列演算には不十分です。",
     "category": "compute",
     "tags": [
       "vmss",
       "virtual-machines",
       "batch"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 24,
-    "question": "Azure Batchで最初のジョブ（Linux、開発/テスト用）を実行する必要があります。コストを最小化する構成はどれですか？",
+    "question": "Azure Batchで初回ジョブ（Linux環境、開発/テスト用途）を実行する場合、コストを最も抑えられる構成はどれですか？",
     "choices": [
       "A. ユーザーサブスクリプションモード + 低優先度VM",
       "B. Batchサービスモード + 専用VM",
       "C. ユーザーサブスクリプションモード + 専用VM"
     ],
     "answer": 0,
-    "explanation": "開発/テスト用途でコストを最小化するには、低優先度VMを使用するのが最適です。低優先度VMはAzureの余剰キャパシティを利用するため、通常のVMと比較して最大80%のコスト削減が可能です。ユーザーサブスクリプションモードでは低優先度VMが利用可能です。専用VMは高い可用性を提供しますが、開発/テストではその必要性は低く、コストが高くなります。LinuxではAzure Hybrid Benefitは適用されないため、その観点でのコスト削減はありません。",
+    "explanation": "開発/テスト目的でコストを最小化するなら、低優先度VMの利用が最適です。低優先度VMはAzureの余剰キャパシティを活用するため、通常VMと比べて最大80%の費用削減が見込めます。ユーザーサブスクリプションモードでは低優先度VMが利用可能です。専用VMは高可用性を確保できますが、開発/テスト段階ではそこまでの必要性は低く、費用が膨らみます。LinuxではAzure Hybrid Benefitは適用されないため、その面でのコスト削減はありません。",
     "category": "compute",
     "tags": [
       "subscription-design",
       "batch"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 25,
-    "question": "Azure Batchで2番目のジョブ（本番環境、MPI対応の長時間実行タスク）を実行する必要があります。適切な構成はどれですか？",
+    "question": "Azure Batchで2つ目のジョブ（本番環境、MPI対応、長時間実行のタスク）を走らせる場合、適切な構成はどれですか？",
     "choices": [
       "A. ユーザーサブスクリプションモード + 低優先度VM",
       "B. Batchサービスモード + 専用VM",
       "C. ユーザーサブスクリプションモード + 専用VM"
     ],
     "answer": 2,
-    "explanation": "本番環境のMPI（Message Passing Interface）対応の長時間実行タスクには、専用VMが必要です。低優先度VMは突然の中断の可能性があり、長時間実行タスクや本番ワークロードには適していません。ユーザーサブスクリプションモードを使用することで、VNetへのデプロイやカスタムイメージの使用が可能になり、MPI通信に必要なネットワーク構成を柔軟に設定できます。",
+    "explanation": "本番環境でMPI（Message Passing Interface）を利用する長時間タスクには、専用VMが不可欠です。低優先度VMは予期しない中断が発生する可能性があり、長時間実行タスクや本番ワークロードには適しません。ユーザーサブスクリプションモードを選ぶことで、VNetへの展開やカスタムイメージの活用が可能となり、MPI通信に必要なネットワーク設定を柔軟に行えます。",
     "category": "compute",
     "tags": [
       "subscription-design",
       "batch",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 26,
-    "question": ".NETで開発されたWebサービスをホストする必要があります。要件は一時ファイルの書き込み、イベントログの記録、コストの最小化です。どのサービスを使用すべきですか？",
+    "question": ".NETで構築されたWebサービスをホスティングしたいと考えています。一時ファイルの書き込み、イベントログの記録が必要で、コストもなるべく低く抑えたい場合、どのサービスが適切ですか？",
     "choices": [
       "A. Azure Functions",
       "B. Virtual Machine Scale Sets (VMSS)",
@@ -1502,7 +455,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. App Service Web Apps"
     ],
     "answer": 3,
-    "explanation": "App Service Web Appsは.NET Webサービスのホスティングに最適で、一時ファイルの書き込み（一時ストレージ提供）やイベントログの記録に対応しています。コストもVMSSやASEと比較して低く抑えられます。Azure Functionsはイベント駆動のサーバーレスサービスで、Webサービスの常時ホスティングには最適ではありません。VMSSは高いスケーラビリティを提供しますが、管理コストが高くなります。ASEは専用環境を提供しますが、最もコストが高いオプションです。",
+    "explanation": "App Service Web Appsは.NET Webサービスのホスティングに最適であり、一時ファイルの書き込み（一時ストレージ提供）やイベントログ記録にも対応しています。VMSSやASEと比べてコストも低く抑えられます。Azure Functionsはイベント駆動型のサーバーレスサービスで、常時稼働のWebサービスホスティングには最善の選択ではありません。VMSSは高いスケーラビリティがありますが、管理・運用コストが増大します。ASEは専用の隔離環境を提供しますが、選択肢の中で最もコストがかかります。",
     "category": "compute",
     "tags": [
       "vmss",
@@ -1510,12 +463,11 @@ var ALL_QUIZ_QUESTIONS = [
       "app-service",
       "azure-functions",
       "event-driven"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 27,
-    "question": "Azure Functionsで5〜20分かかる処理を実行する必要があります。イベント駆動のスケーリングも必要です。どのホスティングプランを使用すべきですか？",
+    "question": "Azure Functionsにおいて5～20分を要する処理を実行する必要があり、イベント駆動のスケーリングも求められます。選ぶべきホスティングプランはどれですか？",
     "choices": [
       "A. 従量課金プラン",
       "B. 専用（App Service）プラン",
@@ -1523,18 +475,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. App Serviceプラン"
     ],
     "answer": 2,
-    "explanation": "Premiumプランは、実行時間の制限が事実上なく（デフォルト30分、最大60分に設定可能）、イベント駆動のスケーリングもサポートしています。従量課金プランは実行時間が最大10分（デフォルト5分）に制限されており、20分の処理には対応できません。専用（App Service）プランは実行時間の制限はありませんが、イベント駆動のスケーリングはサポートしておらず、手動またはスケジュールベースのスケーリングとなります。",
+    "explanation": "Premiumプランは実行時間の上限が実質的になく（デフォルト30分、最大60分まで拡張可能）、イベント駆動型のスケーリングにも対応しています。従量課金プランでは実行時間が最大10分（デフォルト5分）に制限されるため、20分の処理には対応できません。専用（App Service）プランは実行時間制限こそありませんが、イベント駆動型のスケーリングはサポートされず、手動またはスケジュールによるスケーリングに限定されます。",
     "category": "compute",
     "tags": [
       "app-service",
       "azure-functions",
       "event-driven"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 28,
-    "question": "Azure Blob Storageのデータを変換してAzure Data Lake Storageに格納する必要があります。マッピングデータフローを使用したい場合、どのサービスを使用すべきですか？",
+    "question": "Azure Blob Storage内のデータを変換し、Azure Data Lake Storageへ格納する必要があります。マッピングデータフローを活用したい場合に選ぶべきサービスはどれですか？",
     "choices": [
       "A. Azure Storage Sync",
       "B. Azure Data Factory",
@@ -1542,7 +493,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Data Box Gateway"
     ],
     "answer": 1,
-    "explanation": "Azure Data Factoryは、マッピングデータフロー機能を提供しており、コードを書かずにデータ変換をビジュアルに設計できます。Blob StorageからData Lake Storageへのデータの移動と変換を効率的に実行できます。Azure Storage Syncはオンプレミスとクラウド間のファイル同期サービスです。Azure Databricksはコードベースのデータ処理プラットフォームであり、マッピングデータフローは提供していません。Data Box Gatewayはオンプレミスからクラウドへのデータ転送デバイスです。",
+    "explanation": "Azure Data Factoryにはマッピングデータフロー機能が備わっており、コーディング不要でデータ変換をビジュアルに設計できます。Blob StorageからData Lake Storageへのデータ移動と変換を効率よく実行可能です。Azure Storage Syncはオンプレミスとクラウド間のファイル同期サービスです。Azure Databricksはコードベースのデータ処理基盤で、マッピングデータフローの機能は持っていません。Data Box Gatewayはオンプレミスからクラウドへのデータ転送用デバイスです。",
     "category": "data",
     "tags": [
       "entra-connect",
@@ -1550,12 +501,11 @@ var ALL_QUIZ_QUESTIONS = [
       "data-analytics",
       "file-sync",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 29,
-    "question": "データベース内の電話番号の下4桁のみを表示し、残りをマスクする必要があります。どの機能を使用すべきですか？",
+    "question": "データベースに格納された電話番号のうち末尾4桁のみを表示し、他の部分をマスク処理したい場合、どの機能を使うべきですか？",
     "choices": [
       "A. 列の暗号化",
       "B. 透過的データ暗号化（TDE）",
@@ -1563,16 +513,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Always Encrypted"
     ],
     "answer": 2,
-    "explanation": "動的データマスキングは、クエリ結果でデータの一部をマスクして表示する機能です。電話番号の下4桁のみ表示するようなカスタムマスキングルールを設定できます。データ自体は暗号化されず、表示時にのみマスクが適用されます。列の暗号化はデータを暗号化しますが、部分的な表示の制御はできません。TDEはデータベース全体の保存時暗号化であり、表示の制御とは無関係です。Always Encryptedはクライアント側の暗号化であり、部分的なデータ表示の制御には使用しません。",
+    "explanation": "動的データマスキングを使えば、クエリ結果でデータの一部をマスクして表示するルールを設定できます。電話番号の末尾4桁だけを見せるカスタムマスクの定義も可能です。データそのものは暗号化されず、表示の段階でのみマスクが適用されます。列の暗号化はデータを暗号化しますが、部分表示の制御はできません。TDEはデータベース全体の保存時暗号化で、表示制御とは無関係です。Always Encryptedはクライアント側暗号化のため、部分的なデータ表示の制御には使いません。",
     "category": "security",
     "tags": [
       "sql-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 30,
-    "question": "データベース内のSSN（社会保障番号）を、データベース管理者を含め誰にも閲覧できないようにする必要があります。どの機能を使用すべきですか？",
+    "question": "データベース内のSSN（社会保障番号）を、データベース管理者も含め一切閲覧できないように保護する必要があります。適切な機能はどれですか？",
     "choices": [
       "A. 列の暗号化",
       "B. 透過的データ暗号化（TDE）",
@@ -1580,16 +529,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Always Encrypted"
     ],
     "answer": 3,
-    "explanation": "Always Encryptedは、データをクライアント側で暗号化し、データベースエンジン側では暗号化されたままの状態で保持する機能です。暗号化キーはクライアントアプリケーション側に保管されるため、データベース管理者でもデータを復号して閲覧することができません。列の暗号化やTDEはサーバー側でデータを暗号化しますが、管理者はデータにアクセスできます。動的データマスキングは表示をマスクしますが、管理者はマスクを解除できるため、「管理者を含め閲覧不可」の要件を満たしません。",
+    "explanation": "Always Encryptedはクライアント側でデータを暗号化し、データベースエンジン上では暗号化されたまま保持する仕組みです。暗号化キーはクライアントアプリケーション側で管理されるため、データベース管理者であっても復号してデータを参照することはできません。列の暗号化やTDEはサーバー側での暗号化であり、管理者がデータにアクセスできてしまいます。動的データマスキングは表示時のマスク処理ですが、管理者はマスクを外せるため「管理者含め閲覧不可」の条件を満たしません。",
     "category": "security",
     "tags": [
       "sql-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 31,
-    "question": "Azure Logic Appsからオンプレミスに配置されたSQL Serverに接続する必要があります。VPN接続はありません。オンプレミス側に必要なコンポーネントはどれですか？",
+    "question": "Azure Logic Appsからオンプレミス上のSQL Serverへ接続する必要がありますが、VPN接続は存在しません。オンプレミス側で必要となるコンポーネントはどれですか？",
     "choices": [
       "A. Azure AD アプリケーション プロキシ コネクタ",
       "B. オンプレミス データ ゲートウェイ",
@@ -1597,7 +545,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Web Application Proxy"
     ],
     "answer": 1,
-    "explanation": "オンプレミスデータゲートウェイは、Logic AppsなどのAzureサービスからオンプレミスのデータソース（SQL Serverなど）に安全に接続するためのブリッジとして機能します。VPN接続なしでHTTPS経由でAzure Service Busリレーを通じて通信します。Azure ADアプリケーションプロキシコネクタはWebアプリケーションの公開に使用され、データベース接続には使用しません。HCMはApp Serviceのハイブリッド接続用であり、Logic Appsでは使用しません。Web Application ProxyはAD FS関連のサービスです。",
+    "explanation": "オンプレミスデータゲートウェイは、Logic AppsなどのAzureサービスとオンプレミスのデータソース（SQL Server等）との間で安全な通信を仲介するブリッジです。VPNなしでもHTTPSとAzure Service Busリレーを介して接続を確立できます。Azure ADアプリケーションプロキシコネクタはWebアプリの公開用であり、DB接続用途とは異なります。HCMはApp Serviceのハイブリッド接続専用で、Logic Appsでは使えません。Web Application ProxyはAD FS関連のサービスです。",
     "category": "data",
     "tags": [
       "entra-id",
@@ -1606,12 +554,11 @@ var ALL_QUIZ_QUESTIONS = [
       "app-service",
       "messaging",
       "api-management"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 32,
-    "question": "同じシナリオで、Azure側に必要なコンポーネントはどれですか？",
+    "question": "上記と同じシナリオにおいて、Azure側で必要となるコンポーネントはどれですか？",
     "choices": [
       "A. Application Gateway",
       "B. データ ゲートウェイ リソース",
@@ -1619,7 +566,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. エンタープライズ アプリケーション"
     ],
     "answer": 1,
-    "explanation": "Azure側にはデータゲートウェイリソースを作成する必要があります。これはオンプレミスにインストールされたデータゲートウェイとAzureサービス（Logic Apps）を関連付けるためのAzureリソースです。Application GatewayはL7ロードバランサーであり、オンプレミス接続には使用しません。Event Gridはイベントルーティングサービスです。エンタープライズアプリケーションはAzure ADでのアプリケーション登録に使用されます。",
+    "explanation": "Azure側ではデータゲートウェイリソースの作成が必要です。これはオンプレミスにインストール済みのデータゲートウェイとAzureサービス（Logic Apps）を紐づけるためのAzureリソースです。Application GatewayはL7ロードバランサーであり、オンプレミスへの接続には用いません。Event Gridはイベントルーティングのサービスです。エンタープライズアプリケーションはAzure ADにおけるアプリ登録に使われるものです。",
     "category": "data",
     "tags": [
       "entra-id",
@@ -1628,30 +575,28 @@ var ALL_QUIZ_QUESTIONS = [
       "event-driven",
       "api-management",
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 33,
-    "question": "北ヨーロッパリージョンを優先的に使用し、障害時にフェールオーバーするルーティングを構成する必要があります。どのサービスを使用すべきですか？",
+    "question": "北ヨーロッパリージョンを優先的に利用し、障害発生時にはフェールオーバーするルーティングを設計する必要があります。利用すべきサービスはどれですか？",
     "choices": [
       "A. Azure Load Balancer",
       "B. Application Gateway",
       "C. Azure Traffic Manager"
     ],
     "answer": 2,
-    "explanation": "Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数リージョン間でのトラフィックルーティングが可能です。Azure Load BalancerはL4ロードバランサーでリージョン内の分散のみに対応しています。Application GatewayもL7ロードバランサーですが、単一リージョン内のサービスであり、リージョン間のフェールオーバーには使用できません。",
+    "explanation": "Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスで、複数リージョンにまたがるトラフィックルーティングを実現します。Azure Load BalancerはL4ロードバランサーで、リージョン内分散のみに対応しています。Application GatewayもL7ロードバランサーですが、単一リージョンに限定されたサービスであり、リージョン間フェールオーバーには利用できません。",
     "category": "network",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 34,
-    "question": "北ヨーロッパを優先リージョンとして構成するために、Traffic Managerで使用すべきルーティング方法はどれですか？",
+    "question": "北ヨーロッパを優先リージョンとして設定するため、Traffic Managerで採用すべきルーティング方法はどれですか？",
     "choices": [
       "A. Cookieベースのアフィニティ",
       "B. 加重ルーティング",
@@ -1659,36 +604,34 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 優先順位ルーティング"
     ],
     "answer": 3,
-    "explanation": "優先順位ルーティングを使用すると、プライマリエンドポイント（北ヨーロッパ）に最高の優先順位を設定し、障害時にセカンダリエンドポイントに自動的にフェールオーバーできます。加重ルーティングはトラフィックを重み付けで分散しますが、特定のリージョンを優先する設定はできません。パフォーマンスルーティングはユーザーに最も近いエンドポイントにルーティングしますが、特定リージョンの優先は保証できません。Cookieベースのアフィニティはセッション維持のための機能であり、リージョン優先のルーティングとは無関係です。",
+    "explanation": "優先順位ルーティングでは、プライマリエンドポイント（北ヨーロッパ）に最も高い優先度を割り当て、障害時にはセカンダリエンドポイントへ自動フェールオーバーさせることができます。加重ルーティングは重み付けに基づくトラフィック分散で、特定リージョンの優先指定には不向きです。パフォーマンスルーティングはユーザーに最も近いエンドポイントへの誘導ですが、特定リージョン優先の保証はできません。Cookieベースのアフィニティはセッション維持のための機能であり、リージョン優先のルーティングとは関係がありません。",
     "category": "network",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 35,
-    "question": "Azure Front Doorは、レート制限、負荷分散、および地域障害からの保護を提供しますか？",
+    "question": "Azure Front Doorはレート制限、負荷分散、地域的な障害からの保護をすべて提供できますか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 0,
-    "explanation": "はい、Azure Front Doorはこれらすべての機能を提供します。WAF（Web Application Firewall）ポリシーによるレート制限、グローバルなL7負荷分散、複数リージョンのバックエンドへの自動フェールオーバーによる地域障害からの保護が可能です。Front Doorはグローバルサービスとして設計されており、これらの機能を統合的に提供しています。",
+    "explanation": "はい、Azure Front Doorはこれらすべてを提供します。WAF（Web Application Firewall）ポリシーによるレート制限、グローバルなL7負荷分散、そして複数リージョンのバックエンドへの自動フェールオーバーによる地域障害への保護が可能です。Front Doorはグローバルサービスとして設計されており、これらの機能を一元的に提供します。",
     "category": "network",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "load-balancers",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 36,
-    "question": "400GBのデータベースがあり、月に1日だけ使用されます。コストを最小化するAzure SQLのサービスティアとモデルはどれですか？",
+    "question": "容量400GBのデータベースがあり、月に1日だけ利用されます。コストを最小化できるAzure SQLのサービスティアと課金モデルはどれですか？",
     "choices": [
       "A. Business Critical vCoreモデル",
       "B. General Purpose vCoreモデル",
@@ -1696,24 +639,23 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Standard DTUモデル"
     ],
     "answer": 1,
-    "explanation": "General Purpose vCoreモデルでは、サーバーレスコンピューティングティアを使用できます。サーバーレスでは、使用していない時間は自動的に一時停止し、コンピューティング課金が発生しません（ストレージのみ課金）。月1日の使用であれば、大幅なコスト削減が可能です。Business CriticalはGPより高コストです。Basic DTUは最大2GBのデータベースサイズ制限があり、400GBには対応できません。Standard DTUも250GB制限があるため不適切です。",
+    "explanation": "General Purpose vCoreモデルではサーバーレスコンピューティングティアが利用可能です。サーバーレスでは未使用時に自動で一時停止し、コンピューティング料金が発生しません（ストレージのみ課金）。月に1日の利用なら大幅なコスト節約が可能です。Business CriticalはGeneral Purposeより高額です。Basic DTUはデータベース容量が最大2GBまでのため、400GBには対応不可です。Standard DTUも250GB上限があり不適合です。",
     "category": "data",
     "tags": [
       "sql-database",
       "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 37,
-    "question": "Azure Front Doorが提供する機能はどれですか？",
+    "question": "Azure Front Doorが備えている機能はどれですか？",
     "choices": [
       "A. IPフィルタリング",
       "B. Azure AD B2C JWT検証",
       "C. OWASP保護"
     ],
     "answer": 2,
-    "explanation": "Azure Front DoorはWAF（Web Application Firewall）を統合しており、OWASPコアルールセットに基づく保護を提供します。これにより、SQLインジェクション、クロスサイトスクリプティング（XSS）などの一般的なWeb攻撃から保護されます。IPフィルタリングはFront Door WAFでもカスタムルールとして設定可能ですが、この問題ではOWASP保護が最も適切な回答です。B2C JWT検証はAPI Managementの機能であり、Front Doorでは提供されていません。",
+    "explanation": "Azure Front DoorはWAF（Web Application Firewall）を統合しており、OWASPコアルールセットによる保護機能を提供します。SQLインジェクションやクロスサイトスクリプティング（XSS）といった代表的なWeb攻撃に対する防御が含まれます。IPフィルタリングもFront Door WAFのカスタムルールで設定可能ですが、この設問ではOWASP保護が最も適切な回答となります。B2C JWT検証はAPI Managementが持つ機能であり、Front Doorには備わっていません。",
     "category": "security",
     "tags": [
       "entra-id",
@@ -1721,19 +663,18 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "api-management",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 38,
-    "question": "Azure API Managementが提供する機能はどれですか？",
+    "question": "Azure API Managementが備えている機能はどれですか？",
     "choices": [
       "A. IPフィルタリング",
       "B. Azure AD B2C JWT検証",
       "C. OWASP保護"
     ],
     "answer": 1,
-    "explanation": "Azure API Managementは、ポリシーを使用してJWTトークン（Azure AD B2C発行を含む）の検証を行う機能を提供しています。validate-jwtポリシーにより、APIへのアクセス時にトークンの有効性、クレーム、発行者などを検証できます。IPフィルタリングもAPI Managementで可能ですが、この問題ではB2C JWT検証が最も特徴的な機能です。OWASP保護はWAF（Front DoorやApplication Gateway）の機能であり、API Managementの標準機能ではありません。",
+    "explanation": "Azure API Managementでは、ポリシーを通じてJWTトークン（Azure AD B2C発行のものを含む）の検証が行えます。validate-jwtポリシーにより、APIアクセス時にトークンの有効性・クレーム・発行者などを確認できます。IPフィルタリングもAPI Managementで実現可能ですが、この設問ではB2C JWT検証が最も特徴的な機能です。OWASP保護はWAF（Front DoorやApplication Gateway）が提供する機能であり、API Managementの標準機能には含まれません。",
     "category": "security",
     "tags": [
       "entra-id",
@@ -1741,12 +682,11 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "api-management",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 39,
-    "question": "AKSを2つのリージョンにデプロイしています。SSL終端を含むグローバルなルーティングソリューションを選択してください。",
+    "question": "AKSを2つのリージョンに展開しています。SSL終端を含むグローバルなルーティングソリューションとして最適なのはどれですか？",
     "choices": [
       "A. Azure Load Balancer",
       "B. Azure Front Door",
@@ -1754,19 +694,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Traffic Manager"
     ],
     "answer": 1,
-    "explanation": "Azure Front Doorは、複数リージョンへのグローバルL7ロードバランシングとSSL終端（TLSオフロード）を提供します。2つのリージョンのAKSクラスターへのトラフィック分散と障害時のフェールオーバーが可能です。Azure Load BalancerはL4でリージョン内のみです。イングレスコントローラーはクラスター内の機能であり、リージョン間のルーティングはできません。Traffic ManagerはDNSベースのルーティングですが、SSL終端機能は提供しません。",
+    "explanation": "Azure Front Doorは複数リージョンへのグローバルL7ロードバランシングに加え、SSL終端（TLSオフロード）機能を備えています。2リージョンのAKSクラスターに対するトラフィック分散や障害時の自動フェールオーバーが可能です。Azure Load BalancerはL4でリージョン内限定です。イングレスコントローラーはクラスター内の機能であり、リージョン間ルーティングは行えません。Traffic ManagerはDNSベースのルーティングですが、SSL終端機能は持っていません。",
     "category": "network",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "load-balancers",
       "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 40,
-    "question": "Azure Database for MySQLでペアリージョンへのフェールオーバーを実現する必要があります。どの機能を使用すべきですか？",
+    "question": "Azure Database for MySQLでペアリージョンへのフェールオーバーを実現したい場合、どの機能を利用すべきですか？",
     "choices": [
       "A. Premiumファイル共有",
       "B. 読み取りレプリカ",
@@ -1774,7 +713,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Geoバックアップ復元"
     ],
     "answer": 1,
-    "explanation": "Azure Database for MySQLの読み取りレプリカは、ペアリージョンに非同期レプリカを作成でき、障害時にレプリカをスタンドアロンサーバーに昇格させてフェールオーバーできます。Premiumファイル共有はAzure Filesの機能であり、MySQLには関係ありません。ネイティブレプリケーションはマネージドサービスではサポートされていない場合があります。Geoバックアップ復元も可能ですが、読み取りレプリカの方がRPO（Recovery Point Objective）が短く、フェールオーバー時間も短縮されます。",
+    "explanation": "Azure Database for MySQLの読み取りレプリカ機能を使えば、ペアリージョンに非同期レプリカを構成し、障害時にレプリカをスタンドアロンサーバーへ昇格させてフェールオーバーできます。Premiumファイル共有はAzure Filesの機能で、MySQLとは無関係です。ネイティブレプリケーションはマネージドサービスではサポートされない場合があります。Geoバックアップ復元でも復旧は可能ですが、読み取りレプリカの方がRPO（目標復旧時点）を短くでき、フェールオーバー所要時間も短縮されます。",
     "category": "business-continuity",
     "tags": [
       "entra-connect",
@@ -1782,12 +721,11 @@ var ALL_QUIZ_QUESTIONS = [
       "azure-backup",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 41,
-    "question": "OracleデータベースからAzure Databricksで処理し、Azure Synapse Analyticsに格納するデータパイプラインを構築する必要があります。使用すべき2つのサービスはどれですか？（2つ選択）",
+    "question": "OracleデータベースからデータをAzure Databricksで処理し、Azure Synapse Analyticsへ格納するパイプラインを構築したいと考えています。利用すべき2つのサービスはどれですか？（2つ選択）",
     "choices": [
       "A. Azure Data Lake Storage (ADLS)",
       "B. Azure Data Box Gateway",
@@ -1799,17 +737,16 @@ var ALL_QUIZ_QUESTIONS = [
       0,
       4
     ],
-    "explanation": "Azure Data Factoryは、Oracleからのデータ抽出とパイプラインのオーケストレーションを提供します。Azure Data Lake Storage（ADLS）は、Databricksとの統合に最適な中間ストレージとして機能し、大量のデータを効率的に格納・処理できます。OracleからADLSにData Factoryでデータを取り込み、DatabricksでADLS上のデータを処理し、結果をSynapseに格納するアーキテクチャとなります。Data Box GatewayとData Box Edgeはオンプレミスからのデータ転送デバイスであり、このパイプラインには不要です。Import/Exportは物理ディスクによるデータ転送サービスです。",
+    "explanation": "Azure Data FactoryはOracleからのデータ抽出とパイプライン全体のオーケストレーションを担います。Azure Data Lake Storage（ADLS）はDatabricksとの連携に最適な中間ストレージとして機能し、大量データの効率的な格納・処理を可能にします。Data FactoryでOracleからADLSへデータを取り込み、Databricksで加工し、結果をSynapseへ格納するという構成になります。Data Box GatewayやData Box Edgeはオンプレミスからのデータ転送用デバイスであり、このパイプラインには不要です。Import/Exportは物理ディスクを使ったデータ転送サービスです。",
     "category": "data",
     "tags": [
       "data-analytics",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 42,
-    "question": "AKSでWindowsコンテナを使用しています。負荷に応じてノード数を自動的にスケールアウトし、リソースの未使用を最小化する機能はどれですか？",
+    "question": "AKSでWindowsコンテナを運用しています。負荷に応じてノード数を自動的にスケールアウトし、未使用リソースを最小限にできる機能はどれですか？",
     "choices": [
       "A. 水平ポッドオートスケーラー",
       "B. Kubernetes 1.20.2へのアップグレード",
@@ -1817,81 +754,76 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 仮想ノード（ACI）"
     ],
     "answer": 2,
-    "explanation": "クラスターオートスケーラーは、ポッドのリソース要求に基づいてノード数を自動的にスケールアウト/スケールインします。未使用リソースの最小化にも貢献します。水平ポッドオートスケーラーはポッド数のスケーリングであり、ノード数は変更しません。Kubernetesのバージョンアップグレードはスケーリング機能とは無関係です。仮想ノード（ACI）はLinuxコンテナのみをサポートしており、Windowsコンテナでは使用できません。",
+    "explanation": "クラスターオートスケーラーは、ポッドのリソース要求に基づきノード数を自動でスケールアウト/スケールインし、未使用リソースの削減にも寄与します。水平ポッドオートスケーラーはポッド数の調整であり、ノード数の変更は行いません。Kubernetesバージョンのアップグレードはスケーリング機能とは無関係です。仮想ノード（ACI）はLinuxコンテナのみが対象で、Windowsコンテナには利用できません。",
     "category": "compute",
     "tags": [
       "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 43,
-    "question": "Azure VMでSQL Serverを実行しています。トランザクションログディスクのホストキャッシュ設定はどれが適切ですか？",
+    "question": "Azure VM上でSQL Serverを稼働させています。トランザクションログ用ディスクに設定すべきホストキャッシュはどれですか？",
     "choices": [
       "A. Read/Write",
       "B. None",
       "C. Read-only"
     ],
     "answer": 1,
-    "explanation": "SQL Serverのトランザクションログディスクには、ホストキャッシュをNone（なし）に設定すべきです。トランザクションログは順次書き込みが主であり、書き込みの整合性が最も重要です。キャッシュを使用すると、障害時にキャッシュ内のデータが失われ、トランザクションの整合性が損なわれる可能性があります。Read/Writeキャッシュは書き込みキャッシュを含むため、ログの整合性リスクがあります。Read-onlyキャッシュはログの読み取りパターン（順次書き込み）には効果がありません。",
+    "explanation": "SQL Serverのトランザクションログディスクでは、ホストキャッシュをNone（無効）に設定するのが適切です。トランザクションログは順次書き込みが中心であり、書き込みの整合性が最も重視されます。キャッシュを有効にすると、障害時にキャッシュ内データが失われてトランザクションの整合性が損なわれるリスクがあります。Read/Writeキャッシュは書き込みキャッシュを含むため整合性上のリスクがあり、Read-onlyキャッシュはログの書き込み主体のパターンには効果がありません。",
     "category": "compute",
     "tags": [
       "caching"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 44,
-    "question": "同じSQL Server VMのデータディスクのホストキャッシュ設定はどれが適切ですか？",
+    "question": "同一SQL Server VMのデータディスクに設定すべきホストキャッシュはどれですか？",
     "choices": [
       "A. Read/Write",
       "B. None",
       "C. Read-only"
     ],
     "answer": 2,
-    "explanation": "SQL Serverのデータディスクには、Read-only（読み取り専用）キャッシュが推奨されます。データファイルは読み取りが多いワークロードであり、キャッシュにより読み取りパフォーマンスが向上します。Read-onlyキャッシュでは書き込みはキャッシュを経由せず直接ディスクに書き込まれるため、データの整合性も維持されます。Read/Writeキャッシュは書き込みキャッシュによるデータ損失リスクがあります。Noneはキャッシュの恩恵を受けられず、パフォーマンスが低下します。",
+    "explanation": "SQL Serverのデータディスクには、Read-only（読み取り専用）キャッシュの設定が推奨されます。データファイルへのアクセスは読み取りが主体のため、キャッシュによって読み取り性能が向上します。Read-onlyキャッシュでは書き込みはキャッシュを介さず直接ディスクに書き込まれるため、データ整合性も確保されます。Read/Writeキャッシュは書き込みキャッシュに起因するデータ損失リスクがあります。Noneではキャッシュの恩恵が得られず、パフォーマンスが低下します。",
     "category": "compute",
     "tags": [
       "caching"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 45,
-    "question": "2つのリージョンにVMをデプロイし、Azure Traffic Managerで負荷分散する構成は実現可能ですか？",
+    "question": "2つのリージョンそれぞれにVMをデプロイし、Azure Traffic Managerで負荷分散する構成は実現できますか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 0,
-    "explanation": "はい、実現可能です。Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数のリージョンに配置されたVMやサービスに対してトラフィックをルーティングできます。パフォーマンス、優先順位、加重などのルーティング方法を使用して、リージョン間の負荷分散やフェールオーバーを実現できます。",
+    "explanation": "はい、この構成は実現可能です。Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数リージョンに配置されたVMやサービスへトラフィックを振り分けることができます。パフォーマンス、優先順位、加重などのルーティング方式を活用して、リージョン間の負荷分散やフェールオーバーを実現できます。",
     "category": "network",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 46,
-    "question": "2つのリージョンにVMをデプロイし、Application Gatewayで負荷分散する構成は実現可能ですか？",
+    "question": "2つのリージョンにVMをデプロイし、Application Gatewayで負荷分散する構成は実現できますか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 1,
-    "explanation": "いいえ、Application Gatewayは単一リージョン内のサービスであり、複数リージョンにまたがる負荷分散はできません。Application Gatewayは特定のリージョンのVNet内にデプロイされ、そのリージョン内のバックエンドにのみトラフィックを分散します。リージョン間の負荷分散にはTraffic ManagerやAzure Front Doorを使用する必要があります。",
+    "explanation": "いいえ、Application Gatewayは単一リージョン内のサービスであり、リージョンをまたいだ負荷分散には対応していません。Application Gatewayは特定リージョンのVNet内にデプロイされ、同リージョン内のバックエンドにのみトラフィックを振り分けます。リージョン間の負荷分散が必要な場合はTraffic ManagerやAzure Front Doorを利用する必要があります。",
     "category": "network",
     "tags": [
       "load-balancers",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 47,
-    "question": "2つのリージョンにそれぞれ2つの可用性ゾーンを使用してVMをデプロイする場合、必要なVNetの数はいくつですか？",
+    "question": "2つのリージョンにそれぞれ2つの可用性ゾーンを使ってVMを展開する場合、必要となるVNetの数はいくつですか？",
     "choices": [
       "A. 1",
       "B. 2",
@@ -1899,17 +831,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 4"
     ],
     "answer": 1,
-    "explanation": "VNet（仮想ネットワーク）はリージョンスコープのリソースであり、1つのVNetは1つのリージョンにのみ存在できます。ただし、VNet内のサブネットは同一リージョン内の複数の可用性ゾーンにまたがることができます。したがって、2つのリージョンには2つのVNetが必要です。各VNet内で可用性ゾーンにVMを分散させるため、VNetの数は可用性ゾーンの数に影響されません。",
+    "explanation": "VNet（仮想ネットワーク）はリージョン単位のリソースであり、1つのVNetは1つのリージョンにしか存在できません。ただし、VNet内のサブネットは同一リージョン内の複数の可用性ゾーンにまたがることが可能です。そのため、2リージョン構成では2つのVNetが必要となります。各VNet内で可用性ゾーンにVMを分散するため、VNet数は可用性ゾーンの数には左右されません。",
     "category": "network",
     "tags": [
       "availability-zones",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 48,
-    "question": "CPUクレジットモデルを使用するAzure VMシリーズはどれですか？",
+    "question": "CPUクレジットモデルを採用しているAzure VMシリーズはどれですか？",
     "choices": [
       "A. Aシリーズ",
       "B. Bシリーズ",
@@ -1917,16 +848,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Mシリーズ"
     ],
     "answer": 1,
-    "explanation": "Bシリーズ（バースト可能）VMは、CPUクレジットモデルを使用します。ベースラインのCPU使用率を下回っている間はクレジットを蓄積し、負荷が高い時にクレジットを消費してベースラインを超えるパフォーマンスを発揮できます。コスト効率が高く、開発/テスト環境やCPU使用率が変動するワークロードに適しています。Aシリーズは基本的な開発/テスト向け、Dシリーズは汎用、Mシリーズはメモリ最適化であり、いずれもクレジットモデルは使用しません。",
+    "explanation": "Bシリーズ（バースト可能）VMがCPUクレジットモデルを採用しています。CPU使用率がベースラインを下回る間はクレジットを蓄え、負荷が高まった際にクレジットを消費してベースラインを超えるパフォーマンスを発揮します。コスト効率が高く、開発/テスト環境やCPU使用率に変動があるワークロードに向いています。Aシリーズは基本的な開発/テスト向け、Dシリーズは汎用向け、Mシリーズはメモリ最適化向けであり、いずれもクレジットモデルは使用していません。",
     "category": "compute",
     "tags": [
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 49,
-    "question": "SQLインジェクション攻撃からの保護とL7ロードバランシングを実現するために使用すべきサービスはどれですか？",
+    "question": "SQLインジェクション攻撃への防御とL7ロードバランシングの両方を実現するために選択すべきサービスはどれですか？",
     "choices": [
       "A. Azure Load Balancer",
       "B. WAF",
@@ -1936,17 +866,16 @@ var ALL_QUIZ_QUESTIONS = [
       "F. SSLオフロード"
     ],
     "answer": 2,
-    "explanation": "Application GatewayはL7（アプリケーション層）ロードバランサーであり、この問題のサービス選択としてはApplication Gatewayが正解です。Application GatewayにはWAF機能を統合でき、SQLインジェクション保護とL7ロードバランシングの両方を提供します。Azure Load BalancerはL4ロードバランサーであり、L7の機能は持ちません。Traffic ManagerはDNSベースのルーティングです。WAF、URLベースルーティング、SSLオフロードはApplication Gatewayの機能の一部です。",
+    "explanation": "Application GatewayはL7（アプリケーション層）のロードバランサーであり、この設問のサービス選択ではApplication Gatewayが正解です。Application GatewayにWAF機能を統合することで、SQLインジェクション防御とL7ロードバランシングの双方を提供できます。Azure Load BalancerはL4ロードバランサーでL7機能は持ちません。Traffic ManagerはDNSベースのルーティングです。WAF、URLベースルーティング、SSLオフロードはいずれもApplication Gatewayが持つ個別機能です。",
     "category": "network",
     "tags": [
       "load-balancers",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 50,
-    "question": "前問のシナリオで、SQLインジェクション保護を提供する具体的な機能はどれですか？",
+    "question": "前問のシナリオにおいて、SQLインジェクションからの保護を直接担う具体的な機能はどれですか？",
     "choices": [
       "A. Azure Load Balancer",
       "B. WAF",
@@ -1956,35 +885,33 @@ var ALL_QUIZ_QUESTIONS = [
       "F. SSLオフロード"
     ],
     "answer": 1,
-    "explanation": "WAF（Web Application Firewall）は、OWASPコアルールセットに基づいてSQLインジェクション、クロスサイトスクリプティング（XSS）などのWeb攻撃から保護する機能です。Application GatewayやFront DoorにWAFを統合して使用します。Application Gateway自体はL7ロードバランサーですが、SQLインジェクション保護の具体的な機能はWAFが担います。その他の選択肢（Load Balancer、URLルーティング、Traffic Manager、SSLオフロード）はセキュリティ保護の機能ではありません。",
+    "explanation": "WAF（Web Application Firewall）はOWASPコアルールセットに基づき、SQLインジェクションやクロスサイトスクリプティング（XSS）などのWeb攻撃を防御する機能です。Application GatewayやFront DoorにWAFを組み込んで利用します。Application Gateway自体はL7ロードバランサーですが、SQLインジェクション防御の具体的な機能を担うのはWAFです。他の選択肢（Load Balancer、URLルーティング、Traffic Manager、SSLオフロード）はセキュリティ防御の機能ではありません。",
     "category": "security",
     "tags": [
       "load-balancers",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 51,
-    "question": "Basic Virtual WANにExpressRoute接続を追加する必要があります。どの操作が必要ですか？",
+    "question": "Basic SKUのVirtual WANを使用していますが、ExpressRoute接続を構成する必要が生じました。どのような対応が求められますか？",
     "choices": [
-      "A. Hub1にExpressRouteゲートウェイを追加する",
-      "B. ハブVNetを作成する",
-      "C. Virtual WANをStandardにアップグレードする",
-      "D. ExpressRoute Premiumにアップグレードする"
+      "A. Hub1にExpressRouteゲートウェイをデプロイする",
+      "B. 新しいハブVNetを構築する",
+      "C. Virtual WANのSKUをStandardへ変更する",
+      "D. ExpressRoute回線をPremiumへアップグレードする"
     ],
     "answer": 2,
-    "explanation": "Basic Virtual WANはサイト間（S2S）VPN接続のみをサポートしています。ExpressRoute接続を使用するには、Virtual WANをStandardティアにアップグレードする必要があります。Standard Virtual WANは、S2S VPN、ExpressRoute、ポイント対サイトVPN、VNet間接続など、すべての接続タイプをサポートしています。ゲートウェイの追加はStandardへのアップグレード後に行う操作です。ExpressRoute Premiumは異なるリージョンへの接続に必要ですが、Virtual WANのティアとは別の問題です。",
+    "explanation": "Basic SKUのVirtual WANが対応しているのはサイト間VPN（S2S）のみです。ExpressRouteを利用するためには、Standard SKUへの昇格が必須となります。Standardティアでは、S2S VPNに加えてExpressRoute、P2S VPN、VNet間接続といった全種類の接続が利用可能です。ExpressRouteゲートウェイの追加はStandard化が完了した後の手順です。なお、ExpressRoute Premiumは他リージョン間の接続に関わるもので、Virtual WANのティアの話とは異なります。",
     "category": "network",
     "tags": [
       "vnet",
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 52,
-    "question": "VMのデプロイ先リージョンとVMサイズを制限する必要があります。どのサービスを使用すべきですか？",
+    "question": "仮想マシンの展開可能なリージョンおよびサイズを制御したい場合、どのAzureサービスが最適ですか？",
     "choices": [
       "A. Azure Policy",
       "B. 条件付きアクセス",
@@ -1992,7 +919,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ロールベースのアクセス制御 (RBAC)"
     ],
     "answer": 0,
-    "explanation": "Azure Policyは、リソースのプロパティに基づいてルールを強制するサービスです。「許可されたリージョン」や「許可されたVMサイズ」などの組み込みポリシーを使用して、特定のリージョンやVMサイズへのデプロイを制限できます。条件付きアクセスはユーザーのサインイン条件を制御するAzure ADの機能であり、リソースデプロイの制限には使用しません。ABACはデータプレーンのアクセス制御です。RBACはユーザーの操作権限を管理しますが、リソースのプロパティ（リージョンやサイズ）の制限には適していません。",
+    "explanation": "Azure Policyはリソースのプロパティに対してルールを適用できるサービスです。「許可されたリージョン」や「許可されたVMサイズ」といった組み込みのポリシー定義を活用すれば、デプロイ先や利用サイズの制約を設けることが可能です。条件付きアクセスはAzure ADにおけるサインイン制御機能であり、リソースのデプロイ制御には向いていません。ABACはデータプレーン側のアクセス管理に使われます。RBACはユーザーの権限管理が主目的であり、リージョンやVMサイズのようなリソース属性の制約には不向きです。",
     "category": "governance",
     "tags": [
       "entra-id",
@@ -2000,12 +927,11 @@ var ALL_QUIZ_QUESTIONS = [
       "conditional-access",
       "azure-policy",
       "storage-rbac"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 53,
-    "question": "VM上のデータをAzure Data Factoryを使用してAzure Data Lake Storageに転送する必要があります。VM上に必要なコンポーネントはどれですか？",
+    "question": "Azure Data Factoryを利用してVM内のデータをAzure Data Lake Storageへ移送する計画があります。VMにインストールすべきコンポーネントは何ですか？",
     "choices": [
       "A. Azure Pipelines エージェント",
       "B. オンプレミス データ ゲートウェイ",
@@ -2013,7 +939,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. セルフホステッド統合ランタイム"
     ],
     "answer": 3,
-    "explanation": "セルフホステッド統合ランタイムは、Azure Data FactoryがVM上やオンプレミスのデータソースにアクセスするために必要なコンポーネントです。VMにインストールすることで、Data FactoryがVM上のデータを読み取り、ADLSに転送できます。Azure Pipelinesエージェントは CI/CD用であり、Data Factoryとは関係ありません。オンプレミスデータゲートウェイはLogic AppsやPower BI向けです。File SyncエージェントはAzure Filesとの同期用であり、Data Factoryとは連携しません。",
+    "explanation": "Azure Data FactoryがVM上やオンプレミス環境のデータにアクセスするには、セルフホステッド統合ランタイムのインストールが不可欠です。これをVM上に配置すると、Data FactoryがそのVM上のデータを取得してADLSへコピーできるようになります。Azure Pipelinesエージェントの用途はCI/CDであり、Data Factoryの処理には関与しません。オンプレミスデータゲートウェイはPower BIやLogic Apps用のコンポーネントです。File SyncエージェントはAzure Filesの同期に使うもので、Data Factoryとは連携しません。",
     "category": "data",
     "tags": [
       "entra-connect",
@@ -2021,62 +947,58 @@ var ALL_QUIZ_QUESTIONS = [
       "data-analytics",
       "file-sync",
       "api-management"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 54,
-    "question": "App Serviceのデプロイ先リージョンをリソースロックで制限できますか？",
+    "question": "リソースロックを使って、App Serviceの展開先リージョンを制約することは可能でしょうか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 1,
-    "explanation": "いいえ、リソースロックはデプロイ先リージョンを制限する機能ではありません。リソースロックは既存のリソースに対して削除ロック（CanNotDelete）や読み取り専用ロック（ReadOnly）を設定し、誤った変更や削除を防ぐ機能です。新しいリソースのデプロイ先を制限するには、Azure Policyを使用する必要があります。",
+    "explanation": "リソースロックにはデプロイ先リージョンを制約する機能はありません。リソースロックの役割は、既存リソースに対する削除防止（CanNotDelete）や読み取り専用（ReadOnly）の設定であり、意図しない変更・削除から保護するものです。リソースのデプロイ先を制約するにはAzure Policyを利用する必要があります。",
     "category": "governance",
     "tags": [
       "azure-policy",
       "resource-locks",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 55,
-    "question": "App Serviceのデプロイ先リージョンをMicrosoft Defender for Cloudで制限できますか？",
+    "question": "Microsoft Defender for Cloudを用いて、App Serviceのデプロイ先リージョンを制約できますか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 1,
-    "explanation": "いいえ、Microsoft Defender for Cloudはセキュリティ体制管理と脅威保護のサービスであり、リソースのデプロイ先リージョンを制限する機能は提供していません。Defender for Cloudはセキュリティの推奨事項の提示、脅威の検出・アラート、セキュリティスコアの評価などを行います。デプロイ先の制限にはAzure Policyを使用します。",
+    "explanation": "Microsoft Defender for Cloudはセキュリティ態勢管理や脅威防御を担うサービスであり、リソースの展開先リージョンを制御する機能は備えていません。セキュリティ推奨事項の提示、脅威検知とアラート生成、セキュリティスコアの算出などが主な役割です。デプロイ先のリージョン制限にはAzure Policyを活用します。",
     "category": "governance",
     "tags": [
       "azure-policy",
       "alerts",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 56,
-    "question": "App Serviceのデプロイ先リージョンをAzure Policyで制限できますか？",
+    "question": "Azure Policyを利用して、App Serviceの展開可能リージョンを限定することはできますか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 0,
-    "explanation": "はい、Azure Policyの「許可されたリージョン」（Allowed locations）組み込みポリシーを使用することで、App Serviceを含むすべてのAzureリソースのデプロイ先リージョンを制限できます。ポリシーに違反するリージョンへのデプロイは自動的に拒否されます。Azure Policyはリソースのプロパティに基づくルールの強制に最適なサービスです。",
+    "explanation": "Azure Policyに用意されている「Allowed locations」（許可された場所）ビルトインポリシーを適用すれば、App Serviceを含むあらゆるAzureリソースの展開リージョンを制限できます。ポリシーに適合しないリージョンへのデプロイは自動的にブロックされます。リソースのプロパティベースでルールを強制するにはAzure Policyが最適です。",
     "category": "governance",
     "tags": [
       "azure-policy",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 57,
-    "question": "Azure VM上のSQL ServerでHAを実装する必要があります。コストを最小化し、フェールオーバー時間を最小化する構成はどれですか？",
+    "question": "Azure VM上で稼働するSQL Serverに高可用性を導入する必要があります。フェールオーバー時間の短縮とコスト削減の両方を重視する場合、最適な構成はどれですか？",
     "choices": [
       "A. VNN + Standard ファイル共有",
       "B. Premium ファイル共有 + DNN AG（Always On 可用性グループ）",
@@ -2084,38 +1006,36 @@ var ALL_QUIZ_QUESTIONS = [
       "D. VNN + Premium ファイル共有"
     ],
     "answer": 1,
-    "explanation": "Premium ファイル共有 + DNN（Distributed Network Name）を使用したAlways On可用性グループが最適です。Always On可用性グループはフェールオーバー時間が最小化されます。DNNはAzure Load Balancerを必要としないため、構成が簡素化されコストが削減されます。Premium ファイル共有は高いIOPSと低レイテンシを提供します。VNNはAzure Load Balancerが必要でコストが増加します。Standard ファイル共有はパフォーマンスが低くなります。",
+    "explanation": "Premium ファイル共有とDNN（分散ネットワーク名）を組み合わせたAlways On可用性グループが最も適しています。Always On可用性グループによりフェールオーバー所要時間を最短にでき、DNNの採用でAzure Load Balancerが不要になるため、構成の簡略化とコスト低減が実現します。Premium ファイル共有は高IOPSと低レイテンシを実現します。VNN方式ではAzure Load Balancerが別途必要となりコストが増えます。Standard ファイル共有ではパフォーマンスが劣ります。",
     "category": "business-continuity",
     "tags": [
       "site-recovery",
       "storage-redundancy",
       "sql-ha",
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 58,
-    "question": "Azure Key Vaultはフェールオーバー時にどこにフェールオーバーされますか？",
+    "question": "Azure Key Vaultでリージョン障害が発生した場合、フェールオーバー先はどこになりますか？",
     "choices": [
       "A. 同一障害ドメイン",
       "B. ペアリージョン",
       "C. 同一可用性セット"
     ],
     "answer": 1,
-    "explanation": "Azure Key Vaultは、リージョン障害が発生した場合、ペアリージョンに自動的にフェールオーバーされます。これはMicrosoftが管理する自動フェールオーバーであり、ユーザーの操作は不要です。Key Vaultのコンテンツはプライマリリージョンとペアリージョンの両方にレプリケートされています。障害ドメインや可用性セットは同一リージョン内の概念であり、リージョン障害からの保護には対応していません。",
+    "explanation": "Azure Key Vaultは、リージョン規模の障害時にペアリージョンへ自動フェールオーバーされます。この処理はMicrosoftが管理しており、ユーザー側の手動操作は不要です。Key Vaultの内容はプライマリリージョンとペアリージョンの双方に複製されています。障害ドメインや可用性セットは単一リージョン内の概念であるため、リージョン障害への対策にはなりません。",
     "category": "business-continuity",
     "tags": [
       "key-vault",
       "availability-zones",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 59,
-    "question": "Azure Key Vaultのフェールオーバー中に利用できない操作はどれですか？（該当するものを選択）",
+    "question": "Azure Key Vaultがフェールオーバー中の場合、実行不可能な操作はどれですか？（該当するものを選んでください）",
     "choices": [
       "A. List",
       "B. Backup",
@@ -2125,18 +1045,17 @@ var ALL_QUIZ_QUESTIONS = [
       "F. Wrap"
     ],
     "answer": 4,
-    "explanation": "Key Vaultのフェールオーバー中は読み取り専用モードとなり、書き込み操作（Create、Update、Delete）は利用できません。選択肢の中でDeleteは書き込み操作に該当するため、フェールオーバー中は利用できません。List、Get、Unwrap、Wrapは読み取りまたは暗号化操作であり、フェールオーバー中も利用可能です。Backupも読み取り操作として利用可能です。フェールオーバーが完了すると、すべての操作が再び利用可能になります。",
+    "explanation": "フェールオーバー中のKey Vaultは読み取り専用状態となるため、作成・更新・削除などの書き込み系操作は行えません。選択肢のうちDeleteが書き込み操作に分類されるため、フェールオーバー中は使用できなくなります。List、Get、Unwrap、Wrapといった読み取り・暗号化系の操作やBackup（読み取り系）はフェールオーバー中でも実行可能です。フェールオーバーの完了後に全操作が復旧します。",
     "category": "security",
     "tags": [
       "key-vault",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 60,
-    "question": "ネットワーク仮想アプライアンス（NVA）への受信トラフィックを分散するために使用すべきサービスはどれですか？",
+    "question": "ネットワーク仮想アプライアンス（NVA）宛のインバウンドトラフィックを負荷分散するには、どのサービスを採用すべきですか？",
     "choices": [
       "A. Azure Front Door",
       "B. Azure Gateway Load Balancer",
@@ -2144,16 +1063,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Traffic Manager"
     ],
     "answer": 1,
-    "explanation": "Azure Gateway Load Balancerは、NVA（ネットワーク仮想アプライアンス）へのトラフィックを透過的にチェーンするために設計されたサービスです。ファイアウォール、IDS/IPS、DPIなどのNVAにトラフィックを分散し、既存のネットワークパスに透過的に挿入できます。Front DoorはグローバルL7ルーティングでありNVAへの直接的なトラフィック分散には適していません。Application GatewayはWebアプリケーション向けのL7ロードバランサーです。Traffic ManagerはDNSベースのルーティングであり、NVAへのインライントラフィック分散には使用しません。",
+    "explanation": "Azure Gateway Load Balancerは、NVA（ネットワーク仮想アプライアンス）のトラフィックチェーンを透過的に実現するために開発されたサービスです。ファイアウォールやIDS/IPS、DPIなどのNVAへ負荷を分散し、既存のネットワーク経路にシームレスに組み込めます。Front DoorはグローバルなL7ルーティングが主用途で、NVAへの直接的なトラフィック分散には不向きです。Application GatewayはWebアプリ向けのL7ロードバランサーです。Traffic ManagerはDNSレベルのルーティングであり、NVAへのインライン分散には適していません。",
     "category": "network",
     "tags": [
       "load-balancers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 61,
-    "question": "あなたは、5 つの Azure Kubernetes Service (AKS) クラスターでホストされるコンテナー化された Web アプリをデプロイすることを計画しています。各クラスターは異なる Azure リージョンでホストされます。 インターネットからアプリへのアクセスを提供する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 グローバル負荷分散:・ 受信 HTTPS 要求は、ネットワーク遅延が最も短いクラスターにルーティングされる必要がある。・ 個々の Pod への HTTPS トラフィックは、イングレス コントローラー経由でルーティングされる必要がある。・ AKS クラスターが停止した場合、フェールオーバー時間を最小限に抑える必要がある。",
+    "question": "5つの異なるAzureリージョンにデプロイされたAKSクラスターでコンテナ化Webアプリを運用する計画があります。インターネットからのアクセスを提供し、次の要件を満たすグローバル負荷分散ソリューションを選択してください。要件：受信HTTPSリクエストはネットワーク遅延が最小のクラスターへルーティングする／各PodへのHTTPSトラフィックはイングレスコントローラ経由で配信する／AKSクラスター障害時のフェールオーバー時間を最短にする。",
     "choices": [
       "Azure Traffic Manager",
       "Standard Load Balancer",
@@ -2161,7 +1079,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure のリージョン間 (グローバル) ロード バランサー"
     ],
     "answer": 2,
-    "explanation": "Azure Front Door と Traffic Manager はどちらもグローバル ロード バランサーです。ただし、Azure Front Door の推奨トラフィックは HTTP(S) であり、Traffic Manager の推奨トラフィックは非 HTTP(S) です。https://learn.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/load-balancing-overview",
+    "explanation": "Azure Front DoorとTraffic Managerはいずれもグローバルなロードバランサーですが、HTTP(S)トラフィックにはAzure Front Doorが推奨されます。Traffic Managerは非HTTP(S)トラフィック向けとされています。",
     "category": "",
     "tags": [
       "site-recovery",
@@ -2169,19 +1087,18 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "app-service",
       "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 62,
-    "question": "あなたは、5 つの Azure Kubernetes Service (AKS) クラスターでホストされるコンテナー化された Web アプリをデプロイすることを計画しています。各クラスターは異なる Azure リージョンでホストされます。 インターネットからアプリへのアクセスを提供する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 イングレスコントローラー:・ 受信 HTTPS 要求は、ネットワーク遅延が最も短いクラスターにルーティングされる必要がある。・ 個々の Pod への HTTPS トラフィックは、イングレス コントローラー経由でルーティングされる必要がある。・ AKS クラスターが停止した場合、フェールオーバー時間を最小限に抑える必要がある。",
+    "question": "5つの異なるAzureリージョンのAKSクラスターにコンテナ化Webアプリを展開する計画です。インターネットからのアクセスを実現し、次の条件を満たすイングレスコントローラーを選んでください。条件：受信HTTPSリクエストはレイテンシが最も低いクラスターにルーティングする／各PodへのHTTPSはイングレスコントローラ経由で配信する／AKSクラスターの障害時にはフェールオーバーを最短時間で行う。",
     "choices": [
       "Azure Application Gateway",
       "Basic Azure Load Balancer",
       "Azure Standard Load Balancer"
     ],
     "answer": 0,
-    "explanation": "Application Gateway イングレス コントローラー (AGIC) は Kubernetes アプリケーションであり、これにより、Azure Kubernetes Service (AKS) のお客様が、Azure のネイティブ Application Gateway L7 ロード バランサーを活用してクラウド ソフトウェアをインターネットに公開できるようにします。 AGIC では、ホストされている Kubernetes クラスターを監視し、Application Gateway を継続的に更新して、選択されたサービスがインターネットに公開されるようにします。 イングレス コントローラーは、お客様の AKS の独自のポッドで実行されます。 AGIC では、Kubernetes リソースのサブセットに変更がないかを監視します。 AKS クラスターの状態は Application Gateway の特定の構成に変換され、Azure Resource Manager (ARM) に適用されます。AGIC を使用すると、AKS クラスターの前に別のロード バランサー/パブリック IP アドレスを設定する必要がなくなり、要求が AKS クラスターに到達する前にデータパス内の複数のホップを回避できます。https://learn.microsoft.com/ja-jp/azure/application-gateway/ingress-controller-overview",
+    "explanation": "Application Gatewayイングレスコントローラー（AGIC）はKubernetesアプリケーションとして動作し、AzureネイティブのApplication Gateway L7ロードバランサーを通じてクラウドサービスをインターネットに公開できます。AGICはKubernetesクラスターを監視し、選択したサービスが公開されるようApplication Gatewayの設定を自動更新します。イングレスコントローラー自体はAKSの独自Podで稼働し、Kubernetesリソースの一部を監視して変更をAzure Resource Manager経由で適用します。AGICの利用により、AKSクラスターの前段に別途ロードバランサーやパブリックIPを設ける必要がなくなり、データパス上のホップ数を削減できます。",
     "category": "",
     "tags": [
       "azure-monitor",
@@ -2190,12 +1107,11 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "app-service",
       "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 63,
-    "question": "あなたの会社には、次の表に示すインフラストラクチャがあります。 オンプレミスの Active Directory ドメインは、Microsoft Entra ID と同期します。 Server1 は、LDAP クエリを使用してオンプレミスの Active Directory ドメイン内のユーザー ID を確認する App1 という名前のアプリケーションを実行します。 Server1 を Subscription1 の仮想マシンに移行する予定です。 会社のセキュリティ ポリシーでは、Subscription1 にデプロイされた仮想マシンとサービスがオンプレミス ネットワークにアクセスできないようにする必要があると規定されています。 移行後も App1 が機能し続けることを保証するソリューションを推奨する必要があります。ソリューションはセキュリティ ポリシーを満たしている必要があります。 推奨事項には何を含めるべきですか。ロケーション | リソース--------------------------------Azure | ①Subscription1 という名前の Azure サブスクリプション ②20 個の Azure Web アプリオンプレミス データセンター | ①Active Directory ドメイン ②Microsoft Entra Connec を実行しているサーバー ③Server1 という名前の Linux コンピューター",
+    "question": "社内にオンプレミスActive DirectoryドメインがありMicrosoft Entra IDと同期済みです。Server1上でLDAPクエリによりオンプレミスADのユーザーIDを確認するApp1が稼働しています。Server1をSubscription1内のVMへ移行する計画ですが、セキュリティポリシーにより、Subscription1内のVMやサービスからオンプレミスネットワークへのアクセスは禁止されています。移行後もApp1が正常動作しセキュリティポリシーを遵守するために推奨すべきソリューションは何ですか？環境情報：Azure側にはSubscription1と20個のWebアプリ、オンプレミス側にはADドメイン、Entra Connect実行サーバー、LinuxマシンServer1があります。",
     "choices": [
       "Microsoft Entra Domain Services",
       "Azure VPN gateway",
@@ -2203,7 +1119,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Microsoft Entra アプリケーション プロキシ"
     ],
     "answer": 0,
-    "explanation": "Microsoft Entra Domain Services には、ドメイン参加、グループ ポリシー、Lightweight Directory Access Protocol (LDAP)、Kerberos および NTLM 認証などのマネージド ドメイン サービスが用意されています。 クラウドでドメイン コントローラー (DC) のデプロイ、管理、修正プログラムの適用を行わなくても、これらのドメイン サービスを使用することができます。https://learn.microsoft.com/ja-jp/entra/identity/domain-services/overview",
+    "explanation": "Microsoft Entra Domain Servicesはドメイン参加、グループポリシー、LDAP、Kerberos/NTLM認証といったマネージドドメインサービスを提供します。クラウド上でドメインコントローラーをデプロイ・管理・パッチ適用する手間なく、これらのサービスを利用できます。オンプレミスへの接続を必要とせずにLDAP機能が使えるため、セキュリティポリシーにも適合します。",
     "category": "",
     "tags": [
       "entra-family",
@@ -2214,12 +1130,11 @@ var ALL_QUIZ_QUESTIONS = [
       "virtual-machines",
       "app-service",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 64,
-    "question": "あなたは、50,000 台の IoT デバイスを含む Azure IoT Hub ソリューションを計画しています。 各デバイスは、温度、デバイス ID、時間データなどのデータをストリーミングします。毎秒約 50,000 レコードが書き込まれます。データはほぼリアルタイムで視覚化されます。 データを保存およびクエリするためのサービスを推奨する必要があります。 このとき、利用すべきサービスを 2 つ答えてください。",
+    "question": "50,000台のIoTデバイスを含むAzure IoT Hubソリューションを構築予定です。各デバイスは温度、デバイスID、タイムスタンプなどのデータをストリーミングし、毎秒約50,000レコードが書き込まれます。データのほぼリアルタイム可視化が必要です。データの格納およびクエリに適したサービスを2つ選択してください。",
     "choices": [
       "NoSQL 用 Azure Cosmos DB",
       "Azure Table Storage",
@@ -2227,19 +1142,18 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Time Series Insights"
     ],
     "answer": 3,
-    "explanation": "Azure Cosmos DB for NoSQL は、低待機時間と高スループットで大量のデータを処理できる、グローバルに分散されたマルチモデル データベース サービスです。さまざまな整合性レベルとパーティショニング戦略をサポートしているため、大規模な IoT データの処理に適しています。Azure Time Series Insights は、IoT デバイスによって生成された時系列データ向けに特別に設計された、フルマネージドのリアルタイム分析サービスです。時系列データのストレージ、視覚化、高度なクエリ機能を提供するため、多数の IoT デバイスからのデータを処理し、ほぼリアルタイムで視覚化するのに理想的な選択肢となります。https://learn.microsoft.com/ja-jp/azure/architecture/solution-ideas/articles/iot-using-cosmos-db",
+    "explanation": "Azure Cosmos DB for NoSQLは低レイテンシかつ高スループットで大量データを処理可能なグローバル分散マルチモデルデータベースであり、多様な整合性レベルとパーティション戦略により大規模IoTデータの取り扱いに適しています。Azure Time Series Insightsは、IoTデバイスが生成する時系列データに特化したフルマネージドのリアルタイム分析サービスです。時系列データの格納・可視化・高度なクエリ機能を備えており、大量のIoTデバイスデータをほぼリアルタイムで可視化するのに最適です。",
     "category": "",
     "tags": [
       "data-fundamentals",
       "cosmosdb",
       "cosmosdb-params",
       "event-driven"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 65,
-    "question": "あなたは、ユーザー向けのコンテンツを集約するアプリケーションを設計しています。 アプリケーションにデータベース ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ SQL コマンドをサポートする。・ マルチマスター書き込みをサポートする。・ 低遅延の読み取り操作を保証する。",
+    "question": "ユーザー向けコンテンツを集約するアプリケーションの設計において、データベースソリューションの推奨が求められています。要件：SQLコマンドに対応する／マルチマスター書き込みが可能／読み取り操作の低遅延を保証する。どのサービスを推奨すべきですか？",
     "choices": [
       "Azure SQL データベース ハイパースケール",
       "アクティブ geo レプリケーションを使用する Azure SQL データベース",
@@ -2247,7 +1161,7 @@ var ALL_QUIZ_QUESTIONS = [
       "NoSQL 用 Azure Cosmos DB"
     ],
     "answer": 3,
-    "explanation": "Azure Cosmos DB は、SQL コマンド、マルチマスター書き込みをサポートし、低待機時間の読み取り操作を保証する、グローバルに分散されたマルチモデル データベース サービスです。ドキュメント、キーと値、グラフ、列ファミリーなどのさまざまな NoSQL データ モデルをサポートします。 Azure Cosmos DB は、複数の Azure リージョン間でデータをレプリケートおよび同期することにより、自動かつ即時のスケーラビリティ、高可用性、低待機時間をグローバルに提供します。 一方、Azure SQL Database と Azure SQL Database Hyperscale は、マルチマスター書き込みをネイティブにサポートしていない従来のリレーショナル データベース サービスです。",
+    "explanation": "Azure Cosmos DBはSQLクエリ対応、マルチマスター書き込み、低レイテンシ読み取りを兼ね備えたグローバル分散マルチモデルデータベースです。ドキュメント、キー値、グラフ、列ファミリーなど多種のNoSQLモデルに対応しています。複数Azureリージョンにデータを自動複製・同期することで、即時スケーラビリティ、高可用性、低レイテンシをグローバルに提供します。一方、Azure SQL DatabaseやHyperscaleはリレーショナルDBであり、マルチマスター書き込みのネイティブサポートがありません。",
     "category": "",
     "tags": [
       "entra-connect",
@@ -2256,31 +1170,29 @@ var ALL_QUIZ_QUESTIONS = [
       "cosmosdb",
       "bcdr-fundamentals",
       "sql-ha"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 66,
-    "question": "あなたは、複数の場所にデプロイされ、Standard レベルの Azure Databricks ワークスペースを使用する販売時点管理 (POS) ソリューションを設計しています。このソリューションには、各場所のオンプレミス ネットワークにデプロイされた複数のアプリが含まれます。 アプリがワークスペースにアクセスするために使用する認証方法を構成する必要があります。このソリューションでは、スタッフの離職と資格情報の管理に関連する管理労力を最小限に抑える必要があります。 何を設定すればよいでしょうか。",
+    "question": "複数の拠点に展開するPOS（販売時点情報管理）ソリューションでStandardレベルのAzure Databricksワークスペースを利用しています。各拠点のオンプレミスネットワークにデプロイされたアプリからワークスペースへアクセスするための認証方式を設定する必要があり、スタッフの入退社や資格情報管理に伴う運用負荷を最小化する方針です。何を設定すべきですか？",
     "choices": [
       "個人のアクセストークン",
       "サービスプリンシパル",
       "管理されたアイデンティティ"
     ],
     "answer": 1,
-    "explanation": "マネージド ID は Azure リソースの認証を提供できますが、オンプレミス リソースの認証は提供できません。オンプレミス ネットワークの場合は、通常、認証にサービス プリンシパルまたは個人アクセス トークンを使用します。https://learn.microsoft.com/ja-jp/azure/databricks/administration-guide/users-groups/#identity-model",
+    "explanation": "マネージドIDはAzureリソース間の認証に限られ、オンプレミスリソースからの認証には使えません。オンプレミスネットワーク環境では、認証にサービスプリンシパルまたは個人アクセストークンを用いるのが一般的です。サービスプリンシパルは個人に紐付かないため、人事異動の影響を受けにくく管理負荷が低くなります。",
     "category": "",
     "tags": [
       "log-analytics",
       "app-registration",
       "managed-identity",
       "data-analytics"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 67,
-    "question": "App1 という名前のオンプレミス アプリがあります。 お客様は App1 を使用してデジタル画像を管理します。 App1 を Azure に移行する予定です。 App1 用のデータ ストレージ ソリューションを推奨する必要があります。ソリューションは、※1の画像ストレージ要件を満たしている必要があります。 ソリューションは、※2の顧客アカウント要件を満たす必要があります。 データの種類ごとにどのサービスを推奨事項に含めるべきですか。 画像ストレージ:※1・ 保存中のイメージを暗号化する。・ 最大 50 MB のファイルを許可する。・ Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) を使用して、イメージへのアクセスを管理する。※2・ ストレージの自動スケールアウトをサポートする。・ データセンターに障害が発生した場合でも、App1 の可用性を維持する。・ 複数の Azure リージョンからのデータの読み取りと書き込みをサポートする。",
+    "question": "オンプレミスで稼働中のデジタル画像管理アプリApp1をAzureへ移行します。画像ストレージについて、次の要件を満たすサービスを選択してください。要件：保存時の画像暗号化／最大50MBのファイルサポート／Azure Front Door上のWAFによるアクセス管理。",
     "choices": [
       "Azure Table Storage",
       "Azure Blob Storage",
@@ -2288,7 +1200,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Cosmos DB"
     ],
     "answer": 1,
-    "explanation": "WAF 経由でアクセスできるという要件により、Blob Storage へのオプションが制限されます。Azure Blob Storage は、保存時の暗号化をサポートし、大きなファイル サイズ (最大 50 MB 以上) を処理し、Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) と組み合わせて使用できるため、デジタル イメージの保存に適しています。https://learn.microsoft.com/ja-jp/azure/frontdoor/scenario-storage-blobs",
+    "explanation": "WAFを介したアクセス管理が必要な点がポイントとなり、Azure Blob Storageが適しています。Blob Storageは保存時暗号化に対応し、50MB以上の大きなファイルも扱え、Azure Front Door上のWAFと組み合わせて利用できるため、デジタル画像のストレージとして適切です。",
     "category": "",
     "tags": [
       "blob-storage",
@@ -2298,12 +1210,11 @@ var ALL_QUIZ_QUESTIONS = [
       "app-service",
       "network-security",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 68,
-    "question": "App1 という名前のオンプレミス アプリがあります。 お客様は App1 を使用してデジタル画像を管理します。 App1 を Azure に移行する予定です。 App1 用のデータ ストレージ ソリューションを推奨する必要があります。ソリューションは、※1の画像ストレージ要件を満たしている必要があります。 ソリューションは、※2の顧客アカウント要件を満たす必要があります。 データの種類ごとにどのサービスを推奨事項に含めるべきですか。 顧客アカウント:※1・ 保存中のイメージを暗号化する。・ 最大 50 MB のファイルを許可する。・ Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) を使用して、イメージへのアクセスを管理する。※2・ ストレージの自動スケールアウトをサポートする。・ データセンターに障害が発生した場合でも、App1 の可用性を維持する。・ 複数の Azure リージョンからのデータの読み取りと書き込みをサポートする。",
+    "question": "オンプレミスのデジタル画像管理アプリApp1をAzureに移行する計画です。顧客アカウントデータのストレージとして、次の要件を満たすサービスはどれですか？要件：ストレージの自動スケールアウト対応／データセンター障害時もApp1の可用性を維持／複数Azureリージョンからの読み書きをサポート。",
     "choices": [
       "Azure SQL Database",
       "Azure Cosmos DB",
@@ -2311,7 +1222,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Table Storage"
     ],
     "answer": 1,
-    "explanation": "複数のリージョンからの同時書き込みには、唯一 Azure Cosmos DB が対応しています。Azure Cosmos DB は、自動スケールアウトをサポートし、データセンターに障害が発生した場合でも高可用性を確保し、複数の Azure リージョンからのデータの読み取りと書き込みを可能にする、スケーラビリティの高い、グローバルに分散されたマルチモデル データベース サービスです。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction#guaranteed-speed-at-any-scale",
+    "explanation": "複数リージョンからの同時読み書きを実現できるのはAzure Cosmos DBのみです。Cosmos DBは自動スケールアウトに対応し、データセンター障害時にも高い可用性を確保でき、複数Azureリージョン間でのデータ読み書きを可能にするグローバル分散型のマルチモデルデータベースです。",
     "category": "",
     "tags": [
       "blob-storage",
@@ -2321,12 +1232,11 @@ var ALL_QUIZ_QUESTIONS = [
       "app-service",
       "network-security",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 69,
-    "question": "Azure 仮想マシン上に SQL Server があります。データベースはバッチ プロセスの一部として毎晩書き込まれます。 データの災害復旧ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ 地域的な停止が発生した場合に回復する機能を提供する。・ 15 分の目標復旧時間 (RTO) をサポートする。・ 24 時間の目標復旧時点 (RPO) をサポートする。・ 自動リカバリをサポートする。・ コストを最小限に抑える。",
+    "question": "Azure VM上のSQL Serverにバッチ処理で毎晩データを書き込むデータベースがあります。この環境に対し、次の条件を満たすディザスタリカバリソリューションを推奨してください。条件：リージョン全体の障害からの復旧が可能／RTO 15分を達成する／RPO 24時間に対応する／自動復旧をサポートする／コストを抑える。",
     "choices": [
       "Azure Virtual Machines 可用性セット",
       "Always On 可用性グループ",
@@ -2334,7 +1244,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure ディスク バックアップ"
     ],
     "answer": 2,
-    "explanation": "Azure Site Recovery を使用したレプリケーション・ RTO は通常 15 分未満です。・ アプリケーション整合性では 1 時間、クラッシュ整合性では 5 分です。 より低い RPO を求めている場合は、別の BCDR テクノロジを使用してください。https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-sqlAzure ディスク バックアップは遅すぎます。Always On 可用性グループの場合は、セカンダリ レプリカへのレプリケーションは非同期であるため、ある程度のデータ損失が発生します。",
+    "explanation": "Azure Site Recoveryによるレプリケーションでは、RTOは通常15分以内です。RPOはアプリケーション整合性で1時間、クラッシュ整合性で5分程度です。より低いRPOが必要な場合は別のBCDRソリューションの検討が必要です。Azureディスクバックアップでは復旧に時間がかかりすぎます。Always On可用性グループはセカンダリレプリカへの非同期レプリケーションによりある程度のデータ損失が生じ得ます。",
     "category": "",
     "tags": [
       "entra-connect",
@@ -2344,12 +1254,11 @@ var ALL_QUIZ_QUESTIONS = [
       "site-recovery",
       "sql-ha",
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 70,
-    "question": "あなたは 2 つのコンポーネントを含むアプリを設計しています。コンポーネントは、キューを介してメッセージを送信することによって通信します。 先入れ先出し (FIFO) パターンを使用してメッセージを処理するソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+    "question": "2つのコンポーネントがキューを介してメッセージをやり取りするアプリケーションを設計中です。FIFO（先入れ先出し）方式でメッセージを処理する必要がある場合、どのソリューションが適切ですか？",
     "choices": [
       "パーティショニングが有効になっている Service Bus キュー",
       "セッションが有効になっている Service Bus キュー",
@@ -2357,23 +1266,22 @@ var ALL_QUIZ_QUESTIONS = [
       "保存されたアクセス ポリシーを使用した Storage キュー"
     ],
     "answer": 1,
-    "explanation": "Azure Service Bus は、セッションの使用を通じて FIFO パターンをサポートします。セッションは、順序付けられたメッセージのシーケンスです。セッション内のすべてのメッセージは到着順に処理されます。これにより、メッセージがキューに追加された順序で処理されるようになります。Azure Storage キューは先入れ先出し (FIFO) パターンをネイティブにサポートしていません。Azure Service Bus でのパーティション分割は、複数のメッセージ ブローカーとストアに負荷を分散することでパフォーマンスを向上させることができますが、パーティション間で FIFO 順序付けが強制されるわけではありません。 FIFO の順序はパーティション内では維持されますが、パーティション間では維持されません。https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/message-sessions",
+    "explanation": "Azure Service Busではセッション機能によりFIFOパターンを実現できます。セッションは順序付けられたメッセージシーケンスで、セッション内の全メッセージは到着順に処理されるため、キュー投入順での処理が保証されます。Azure Storage キューはFIFOをネイティブにサポートしていません。Service Busのパーティション分割は複数ブローカーへの負荷分散でパフォーマンスを向上させますが、パーティション間ではFIFO順序は保証されません。FIFO順序はパーティション内でのみ維持されます。",
     "category": "",
     "tags": [
       "messaging"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 71,
-    "question": "ルート管理グループと 10 個の子管理グループを含む Azure 環境を作成する予定です。各子管理グループには 5 つの Azure サブスクリプションが含まれます。各サブスクリプションに 10 ～ 30 のリソース グループを含める予定です。 Azure ガバナンス ソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 ブループリントを定義するレベル:・ Azure Blueprints を使用して、すべてのサブスクリプションとリソース グループにわたるガバナンスを制御する。・ ブループリント ベースの構成がすべてのサブスクリプションとリソース グループにわたって一貫していることを確認する。・ ブループリントの定義と割り当ての数を最小限に抑える。",
+    "question": "ルート管理グループと10個の子管理グループで構成されるAzure環境を構築予定です。各子管理グループに5つのサブスクリプションを配置し、各サブスクリプションに10～30個のリソースグループを含める計画です。Azure Blueprintsによるガバナンス制御を全サブスクリプション・リソースグループに適用し、構成の一貫性を確保しつつ、ブループリントの定義数と割り当て数を最小化する場合、ブループリントを定義すべきレベルはどれですか？",
     "choices": [
       "ルート管理グループ",
       "子管理グループ",
       "サブスクリプション"
     ],
     "answer": 0,
-    "explanation": "ルート管理グループブループリント定義を作成するときは、ブループリントの保存場所を定義します。ブループリントは、所有している管理グループまたはサブスクリプションに保存できます。寄稿者のアクセス権。場所が管理グループの場合、ブループリントをその管理グループの子サブスクリプションに割り当てることができます。ルート管理グループは階層に組み込まれており、すべての管理グループとサブスクリプションがそれに組み込まれます。このルート管理グループにより、グローバル ポリシーと Azure ロールの割り当てをディレクトリ レベルで適用できます。https://learn.microsoft.com/ja-jp/azure/governance/management-groups/overview",
+    "explanation": "ブループリント定義の保存先として管理グループまたはサブスクリプションを指定できます。保存先が管理グループの場合、そのグループ配下の子サブスクリプションにブループリントを割り当て可能です。ルート管理グループは階層の最上位であり、全管理グループ・全サブスクリプションを包含します。このレベルでブループリントを定義することにより、グローバルなポリシーやロール割り当てをディレクトリ全体に適用できます。",
     "category": "",
     "tags": [
       "rbac",
@@ -2381,37 +1289,35 @@ var ALL_QUIZ_QUESTIONS = [
       "management-groups",
       "subscription-design",
       "blueprints"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 72,
-    "question": "ルート管理グループと 10 個の子管理グループを含む Azure 環境を作成する予定です。各子管理グループには 5 つの Azure サブスクリプションが含まれます。各サブスクリプションに 10 ～ 30 のリソース グループを含める予定です。 Azure ガバナンス ソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 ブループリント割り当てを作成するレベル:・ Azure Blueprints を使用して、すべてのサブスクリプションとリソース グループにわたるガバナンスを制御する。・ ブループリント ベースの構成がすべてのサブスクリプションとリソース グループにわたって一貫していることを確認する。・ ブループリントの定義と割り当ての数を最小限に抑える。",
+    "question": "ルート管理グループ配下に10個の子管理グループがあるAzure環境を計画中です。各子管理グループに5サブスクリプション、各サブスクリプションに10～30のリソースグループを含めます。Azure Blueprintsで全体のガバナンスを統一し、定義・割り当て数を最小化する方針において、ブループリントの割り当てを作成するレベルはどこですか？",
     "choices": [
       "ルート管理グループ",
       "子管理グループ",
       "サブスクリプション"
     ],
     "answer": 2,
-    "explanation": "ブループリントの個々の発行済みバージョンを既存の管理グループまたはサブスクリプションに割り当てることができます (名前の最大長は 90 文字)。 ポータルにおいて、ブループリントの既定のバージョンは、直近の発行済みになったバージョンになります。 アーティファクトのパラメーターまたはブループリントのパラメーターがある場合、そのパラメーターは割り当て処理時に定義されます。https://learn.microsoft.com/ja-jp/azure/governance/blueprints/overview#blueprint-assignment",
+    "explanation": "ブループリントの発行済みバージョンは、既存の管理グループまたはサブスクリプションに割り当てることが可能です（割り当て名は最大90文字）。ポータル上ではデフォルトで直近の発行バージョンが選択されます。アーティファクトパラメーターやブループリントパラメーターがある場合は、割り当て時に値を定義します。",
     "category": "",
     "tags": [
       "resource-hierarchy",
       "management-groups",
       "subscription-design",
       "blueprints"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 73,
-    "question": "Azure サブスクリプションでステートレス Web アプリをホストするには、リソースをデプロイする必要があります。ソリューションは次の要件を満たす必要があります。 解決策: 自動スケーリングを使用する Virtual Machine Scale Setsをデプロイします。 これは目標を達成していますか。・ 完全な .NET Frameworkへのアクセスを提供する。・ Azure リージョンに障害が発生した場合に冗長性を提供する。・ カスタム アプリケーションの依存関係をインストールするためのオペレーティング システムへのアクセスを管理者に許可する。",
+    "question": "Azureサブスクリプション上でステートレスWebアプリをホストするリソースをデプロイします。要件：完全な.NET Frameworkが利用できる／Azureリージョン障害時にも冗長性がある／管理者がOSにアクセスしてカスタムアプリ依存関係をインストールできる。解決策として、自動スケーリング付きのVirtual Machine Scale Setsをデプロイすることを提案します。これで目標を達成できますか？",
     "choices": [
       "はい",
       "いいえ"
     ],
     "answer": 1,
-    "explanation": "この解決策では目標を達成することはできません。代わりに、2 つの Azure 仮想マシンを 2 つの Azure リージョンにデプロイし、Traffic Manager プロファイルを作成する必要があります。Azure Traffic Manager は、DNS ベースのトラフィック ロード バランサーです。 このサービスを使用すると、パブリックに公開されているアプリケーションへのトラフィックを世界各国の Azure リージョン全体に分散することができます。 また、Traffic Manager によって、パブリック エンドポイントには高可用性と高い応答速度が確保されます。https://docs.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-overview",
+    "explanation": "この解決策では要件を満たせません。VMSSは単一リージョン内で動作するため、リージョン障害時の冗長性を確保できません。代替策として、2つのAzureリージョンにそれぞれVMをデプロイし、Traffic Managerプロファイルで負荷分散する構成が必要です。Azure Traffic ManagerはDNSベースのトラフィックロードバランサーとして、パブリックアプリケーションへのトラフィックを複数リージョンに分散し、高可用性と高応答性を実現します。",
     "category": "",
     "tags": [
       "subscription-design",
@@ -2420,19 +1326,18 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "virtual-machines",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 74,
-    "question": "Azure Cosmos DB と Azure Synapse を統合するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 Azure Synapse ワークスペースをプロビジョニングするとき:・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、Microsoft バックボーン ネットワーク経由で送信される必要がある。・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、インターネット経由でルーティングしてはならない。・ 導入の労力は最小限に抑える必要がある。",
+    "question": "Azure Cosmos DBとAzure Synapseの統合ソリューションを設計しています。要件：SynapseワークスペースからCosmos DBへの通信はMicrosoftバックボーンネットワーク経由とする／インターネット経由のルーティングは禁止／導入工数を最小化する。Synapseワークスペースのプロビジョニング時にどの設定を行うべきですか？",
     "choices": [
       "Microsoft Entra ID 認証の使用を有効にする。",
       "ワークスペース エンドポイントへのパブリック ネットワーク アクセスを無効にする。",
       "専用の仮想ネットワークを構成する。"
     ],
     "answer": 2,
-    "explanation": "専用のマネージド仮想ネットワークを構成するマネージド プライベート エンドポイントは、マネージド ワークスペース仮想ネットワークを使用した Azure Synapse ワークスペースでのみサポートされます。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/security/synapse-workspace-managed-private-endpoints#managed-private-endpoints",
+    "explanation": "マネージドプライベートエンドポイントを使用するには、マネージドワークスペース仮想ネットワークが有効なSynapseワークスペースが必要です。専用のマネージド仮想ネットワークを構成することで、プライベートエンドポイントを通じた安全な通信が可能になります。",
     "category": "",
     "tags": [
       "entra-id",
@@ -2441,83 +1346,78 @@ var ALL_QUIZ_QUESTIONS = [
       "data-analytics",
       "vnet",
       "private-link"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 75,
-    "question": "Azure Cosmos DB と Azure Synapse を統合するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 Azure Cosmos DB アカウントを構成するときに、次を有効にする:・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、Microsoft バックボーン ネットワーク経由で送信される必要がある。・ Azure Synapse ワークスペースから Azure Cosmos DB アカウントへのトラフィックは、インターネット経由でルーティングしてはならない。・ 導入の労力は最小限に抑える必要がある。",
+    "question": "Azure Cosmos DBとAzure Synapseの統合ソリューションの設計において、次の条件を満たす必要があります。条件：SynapseからCosmos DBへの通信をMicrosoftバックボーン経由にする／インターネット経由は不可／導入労力を最小にする。Cosmos DBアカウントの設定時に何を有効化すべきですか？",
     "choices": [
       "マネージド プライベート エンドポイント",
       "サービス エンドポイント ポリシー",
       "サーバーレベルのファイアウォール規則"
     ],
     "answer": 0,
-    "explanation": "マネージドプライベートエンドポイントマネージド プライベート エンドポイントを使用すると、Azure Synapse ワークスペースと他の Azure リソース間のトラフィックは、完全に Microsoft バックボーン ネットワーク上を通過します。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/security/synapse-workspace-managed-vnet",
+    "explanation": "マネージドプライベートエンドポイントを利用すれば、SynapseワークスペースとAzureリソース間のトラフィックが全てMicrosoftバックボーンネットワーク上で完結します。インターネットを経由しないため、セキュリティ要件を満たしつつ導入も容易です。",
     "category": "",
     "tags": [
       "log-analytics",
       "cosmosdb",
       "data-analytics",
       "private-link"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 76,
-    "question": "オンプレミス ネットワークには、500 GB のデータを保存する Server1 という名前のファイル サーバーが含まれています。 Azure Data Factory を使用して、Server1 から Azure Storage にデータをコピーする必要があります。 新しいデータ ファクトリを追加します。 次に何をすべきでしょうか。 Server1:",
+    "question": "オンプレミスネットワーク内の500GBのデータを保持するファイルサーバーServer1から、Azure Data Factoryを使ってAzure Storageへデータコピーする計画です。新しいData Factoryを作成した後、Server1側で行うべき次の手順は何ですか？",
     "choices": [
       "セルフホステッド統合ランタイムをインストールする。",
       "Azure File Sync エージェントをインストールする。",
       "ファイル サーバー リソース マネージャーの役​​割サービスをインストールする。"
     ],
     "answer": 0,
-    "explanation": "セルフホステッド統合ランタイムをインストールします。データ ストアがオンプレミス ネットワーク、Azure 仮想ネットワーク、または Amazon Virtual Private Cloud 内にある場合は、それに接続するようにセルフホステッド統合ランタイムを構成する必要があります。データ ストアに接続するために使用される統合ランタイム。 Azure Integration Runtime またはセルフホステッド Integration Runtime (データ ストアがプライベート ネットワークにある場合) を使用できます。指定しない場合は、デフォルトの Azure 統合ランタイムが使用されます。https://learn.microsoft.com/ja-jp/azure/data-factory/connector-file-system?tabs=data-factory",
+    "explanation": "データストアがオンプレミスネットワーク内、Azure仮想ネットワーク内、またはAmazon VPC内にある場合は、セルフホステッド統合ランタイムの構成が必要です。これにより、Data Factoryがプライベートネットワーク内のデータストアへアクセスできるようになります。指定しなければデフォルトのAzure統合ランタイムが使われますが、プライベートネットワーク内のデータには到達できません。",
     "category": "",
     "tags": [
       "data-analytics",
       "file-sync",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 77,
-    "question": "オンプレミス ネットワークには、500 GB のデータを保存する Server1 という名前のファイル サーバーが含まれています。 Azure Data Factory を使用して、Server1 から Azure Storage にデータをコピーする必要があります。 新しいデータ ファクトリーを追加します。 次に何をすべきでしょうか。 データ ファクトリー:",
+    "question": "オンプレミスのファイルサーバーServer1（データ量500GB）からAzure Data Factoryを使ってAzure Storageにデータをコピーします。新規Data Factoryの追加後、Data Factory側で次に実施すべき操作は何ですか？",
     "choices": [
       "Azure Import/Export ジョブを作成する。",
       "Azure-SQL Server Integration Services (SSIS) 統合ランタイム (IR) をプロビジョニングする。",
       "パイプラインを作成する。"
     ],
     "answer": 2,
-    "explanation": "パイプラインを作成します。パイプラインを使用してコピー アクティビティを実行します。パイプラインでコピー アクティビティを実行するには、次のいずれかのツールまたは SDK を使用します。・データ コピー ツール・Azure ポータル・.NET SDK・Python SDK・Azure PowerShell・REST API・Azure Resource Manager テンプレートhttps://learn.microsoft.com/ja-jp/azure/data-factory/connector-file-system?tabs=data-factory",
+    "explanation": "Data Factory内でコピーアクティビティを実行するにはパイプラインを作成します。パイプラインのコピーアクティビティは、データコピーツール、Azureポータル、各種SDK（.NET、Python）、Azure PowerShell、REST API、ARMテンプレートなどを使って構成・実行できます。",
     "category": "",
     "tags": [
       "data-analytics",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 78,
-    "question": "Azure SQL をデータベース プラットフォームとして使用する予定です。 次の要件を満たす Azure SQL 製品とサービス レベルを推奨する必要があります。 ・ ワークロードの需要に基づいてコンピューティング リソースを自動的にスケーリングする ・ 秒単位の課金を提供する このとき、何を勧めるべきですか。 Azure SQL 製品:",
+    "question": "Azure SQLをデータベース基盤として採用する予定です。次の要件を満たすAzure SQL製品を選んでください。要件：ワークロード需要に応じてコンピューティングリソースが自動スケーリングされる／秒単位の課金に対応する。推奨すべきAzure SQL製品はどれですか？",
     "choices": [
       "Azure SQL Database の単一データベース",
       "Azure SQL Managed Instance",
       "An Azure SQL Database elastic pool"
     ],
     "answer": 0,
-    "explanation": "サーバーレスは、ワークロードの需要に基づいてコンピューティングが自動的にスケーリングされ、1 秒あたりのコンピューティング使用量に対して請求される、Azure SQL Database の単一データベース用のコンピューティング レベルです。 またサーバーレス コンピューティング レベルでは、アイドル期間にデータベースを自動的に一時停止します。このときはストレージのみに課金され、再びアクティブになると自動的にデータベースが再開されます。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/serverless-tier-overview?view=azuresql&tabs=general-purpose",
+    "explanation": "サーバーレスコンピューティングレベルはAzure SQL Databaseの単一データベース向けに提供されており、ワークロード量に基づいてコンピューティングが自動スケーリングされ、秒単位で課金されます。アイドル時にはデータベースが自動停止してストレージのみの課金となり、アクティビティ再開時に自動復帰します。サーバーレスはGeneral Purposeサービスレベルで一般提供中で、HyperscaleではプレビューS段階です。",
     "category": "",
     "tags": [
       "sql-database",
       "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 79,
-    "question": "Azure SQL をデータベース プラットフォームとして使用する予定です。 次の要件を満たす Azure SQL 製品とサービス レベルを推奨する必要があります。 このとき、何を勧めるべきですか。 サービスレベル:・ ワークロードの需要に基づいてコンピューティング リソースを自動的にスケーリングする・ 秒単位の課金を提供する",
+    "question": "Azure SQLの導入を計画しています。ワークロード需要に応じたコンピューティングの自動スケーリングと秒単位課金を実現するために、どのサービスレベルを選択すべきですか？",
     "choices": [
       "Business Critical",
       "General Purpose",
@@ -2526,17 +1426,16 @@ var ALL_QUIZ_QUESTIONS = [
       "Hyperscale"
     ],
     "answer": 1,
-    "explanation": "サーバーレスは、ワークロードの需要に基づいてコンピューティングが自動的にスケーリングされ、1 秒あたりのコンピューティング使用量に対して請求される、Azure SQL Database の単一データベース用のコンピューティング レベルです。 またサーバーレス コンピューティング レベルでは、アイドル期間にデータベースを自動的に一時停止します。このときはストレージのみに課金され、再びアクティブになると自動的にデータベースが再開されます。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/serverless-tier-overview?view=azuresql&tabs=general-purpose",
+    "explanation": "サーバーレスコンピューティングレベルは、General Purposeサービスレベルにおいて一般提供されています。ワークロード需要に合わせてコンピューティングを自動スケーリングし、秒単位で使用量に応じた課金を行います。アイドル状態ではデータベースが自動一時停止されストレージのみの課金に切り替わり、アクティビティ発生時に自動再開されます。Hyperscaleでのサーバーレスは現在プレビュー段階です。",
     "category": "",
     "tags": [
       "sql-database",
       "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 80,
-    "question": "パフォーマンス データを Azure Blob Storage に書き込むデバイスが 100 台あります。 パフォーマンス データを Azure SQL データベースに保存して分析することを計画しています。 パフォーマンス データを Azure SQL データベースに継続的にコピーするソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+    "question": "100台のデバイスがパフォーマンスデータをAzure Blob Storageに書き込んでいます。このデータをAzure SQL Databaseに格納して分析する計画であり、継続的にデータをコピーするソリューションが必要です。どのサービスを推奨すべきですか？",
     "choices": [
       "Azure Database Migration Service",
       "Azure Data Factory",
@@ -2544,7 +1443,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Data Box"
     ],
     "answer": 1,
-    "explanation": "Azure Data Factory は、データ パイプラインの作成、スケジュール、管理を可能にするクラウドベースのデータ統合サービスです。これを使用すると、Azure Blob Storage などのさまざまなソースから Azure SQL Database などの複数の宛先にデータを継続的にコピーできます。他の選択肢は、説明したシナリオでの継続的なデータ コピーには適していません。https://learn.microsoft.com/ja-jp/azure/data-factory/introduction",
+    "explanation": "Azure Data Factoryはデータパイプラインの構築・スケジュール・管理が可能なクラウドベースのデータ統合サービスです。Blob StorageからSQL Databaseなど、多様なソースからターゲットへの継続的なデータコピーに対応しています。他の選択肢は、このシナリオのような継続的なデータ転送には適していません。",
     "category": "",
     "tags": [
       "blob-storage",
@@ -2552,50 +1451,47 @@ var ALL_QUIZ_QUESTIONS = [
       "data-analytics",
       "data-migration",
       "db-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 81,
-    "question": "あなたは、従業員の個人識別情報 (PII) を保存する Azure Web アプリを構築しています。 Azure SQL を推奨する必要があります。 Web アプリ用のデータベース ソリューション。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 サービス階層とコンピューティング レベル:・ 単一のデータセンターが停止した場合でも可用性を維持する。・ PII を含む特定の列の暗号化をサポートする。・ 給与計算業務中に自動的にスケールアップする。・ コストを最小限に抑える。",
+    "question": "従業員の個人識別情報（PII）を格納するAzure Webアプリを構築中です。Azure SQL Databaseソリューションとして、次の要件を満たすサービス階層とコンピューティングレベルの組み合わせを選択してください。要件：単一データセンター障害時の可用性維持／PIIを含む特定列の暗号化対応／給与処理時の自動スケールアップ／コスト最小化。",
     "choices": [
       "Business Critical サービス レベルとサーバーレス コンピューティング レベル",
       "Hyperscale サービス レベルとプロビジョニング済みコンピューティング レベル",
       "General Purpose サービス レベルとサーバーレス コンピューティング レベル"
     ],
     "answer": 2,
-    "explanation": "General Purpose サービス レベルは、一般的なワークロード向けに設計されています。 予算重視のバランスの取れたコンピューティングおよびストレージ オプションが提供されます。サーバーレス コンピューティング レベル: ワークロード アクティビティに基づいてコンピューティング リソースを自動的にスケーリングし、1 秒あたりのコンピューティング使用量に対して請求します。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで一般提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/sql-database-paas-overview?view=azuresql#service-tiers",
+    "explanation": "General Purposeサービスレベルは標準的なワークロード向けに設計されており、コストとパフォーマンスのバランスに優れたコンピューティング・ストレージオプションを提供します。サーバーレスコンピューティングレベルはワークロードの負荷に応じてリソースを自動スケーリングし、秒単位の従量課金を行います。General Purposeで一般提供されており、Hyperscaleではプレビュー段階です。",
     "category": "",
     "tags": [
       "cost-management",
       "sql-database",
       "app-service",
       "azure-functions"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 82,
-    "question": "あなたは、従業員の個人識別情報 (PII) を保存する Azure Web アプリを構築しています。 Azure SQL を推奨する必要があります。 Web アプリ用のデータベース ソリューション。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 暗号化方式:・ 単一のデータセンターが停止した場合でも可用性を維持する。・ PII を含む特定の列の暗号化をサポートする。・ 給与計算業務中に自動的にスケールアップする。・ コストを最小限に抑える。",
+    "question": "従業員のPIIを保存するAzure Webアプリ向けにAzure SQL Databaseを導入します。次の要件を満たす暗号化方式はどれですか？要件：単一データセンター停止時も可用性を維持／PIIを含む特定列の暗号化／給与計算時の自動スケールアップ／コスト最小化。",
     "choices": [
       "透過的なデータ暗号化 (TDE)",
       "Always Encrypted",
       "Microsoft SQLサービスとデータベース暗号化キー"
     ],
     "answer": 1,
-    "explanation": "Always Encrypted は、Azure SQL Database、Azure SQL Managed Instance や SQL Server データベースに格納された、クレジット カード番号や国民識別番号 (米国の社会保障番号など) のような機微なデータを保護することを目的とした機能です。 Always Encrypted では、クライアント内部で機密データが暗号化されるため、暗号化キーがデータベース エンジンに公開されることはありません。 これにより、データを所有し、それを表示できるユーザーと、データを管理するがアクセス権を持たないユーザー (オンプレミスのデータベース管理者、クラウド データベース オペレーター、またはその他の高い特権を持つ未承認のユーザー) が分離されます。 結果として、Always Encrypted を使用すると、顧客は自信を持って機密データをクラウドに格納し、悪意のある内部関係者によるデータ盗難の可能性を減らすことができます。https://learn.microsoft.com/ja-jp/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-ver16",
+    "explanation": "Always Encryptedは、クレジットカード番号や国民ID番号のような機微データの保護を目的とした機能です。クライアント側でデータを暗号化するため、暗号化キーがデータベースエンジンに渡ることはありません。これにより、データを閲覧できるユーザーと、管理するがアクセス権を持たないユーザー（DB管理者やクラウドオペレーターなど）を明確に分離できます。結果として、機密データをクラウドに保管しても内部不正によるデータ漏洩リスクを軽減できます。",
     "category": "",
     "tags": [
       "pim",
       "sql-database",
       "sql-security",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 83,
-    "question": "Microsoft Entra テナントがあります。 SQL API を使用する Azure Cosmos DB データベースをデプロイする予定です。 特定の Microsoft Entra ID ユーザー アカウントに Cosmos DB データベースへの読み取りアクセスを提供するソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+    "question": "Microsoft Entraテナントを保有しており、SQL APIを使用するAzure Cosmos DBデータベースをデプロイ予定です。特定のEntra IDユーザーアカウントにCosmos DBの読み取りアクセスを付与するにはどうすべきですか？",
     "choices": [
       "証明書と Azure Key Vault",
       "共有アクセス署名 (SAS) と条件付きアクセス ポリシー",
@@ -2603,7 +1499,7 @@ var ALL_QUIZ_QUESTIONS = [
       "マスター キーと Azure Information Protection ポリシー"
     ],
     "answer": 2,
-    "explanation": "Azure Cosmos DB の SQL API は、マスター キー トークンとリソース トークンという 2 種類の承認を提供します。マスター キー トークンは、すべてのデータとすべての権限へのアクセスを提供します。リソース トークンは、特定のコンテナーとアクセス許可へのアクセスを提供し、Microsoft Entra ID ユーザーの ID を使用してこれらのトークンを作成できます。Microsoft Entra ID ユーザーに Azure Cosmos DB へのアクセスを提供するには、ユーザーに特定の IAM ロールを割り当てます。 Azure Cosmos DB は、特定のアクセスを提供するために Azure ロールベースのアクセス制御 (Azure RBAC) を使用します。 Azure RBAC は、Azure Resource Manager 上に構築された認証システムで、Azure 内のリソースに対するきめ細かいアクセス管理を提供します。リソース トークンと IAM ロールの割り当てを組み合わせることで、Microsoft Entra ID ユーザー アカウントが Cosmos DB データベースへの読み取りアクセスを持つために必要なアクセス制御が提供されます。https://docs.microsoft.com/ja-jp/azure/cosmos-db/role-based-access-control",
+    "explanation": "Cosmos DBのSQL APIには、マスターキートークンとリソーストークンの2種類の認可方式があります。マスターキーは全データ・全権限へのフルアクセスを提供します。リソーストークンは特定のコンテナーと権限に限定したアクセスを付与でき、Entra IDユーザーのIDに基づいて生成可能です。Entra IDユーザーにCosmos DBへのアクセスを提供するには、IAMロール割り当てを使います。Azure RBACはResource Manager上に構築された認可システムで、リソースに対するきめ細かいアクセス制御を実現します。リソーストークンとIAMロール割り当てを組み合わせることで、必要な読み取りアクセス制御が得られます。",
     "category": "",
     "tags": [
       "entra-id",
@@ -2613,12 +1509,11 @@ var ALL_QUIZ_QUESTIONS = [
       "key-vault",
       "cosmosdb",
       "containers"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 84,
-    "question": "App1 という名前の多層アプリと SQL1 という名前の Azure SQL データベースがあります。 App1 のバックエンド サービスは、データを SQL1 に書き込みます。ユーザーは App1 クライアントを使用して SQL1 からデータを読み取ります。 使用率が高い期間中、ユーザーはデータの取得に遅れを経験します。 データ要求にかかる時間を最小限に抑える必要があります。 ソリューションには何を含めるべきでしょうか。",
+    "question": "多層アプリApp1とAzure SQL DatabaseのSQL1があります。バックエンドサービスがSQL1にデータを書き込み、ユーザーはApp1クライアントを使ってSQL1からデータを読み取ります。高負荷時にユーザーのデータ取得が遅延する問題が発生しています。データリクエストの応答時間を短縮するには何を導入すべきですか？",
     "choices": [
       "Azure コンテンツ配信ネットワーク (CDN)",
       "Azure Cache for Redis",
@@ -2626,18 +1521,17 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Data Factory"
     ],
     "answer": 1,
-    "explanation": "Azure Cache for Redis は、Redis ソフトウェアを基にしたインメモリ データ ストアを提供します。 Redis は、バックエンドでデータ ストアを酷使するアプリケーションのパフォーマンスとスケーラビリティを高めます。 高速に読み書きできるサーバーのメモリ内にアクセス頻度の高いデータを維持することで、大量のアプリケーション要求を処理することができます。 Redis によって、きわめて低遅延かつ高スループットのデータ ストレージ ソリューションがモダン アプリケーションにもたらされます。Azure コンテンツ配信ネットワーク (CDN): ネットワークに問題はありませんAzure Data Factory: このツールはオーケストレーション用であり、既存のものを強化するためのものではありませんAzure Synapse Analytics: 追加のデータ ウェアハウス機能を備えたオーケストレーション ツールでもありますが、この場合は関係ありませんhttps://learn.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-overview",
+    "explanation": "Azure Cache for RedisはRedisベースのインメモリデータストアです。バックエンドのデータストアに高い負荷がかかるアプリのパフォーマンスとスケーラビリティを向上させます。アクセス頻度の高いデータをサーバーメモリ上に保持し、高速な読み書きを実現することで、大量リクエストを効率的に処理します。極めて低いレイテンシと高スループットのデータストレージをアプリに提供します。CDNはネットワーク最適化であり本件の問題には該当しません。Data Factoryはデータオーケストレーション用ツールです。Synapse Analyticsはデータウェアハウス機能を持つ分析ツールであり、このケースには不適切です。",
     "category": "",
     "tags": [
       "sql-database",
       "data-analytics",
       "caching"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 85,
-    "question": "Azure Event Grid にルーティングされたイベントに応答してカスタム C# コードを実行するソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。・ 実行されるコードは、Azure 仮想マシン上で実行される Microsoft SQL Server インスタンスのプライベート IP アドレスにアクセスできる必要がある。・ コストは最小限に抑える必要がある。",
+    "question": "Azure Event Gridに配信されるイベントをトリガーにカスタムC#コードを実行するソリューションを設計中です。要件：実行コードからAzure VM上のMicrosoft SQL ServerのプライベートIPアドレスにアクセスできる／コストを最小限にする。どのサービスを選択すべきですか？",
     "choices": [
       "Azure Logic Apps の統合サービス環境 (ISE)",
       "Azure Logic Apps の 従量課金プラン",
@@ -2645,7 +1539,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Functions の Premium プラン"
     ],
     "answer": 3,
-    "explanation": "プレミアム プランでは仮想ネットワーク接続が可能です。従量課金プランでは仮想ネットワーク統合機能にアクセスできません。https://learn.microsoft.com/ja-jp/azure/azure-functions/functions-scale#networking-features",
+    "explanation": "Azure FunctionsのPremiumプランは仮想ネットワーク統合に対応しており、VNet内のプライベートIPへのアクセスが可能です。従量課金プランでは仮想ネットワーク統合機能を利用できないため、プライベートIPへの到達要件を満たせません。",
     "category": "",
     "tags": [
       "virtual-machines",
@@ -2653,12 +1547,11 @@ var ALL_QUIZ_QUESTIONS = [
       "event-driven",
       "api-management",
       "vnet"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 86,
-    "question": "従量課金プランでホストされている App1 という名前の Azure Functions マイクロサービス アプリがあります。 App1 は Azure Queue Storage トリガーを使用します。 App1 を Azure Kubernetes Service (AKS) クラスターに移行することを計画しています。 App1 をサポートするには、AKS クラスターを準備する必要があります。ソリューションは次の要件を満たす必要があります。 どの 2 つのアクションを実行する必要がありますか。・ 現在のデプロイメントと同じスケーリング メカニズムを使用する。・ kubenet および Azure Container Networking Interface (CNI) ネットワーキングをサポートする。",
+    "question": "従量課金プランで動作するAzure FunctionsアプリApp1がAzure Queue Storageトリガーを使用しています。App1をAKSクラスターに移行する計画で、現在のスケーリング方式を維持しつつ、kubenetおよびAzure CNIネットワークの両方に対応する必要があります。AKSクラスターの準備として実施すべき2つのアクションはどれですか？",
     "choices": [
       "Kubernetes Event-driven Autoscaling (KEDA をインストールする。",
       "ポッドの水平オートスケーラーを構成する。",
@@ -2667,7 +1560,7 @@ var ALL_QUIZ_QUESTIONS = [
       "仮想ノード アドオンを構成する。"
     ],
     "answer": 1,
-    "explanation": "Kubernetes は、ポッドの水平オートスケーラー (HPA) を使用して、リソース需要を監視し、ポッドの数を自動的にスケーリングします。 既定では、HPA は、必要なレプリカ数の変更についてメトリック API を 15 秒ごとに確認します。メトリック API は、Kubelet からデータを 60 秒ごとに取得します。 つまり、HPA は 60 秒ごとに更新されます。 変更が必要な場合、それに応じてレプリカの数が増減されます。 HPA は、Kubernetes 1.8 以降用のメトリック サーバーをデプロイした AKS クラスターで動作します。https://learn.microsoft.com/ja-jp/azure/aks/concepts-scale#horizo%E2%80%8B%E2%80%8Bntal-pod-autoscalerKubernetes Event-driven Autoscaling (KEDA) は、アプリケーションの自動スケーリングをシンプルにすることを目指す単一目的の軽量コンポーネントであり、CNCF Graduated プロジェクトです。 イベント駆動型自動スケーリングを適用して、scale-to-zero で持続可能でコスト効率の高い方法で需要を満たすようにアプリケーションをスケーリングします。https://learn.microsoft.com/ja-jp/azure/aks/keda-about",
+    "explanation": "Kubernetesの水平ポッドオートスケーラー（HPA）はリソース需要を監視してPod数を自動調整します。デフォルトでHPAは15秒ごとにメトリックAPIを確認し、必要に応じてレプリカ数を増減させます。HPAはKubernetes 1.8以降のメトリックサーバーがデプロイされたAKSクラスターで動作します。Kubernetes Event-driven Autoscaling（KEDA）はイベント駆動型の自動スケーリングをシンプルにする軽量コンポーネントで、CNCFのGraduatedプロジェクトです。ゼロスケールに対応した持続可能でコスト効率の高いスケーリングを実現します。",
     "category": "",
     "tags": [
       "azure-monitor",
@@ -2677,64 +1570,60 @@ var ALL_QUIZ_QUESTIONS = [
       "messaging",
       "event-driven",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 87,
-    "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Traffic Manager を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+    "question": "Azure Webアプリの複数インスタンスを複数リージョンにデプロイする予定です。要件：レート制限に対応する／全インスタンス間でリクエストを均等分散する／リージョン障害時もアプリにアクセス可能にする。Azure Traffic Managerでアクセスを提供する案は要件を満たしますか？",
     "choices": [
       "はい",
       "いいえ"
     ],
     "answer": 1,
-    "explanation": "Azure Traffic Manager は、DNS ベースのトラフィック ロード バランサーです。このサービスを使用すると、グローバル Azure リージョン全体でパブリック向けアプリケーションにトラフィックを分散できます。 Traffic Manager は、パブリック エンドポイントに高可用性と迅速な応答性も提供します。レート制限はありません。https://learn.microsoft.com/ja-jp/azure/app-service/web-sites-traffic-manager",
+    "explanation": "Azure Traffic ManagerはDNSベースのトラフィックロードバランサーで、グローバルリージョン間でのトラフィック分散と高可用性を提供します。しかしレート制限機能は備えていないため、この要件を満たすことはできません。",
     "category": "",
     "tags": [
       "bcdr-fundamentals",
       "load-balancers",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 88,
-    "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Load Balancer を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+    "question": "複数Azureリージョンに展開したWebアプリの複数インスタンスへのアクセスソリューションを検討中です。要件：レート制限対応／全インスタンスへの負荷分散／リージョン障害時のアクセス継続。Azure Load Balancerを利用する案で目標は達成できますか？",
     "choices": [
       "はい",
       "いいえ"
     ],
     "answer": 1,
-    "explanation": "Azure Load Balancer はリージョン内でロード バランシングを行います (リージョンの停止はサポートされません)。一方で、Azure Load Balancer は、レートまたは接続の制限をサポートしていません。https://docs.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/load-balancing-overview",
+    "explanation": "Azure Load Balancerはリージョン内でのみ負荷分散を行うサービスであり、リージョン障害への対応はできません。さらに、レート制限や接続制限もサポートしていないため、要件を満たしません。",
     "category": "",
     "tags": [
       "bcdr-fundamentals",
       "load-balancers",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 89,
-    "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Application Gateway を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+    "question": "複数Azureリージョンに展開されたWebアプリインスタンスへのアクセスソリューションを設計しています。要件：レート制限をサポート／全インスタンスへのリクエスト分散／リージョン停止時のアクセス継続。Azure Application Gatewayを使う案で目標を達成できますか？",
     "choices": [
       "はい",
       "いいえ"
     ],
     "answer": 1,
-    "explanation": "Azure Application Gateway は、レートまたは接続の制限をサポートしていません。Azure Front Door は要件を満たします。 Azure Front Door の Azure Web アプリケーション ファイアウォール (WAF) レート制限ルールは、1 分間にクライアントから許可される要求の数を制御します。https://learn.microsoft.com/ja-jp/azure/application-gateway/overviewhttps://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-rate-limit-configure?pivots=portal",
+    "explanation": "Azure Application Gatewayにはレート制限や接続制限の機能がないため、要件を満たしません。この要件にはAzure Front Doorが適しています。Front DoorのWAFレート制限ルールを使えば、クライアントからの1分あたりのリクエスト数を制御できます。",
     "category": "",
     "tags": [
       "bcdr-fundamentals",
       "load-balancers",
       "app-service",
       "network-security"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 90,
-    "question": "App1 という名前の Web アプリをオンプレミスのデータセンターから Azure に移動する予定です。 App1 は、ホスト サーバーにインストールされているカスタム COM コンポーネントに依存します。 Azure で App1 をホストするソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ Azure データセンターが利用できなくなった場合、ユーザーは App1 を利用できる必要がある。・ コストは最小限に抑える必要がある。",
+    "question": "オンプレミスのWebアプリApp1をAzureへ移行する計画です。App1はホストサーバー上にインストールされたカスタムCOMコンポーネントに依存しています。要件：Azureデータセンターが利用不能になった場合でもApp1を継続利用できる／コストを最小化する。どの構成を推奨しますか？",
     "choices": [
       "2 つの Azure リージョンに、ロード バランサーと仮想マシン スケール セットをデプロイする。",
       "2 つの Azure リージョンに、Azure Traffic Manager プロファイルと Web Appをデプロイする。",
@@ -2742,55 +1631,52 @@ var ALL_QUIZ_QUESTIONS = [
       "ロード バランサーと仮想マシン スケール セットを 2 つの可用性ゾーンにデプロイする。"
     ],
     "answer": 3,
-    "explanation": "Azure App Service では COM コンポーネントが許可されないため、仮想マシンを使用する必要があります。Azure データセンターの障害から保護するには 2 つの可用性ゾーンが必要です。Web Appは使用できません。Azure App Service では、プラットフォーム上で COM コンポーネントを登録することはできません。 アプリで COM コンポーネントを使用する場合は、それらのコンポーネントをマネージド コードで書き換えて、サイトまたはアプリケーショントと共にデプロイする必要があります。https://learn.microsoft.com/ja-jp/dotnet/azure/migration/app-service#com-and-com-components",
+    "explanation": "Azure App ServiceではCOMコンポーネントの登録が許可されていないため、仮想マシンを使用する必要があります。Azureデータセンター障害に備えるには2つの可用性ゾーンへのデプロイが必要です。Web Appの選択肢はCOMコンポーネントの制約により使用不可です。App Service上でCOMコンポーネントを利用するには、マネージドコードでの書き換えとアプリへの同梱が必要です。",
     "category": "",
     "tags": [
       "availability-zones",
       "load-balancers",
       "virtual-machines",
       "app-service"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 91,
-    "question": "ビジネスに重要なデータを保存する新しいアプリを開発する予定です。アプリは次の要件を満たす必要があります。 アプリにはどのようなストレージ ソリューションを推奨しますか。 ストレージ アカウントの種類:・ 1 年間は新しいデータが変更されないようにする。・ データの復元力を最大化する。・ 読み取り遅延を最小限に抑える。",
+    "question": "ビジネス上重要なデータを格納する新規アプリケーションを開発予定です。要件：1年間はデータの変更を不可にする／データの耐障害性を最大化する／読み取り遅延を最小限にする。推奨するストレージアカウントの種類はどれですか？",
     "choices": [
       "Standard 汎用 v1",
       "Premium ブロックBLOB",
       "Standard 汎用 v2"
     ],
     "answer": 1,
-    "explanation": "読み取り遅延を最小限に抑えるには、Premium ブロック BLOB が正解です。Premium レベルでは、不変ストレージもサポートされています。https://docs.microsoft.com/ja-jp/azure/storage/blobs/immutable-storage-overview#supported-account-configurations",
+    "explanation": "読み取りレイテンシの最小化にはPremiumブロックBLOBが最適です。Premiumレベルでは不変ストレージ（イミュータブルストレージ）もサポートされており、データの変更不可要件にも対応できます。",
     "category": "",
     "tags": [
       "resource-locks",
       "azure-storage",
       "blob-storage"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 92,
-    "question": "ビジネスに重要なデータを保存する新しいアプリを開発する予定です。アプリは次の要件を満たす必要があります。 アプリにはどのようなストレージ ソリューションを推奨しますか。 冗長性:・ 1 年間は新しいデータが変更されないようにする。・ データの復元力を最大化する。・ 読み取り遅延を最小限に抑える。",
+    "question": "ビジネスクリティカルなデータを保管する新しいアプリを開発します。要件：1年間データ変更不可／データ復元力の最大化／読み取りレイテンシの最小化。どの冗長性オプションを選択すべきですか？",
     "choices": [
       "ローカル冗長ストレージ (LRS)",
       "ゾーン冗長ストレージ (ZRS)"
     ],
     "answer": 1,
-    "explanation": "ローカル冗長ストレージ (LRS) は、プライマリ リージョンの 1 つの物理的な場所内で、データを同期的に 3 回コピーします。 LRS は最もコストのかからないレプリケーション オプションですが、高可用性または持続性を必要とするアプリケーションには推奨されません。 ゾーン冗長ストレージ (ZRS) は、プライマリ リージョンの 3 つの Azure 可用性ゾーン間でデータを同期的にコピーします。 高可用性を必要とするアプリケーションでは、プライマリ リージョンで ZRS を使用し、セカンダリ リージョンにもレプリケートすることをお勧めします。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
+    "explanation": "LRSはプライマリリージョン内の単一物理ロケーションにデータを3回同期コピーします。コスト最小のオプションですが、高可用性や高耐久性が求められるアプリには推奨されません。ZRSはプライマリリージョン内の3つの可用性ゾーン間でデータを同期コピーし、LRSより高い耐障害性を提供します。高可用性アプリではZRSの使用が推奨され、セカンダリリージョンへのレプリケーションとの併用も検討すべきです。",
     "category": "",
     "tags": [
       "entra-connect",
       "azure-storage",
       "bcdr-fundamentals",
       "availability-zones"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 93,
-    "question": "次の表に示すリソースがあります。 Azure に RG2 という名前の新しいリソース グループを作成します。 仮想マシンを RG2 に移動する必要があります。 各仮想マシンを移動するには何を使用する必要がありますか。 VM1:名前 | タイプ | リソースグループ-----------------------------------------------VM1 | Azure 仮想マシン | RG1VM2 | オンプレミスの仮想マシン | 未適用",
+    "question": "リソースグループRG1内にAzure仮想マシンVM1があり、オンプレミスにはVM2があります。新たにRG2というリソースグループをAzureに作成し、VM1をRG2に移動させる必要があります。VM1の移動に使用すべきツールはどれですか？",
     "choices": [
       "The Data Migration Assistant (DMA)",
       "Azure Migrate",
@@ -2799,19 +1685,18 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Resource Mover"
     ],
     "answer": 4,
-    "explanation": "Azure Resource MoverAzure VM を別のリージョンに移動するには、Microsoft は Azure Resource Mover の使用を推奨しています。リージョン間でリソースを移動するには、移動するリソースを選択します。 Resource Mover はこれらのリソースを検証し、他のリソースに対する依存関係を解決します。https://docs.microsoft.com/ja-jp/azure/resource-mover/overview",
+    "explanation": "Azure VMを別のリージョンやリソースグループに移動する際は、Azure Resource Moverの利用がMicrosoftから推奨されています。Resource Moverは移動対象リソースを検証し、他リソースへの依存関係を自動解決してくれます。",
     "category": "",
     "tags": [
       "lighthouse",
       "virtual-machines",
       "data-migration",
       "db-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 94,
-    "question": "次の表に示すリソースがあります。 Azure に RG2 という名前の新しいリソース グループを作成します。 仮想マシンを RG2 に移動する必要があります。 各仮想マシンを移動するには何を使用する必要がありますか。 VM2:名前 | タイプ | リソースグループ-----------------------------------------------VM1 | Azure 仮想マシン | RG1VM2 | オンプレミスの仮想マシン | 未適用",
+    "question": "Azure VM（VM1、RG1所属）とオンプレミスVM（VM2）があります。新規リソースグループRG2を作成し、VM2をAzureのRG2へ移行する必要があります。VM2の移行に適切なツールはどれですか？",
     "choices": [
       "The Data Migration Assistant (DMA)",
       "Azure Migrate",
@@ -2820,7 +1705,7 @@ var ALL_QUIZ_QUESTIONS = [
       "Azure Resource Mover"
     ],
     "answer": 1,
-    "explanation": "Azure MigrateAzure Migrate では、Azure に簡単な移行、最新化、最適化のサービスが提供されます。 インフラストラクチャ、データ、アプリケーションに対して、オンプレミス リソースの検出、評価、適切なサイズ設定など、移行前のすべての手順が含まれています。 Azure Migrate の拡張可能なフレームワークを使用すると、サード パーティ製ツールを統合できるため、サポートされるユース ケースの範囲が広がります。Azure Arc: Azure Migrate で十分です。 Azure Arc を使用する必要はありません。Data Migration Assistant: Data Migration Assistant は、SQL Server を評価するためのスタンドアロン ツールです。Azure Lighthouse: Azure Lighthouse では、スケーラビリティ、高度な自動化、およびリソース全体にわたる強化されたガバナンスを備えたマルチテナント管理が可能になります。https://learn.microsoft.com/ja-jp/azure/migrate/migrate-services-overview",
+    "explanation": "Azure Migrateはオンプレミスからのクラウド移行を支援する統合サービスで、インフラ・データ・アプリの検出、評価、適切なサイジングなど移行前の全工程をカバーします。拡張フレームワークによりサードパーティツールの統合も可能で対応範囲が広がります。Azure Arcは本ケースでは不要です。DMAはSQL Server評価用のスタンドアロンツールです。LighthouseはマルチテナントのクロステナントManagement用サービスです。",
     "category": "",
     "tags": [
       "entra-id",
@@ -2829,55 +1714,52 @@ var ALL_QUIZ_QUESTIONS = [
       "automation-deploy",
       "data-migration",
       "db-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 95,
-    "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 ストレージ アカウント タイプ:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+    "question": "Azure Linux VMを使ってビデオファイルを解析するアプリケーションを設計中です。ファイルはExpressRoute接続された企業オフィスからアップロードされます。ストレージアカウントの要件：最大7TBのビデオファイルに対応／可能な限り高い可用性／大容量ビデオファイルに最適化されたストレージ／ExpressRoute経由でのアップロードを確実にする。ストレージアカウントタイプの選択はどれですか？",
     "choices": [
       "Premium ページ BLOB",
       "Premium ファイル共有",
       "Standard 汎用 v2"
     ],
     "answer": 2,
-    "explanation": "https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blobs-introduction#blobs",
+    "explanation": "Standard汎用v2はブロックBLOBをサポートし、大容量のビデオファイル（最大数TBまで）に対応可能です。また、様々な冗長性オプションとネットワーク構成を柔軟に選択できます。",
     "category": "",
     "tags": [
       "azure-storage",
       "virtual-machines",
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 96,
-    "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 データの冗長性:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+    "question": "Azure Linux VMでビデオファイル解析を行うアプリの設計です。ExpressRoute接続の企業オフィスからファイルをアップロードします。要件：最大7TBファイル対応／最高レベルの可用性／大容量ビデオ向けストレージ最適化／ExpressRoute経由のアップロード保証。データの冗長性としてどれを選びますか？",
     "choices": [
       "ローカル冗長ストレージ (LRS)",
       "Geo 冗長ストレージ (GRS)",
       "ゾーン冗長ストレージ (ZRS)"
     ],
     "answer": 1,
-    "explanation": "GRS は、LRS または ZRS と比較して、データ ストレージに追加の冗長性を提供します。また、可能な限り最高の可用性を実現します。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
+    "explanation": "GRSはLRSやZRSと比較して追加の冗長性を提供し、可能な限り高い可用性を実現します。プライマリリージョンに加えてセカンダリリージョンにもデータが複製されるため、リージョン障害からの復旧にも対応できます。",
     "category": "",
     "tags": [
       "azure-storage",
       "virtual-machines",
       "on-premises-connectivity"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 97,
-    "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 ネットワーキング:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+    "question": "Azure Linux VMでビデオ解析アプリを運用し、ExpressRoute経由で企業オフィスからファイルをアップロードする構成です。要件：最大7TBのビデオファイル／最高の可用性／大容量ファイルに最適化／ExpressRoute経由のアップロードを確実にする。ネットワーク構成として何を選択すべきですか？",
     "choices": [
       "サービスエンドポイント",
       "Azure Route Server",
       "プライベートエンドポイント"
     ],
     "answer": 2,
-    "explanation": "ExpressRoute は、インターネットをバイパスして、Azure ネットワークに直接接続します。よって、プライベートエンドポイントが正答となります。Azure Private Link を使用すると、プライベート エンドポイントを使用して Azure PaaS サービスを仮想ネットワークに安全に接続できます。 多くのサービスでは、リソースごとにエンドポイントを設定するだけです。 つまり、オンプレミスまたはマルチクラウド サーバーを Azure Arc に接続し、パブリック ネットワークを使用する代わりに、Azure ExpressRoute またはサイト間 VPN 接続経由ですべてのトラフィックを送信できます。https://learn.microsoft.com/ja-jp/azure/azure-arc/servers/private-link-security",
+    "explanation": "ExpressRouteはインターネットを経由せずAzureネットワークに直結するため、プライベートエンドポイントが適切です。Azure Private Linkを使えば、プライベートエンドポイントを介してAzure PaaSサービスを仮想ネットワークに安全に接続できます。オンプレミスサーバーをAzure Arcに接続し、ExpressRouteやサイト間VPN経由で全トラフィックを送信することで、パブリックネットワークを回避した通信が実現できます。",
     "category": "",
     "tags": [
       "azure-storage",
@@ -2885,12 +1767,11 @@ var ALL_QUIZ_QUESTIONS = [
       "vnet",
       "on-premises-connectivity",
       "private-link"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 98,
-    "question": "あなたは、Azure サブスクリプションを持っています。 開発者に Azure 仮想マシンをプロビジョニングできる機能を提供するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ 特定のリージョンでのみ仮想マシンの作成を許可する。・ 特定のサイズの仮想マシンの作成のみを許可する。",
+    "question": "Azureサブスクリプションがあり、開発者にAzure VMのプロビジョニング権限を付与するソリューションが必要です。要件：特定リージョンのみでVM作成を許可／特定サイズのVMのみ作成を許可。どのサービスを推奨しますか？",
     "choices": [
       "Azure Policy",
       "Azure Resource Manager テンプレート",
@@ -2898,7 +1779,7 @@ var ALL_QUIZ_QUESTIONS = [
       "条件付きアクセス ポリシー"
     ],
     "answer": 0,
-    "explanation": "Azure Policyを使用すると、許可される場所と許可される VM SKU を指定できます。https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-and-manage",
+    "explanation": "Azure Policyを活用すれば、許可するリージョン（場所）や許可するVM SKUを定義・強制できます。ポリシーに適合しないリソースの作成は自動的に拒否されるため、開発者のVM作成を指定のリージョンとサイズに限定できます。",
     "category": "",
     "tags": [
       "rbac",
@@ -2906,50 +1787,1018 @@ var ALL_QUIZ_QUESTIONS = [
       "subscription-design",
       "azure-policy",
       "virtual-machines"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 99,
-    "question": "AG1 という名前の Always On 可用性グループをホストするオンプレミスの Microsoft SQL Server 2017 インスタンスが 2 つあります。 AG1 には、DB1 という名前の単一データベースが含まれています。 VM1 という名前の仮想マシンを含む Azure サブスクリプションがあります。 VM1 は Linux を実行し、SQL Server 2019 インスタンスが含まれています。 DB1 を VM1 に移行する必要があります。ソリューションでは、DB1 のダウンタイムを最小限に抑える必要があります。 マイグレーションの準備をするとき、あなたは次のうちどれを使用しますか。",
+    "question": "オンプレミスに2つのSQL Server 2017インスタンスがあり、Always On可用性グループAG1をホストしています。AG1にはデータベースDB1が含まれます。Azure側にはLinuxでSQL Server 2019が稼働するVM1があります。DB1をVM1に移行する際、ダウンタイムを最小限にしたい場合、移行準備として何を実施すべきですか？",
     "choices": [
       "オンプレミスの SQL Server インスタンスのアップグレード",
       "AG1 へのセカンダリ レプリカの追加",
       "VM1 での Always On 可用性グループの作成"
     ],
     "answer": 1,
-    "explanation": "次の手順で移行の準備をします。セカンダリ レプリカを AG1 に追加するオンプレミスの SQL Server インスタンスには可用性グループ (AG1) がすでに存在しているため、VM1 に Always On 可用性グループを作成する必要はありません。セカンダリ レプリカを AG1 に追加すると、移行に使用できる DB1 のコピーを提供できます。これにより、プライマリ レプリカを使用可能な状態のままでセカンダリ レプリカで移行を実行することにより、DB1 のダウンタイムを最小限に抑えることができます。",
+    "explanation": "移行準備としてAG1にセカンダリレプリカを追加します。オンプレミスに既存の可用性グループ（AG1）があるため、VM1上に新たなAlways On可用性グループを作成する必要はありません。セカンダリレプリカを追加することでDB1のコピーが移行に利用でき、プライマリレプリカを稼働させたままセカンダリ側で移行を進められるため、ダウンタイムを最小化できます。",
     "category": "",
     "tags": [
       "subscription-design",
       "sql-ha",
       "virtual-machines",
       "data-migration"
-    ],
-    "source": "it-concepts-japan.com"
+    ]
   },
   {
     "id": 100,
-    "question": "AG1 という名前の Always On 可用性グループをホストするオンプレミスの Microsoft SQL Server 2017 インスタンスが 2 つあります。 AG1 には、DB1 という名前の単一データベースが含まれています。 VM1 という名前の仮想マシンを含む Azure サブスクリプションがあります。 VM1 は Linux を実行し、SQL Server 2019 インスタンスが含まれています。 DB1 を VM1 に移行する必要があります。ソリューションでは、DB1 のダウンタイムを最小限に抑える必要があります。 マイクレーションを実行するとき、あなたは次のうちどれを使用しますか。",
+    "question": "2つのオンプレミスSQL Server 2017インスタンスでAlways On可用性グループAG1（DB1を含む）を運用中です。Azure上のLinux VM（VM1）でSQL Server 2019が稼働しています。DB1をVM1へ移行する際にダウンタイムを最小限にするため、マイグレーション実行時に使用すべきツールはどれですか？",
     "choices": [
       "ログ 配布",
       "Azure Migrate",
       "分散型可用性グループ"
     ],
     "answer": 1,
-    "explanation": "オンプレミス SQL サーバーをアップグレードし、Azure Migrate を使用します。",
+    "explanation": "オンプレミスのSQL Serverをアップグレードしたうえで、Azure Migrateを使用して移行を実行します。Azure Migrateはオンプレミスからのクラウド移行を包括的に支援するサービスです。",
     "category": "",
     "tags": [
       "subscription-design",
       "sql-ha",
       "virtual-machines",
       "data-migration"
+    ]
+  },
+  {
+    "id": 101,
+    "question": "contoso.com および fabrikam.com という 2 つの Microsoft Entra ID テナントが存在し、それぞれ 50 個の Azure サブスクリプションと関連付けられています。Contoso.com テナントには User1 と User2 の 2 名のユーザーが登録されています。以下の条件を最小権限の原則に基づいて実現するには、各ユーザーにどのロールを付与すべきですか。 User1 について: ・ User1 が特定の Azure サブスクリプションの関連付け先となる Microsoft Entra テナントを切り替えられるようにする。・ サブスクリプションが別の Microsoft Entra テナントへ移行された後、そのサブスクリプションに対してフルレベルの権限を持つ Microsoft Entra ID アカウントが存在しない状況で、User2 のアクセス権限をサブスクリプションに対して引き上げられるようにする。",
+    "choices": [
+      "サービス管理者",
+      "共同管理者",
+      "所有者"
     ],
-    "source": "it-concepts-japan.com"
+    "answer": 2,
+    "explanation": "User1 には「所有者」ロールを割り当てる必要があります。Azure サブスクリプションに紐づく Microsoft Entra テナントの変更を行うためには、所有者レベルの十分な権限が求められるためです。サブスクリプションのディレクトリ変更操作には、この権限が最低限必要となります。https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory#before-you-begin",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "rbac",
+      "pim",
+      "subscription-design"
+    ]
+  },
+  {
+    "id": 102,
+    "question": "contoso.com および fabrikam.com という 2 つの Microsoft Entra ID テナントが存在し、それぞれ 50 個の Azure サブスクリプションと関連付けられています。Contoso.com テナントには User1 と User2 の 2 名のユーザーが登録されています。以下の条件を最小権限の原則に基づいて実現するには、各ユーザーにどのロールを付与すべきですか。 User2 について: ・ User1 が特定の Azure サブスクリプションの関連付け先となる Microsoft Entra テナントを切り替えられるようにする。・ サブスクリプションが別の Microsoft Entra テナントへ移行された後、そのサブスクリプションに対してフルレベルの権限を持つ Microsoft Entra ID アカウントが存在しない状況で、User2 のアクセス権限をサブスクリプションに対して引き上げられるようにする。",
+    "choices": [
+      "サービス管理者",
+      "共同管理者",
+      "所有者"
+    ],
+    "answer": 2,
+    "explanation": "User2 にも「所有者」ロールの付与が必要です。サブスクリプションに対するフルレベルのアクセス権限を持つ Microsoft Entra ID アカウントが見つからない場合に、User2 のアクセスを昇格させる必要があるためです。所有者ロールはあらゆるリソースに対する完全なアクセス権と、他のユーザーへのアクセス委任権限を含んでおり、このシナリオにおいて User2 がサブスクリプションを管理するために不可欠です。https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory#before-you-begin",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "rbac",
+      "pim",
+      "subscription-design"
+    ]
+  },
+  {
+    "id": 103,
+    "question": "Windows Server が稼働するオンプレミスのサーバー 10 台があります。これらのサーバーを Recovery Services コンテナーに毎日バックアップする必要があり、以下の条件を満たすソリューションが求められています。サーバー側の構成として適切なものはどれですか。・ 各サーバーの全ファイルおよびフォルダーをバックアップ対象とする。・ Azure 上にバックアップのコピーを 3 つ維持する。・ コストを可能な限り抑える。",
+    "choices": [
+      "Azure Site Recovery モビリティ サービス",
+      "ボリューム シャドウ コピー サービス (VSS)",
+      "Microsoft Azure Recovery Service (MARS) エージェント"
+    ],
+    "answer": 2,
+    "explanation": "サーバーのファイルとフォルダーを Azure にバックアップするには、MARS エージェントが適しています。MARS エージェントを使えば、ファイルレベルでのバックアップが可能であり、Recovery Services コンテナーへの直接バックアップを実現できます。",
+    "category": "",
+    "tags": [
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "containers"
+    ]
+  },
+  {
+    "id": 104,
+    "question": "Windows Server が稼働するオンプレミスのサーバー 10 台があります。これらのサーバーを Recovery Services コンテナーに毎日バックアップする必要があり、以下の条件を満たすソリューションが求められています。ストレージの設定として適切なものはどれですか。・ 各サーバーの全ファイルおよびフォルダーをバックアップ対象とする。・ Azure 上にバックアップのコピーを 3 つ維持する。・ コストを可能な限り抑える。",
+    "choices": [
+      "ローカル冗長ストレージ (LRS)",
+      "Geo 冗長ストレージ (GRS)",
+      "ゾーン冗長ストレージ (ZRS)"
+    ],
+    "answer": 0,
+    "explanation": "LRS は Azure Backup において最もコスト効率に優れたストレージの選択肢です。プライマリリージョンの単一データセンター内でデータを 3 回複製するため、大半のワークロードに十分な耐久性を備えています。コスト最小化の観点から最適な選択となります。",
+    "category": "",
+    "tags": [
+      "azure-storage",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "containers"
+    ]
+  },
+  {
+    "id": 105,
+    "question": "以下の条件を満たすデータストレージソリューションとして、どれを推奨すべきですか。・ アプリケーションが REST 接続でデータにアクセスできること。・ サイズや利用パターンが異なる 20 個の独立したテーブルを格納できること。・ 別の Azure リージョンへデータが自動的にレプリケートされること。・ コストを最小限にすること。",
+    "choices": [
+      "geo 冗長ストレージ (GRS) を使用する Azure ストレージ アカウント内のテーブル",
+      "アクティブな geo レプリケーションを使用する Azure SQL Database エラスティック プール",
+      "アクティブ geo レプリケーションを使用する Azure SQL データベース",
+      "読み取りアクセス geo 冗長ストレージ (RA-GRS) を使用する Azure ストレージ アカウント内のテーブル"
+    ],
+    "answer": 0,
+    "explanation": "Azure Table Storage はスキーマレスな NoSQL データストアであり、異なるサイズや使用パターンを持つ複数の独立テーブルのホスティングに向いています。REST API でのアクセスが可能で、GRS を選択すればセカンダリリージョンへの自動レプリケーションが行われます。コスト面では GRS は RA-GRS より低コストであり、一般的に Azure SQL Database の選択肢と比較しても経済的です。https://learn.microsoft.com/ja-jp/azure/storage/common/geo-redundant-design",
+    "category": "",
+    "tags": [
+      "data-fundamentals",
+      "azure-storage",
+      "sql-database",
+      "bcdr-fundamentals",
+      "sql-ha"
+    ]
+  },
+  {
+    "id": 106,
+    "question": "以下の条件をすべて満たす Azure Storage ソリューションとして、どれを推奨すべきですか。・ 1 PB 規模のデータ容量に対応する。・ BLOB ストレージ形式でデータを保持する。・ 3 階層のサブフォルダー構造に対応する。・ アクセス制御リスト (ACL) による権限管理が可能である。",
+    "choices": [
+      "ページ BLOB 用に構成された Premium ストレージ アカウント",
+      "ブロック BLOB 用に構成された Premium ストレージ アカウント",
+      "ファイル共有用に構成され、大規模なファイル共有をサポートする Premium ストレージ アカウント",
+      "階層名前空間が有効になっている汎用 v2 ストレージ アカウント"
+    ],
+    "answer": 3,
+    "explanation": "Azure Blob Storage はペタバイト規模の非構造化データ保存に対応しており、汎用 v2 アカウントは GB あたりの容量料金が最も安価です。階層名前空間を有効にすることで、ディレクトリやサブフォルダーの複数レベルの構造をサポートでき、さらに Azure Data Lake Storage Gen2 を通じてきめ細かい ACL ベースのアクセス制御が利用可能になります。https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/azure-subscription-service-limits#storage-limits",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage",
+      "data-analytics"
+    ]
+  },
+  {
+    "id": 107,
+    "question": "2 TB のデータファイルを保有するオンプレミスのファイルサーバーがあり、これらを西ヨーロッパ Azure リージョンの Azure Blob Storage へ移行する計画です。以下の条件を満たすストレージアカウントの種類を推奨してください。・ 単一の Azure データセンターで障害が発生しても利用を継続できる。・ ストレージの階層化に対応している。・ コストを可能な限り抑える。",
+    "choices": [
+      "Standard 汎用 v2",
+      "Premium ブロック BLOB",
+      "Standard 汎用 v1"
+    ],
+    "answer": 0,
+    "explanation": "Standard 汎用 v2 は、BLOB、ファイル共有、キュー、テーブルに対応する標準的なストレージアカウントです。ストレージ階層化をサポートし、Azure Storage を利用する大半のシナリオに推奨されるアカウント種類です。コストの観点でも最適な選択肢となります。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage",
+      "bcdr-fundamentals",
+      "messaging"
+    ]
+  },
+  {
+    "id": 108,
+    "question": "2 TB のデータファイルを保有するオンプレミスのファイルサーバーがあり、これらを西ヨーロッパ Azure リージョンの Azure Blob Storage へ移行する計画です。以下の条件を満たす冗長性オプションを推奨してください。・ 単一の Azure データセンターで障害が発生しても利用を継続できる。・ ストレージの階層化に対応している。・ コストを可能な限り抑える。",
+    "choices": [
+      "ゾーン冗長ストレージ (ZRS)",
+      "Geo 冗長ストレージ (GRS)",
+      "読み取りアクセス geo 冗長ストレージ (RA-GRS)",
+      "ローカル冗長ストレージ (LRS)"
+    ],
+    "answer": 0,
+    "explanation": "ZRS はプライマリリージョン内の 3 つの可用性ゾーン間でデータを同期的にレプリケートします。各可用性ゾーンには独立した電源、冷却設備、ネットワークが備わっており、単一データセンターの障害に耐えることができます。ZRS は年間 99.9999999999%（12 ナイン）以上の耐久性を実現し、GRS や RA-GRS と比べてコストを抑えつつデータセンター障害からの保護を提供します。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
+    "category": "",
+    "tags": [
+      "entra-connect",
+      "azure-storage",
+      "blob-storage",
+      "bcdr-fundamentals",
+      "availability-zones"
+    ]
+  },
+  {
+    "id": 109,
+    "question": "オンプレミスの Microsoft SQL Server データベースを Azure へ移行する計画があります。以下の条件を満たすデプロイソリューションとして適切なものはどれですか。・ ユーザーが手動で開始するバックアップに対応する。・ Azure リージョン間で自動レプリケーションされる複数インスタンスをサポートする。・ 事業継続性の実装・維持にかかる管理作業を最小化する。",
+    "choices": [
+      "Azure SQL Managed Instance",
+      "Azure SQL Database の単一データベース",
+      "Azure Virtual Machines 上の SQL Server"
+    ],
+    "answer": 0,
+    "explanation": "重要なポイントは「複数インスタンスの自動レプリケーション対応」という点です。ユーザーが開始するバックアップもサポートし、かつ管理負荷を抑えられる選択肢は Azure SQL Managed Instance のみです。https://learn.microsoft.com/ja-jp/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview?view=azuresql",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "virtual-machines",
+      "data-migration"
+    ]
+  },
+  {
+    "id": 110,
+    "question": "オンプレミスの Microsoft SQL Server データベースを Azure へ移行する計画があります。以下の条件を満たす回復力ソリューションとして適切なものはどれですか。・ ユーザーが手動で開始するバックアップに対応する。・ Azure リージョン間で自動レプリケーションされる複数インスタンスをサポートする。・ 事業継続性の実装・維持にかかる管理作業を最小化する。",
+    "choices": [
+      "自動フェールオーバー グループ",
+      "アクティブ geo レプリケーション",
+      "ゾーン冗長デプロイメント"
+    ],
+    "answer": 0,
+    "explanation": "Azure SQL Managed Instance ではアクティブ geo レプリケーションがサポートされていないため、リージョン間の冗長性を確保するには自動フェールオーバーグループを使用する必要があります。https://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-sql-managed-instance/reliability",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "storage-redundancy",
+      "sql-ha",
+      "data-migration"
+    ]
+  },
+  {
+    "id": 111,
+    "question": "Azure サブスクリプション上でステートレスな Web アプリケーションをホストするためのリソースをデプロイする必要があります。提案された解決策として、Isolated App Service プランに Web アプリをデプロイする方法が挙げられています。この提案は以下の目標を達成できますか。・ 完全な .NET Framework を利用可能にする。・ Azure リージョン全体の障害時にも冗長性を確保する。・ カスタムのアプリケーション依存関係をインストールするために、管理者が OS レベルのアクセス権を持てるようにする。",
+    "choices": [
+      "はい",
+      "いいえ"
+    ],
+    "answer": 1,
+    "explanation": "この提案は目標を満たしません。代替策として、2 つの Azure リージョンにそれぞれ Azure 仮想マシンをデプロイし、Azure Traffic Manager プロファイルを構成する方法が適切です。https://docs.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-overview",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "azure-storage",
+      "load-balancers",
+      "virtual-machines",
+      "app-service"
+    ]
+  },
+  {
+    "id": 112,
+    "question": "以下のリソースを含む Azure サブスクリプションがあります。VNet1 と VNet2 間、および VNet1 と VNet3 間にピアリングを設定しています。各仮想マシンは HTTPS ベースのクライアント/サーバーアプリケーションを実行しており、プライベート IP アドレスのみでアクセス可能です。VM2 と VM3 間で負荷分散を行い、一方の VM に障害が発生した際にもう一方へ自動的にリクエストが転送されるようにするには、どのソリューションを採用すべきですか。名前 | 種類 | 詳細------------------------------VM1 | 仮想マシン | 米国中部リージョン、フロントエンドVM2 | 仮想マシン | 米国東部リージョン、バックエンドVM3 | 仮想マシン | 米国西部 2 リージョン、バックエンドVNet1 | 仮想ネットワーク | VM1 を収容VNet2 | 仮想ネットワーク | VM2 を収容VNet3 | 仮想ネットワーク | VM3 を収容",
+    "choices": [
+      "リージョン間のロード バランサー",
+      "Azure Firewall Premium",
+      "Azure Application Gateway v2",
+      "Azure Front Door Premium"
+    ],
+    "answer": 3,
+    "explanation": "Azure Front Door Premium は Private Link に対応しており、仮想ネットワーク内で稼働するサービスへのプライベート接続を実現します。プライベートエンドポイントを各リージョンのネットワーク内に作成し、Microsoft のバックボーンネットワーク経由で VM2 および VM3 にトラフィックを振り分けることが可能です。パブリックインターネットへの露出なしにリージョン横断での負荷分散と自動フェールオーバーを実現できます。https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-faq#azure-front-door---azure-application-gateway----------",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "load-balancers",
+      "virtual-machines",
+      "vnet",
+      "private-link",
+      "network-security"
+    ]
+  },
+  {
+    "id": 113,
+    "question": "ある企業が Azure SQL データベースを利用する複数の Azure App Service インスタンスのデプロイを予定しています。App Service インスタンスは Azure SQL データベースと同時にプロビジョニングされます。規制上の要件として、App Service は特定の Azure リージョンにのみ配置でき、関連リソースも同一リージョンに存在しなければなりません。提案された解決策として、Azure Policy イニシアチブによりリソースグループの場所を強制する方法が挙げられています。これは目的を達成しますか。",
+    "choices": [
+      "はい",
+      "いいえ"
+    ],
+    "answer": 1,
+    "explanation": "リソースグループの場所と、その中に含まれるリソースの場所は無関係です。リソースグループは「許可された場所」ポリシーの対象外となります。リソースのデプロイ先リージョンを制限するには、「許可された場所」ポリシーをリソース自体に適用する必要があります。リソースグループの配置制限には別途「リソースグループに許可された場所」ポリシーを使用します。",
+    "category": "",
+    "tags": [
+      "azure-policy",
+      "purview",
+      "sql-database",
+      "app-service"
+    ]
+  },
+  {
+    "id": 114,
+    "question": "サードパーティ製のスケジューラを使用するハイパフォーマンスコンピューティング (HPC) クラスターを Azure 上にプロビジョニングしたいと考えています。HPC クラスターのノードをプロビジョニングおよび管理するのに最適なソリューションはどれですか。",
+    "choices": [
+      "Azure Purview",
+      "Azure Automation",
+      "Azure Lighthouse",
+      "Azure CycleCloud"
+    ],
+    "answer": 3,
+    "explanation": "Azure CycleCloud は、Azure 上での HPC 環境の構築・管理に特化したエンタープライズ向けツールです。既存の HPC スケジューラとの連携が可能で、インフラの動的なプロビジョニングや自動スケーリングをサポートします。任意の規模でのジョブ実行が効率的に行えるほか、ファイルシステムの作成やコンピュートノードへのマウントといった機能も備えています。https://learn.microsoft.com/ja-jp/azure/cyclecloud/overview?view=cyclecloud-8",
+    "category": "",
+    "tags": [
+      "lighthouse",
+      "purview",
+      "batch",
+      "automation-deploy"
+    ]
+  },
+  {
+    "id": 115,
+    "question": "ニューヨーク、シドニー、パリ、ヨハネスブルグにオフィスを持つ企業が、Azure サブスクリプションを利用しています。以下の条件を満たす Azure ネットワークソリューションをデプロイするにあたり、最低限必要な仮想 WAN ハブの数はいくつですか。・ 米国東部、東南アジア、北ヨーロッパ、南アフリカの各 Azure リージョンで ExpressRoute 回線と接続する。・ 3 つのリージョン間の接続を最適化してレイテンシを最小化する。・ サイト間 VPN 接続をサポートする。・ コストを最小限に抑える。",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 3,
+    "explanation": "レイテンシ最小化には 3 リージョンでの接続最適化が求められますが、4 つの Azure リージョンすべてで ExpressRoute 回線への接続も必要です。各リージョンにローカルなハブを配置することで、接続ポイントが確保されレイテンシが低減されます。3 リージョン間の最適化だけなら 3 つで足りるように見えますが、4 つのリージョンすべてのローカル接続をカバーするには 4 つのハブが必要です。",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "on-premises-connectivity"
+    ]
+  },
+  {
+    "id": 116,
+    "question": "ニューヨーク、シドニー、パリ、ヨハネスブルグにオフィスを持つ企業が、Azure サブスクリプションを利用しています。以下の条件を満たす Azure ネットワークソリューションをデプロイするにあたり、適切な仮想 WAN SKU はどれですか。・ 米国東部、東南アジア、北ヨーロッパ、南アフリカの各 Azure リージョンで ExpressRoute 回線と接続する。・ 3 つのリージョン間の接続を最適化してレイテンシを最小化する。・ サイト間 VPN 接続をサポートする。・ コストを最小限に抑える。",
+    "choices": [
+      "Standard",
+      "Basic"
+    ],
+    "answer": 0,
+    "explanation": "Basic SKU はサイト間 VPN のみ対応です。Standard SKU は ExpressRoute、ユーザー VPN (P2S)、サイト間 VPN、ハブ間トランジット、VNet 間トランジット、Azure Firewall、仮想 WAN 上の NVA をサポートします。ExpressRoute との接続が必要なため Standard が必須です。https://learn.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about#basicstandard",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "vnet",
+      "on-premises-connectivity",
+      "network-security"
+    ]
+  },
+  {
+    "id": 117,
+    "question": "Azure サブスクリプションを利用しており、Linux ノードを使用する Azure Kubernetes Service (AKS) のソリューションを推奨する必要があります。以下の条件を満たすスケーリングオプションはどれですか。・ スケールアウト時のコンピューティングリソースのプロビジョニング時間を最小限にする。・ Linux コンテナの自動スケーリングに対応する。・ 管理にかかる作業量を最小限にする。",
+    "choices": [
+      "クラスターオートスケーラー",
+      "Virtual Kubelet",
+      "水平 Pod オートスケーラー",
+      "仮想ノード"
+    ],
+    "answer": 3,
+    "explanation": "仮想ノードを使用すると、AKS クラスター上のアプリケーションワークロードを迅速にスケールできます。Pod のプロビジョニングが短時間で完了し、実行時間に基づく秒単位の課金のみで済みます。クラスターオートスケーラーが VM コンピューティングノードの追加デプロイを待つ必要がなくなります。なお、仮想ノードは Linux の Pod とノードでのみサポートされています。https://learn.microsoft.com/ja-jp/azure/aks/virtual-nodes",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "vmss",
+      "containers"
+    ]
+  },
+  {
+    "id": 118,
+    "question": "Microsoft Entra ID ユーザーがオンラインアンケートの作成・公開を行える SaaS アプリケーションを設計しています。このアプリケーションにはフロントエンドの Web アプリとバックエンドの Web API があり、Web アプリは Web API を呼び出して顧客アンケートの更新処理を行います。以下の要件を満たす認証フローの設計において、アクセストークンはどこで生成されるべきですか。・ Web アプリからバックエンド Web API へのアクセスには OAuth 2.0 ベアラートークンによる認証が必要。・ Web アプリでは個々のユーザーの ID による認証が必要。",
+    "choices": [
+      "ウェブアプリ",
+      "Web API",
+      "Microsoft Entra ID"
+    ],
+    "answer": 2,
+    "explanation": "OAuth 2.0 では、認可サーバーがリソース所有者の承認に基づきアクセストークンを発行します。Microsoft Entra ID は OAuth 2.0 のすべてのフローをサポートする認可サーバーとして機能し、アクセストークンの生成を担います。クライアント（Web アプリ）はこのトークンを使って、リソースサーバー（Web API）上の保護リソースにアクセスします。https://learn.microsoft.com/ja-jp/entra/architecture/auth-oauth2",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "alerts",
+      "app-service"
+    ]
+  },
+  {
+    "id": 119,
+    "question": "Microsoft Entra ID ユーザーがオンラインアンケートの作成・公開を行える SaaS アプリケーションを設計しています。このアプリケーションにはフロントエンドの Web アプリとバックエンドの Web API があり、Web アプリは Web API を呼び出して顧客アンケートの更新処理を行います。以下の要件を満たす認証フローの設計において、認可の判断はどこで行われるべきですか。・ Web アプリからバックエンド Web API へのアクセスには OAuth 2.0 ベアラートークンによる認証が必要。・ Web アプリでは個々のユーザーの ID による認証が必要。",
+    "choices": [
+      "ウェブアプリ",
+      "Web API",
+      "Microsoft Entra ID"
+    ],
+    "answer": 1,
+    "explanation": "委任アクセスのパターンでは、Web API に送信されるベアラートークンにユーザー ID 情報が含まれています。Web API はこのユーザー ID をもとに、リソースへのアクセス可否を判断します。https://learn.microsoft.com/ja-jp/azure/architecture/guide/multitenant/considerations/identity",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "alerts",
+      "app-service"
+    ]
+  },
+  {
+    "id": 120,
+    "question": "以下の条件を満たす高可用性 Azure SQL データベースを設計するには、どのデプロイオプションを選択すべきですか。・ レプリカ間のフェイルオーバー時にデータ損失が発生しないこと。・ 可用性ゾーンの障害時にもデータベースの利用を継続できること。・ コストを可能な限り抑えること。",
+    "choices": [
+      "Azure SQL Database Business Critical",
+      "Azure SQL Database Basic",
+      "Azure SQL Managed Instance General Purpose",
+      "Azure SQL Database Standard"
+    ],
+    "answer": 0,
+    "explanation": "Business Critical レベルは、フェールオーバー時のデータ損失ゼロと高可用性を実現するよう設計されています。また、ゾーン冗長構成を備えており、異なる可用性ゾーンにレプリカを配置することで、ゾーン停止時にもサービスを継続できます。General Purpose レベルでは必要なゾーン冗長性がサポートされていません。コスト最小化は最も安価な選択肢を選ぶことではなく、すべての要件を満たした上で最もコスト効率の高い構成を選ぶことを意味します。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/sql-database-paas-overview?view=azuresql#service-tiers",
+    "category": "",
+    "tags": [
+      "azure-storage",
+      "sql-database",
+      "bcdr-fundamentals",
+      "availability-zones",
+      "azure-backup",
+      "site-recovery",
+      "storage-redundancy"
+    ]
+  },
+  {
+    "id": 121,
+    "question": "Contoso, Ltd. という Microsoft ボリュームライセンス顧客のデータベース環境を管理しています。Contoso はソフトウェアアシュアランスのライセンスモビリティを活用しています。50 個のデータベースをデプロイする際、以下の要件を満たす購入モデルとして適切なものはどれですか。・ 自動スケーリングに対応する。・ Microsoft SQL Server のライセンス費用を最小化する。",
+    "choices": [
+      "仮想コア",
+      "DTU",
+      "Azure 予約仮想マシン インスタンス"
+    ],
+    "answer": 0,
+    "explanation": "Azure ハイブリッド特典を Azure SQL Database に適用するには、仮想コアベースの購入モデルとプロビジョニング済みコンピューティングレベルを選択する必要があります。DTU ベースの購入モデルやサーバーレスコンピューティングレベルでは Azure ハイブリッド特典を利用できません。ソフトウェアアシュアランスを持つ顧客にとって、仮想コアモデルが最もライセンスコストを抑える選択です。https://docs.microsoft.com/ja-jp/azure/azure-sql/azure-hybrid-benefit",
+    "category": "",
+    "tags": [
+      "entra-license",
+      "sql-database",
+      "vmss",
+      "virtual-machines",
+      "azure-functions"
+    ]
+  },
+  {
+    "id": 122,
+    "question": "Contoso, Ltd. という Microsoft ボリュームライセンス顧客のデータベース環境を管理しています。Contoso はソフトウェアアシュアランスのライセンスモビリティを活用しています。50 個のデータベースをデプロイする際、以下の要件を満たすデプロイオプションとして適切なものはどれですか。・ 自動スケーリングに対応する。・ Microsoft SQL Server のライセンス費用を最小化する。",
+    "choices": [
+      "Azure SQL Managed Instance",
+      "SQL Server Always On 可用性グループ",
+      "Azure SQL Database エラスティック プール"
+    ],
+    "answer": 2,
+    "explanation": "Azure SQL Database のエラスティックプールは、利用パターンが多様で予測が難しい複数のデータベースを効率よく管理・スケーリングするためのコスト効率に優れたソリューションです。プール内のデータベースは単一サーバー上でリソースを共有し、SaaS 開発者はデータベースごとの弾力的なパフォーマンスを確保しながら、全体の費用を予算内に収められます。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/elastic-pool-overview?view=azuresql",
+    "category": "",
+    "tags": [
+      "entra-license",
+      "cost-management",
+      "sql-database",
+      "vmss",
+      "sql-ha"
+    ]
+  },
+  {
+    "id": 123,
+    "question": "Contoso, Ltd. は以下のリソース（※1）を持つ Azure サブスクリプションを運用しています。Contoso の製品データは contososql1 から contosolake1 にコピー済みです。パートナー企業 Fabrikam Inc. は以下のリソース（※2）を持つ Azure サブスクリプションを所有しています。Contoso は FabrikamVM1 上の研究データを contosolake1 にアップロードし、その過程で Contoso の利用するデータ形式へ変換する必要があります。contosolake1 に格納されたデータは contosoworkspace1 で分析します。以下の要件（※3）を満たすソリューションとして、データのアップロードと変換にはどの方法を推奨しますか。※1 contosoworkspace1（Azure Synapse Analytics ワークスペース）、contosolake1（Azure Data Lake Storage アカウント）、contososql1（Azure SQL データベース） ※2 FabrikamVM1（SQL Server 2019 搭載の仮想マシン）、fabrikamsa1（Azure ストレージアカウント） ※3 FabrikamVM1 の研究データのアップロードおよび変換、contosoworkspace1 内のデータスナップショットへの限定的なアクセスを Fabrikam に付与",
+    "choices": [
+      "Azure Data Box Gateway",
+      "Azure Data Share",
+      "Azure Synapse パイプライン"
+    ],
+    "answer": 2,
+    "explanation": "データのアップロードと変換（ETL 操作）には Azure Data Factory ベースの機能が適しています。Azure Synapse Analytics の Synapse パイプラインは Azure Data Factory の機能を基盤としており、データ統合やデータフローの処理を Synapse ワークスペース内で直接実行できます。https://learn.microsoft.com/ja-jp/azure/synapse-analytics/data-integration/concepts-data-factory-differences",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "log-analytics",
+      "azure-storage",
+      "sql-database",
+      "data-analytics",
+      "virtual-machines",
+      "data-migration"
+    ]
+  },
+  {
+    "id": 124,
+    "question": "Contoso, Ltd. は以下のリソース（※1）を持つ Azure サブスクリプションを運用しています。Contoso の製品データは contososql1 から contosolake1 にコピー済みです。パートナー企業 Fabrikam Inc. は以下のリソース（※2）を持つ Azure サブスクリプションを所有しています。Contoso は FabrikamVM1 上の研究データを contosolake1 にアップロードし、その過程で Contoso の利用するデータ形式へ変換する必要があります。contosolake1 に格納されたデータは contosoworkspace1 で分析します。以下の要件（※3）を満たすソリューションとして、制限付きアクセスの提供にはどの方法を推奨しますか。※1 contosoworkspace1（Azure Synapse Analytics ワークスペース）、contosolake1（Azure Data Lake Storage アカウント）、contososql1（Azure SQL データベース） ※2 FabrikamVM1（SQL Server 2019 搭載の仮想マシン）、fabrikamsa1（Azure ストレージアカウント） ※3 FabrikamVM1 の研究データのアップロードおよび変換、contosoworkspace1 内のデータスナップショットへの限定的なアクセスを Fabrikam に付与",
+    "choices": [
+      "Azure Data Box Gateway",
+      "Azure Synapse パイプライン",
+      "Azure Data Share"
+    ],
+    "answer": 2,
+    "explanation": "Azure Data Share を利用すると、複数の顧客やパートナーとデータを安全に共有できます。データプロバイダーは共有データの管理権限を保持したまま、誰がいつどのデータにアクセスしたかを監視・管理できます。このケースではスナップショットベースの共有方式を使って、Fabrikam に対して contosoworkspace1 のデータへの限定的なアクセスを提供します。https://learn.microsoft.com/ja-jp/azure/data-share/overview",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "azure-monitor",
+      "log-analytics",
+      "azure-storage",
+      "sql-database",
+      "data-analytics",
+      "virtual-machines",
+      "data-migration"
+    ]
+  },
+  {
+    "id": 125,
+    "question": "ミッションクリティカルなアプリケーションの記録データを保存するストレージソリューションを選定する必要があります。書き込み操作のレイテンシおよびスループットに関する SLA を提供するサービスとして、最も適切なものはどれですか。",
+    "choices": [
+      "Azure Data Lake Storage Gen2",
+      "Azure Cosmos DB",
+      "Azure SQL",
+      "Azure Blob Storage"
+    ],
+    "answer": 1,
+    "explanation": "Azure Cosmos DB は、グローバル分散型のマルチモデルデータベースサービスであり、スループット、レイテンシ、可用性、整合性を網羅する包括的な SLA を提供する唯一の選択肢です。他のサービスではレイテンシとスループットの両方に対する SLA は保証されません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction",
+    "category": "",
+    "tags": [
+      "blob-storage",
+      "cosmosdb",
+      "data-analytics"
+    ]
+  },
+  {
+    "id": 126,
+    "question": "以下の表に示す部門構成を持つ企業があります。Sub1 には App1 という Azure App Service Web アプリが含まれ、シングルテナント構成で Microsoft Entra ID を使ったユーザー認証を行っています。現在 contoso.com のユーザーのみが App1 に認証可能です。fabrikam.com テナントのユーザーにも App1 への認証を許可するには、どのソリューションを推奨すべきですか。部門 | Azure サブスクリプション | Microsoft Entra テナント-----East | Sub1 | Contoso.com West | Sub2 | Fabrikam.com",
+    "choices": [
+      "Microsoft Entra ID Protection を構成する。",
+      "条件付きアクセス ポリシーを構成する。",
+      "Microsoft Entra ID エンタイトルメント管理を使用して外部ユーザーを管理する。",
+      "Microsoft Entra ID プロビジョニング サービスを構成する。"
+    ],
+    "answer": 2,
+    "explanation": "エンタイトルメント管理では、接続先組織を指定してそのユーザーがアクセス権を要求できるようにします。ディレクトリに未登録のユーザーがアクセスを要求し承認されると、自動的に B2B ゲストとして招待されアクセス権が付与されます。アクセス権の期限切れ後、他のアクセスパッケージが割り当てられていなければ B2B アカウントも自動削除されます。https://learn.microsoft.com/ja-jp/entra/id-governance/entitlement-management-overview",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "external-users",
+      "entra-governance",
+      "conditional-access",
+      "subscription-design",
+      "app-service"
+    ]
+  },
+  {
+    "id": 127,
+    "question": "オンプレミスネットワークと Azure サブスクリプションを利用しており、複数のブランチオフィスが存在します。トロントのブランチオフィスにはファイルサーバーとして機能する VM1 があり、全オフィスのユーザーが VM1 の共有ファイルにアクセスしています。トロントオフィスへのアクセスが不能になった場合に、ユーザーが共有ファイルへ可能な限り早くアクセスできるようにするソリューションはどれですか。",
+    "choices": [
+      "Azure File 共有 と Azure File Sync",
+      "Recovery Services コンテナーと Windows Server バックアップ",
+      "Recovery Services コンテナーと Azure Backup",
+      "Azure BLOB コンテナーと Azure File Sync"
+    ],
+    "answer": 0,
+    "explanation": "Azure File Sync と Azure ファイル共有を組み合わせることで、オンプレミスのファイルサーバーのデータをクラウドに同期できます。トロントのオフィスがアクセス不能になった場合でも、Azure 上の同期済みファイル共有から迅速にファイルを提供できるため、ダウンタイムを最小化できます。",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "file-sync",
+      "virtual-machines",
+      "containers"
+    ]
+  },
+  {
+    "id": 128,
+    "question": "ある企業が Web アプリケーションをサポートする HTTP ベースの API を実装予定です。この Web アプリでは顧客が注文ステータスを確認できます。以下の要件を満たすために、どの HTTP メソッドを構成すべきですか。・ Azure Functions で実装する。・ パブリックな読み取り専用アクセスを提供する。・ 書き込み操作は許可しない。",
+    "choices": [
+      "GET と POST のみ",
+      "GET、POST、OPTIONSのみ",
+      "APIメソッド",
+      "GETのみ"
+    ],
+    "answer": 3,
+    "explanation": "読み取り専用のパブリックアクセスのみが求められるため、データ取得用の GET メソッドだけで十分です。POST など書き込みを伴うメソッドは不要です。",
+    "category": "",
+    "tags": [
+      "app-service",
+      "azure-functions"
+    ]
+  },
+  {
+    "id": 129,
+    "question": "ある企業が Web アプリケーションをサポートする HTTP ベースの API を実装予定です。この Web アプリでは顧客が注文ステータスを確認できます。以下の要件を満たすために、どの認証レベルを構成すべきですか。・ Azure Functions で実装する。・ パブリックな読み取り専用アクセスを提供する。・ 書き込み操作は許可しない。",
+    "choices": [
+      "匿名",
+      "管理者",
+      "関数"
+    ],
+    "answer": 0,
+    "explanation": "API は読み取り専用でパブリックにアクセス可能である必要があるため、認証や承認を必要としない匿名レベルを使用します。これにより制限なしのアクセスが実現されます。",
+    "category": "",
+    "tags": [
+      "app-service",
+      "azure-functions"
+    ]
+  },
+  {
+    "id": 130,
+    "question": "Application1 と Application2 の 2 つのアプリケーション向けに Azure ストレージアカウントの構成を推奨する必要があります。以下の要件を踏まえ、Application1 に適した構成はどれですか。・ Application1 は最大限のトランザクションレートと最小限のレイテンシが必要。・ Application2 は GB あたりのストレージコストを最低限にする必要がある。・ どちらもデータセンター障害時に利用継続できなければならない。・ どちらもアップロード・ダウンロード処理に最適化される必要がある。",
+    "choices": [
+      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ",
+      "Standard パフォーマンス、ホット アクセス層、ローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v2",
+      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス地理冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
+      "Premium パフォーマンスとローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v1"
+    ],
+    "answer": 0,
+    "explanation": "Application1 には高トランザクションレートと低レイテンシが求められるため、Standard ではなく Premium パフォーマンスを選択する必要があります。また、データセンター障害時の可用性を確保するため ZRS レプリケーションを組み合わせたブロック BLOB ストレージが最適です。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage",
+      "bcdr-fundamentals"
+    ]
+  },
+  {
+    "id": 131,
+    "question": "Application1 と Application2 の 2 つのアプリケーション向けに Azure ストレージアカウントの構成を推奨する必要があります。以下の要件を踏まえ、Application1 に適した構成はどれですか。・ Application1 は最大限のトランザクションレートと最小限のレイテンシが必要。・ Application2 は GB あたりのストレージコストを最低限にする必要がある。・ どちらもデータセンター障害時に利用継続できなければならない。・ どちらもアップロード・ダウンロード処理に最適化される必要がある。",
+    "choices": [
+      "Premium パフォーマンスとローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v1",
+      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス地理冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
+      "Standard パフォーマンス、ホット アクセス層、ローカル冗長ストレージ (LRS) レプリケーションを備えた汎用 v2",
+      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ"
+    ],
+    "answer": 3,
+    "explanation": "Application1 は高いトランザクションレートと低レイテンシを必要としているため、Standard ではなく Premium パフォーマンスが必須です。データセンター障害への耐性も必要なため、ZRS レプリケーションを備えたブロック BLOB ストレージが最も適しています。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage",
+      "bcdr-fundamentals"
+    ]
+  },
+  {
+    "id": 132,
+    "question": "Application1 と Application2 の 2 つのアプリケーション向けに Azure ストレージアカウントの構成を推奨する必要があります。以下の要件を踏まえ、Application2 に適した構成はどれですか。・ Application1 は最大限のトランザクションレートと最小限のレイテンシが必要。・ Application2 は GB あたりのストレージコストを最低限にする必要がある。・ どちらもデータセンター障害時に利用継続できなければならない。・ どちらもアップロード・ダウンロード処理に最適化される必要がある。",
+    "choices": [
+      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス geo 冗長ストレージ (RA-GRS) レプリケーションを備えた BLOB ストレージ",
+      "Standard パフォーマンス、ホット アクセス層、読み取りアクセス geo 冗長ソストレージ (RA-GRS) レプリケーションを備えた BLOBストレージ",
+      "Standard パフォーマンス、クール アクセス層、読み取りアクセス geo 冗長ストレージ (RA-GRS) レプリケーションを備えた汎用 v2",
+      "Premium パフォーマンスとゾーン冗長ストレージ (ZRS) レプリケーションを備えた ブロックBLOB ストレージ"
+    ],
+    "answer": 2,
+    "explanation": "汎用 v2 ストレージアカウントは Azure Storage の最新機能をすべてサポートし、GB あたりの容量単価が最も低く設定されています。大半のストレージ利用シナリオに推奨されるアカウントタイプです。ホット・クールの既定アクセス層や、ホット・クール・アーカイブ間の BLOB レベル階層化にも対応しています。https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage",
+      "bcdr-fundamentals"
+    ]
+  },
+  {
+    "id": 133,
+    "question": "ファイル共有をホストする Azure ストレージアカウントの作成を予定しています。この共有にはトランザクション集中型のオンプレミスアプリケーションからアクセスします。ファイル共有へのアクセス時のレイテンシを最小にし、選択したストレージ層で最も高い復元力を確保するには、どのストレージ層を推奨すべきですか。",
+    "choices": [
+      "Premium",
+      "ホット",
+      "トランザクション 最適化"
+    ],
+    "answer": 0,
+    "explanation": "Premium ファイル共有は SSD に支えられており、IO 集中型のワークロードに対してほとんどの操作で 1 桁ミリ秒台の低レイテンシを安定して提供します。データベースやウェブサイトホスティング、開発環境など幅広い用途に適しています。トランザクション最適化層は HDD ベースであり、Premium ほどの低レイテンシは実現できません。ホット層やクール層も HDD ベースの標準ストレージハードウェア上で提供されます。https://docs.microsoft.com/ja-jp/azure/storage/files/storage-files-planning",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage"
+    ]
+  },
+  {
+    "id": 134,
+    "question": "ファイル共有をホストする Azure ストレージアカウントの作成を予定しています。この共有にはトランザクション集中型のオンプレミスアプリケーションからアクセスします。ファイル共有へのアクセス時のレイテンシを最小にし、選択したストレージ層で最も高い復元力を確保するには、どの冗長性オプションを推奨すべきですか。",
+    "choices": [
+      "ローカル冗長ストレージ (LRS)",
+      "Geo 冗長ストレージ (GRS)",
+      "ゾーン冗長ストレージ (ZRS)"
+    ],
+    "answer": 2,
+    "explanation": "LRS は単一データセンター内で 3 回データを複製しますが、データセンター全体の災害時にはすべてのレプリカが失われる恐れがあります。ZRS は物理的に分離された 3 つの可用性ゾーンにデータを分散保存し、単一ゾーンの障害に耐えることができます。GRS はセカンダリリージョンへの非同期レプリケーションを行いますが、Premium ファイル共有で選択可能な最高の復元力を持つのは ZRS です。https://docs.microsoft.com/ja-jp/azure/storage/files/storage-files-planning",
+    "category": "",
+    "tags": [
+      "entra-connect",
+      "azure-storage",
+      "bcdr-fundamentals",
+      "availability-zones",
+      "site-recovery",
+      "storage-redundancy"
+    ]
+  },
+  {
+    "id": 135,
+    "question": "オンプレミスの SQL Server データベース 10 個を宛先として使用する 100 個の Microsoft SQL Server Integration Services (SSIS) パッケージがあります。これら 10 個のデータベースを Azure SQL Database へ移行する計画です。移行後の Azure SQL Database インスタンスを宛先として使用できる Azure-SSIS パッケージを作成するためのソリューションとして、何を推奨すべきですか。",
+    "choices": [
+      "SQL Server Migration Assistant (SSMA)",
+      "Data Migration Assistant (DMA)",
+      "Azure Data Catalog",
+      "Azure Data Factory"
+    ],
+    "answer": 3,
+    "explanation": "データベースワークロードを Azure SQL Database や Azure SQL Managed Instance に移行する際、SSIS の ETL ワークロードも併せて移行することが重要です。Azure Data Factory（ADF）の Azure-SSIS Integration Runtime を利用すれば、SSIS パッケージを Azure 上で実行できます。SSDT や SSMS などの従来のツールを引き続き使ってパッケージのデプロイと実行が可能です。https://learn.microsoft.com/ja-jp/azure/data-factory/scenario-ssis-migration-overview",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "data-analytics",
+      "data-migration",
+      "db-migration"
+    ]
+  },
+  {
+    "id": 136,
+    "question": "複数の Azure クラウドサービスで構成される販売アプリケーションを開発しており、各サービスは顧客注文、請求、支払い、在庫、出荷といったトランザクションの異なる部分を処理します。XML メッセージを使って各クラウドサービス間で非同期にトランザクション情報をやり取りできるようにするには、どのソリューションを推奨すべきですか。",
+    "choices": [
+      "Azure Data Lake",
+      "Azure Service Fabric",
+      "Azure Traffic Manager",
+      "Azure Service Bus"
+    ],
+    "answer": 3,
+    "explanation": "Azure Service Bus は、メッセージキューやパブリッシュ/サブスクライブトピックを備えたフルマネージドのエンタープライズ統合メッセージブローカーです。アプリケーションとサービスの分離を実現し、競合するワーカー間での負荷分散、サービス境界を越えたデータや制御の安全な転送、高信頼性が求められるトランザクション処理の調整といった用途に適しています。https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-messaging-overview",
+    "category": "",
+    "tags": [
+      "entra-connect",
+      "data-analytics",
+      "load-balancers",
+      "containers",
+      "messaging"
+    ]
+  },
+  {
+    "id": 137,
+    "question": "米国西部 Azure リージョンに KeyVault1 という Azure Key Vault を使用する Azure Web アプリケーションがあり、KeyVault1 の災害復旧計画を策定しています。KeyVault1 のキーをバックアップした場合、そのバックアップはどこに復元可能ですか。",
+    "choices": [
+      "同じリージョンのみ",
+      "KeyVault1のみ",
+      "世界中全てのリージョン",
+      "同じ地域のみ"
+    ],
+    "answer": 3,
+    "explanation": "Key Vault オブジェクト（シークレット、キー、証明書など）をバックアップすると、暗号化された BLOB としてダウンロードされます。この BLOB は Azure 外部では復号できません。有効なデータとして復元するには、同一の Azure サブスクリプションかつ同一の Azure 地域内にある Key Vault に対してのみ復元操作が可能です。https://learn.microsoft.com/ja-jp/azure/key-vault/general/backup?tabs=azure-cli",
+    "category": "",
+    "tags": [
+      "subscription-design",
+      "key-vault",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "app-service",
+      "containers"
+    ]
+  },
+  {
+    "id": 138,
+    "question": "複数の Azure リージョンにまたがる複数インスタンスの Azure App Service Web アプリをデプロイする計画があります。以下の要件を満たす負荷分散サービスはどれですか。・ リージョン全体の停止時でもアプリへのアクセスを維持する。・ Azure Web アプリケーション ファイアウォール (WAF) に対応する。・ Cookie ベースのセッションアフィニティをサポートする。・ URL パスベースのルーティングに対応する。",
+    "choices": [
+      "Azure Front Door",
+      "Azure Load Balancer",
+      "Azure Traffic Manager",
+      "Azure Application Gateway"
+    ],
+    "answer": 0,
+    "explanation": "Azure Application Gateway はリージョン内でトラフィックを分散するリージョナルサービスであるのに対し、Azure Front Door はリージョン間でトラフィックを振り分けるグローバルサービスです。両者とも WAF、Cookie アフィニティ、URL ルーティングをサポートしますが、リージョン障害時の可用性確保にはクロスリージョン対応の Azure Front Door が必要です。https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-faq#what-is-the-difference-between-azure-front-door-and-azure-application-gateway",
+    "category": "",
+    "tags": [
+      "load-balancers",
+      "app-service",
+      "network-security"
+    ]
+  },
+  {
+    "id": 139,
+    "question": "Webapp1 という Azure App Service Web アプリが DB1 という Azure SQL データベースに接続しています。両方とも米国東部リージョンにデプロイされています。Webapp1 と DB1 間のすべての通信をプライベート接続経由にするために、仮想ネットワークにはサブネットが少なくともいくつ必要ですか。",
+    "choices": [
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "最低 2 つのサブネットが必要です。1 つは Azure App Service の VNet 統合用、もう 1 つは Azure Private Link のプライベートエンドポイント用です。VNet 統合は専用サブネットを必要とし、Azure はサブネットごとに先頭の 5 つの IP アドレスを予約します。App Service のインスタンスごとに統合サブネットから 1 つのアドレスが消費されます。https://learn.microsoft.com/ja-jp/azure/app-service/overview-vnet-integration#subnet-requirements",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "app-service",
+      "vnet",
+      "private-link"
+    ]
+  },
+  {
+    "id": 140,
+    "question": "Webapp1 という Azure App Service Web アプリが DB1 という Azure SQL データベースに接続しています。両方とも米国東部リージョンにデプロイされています。Webapp1 と DB1 間のすべての通信をプライベート接続経由にするために、仮想ネットワークからどの名前解決方式を使用すべきですか。",
+    "choices": [
+      "Azure DNS Private Resolver",
+      "プライベートDNSゾーン",
+      "パブリックDNSゾーン"
+    ],
+    "answer": 1,
+    "explanation": "プライベート DNS ゾーンを構成する必要があります。Web アプリが Azure DNS プライベートゾーンと連携してプライベートエンドポイントの名前解決を行うために不可欠な設定です。",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "app-service",
+      "vnet"
+    ]
+  },
+  {
+    "id": 141,
+    "question": "機密データ向けの Azure Storage ソリューションを計画しています。データは毎日アクセスされ、データセットの容量は 10 GB 未満です。以下の条件を満たすストレージアカウントの種類はどれですか。・ 書き込まれたすべてのデータは 5 年間保持しなければならない。・ 書き込み後はデータの読み取りのみ可能とし、変更と削除を阻止する。・ 5 年経過後はデータの削除は可能だが、変更は引き続き禁止する。・ データアクセスにかかる料金を最小限にする。",
+    "choices": [
+      "BLOB のクール アクセス層を備えた汎用 v2",
+      "Premium ブロック BLOB",
+      "BLOB のホット アクセス層を備えた汎用 v2"
+    ],
+    "answer": 2,
+    "explanation": "データに毎日アクセスするため、ホットアクセス層がデータアクセス料金の面で最適です。クール層はストレージ単価は安いですが、アクセスごとの料金が割高になるため、日常的にアクセスするシナリオには不向きです。Premium ブロック BLOB は高パフォーマンス向けであり、10 GB 未満の小規模データセットには過剰です。https://azure.microsoft.com/ja-jp/pricing/details/storage/blobs/",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "blob-storage"
+    ]
+  },
+  {
+    "id": 142,
+    "question": "機密データ向けの Azure Storage ソリューションを計画しています。データは毎日アクセスされ、データセットの容量は 10 GB 未満です。以下の条件を満たすために、変更と削除を防止する構成として適切なものはどれですか。・ 書き込まれたすべてのデータは 5 年間保持しなければならない。・ 書き込み後はデータの読み取りのみ可能とし、変更と削除を阻止する。・ 5 年経過後はデータの削除は可能だが、変更は引き続き禁止する。・ データアクセスにかかる料金を最小限にする。",
+    "choices": [
+      "ストレージ アカウントのリソース ロック",
+      "不変ポリシー",
+      "コンテナーのアクセス レベル"
+    ],
+    "answer": 1,
+    "explanation": "不変ポリシーを使えば、読み取り専用のアクセス許可を設定し 5 年間の保持期間を指定できます。このポリシーにより、保持期間中はデータの変更・削除が防止されます。期間満了後はデータの削除は許可されますが変更は不可のままです。リソースロックやコンテナーアクセスレベルでは、このような細かい粒度でのデータ制御はできません。https://learn.microsoft.com/ja-jp/azure/storage/blobs/immutable-storage-overview",
+    "category": "",
+    "tags": [
+      "resource-locks",
+      "azure-storage",
+      "containers"
+    ]
+  },
+  {
+    "id": 143,
+    "question": "以下の表（※1）に示す Azure サブスクリプションがあり、contoso.onmicrosoft.com テナントには User1 というユーザーが存在します。ランサムウェア対策のソリューションをデプロイする必要があり、以下の要件（※2）を満たす必要があります。Sub1 に作成すべきリソースはどれですか。※1 名前 | 場所 | Microsoft Entra テナント --- Sub1 | 米国東部 | contoso.onmicrosoft.com / Sub2 | 米国東部 | contoso-recovery.onmicrosoft.com ※2 Sub1 の全リソースが Azure Backup で保護されていること。バックアップ構成への重大な変更を行う前に、User1 に Sub2 でのロール割り当てが必要となること。",
+    "choices": [
+      "Azure Site Recovery ジョブ",
+      "Microsoft Azure Backup Server (MABS)",
+      "Recovery Services コンテナー",
+      "Microsoft Azure Recovery Services (MARS) エージェント",
+      "Resource Guard"
+    ],
+    "answer": 2,
+    "explanation": "Sub1 には Recovery Services コンテナーを作成します。Azure Backup を使用してサブスクリプション内のリソースをバックアップするためのインフラストラクチャとして Recovery Services コンテナーが必要です。",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "rbac",
+      "subscription-design",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "containers"
+    ]
+  },
+  {
+    "id": 144,
+    "question": "以下の表（※1）に示す Azure サブスクリプションがあり、contoso.onmicrosoft.com テナントには User1 というユーザーが存在します。ランサムウェア対策のソリューションをデプロイする必要があり、以下の要件（※2）を満たす必要があります。Sub2 に作成すべきリソースはどれですか。※1 名前 | 場所 | Microsoft Entra テナント --- Sub1 | 米国東部 | contoso.onmicrosoft.com / Sub2 | 米国東部 | contoso-recovery.onmicrosoft.com ※2 Sub1 の全リソースが Azure Backup で保護されていること。バックアップ構成への重大な変更を行う前に、User1 に Sub2 でのロール割り当てが必要となること。",
+    "choices": [
+      "Azure Site Recovery ジョブ",
+      "Microsoft Azure Backup Server (MABS)",
+      "Recovery Services コンテナー",
+      "Microsoft Azure Recovery Services (MARS) エージェント",
+      "Resource Guard"
+    ],
+    "answer": 4,
+    "explanation": "Sub2 には Resource Guard を作成します。Azure Backup のマルチユーザー認可（MUA）を構成することで、Recovery Services コンテナーへの重要な操作に追加の保護レイヤーを設けることができます。別テナントに Resource Guard を配置することで最大限の保護が実現され、Microsoft Entra Privileged Identity Management との連携により、重要操作の要求と承認のプロセスを管理できます。https://learn.microsoft.com/ja-jp/azure/backup/multi-user-authorization?tabs=azure-portal&pivots=vaults-recovery-services-vault",
+    "category": "",
+    "tags": [
+      "entra-id",
+      "rbac",
+      "pim",
+      "subscription-design",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "containers"
+    ]
+  },
+  {
+    "id": 145,
+    "question": "オンプレミスにストレージソリューションがあり、これを Azure へ移行する必要があります。移行先のソリューションは Hadoop 分散ファイルシステム (HDFS) との互換性が求められます。どのサービスを使用すべきですか。",
+    "choices": [
+      "Azure Data Share",
+      "Azure Data Lake Storage Gen2",
+      "Azure Table Storage",
+      "Azure NetApp Files"
+    ],
+    "answer": 1,
+    "explanation": "Azure Data Lake Storage Gen2 は HDFS と互換性のあるファイルシステムを提供し、Hadoop エコシステムとのシームレスな統合が可能です。既存の HDFS ワークロードの移行先として最適な選択肢です。",
+    "category": "",
+    "tags": [
+      "data-analytics",
+      "data-migration"
+    ]
+  },
+  {
+    "id": 146,
+    "question": "Web アプリケーションを支えるマイクロサービスアーキテクチャを設計しています。以下の要件を満たすテクノロジーとしてどれを推奨すべきですか。・ オンプレミスと Azure の両方にデプロイ可能であること。・ 低レイテンシかつハイパースケールのオペレーションに対応すること。・ 各マイクロサービスの独立したアップグレードが可能であること。・ マイクロサービスの自動修復ポリシーを設定できること。",
+    "choices": [
+      "Azure Service Fabric",
+      "Azure Container Instance",
+      "Azure Logic App",
+      "Azure Virtual Machine Scale Sets"
+    ],
+    "answer": 0,
+    "explanation": "Azure Service Fabric はオンプレミスやその他のクラウド環境にもクラスターを作成でき、低レイテンシ動作と数千台規模のスケールアップに対応します。マイクロサービスごとの独立したデプロイ・アップグレードや自動修復機能も備えています。https://azure.microsoft.com/ja-jp/products/service-fabric/",
+    "category": "",
+    "tags": [
+      "sql-database",
+      "vmss",
+      "virtual-machines",
+      "app-service",
+      "containers"
+    ]
+  },
+  {
+    "id": 147,
+    "question": "ある企業がオンプレミスデータセンターで稼働する販売、財務、レポートの各アプリケーションをホストする仮想マシンについて、事業継続性と災害復旧の目標を定めています。コストを最小限に抑えつつ、これらの目標を満たすサービスを推奨する必要があります。販売アプリケーションに推奨すべきサービスはどれですか。・ 販売アプリケーション: 2 番目のオンプレミスデータセンターへのフェイルオーバーが必要。・ レポートアプリケーション: 日次粒度でのポイントインタイムリカバリが必要。RTO は 8 時間。・ 財務アプリケーション: データを 7 年間保持し、災害時は Azure から実行可能にする。RTO は 10 分。",
+    "choices": [
+      "Azure Site Recovery のみ",
+      "Azure Backupのみ",
+      "Azure Site Recovery と Azure Backup"
+    ],
+    "answer": 0,
+    "explanation": "販売アプリケーションには Azure Site Recovery が適しています。Site Recovery は仮想マシンや物理サーバーのレプリケーション、フェイルオーバー、フェイルバックを調整し、DR コピーは数秒から数分の遅延で維持されます。2 番目のデータセンターへの迅速なフェイルオーバーを実現でき、カスタマイズ可能な復旧計画とリモート監視機能を提供します。https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-overview",
+    "category": "",
+    "tags": [
+      "entra-connect",
+      "azure-monitor",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "virtual-machines"
+    ]
+  },
+  {
+    "id": 148,
+    "question": "ある企業がオンプレミスデータセンターで稼働する販売、財務、レポートの各アプリケーションをホストする仮想マシンについて、事業継続性と災害復旧の目標を定めています。コストを最小限に抑えつつ、これらの目標を満たすサービスを推奨する必要があります。レポートアプリケーションに推奨すべきサービスはどれですか。・ 販売アプリケーション: 2 番目のオンプレミスデータセンターへのフェイルオーバーが必要。・ レポートアプリケーション: 日次粒度でのポイントインタイムリカバリが必要。RTO は 8 時間。・ 財務アプリケーション: データを 7 年間保持し、災害時は Azure から実行可能にする。RTO は 10 分。",
+    "choices": [
+      "Azure Site Recovery のみ",
+      "Azure Backupのみ",
+      "Azure Site Recovery と Azure Backup"
+    ],
+    "answer": 1,
+    "explanation": "レポートアプリケーションには Azure Backup が適しています。Azure Backup はオンプレミスおよびクラウドのデータをバックアップし、VM バックアップは通常日次、データベースバックアップは最短 15 分間隔で取得可能です。コンプライアンス要件に応じて数年にわたるデータ保持にも対応できます。RTO が 8 時間と比較的長いため、バックアップからの復元で十分に対応可能です。",
+    "category": "",
+    "tags": [
+      "purview",
+      "blob-storage",
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "virtual-machines"
+    ]
+  },
+  {
+    "id": 149,
+    "question": "ある企業がオンプレミスデータセンターで稼働する販売、財務、レポートの各アプリケーションをホストする仮想マシンについて、事業継続性と災害復旧の目標を定めています。コストを最小限に抑えつつ、これらの目標を満たすサービスを推奨する必要があります。財務アプリケーションに推奨すべきサービスはどれですか。・ 販売アプリケーション: 2 番目のオンプレミスデータセンターへのフェイルオーバーが必要。・ レポートアプリケーション: 日次粒度でのポイントインタイムリカバリが必要。RTO は 8 時間。・ 財務アプリケーション: データを 7 年間保持し、災害時は Azure から実行可能にする。RTO は 10 分。",
+    "choices": [
+      "Azure Site Recovery のみ",
+      "Azure Backupのみ",
+      "Azure Site Recovery と Azure Backup"
+    ],
+    "answer": 2,
+    "explanation": "財務アプリケーションには Azure Site Recovery と Azure Backup の両方が必要です。Azure Backup により 7 年間のデータ保持要件を満たしつつデータの安全性と回復性を確保し、Site Recovery により災害発生時に Azure 上でのワークロード実行と 10 分という短い RTO を実現します。",
+    "category": "",
+    "tags": [
+      "bcdr-fundamentals",
+      "azure-backup",
+      "site-recovery",
+      "virtual-machines"
+    ]
+  },
+  {
+    "id": 150,
+    "question": "Azure Cosmos DB を活用して複数国の売上データを集約するアプリケーションを設計しています。以下の要件を満たす API としてどれを推奨すべきですか。・ SQL クエリに対応している。・ geo レプリケーションをサポートしている。・ データをリレーショナル形式で保存・アクセスできる。",
+    "choices": [
+      "MongoDB",
+      "Apache Cassandra",
+      "PostgreSQL",
+      "NoSQL"
+    ],
+    "answer": 2,
+    "explanation": "Azure Cosmos DB の PostgreSQL 用 API は、SQL クエリの完全サポート、geo レプリケーション対応、リレーショナル形式でのデータ保存・アクセスを提供し、すべての要件を満たします。自動的かつ即時のスケーラビリティとグローバル分散を備えています。Apache Cassandra は SQL をネイティブサポートせず、完全なリレーショナルモデルではありません。MongoDB も NoSQL 型であり、リレーショナルデータモデルは非対応です。NoSQL は特定の API ではなく、データベース設計のカテゴリです。https://learn.microsoft.com/ja-jp/azure/cosmos-db/choose-api",
+    "category": "",
+    "tags": [
+      "data-fundamentals",
+      "sql-database",
+      "cosmosdb",
+      "bcdr-fundamentals",
+      "sql-ha"
+    ]
+  },
+  {
+    "id": 151,
+    "question": "以下の表に示すリソースがあります。CDB1 には継続的に更新される運用データを格納するコンテナーがホストされています。AS1 を使用して運用データを日次で分析するソリューションを設計しており、運用データストアのパフォーマンスに影響を与えずにデータを分析するためには、どのソリューションを推奨すべきですか。名前 | 種類------------------AS1 | Azure Synapse Analytics インスタンスCDB1 | NoSQL アカウント用の Azure Cosmos DB",
+    "choices": [
+      "Azure Synapse Link for Azure Cosmos DB",
+      "Azure Cosmos DB および Azure Synapse Analytics コネクタを備えた Azure Data Factory",
+      "Azure Cosmos DB 変更フィード",
+      "PolyBase データ読み込みを使用した Azure Synapse Analytics"
+    ],
+    "answer": 0,
+    "explanation": "Azure Synapse Link for Azure Cosmos DB は、Cosmos DB と Synapse Analytics の間に緊密な統合を構築し、トランザクションワークロードのパフォーマンスに影響を及ぼすことなく運用データに対するほぼリアルタイムの分析を可能にします。ETL 不要の環境を実現し、運用データを直接分析できます。Azure Data Factory を介したコネクタ方式では ETL 操作が伴い運用ストアに負荷がかかる可能性があります。PolyBase は Azure Blob Storage や Data Lake Storage 等の外部ソースからの読み込み向けです。変更フィードは分析ニーズに直接対応するものではありません。https://learn.microsoft.com/ja-jp/azure/cosmos-db/synapse-link",
+    "category": "",
+    "tags": [
+      "data-fundamentals",
+      "blob-storage",
+      "cosmosdb",
+      "data-analytics",
+      "containers"
+    ]
   },
   {
     "id": 1,
-    "question": "あなたはAzure環境を管理しています。デプロイしたAzureリソースに部門名を追加して、リソースの管理を容易にしたいと考えています。どの機能を使用すべきですか？",
+    "question": "社内のAzureインフラを担当しているとします。Azureリソースに所属部門の情報を付与して、運用管理を効率化したい場合、どの機能を利用すべきですか？",
     "choices": [
       "A. タグ",
       "B. 管理グループ",
@@ -2957,35 +2806,33 @@ var ALL_QUIZ_QUESTIONS = [
       "D. サブスクリプション"
     ],
     "answer": 0,
-    "explanation": "タグはAzureリソースにメタデータ（キーと値のペア）を付与し、部門名やコストセンターなどの情報を追加できます。管理グループはサブスクリプションの階層管理に使用され、リソース単位の情報付与には適しません。リソースグループはリソースの論理的なグループ化であり、部門名のような柔軟なメタデータの付与はできません。サブスクリプションは課金単位であり、個別リソースへの情報付与には使用しません。",
+    "explanation": "タグを使えば、Azureリソースにキーと値の形式でメタデータを付与でき、部門名やコストセンターなどの情報を柔軟に追加できます。管理グループはサブスクリプション間の階層的な管理を目的としており、個々のリソースへの情報付与には不向きです。リソースグループはリソースを論理的にまとめるものであり、部門名のようなカスタムメタデータの設定はできません。サブスクリプションは課金の境界であり、リソース単位での情報追加には利用できません。",
     "category": "governance",
     "tags": [
       "resource-hierarchy",
       "management-groups",
       "subscription-design",
       "tagging"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 2,
-    "question": "あなたは300台のWindows Server 2022のシステムログを一元的に監視する必要があります。Azure Monitorエージェントをインストールすることで、この要件を満たすことができますか？",
+    "question": "Windows Server 2022が300台稼働している環境で、すべてのシステムログを集中的に監視する必要があります。Azure Monitorエージェントの導入でこの要件は実現可能ですか？",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 0,
-    "explanation": "Azure Monitorエージェント（AMA）は、Windows/Linuxサーバーからログやパフォーマンスデータを収集し、Log Analyticsワークスペースに送信できます。データ収集ルール（DCR）を使用して、収集するログの種類を柔軟に設定でき、300台のサーバーのシステムログを一元監視する要件を満たせます。",
+    "explanation": "Azure Monitorエージェント（AMA）をインストールすれば、Windows/Linuxのサーバーからログやパフォーマンス指標を収集してLog Analyticsワークスペースへ転送できます。データ収集ルール（DCR）によって取得するログの種類を自由に指定できるため、300台規模のシステムログ集中監視という要件にも対応可能です。",
     "category": "monitoring",
     "tags": [
       "azure-monitor",
       "log-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 3,
-    "question": "あなたはAzure Monitor ログを使用してLinuxサーバーのログを分析しています。1日あたり約120GBのログが取り込まれており、コストを最小限に抑える必要があります。どのような変更を行うべきですか？",
+    "question": "Azure Monitor ログを利用してLinuxサーバーのログ分析を行っています。日次のログ取り込み量が約120GBあり、費用を抑えたいと考えています。どのような対応が適切ですか？",
     "choices": [
       "A. 基本ログに変更する",
       "B. 分析ログのままにする",
@@ -2993,17 +2840,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ワークスペースを分割する"
     ],
     "answer": 0,
-    "explanation": "基本ログ（Basic Logs）は、分析ログ（Analytics Logs）と比較して取り込みコストが大幅に安くなります（約半額）。大量のログデータを取り込むが高度な分析が不要な場合、基本ログに変更することでコストを最小限に抑えられます。ただし、基本ログはKQLクエリの機能が一部制限され、クエリ実行時に追加料金が発生します。保持期間の短縮やワークスペース分割はコスト削減効果が限定的です。",
+    "explanation": "基本ログ（Basic Logs）は分析ログ（Analytics Logs）と比べて取り込み単価がおよそ半額に抑えられます。大量のログを取り込むものの高度な分析が必要ない場面では、基本ログへの切り替えがコスト削減に効果的です。ただしKQLクエリに一部制約があり、クエリ実行ごとに課金が発生する点には注意が必要です。保持期間の変更やワークスペース分割では十分な費用削減が見込めません。",
     "category": "monitoring",
     "tags": [
       "azure-monitor",
       "log-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 4,
-    "question": "あなたはAzure VM内のデータをLog Analyticsに転送し、転送時にログを変換する必要があります。ログの転送先とログの変換方法として正しい組み合わせはどれですか？",
+    "question": "Azure VM上のデータをLog Analyticsへ送信する際、転送途中にログの変換処理を行いたいと考えています。転送先とログ変換手段の正しい組み合わせはどれですか？",
     "choices": [
       "A. ログ転送: データ収集エンドポイント、ログ変換: KQLクエリ",
       "B. ログ転送: Azure Event Hubs、ログ変換: Azure Functions",
@@ -3011,7 +2857,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ログ転送: Azure Monitor API、ログ変換: PowerShellスクリプト"
     ],
     "answer": 0,
-    "explanation": "データ収集ルール（DCR）ではデータ収集エンドポイント（DCE）を使用してログを転送し、KQLクエリによるインジェスト時変換が可能です。これにより、Log Analyticsに取り込む前にデータのフィルタリングや変換を行えます。Event HubsやストレージアカウントはLog Analyticsへの直接転送には使用しません。Azure FunctionsやLogic Appsはログ変換には過剰な構成です。",
+    "explanation": "データ収集ルール（DCR）においてデータ収集エンドポイント（DCE）を利用してログを転送し、KQLクエリによるインジェスト時変換を適用できます。これにより、Log Analyticsへ取り込む前段階でデータのフィルタリングや加工が可能です。Event Hubsやストレージアカウント経由ではLog Analyticsへの直接取り込みに適していません。Azure FunctionsやLogic Appsでの変換は構成が過大になります。",
     "category": "monitoring",
     "tags": [
       "azure-monitor",
@@ -3020,12 +2866,11 @@ var ALL_QUIZ_QUESTIONS = [
       "azure-functions",
       "event-driven",
       "api-management"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 5,
-    "question": "Azure Monitor ログにおいて、WindowsイベントログとLinux Syslogのデータが格納されるテーブル名の組み合わせとして正しいものはどれですか？",
+    "question": "Azure Monitor ログにおける、WindowsイベントログとLinux Syslogの格納先テーブル名の正しい組み合わせを選んでください。",
     "choices": [
       "A. WindowsイベントログのテーブルはEvent、Linux SyslogのテーブルはSyslog",
       "B. WindowsイベントログのテーブルはWindowsEvent、Linux SyslogのテーブルはLinuxSyslog",
@@ -3033,18 +2878,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. WindowsイベントログのテーブルはEventLog、Linux SyslogのテーブルはSyslogMessages"
     ],
     "answer": 0,
-    "explanation": "Log Analyticsワークスペースにおいて、WindowsイベントログはEventテーブルに、Linux SyslogはSyslogテーブルに格納されます。SecurityEventはセキュリティイベント専用のテーブルです。WindowsEventやLinuxSyslogなどのテーブル名は存在しません。",
+    "explanation": "Log Analyticsワークスペースでは、WindowsイベントログはEventテーブルに、Linux SyslogデータはSyslogテーブルに保存されます。SecurityEventテーブルはセキュリティ関連イベント専用です。WindowsEventやLinuxSyslogという名称のテーブルは実在しません。",
     "category": "monitoring",
     "tags": [
       "azure-monitor",
       "log-analytics",
       "event-driven"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 6,
-    "question": "あなたはAzureサブスクリプションを監視しています。Network Insights、Application Insights、VM Insightsのすべてを使用する場合、必要なLog Analyticsワークスペースの最小数はいくつですか？",
+    "question": "あるAzureサブスクリプション上で、Network Insights、Application Insights、VM Insightsの3つを利用する場合、最低限必要なLog Analyticsワークスペースの数はいくつですか？",
     "choices": [
       "A. 1",
       "B. 2",
@@ -3052,7 +2896,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 4"
     ],
     "answer": 0,
-    "explanation": "Network Insights、Application Insights、VM Insightsはすべて同じLog Analyticsワークスペースを共有できます。そのため、必要なワークスペースの最小数は1つです。複数のInsightsソリューションを1つのワークスペースに統合することで、データの相関分析が容易になり、管理コストも削減できます。",
+    "explanation": "Network Insights、Application Insights、VM Insightsはいずれも同一のLog Analyticsワークスペースに集約可能です。したがって最低1つあれば運用できます。複数のInsightsを1つのワークスペースに統合することで、データ間の相関分析が容易になるだけでなく、運用コストも抑えられます。",
     "category": "monitoring",
     "tags": [
       "subscription-design",
@@ -3060,12 +2904,11 @@ var ALL_QUIZ_QUESTIONS = [
       "log-analytics",
       "app-insights",
       "monitor-insights"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 7,
-    "question": "あなたはAzureサブスクリプション内のリソース一覧を月次レポートとして作成する必要があります。どのサービスの組み合わせを使用すべきですか？",
+    "question": "Azureサブスクリプション内に存在するリソースの一覧を、毎月のレポートとしてまとめる必要があります。適切なサービスの組み合わせはどれですか？",
     "choices": [
       "A. Azure Resource Graph、Azure Functions",
       "B. アクティビティログ、Log Analyticsワークスペース",
@@ -3073,7 +2916,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Monitor メトリック、Azure Dashboard"
     ],
     "answer": 1,
-    "explanation": "アクティビティログはサブスクリプション内のリソース操作（作成・変更・削除）を記録します。Log Analyticsワークスペースにアクティビティログを送信することで、KQLクエリを使用して月次レポートに必要なデータを集計・分析できます。Resource Graphはリアルタイムのリソース照会に適していますが、履歴データの分析には向きません。Azure Advisorは推奨事項の提供であり、リソース一覧の作成には適しません。",
+    "explanation": "アクティビティログにはサブスクリプション内のリソース操作（作成・変更・削除）の履歴が記録されます。Log Analyticsワークスペースへ転送すれば、KQLで集計・分析を行い、月次レポートに必要なデータを抽出できます。Resource Graphはリアルタイムのリソースクエリ向けで、過去の変更履歴の分析には不向きです。Azure Advisorはベストプラクティスの提案サービスであり、リソース一覧の生成用途とは異なります。",
     "category": "monitoring",
     "tags": [
       "subscription-design",
@@ -3082,12 +2925,11 @@ var ALL_QUIZ_QUESTIONS = [
       "activity-log",
       "azure-storage",
       "azure-functions"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 8,
-    "question": "あなたはAzure Cost Managementを使用して、部門ごとのコストを監視したいと考えています。どの機能を使用すべきですか？",
+    "question": "Azure Cost Managementを利用して、各部門の利用コストを可視化・管理したいと考えています。最適な機能はどれですか？",
     "choices": [
       "A. 管理グループ",
       "B. リソースグループ",
@@ -3095,7 +2937,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. サブスクリプション"
     ],
     "answer": 2,
-    "explanation": "リソースのタグ（例：Department: Sales）を使用することで、Cost Managementでタグごとにコストをフィルタリング・分析できます。部門ごとのコスト配分を柔軟に実現できます。管理グループやサブスクリプションは組織階層の管理には使えますが、部門横断的なリソースがある場合は柔軟性に欠けます。リソースグループは論理的なグループ化ですが、1つのリソースは1つのRGにしか属せないため、部門ごとのコスト配分には不十分です。",
+    "explanation": "リソースにタグ（例：Department: Sales）を設定すれば、Cost Managementでタグ単位にコストのフィルタリングや分析が可能になります。部門別のコスト配賦を柔軟に実現できる手段です。管理グループやサブスクリプションは組織構造の管理に使えるものの、複数部門にまたがるリソースがある場合は柔軟性に欠けます。リソースグループは1リソースにつき1つしか所属できないため、部門別コスト管理には不十分です。",
     "category": "governance",
     "tags": [
       "resource-hierarchy",
@@ -3104,12 +2946,11 @@ var ALL_QUIZ_QUESTIONS = [
       "tagging",
       "azure-monitor",
       "cost-management"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 9,
-    "question": "あなたはNSG（ネットワークセキュリティグループ）の診断データを収集する設定を行っています。ストレージアカウントに保持される期間とLog Analyticsに保持される最大期間の組み合わせとして正しいものはどれですか？",
+    "question": "NSG（ネットワークセキュリティグループ）の診断データを収集する際、ストレージアカウントでの保持期間とLog Analyticsでの最大保持期間の正しい組み合わせはどれですか？",
     "choices": [
       "A. ストレージアカウント: 30日、Log Analytics: 365日",
       "B. ストレージアカウント: 90日、Log Analytics: 730日",
@@ -3117,7 +2958,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ストレージアカウント: 365日、Log Analytics: 730日"
     ],
     "answer": 1,
-    "explanation": "NSGフローログの診断データは、ストレージアカウントにデフォルトで最大90日間保持されます。Log Analyticsワークスペースでは最大730日（2年）間データを保持できます。これらの保持期間を理解することは、コンプライアンス要件やコスト管理において重要です。",
+    "explanation": "NSGフローログの診断データは、ストレージアカウントではデフォルトで最大90日まで保持されます。一方、Log Analyticsワークスペースでは最大730日（2年間）のデータ保持が可能です。これらの保持期間を把握しておくことは、コンプライアンス対応やコスト最適化の観点で重要です。",
     "category": "monitoring",
     "tags": [
       "purview",
@@ -3125,12 +2966,11 @@ var ALL_QUIZ_QUESTIONS = [
       "cost-management",
       "azure-storage",
       "network-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 10,
-    "question": "あなたは社員向けアプリケーションにSSOを実装する必要があります。アプリケーションは独自のHTMLログインページを持ち、パスワードによる認証を使用しています。どのSSO方式を使用すべきですか？",
+    "question": "従業員向けWebアプリケーションにSSOを導入する必要があります。このアプリケーションは独自のHTMLログインフォームを備え、パスワード認証で動作しています。どのSSO方式が適していますか？",
     "choices": [
       "A. SAML",
       "B. パスワードベース",
@@ -3138,17 +2978,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 統合Windows認証"
     ],
     "answer": 1,
-    "explanation": "パスワードベースSSOは、独自のHTMLログインページを持つアプリケーションに適しています。Microsoft Entra IDがユーザーの資格情報を安全に保存し、ログインページに自動的に入力します。SAMLはSAMLプロトコルをサポートするアプリケーション向けであり、独自HTMLページには対応しません。リンクされたSSOは既存のSSO実装がある場合に使用します。統合Windows認証はオンプレミスのKerberos認証環境向けです。",
+    "explanation": "パスワードベースSSOは、独自のHTMLログインフォームを持つアプリケーションに適した方式です。Microsoft Entra IDがユーザーの認証情報を安全に管理し、ログイン画面へ自動入力します。SAMLはSAMLプロトコル対応のアプリケーション用であり、カスタムHTMLフォームには適合しません。リンクされたSSOは別のSSO基盤が既にある場合に使います。統合Windows認証はKerberosベースのオンプレミス環境向けです。",
     "category": "identity",
     "tags": [
       "entra-id",
       "sso"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 11,
-    "question": "あなたはオンプレミスのWebアプリケーションを外部ユーザーに公開する必要があります。VPN接続は不要で、DMZ（非武装地帯）の構築も避けたいと考えています。どのサービスを使用すべきですか？",
+    "question": "オンプレミスで運用しているWebアプリケーションを、VPN接続やDMZ構築なしで外部ユーザーに安全に公開したいと考えています。どのサービスを選択すべきですか？",
     "choices": [
       "A. Azure Front Door",
       "B. Azure Application Gateway",
@@ -3156,7 +2995,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Microsoft Entra アプリケーションプロキシ"
     ],
     "answer": 3,
-    "explanation": "Microsoft Entraアプリケーションプロキシは、オンプレミスのWebアプリケーションをVPNやDMZなしで外部に安全に公開できます。軽量なコネクタをオンプレミスにインストールするだけで、Microsoft Entra IDによる認証と条件付きアクセスを適用できます。Front DoorやApplication Gatewayはクラウド上のアプリケーション向けです。VPN Gatewayは外部公開ではなくプライベート接続に使用します。",
+    "explanation": "Microsoft Entraアプリケーションプロキシを使うと、オンプレミス環境に軽量なコネクタを設置するだけで、VPNやDMZを介さずにWebアプリケーションを外部へ安全に公開できます。Microsoft Entra IDの認証や条件付きアクセスも併用可能です。Front DoorやApplication Gatewayはクラウドでホストされるアプリケーション向けです。VPN Gatewayはプライベートネットワーク接続を提供するもので、外部公開の手段ではありません。",
     "category": "identity",
     "tags": [
       "entra-id",
@@ -3165,12 +3004,11 @@ var ALL_QUIZ_QUESTIONS = [
       "conditional-access",
       "load-balancers",
       "on-premises-connectivity"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 12,
-    "question": "Microsoft Entra IDのアクセスレビューに関して、以下の記述のうち正しいものの組み合わせはどれですか？\n・アプリケーションへのアクセス権をレビューできる\n・グループメンバーシップをレビューできる\n・Microsoft 365 E5ライセンスでアクセスレビューを利用できる",
+    "question": "Microsoft Entra IDのアクセスレビュー機能について、次の記述の正誤の組み合わせとして正しいものはどれですか？\n・アプリケーションのアクセス権限を見直すことができる\n・グループへの所属状況をレビューできる\n・Microsoft 365 E5ライセンスでこの機能を使用できる",
     "choices": [
       "A. すべて正しい",
       "B. アプリケーションへのアクセス権とグループメンバーシップのみ正しい",
@@ -3178,18 +3016,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. アプリケーションへのアクセス権のみ正しい"
     ],
     "answer": 0,
-    "explanation": "Microsoft Entra IDのアクセスレビューは、アプリケーションへのアクセス権とグループメンバーシップの両方をレビューできます。また、Microsoft 365 E5ライセンスにはMicrosoft Entra ID P2が含まれているため、アクセスレビュー機能を利用できます。アクセスレビューはMicrosoft Entra ID P2またはMicrosoft Entra ID Governanceライセンスが必要です。",
+    "explanation": "Microsoft Entra IDのアクセスレビューでは、アプリケーションへのアクセス権とグループメンバーシップの両方を対象に定期的な見直しが可能です。さらに、Microsoft 365 E5ライセンスにはMicrosoft Entra ID P2が含まれるため、アクセスレビュー機能が利用できます。この機能にはMicrosoft Entra ID P2またはMicrosoft Entra ID Governanceライセンスが必要です。",
     "category": "identity",
     "tags": [
       "entra-id",
       "entra-governance",
       "entra-license"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 13,
-    "question": "Azure RBACのロール継承に関して、管理グループにOwnerロールを割り当てた場合、その配下のサブスクリプションとリソースグループにも同じロールが継承されますか？",
+    "question": "Azure RBACのロール継承について質問です。管理グループにOwnerロールを付与した場合、配下のサブスクリプションやリソースグループにもそのロールは引き継がれますか？",
     "choices": [
       "A. はい、サブスクリプションとリソースグループの両方に継承される",
       "B. サブスクリプションのみに継承され、リソースグループには継承されない",
@@ -3197,19 +3034,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. どちらにも継承されない"
     ],
     "answer": 0,
-    "explanation": "Azure RBACでは、上位スコープで割り当てたロールは下位のすべてのスコープに継承されます。管理グループにOwnerロールを割り当てると、その配下のすべてのサブスクリプション、リソースグループ、および個々のリソースにOwner権限が継承されます。これはRBACの基本的な継承モデルです。",
+    "explanation": "Azure RBACでは、上位スコープに割り当てられたロールは配下のすべてのスコープへ自動的に継承されます。管理グループにOwnerロールを設定すると、その下にある全サブスクリプション、リソースグループ、さらに個別のリソースに対してもOwner権限が適用されます。これがRBACの基本的な継承の仕組みです。",
     "category": "governance",
     "tags": [
       "rbac",
       "resource-hierarchy",
       "management-groups",
       "subscription-design"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 14,
-    "question": "あなたはAzureサブスクリプションとMicrosoft Entraテナントの関連付けを変更する必要があります。この操作を実行するために必要な最小権限のロールはどれですか？",
+    "question": "AzureサブスクリプションとMicrosoft Entraテナントの紐付けを変更する操作を行うために、最低限必要なロールはどれですか？",
     "choices": [
       "A. 所有者（Owner）",
       "B. 共同作成者（Contributor）",
@@ -3217,18 +3053,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 全体管理者"
     ],
     "answer": 0,
-    "explanation": "サブスクリプションのディレクトリ（Entraテナント）変更には、サブスクリプションの所有者（Owner）ロールが必要です。共同作成者はリソースの管理はできますが、サブスクリプション自体のディレクトリ変更はできません。ユーザーアクセス管理者はロール割り当ての管理のみです。全体管理者はEntra IDの管理者であり、サブスクリプションレベルの操作には直接的な権限を持ちません。",
+    "explanation": "サブスクリプションが属するディレクトリ（Entraテナント）を切り替えるには、サブスクリプションの所有者（Owner）ロールが必要です。共同作成者はリソース操作は可能ですが、サブスクリプション自体のディレクトリ変更は行えません。ユーザーアクセス管理者はロール割り当ての操作に限定されます。全体管理者はEntra IDの管理権限であり、サブスクリプション操作への直接的な権限は持ちません。",
     "category": "governance",
     "tags": [
       "entra-id",
       "rbac",
       "subscription-design"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 15,
-    "question": "あなたは経理部のユーザーのパスワードリセットを管理するため、管理単位「Accounting」を作成しました。User1に最小権限でAccountingのパスワードリセット権限を付与するには、どの操作を行うべきですか？",
+    "question": "経理部門のユーザーのパスワードリセットを管理するため、「Accounting」という管理単位を作成しました。User1に対して、この管理単位の範囲内だけでパスワードリセットが行えるよう、最小権限で設定するにはどうすべきですか？",
     "choices": [
       "A. テナント全体のヘルプデスク管理者ロールにUser1を追加する",
       "B. テナント全体のパスワード管理者ロールにUser1を追加する",
@@ -3236,18 +3071,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Accounting管理単位のヘルプデスク管理者ロールにUser1を追加する"
     ],
     "answer": 3,
-    "explanation": "管理単位（Administrative Unit）を使用すると、特定のユーザーグループに対してのみ管理権限を付与できます。ヘルプデスク管理者ロールにはパスワードリセットの権限が含まれており、Accounting管理単位に限定して割り当てることで最小権限の原則を満たせます。テナント全体のロールは権限が広すぎます。パスワード管理者もパスワードリセットは可能ですが、ヘルプデスク管理者の方がより制限された権限であり、最小権限の原則に合致します。",
+    "explanation": "管理単位（Administrative Unit）を活用すれば、特定のユーザー群に限定した管理権限を付与できます。ヘルプデスク管理者ロールにはパスワードリセット権限が含まれており、Accounting管理単位にスコープを限定することで最小権限の原則を満たせます。テナント全体に対するロール付与では権限範囲が広すぎます。パスワード管理者でもリセットは行えますが、ヘルプデスク管理者はより限定的な権限セットのため、最小権限に適合します。",
     "category": "identity",
     "tags": [
       "entra-id",
       "rbac",
       "admin-units"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 16,
-    "question": "あなたは2つのAzureサブスクリプションを管理しています。Sub1はcontoso.comテナント、Sub2はfabrikam.comテナントに関連付けられています。fabrikam.comのユーザーにSub1のApp Serviceへのアクセスを許可するには、どうすべきですか？",
+    "question": "2つのAzureサブスクリプションを運用しています。Sub1はcontoso.comテナント、Sub2はfabrikam.comテナントに紐づいています。fabrikam.comのユーザーがSub1内のApp Serviceを利用できるようにするには、どのような対応が必要ですか？",
     "choices": [
       "A. fabrikam.comのユーザーをcontoso.comに同期する",
       "B. fabrikam.comのユーザーをcontoso.comにゲストユーザーとして招待する",
@@ -3255,7 +3089,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 両テナント間にVNet ピアリングを構成する"
     ],
     "answer": 1,
-    "explanation": "Microsoft Entra B2Bコラボレーションを使用して、fabrikam.comのユーザーをcontoso.comテナントにゲストユーザーとして招待できます。招待されたユーザーは自身の資格情報でサインインし、contoso.comのリソースにアクセスできます。同期は異なるテナント間では直接できません。サブスクリプションの移動は大規模な変更であり、最小限の変更ではありません。VNetピアリングはネットワーク接続であり、認証・認可の問題は解決しません。",
+    "explanation": "Microsoft Entra B2Bコラボレーションにより、fabrikam.comのユーザーをcontoso.comテナントへゲストとして招待できます。招待を受けたユーザーは自組織の認証情報でサインインし、contoso.com側のリソースを利用可能になります。異なるテナント間の直接同期は行えません。サブスクリプションの移動は影響範囲が大きく、最小限の変更とはいえません。VNetピアリングはネットワーク層の接続であり、認証やアクセス許可の課題は解決しません。",
     "category": "identity",
     "tags": [
       "entra-id",
@@ -3264,12 +3098,11 @@ var ALL_QUIZ_QUESTIONS = [
       "subscription-design",
       "app-service",
       "vnet"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 17,
-    "question": "あなたは5つのAzureサブスクリプション（それぞれ異なるEntraテナントに関連付け）のWindows VMからイベントログを収集する必要があります。データ収集ルール（DCR）を使用します。イベントログの転送、DCRの実行、複数テナントのデータ収集に適したサービスの組み合わせはどれですか？",
+    "question": "5つのAzureサブスクリプション（それぞれ異なるEntraテナントに紐づけ）上のWindows VMからイベントログを収集する必要があります。データ収集ルール（DCR）を使用する前提で、イベントログ転送・DCR実行・複数テナントからのデータ収集に適したサービスの組み合わせはどれですか？",
     "choices": [
       "A. イベントログ: Azure Storage、DCR: Log Analytics エージェント、複数テナント: Azure Arc",
       "B. イベントログ: Azure Event Hubs、DCR: Azure Monitorエージェント、複数テナント: Azure Lighthouse",
@@ -3277,7 +3110,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. イベントログ: Azure Storage、DCR: Azure Monitorエージェント、複数テナント: 管理グループ"
     ],
     "answer": 1,
-    "explanation": "Azure Event Hubsは大規模なイベントログの転送に適しています。Azure Monitorエージェント（AMA）はDCRを使用してデータ収集を実行する新しいエージェントです。Azure Lighthouseは複数テナントのリソースを一元管理でき、異なるテナントのサブスクリプションを横断してデータ収集が可能です。Log AnalyticsエージェントはレガシーでありDCRをサポートしません。管理グループは単一テナント内の管理階層です。",
+    "explanation": "Azure Event Hubsは大規模イベントログの転送に適しています。Azure Monitorエージェント（AMA）はDCRに対応した新世代のエージェントです。Azure Lighthouseを使えば、異なるテナントに属する複数サブスクリプションのリソースを一元的に管理しデータを収集できます。旧式のLog Analyticsエージェントはdcr非対応です。管理グループは同一テナント内の階層管理用であり、テナント横断の管理はできません。",
     "category": "monitoring",
     "tags": [
       "entra-id",
@@ -3290,12 +3123,11 @@ var ALL_QUIZ_QUESTIONS = [
       "log-analytics",
       "azure-functions",
       "event-driven"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 18,
-    "question": "あなたは全体管理者がAzureポータルにアクセスする際にMFA（多要素認証）を必須にする必要があります。どの機能を使用すべきですか？",
+    "question": "全体管理者がAzureポータルへサインインする際に、MFA（多要素認証）を必ず求めるようにしたいと考えています。どの機能を利用すべきですか？",
     "choices": [
       "A. セキュリティの既定値群",
       "B. 条件付きアクセス",
@@ -3303,19 +3135,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ユーザーごとのMFA"
     ],
     "answer": 1,
-    "explanation": "条件付きアクセスポリシーを使用すると、特定のロール（全体管理者）がAzureポータルにアクセスする際にMFAを要求する条件を設定できます。セキュリティの既定値群はすべてのユーザーにMFAを要求しますが、全体管理者のみに限定できません。ID Protectionはリスクベースの条件付きアクセスであり、常にMFAを要求する設定には適しません。ユーザーごとのMFAは旧式の方法であり、条件（ポータルアクセス時のみ）の設定ができません。",
+    "explanation": "条件付きアクセスポリシーを使えば、全体管理者ロールを持つユーザーがAzureポータルにアクセスする場面に限定してMFAを要求できます。セキュリティの既定値群は全ユーザーにMFAを適用しますが、特定ロールだけに絞ることはできません。ID Protectionはリスクベースのポリシーであり、常時MFA強制には適しません。ユーザーごとのMFA設定は従来の方式で、アクセス先に応じた条件指定ができません。",
     "category": "identity",
     "tags": [
       "entra-id",
       "auth-methods",
       "rbac",
       "conditional-access"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 19,
-    "question": "あなたはAzure Key Vaultを管理しています。開発者に一時的なKey Vaultへのアクセス権を付与し、使用後に自動的に権限を失効させたいと考えています。どの機能を使用すべきですか？",
+    "question": "Azure Key Vaultを運用しています。開発者に対して一時的にKey Vaultへのアクセスを許可し、一定期間後に自動で権限が取り消される仕組みを導入したい場合、どの機能が適切ですか？",
     "choices": [
       "A. アクセスレビュー",
       "B. 条件付きアクセス",
@@ -3323,7 +3154,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Microsoft Entra PIM（Privileged Identity Management）"
     ],
     "answer": 3,
-    "explanation": "Microsoft Entra PIM（Privileged Identity Management）を使用すると、ジャストインタイム（JIT）アクセスとして、一時的な権限の付与と自動失効を実現できます。開発者は必要な時にアクセス権をアクティブ化し、設定された期間後に自動的に失効します。アクセスレビューは定期的なレビューであり、一時的なアクセス管理には適しません。条件付きアクセスはアクセス条件の制御であり、一時的な権限付与ではありません。マネージドIDはアプリケーション向けの機能です。",
+    "explanation": "Microsoft Entra PIM（Privileged Identity Management）を活用すると、ジャストインタイム（JIT）方式で一時的な権限付与と自動失効を実装できます。開発者は必要時にアクセスをアクティブ化し、設定した期限が来れば自動的に権限が無効化されます。アクセスレビューは定期的な棚卸し用途であり、即時の一時アクセス管理とは異なります。条件付きアクセスはアクセス条件の制御機能で、期間限定の権限付与には向きません。マネージドIDはアプリケーション用の認証手段です。",
     "category": "identity",
     "tags": [
       "entra-governance",
@@ -3331,12 +3162,11 @@ var ALL_QUIZ_QUESTIONS = [
       "pim",
       "managed-identity",
       "key-vault"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 20,
-    "question": "あなたはAzure BlobストレージにアクセスするアプリケーションにSAS（Shared Access Signature）を使用しています。共有キーの使用を禁止し、時間制限を設け、最大のセキュリティを確保する必要があります。どの種類のSASを使用すべきですか？",
+    "question": "Azure BlobストレージにアクセスするアプリケーションでSAS（Shared Access Signature）を利用しています。ストレージアカウントの共有キーを使わず、有効期限を設定しつつ最大限のセキュリティを確保するには、どの種類のSASを選ぶべきですか？",
     "choices": [
       "A. サービスSAS",
       "B. アカウントSAS",
@@ -3344,19 +3174,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ストレージアクセスキー"
     ],
     "answer": 2,
-    "explanation": "ユーザー委任SASは、Microsoft Entra IDの資格情報で署名されるため、ストレージアカウントの共有キーを使用しません。時間制限の設定が可能で、最も安全なSASの種類です。サービスSASとアカウントSASはストレージアカウントキーで署名されるため、共有キー禁止の要件を満たしません。ストレージアクセスキーは直接的なアクセス方法であり、SASではありません。",
+    "explanation": "ユーザー委任SASはMicrosoft Entra IDの認証情報を用いて署名されるため、ストレージアカウントの共有キーに依存しません。有効期限の指定も可能で、SASの中で最も安全性が高い方式です。サービスSASやアカウントSASはストレージアカウントキーで署名されるため、共有キー不使用の要件を満たせません。ストレージアクセスキーはキー自体を直接利用する手段であり、SASとは別の仕組みです。",
     "category": "identity",
     "tags": [
       "entra-id",
       "access-keys",
       "sas",
       "azure-storage"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 21,
-    "question": "あなたのアプリケーションはAzure VM上で実行され、Azure SQL Databaseにアクセスする必要があります。コード内にIDや資格情報を保存せず、VMの増加時に管理を最小限にしたいと考えています。どの認証方式を使用すべきですか？",
+    "question": "Azure VM上で稼働するアプリケーションからAzure SQL Databaseへ接続する必要があります。ソースコードに認証情報を埋め込まず、VMの台数が増えても管理負荷を最小にしたい場合、どの認証方式を採用すべきですか？",
     "choices": [
       "A. サービスプリンシパル",
       "B. 接続文字列",
@@ -3364,7 +3193,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. システム割り当てマネージドID"
     ],
     "answer": 3,
-    "explanation": "システム割り当てマネージドIDは、VMに自動的にIDが付与され、コード内に資格情報を保存する必要がありません。VMのライフサイクルに連動して自動的に作成・削除されるため、管理が最小限で済みます。サービスプリンシパルは資格情報の管理が必要です。接続文字列はコード内に記述する必要があります。ユーザー割り当てマネージドIDも資格情報不要ですが、VMが増加する際にシステム割り当ての方が個別管理の手間が少なくなります。",
+    "explanation": "システム割り当てマネージドIDはVMに自動でIDが付与され、コード内に資格情報を保存する必要がありません。VMのライフサイクルと連動して作成・削除が自動的に行われるため、運用負荷が最小限に抑えられます。サービスプリンシパルは認証情報の管理が別途必要です。接続文字列はコード中に記述することになります。ユーザー割り当てマネージドIDも資格情報は不要ですが、VMが増えるたびにID割り当て管理が必要となり、システム割り当てに比べて手間がかかります。",
     "category": "identity",
     "tags": [
       "auth-methods",
@@ -3372,12 +3201,11 @@ var ALL_QUIZ_QUESTIONS = [
       "managed-identity",
       "blob-storage",
       "sql-database"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 22,
-    "question": "あなたは複数のAzure VM上でアプリケーションを実行しており、すべてのVMからAzure SQL Databaseにアクセスする必要があります。コード内にIDを記述せず、効率的に管理したいと考えています。どの認証方式を使用すべきですか？",
+    "question": "複数のAzure VMで動くアプリケーションが、共通してAzure SQL Databaseにアクセスする必要があります。コード内にID情報を書かず、アクセス権を効率よく一括管理するには、どの認証方式を選ぶべきですか？",
     "choices": [
       "A. サービスプリンシパル",
       "B. 接続文字列",
@@ -3385,19 +3213,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. システム割り当てマネージドID"
     ],
     "answer": 2,
-    "explanation": "ユーザー割り当てマネージドIDは、複数のVMで共有できるスタンドアロンのIDです。1つのIDを作成して複数のVMに割り当てることで、SQL Databaseへのアクセス権を一元管理できます。システム割り当てマネージドIDはVM個別に付与されるため、複数VMでの共有管理にはユーザー割り当ての方が効率的です。サービスプリンシパルは資格情報の管理が必要で、接続文字列はコード内に記述が必要です。",
+    "explanation": "ユーザー割り当てマネージドIDは独立したIDリソースとして作成でき、複数のVMに共有して紐づけることが可能です。1つのIDを作成して全VMに割り当てれば、SQL Databaseへのアクセス権を一元的に管理できます。システム割り当てマネージドIDはVM個別のIDとなるため、複数VMでの共通管理にはユーザー割り当て方式の方が効率的です。サービスプリンシパルは認証情報の管理が発生し、接続文字列はコード内記述が必要です。",
     "category": "identity",
     "tags": [
       "auth-methods",
       "app-registration",
       "managed-identity",
       "sql-database"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 23,
-    "question": "Azure Policyを割り当てることができるスコープはどれですか？（3つ選択）",
+    "question": "Azure Policyの割り当てが可能なスコープを3つ選んでください。",
     "choices": [
       "A. サブスクリプション",
       "B. 管理グループ",
@@ -3410,7 +3237,7 @@ var ALL_QUIZ_QUESTIONS = [
       1,
       2
     ],
-    "explanation": "Azure Policyは、管理グループ、サブスクリプション、リソースグループの3つのスコープに割り当てることができます。テナントレベルでの直接的なPolicy割り当てはできません（管理グループを通じて間接的に適用）。可用性ゾーンはインフラストラクチャの概念であり、Policyのスコープではありません。",
+    "explanation": "Azure Policyは管理グループ、サブスクリプション、リソースグループの3階層に対して割り当てが可能です。テナントレベルへの直接割り当てはできず、管理グループを介して間接的にカバーします。可用性ゾーンはインフラの物理的な構成要素であり、Policyの適用スコープとしては定義されていません。",
     "category": "governance",
     "tags": [
       "entra-id",
@@ -3419,12 +3246,11 @@ var ALL_QUIZ_QUESTIONS = [
       "subscription-design",
       "azure-policy",
       "availability-zones"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 24,
-    "question": "あなたは開発者がAzure VMを作成する際に、特定のリージョンとVMサイズに制限したいと考えています。複数のポリシーをまとめて適用するには、どの機能を使用すべきですか？",
+    "question": "開発者がAzure VMを作成する際、利用可能なリージョンとVMサイズを制限したいと考えています。関連する複数のポリシーをまとめて一括で適用するには、どの機能を使うべきですか？",
     "choices": [
       "A. Azure Policy定義",
       "B. Azure Blueprint",
@@ -3432,19 +3258,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Policyのイニシアチブ定義"
     ],
     "answer": 3,
-    "explanation": "Azure Policyのイニシアチブ定義（ポリシーセット定義）を使用すると、複数のポリシー定義をグループ化して一括で割り当てることができます。リージョン制限とVMサイズ制限の2つのポリシーを1つのイニシアチブにまとめることで、効率的な管理が可能です。個別のPolicy定義では複数のポリシーをまとめられません。Blueprintは環境全体のテンプレートであり、この要件には過剰です。管理グループはスコープの管理であり、ポリシーのグループ化はできません。",
+    "explanation": "Azure Policyのイニシアチブ定義（ポリシーセット定義）を利用すると、複数のポリシー定義をひとまとめにして一括で割り当てられます。リージョン制限とVMサイズ制限を1つのイニシアチブにまとめれば、管理効率が向上します。個別のPolicy定義では複数ポリシーのグループ化ができません。Blueprintは環境全体のテンプレート化であり、この用途には大がかりすぎます。管理グループはスコープ管理用であり、ポリシーの集約機能はありません。",
     "category": "governance",
     "tags": [
       "resource-hierarchy",
       "management-groups",
       "azure-policy",
       "blueprints"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 25,
-    "question": "あなたはAzure Policyを使用してタグ管理を自動化したいと考えています。新規リソースにリソースグループのタグを継承させ、既存リソースのタグも修正する必要があります。どの効果（effect）を使用すべきですか？",
+    "question": "Azure Policyでタグの運用を自動化したいと考えています。新しく作成されるリソースにリソースグループのタグを自動継承させ、既に存在するリソースのタグも修正する場合、どの効果（effect）を指定すべきですか？",
     "choices": [
       "A. Deny",
       "B. Audit",
@@ -3452,18 +3277,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Modify"
     ],
     "answer": 3,
-    "explanation": "Modify効果は、リソースの作成時または更新時にプロパティ（タグを含む）を追加・変更・削除できます。既存のリソースに対しても修復タスクを実行してタグを修正できます。Denyはリソースの作成を拒否するだけでタグの継承はできません。Auditは非準拠リソースの記録のみで修正はしません。AppendはIPルールなどの配列フィールドの追加に使用され、タグの管理にはModifyが推奨されます。",
+    "explanation": "Modify効果を使えば、リソースの作成時や更新時にタグなどのプロパティを追加・変更・削除できます。また、修復タスクにより既存リソースのタグも自動修正が可能です。Denyはリソース作成の拒否のみでタグ継承はできません。Auditは非準拠リソースの記録だけで実際の修正は行いません。Appendは配列型フィールドへの追加用途であり、タグ管理にはModifyの使用が推奨されています。",
     "category": "governance",
     "tags": [
       "azure-policy",
       "tagging",
       "automation-deploy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 26,
-    "question": "あなたはアプリケーションで使用するAPIキーをAzure Key Vaultに安全に保管したいと考えています。どのKey Vaultオブジェクトの種類を使用すべきですか？",
+    "question": "アプリケーションで利用するAPIキーをAzure Key Vaultに安全に保管したい場合、どのKey Vaultオブジェクト種別を使うべきですか？",
     "choices": [
       "A. シークレット",
       "B. キー",
@@ -3471,18 +3295,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ストレージアカウントキー"
     ],
     "answer": 0,
-    "explanation": "Key Vaultのシークレットは、APIキー、パスワード、接続文字列などのテキストベースの機密情報を安全に保存するために使用します。キー（Key）は暗号化操作（暗号化・復号化・署名・検証）に使用する暗号化キーです。証明書はTLS/SSL証明書の管理に使用します。ストレージアカウントキーはKey Vaultオブジェクトの種類ではなく、ストレージアカウントのアクセスキーです。",
+    "explanation": "Key Vaultのシークレットは、APIキーやパスワード、接続文字列といったテキスト形式の機密情報を安全に格納するためのオブジェクト種別です。キー（Key）は暗号化・復号化・署名・検証に使う暗号鍵の管理用です。証明書はTLS/SSL証明書のライフサイクル管理向けです。ストレージアカウントキーはKey Vaultのオブジェクト種別ではなく、ストレージアカウント側のアクセスキーを指します。",
     "category": "identity",
     "tags": [
       "access-keys",
       "key-vault",
       "azure-storage"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 1,
-    "question": "あなたはPremiumアクセス層で最高のパフォーマンスと最高の冗長性を持つストレージアカウントを構成する必要があります。どのストレージアカウントの種類と冗長性オプションを選択すべきですか？",
+    "question": "Premiumアクセス層で最高のパフォーマンスと最大限の冗長性を確保できるストレージアカウントを構成する必要があります。選択すべきストレージアカウントの種類と冗長性オプションの組み合わせはどれですか？",
     "choices": [
       "A. Premium BlockBlobStorage、LRS",
       "B. Premium BlockBlobStorage、ZRS",
@@ -3490,18 +3313,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. General Purpose v2 Premium、RA-GRS"
     ],
     "answer": 1,
-    "explanation": "Premiumストレージアカウントでは、冗長性オプションはLRSとZRSのみがサポートされます。GRSやRA-GRSはPremiumでは使用できません。最高の冗長性を実現するには、ZRS（ゾーン冗長ストレージ）を選択します。ZRSは3つの可用性ゾーンにデータをレプリケートし、LRS（単一データセンター内の3コピー）よりも高い冗長性を提供します。",
+    "explanation": "Premiumストレージアカウントで利用可能な冗長性オプションはLRSとZRSに限られます。GRSやRA-GRSはPremiumでは選択できません。より高い冗長性を得るにはZRS（ゾーン冗長ストレージ）が最適で、3つの可用性ゾーンにデータを複製します。LRSは単一データセンター内に3つのコピーを保持するだけなので、ZRSの方が冗長性で優れています。",
     "category": "data",
     "tags": [
       "azure-storage",
       "blob-storage",
       "availability-zones"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 2,
-    "question": "あなたは10GBのデータを保存し、読み取りパフォーマンスを向上させながら、ストレージコストを最小化する必要があります。どのAzureサービスを使用すべきですか？",
+    "question": "容量10GB程度のデータを格納し、読み取り速度を高めつつストレージ費用を最小限にしたいと考えています。どのAzureサービスが適切ですか？",
     "choices": [
       "A. Azure Files Premium",
       "B. Azure Blob Storage",
@@ -3509,17 +3331,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Table Storage"
     ],
     "answer": 1,
-    "explanation": "Azure Blob Storageは、非構造化データの保存に最適で、アクセス層（Hot/Cool/Cold/Archive）を選択することでストレージコストを最小化できます。10GBという比較的小さなデータ量に対して、読み取りパフォーマンスはHotアクセス層で十分に高速です。Azure Files Premiumはファイル共有向けでコストが高くなります。Managed Disksは仮想マシン用です。Table Storageは構造化データ向けです。",
+    "explanation": "Azure Blob Storageは非構造化データの格納に最適化されており、アクセス層（Hot/Cool/Cold/Archive）の選択によってストレージコストを調整できます。10GB程度のデータであれば、Hotアクセス層で十分高速な読み取りが可能です。Azure Files Premiumはファイル共有用途で割高になります。Managed Disksは仮想マシン専用のディスクサービスです。Table Storageは構造化されたKey-Valueデータ向けです。",
     "category": "data",
     "tags": [
       "blob-storage",
       "virtual-machines"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 3,
-    "question": "あなたはグローバルに分散されたアプリケーションを構築しています。マルチリージョン書き込みと99.999%の可用性SLAが必要です。どのAzureサービスを使用すべきですか？",
+    "question": "世界各地に分散するアプリケーションを開発しています。複数リージョンでの書き込みと99.999%の可用性SLAが求められます。どのAzureサービスを選ぶべきですか？",
     "choices": [
       "A. Azure SQL Database geo レプリケーション",
       "B. Azure Cosmos DB",
@@ -3527,7 +3348,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Cache for Redis"
     ],
     "answer": 1,
-    "explanation": "Azure Cosmos DBは、マルチリージョン書き込み（マルチマスター）をサポートし、マルチリージョン構成で99.999%の可用性SLAを提供します。これはAzureサービスの中で最も高い可用性SLAです。Azure SQL Databaseのgeoレプリケーションは読み取りレプリカであり、マルチリージョン書き込みはサポートしません。PostgreSQL HyperscaleはCitusベースの分散DBですが、99.999%のSLAは提供しません。Redis Cacheはキャッシュサービスであり、永続データストアではありません。",
+    "explanation": "Azure Cosmos DBはマルチリージョン書き込み（マルチマスター）に対応しており、複数リージョン構成で99.999%の可用性SLAを提供します。これはAzureサービスの中で最高水準のSLAです。Azure SQL Databaseのgeoレプリケーションは読み取りレプリカ方式のため、マルチリージョン書き込みには対応しません。PostgreSQL HyperscaleはCitusベースの分散DBですが、99.999%のSLA保証はありません。Redis Cacheはキャッシュ層であり、永続的なデータストアとしては設計されていません。",
     "category": "data",
     "tags": [
       "sql-database",
@@ -3535,12 +3356,11 @@ var ALL_QUIZ_QUESTIONS = [
       "bcdr-fundamentals",
       "sql-ha",
       "caching"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 4,
-    "question": "あなたはAzure Cosmos DBでクエリのスケーリングを最適化する必要があります。クロスパーティションクエリを避け、効率的なデータアクセスを実現するために最も重要な設計要素はどれですか？",
+    "question": "Azure Cosmos DBでクエリのスケーラビリティを最適化したいと考えています。クロスパーティションクエリを回避し、効率的にデータへアクセスするために最も重要となる設計上の要素はどれですか？",
     "choices": [
       "A. インデックスポリシー",
       "B. 整合性レベル",
@@ -3548,17 +3368,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. スループット（RU/s）"
     ],
     "answer": 2,
-    "explanation": "パーティションキーの適切な選択は、Cosmos DBのスケーリングにおいて最も重要な設計要素です。適切なパーティションキーを選択することで、データが均等に分散され、クロスパーティションクエリを避けることができます。インデックスポリシーはクエリパフォーマンスに影響しますが、スケーリングの基本ではありません。整合性レベルはデータの一貫性に関する設定です。スループットはパフォーマンスの割り当てであり、データ分散の設計ではありません。",
+    "explanation": "適切なパーティションキーの選定は、Cosmos DBのスケーラビリティにおける最重要設計事項です。パーティションキーを正しく選ぶことで、データが均等に分散されクロスパーティションクエリを回避できます。インデックスポリシーはクエリ性能に影響を与えますが、スケーリングの根本的な要素ではありません。整合性レベルはデータの一貫性設定に関するものです。スループットはパフォーマンスの割り当て量であり、データ配置の設計とは別の観点です。",
     "category": "data",
     "tags": [
       "cosmosdb",
       "cosmosdb-params"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 5,
-    "question": "あなたはAzure SQLの展開オプションを検討しています。複数のデータベース間でクエリを実行する必要がある場合、どのオプションを選択すべきですか？",
+    "question": "Azure SQLのデプロイ形態を検討中です。複数のデータベースをまたいでクエリを実行する必要がある場合、どのオプションを選ぶべきですか？",
     "choices": [
       "A. Azure SQL Database 単一データベース",
       "B. Azure SQL Database エラスティックプール",
@@ -3566,18 +3385,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure SQL Database サーバーレス"
     ],
     "answer": 2,
-    "explanation": "Azure SQL Managed Instance（MI）は、クロスデータベースクエリをサポートしています。複数のデータベース間でJOINやトランザクションを実行できます。Azure SQL Database（単一DB、エラスティックプール、サーバーレス）ではクロスデータベースクエリはサポートされていません（エラスティッククエリという機能で限定的な読み取りは可能）。MIはSQL Serverとの高い互換性を持ち、オンプレミスからの移行にも適しています。",
+    "explanation": "Azure SQL Managed Instance（MI）はクロスデータベースクエリをネイティブにサポートしています。複数DB間でのJOINやトランザクション実行が可能です。Azure SQL Database（単一DB、エラスティックプール、サーバーレス）ではクロスデータベースクエリは基本的にサポートされません（エラスティッククエリによる限定的な読み取りは可能）。MIはSQL Serverとの高い互換性を備え、オンプレミスからの移行先としても適しています。",
     "category": "data",
     "tags": [
       "sql-database",
       "azure-functions",
       "data-migration"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 6,
-    "question": "あなたはデータウェアハウスとOLAP（オンライン分析処理）を実装する必要があります。大量の構造化データに対して複雑な分析クエリを実行します。どのサービスを使用すべきですか？",
+    "question": "データウェアハウスおよびOLAP（オンライン分析処理）の基盤を構築する必要があります。大規模な構造化データに対して高度な分析クエリを実行する場合、どのサービスが最適ですか？",
     "choices": [
       "A. Azure SQL Database",
       "B. Azure Synapse Analytics 専用SQLプール",
@@ -3585,19 +3403,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Database for PostgreSQL"
     ],
     "answer": 1,
-    "explanation": "Azure Synapse Analytics 専用SQLプールは、超並列処理（MPP）アーキテクチャを使用したエンタープライズデータウェアハウスです。大量のデータに対するOLAPクエリに最適化されており、列ストア圧縮やパーティション分割によって高速な分析を実現します。Azure SQL DatabaseはOLTPに適しており、大規模なOLAPには向きません。Cosmos DBはNoSQLデータベースです。PostgreSQLは汎用RDBMSですが、大規模DWHには専用SQLプールの方が適切です。",
+    "explanation": "Azure Synapse Analytics 専用SQLプールは、超並列処理（MPP）アーキテクチャを採用したエンタープライズ向けデータウェアハウスです。大量データに対するOLAPクエリ向けに最適化されており、列ストア圧縮やパーティション分割で高速な分析処理を実現します。Azure SQL DatabaseはOLTP用途に適しており、大規模OLAPには向きません。Cosmos DBはNoSQLデータベースです。PostgreSQLは汎用RDBMSですが、大規模DWH用途には専用SQLプールが適切です。",
     "category": "data",
     "tags": [
       "data-fundamentals",
       "sql-database",
       "cosmosdb",
       "data-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 7,
-    "question": "あなたは複数のデータソースからデータを抽出・変換・読み込み（ETL）するパイプラインを構築する必要があります。どのAzureサービスを使用すべきですか？",
+    "question": "複数のデータソースからデータを抽出・変換・読み込み（ETL）するパイプラインを構築したいと考えています。最適なAzureサービスはどれですか？",
     "choices": [
       "A. Azure Stream Analytics",
       "B. Azure Data Factory",
@@ -3605,7 +3422,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Logic Apps"
     ],
     "answer": 1,
-    "explanation": "Azure Data Factoryは、ETL/ELTパイプラインの構築に特化したマネージドサービスです。90以上のデータソースに対応するコネクタを備え、コードなしでデータフローを設計できます。Stream Analyticsはリアルタイムストリーム処理向けです。Event Hubsはイベントの取り込みサービスであり、データ変換機能はありません。Logic Appsはワークフロー自動化ですが、大規模なETLパイプラインには適していません。",
+    "explanation": "Azure Data FactoryはETL/ELTパイプラインの構築に特化したフルマネージドサービスで、90種以上のコネクタを備えノーコードでデータフローを設計可能です。Stream Analyticsはリアルタイムのストリーム処理向けです。Event Hubsはイベント取り込みサービスであり、データ変換の機能は持ちません。Logic Appsはワークフロー自動化向けですが、大規模ETL処理には不向きです。",
     "category": "data",
     "tags": [
       "data-sources",
@@ -3613,12 +3430,11 @@ var ALL_QUIZ_QUESTIONS = [
       "event-driven",
       "api-management",
       "automation-deploy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 8,
-    "question": "あなたはIoTデバイスからのリアルタイムデータストリームを処理する必要があります。毎秒数百万件のイベントを取り込めるサービスはどれですか？",
+    "question": "IoTデバイスが送信するリアルタイムのデータストリームを処理する必要があります。毎秒数百万件規模のイベントを受け入れ可能なサービスはどれですか？",
     "choices": [
       "A. Azure Service Bus",
       "B. Azure Event Hubs",
@@ -3626,17 +3442,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Notification Hubs"
     ],
     "answer": 1,
-    "explanation": "Azure Event Hubsは、毎秒数百万件のイベントを取り込めるビッグデータストリーミングプラットフォームです。IoTデバイスやアプリケーションからの大量のテレメトリデータのリアルタイム取り込みに最適です。Service Busはエンタープライズメッセージングに適していますが、大規模ストリーム処理向けではありません。Queue Storageは単純なキューイングです。Notification Hubsはプッシュ通知サービスです。",
+    "explanation": "Azure Event Hubsは毎秒数百万件のイベント取り込みが可能な大規模ストリーミングプラットフォームです。IoT端末やアプリケーションから送られる大量のテレメトリデータをリアルタイムで処理するのに最適です。Service Busはエンタープライズ向けメッセージングに強みがありますが、大規模ストリーム処理には不向きです。Queue Storageはシンプルなキュー機能です。Notification Hubsはモバイルプッシュ通知のサービスです。",
     "category": "data",
     "tags": [
       "messaging",
       "event-driven"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 9,
-    "question": "あなたは構造化データを保存し、ACID準拠のトランザクション処理が必要なアプリケーションを構築しています。どのAzureサービスを使用すべきですか？",
+    "question": "構造化データを保管し、ACID準拠のトランザクション処理を求めるアプリケーションを開発しています。どのAzureサービスが適していますか？",
     "choices": [
       "A. Azure Cosmos DB",
       "B. Azure SQL Database",
@@ -3644,7 +3459,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Table Storage"
     ],
     "answer": 1,
-    "explanation": "Azure SQL Databaseは、完全マネージドのリレーショナルデータベースであり、ACID準拠のトランザクション処理をサポートします。構造化データの保存とSQLクエリに最適です。Cosmos DBもトランザクションをサポートしますが、主にNoSQLワークロード向けです。Blob Storageは非構造化データ向けでトランザクション処理には対応しません。Table StorageはNoSQLキー/バリューストアであり、完全なACIDトランザクションはサポートしません。",
+    "explanation": "Azure SQL Databaseはフルマネージドのリレーショナルデータベースで、ACID準拠のトランザクション処理を完全にサポートします。構造化データの格納とSQLクエリに最適な選択肢です。Cosmos DBもトランザクション機能を備えていますが、主にNoSQLワークロード向けに設計されています。Blob Storageは非構造化データ用でトランザクション処理には対応しません。Table StorageはNoSQLのKey-Valueストアであり、完全なACIDトランザクションには対応していません。",
     "category": "data",
     "tags": [
       "data-fundamentals",
@@ -3652,12 +3467,11 @@ var ALL_QUIZ_QUESTIONS = [
       "sql-database",
       "cosmosdb",
       "containers"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 10,
-    "question": "あなたは大量の非構造化データを長期間保存する必要があります。データへのアクセス頻度は非常に低く、コストを最小化したいと考えています。どのストレージオプションを使用すべきですか？",
+    "question": "大量の非構造化データを長期にわたって保管する必要があります。データへのアクセスはほとんど発生せず、ストレージ費用をできる限り抑えたいと考えています。どのストレージオプションが最適ですか？",
     "choices": [
       "A. Azure Blob Storage Hotアクセス層",
       "B. Azure Blob Storage Coolアクセス層",
@@ -3665,16 +3479,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Files Premium"
     ],
     "answer": 2,
-    "explanation": "Azure Blob Storage Archiveアクセス層は、ストレージコストが最も低く、アクセス頻度が非常に低い長期保存データに最適です。ただし、データの取得にはリハイドレーション（数時間）が必要です。Hotアクセス層はアクセスコストが低いがストレージコストが高く、Coolアクセス層はArchiveよりストレージコストが高くなります。Files Premiumはファイル共有向けで最もコストが高いオプションです。",
+    "explanation": "Azure Blob StorageのArchiveアクセス層はストレージ単価が最も低く、アクセス頻度が極めて低い長期保存データに適しています。ただしデータの読み出しにはリハイドレーション処理（数時間程度）が必要です。Hotアクセス層はアクセスコストが低い反面ストレージ単価が高く、Coolアクセス層はArchiveよりも保管コストが高くなります。Files Premiumはファイル共有向けで、最もコスト高な選択肢です。",
     "category": "data",
     "tags": [
       "blob-storage"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 11,
-    "question": "あなたはAzure SQL Databaseの保存データをサーバー側で暗号化する必要があります。どの機能を使用すべきですか？",
+    "question": "Azure SQL Databaseに保存されているデータをサーバー側で暗号化する必要があります。利用すべき機能はどれですか？",
     "choices": [
       "A. Always Encrypted",
       "B. Transparent Data Encryption（TDE）",
@@ -3682,19 +3495,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Information Protection"
     ],
     "answer": 1,
-    "explanation": "Transparent Data Encryption（TDE）は、Azure SQL Databaseの保存データ（Data at Rest）をサーバー側で自動的に暗号化します。データベースファイル、ログファイル、バックアップが暗号化されます。Azure SQL Databaseではデフォルトで有効になっています。Always Encryptedはクライアント側の暗号化です。動的データマスキングはデータの表示を制限する機能であり、暗号化ではありません。Azure Information Protectionはドキュメント保護サービスです。",
+    "explanation": "Transparent Data Encryption（TDE）はAzure SQL Databaseの保存データ（Data at Rest）をサーバー側で自動的に暗号化する機能です。データベースファイル、トランザクションログ、バックアップのすべてが暗号化対象となり、Azure SQL Databaseでは既定で有効化されています。Always Encryptedはクライアント側暗号化の仕組みです。動的データマスキングはデータ表示を制限する機能であり、暗号化とは異なります。Azure Information Protectionはドキュメント保護向けのサービスです。",
     "category": "data",
     "tags": [
       "sql-database",
       "sql-security",
       "bcdr-fundamentals",
       "azure-backup"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 12,
-    "question": "あなたはAzure SQL Database内の機密データをクライアント側で暗号化し、データベース管理者でさえ平文データを参照できないようにする必要があります。どの機能を使用すべきですか？",
+    "question": "Azure SQL Database内の機密データをクライアント側で暗号化し、DB管理者であっても平文のデータを閲覧できないようにする必要があります。どの機能を利用すべきですか？",
     "choices": [
       "A. Transparent Data Encryption（TDE）",
       "B. Always Encrypted",
@@ -3702,17 +3514,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 列レベルの暗号化"
     ],
     "answer": 1,
-    "explanation": "Always Encryptedは、クライアント側でデータを暗号化し、暗号化キーはデータベースエンジンに公開されません。そのため、データベース管理者（DBA）でさえ平文データを参照できません。TDEはサーバー側の暗号化であり、DBAはデータを参照できます。行レベルセキュリティはアクセス制御であり暗号化ではありません。列レベルの暗号化はT-SQLの機能ですが、Always Encryptedほどの保護レベルはありません。",
+    "explanation": "Always Encryptedはクライアント側でデータを暗号化し、暗号鍵はデータベースエンジンには渡りません。そのためDB管理者（DBA）でさえ平文データを参照することが不可能です。TDEはサーバー側の暗号化であるため、DBAはデータにアクセスできます。行レベルセキュリティはアクセス制御の仕組みで暗号化ではありません。列レベルの暗号化はT-SQLで実装可能ですが、Always Encryptedほどの保護強度はありません。",
     "category": "data",
     "tags": [
       "sql-database",
       "sql-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 13,
-    "question": "あなたは既存のMongoDBアプリケーションをAzureに移行する必要があります。コードの変更を最小限にしたいと考えています。Azure Cosmos DBのどのAPIを使用すべきですか？",
+    "question": "オンプレミスで稼働中のMongoDBアプリケーションをAzureへ移行する計画です。コード変更を最小限にとどめたい場合、Azure Cosmos DBのどのAPIを選択すべきですか？",
     "choices": [
       "A. NoSQL API",
       "B. MongoDB API",
@@ -3720,18 +3531,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Table API"
     ],
     "answer": 1,
-    "explanation": "Azure Cosmos DB for MongoDB（MongoDB API）を使用すると、既存のMongoDBアプリケーションのコードをほぼ変更せずにCosmos DBに移行できます。MongoDBのドライバーやツールをそのまま使用でき、MongoDBのクエリ構文も互換性があります。NoSQL APIはCosmos DBネイティブのAPIです。Cassandra APIはApache Cassandraワークロード向けです。Table APIはAzure Table Storage互換のAPIです。",
+    "explanation": "Azure Cosmos DB for MongoDB（MongoDB API）を利用すれば、既存のMongoDBアプリケーションのコードをほぼ変更せずにCosmos DBへ移行できます。MongoDBのドライバーやツールをそのまま活用でき、クエリ構文も互換性があります。NoSQL APIはCosmos DB独自のネイティブAPIです。Cassandra APIはApache Cassandraワークロード向けです。Table APIはAzure Table Storage互換のインターフェースです。",
     "category": "data",
     "tags": [
       "data-fundamentals",
       "cosmosdb",
       "data-migration"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 14,
-    "question": "あなたはAzure Cosmos DBで予約済みスループットのSLAを確保する必要があります。どのスループットモデルと単位を使用すべきですか？",
+    "question": "Azure Cosmos DBでSLAに基づく予約済みスループットを確保したいと考えています。適切なスループットモデルと課金単位の組み合わせはどれですか？",
     "choices": [
       "A. サーバーレススループット、DTU",
       "B. プロビジョニングスループット、RU（要求ユニット）",
@@ -3739,19 +3549,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. サーバーレススループット、RU（要求ユニット）"
     ],
     "answer": 1,
-    "explanation": "プロビジョニングスループットは、RU/s（要求ユニット/秒）で指定した固定のスループットを予約し、SLAで保証されたパフォーマンスを提供します。RU（Request Unit）はCosmos DBの課金・パフォーマンス単位です。サーバーレスは使用量ベースでSLAの保証レベルが異なります。DTUはAzure SQL Databaseの単位であり、Cosmos DBでは使用しません。IOPSはストレージの単位です。",
+    "explanation": "プロビジョニングスループットではRU/s（要求ユニット/秒）で固定のスループットを事前に確保し、SLAに裏付けされたパフォーマンスが保証されます。RU（Request Unit）はCosmos DB固有の課金・パフォーマンス指標です。サーバーレスは従量課金方式であり、SLA保証のレベルが異なります。DTUはAzure SQL Database固有の単位でCosmos DBでは使いません。IOPSはストレージのパフォーマンス指標です。",
     "category": "data",
     "tags": [
       "sql-database",
       "cosmosdb",
       "cosmosdb-params",
       "azure-functions"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 15,
-    "question": "Azure Data Lake Storage Gen2の特徴として正しいものはどれですか？（2つ選択）",
+    "question": "Azure Data Lake Storage Gen2の特徴として正しいものを2つ選んでください。",
     "choices": [
       "A. 階層型名前空間をサポートする",
       "B. ACL（アクセス制御リスト）によるきめ細かなアクセス制御が可能",
@@ -3763,18 +3572,17 @@ var ALL_QUIZ_QUESTIONS = [
       0,
       1
     ],
-    "explanation": "ADLS Gen2は階層型名前空間（Hierarchical Namespace: HNS）をサポートし、ディレクトリレベルでの操作が高速に行えます。また、POSIX互換のACLによるきめ細かなファイル・ディレクトリレベルのアクセス制御が可能です。ブロックBlobをサポートします。Standard StorageアカウントでもHNSを有効化してADLS Gen2として使用できます。Blob Storage APIとの互換性も維持されています。",
+    "explanation": "ADLS Gen2は階層型名前空間（Hierarchical Namespace: HNS）に対応しており、ディレクトリ単位の操作を高速に処理できます。さらにPOSIX準拠のACLにより、ファイルやディレクトリ単位できめ細かなアクセス制御を設定可能です。対応するBlobの種類はブロックBlobです。Standard StorageアカウントでもHNSを有効にすればADLS Gen2として利用できます。Blob Storage APIとの互換性も維持されています。",
     "category": "data",
     "tags": [
       "resource-locks",
       "blob-storage",
       "data-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 16,
-    "question": "Azure Blob Storageのライフサイクル管理ポリシーが適用されるBlobの種類はどれですか？",
+    "question": "Azure Blob Storageのライフサイクル管理ポリシーの適用対象となるBlobの種類はどれですか？",
     "choices": [
       "A. ブロックBlobのみ",
       "B. ページBlobのみ",
@@ -3782,18 +3590,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. すべてのBlobの種類"
     ],
     "answer": 0,
-    "explanation": "Azure Blob Storageのライフサイクル管理ポリシーは、ブロックBlobにのみ適用されます。ライフサイクル管理を使用すると、ブロックBlobのアクセス層の変更（Hot→Cool→Cold→Archive）や削除を自動化できます。ページBlob（VMディスクなど）や追加Blob（ログデータなど）には適用されません。",
+    "explanation": "Azure Blob Storageのライフサイクル管理ポリシーはブロックBlobのみを対象とします。この機能を使えば、ブロックBlobのアクセス層移行（Hot→Cool→Cold→Archive）や自動削除をルールベースで運用できます。ページBlob（VMディスク等）や追加Blob（ログ追記用等）はライフサイクル管理の対象外です。",
     "category": "data",
     "tags": [
       "resource-locks",
       "blob-storage",
       "automation-deploy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 17,
-    "question": "あなたはオンプレミスのHadoop環境で使用しているHDFS（Hadoop Distributed File System）をAzureに移行する必要があります。HDFSの代替として最適なAzureサービスはどれですか？",
+    "question": "オンプレミスのHadoop環境で利用しているHDFS（Hadoop Distributed File System）をAzureへ移行する計画です。HDFSの代わりとして最適なAzureサービスはどれですか？",
     "choices": [
       "A. Azure Blob Storage",
       "B. Azure Data Lake Storage Gen2",
@@ -3801,18 +3608,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Managed Disks"
     ],
     "answer": 1,
-    "explanation": "Azure Data Lake Storage Gen2（ADLS Gen2）は、HDFS互換のファイルシステムインターフェースを提供し、Hadoopエコシステム（Spark、Hiveなど）からシームレスにアクセスできます。階層型名前空間によりディレクトリ操作が高速で、ビッグデータ分析に最適化されています。Blob StorageもHDFSドライバー経由でアクセスできますが、ADLS Gen2の方がパフォーマンスと機能で優れています。Azure FilesはSMB/NFSファイル共有、Managed DisksはVM用ストレージです。",
+    "explanation": "Azure Data Lake Storage Gen2（ADLS Gen2）はHDFS互換のファイルシステムインターフェースを提供しており、SparkやHiveなどのHadoopエコシステムからシームレスに利用可能です。階層型名前空間により高速なディレクトリ操作が可能で、ビッグデータ分析向けに設計されています。Blob StorageもHDFSドライバー経由のアクセスは可能ですが、ADLS Gen2の方がパフォーマンスと機能面で優位です。Azure FilesはSMB/NFSファイル共有用、Managed DisksはVM用のディスクサービスです。",
     "category": "data",
     "tags": [
       "blob-storage",
       "data-analytics",
       "data-migration"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 18,
-    "question": "あなたは規制要件により、Azure Blob Storage内のデータを一定期間変更・削除できないようにする必要があります。どの機能を使用すべきですか？",
+    "question": "規制上の要件により、Azure Blob Storage内のデータを一定期間にわたって変更も削除もできないようにする必要があります。どの機能を使うべきですか？",
     "choices": [
       "A. 論理的な削除",
       "B. 時間ベースの保持ポリシー（不変ストレージ）",
@@ -3820,18 +3626,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ストレージアカウントのロック"
     ],
     "answer": 1,
-    "explanation": "時間ベースの保持ポリシー（不変ストレージ）を使用すると、指定した期間中はBlobの変更・削除が不可能になります。WORM（Write Once, Read Many）ストレージとして機能し、金融・医療などの規制要件に対応できます。論理的な削除は削除後の復元を可能にしますが、変更の防止はしません。バージョン管理は変更履歴の保持ですが、変更自体は許可されます。ストレージアカウントのロックはリソース自体の削除防止です。",
+    "explanation": "時間ベースの保持ポリシー（不変ストレージ）を適用すると、指定期間中はBlobの変更や削除が一切できなくなります。WORM（Write Once, Read Many）ストレージとして機能し、金融や医療分野などの規制要件に適合します。論理的な削除は削除後にデータを復元可能にする機能で、変更防止にはなりません。バージョン管理は変更履歴の追跡が目的であり、変更そのものは許可されます。ストレージアカウントのロックはリソース自体の削除防止用です。",
     "category": "data",
     "tags": [
       "resource-locks",
       "azure-storage",
       "blob-storage"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 19,
-    "question": "Azure Synapse Analyticsに関する以下の記述のうち、正しい組み合わせはどれですか？\n・ハッシュ分散テーブルは専用SQLプールで使用できる\n・Delta Lakeの更新操作にはSparkプールが必要",
+    "question": "Azure Synapse Analyticsについて、以下の2つの記述の正誤の組み合わせとして正しいものはどれですか？\n・ハッシュ分散テーブルは専用SQLプールで利用できる\n・Delta Lakeの更新操作にはSparkプールが必要である",
     "choices": [
       "A. 両方正しい",
       "B. ハッシュ分散テーブルの記述のみ正しい",
@@ -3839,16 +3644,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 両方誤り"
     ],
     "answer": 0,
-    "explanation": "ハッシュ分散テーブルは、専用SQLプールのテーブル分散方式の1つであり、指定した列の値に基づいてデータを60のディストリビューションに分散します。大規模なファクトテーブルに適しています。Delta Lakeの更新操作（UPDATE/DELETE/MERGE）は、Apache Sparkエンジン上で動作するため、Synapse AnalyticsではSparkプールを使用する必要があります。専用SQLプールからDelta Lakeテーブルを読み取ることはできますが、更新操作にはSparkプールが必要です。",
+    "explanation": "ハッシュ分散テーブルは専用SQLプールにおけるテーブル分散方式の1つで、指定カラムの値をもとにデータを60のディストリビューションに振り分けます。大規模なファクトテーブルに向いています。Delta LakeのUPDATE/DELETE/MERGE操作はApache Sparkエンジン上で実行されるため、Synapse AnalyticsではSparkプールを使う必要があります。専用SQLプールからDelta Lakeテーブルの読み取りは可能ですが、更新処理にはSparkプールが不可欠です。",
     "category": "data",
     "tags": [
       "data-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 20,
-    "question": "あなたはAzure DatabricksでAzure Active Directoryの資格情報パススルーを使用したいと考えています。どのDatabricksの価格レベルが必要ですか？",
+    "question": "Azure DatabricksでAzure Active Directoryの資格情報パススルーを有効にしたい場合、どの価格レベルのDatabricksが必要ですか？",
     "choices": [
       "A. Standard",
       "B. Premium",
@@ -3856,17 +3660,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. StandardまたはPremium"
     ],
     "answer": 1,
-    "explanation": "Azure Active Directory（Microsoft Entra ID）の資格情報パススルーは、Azure Databricks Premiumプランでのみ利用可能な機能です。この機能により、ユーザーのEntra ID資格情報を使用してAzure Data Lake Storageなどのリソースにアクセスできます。Standardプランではこの機能は使用できません。Trialプランは評価用であり、本番利用には適しません。",
+    "explanation": "Azure Active Directory（Microsoft Entra ID）の資格情報パススルー機能は、Azure Databricks Premiumプラン限定の機能です。この機能により、ユーザーのEntra ID認証情報を使ってAzure Data Lake Storageなどのリソースにアクセスできるようになります。Standardプランでは利用できません。Trialプランは評価目的であり、本番環境での利用は想定されていません。",
     "category": "data",
     "tags": [
       "entra-id",
       "data-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 21,
-    "question": "Azure Synapse Analyticsにおいて、Azure Cosmos DBのデータをETLなしでリアルタイムに分析するために使用する機能はどれですか？",
+    "question": "Azure Synapse Analyticsで、Azure Cosmos DBのデータをETLプロセスなしにリアルタイムで分析するために利用する機能はどれですか？",
     "choices": [
       "A. Azure Data Factory統合",
       "B. Synapse Link",
@@ -3874,18 +3677,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. COPY INTO ステートメント"
     ],
     "answer": 1,
-    "explanation": "Synapse Linkは、Azure Cosmos DBのデータをETLパイプラインなしでSynapse Analyticsにリアルタイムで同期する機能です。Cosmos DBの分析ストア（列ストア）を活用し、OLTPワークロードに影響を与えずに分析クエリを実行できます。Data FactoryはETLパイプラインであり、リアルタイムではありません。PolyBaseとCOPY INTOは外部データの読み込み方法ですが、Cosmos DBとのリアルタイム統合ではありません。",
+    "explanation": "Synapse Linkは、Azure Cosmos DBのデータをETLパイプラインを構築せずにSynapse Analyticsへリアルタイム同期する機能です。Cosmos DBの分析ストア（列ストア形式）を活用し、OLTPワークロードへの影響なく分析クエリを実行できます。Data FactoryはETLパイプラインを構築する方式でリアルタイムではありません。PolyBaseやCOPY INTOは外部データのロード手段であり、Cosmos DBとのリアルタイム連携機能ではありません。",
     "category": "data",
     "tags": [
       "entra-connect",
       "cosmosdb",
       "data-analytics"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 22,
-    "question": "Azure Cosmos DB for PostgreSQLに関する記述として正しいものはどれですか？",
+    "question": "Azure Cosmos DB for PostgreSQLの機能に関する記述として正しいものはどれですか？",
     "choices": [
       "A. マルチリージョン分散とマルチマスター書き込みの両方をサポートする",
       "B. マルチリージョン分散をサポートするが、マルチマスター書き込みはサポートしない",
@@ -3893,18 +3695,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. マルチリージョン分散もマルチマスター書き込みもサポートしない"
     ],
     "answer": 1,
-    "explanation": "Azure Cosmos DB for PostgreSQL（旧Hyperscale (Citus)）は、PostgreSQL互換の分散データベースであり、マルチリージョンへのデータ分散をサポートしますが、マルチマスター書き込み（マルチリージョン書き込み）はサポートしていません。書き込みはコーディネーターノードを通じて行われます。マルチマスター書き込みはCosmos DB（NoSQL APIなど）の機能です。",
+    "explanation": "Azure Cosmos DB for PostgreSQL（旧Hyperscale (Citus)）はPostgreSQL互換の分散データベースであり、データの複数リージョンへの分散配置をサポートします。ただしマルチマスター書き込み（マルチリージョン書き込み）には対応しておらず、書き込みはコーディネーターノード経由で行われます。マルチマスター書き込みはCosmos DBのNoSQL APIなどで提供される機能です。",
     "category": "data",
     "tags": [
       "data-fundamentals",
       "sql-database",
       "cosmosdb"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 1,
-    "question": "あなたは3つのワークロードの災害対策を計画しています。\n・ワークロードA: フェールオーバーが必要\n・ワークロードB: バックアップが必要でRTOは24時間以内\n・ワークロードC: 7年間のデータ保持が必要でRTOは10分以内\nそれぞれに適したAzureサービスの組み合わせはどれですか？",
+    "question": "社内で運用している3つのシステムについて、それぞれ異なるBCDR要件があります。\n・システA: 障害発生時に即座に別環境へ切り替えたい\n・システムB: 定期的なバックアップが必要で、復旧までの許容時間は24時間\n・システムC: データを7年間保管する義務があり、復旧は10分以内に完了させたい\n各システムに最も適したAzureサービスの組み合わせを選んでください。",
     "choices": [
       "A. A: Azure Site Recovery、B: Azure Backup、C: Azure Backup + Azure Site Recovery",
       "B. A: Azure Backup、B: Azure Site Recovery、C: Azure Backup",
@@ -3912,19 +3713,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. A: Azure Backup、B: Azure Backup、C: Azure Site Recovery"
     ],
     "answer": 0,
-    "explanation": "Azure Site Recoveryはフェールオーバー機能を提供し、RTO数分でのリカバリが可能です（ワークロードA）。Azure BackupはRTO24時間以内のバックアップ要件に適しています（ワークロードB）。ワークロードCは7年保持（Backup）とRTO10分（Site Recovery）の両方が必要なため、Azure BackupとSite Recoveryの組み合わせが適切です。",
+    "explanation": "Azure Site Recoveryは環境の切り替え（フェールオーバー）を提供し、数分でのリカバリを可能にします（システムA向き）。Azure Backupは24時間以内のRTOで十分なバックアップ要件をカバーします（システムB向き）。システムCでは7年間の長期保管（Backup）と10分以内の迅速な復旧（Site Recovery）の両立が求められるため、両サービスの併用が最適解となります。",
     "category": "bcdr",
     "tags": [
       "bcdr-fundamentals",
       "azure-backup",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 2,
-    "question": "あなたのオンプレミス環境にあるファイルサーバーが障害を起こした場合に、迅速にファイルアクセスを復旧させたいと考えています。クラウドとの同期も必要です。どのサービスの組み合わせを使用すべきですか？",
+    "question": "オンプレミス環境で稼働しているファイルサーバーに障害が起きた際、速やかにファイルへのアクセスを回復させたいと考えています。さらに、クラウドとの継続的な同期も求められています。どのサービスの組み合わせが適切でしょうか。",
     "choices": [
       "A. Azure Blob Storage + Azure CDN",
       "B. Azure Files + Azure File Sync",
@@ -3932,7 +3732,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure NetApp Files + VPN Gateway"
     ],
     "answer": 1,
-    "explanation": "Azure FilesはSMBプロトコルでアクセスできるクラウドファイル共有を提供し、Azure File Syncはオンプレミスのファイルサーバーとクラウド間でファイルを同期します。障害時にはクラウド上のファイル共有に直接アクセスでき、迅速な復旧が可能です。クラウド階層化により頻繁にアクセスされるファイルをローカルにキャッシュし、パフォーマンスも確保できます。",
+    "explanation": "Azure FilesはSMBプロトコルに対応したクラウド上のファイル共有サービスであり、Azure File Syncを組み合わせることでオンプレミスのファイルサーバーとクラウド間の同期が実現します。障害が起きた場合には、クラウド側のファイル共有へ直接アクセスすることで素早い復旧が可能です。また、クラウド階層化機能によりアクセス頻度の高いファイルをローカルにキャッシュし、パフォーマンスを維持できます。",
     "category": "bcdr",
     "tags": [
       "entra-connect",
@@ -3941,12 +3741,11 @@ var ALL_QUIZ_QUESTIONS = [
       "file-sync",
       "caching",
       "on-premises-connectivity"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 3,
-    "question": "あなたは80TBのデータを格納するAzure SQL Databaseを構築する必要があります。どのサービスティアを選択すべきですか？",
+    "question": "80TBのデータを扱うAzure SQL Databaseの構築が必要です。どのサービスティアを採用すべきでしょうか。",
     "choices": [
       "A. General Purpose",
       "B. Business Critical",
@@ -3954,16 +3753,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Basic"
     ],
     "answer": 2,
-    "explanation": "Azure SQL Database Hyperscaleティアは、最大100TBまでのデータベースサイズをサポートします。80TBのデータを格納するにはHyperscaleが必要です。General PurposeとBusiness Criticalは最大4TBまで（vCoreモデル、仮想コアの構成によっては最大16TB）のデータベースサイズをサポートします。BasicはDTUモデルの最小ティアで、データサイズの制限が非常に小さくなります。",
+    "explanation": "Azure SQL DatabaseのHyperscaleティアは、最大100TBまでのデータベース容量に対応しています。80TBのデータを扱うにはHyperscaleの選択が必須です。General PurposeおよびBusiness Criticalは、vCoreモデルの構成次第で最大4TB～16TB程度までのデータベースに対応します。BasicティアはDTUモデルのエントリレベルで、格納可能なデータ量は非常に限られています。",
     "category": "bcdr",
     "tags": [
       "sql-database"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 4,
-    "question": "あなたはAzure SQL Databaseを可用性ゾーンの障害時にも使用可能にする必要があります。コストを最小限に抑えたい場合、どのサービスティアとモデルを選択すべきですか？",
+    "question": "Azure SQL Databaseを可用性ゾーン障害に耐えられるようにしたいのですが、費用はなるべく抑えたいです。どのサービスティアとモデルの組み合わせが最善でしょうか。",
     "choices": [
       "A. DTU Basic",
       "B. 仮想コア General Purpose（ゾーン冗長構成）",
@@ -3971,35 +3769,33 @@ var ALL_QUIZ_QUESTIONS = [
       "D. DTU Premium"
     ],
     "answer": 1,
-    "explanation": "仮想コアモデルのGeneral Purposeティアはゾーン冗長構成をサポートしており、可用性ゾーン障害に対する保護を提供します。Business Criticalもゾーン冗長をサポートしますが、コストがGeneral Purposeより高くなります。DTUモデルのBasicやStandardはゾーン冗長をサポートしません。コスト最小の要件から、General Purposeのゾーン冗長が最適です。",
+    "explanation": "仮想コアモデルのGeneral Purposeティアではゾーン冗長構成が利用でき、可用性ゾーン障害からデータベースを守ることができます。Business Criticalでも同様にゾーン冗長に対応していますが、General Purposeと比べるとコストが高くなります。DTUモデルのBasicやStandardではゾーン冗長構成を利用できません。コスト最小化の条件を踏まえると、General Purposeのゾーン冗長構成が最も合理的な選択です。",
     "category": "bcdr",
     "tags": [
       "sql-database",
       "availability-zones"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 5,
-    "question": "あなたはAzure SQL Databaseのバックアップを5年間保持する必要があります。Premiumティアの自動バックアップだけでこの要件を満たすことができますか？",
+    "question": "Azure SQL Databaseのバックアップを5年間保持したいと考えています。Premiumティアの自動バックアップ機能だけで、この要件に対応できるでしょうか。",
     "choices": [
       "A. はい",
       "B. いいえ"
     ],
     "answer": 1,
-    "explanation": "Azure SQL Databaseの自動バックアップ（PITR: Point-In-Time Restore）の保持期間は最大35日間です。5年間のバックアップ保持には、長期保持（LTR: Long-Term Retention）ポリシーを別途構成する必要があります。LTRを使用すると、完全バックアップをAzure Blob Storageに最大10年間保持できます。Premiumティアの自動バックアップだけでは5年間の保持要件を満たせません。",
+    "explanation": "Azure SQL Databaseの自動バックアップ（PITR: Point-In-Time Restore）で保持できる期間は最長35日です。5年にわたるバックアップ保持を実現するには、長期保持ポリシー（LTR: Long-Term Retention）を追加で設定する必要があります。LTRを使えば、フルバックアップをAzure Blob Storageに最長10年間保管できます。したがって、Premiumティアの自動バックアップのみでは5年間の保持要件を充足できません。",
     "category": "bcdr",
     "tags": [
       "blob-storage",
       "sql-database",
       "bcdr-fundamentals",
       "azure-backup"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 6,
-    "question": "あなたはAzureストレージアカウントをリージョン障害に対応させる必要があります。どの冗長性オプションを選択すべきですか？",
+    "question": "Azureストレージアカウントをリージョン規模の障害から保護するには、どの冗長性構成を選べばよいですか。",
     "choices": [
       "A. LRS（ローカル冗長ストレージ）",
       "B. ZRS（ゾーン冗長ストレージ）",
@@ -4007,16 +3803,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Premium LRS"
     ],
     "answer": 2,
-    "explanation": "リージョン障害に対応するには、データを別のリージョンにレプリケートする必要があります。GRS（geo冗長ストレージ）はプライマリリージョンのLRSとセカンダリリージョンのLRSを組み合わせます。GZRS（geoゾーン冗長ストレージ）はプライマリリージョンのZRSとセカンダリリージョンのLRSを組み合わせます。LRSは単一データセンター内、ZRSは単一リージョン内の冗長性であり、リージョン障害には対応できません。",
+    "explanation": "リージョン全体の障害に備えるためには、データを地理的に離れた別リージョンへ複製する必要があります。GRS（geo冗長ストレージ）はプライマリリージョンでLRS、セカンダリリージョンでもLRSを構成します。GZRS（geoゾーン冗長ストレージ）はプライマリ側がZRS、セカンダリ側がLRSの構成です。LRSは単一データセンター内、ZRSは単一リージョン内に限られた冗長性なので、リージョン障害には耐えられません。",
     "category": "bcdr",
     "tags": [
       "azure-storage"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 7,
-    "question": "Azure BackupのバックアップポリシーにおけるStandardとEnhancedの違いとして正しいものはどれですか？",
+    "question": "Azure BackupのバックアップポリシーにおけるStandardポリシーとEnhancedポリシーの相違点として適切なものはどれですか。",
     "choices": [
       "A. Enhancedは1日に複数回のバックアップをサポートするが、Standardは1日1回のみ",
       "B. StandardはAzure VMのバックアップをサポートするが、Enhancedはサポートしない",
@@ -4024,17 +3819,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. AとCの両方"
     ],
     "answer": 3,
-    "explanation": "Enhancedバックアップポリシーは、1日に複数回のバックアップ（4時間ごとなど）をサポートし、インスタントリストアのスナップショット保持期間が最大30日です。Standardポリシーは1日1回のバックアップで、スナップショット保持は最大5日です。両方ともAzure VMのバックアップをサポートしています。Enhancedはより低いRPOとRTOを実現できます。",
+    "explanation": "Enhancedポリシーでは、1日に複数回（例: 4時間間隔）のバックアップ取得が可能で、インスタントリストア用スナップショットの保持期間も最大30日まで拡張されます。一方、Standardポリシーでは1日1回の取得で、スナップショット保持は最大5日間です。Azure VMのバックアップはどちらのポリシーでも対応しています。Enhancedを利用することで、より短いRPOとRTOの達成が見込めます。",
     "category": "bcdr",
     "tags": [
       "bcdr-fundamentals",
       "azure-backup"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 8,
-    "question": "Azure Site RecoveryでAzure VMをレプリケートする場合のレプリケーション方式として正しいものはどれですか？",
+    "question": "Azure Site RecoveryによるAzure VMのレプリケーションでは、どのレプリケーション方式が使われますか。",
     "choices": [
       "A. 同期レプリケーション",
       "B. 非同期レプリケーション",
@@ -4042,19 +3836,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. バックアップベースのレプリケーション"
     ],
     "answer": 1,
-    "explanation": "Azure Site Recoveryは非同期レプリケーションを使用してAzure VMをセカンダリリージョンにレプリケートします。非同期レプリケーションにより、プライマリVMのパフォーマンスへの影響を最小限に抑えながら、継続的にデータを複製します。RPO（目標復旧時点）は通常数分程度です。同期レプリケーションはパフォーマンスへの影響が大きく、長距離レプリケーションには適しません。",
+    "explanation": "Azure Site Recoveryでは非同期方式でAzure VMをセカンダリリージョンへ複製します。この方式により、プライマリVMの処理性能への影響を抑えつつ、データの継続的な複製が行われます。RPO（目標復旧時点）は一般的に数分程度となります。同期レプリケーションは性能面での負荷が大きく、距離のあるリージョン間の複製には不向きです。",
     "category": "bcdr",
     "tags": [
       "entra-connect",
       "bcdr-fundamentals",
       "azure-backup",
       "site-recovery"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 9,
-    "question": "あなたは以下の要件に基づいて負荷分散サービスを選択する必要があります。グローバルなHTTP/HTTPSトラフィックの分散、WAF機能、SSL終端をサポートするサービスはどれですか？",
+    "question": "以下の条件を満たすロードバランシングサービスを選ぶ必要があります。世界規模のHTTP/HTTPSトラフィック分散、WAF機能、SSL終端に対応するものはどれでしょうか。",
     "choices": [
       "A. Azure Load Balancer",
       "B. Azure Application Gateway",
@@ -4062,17 +3855,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Front Door"
     ],
     "answer": 3,
-    "explanation": "Azure Front Doorは、グローバルなHTTP/HTTPSトラフィックの負荷分散を提供し、WAF（Web Application Firewall）機能とSSL終端をサポートします。Application Gatewayはリージョナルなレイヤー7ロードバランサーでWAFをサポートしますが、グローバル分散には対応しません。Load Balancerはレイヤー4（TCP/UDP）でHTTP/HTTPS固有の機能はありません。Traffic ManagerはDNSベースのグローバル分散ですが、WAFやSSL終端はサポートしません。",
+    "explanation": "Azure Front Doorはグローバル規模のHTTP/HTTPSトラフィック分散を行い、WAF（Web Application Firewall）やSSL終端にも対応しています。Application Gatewayはリージョン内で動作するレイヤー7ロードバランサーでWAFに対応しますが、グローバルな分散は行えません。Load Balancerはレイヤー4（TCP/UDP）の負荷分散でHTTP/HTTPS固有の機能を持ちません。Traffic ManagerはDNSベースのグローバル分散ですが、WAFやSSL終端には対応していません。",
     "category": "bcdr",
     "tags": [
       "load-balancers",
       "network-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 10,
-    "question": "Azure Key Vaultでリージョン障害が発生した場合、フェールオーバー先はどこになりますか？",
+    "question": "Azure Key Vaultが所在するリージョンで障害が発生した場合、フェールオーバーの切り替え先はどこになりますか。",
     "choices": [
       "A. 最も近いリージョン",
       "B. ペアリージョン",
@@ -4080,18 +3872,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. フェールオーバーはサポートされていない"
     ],
     "answer": 1,
-    "explanation": "Azure Key Vaultは、リージョン障害が発生した場合、自動的にペアリージョンにフェールオーバーします。ペアリージョンはAzureが事前に定義した地理的に近いリージョンのペアです（例：東日本と西日本）。フェールオーバーは自動的に行われ、ユーザーによる操作は不要です。フェールオーバー先をユーザーが選択することはできません。",
+    "explanation": "Azure Key Vaultでは、リージョン障害の発生時にペアリージョンへ自動的にフェールオーバーが行われます。ペアリージョンとは、Azureが地理的に近い場所に事前定義したリージョンの組み合わせです（例: 東日本と西日本）。この切り替えは自動で実行されるため、利用者による操作は不要です。なお、切り替え先を利用者が任意に選ぶことはできません。",
     "category": "bcdr",
     "tags": [
       "key-vault",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 11,
-    "question": "Azure Key Vaultのフェールオーバー中に使用できない操作はどれですか？",
+    "question": "Azure Key Vaultがフェールオーバー中の場合、実行できなくなる操作はどれですか。",
     "choices": [
       "A. シークレットの読み取り",
       "B. キーを使用した暗号化操作",
@@ -4099,18 +3890,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 証明書の参照"
     ],
     "answer": 2,
-    "explanation": "Key Vaultのフェールオーバー中は、読み取り操作（シークレットの読み取り、キーの使用、証明書の参照など）は引き続き利用可能ですが、書き込み操作（作成・更新・削除）は使用できません。フェールオーバー中のKey Vaultは読み取り専用モードで動作します。フェールバック後に書き込み操作が再び可能になります。",
+    "explanation": "Key Vaultのフェールオーバー中は、読み取り系の操作（シークレットの取得、暗号化キーの利用、証明書の参照など）は引き続き使用可能ですが、書き込み系の操作（新規作成・更新・削除）は利用できません。フェールオーバー中のKey Vaultは読み取り専用の状態で稼働し、フェールバックが完了してから書き込み操作が再び有効になります。",
     "category": "bcdr",
     "tags": [
       "key-vault",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 12,
-    "question": "Azure Database for MySQLで高可用性を実現するために必要な最小のサービスティアとオプションはどれですか？",
+    "question": "Azure Database for MySQLで高可用性を確保するために、最低限必要となるサービスティアとオプションの組み合わせはどれですか。",
     "choices": [
       "A. Burstable + 単一ゾーン",
       "B. General Purpose以上 + ゾーン冗長高可用性",
@@ -4118,19 +3908,18 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Burstable + ゾーン冗長高可用性"
     ],
     "answer": 1,
-    "explanation": "Azure Database for MySQL フレキシブルサーバーでゾーン冗長の高可用性を有効にするには、General Purpose以上のサービスティアが必要です。Burstableティアではゾーン冗長高可用性はサポートされません。Business Criticalでも対応可能ですが、最小のティアとしてはGeneral Purposeが適切です。geo冗長バックアップは災害復旧には有効ですが、高可用性（自動フェールオーバー）とは異なります。",
+    "explanation": "Azure Database for MySQLのフレキシブルサーバーでゾーン冗長高可用性を有効化するには、General Purpose以上のティアが必要です。Burstableティアではこの構成は利用できません。Business Criticalでも対応可能ですが、最低限のティアとしてはGeneral Purposeが該当します。geo冗長バックアップは災害復旧用途としては有効ですが、自動フェールオーバーを伴う高可用性とは役割が異なります。",
     "category": "bcdr",
     "tags": [
       "bcdr-fundamentals",
       "azure-backup",
       "site-recovery",
       "storage-redundancy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 13,
-    "question": "Azure SQL Databaseで、読み取りワークロードをセカンダリリージョンにオフロードしたい場合に使用する機能はどれですか？",
+    "question": "Azure SQL Databaseで、読み取り処理を別リージョンのレプリカにオフロードしたい場合、どの機能を利用すべきですか。",
     "choices": [
       "A. 読み取りレプリカ",
       "B. geoバックアップ",
@@ -4138,7 +3927,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ポイントインタイムリストア"
     ],
     "answer": 2,
-    "explanation": "アクティブgeoレプリケーションは、Azure SQL Databaseのデータを別リージョンに非同期でレプリケートし、読み取り可能なセカンダリデータベースを提供します。読み取りワークロードをセカンダリにオフロードできます。geoバックアップは災害復旧用のバックアップであり、読み取りオフロードはできません。読み取りレプリカはMySQL/PostgreSQL向けの用語です。ポイントインタイムリストアは特定時点への復元機能です。",
+    "explanation": "アクティブgeoレプリケーションを使うと、Azure SQL Databaseのデータが非同期で別リージョンに複製され、読み取り可能なセカンダリが提供されます。これにより読み取り処理をセカンダリへ分散できます。geoバックアップは障害復旧向けのバックアップであり、読み取りのオフロード用途には使えません。読み取りレプリカはMySQL/PostgreSQL系のサービスで使われる用語です。ポイントインタイムリストアは、指定した時点へデータベースを復元する機能です。",
     "category": "bcdr",
     "tags": [
       "entra-connect",
@@ -4146,12 +3935,11 @@ var ALL_QUIZ_QUESTIONS = [
       "bcdr-fundamentals",
       "azure-backup",
       "site-recovery"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 14,
-    "question": "Azure SQL Databaseで、自動フェールオーバーとフェールオーバー後の接続エンドポイント変更なしを実現するために使用する機能はどれですか？",
+    "question": "Azure SQL Databaseにおいて、自動でのフェールオーバーを実現し、かつ切り替え後もアプリケーション側の接続先を変更せずに済む機能はどれですか。",
     "choices": [
       "A. アクティブgeoレプリケーション",
       "B. 自動フェールオーバーグループ",
@@ -4159,7 +3947,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ゾーン冗長構成"
     ],
     "answer": 1,
-    "explanation": "自動フェールオーバーグループは、自動フェールオーバー機能を提供し、読み書き用と読み取り専用のリスナーエンドポイントを提供します。フェールオーバー後もエンドポイントが変更されないため、アプリケーションの接続文字列を変更する必要がありません。アクティブgeoレプリケーションは手動フェールオーバーが必要で、接続先の変更も必要です。geoバックアップは復元操作であり自動フェールオーバーではありません。ゾーン冗長はリージョン内の冗長性です。",
+    "explanation": "自動フェールオーバーグループは、自動フェールオーバー機能に加えて、読み書き用と読み取り専用のリスナーエンドポイントを提供します。フェールオーバーが起きてもエンドポイントはそのまま維持されるため、アプリケーション側で接続文字列を変更する必要がありません。アクティブgeoレプリケーションでは手動での切り替えが必要であり、接続先の変更も伴います。geoバックアップは復元処理であって自動フェールオーバーではありません。ゾーン冗長は同一リージョン内での冗長性にとどまります。",
     "category": "bcdr",
     "tags": [
       "azure-storage",
@@ -4169,12 +3957,11 @@ var ALL_QUIZ_QUESTIONS = [
       "site-recovery",
       "storage-redundancy",
       "sql-ha"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 15,
-    "question": "Azure Backupにおいて、バックアップの削除操作を保護するために使用するリソースはどれですか？",
+    "question": "Azure Backupにおいて、バックアップの削除などの重要操作を不正に実行されないよう保護するために使うリソースはどれですか。",
     "choices": [
       "A. Azure Policy",
       "B. Azure Resource Guard",
@@ -4182,7 +3969,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Microsoft Defender for Cloud"
     ],
     "answer": 1,
-    "explanation": "Azure Resource Guardは、Azure Backupの重要な操作（バックアップの削除、バックアップポリシーの変更、論理削除の無効化など）に対する追加の保護レイヤーを提供します。Resource Guardを使用すると、これらの操作には別のサブスクリプションに存在するResource Guardリソースへのアクセス権が必要になります。Azure Policyはコンプライアンスの監査・強制ですが、バックアップ操作の直接的な保護ではありません。Key Vaultは暗号化キーの管理です。",
+    "explanation": "Azure Resource Guardは、バックアップの削除やポリシーの変更、論理削除の無効化といったAzure Backupの重要操作に対して追加の保護層を設けます。Resource Guardを構成すると、こうした操作を行うには別サブスクリプションに配置されたResource Guardリソースへのアクセス権限が求められるようになります。Azure Policyはコンプライアンスの監査や強制が主な用途であり、バックアップ操作そのものの保護とは異なります。Key Vaultは暗号化キーやシークレットの管理サービスです。",
     "category": "bcdr",
     "tags": [
       "subscription-design",
@@ -4191,12 +3978,11 @@ var ALL_QUIZ_QUESTIONS = [
       "key-vault",
       "bcdr-fundamentals",
       "azure-backup"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 1,
-    "question": "あなたはSQL Serverをホストするための Azure VMを選択する必要があります。要件はSR-IOV対応、15,000 IOPSのサポート、コスト最小化です。適切なVMシリーズとディスクの種類の組み合わせはどれですか？",
+    "question": "SQL Serverを稼働させるAzure VMを選定する必要があります。条件はSR-IOV対応、15,000 IOPSの確保、そしてコストの最小化です。適切なVMシリーズとディスク種別の組み合わせはどれでしょうか。",
     "choices": [
       "A. NCシリーズ + Ultra Disk",
       "B. DSシリーズ + Premium SSD",
@@ -4204,16 +3990,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Fシリーズ + Premium SSD"
     ],
     "answer": 1,
-    "explanation": "DSシリーズはPremium Storageをサポートする汎用VMであり、SR-IOVに対応しています。Premium SSDは最大20,000 IOPSをサポートし、15,000 IOPSの要件を満たしながらUltra Diskよりもコストが低くなります。NCシリーズはGPUコンピューティング向け、NVシリーズはGPUビジュアライゼーション向けで、SQL Serverには過剰です。Fシリーズはコンピューティング最適化ですが、Premium Storageのサポートが限定的です。",
+    "explanation": "DSシリーズはPremium Storageに対応した汎用仮想マシンで、SR-IOVもサポートしています。Premium SSDは最大20,000 IOPSまで対応でき、15,000 IOPSの要件を満たしつつUltra Diskよりも費用を抑えられます。NCシリーズはGPUコンピューティング用途、NVシリーズはGPUによるビジュアライゼーション向けのため、SQL Serverにはオーバースペックです。FシリーズはCPU最適化型ですが、Premium Storageへの対応が限定的です。",
     "category": "compute",
     "tags": [
       "virtual-machines"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 2,
-    "question": "Azure VMでSQL Serverを実行する場合、ログファイルとデータファイルに推奨されるホストキャッシュの設定はどれですか？",
+    "question": "Azure VM上でSQL Serverを動かす場合、ログファイル用ディスクとデータファイル用ディスクそれぞれに推奨されるホストキャッシュの設定はどれですか。",
     "choices": [
       "A. ログ: Read-only、データ: Read/Write",
       "B. ログ: None、データ: Read-only",
@@ -4221,16 +4006,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ログ: None、データ: None"
     ],
     "answer": 1,
-    "explanation": "SQL Server VMのベストプラクティスでは、ログファイルのディスクにはホストキャッシュをNoneに設定します。ログファイルは順次書き込みが中心であり、読み取りキャッシュは不要です。データファイルのディスクにはRead-onlyキャッシュを設定します。データファイルはランダム読み取りが頻繁に発生するため、キャッシュによりパフォーマンスが向上します。Read/Writeキャッシュはデータ破損のリスクがあるため推奨されません。",
+    "explanation": "SQL Server VMにおけるベストプラクティスとして、ログファイル用ディスクのホストキャッシュはNoneに設定します。ログは順次書き込みが主体であり、読み取りキャッシュのメリットがないためです。データファイル用ディスクにはRead-onlyキャッシュを設定します。データファイルはランダムな読み取りが頻繁に発生するため、キャッシュがパフォーマンス改善に寄与します。Read/Writeキャッシュはデータ破損を招くおそれがあるため推奨されません。",
     "category": "compute",
     "tags": [
       "caching"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 3,
-    "question": "Azure App Serviceでデプロイスロットを使用するために必要な最小のサービスプランはどれですか？",
+    "question": "Azure App Serviceでデプロイスロットを利用するには、最低でもどのサービスプランが必要ですか。",
     "choices": [
       "A. Free",
       "B. Basic",
@@ -4238,17 +4022,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Premium"
     ],
     "answer": 2,
-    "explanation": "デプロイスロットはAzure App ServiceのStandard以上のプランで利用可能です。デプロイスロットを使用すると、本番環境に影響を与えずにアプリケーションをテストし、スワップ操作で即座にデプロイできます。FreeおよびBasicプランではデプロイスロットはサポートされていません。Standardでは5つ、Premiumでは20のデプロイスロットが利用可能です。",
+    "explanation": "デプロイスロットはStandard以上のApp Serviceプランで使用できます。この機能を活用すると、本番環境に影響を及ぼさずにアプリをテストでき、スワップ操作で即時デプロイが可能になります。FreeプランやBasicプランではデプロイスロットは利用できません。Standardプランでは5スロット、Premiumプランでは20スロットまで作成できます。",
     "category": "compute",
     "tags": [
       "entra-license",
       "app-service"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 4,
-    "question": "AKS（Azure Kubernetes Service）でWindowsコンテナーワークロードのオートスケーリングを行う必要があります。どのスケーリング方式を使用すべきですか？",
+    "question": "AKS（Azure Kubernetes Service）上でWindowsコンテナーのワークロードを自動スケーリングしたいと考えています。どのスケーリング方式を採用すべきでしょうか。",
     "choices": [
       "A. 仮想ノード",
       "B. クラスターオートスケーラー",
@@ -4256,17 +4039,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. KEDA"
     ],
     "answer": 1,
-    "explanation": "クラスターオートスケーラーは、ノードプールのノード数を自動的に増減させます。Windowsノードプールにも対応しています。仮想ノード（Virtual Nodes）はAzure Container Instancesと連携してスケーリングしますが、Linuxコンテナーのみサポートしており、Windowsコンテナーには対応していません。HPAはポッドレベルのスケーリングであり、ノードの追加は行いません。KEDAはイベントドリブンスケーリングですが、ノードの自動追加にはクラスターオートスケーラーが必要です。",
+    "explanation": "クラスターオートスケーラーはノードプール内のノード数を需要に応じて自動増減させる仕組みで、Windowsノードプールにも対応しています。仮想ノード（Virtual Nodes）はAzure Container Instancesと連携して拡張しますが、Linuxコンテナー限定のためWindowsには使えません。HPAはポッド単位のスケーリングであり、ノード自体の追加は行いません。KEDAはイベントドリブンのスケーリングを実現しますが、ノードの自動追加にはクラスターオートスケーラーとの併用が必要です。",
     "category": "compute",
     "tags": [
       "containers",
       "event-driven"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 5,
-    "question": "あなたはAzure Functionsで5分から20分かかる処理を実行する必要があります。どのプランを使用すべきですか？",
+    "question": "Azure Functionsを使って、実行に5分から20分を要する処理を動かす必要があります。どのホスティングプランを選ぶべきですか。",
     "choices": [
       "A. 従量課金プラン",
       "B. Premium プラン",
@@ -4274,18 +4056,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 従量課金プラン（タイムアウト延長）"
     ],
     "answer": 1,
-    "explanation": "Azure Functions Premiumプランは、実行時間の制限がなく（既定は30分、最大で無制限に設定可能）、5〜20分の処理に対応できます。従量課金プランはデフォルトで5分、最大10分のタイムアウト制限があり、20分の処理には対応できません。App Service プランのFreeティアもタイムアウト制限があります。Premiumプランはさらに、VNET統合やウォームアップインスタンスなどの機能も提供します。",
+    "explanation": "Azure FunctionsのPremiumプランは実行時間の上限を柔軟に設定でき（既定30分、最大無制限）、5～20分の処理にも対応可能です。従量課金プランは既定5分、最大10分のタイムアウトがあり、20分の処理には対応できません。App ServiceプランのFreeティアにもタイムアウト制約があります。加えてPremiumプランではVNET統合やウォームアップインスタンスといった付加機能も利用できます。",
     "category": "compute",
     "tags": [
       "entra-license",
       "app-service",
       "azure-functions"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 6,
-    "question": "あなたは大規模な並列バッチ処理を実行する必要があります。ジョブの種類ごとに異なるVM構成を使用したいと考えています。どのAzureサービスを使用すべきですか？",
+    "question": "大量の並列バッチ処理を実行する計画があります。ジョブの特性に応じて異なるVM構成を使い分けたい場合、どのAzureサービスが最適でしょうか。",
     "choices": [
       "A. Azure Functions",
       "B. Azure Batch",
@@ -4293,7 +4074,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Logic Apps"
     ],
     "answer": 1,
-    "explanation": "Azure Batchは大規模な並列バッチ処理に特化したサービスで、ジョブの種類ごとに異なるプール（VM構成）を作成できます。CPU集中型、GPU対応、メモリ最適化など、ジョブに最適なVM構成を選択できます。Azure Functionsはイベントドリブンの短時間処理向けです。Container Instancesは単一のコンテナー実行向けです。Logic Appsはワークフロー自動化サービスです。",
+    "explanation": "Azure Batchは大規模並列バッチ処理に特化しており、ジョブの特性ごとに異なるプール（VM構成）を構築できます。CPU集約型、GPU搭載型、メモリ最適化型など、ジョブに最も適した構成を柔軟に選択可能です。Azure Functionsはイベント駆動型の短時間処理向けです。Container Instancesは個別のコンテナー実行に適しています。Logic Appsはワークフロー自動化のためのサービスです。",
     "category": "compute",
     "tags": [
       "containers",
@@ -4302,12 +4083,11 @@ var ALL_QUIZ_QUESTIONS = [
       "event-driven",
       "api-management",
       "automation-deploy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 7,
-    "question": "あなたはメッセージングシステムを設計しており、FIFO（先入先出）の順序保証が必要です。どのAzureサービスと機能を使用すべきですか？",
+    "question": "メッセージングシステムの設計において、FIFO（先入先出）での順序保証が求められています。どのAzureサービスおよび機能を利用すべきですか。",
     "choices": [
       "A. Azure Queue Storage",
       "B. Azure Event Hubs パーティション",
@@ -4315,17 +4095,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Event Grid"
     ],
     "answer": 2,
-    "explanation": "Azure Service Busのセッション機能は、メッセージのFIFO順序保証を提供します。セッションIDに基づいてメッセージの順序を保証し、関連するメッセージを順番に処理できます。Queue Storageは基本的なキューイングサービスですが、厳密なFIFO保証はありません。Event Hubsはパーティション内で順序を保証しますが、メッセージングのFIFO保証にはService Busのセッションがより適切です。Event Gridはイベント配信サービスであり、順序保証はありません。",
+    "explanation": "Azure Service Busのセッション機能を使うと、メッセージのFIFO順序が保証されます。セッションIDを基にメッセージの順序が管理され、関連するメッセージを正しい順番で処理できます。Queue Storageは基本的なキュー機能を提供しますが、厳密なFIFO保証はありません。Event Hubsはパーティション内での順序を保ちますが、メッセージングにおけるFIFO保証にはService Busのセッションの方が適しています。Event Gridはイベント配信のサービスで、順序保証の仕組みはありません。",
     "category": "compute",
     "tags": [
       "messaging",
       "event-driven"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 8,
-    "question": "あなたはイベントドリブンアーキテクチャを設計しています。リソースの状態変更を検知して、複数のサブスクライバーに通知する必要があります。Azure Event GridとAzure Event Hubsのどちらを選択すべきですか？",
+    "question": "イベントドリブンアーキテクチャを構築中です。Azureリソースの状態変化を検知し、複数のサブスクライバーへ通知を送る必要があります。Azure Event GridとAzure Event Hubsのどちらが適していますか。",
     "choices": [
       "A. Event Grid（イベントの反応・ルーティングに特化）",
       "B. Event Hubs（イベントの反応・ルーティングに特化）",
@@ -4333,18 +4112,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Event Hubs（リソース状態変更の通知に特化）"
     ],
     "answer": 0,
-    "explanation": "Azure Event Gridは、イベントベースのアーキテクチャ向けに設計されており、Azureリソースの状態変更などのイベントを検知して、複数のサブスクライバー（Azure Functions、Logic Appsなど）にルーティングします。Event Hubsは大規模なデータストリームの取り込みに特化しており、IoTデータやログの大量取り込みに適しています。リソース状態変更の通知にはEvent Gridが適切です。",
+    "explanation": "Azure Event Gridはイベント駆動型アーキテクチャ向けに設計されており、Azureリソースの状態変化を検知して、Azure FunctionsやLogic Appsなどの複数サブスクライバーへルーティングします。Event Hubsは大量のデータストリーム取り込みを得意とし、IoTデータやログの大規模取り込みに向いています。リソースの状態変化に対する通知用途にはEvent Gridが最適です。",
     "category": "compute",
     "tags": [
       "azure-functions",
       "event-driven",
       "api-management"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 9,
-    "question": "Azure API Managementで、仮想ネットワーク（VNet）統合を使用してバックエンドAPIをプライベートネットワーク内に配置する必要があります。どの価格レベルが必要ですか？",
+    "question": "Azure API Managementで仮想ネットワーク（VNet）統合を使い、バックエンドAPIをプライベートネットワーク内に配置したいと考えています。どの価格レベルが必要でしょうか。",
     "choices": [
       "A. Developer",
       "B. Basic",
@@ -4352,18 +4130,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Premium"
     ],
     "answer": 3,
-    "explanation": "Azure API ManagementのVNet統合（内部モードおよび外部モード）は、Premiumティアでのみサポートされます。Developer ティアもVNet統合をサポートしますが、SLAがなく本番環境には適しません。BasicおよびStandardティアはVNet統合をサポートしていません。PremiumティアはさらにマルチリージョンデプロイやAvailability Zonesもサポートします。",
+    "explanation": "Azure API ManagementにおけるVNet統合（内部モード・外部モード）は、Premiumティアで利用可能です。Developerティアでも技術的にはVNet統合に対応していますが、SLAが提供されず本番運用には不向きです。BasicおよびStandardティアではVNet統合がサポートされていません。PremiumティアではさらにマルチリージョンへのデプロイやAvailability Zonesへの対応も可能です。",
     "category": "network",
     "tags": [
       "availability-zones",
       "api-management",
       "vnet"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 10,
-    "question": "あなたはWebアプリケーションのパフォーマンスを向上させたいと考えています。静的コンテンツ（画像、CSS、JavaScript）のグローバル配信にはどのサービスを使用し、動的データ（セッション情報、データベースクエリ結果）のキャッシュにはどのサービスを使用すべきですか？",
+    "question": "Webアプリケーションの応答速度を改善したいと考えています。画像やCSS、JavaScriptなどの静的コンテンツを世界中に配信するサービスと、セッション情報やDBクエリ結果などの動的データをキャッシュするサービスは、それぞれどれを使うべきですか。",
     "choices": [
       "A. 静的コンテンツ: Azure CDN、動的データ: Azure CDN",
       "B. 静的コンテンツ: Azure Cache for Redis、動的データ: Azure CDN",
@@ -4371,17 +4148,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 静的コンテンツ: Azure Front Door、動的データ: Azure Table Storage"
     ],
     "answer": 2,
-    "explanation": "Azure CDNはエッジサーバーのグローバルネットワークを使用して静的コンテンツを配信し、レイテンシを低減します。Azure Cache for Redisはインメモリデータストアであり、セッション情報やデータベースクエリ結果などの動的データのキャッシュに最適です。CDNは動的データのキャッシュには適していません。Redis Cacheは静的ファイルの配信には使用しません。",
+    "explanation": "Azure CDNは世界各地のエッジサーバーを通じて静的コンテンツを高速配信し、遅延を軽減します。Azure Cache for Redisはインメモリデータストアとして、セッション情報やデータベースクエリの結果など動的データのキャッシュに最適です。CDNは動的データのキャッシュには向いておらず、Redis Cacheは静的ファイルの配信用途には使いません。",
     "category": "compute",
     "tags": [
       "load-balancers",
       "caching"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 11,
-    "question": "あなたはインフラストラクチャのデプロイを自動化する必要があります。宣言的なテンプレートでリソースを定義し、冪等性のあるデプロイを行いたいと考えています。どのサービスを使用すべきですか？",
+    "question": "インフラのデプロイを自動化したいと考えています。宣言的なテンプレートでリソースを定義し、何度実行しても同じ結果になる冪等性のあるデプロイを実現するには、どのサービスが適切ですか。",
     "choices": [
       "A. Azure Automation Runbook",
       "B. ARM テンプレート / Bicep",
@@ -4389,16 +4165,15 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure PowerShell スクリプト"
     ],
     "answer": 1,
-    "explanation": "ARMテンプレート（およびBicep）は、Azureリソースを宣言的に定義するIaC（Infrastructure as Code）ツールです。冪等性があり、同じテンプレートを何度デプロイしても同じ結果になります。Azure Automation Runbookは手続き的なスクリプト実行であり、宣言的ではありません。Azure CLIやPowerShellスクリプトも手続き的なアプローチです。",
+    "explanation": "ARMテンプレートおよびBicepは、Azureリソースを宣言的に記述するIaC（Infrastructure as Code）ツールです。冪等性を備えており、同一テンプレートを複数回デプロイしても結果は変わりません。Azure Automation Runbookは手続き的にスクリプトを実行するもので、宣言的なアプローチとは異なります。Azure CLIやPowerShellのスクリプトも手続き型の手法に分類されます。",
     "category": "compute",
     "tags": [
       "automation-deploy"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 12,
-    "question": "あなたはオンプレミスネットワークとAzure VNetをインターネット経由で暗号化された接続で結ぶ必要があります。常時接続で複数のオンプレミスサイトを接続します。どのVPN接続方式を使用すべきですか？",
+    "question": "オンプレミスネットワークとAzure VNetをインターネット経由で暗号化された常時接続で結び、複数の拠点を接続する必要があります。どのVPN接続方式を選ぶべきでしょうか。",
     "choices": [
       "A. ポイント対サイト（P2S）VPN",
       "B. サイト間（S2S）VPN",
@@ -4406,17 +4181,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. ExpressRoute"
     ],
     "answer": 1,
-    "explanation": "サイト間（S2S）VPNは、オンプレミスのVPNデバイスとAzure VPN Gatewayの間にIPsecトンネルを確立し、常時接続の暗号化通信を提供します。複数のオンプレミスサイトを接続できます。ポイント対サイト（P2S）VPNは個々のクライアントPCからの接続用であり、サイト全体の接続には適しません。VNetピアリングはAzure VNet間の接続です。ExpressRouteはインターネットを経由しないプライベート接続です。",
+    "explanation": "サイト間（S2S）VPNは、オンプレミスのVPN機器とAzure VPN Gateway間にIPsecトンネルを構築し、暗号化された常時接続の通信を確立します。複数拠点の接続にも対応できます。ポイント対サイト（P2S）VPNは個々の端末からの接続に使うもので、拠点全体の接続には向きません。VNetピアリングはAzure内のVNet同士を結ぶサービスです。ExpressRouteはインターネットを経由しない専用回線接続です。",
     "category": "network",
     "tags": [
       "vnet",
       "on-premises-connectivity"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 13,
-    "question": "あなたはオンプレミスとAzure間で高帯域幅・低レイテンシの専用接続が必要です。インターネットを経由しない接続を要求されています。どのサービスを使用すべきですか？",
+    "question": "オンプレミス環境とAzureの間に、高帯域・低遅延の専用接続を確保する必要があります。インターネットを通さない通信が求められています。どのサービスを選択すべきですか。",
     "choices": [
       "A. VPN Gateway（S2S）",
       "B. ExpressRoute",
@@ -4424,17 +4198,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. VPN Gateway（P2S）"
     ],
     "answer": 1,
-    "explanation": "ExpressRouteは、接続プロバイダーを通じてオンプレミスネットワークとAzureの間にプライベートな専用接続を提供します。インターネットを経由せず、高帯域幅（最大100Gbps）と低レイテンシを実現します。VPN GatewayはIPsecトンネルを使用しますが、インターネット経由の接続です。Front DoorはグローバルHTTPロードバランサーです。",
+    "explanation": "ExpressRouteは接続プロバイダーを介して、オンプレミスとAzure間にプライベートな専用回線を提供します。インターネットを経由しないため、最大100Gbpsの高帯域と低遅延を実現できます。VPN GatewayはIPsecトンネルによる接続ですが、インターネットを通る経路となります。Front DoorはグローバルHTTPロードバランサーであり、専用接続の用途ではありません。",
     "category": "network",
     "tags": [
       "load-balancers",
       "on-premises-connectivity"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 14,
-    "question": "Azure Virtual WANにおけるBasic SKUとStandard SKUの違いとして正しいものはどれですか？",
+    "question": "Azure Virtual WANのBasic SKUとStandard SKUにはどのような違いがありますか。正しい記述を選んでください。",
     "choices": [
       "A. BasicはS2S VPNのみサポートし、StandardはS2S VPN、P2S VPN、ExpressRoute、VNet間接続をサポートする",
       "B. BasicはExpressRouteのみサポートし、StandardはVPNのみサポートする",
@@ -4442,17 +4215,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. BasicはP2S VPNのみサポートし、StandardはすべてのVPN種類をサポートする"
     ],
     "answer": 0,
-    "explanation": "Virtual WAN Basic SKUはサイト間（S2S）VPN接続のみをサポートします。Standard SKUはS2S VPN、ポイント対サイト（P2S）VPN、ExpressRoute、仮想ネットワーク間接続、ハブ間接続など、すべての接続タイプをサポートします。複数の接続タイプが必要な場合はStandard SKUを選択する必要があります。",
+    "explanation": "Virtual WANのBasic SKUが対応する接続タイプはサイト間（S2S）VPNのみです。Standard SKUではS2S VPN、ポイント対サイト（P2S）VPN、ExpressRoute、仮想ネットワーク間の接続、ハブ間接続など、すべての接続タイプが利用可能です。複数種類の接続を必要とする場合はStandard SKUを選択する必要があります。",
     "category": "network",
     "tags": [
       "vnet",
       "on-premises-connectivity"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 15,
-    "question": "Azure Private Linkにおけるサービスエンドポイントとプライベートエンドポイントの違いとして正しいものはどれですか？",
+    "question": "Azure Private Linkに関して、サービスエンドポイントとプライベートエンドポイントの違いを正しく説明しているものはどれですか。",
     "choices": [
       "A. サービスエンドポイントはVNet内のプライベートIPを割り当て、プライベートエンドポイントはパブリックIPを使用する",
       "B. プライベートエンドポイントはVNet内のプライベートIPを割り当て、サービスエンドポイントはサービスへのルートを最適化する",
@@ -4460,17 +4232,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 両方ともパブリックIPを使用する"
     ],
     "answer": 1,
-    "explanation": "プライベートエンドポイントは、VNet内のサブネットにプライベートIPアドレスを割り当て、Azureサービスにプライベート接続します。トラフィックはMicrosoftバックボーンネットワーク内に留まります。サービスエンドポイントは、VNetからAzureサービスへのルートを最適化し、トラフィックをAzureバックボーン経由で送信しますが、サービスのパブリックIPアドレスは保持されます。プライベートエンドポイントの方がセキュリティが高く、オンプレミスやピアリングVNetからのアクセスもサポートします。",
+    "explanation": "プライベートエンドポイントはVNet内のサブネットにプライベートIPアドレスを付与し、Azureサービスへのプライベート接続を実現します。通信はMicrosoftのバックボーンネットワーク内で完結します。サービスエンドポイントはVNetからAzureサービスへの経路をAzureバックボーン経由に最適化しますが、サービス側のパブリックIPアドレスはそのまま残ります。セキュリティ面ではプライベートエンドポイントの方が優れており、オンプレミスやピアリングVNetからの接続もサポートしています。",
     "category": "network",
     "tags": [
       "vnet",
       "private-link"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 16,
-    "question": "あなたはAzure環境のネットワークセキュリティを設計しています。サブネットレベルでのトラフィックフィルタリングにはNSGを使用し、集中型のネットワークセキュリティ管理にはどのサービスを使用すべきですか？",
+    "question": "Azure環境のネットワークセキュリティを設計しています。サブネット単位のトラフィック制御にはNSGを使いますが、ネットワーク全体を集中管理できるセキュリティサービスとしてはどれを選ぶべきですか。",
     "choices": [
       "A. Azure DDoS Protection",
       "B. Azure Firewall",
@@ -4478,18 +4249,17 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Front Door"
     ],
     "answer": 1,
-    "explanation": "Azure Firewallは、集中型のネットワークセキュリティ管理を提供するマネージドファイアウォールサービスです。L3-L7のフィルタリング、脅威インテリジェンス、FQDN フィルタリング、URLフィルタリングなどの機能を提供します。NSGはサブネット/NICレベルの基本的なフィルタリングに適していますが、高度なセキュリティ機能は限定的です。DDoS ProtectionはDDoS攻撃への防御に特化しています。WAFはWebアプリケーション層の保護です。",
+    "explanation": "Azure Firewallは集中型のネットワークセキュリティ管理を担うマネージドファイアウォールです。L3～L7のフィルタリング、脅威インテリジェンス連携、FQDNフィルタリング、URLフィルタリングなどの高度な機能を備えています。NSGはサブネットやNIC単位での基本的なフィルタリングに適していますが、高度なセキュリティ機能は限られます。DDoS ProtectionはDDoS攻撃への防御に特化したサービスです。WAFはWebアプリケーション層の防御を担います。",
     "category": "network",
     "tags": [
       "load-balancers",
       "vnet",
       "network-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 17,
-    "question": "あなたはAzure環境をDDoS攻撃から保護する必要があります。Azure DDoS Protectionのプランとして正しいものはどれですか？",
+    "question": "Azure環境をDDoS攻撃から守る必要があります。Azure DDoS Protectionのプランについて正しい説明はどれですか。",
     "choices": [
       "A. DDoS Protectionは無料で全リソースに自動適用される",
       "B. DDoS Network Protection（有料）はVNetに対して適用され、テレメトリとアラートを提供する",
@@ -4497,7 +4267,7 @@ var ALL_QUIZ_QUESTIONS = [
       "D. DDoS ProtectionはApplication Gatewayでのみ使用可能"
     ],
     "answer": 1,
-    "explanation": "Azure DDoS Network Protection（旧Standard）は、有料プランであり、仮想ネットワーク内のリソースに対して高度なDDoS軽減機能を提供します。DDoS攻撃のテレメトリ、診断ログ、アラート、コスト保護保証が含まれます。Azureプラットフォーム自体に基本的なDDoS保護（Infrastructure Protection）は無料で含まれていますが、高度な保護にはNetwork Protectionが必要です。",
+    "explanation": "Azure DDoS Network Protection（旧称Standard）は有料のプランで、仮想ネットワーク内のリソースに対し高度なDDoS軽減機能を提供します。攻撃に関するテレメトリ、診断ログ、アラート機能、コスト保護保証が含まれます。Azureプラットフォーム自体には無料の基本DDoS保護（Infrastructure Protection）が組み込まれていますが、より高度な防御を行うにはNetwork Protectionの導入が必要です。",
     "category": "network",
     "tags": [
       "diagnostic-settings",
@@ -4505,12 +4275,11 @@ var ALL_QUIZ_QUESTIONS = [
       "load-balancers",
       "vnet",
       "network-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 18,
-    "question": "Azure WAF（Web Application Firewall）をデプロイできるサービスはどれですか？（3つ選択）",
+    "question": "Azure WAF（Web Application Firewall）をデプロイ可能なサービスはどれですか。（3つ選択）",
     "choices": [
       "A. Azure Application Gateway",
       "B. Azure Front Door",
@@ -4523,18 +4292,17 @@ var ALL_QUIZ_QUESTIONS = [
       1,
       2
     ],
-    "explanation": "Azure WAFは、Application Gateway、Front Door、CDN（Azure CDN from Microsoft）の3つのサービスにデプロイできます。WAFはOWASP Top 10の脆弱性（SQLインジェクション、XSSなど）からWebアプリケーションを保護します。Load BalancerはL4のロードバランサーでありWAFをサポートしません。Traffic ManagerはDNSベースの負荷分散でありWAFをサポートしません。",
+    "explanation": "Azure WAFのデプロイ先として対応しているのは、Application Gateway、Front Door、CDN（Azure CDN from Microsoft）の3つです。WAFはOWASP Top 10に含まれる脆弱性（SQLインジェクション、XSSなど）からWebアプリケーションを防御します。Load BalancerはL4レベルのロードバランサーであるためWAFには対応しません。Traffic ManagerはDNSベースの負荷分散サービスで、こちらもWAF非対応です。",
     "category": "network",
     "tags": [
       "load-balancers",
       "caching",
       "network-security"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 19,
-    "question": "あなたはオンプレミスのサーバーとアプリケーションをAzureに移行する計画を立てています。移行の評価・計画・実行を一元的に管理するために使用すべきサービスはどれですか？",
+    "question": "オンプレミスで稼働中のサーバーやアプリケーションをAzureへ移行する計画を進めています。移行の評価・計画・実行を一つの場所で管理できるサービスはどれですか。",
     "choices": [
       "A. Azure Site Recovery",
       "B. Azure Migrate",
@@ -4542,17 +4310,16 @@ var ALL_QUIZ_QUESTIONS = [
       "D. Azure Advisor"
     ],
     "answer": 1,
-    "explanation": "Azure Migrateは、オンプレミスからAzureへの移行を一元的に管理するためのハブサービスです。サーバー、データベース、Webアプリケーションの検出・評価・移行を統合的に行えます。Site Recoveryは災害復旧と移行の実行ツールですが、評価機能はありません。Resource MoverはAzureリージョン間のリソース移動です。Advisorは推奨事項の提供であり、移行管理ではありません。",
+    "explanation": "Azure Migrateはオンプレミスからのクラウド移行を一元的に管理するハブサービスです。サーバー、データベース、Webアプリケーションの検出から評価、実際の移行までを統合的に実施できます。Site Recoveryは災害復旧や移行実行のツールですが、事前の評価機能は備えていません。Resource MoverはAzureのリージョン間でリソースを移動するためのサービスです。Advisorは運用上の推奨事項を提示するサービスであり、移行管理の機能はありません。",
     "category": "compute",
     "tags": [
       "site-recovery",
       "data-migration"
-    ],
-    "source": "book-az305"
+    ]
   },
   {
     "id": 20,
-    "question": "あなたはデータベースの移行を計画しています。DMS（Database Migration Service）、DMA（Data Migration Assistant）、SSMA（SQL Server Migration Assistant）の用途の違いとして正しいものはどれですか？",
+    "question": "データベースの移行を検討しています。DMS（Database Migration Service）、DMA（Data Migration Assistant）、SSMA（SQL Server Migration Assistant）の役割の違いについて、正しい説明はどれですか。",
     "choices": [
       "A. DMSはオンライン移行（最小ダウンタイム）をサポートし、DMAはSQL Serverの互換性評価を行い、SSMAは非SQL Server DBからSQL Serverへの移行を支援する",
       "B. DMAはオンライン移行をサポートし、DMSは互換性評価を行い、SSMAはSQL Server間の移行を支援する",
@@ -4560,13 +4327,12 @@ var ALL_QUIZ_QUESTIONS = [
       "D. 3つとも同じ機能を提供する"
     ],
     "answer": 0,
-    "explanation": "DMS（Azure Database Migration Service）は、オンライン移行（最小ダウンタイム）をサポートし、SQL Server、MySQL、PostgreSQLなどのデータベースをAzureに移行します。DMA（Data Migration Assistant）は、SQL ServerからAzure SQL Database/MIへの移行前に互換性の評価と推奨事項を提供するツールです。SSMA（SQL Server Migration Assistant）は、Oracle、MySQL、AccessなどのNon-SQL ServerデータベースからSQL Serverへのスキーマとデータの移行を支援します。",
+    "explanation": "DMS（Azure Database Migration Service）はダウンタイムを最小限に抑えたオンライン移行に対応し、SQL Server、MySQL、PostgreSQLなどのデータベースをAzureへ移行できます。DMA（Data Migration Assistant）はSQL ServerからAzure SQL DatabaseやManaged Instanceへの移行に先立ち、互換性の評価や改善の提案を行うツールです。SSMA（SQL Server Migration Assistant）はOracle、MySQL、Accessなど、SQL Server以外のデータベースからSQL Serverへのスキーマ変換とデータ移行を支援します。",
     "category": "data",
     "tags": [
       "sql-database",
       "data-migration",
       "db-migration"
-    ],
-    "source": "book-az305"
+    ]
   }
 ];

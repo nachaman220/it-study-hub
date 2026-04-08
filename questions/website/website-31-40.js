@@ -1,9 +1,9 @@
 var QUIZ_DATA_website_31_40 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 31,
-      "question": "Azure Logic Appsからオンプレミスに配置されたSQL Serverに接続する必要があります。VPN接続はありません。オンプレミス側に必要なコンポーネントはどれですか？",
+      "question": "Azure Logic Appsからオンプレミス上のSQL Serverへ接続する必要がありますが、VPN接続は存在しません。オンプレミス側で必要となるコンポーネントはどれですか？",
       "choices": [
         "A. Azure AD アプリケーション プロキシ コネクタ",
         "B. オンプレミス データ ゲートウェイ",
@@ -11,7 +11,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. Web Application Proxy"
       ],
       "answer": 1,
-      "explanation": "オンプレミスデータゲートウェイは、Logic AppsなどのAzureサービスからオンプレミスのデータソース（SQL Serverなど）に安全に接続するためのブリッジとして機能します。VPN接続なしでHTTPS経由でAzure Service Busリレーを通じて通信します。Azure ADアプリケーションプロキシコネクタはWebアプリケーションの公開に使用され、データベース接続には使用しません。HCMはApp Serviceのハイブリッド接続用であり、Logic Appsでは使用しません。Web Application ProxyはAD FS関連のサービスです。",
+      "explanation": "オンプレミスデータゲートウェイは、Logic AppsなどのAzureサービスとオンプレミスのデータソース（SQL Server等）との間で安全な通信を仲介するブリッジです。VPNなしでもHTTPSとAzure Service Busリレーを介して接続を確立できます。Azure ADアプリケーションプロキシコネクタはWebアプリの公開用であり、DB接続用途とは異なります。HCMはApp Serviceのハイブリッド接続専用で、Logic Appsでは使えません。Web Application ProxyはAD FS関連のサービスです。",
       "category": "data",
       "tags": [
         "entra-id",
@@ -24,7 +24,7 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 32,
-      "question": "同じシナリオで、Azure側に必要なコンポーネントはどれですか？",
+      "question": "上記と同じシナリオにおいて、Azure側で必要となるコンポーネントはどれですか？",
       "choices": [
         "A. Application Gateway",
         "B. データ ゲートウェイ リソース",
@@ -32,7 +32,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. エンタープライズ アプリケーション"
       ],
       "answer": 1,
-      "explanation": "Azure側にはデータゲートウェイリソースを作成する必要があります。これはオンプレミスにインストールされたデータゲートウェイとAzureサービス（Logic Apps）を関連付けるためのAzureリソースです。Application GatewayはL7ロードバランサーであり、オンプレミス接続には使用しません。Event Gridはイベントルーティングサービスです。エンタープライズアプリケーションはAzure ADでのアプリケーション登録に使用されます。",
+      "explanation": "Azure側ではデータゲートウェイリソースの作成が必要です。これはオンプレミスにインストール済みのデータゲートウェイとAzureサービス（Logic Apps）を紐づけるためのAzureリソースです。Application GatewayはL7ロードバランサーであり、オンプレミスへの接続には用いません。Event Gridはイベントルーティングのサービスです。エンタープライズアプリケーションはAzure ADにおけるアプリ登録に使われるものです。",
       "category": "data",
       "tags": [
         "entra-id",
@@ -45,14 +45,14 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 33,
-      "question": "北ヨーロッパリージョンを優先的に使用し、障害時にフェールオーバーするルーティングを構成する必要があります。どのサービスを使用すべきですか？",
+      "question": "北ヨーロッパリージョンを優先的に利用し、障害発生時にはフェールオーバーするルーティングを設計する必要があります。利用すべきサービスはどれですか？",
       "choices": [
         "A. Azure Load Balancer",
         "B. Application Gateway",
         "C. Azure Traffic Manager"
       ],
       "answer": 2,
-      "explanation": "Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数リージョン間でのトラフィックルーティングが可能です。Azure Load BalancerはL4ロードバランサーでリージョン内の分散のみに対応しています。Application GatewayもL7ロードバランサーですが、単一リージョン内のサービスであり、リージョン間のフェールオーバーには使用できません。",
+      "explanation": "Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスで、複数リージョンにまたがるトラフィックルーティングを実現します。Azure Load BalancerはL4ロードバランサーで、リージョン内分散のみに対応しています。Application GatewayもL7ロードバランサーですが、単一リージョンに限定されたサービスであり、リージョン間フェールオーバーには利用できません。",
       "category": "network",
       "tags": [
         "site-recovery",
@@ -62,7 +62,7 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 34,
-      "question": "北ヨーロッパを優先リージョンとして構成するために、Traffic Managerで使用すべきルーティング方法はどれですか？",
+      "question": "北ヨーロッパを優先リージョンとして設定するため、Traffic Managerで採用すべきルーティング方法はどれですか？",
       "choices": [
         "A. Cookieベースのアフィニティ",
         "B. 加重ルーティング",
@@ -70,7 +70,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. 優先順位ルーティング"
       ],
       "answer": 3,
-      "explanation": "優先順位ルーティングを使用すると、プライマリエンドポイント（北ヨーロッパ）に最高の優先順位を設定し、障害時にセカンダリエンドポイントに自動的にフェールオーバーできます。加重ルーティングはトラフィックを重み付けで分散しますが、特定のリージョンを優先する設定はできません。パフォーマンスルーティングはユーザーに最も近いエンドポイントにルーティングしますが、特定リージョンの優先は保証できません。Cookieベースのアフィニティはセッション維持のための機能であり、リージョン優先のルーティングとは無関係です。",
+      "explanation": "優先順位ルーティングでは、プライマリエンドポイント（北ヨーロッパ）に最も高い優先度を割り当て、障害時にはセカンダリエンドポイントへ自動フェールオーバーさせることができます。加重ルーティングは重み付けに基づくトラフィック分散で、特定リージョンの優先指定には不向きです。パフォーマンスルーティングはユーザーに最も近いエンドポイントへの誘導ですが、特定リージョン優先の保証はできません。Cookieベースのアフィニティはセッション維持のための機能であり、リージョン優先のルーティングとは関係がありません。",
       "category": "network",
       "tags": [
         "site-recovery",
@@ -80,13 +80,13 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 35,
-      "question": "Azure Front Doorは、レート制限、負荷分散、および地域障害からの保護を提供しますか？",
+      "question": "Azure Front Doorはレート制限、負荷分散、地域的な障害からの保護をすべて提供できますか？",
       "choices": [
         "A. はい",
         "B. いいえ"
       ],
       "answer": 0,
-      "explanation": "はい、Azure Front Doorはこれらすべての機能を提供します。WAF（Web Application Firewall）ポリシーによるレート制限、グローバルなL7負荷分散、複数リージョンのバックエンドへの自動フェールオーバーによる地域障害からの保護が可能です。Front Doorはグローバルサービスとして設計されており、これらの機能を統合的に提供しています。",
+      "explanation": "はい、Azure Front Doorはこれらすべてを提供します。WAF（Web Application Firewall）ポリシーによるレート制限、グローバルなL7負荷分散、そして複数リージョンのバックエンドへの自動フェールオーバーによる地域障害への保護が可能です。Front Doorはグローバルサービスとして設計されており、これらの機能を一元的に提供します。",
       "category": "network",
       "tags": [
         "site-recovery",
@@ -97,7 +97,7 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 36,
-      "question": "400GBのデータベースがあり、月に1日だけ使用されます。コストを最小化するAzure SQLのサービスティアとモデルはどれですか？",
+      "question": "容量400GBのデータベースがあり、月に1日だけ利用されます。コストを最小化できるAzure SQLのサービスティアと課金モデルはどれですか？",
       "choices": [
         "A. Business Critical vCoreモデル",
         "B. General Purpose vCoreモデル",
@@ -105,7 +105,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. Standard DTUモデル"
       ],
       "answer": 1,
-      "explanation": "General Purpose vCoreモデルでは、サーバーレスコンピューティングティアを使用できます。サーバーレスでは、使用していない時間は自動的に一時停止し、コンピューティング課金が発生しません（ストレージのみ課金）。月1日の使用であれば、大幅なコスト削減が可能です。Business CriticalはGPより高コストです。Basic DTUは最大2GBのデータベースサイズ制限があり、400GBには対応できません。Standard DTUも250GB制限があるため不適切です。",
+      "explanation": "General Purpose vCoreモデルではサーバーレスコンピューティングティアが利用可能です。サーバーレスでは未使用時に自動で一時停止し、コンピューティング料金が発生しません（ストレージのみ課金）。月に1日の利用なら大幅なコスト節約が可能です。Business CriticalはGeneral Purposeより高額です。Basic DTUはデータベース容量が最大2GBまでのため、400GBには対応不可です。Standard DTUも250GB上限があり不適合です。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -114,14 +114,14 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 37,
-      "question": "Azure Front Doorが提供する機能はどれですか？",
+      "question": "Azure Front Doorが備えている機能はどれですか？",
       "choices": [
         "A. IPフィルタリング",
         "B. Azure AD B2C JWT検証",
         "C. OWASP保護"
       ],
       "answer": 2,
-      "explanation": "Azure Front DoorはWAF（Web Application Firewall）を統合しており、OWASPコアルールセットに基づく保護を提供します。これにより、SQLインジェクション、クロスサイトスクリプティング（XSS）などの一般的なWeb攻撃から保護されます。IPフィルタリングはFront Door WAFでもカスタムルールとして設定可能ですが、この問題ではOWASP保護が最も適切な回答です。B2C JWT検証はAPI Managementの機能であり、Front Doorでは提供されていません。",
+      "explanation": "Azure Front DoorはWAF（Web Application Firewall）を統合しており、OWASPコアルールセットによる保護機能を提供します。SQLインジェクションやクロスサイトスクリプティング（XSS）といった代表的なWeb攻撃に対する防御が含まれます。IPフィルタリングもFront Door WAFのカスタムルールで設定可能ですが、この設問ではOWASP保護が最も適切な回答となります。B2C JWT検証はAPI Managementが持つ機能であり、Front Doorには備わっていません。",
       "category": "security",
       "tags": [
         "entra-id",
@@ -133,14 +133,14 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 38,
-      "question": "Azure API Managementが提供する機能はどれですか？",
+      "question": "Azure API Managementが備えている機能はどれですか？",
       "choices": [
         "A. IPフィルタリング",
         "B. Azure AD B2C JWT検証",
         "C. OWASP保護"
       ],
       "answer": 1,
-      "explanation": "Azure API Managementは、ポリシーを使用してJWTトークン（Azure AD B2C発行を含む）の検証を行う機能を提供しています。validate-jwtポリシーにより、APIへのアクセス時にトークンの有効性、クレーム、発行者などを検証できます。IPフィルタリングもAPI Managementで可能ですが、この問題ではB2C JWT検証が最も特徴的な機能です。OWASP保護はWAF（Front DoorやApplication Gateway）の機能であり、API Managementの標準機能ではありません。",
+      "explanation": "Azure API Managementでは、ポリシーを通じてJWTトークン（Azure AD B2C発行のものを含む）の検証が行えます。validate-jwtポリシーにより、APIアクセス時にトークンの有効性・クレーム・発行者などを確認できます。IPフィルタリングもAPI Managementで実現可能ですが、この設問ではB2C JWT検証が最も特徴的な機能です。OWASP保護はWAF（Front DoorやApplication Gateway）が提供する機能であり、API Managementの標準機能には含まれません。",
       "category": "security",
       "tags": [
         "entra-id",
@@ -152,7 +152,7 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 39,
-      "question": "AKSを2つのリージョンにデプロイしています。SSL終端を含むグローバルなルーティングソリューションを選択してください。",
+      "question": "AKSを2つのリージョンに展開しています。SSL終端を含むグローバルなルーティングソリューションとして最適なのはどれですか？",
       "choices": [
         "A. Azure Load Balancer",
         "B. Azure Front Door",
@@ -160,7 +160,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. Azure Traffic Manager"
       ],
       "answer": 1,
-      "explanation": "Azure Front Doorは、複数リージョンへのグローバルL7ロードバランシングとSSL終端（TLSオフロード）を提供します。2つのリージョンのAKSクラスターへのトラフィック分散と障害時のフェールオーバーが可能です。Azure Load BalancerはL4でリージョン内のみです。イングレスコントローラーはクラスター内の機能であり、リージョン間のルーティングはできません。Traffic ManagerはDNSベースのルーティングですが、SSL終端機能は提供しません。",
+      "explanation": "Azure Front Doorは複数リージョンへのグローバルL7ロードバランシングに加え、SSL終端（TLSオフロード）機能を備えています。2リージョンのAKSクラスターに対するトラフィック分散や障害時の自動フェールオーバーが可能です。Azure Load BalancerはL4でリージョン内限定です。イングレスコントローラーはクラスター内の機能であり、リージョン間ルーティングは行えません。Traffic ManagerはDNSベースのルーティングですが、SSL終端機能は持っていません。",
       "category": "network",
       "tags": [
         "site-recovery",
@@ -171,7 +171,7 @@ var QUIZ_DATA_website_31_40 = {
     },
     {
       "id": 40,
-      "question": "Azure Database for MySQLでペアリージョンへのフェールオーバーを実現する必要があります。どの機能を使用すべきですか？",
+      "question": "Azure Database for MySQLでペアリージョンへのフェールオーバーを実現したい場合、どの機能を利用すべきですか？",
       "choices": [
         "A. Premiumファイル共有",
         "B. 読み取りレプリカ",
@@ -179,7 +179,7 @@ var QUIZ_DATA_website_31_40 = {
         "D. Geoバックアップ復元"
       ],
       "answer": 1,
-      "explanation": "Azure Database for MySQLの読み取りレプリカは、ペアリージョンに非同期レプリカを作成でき、障害時にレプリカをスタンドアロンサーバーに昇格させてフェールオーバーできます。Premiumファイル共有はAzure Filesの機能であり、MySQLには関係ありません。ネイティブレプリケーションはマネージドサービスではサポートされていない場合があります。Geoバックアップ復元も可能ですが、読み取りレプリカの方がRPO（Recovery Point Objective）が短く、フェールオーバー時間も短縮されます。",
+      "explanation": "Azure Database for MySQLの読み取りレプリカ機能を使えば、ペアリージョンに非同期レプリカを構成し、障害時にレプリカをスタンドアロンサーバーへ昇格させてフェールオーバーできます。Premiumファイル共有はAzure Filesの機能で、MySQLとは無関係です。ネイティブレプリケーションはマネージドサービスではサポートされない場合があります。Geoバックアップ復元でも復旧は可能ですが、読み取りレプリカの方がRPO（目標復旧時点）を短くでき、フェールオーバー所要時間も短縮されます。",
       "category": "business-continuity",
       "tags": [
         "entra-connect",

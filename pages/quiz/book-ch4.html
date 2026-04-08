@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第4章 問題集 - Azure Study Hub</title>
+  <title>第4章 問題集 - IT Study Hub</title>
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/copy-protect.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -19,11 +20,18 @@
     <h1 style="font-size: 1.6rem; margin-bottom: 24px;">第4章 インフラストラクチャ（20問）</h1>
     <div id="quiz-container"></div>
   </main>
-  <script src="../../questions/book/book-ch4.js"></script>
+  <script src="../../js/admin-toggle.js"></script>
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
   <script src="../../js/quiz.js"></script>
   <script>
-    const quiz = new Quiz('quiz-container');
-    quiz.loadQuestionsFromData([QUIZ_DATA_book_ch4]);
+    function onReady(fn) {
+      if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
+    }
+    onReady(function () {
+      var quiz = new Quiz('quiz-container');
+      quiz.loadFromSupabase({ exam: 'az-305', source: 'book-ch4', shuffle: false });
+    });
   </script>
 
   <footer style="background: #f7f9fb; border-top: 1px solid #e0e0e0; padding: 20px 48px; margin-top: 40px; text-align: center; font-size: 0.85rem; color: #888;">

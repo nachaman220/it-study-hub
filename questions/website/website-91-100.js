@@ -1,16 +1,16 @@
 var QUIZ_DATA_website_91_100 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 91,
-      "question": "ビジネスに重要なデータを保存する新しいアプリを開発する予定です。アプリは次の要件を満たす必要があります。 アプリにはどのようなストレージ ソリューションを推奨しますか。 ストレージ アカウントの種類:・ 1 年間は新しいデータが変更されないようにする。・ データの復元力を最大化する。・ 読み取り遅延を最小限に抑える。",
+      "question": "ビジネス上重要なデータを格納する新規アプリケーションを開発予定です。要件：1年間はデータの変更を不可にする／データの耐障害性を最大化する／読み取り遅延を最小限にする。推奨するストレージアカウントの種類はどれですか？",
       "choices": [
         "Standard 汎用 v1",
         "Premium ブロックBLOB",
         "Standard 汎用 v2"
       ],
       "answer": 1,
-      "explanation": "読み取り遅延を最小限に抑えるには、Premium ブロック BLOB が正解です。Premium レベルでは、不変ストレージもサポートされています。https://docs.microsoft.com/ja-jp/azure/storage/blobs/immutable-storage-overview#supported-account-configurations",
+      "explanation": "読み取りレイテンシの最小化にはPremiumブロックBLOBが最適です。Premiumレベルでは不変ストレージ（イミュータブルストレージ）もサポートされており、データの変更不可要件にも対応できます。",
       "category": "",
       "tags": [
         "resource-locks",
@@ -20,13 +20,13 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 92,
-      "question": "ビジネスに重要なデータを保存する新しいアプリを開発する予定です。アプリは次の要件を満たす必要があります。 アプリにはどのようなストレージ ソリューションを推奨しますか。 冗長性:・ 1 年間は新しいデータが変更されないようにする。・ データの復元力を最大化する。・ 読み取り遅延を最小限に抑える。",
+      "question": "ビジネスクリティカルなデータを保管する新しいアプリを開発します。要件：1年間データ変更不可／データ復元力の最大化／読み取りレイテンシの最小化。どの冗長性オプションを選択すべきですか？",
       "choices": [
         "ローカル冗長ストレージ (LRS)",
         "ゾーン冗長ストレージ (ZRS)"
       ],
       "answer": 1,
-      "explanation": "ローカル冗長ストレージ (LRS) は、プライマリ リージョンの 1 つの物理的な場所内で、データを同期的に 3 回コピーします。 LRS は最もコストのかからないレプリケーション オプションですが、高可用性または持続性を必要とするアプリケーションには推奨されません。 ゾーン冗長ストレージ (ZRS) は、プライマリ リージョンの 3 つの Azure 可用性ゾーン間でデータを同期的にコピーします。 高可用性を必要とするアプリケーションでは、プライマリ リージョンで ZRS を使用し、セカンダリ リージョンにもレプリケートすることをお勧めします。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
+      "explanation": "LRSはプライマリリージョン内の単一物理ロケーションにデータを3回同期コピーします。コスト最小のオプションですが、高可用性や高耐久性が求められるアプリには推奨されません。ZRSはプライマリリージョン内の3つの可用性ゾーン間でデータを同期コピーし、LRSより高い耐障害性を提供します。高可用性アプリではZRSの使用が推奨され、セカンダリリージョンへのレプリケーションとの併用も検討すべきです。",
       "category": "",
       "tags": [
         "entra-connect",
@@ -37,7 +37,7 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 93,
-      "question": "次の表に示すリソースがあります。 Azure に RG2 という名前の新しいリソース グループを作成します。 仮想マシンを RG2 に移動する必要があります。 各仮想マシンを移動するには何を使用する必要がありますか。 VM1:名前 | タイプ | リソースグループ-----------------------------------------------VM1 | Azure 仮想マシン | RG1VM2 | オンプレミスの仮想マシン | 未適用",
+      "question": "リソースグループRG1内にAzure仮想マシンVM1があり、オンプレミスにはVM2があります。新たにRG2というリソースグループをAzureに作成し、VM1をRG2に移動させる必要があります。VM1の移動に使用すべきツールはどれですか？",
       "choices": [
         "The Data Migration Assistant (DMA)",
         "Azure Migrate",
@@ -46,7 +46,7 @@ var QUIZ_DATA_website_91_100 = {
         "Azure Resource Mover"
       ],
       "answer": 4,
-      "explanation": "Azure Resource MoverAzure VM を別のリージョンに移動するには、Microsoft は Azure Resource Mover の使用を推奨しています。リージョン間でリソースを移動するには、移動するリソースを選択します。 Resource Mover はこれらのリソースを検証し、他のリソースに対する依存関係を解決します。https://docs.microsoft.com/ja-jp/azure/resource-mover/overview",
+      "explanation": "Azure VMを別のリージョンやリソースグループに移動する際は、Azure Resource Moverの利用がMicrosoftから推奨されています。Resource Moverは移動対象リソースを検証し、他リソースへの依存関係を自動解決してくれます。",
       "category": "",
       "tags": [
         "lighthouse",
@@ -57,7 +57,7 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 94,
-      "question": "次の表に示すリソースがあります。 Azure に RG2 という名前の新しいリソース グループを作成します。 仮想マシンを RG2 に移動する必要があります。 各仮想マシンを移動するには何を使用する必要がありますか。 VM2:名前 | タイプ | リソースグループ-----------------------------------------------VM1 | Azure 仮想マシン | RG1VM2 | オンプレミスの仮想マシン | 未適用",
+      "question": "Azure VM（VM1、RG1所属）とオンプレミスVM（VM2）があります。新規リソースグループRG2を作成し、VM2をAzureのRG2へ移行する必要があります。VM2の移行に適切なツールはどれですか？",
       "choices": [
         "The Data Migration Assistant (DMA)",
         "Azure Migrate",
@@ -66,7 +66,7 @@ var QUIZ_DATA_website_91_100 = {
         "Azure Resource Mover"
       ],
       "answer": 1,
-      "explanation": "Azure MigrateAzure Migrate では、Azure に簡単な移行、最新化、最適化のサービスが提供されます。 インフラストラクチャ、データ、アプリケーションに対して、オンプレミス リソースの検出、評価、適切なサイズ設定など、移行前のすべての手順が含まれています。 Azure Migrate の拡張可能なフレームワークを使用すると、サード パーティ製ツールを統合できるため、サポートされるユース ケースの範囲が広がります。Azure Arc: Azure Migrate で十分です。 Azure Arc を使用する必要はありません。Data Migration Assistant: Data Migration Assistant は、SQL Server を評価するためのスタンドアロン ツールです。Azure Lighthouse: Azure Lighthouse では、スケーラビリティ、高度な自動化、およびリソース全体にわたる強化されたガバナンスを備えたマルチテナント管理が可能になります。https://learn.microsoft.com/ja-jp/azure/migrate/migrate-services-overview",
+      "explanation": "Azure Migrateはオンプレミスからのクラウド移行を支援する統合サービスで、インフラ・データ・アプリの検出、評価、適切なサイジングなど移行前の全工程をカバーします。拡張フレームワークによりサードパーティツールの統合も可能で対応範囲が広がります。Azure Arcは本ケースでは不要です。DMAはSQL Server評価用のスタンドアロンツールです。LighthouseはマルチテナントのクロステナントManagement用サービスです。",
       "category": "",
       "tags": [
         "entra-id",
@@ -79,14 +79,14 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 95,
-      "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 ストレージ アカウント タイプ:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+      "question": "Azure Linux VMを使ってビデオファイルを解析するアプリケーションを設計中です。ファイルはExpressRoute接続された企業オフィスからアップロードされます。ストレージアカウントの要件：最大7TBのビデオファイルに対応／可能な限り高い可用性／大容量ビデオファイルに最適化されたストレージ／ExpressRoute経由でのアップロードを確実にする。ストレージアカウントタイプの選択はどれですか？",
       "choices": [
         "Premium ページ BLOB",
         "Premium ファイル共有",
         "Standard 汎用 v2"
       ],
       "answer": 2,
-      "explanation": "https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blobs-introduction#blobs",
+      "explanation": "Standard汎用v2はブロックBLOBをサポートし、大容量のビデオファイル（最大数TBまで）に対応可能です。また、様々な冗長性オプションとネットワーク構成を柔軟に選択できます。",
       "category": "",
       "tags": [
         "azure-storage",
@@ -96,14 +96,14 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 96,
-      "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 データの冗長性:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+      "question": "Azure Linux VMでビデオファイル解析を行うアプリの設計です。ExpressRoute接続の企業オフィスからファイルをアップロードします。要件：最大7TBファイル対応／最高レベルの可用性／大容量ビデオ向けストレージ最適化／ExpressRoute経由のアップロード保証。データの冗長性としてどれを選びますか？",
       "choices": [
         "ローカル冗長ストレージ (LRS)",
         "Geo 冗長ストレージ (GRS)",
         "ゾーン冗長ストレージ (ZRS)"
       ],
       "answer": 1,
-      "explanation": "GRS は、LRS または ZRS と比較して、データ ストレージに追加の冗長性を提供します。また、可能な限り最高の可用性を実現します。https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy",
+      "explanation": "GRSはLRSやZRSと比較して追加の冗長性を提供し、可能な限り高い可用性を実現します。プライマリリージョンに加えてセカンダリリージョンにもデータが複製されるため、リージョン障害からの復旧にも対応できます。",
       "category": "",
       "tags": [
         "azure-storage",
@@ -113,14 +113,14 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 97,
-      "question": "あなたは、Azure Linux 仮想マシンを使用してビデオ ファイルを分析するアプリケーションを設計しています。 ファイルは、ExpressRoute を使用して Azure に接続する企業オフィスからアップロードされます。 ファイルをホストするために Azure ストレージ アカウントをプロビジョニングする予定です。 ストレージ アカウントが次の要件を満たしていることを確認する必要があります。 ストレージ アカウントはどのように構成すればよいでしょうか。 ネットワーキング:・ 最大 7 TB のビデオ ファイルをサポートする・ 可能な限り最高の可用性を提供する・ ストレージが大きなビデオ ファイル用に最適化されていることを確認する・ ExpressRoute を使用してオンプレミス ネットワークからのファイルが確実にアップロードされるようにする",
+      "question": "Azure Linux VMでビデオ解析アプリを運用し、ExpressRoute経由で企業オフィスからファイルをアップロードする構成です。要件：最大7TBのビデオファイル／最高の可用性／大容量ファイルに最適化／ExpressRoute経由のアップロードを確実にする。ネットワーク構成として何を選択すべきですか？",
       "choices": [
         "サービスエンドポイント",
         "Azure Route Server",
         "プライベートエンドポイント"
       ],
       "answer": 2,
-      "explanation": "ExpressRoute は、インターネットをバイパスして、Azure ネットワークに直接接続します。よって、プライベートエンドポイントが正答となります。Azure Private Link を使用すると、プライベート エンドポイントを使用して Azure PaaS サービスを仮想ネットワークに安全に接続できます。 多くのサービスでは、リソースごとにエンドポイントを設定するだけです。 つまり、オンプレミスまたはマルチクラウド サーバーを Azure Arc に接続し、パブリック ネットワークを使用する代わりに、Azure ExpressRoute またはサイト間 VPN 接続経由ですべてのトラフィックを送信できます。https://learn.microsoft.com/ja-jp/azure/azure-arc/servers/private-link-security",
+      "explanation": "ExpressRouteはインターネットを経由せずAzureネットワークに直結するため、プライベートエンドポイントが適切です。Azure Private Linkを使えば、プライベートエンドポイントを介してAzure PaaSサービスを仮想ネットワークに安全に接続できます。オンプレミスサーバーをAzure Arcに接続し、ExpressRouteやサイト間VPN経由で全トラフィックを送信することで、パブリックネットワークを回避した通信が実現できます。",
       "category": "",
       "tags": [
         "azure-storage",
@@ -132,7 +132,7 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 98,
-      "question": "あなたは、Azure サブスクリプションを持っています。 開発者に Azure 仮想マシンをプロビジョニングできる機能を提供するソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ 特定のリージョンでのみ仮想マシンの作成を許可する。・ 特定のサイズの仮想マシンの作成のみを許可する。",
+      "question": "Azureサブスクリプションがあり、開発者にAzure VMのプロビジョニング権限を付与するソリューションが必要です。要件：特定リージョンのみでVM作成を許可／特定サイズのVMのみ作成を許可。どのサービスを推奨しますか？",
       "choices": [
         "Azure Policy",
         "Azure Resource Manager テンプレート",
@@ -140,7 +140,7 @@ var QUIZ_DATA_website_91_100 = {
         "条件付きアクセス ポリシー"
       ],
       "answer": 0,
-      "explanation": "Azure Policyを使用すると、許可される場所と許可される VM SKU を指定できます。https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-and-manage",
+      "explanation": "Azure Policyを活用すれば、許可するリージョン（場所）や許可するVM SKUを定義・強制できます。ポリシーに適合しないリソースの作成は自動的に拒否されるため、開発者のVM作成を指定のリージョンとサイズに限定できます。",
       "category": "",
       "tags": [
         "rbac",
@@ -152,14 +152,14 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 99,
-      "question": "AG1 という名前の Always On 可用性グループをホストするオンプレミスの Microsoft SQL Server 2017 インスタンスが 2 つあります。 AG1 には、DB1 という名前の単一データベースが含まれています。 VM1 という名前の仮想マシンを含む Azure サブスクリプションがあります。 VM1 は Linux を実行し、SQL Server 2019 インスタンスが含まれています。 DB1 を VM1 に移行する必要があります。ソリューションでは、DB1 のダウンタイムを最小限に抑える必要があります。 マイグレーションの準備をするとき、あなたは次のうちどれを使用しますか。",
+      "question": "オンプレミスに2つのSQL Server 2017インスタンスがあり、Always On可用性グループAG1をホストしています。AG1にはデータベースDB1が含まれます。Azure側にはLinuxでSQL Server 2019が稼働するVM1があります。DB1をVM1に移行する際、ダウンタイムを最小限にしたい場合、移行準備として何を実施すべきですか？",
       "choices": [
         "オンプレミスの SQL Server インスタンスのアップグレード",
         "AG1 へのセカンダリ レプリカの追加",
         "VM1 での Always On 可用性グループの作成"
       ],
       "answer": 1,
-      "explanation": "次の手順で移行の準備をします。セカンダリ レプリカを AG1 に追加するオンプレミスの SQL Server インスタンスには可用性グループ (AG1) がすでに存在しているため、VM1 に Always On 可用性グループを作成する必要はありません。セカンダリ レプリカを AG1 に追加すると、移行に使用できる DB1 のコピーを提供できます。これにより、プライマリ レプリカを使用可能な状態のままでセカンダリ レプリカで移行を実行することにより、DB1 のダウンタイムを最小限に抑えることができます。",
+      "explanation": "移行準備としてAG1にセカンダリレプリカを追加します。オンプレミスに既存の可用性グループ（AG1）があるため、VM1上に新たなAlways On可用性グループを作成する必要はありません。セカンダリレプリカを追加することでDB1のコピーが移行に利用でき、プライマリレプリカを稼働させたままセカンダリ側で移行を進められるため、ダウンタイムを最小化できます。",
       "category": "",
       "tags": [
         "subscription-design",
@@ -170,14 +170,14 @@ var QUIZ_DATA_website_91_100 = {
     },
     {
       "id": 100,
-      "question": "AG1 という名前の Always On 可用性グループをホストするオンプレミスの Microsoft SQL Server 2017 インスタンスが 2 つあります。 AG1 には、DB1 という名前の単一データベースが含まれています。 VM1 という名前の仮想マシンを含む Azure サブスクリプションがあります。 VM1 は Linux を実行し、SQL Server 2019 インスタンスが含まれています。 DB1 を VM1 に移行する必要があります。ソリューションでは、DB1 のダウンタイムを最小限に抑える必要があります。 マイクレーションを実行するとき、あなたは次のうちどれを使用しますか。",
+      "question": "2つのオンプレミスSQL Server 2017インスタンスでAlways On可用性グループAG1（DB1を含む）を運用中です。Azure上のLinux VM（VM1）でSQL Server 2019が稼働しています。DB1をVM1へ移行する際にダウンタイムを最小限にするため、マイグレーション実行時に使用すべきツールはどれですか？",
       "choices": [
         "ログ 配布",
         "Azure Migrate",
         "分散型可用性グループ"
       ],
       "answer": 1,
-      "explanation": "オンプレミス SQL サーバーをアップグレードし、Azure Migrate を使用します。",
+      "explanation": "オンプレミスのSQL Serverをアップグレードしたうえで、Azure Migrateを使用して移行を実行します。Azure Migrateはオンプレミスからのクラウド移行を包括的に支援するサービスです。",
       "category": "",
       "tags": [
         "subscription-design",

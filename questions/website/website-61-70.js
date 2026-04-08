@@ -1,9 +1,9 @@
 var QUIZ_DATA_website_61_70 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 61,
-      "question": "あなたは、5 つの Azure Kubernetes Service (AKS) クラスターでホストされるコンテナー化された Web アプリをデプロイすることを計画しています。各クラスターは異なる Azure リージョンでホストされます。 インターネットからアプリへのアクセスを提供する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 グローバル負荷分散:・ 受信 HTTPS 要求は、ネットワーク遅延が最も短いクラスターにルーティングされる必要がある。・ 個々の Pod への HTTPS トラフィックは、イングレス コントローラー経由でルーティングされる必要がある。・ AKS クラスターが停止した場合、フェールオーバー時間を最小限に抑える必要がある。",
+      "question": "5つの異なるAzureリージョンにデプロイされたAKSクラスターでコンテナ化Webアプリを運用する計画があります。インターネットからのアクセスを提供し、次の要件を満たすグローバル負荷分散ソリューションを選択してください。要件：受信HTTPSリクエストはネットワーク遅延が最小のクラスターへルーティングする／各PodへのHTTPSトラフィックはイングレスコントローラ経由で配信する／AKSクラスター障害時のフェールオーバー時間を最短にする。",
       "choices": [
         "Azure Traffic Manager",
         "Standard Load Balancer",
@@ -11,7 +11,7 @@ var QUIZ_DATA_website_61_70 = {
         "Azure のリージョン間 (グローバル) ロード バランサー"
       ],
       "answer": 2,
-      "explanation": "Azure Front Door と Traffic Manager はどちらもグローバル ロード バランサーです。ただし、Azure Front Door の推奨トラフィックは HTTP(S) であり、Traffic Manager の推奨トラフィックは非 HTTP(S) です。https://learn.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/load-balancing-overview",
+      "explanation": "Azure Front DoorとTraffic Managerはいずれもグローバルなロードバランサーですが、HTTP(S)トラフィックにはAzure Front Doorが推奨されます。Traffic Managerは非HTTP(S)トラフィック向けとされています。",
       "category": "",
       "tags": [
         "site-recovery",
@@ -23,14 +23,14 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 62,
-      "question": "あなたは、5 つの Azure Kubernetes Service (AKS) クラスターでホストされるコンテナー化された Web アプリをデプロイすることを計画しています。各クラスターは異なる Azure リージョンでホストされます。 インターネットからアプリへのアクセスを提供する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。 イングレスコントローラー:・ 受信 HTTPS 要求は、ネットワーク遅延が最も短いクラスターにルーティングされる必要がある。・ 個々の Pod への HTTPS トラフィックは、イングレス コントローラー経由でルーティングされる必要がある。・ AKS クラスターが停止した場合、フェールオーバー時間を最小限に抑える必要がある。",
+      "question": "5つの異なるAzureリージョンのAKSクラスターにコンテナ化Webアプリを展開する計画です。インターネットからのアクセスを実現し、次の条件を満たすイングレスコントローラーを選んでください。条件：受信HTTPSリクエストはレイテンシが最も低いクラスターにルーティングする／各PodへのHTTPSはイングレスコントローラ経由で配信する／AKSクラスターの障害時にはフェールオーバーを最短時間で行う。",
       "choices": [
         "Azure Application Gateway",
         "Basic Azure Load Balancer",
         "Azure Standard Load Balancer"
       ],
       "answer": 0,
-      "explanation": "Application Gateway イングレス コントローラー (AGIC) は Kubernetes アプリケーションであり、これにより、Azure Kubernetes Service (AKS) のお客様が、Azure のネイティブ Application Gateway L7 ロード バランサーを活用してクラウド ソフトウェアをインターネットに公開できるようにします。 AGIC では、ホストされている Kubernetes クラスターを監視し、Application Gateway を継続的に更新して、選択されたサービスがインターネットに公開されるようにします。 イングレス コントローラーは、お客様の AKS の独自のポッドで実行されます。 AGIC では、Kubernetes リソースのサブセットに変更がないかを監視します。 AKS クラスターの状態は Application Gateway の特定の構成に変換され、Azure Resource Manager (ARM) に適用されます。AGIC を使用すると、AKS クラスターの前に別のロード バランサー/パブリック IP アドレスを設定する必要がなくなり、要求が AKS クラスターに到達する前にデータパス内の複数のホップを回避できます。https://learn.microsoft.com/ja-jp/azure/application-gateway/ingress-controller-overview",
+      "explanation": "Application Gatewayイングレスコントローラー（AGIC）はKubernetesアプリケーションとして動作し、AzureネイティブのApplication Gateway L7ロードバランサーを通じてクラウドサービスをインターネットに公開できます。AGICはKubernetesクラスターを監視し、選択したサービスが公開されるようApplication Gatewayの設定を自動更新します。イングレスコントローラー自体はAKSの独自Podで稼働し、Kubernetesリソースの一部を監視して変更をAzure Resource Manager経由で適用します。AGICの利用により、AKSクラスターの前段に別途ロードバランサーやパブリックIPを設ける必要がなくなり、データパス上のホップ数を削減できます。",
       "category": "",
       "tags": [
         "azure-monitor",
@@ -43,7 +43,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 63,
-      "question": "あなたの会社には、次の表に示すインフラストラクチャがあります。 オンプレミスの Active Directory ドメインは、Microsoft Entra ID と同期します。 Server1 は、LDAP クエリを使用してオンプレミスの Active Directory ドメイン内のユーザー ID を確認する App1 という名前のアプリケーションを実行します。 Server1 を Subscription1 の仮想マシンに移行する予定です。 会社のセキュリティ ポリシーでは、Subscription1 にデプロイされた仮想マシンとサービスがオンプレミス ネットワークにアクセスできないようにする必要があると規定されています。 移行後も App1 が機能し続けることを保証するソリューションを推奨する必要があります。ソリューションはセキュリティ ポリシーを満たしている必要があります。 推奨事項には何を含めるべきですか。ロケーション | リソース--------------------------------Azure | ①Subscription1 という名前の Azure サブスクリプション ②20 個の Azure Web アプリオンプレミス データセンター | ①Active Directory ドメイン ②Microsoft Entra Connec を実行しているサーバー ③Server1 という名前の Linux コンピューター",
+      "question": "社内にオンプレミスActive DirectoryドメインがありMicrosoft Entra IDと同期済みです。Server1上でLDAPクエリによりオンプレミスADのユーザーIDを確認するApp1が稼働しています。Server1をSubscription1内のVMへ移行する計画ですが、セキュリティポリシーにより、Subscription1内のVMやサービスからオンプレミスネットワークへのアクセスは禁止されています。移行後もApp1が正常動作しセキュリティポリシーを遵守するために推奨すべきソリューションは何ですか？環境情報：Azure側にはSubscription1と20個のWebアプリ、オンプレミス側にはADドメイン、Entra Connect実行サーバー、LinuxマシンServer1があります。",
       "choices": [
         "Microsoft Entra Domain Services",
         "Azure VPN gateway",
@@ -51,7 +51,7 @@ var QUIZ_DATA_website_61_70 = {
         "Microsoft Entra アプリケーション プロキシ"
       ],
       "answer": 0,
-      "explanation": "Microsoft Entra Domain Services には、ドメイン参加、グループ ポリシー、Lightweight Directory Access Protocol (LDAP)、Kerberos および NTLM 認証などのマネージド ドメイン サービスが用意されています。 クラウドでドメイン コントローラー (DC) のデプロイ、管理、修正プログラムの適用を行わなくても、これらのドメイン サービスを使用することができます。https://learn.microsoft.com/ja-jp/entra/identity/domain-services/overview",
+      "explanation": "Microsoft Entra Domain Servicesはドメイン参加、グループポリシー、LDAP、Kerberos/NTLM認証といったマネージドドメインサービスを提供します。クラウド上でドメインコントローラーをデプロイ・管理・パッチ適用する手間なく、これらのサービスを利用できます。オンプレミスへの接続を必要とせずにLDAP機能が使えるため、セキュリティポリシーにも適合します。",
       "category": "",
       "tags": [
         "entra-family",
@@ -66,7 +66,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 64,
-      "question": "あなたは、50,000 台の IoT デバイスを含む Azure IoT Hub ソリューションを計画しています。 各デバイスは、温度、デバイス ID、時間データなどのデータをストリーミングします。毎秒約 50,000 レコードが書き込まれます。データはほぼリアルタイムで視覚化されます。 データを保存およびクエリするためのサービスを推奨する必要があります。 このとき、利用すべきサービスを 2 つ答えてください。",
+      "question": "50,000台のIoTデバイスを含むAzure IoT Hubソリューションを構築予定です。各デバイスは温度、デバイスID、タイムスタンプなどのデータをストリーミングし、毎秒約50,000レコードが書き込まれます。データのほぼリアルタイム可視化が必要です。データの格納およびクエリに適したサービスを2つ選択してください。",
       "choices": [
         "NoSQL 用 Azure Cosmos DB",
         "Azure Table Storage",
@@ -74,7 +74,7 @@ var QUIZ_DATA_website_61_70 = {
         "Azure Time Series Insights"
       ],
       "answer": 3,
-      "explanation": "Azure Cosmos DB for NoSQL は、低待機時間と高スループットで大量のデータを処理できる、グローバルに分散されたマルチモデル データベース サービスです。さまざまな整合性レベルとパーティショニング戦略をサポートしているため、大規模な IoT データの処理に適しています。Azure Time Series Insights は、IoT デバイスによって生成された時系列データ向けに特別に設計された、フルマネージドのリアルタイム分析サービスです。時系列データのストレージ、視覚化、高度なクエリ機能を提供するため、多数の IoT デバイスからのデータを処理し、ほぼリアルタイムで視覚化するのに理想的な選択肢となります。https://learn.microsoft.com/ja-jp/azure/architecture/solution-ideas/articles/iot-using-cosmos-db",
+      "explanation": "Azure Cosmos DB for NoSQLは低レイテンシかつ高スループットで大量データを処理可能なグローバル分散マルチモデルデータベースであり、多様な整合性レベルとパーティション戦略により大規模IoTデータの取り扱いに適しています。Azure Time Series Insightsは、IoTデバイスが生成する時系列データに特化したフルマネージドのリアルタイム分析サービスです。時系列データの格納・可視化・高度なクエリ機能を備えており、大量のIoTデバイスデータをほぼリアルタイムで可視化するのに最適です。",
       "category": "",
       "tags": [
         "data-fundamentals",
@@ -85,7 +85,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 65,
-      "question": "あなたは、ユーザー向けのコンテンツを集約するアプリケーションを設計しています。 アプリケーションにデータベース ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ SQL コマンドをサポートする。・ マルチマスター書き込みをサポートする。・ 低遅延の読み取り操作を保証する。",
+      "question": "ユーザー向けコンテンツを集約するアプリケーションの設計において、データベースソリューションの推奨が求められています。要件：SQLコマンドに対応する／マルチマスター書き込みが可能／読み取り操作の低遅延を保証する。どのサービスを推奨すべきですか？",
       "choices": [
         "Azure SQL データベース ハイパースケール",
         "アクティブ geo レプリケーションを使用する Azure SQL データベース",
@@ -93,7 +93,7 @@ var QUIZ_DATA_website_61_70 = {
         "NoSQL 用 Azure Cosmos DB"
       ],
       "answer": 3,
-      "explanation": "Azure Cosmos DB は、SQL コマンド、マルチマスター書き込みをサポートし、低待機時間の読み取り操作を保証する、グローバルに分散されたマルチモデル データベース サービスです。ドキュメント、キーと値、グラフ、列ファミリーなどのさまざまな NoSQL データ モデルをサポートします。 Azure Cosmos DB は、複数の Azure リージョン間でデータをレプリケートおよび同期することにより、自動かつ即時のスケーラビリティ、高可用性、低待機時間をグローバルに提供します。 一方、Azure SQL Database と Azure SQL Database Hyperscale は、マルチマスター書き込みをネイティブにサポートしていない従来のリレーショナル データベース サービスです。",
+      "explanation": "Azure Cosmos DBはSQLクエリ対応、マルチマスター書き込み、低レイテンシ読み取りを兼ね備えたグローバル分散マルチモデルデータベースです。ドキュメント、キー値、グラフ、列ファミリーなど多種のNoSQLモデルに対応しています。複数Azureリージョンにデータを自動複製・同期することで、即時スケーラビリティ、高可用性、低レイテンシをグローバルに提供します。一方、Azure SQL DatabaseやHyperscaleはリレーショナルDBであり、マルチマスター書き込みのネイティブサポートがありません。",
       "category": "",
       "tags": [
         "entra-connect",
@@ -106,14 +106,14 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 66,
-      "question": "あなたは、複数の場所にデプロイされ、Standard レベルの Azure Databricks ワークスペースを使用する販売時点管理 (POS) ソリューションを設計しています。このソリューションには、各場所のオンプレミス ネットワークにデプロイされた複数のアプリが含まれます。 アプリがワークスペースにアクセスするために使用する認証方法を構成する必要があります。このソリューションでは、スタッフの離職と資格情報の管理に関連する管理労力を最小限に抑える必要があります。 何を設定すればよいでしょうか。",
+      "question": "複数の拠点に展開するPOS（販売時点情報管理）ソリューションでStandardレベルのAzure Databricksワークスペースを利用しています。各拠点のオンプレミスネットワークにデプロイされたアプリからワークスペースへアクセスするための認証方式を設定する必要があり、スタッフの入退社や資格情報管理に伴う運用負荷を最小化する方針です。何を設定すべきですか？",
       "choices": [
         "個人のアクセストークン",
         "サービスプリンシパル",
         "管理されたアイデンティティ"
       ],
       "answer": 1,
-      "explanation": "マネージド ID は Azure リソースの認証を提供できますが、オンプレミス リソースの認証は提供できません。オンプレミス ネットワークの場合は、通常、認証にサービス プリンシパルまたは個人アクセス トークンを使用します。https://learn.microsoft.com/ja-jp/azure/databricks/administration-guide/users-groups/#identity-model",
+      "explanation": "マネージドIDはAzureリソース間の認証に限られ、オンプレミスリソースからの認証には使えません。オンプレミスネットワーク環境では、認証にサービスプリンシパルまたは個人アクセストークンを用いるのが一般的です。サービスプリンシパルは個人に紐付かないため、人事異動の影響を受けにくく管理負荷が低くなります。",
       "category": "",
       "tags": [
         "log-analytics",
@@ -124,7 +124,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 67,
-      "question": "App1 という名前のオンプレミス アプリがあります。 お客様は App1 を使用してデジタル画像を管理します。 App1 を Azure に移行する予定です。 App1 用のデータ ストレージ ソリューションを推奨する必要があります。ソリューションは、※1の画像ストレージ要件を満たしている必要があります。 ソリューションは、※2の顧客アカウント要件を満たす必要があります。 データの種類ごとにどのサービスを推奨事項に含めるべきですか。 画像ストレージ:※1・ 保存中のイメージを暗号化する。・ 最大 50 MB のファイルを許可する。・ Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) を使用して、イメージへのアクセスを管理する。※2・ ストレージの自動スケールアウトをサポートする。・ データセンターに障害が発生した場合でも、App1 の可用性を維持する。・ 複数の Azure リージョンからのデータの読み取りと書き込みをサポートする。",
+      "question": "オンプレミスで稼働中のデジタル画像管理アプリApp1をAzureへ移行します。画像ストレージについて、次の要件を満たすサービスを選択してください。要件：保存時の画像暗号化／最大50MBのファイルサポート／Azure Front Door上のWAFによるアクセス管理。",
       "choices": [
         "Azure Table Storage",
         "Azure Blob Storage",
@@ -132,7 +132,7 @@ var QUIZ_DATA_website_61_70 = {
         "Azure Cosmos DB"
       ],
       "answer": 1,
-      "explanation": "WAF 経由でアクセスできるという要件により、Blob Storage へのオプションが制限されます。Azure Blob Storage は、保存時の暗号化をサポートし、大きなファイル サイズ (最大 50 MB 以上) を処理し、Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) と組み合わせて使用できるため、デジタル イメージの保存に適しています。https://learn.microsoft.com/ja-jp/azure/frontdoor/scenario-storage-blobs",
+      "explanation": "WAFを介したアクセス管理が必要な点がポイントとなり、Azure Blob Storageが適しています。Blob Storageは保存時暗号化に対応し、50MB以上の大きなファイルも扱え、Azure Front Door上のWAFと組み合わせて利用できるため、デジタル画像のストレージとして適切です。",
       "category": "",
       "tags": [
         "blob-storage",
@@ -146,7 +146,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 68,
-      "question": "App1 という名前のオンプレミス アプリがあります。 お客様は App1 を使用してデジタル画像を管理します。 App1 を Azure に移行する予定です。 App1 用のデータ ストレージ ソリューションを推奨する必要があります。ソリューションは、※1の画像ストレージ要件を満たしている必要があります。 ソリューションは、※2の顧客アカウント要件を満たす必要があります。 データの種類ごとにどのサービスを推奨事項に含めるべきですか。 顧客アカウント:※1・ 保存中のイメージを暗号化する。・ 最大 50 MB のファイルを許可する。・ Azure Front Door 上の Azure Web アプリケーション ファイアウォール (WAF) を使用して、イメージへのアクセスを管理する。※2・ ストレージの自動スケールアウトをサポートする。・ データセンターに障害が発生した場合でも、App1 の可用性を維持する。・ 複数の Azure リージョンからのデータの読み取りと書き込みをサポートする。",
+      "question": "オンプレミスのデジタル画像管理アプリApp1をAzureに移行する計画です。顧客アカウントデータのストレージとして、次の要件を満たすサービスはどれですか？要件：ストレージの自動スケールアウト対応／データセンター障害時もApp1の可用性を維持／複数Azureリージョンからの読み書きをサポート。",
       "choices": [
         "Azure SQL Database",
         "Azure Cosmos DB",
@@ -154,7 +154,7 @@ var QUIZ_DATA_website_61_70 = {
         "Azure Table Storage"
       ],
       "answer": 1,
-      "explanation": "複数のリージョンからの同時書き込みには、唯一 Azure Cosmos DB が対応しています。Azure Cosmos DB は、自動スケールアウトをサポートし、データセンターに障害が発生した場合でも高可用性を確保し、複数の Azure リージョンからのデータの読み取りと書き込みを可能にする、スケーラビリティの高い、グローバルに分散されたマルチモデル データベース サービスです。https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction#guaranteed-speed-at-any-scale",
+      "explanation": "複数リージョンからの同時読み書きを実現できるのはAzure Cosmos DBのみです。Cosmos DBは自動スケールアウトに対応し、データセンター障害時にも高い可用性を確保でき、複数Azureリージョン間でのデータ読み書きを可能にするグローバル分散型のマルチモデルデータベースです。",
       "category": "",
       "tags": [
         "blob-storage",
@@ -168,7 +168,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 69,
-      "question": "Azure 仮想マシン上に SQL Server があります。データベースはバッチ プロセスの一部として毎晩書き込まれます。 データの災害復旧ソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ 地域的な停止が発生した場合に回復する機能を提供する。・ 15 分の目標復旧時間 (RTO) をサポートする。・ 24 時間の目標復旧時点 (RPO) をサポートする。・ 自動リカバリをサポートする。・ コストを最小限に抑える。",
+      "question": "Azure VM上のSQL Serverにバッチ処理で毎晩データを書き込むデータベースがあります。この環境に対し、次の条件を満たすディザスタリカバリソリューションを推奨してください。条件：リージョン全体の障害からの復旧が可能／RTO 15分を達成する／RPO 24時間に対応する／自動復旧をサポートする／コストを抑える。",
       "choices": [
         "Azure Virtual Machines 可用性セット",
         "Always On 可用性グループ",
@@ -176,7 +176,7 @@ var QUIZ_DATA_website_61_70 = {
         "Azure ディスク バックアップ"
       ],
       "answer": 2,
-      "explanation": "Azure Site Recovery を使用したレプリケーション・ RTO は通常 15 分未満です。・ アプリケーション整合性では 1 時間、クラッシュ整合性では 5 分です。 より低い RPO を求めている場合は、別の BCDR テクノロジを使用してください。https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-sqlAzure ディスク バックアップは遅すぎます。Always On 可用性グループの場合は、セカンダリ レプリカへのレプリケーションは非同期であるため、ある程度のデータ損失が発生します。",
+      "explanation": "Azure Site Recoveryによるレプリケーションでは、RTOは通常15分以内です。RPOはアプリケーション整合性で1時間、クラッシュ整合性で5分程度です。より低いRPOが必要な場合は別のBCDRソリューションの検討が必要です。Azureディスクバックアップでは復旧に時間がかかりすぎます。Always On可用性グループはセカンダリレプリカへの非同期レプリケーションによりある程度のデータ損失が生じ得ます。",
       "category": "",
       "tags": [
         "entra-connect",
@@ -190,7 +190,7 @@ var QUIZ_DATA_website_61_70 = {
     },
     {
       "id": 70,
-      "question": "あなたは 2 つのコンポーネントを含むアプリを設計しています。コンポーネントは、キューを介してメッセージを送信することによって通信します。 先入れ先出し (FIFO) パターンを使用してメッセージを処理するソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+      "question": "2つのコンポーネントがキューを介してメッセージをやり取りするアプリケーションを設計中です。FIFO（先入れ先出し）方式でメッセージを処理する必要がある場合、どのソリューションが適切ですか？",
       "choices": [
         "パーティショニングが有効になっている Service Bus キュー",
         "セッションが有効になっている Service Bus キュー",
@@ -198,7 +198,7 @@ var QUIZ_DATA_website_61_70 = {
         "保存されたアクセス ポリシーを使用した Storage キュー"
       ],
       "answer": 1,
-      "explanation": "Azure Service Bus は、セッションの使用を通じて FIFO パターンをサポートします。セッションは、順序付けられたメッセージのシーケンスです。セッション内のすべてのメッセージは到着順に処理されます。これにより、メッセージがキューに追加された順序で処理されるようになります。Azure Storage キューは先入れ先出し (FIFO) パターンをネイティブにサポートしていません。Azure Service Bus でのパーティション分割は、複数のメッセージ ブローカーとストアに負荷を分散することでパフォーマンスを向上させることができますが、パーティション間で FIFO 順序付けが強制されるわけではありません。 FIFO の順序はパーティション内では維持されますが、パーティション間では維持されません。https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/message-sessions",
+      "explanation": "Azure Service Busではセッション機能によりFIFOパターンを実現できます。セッションは順序付けられたメッセージシーケンスで、セッション内の全メッセージは到着順に処理されるため、キュー投入順での処理が保証されます。Azure Storage キューはFIFOをネイティブにサポートしていません。Service Busのパーティション分割は複数ブローカーへの負荷分散でパフォーマンスを向上させますが、パーティション間ではFIFO順序は保証されません。FIFO順序はパーティション内でのみ維持されます。",
       "category": "",
       "tags": [
         "messaging"

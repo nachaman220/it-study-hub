@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webサイト問題集 - Azure Study Hub</title>
+  <title>Webサイト問題集 - IT Study Hub</title>
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/copy-protect.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -25,43 +26,18 @@
     <div id="quiz-container"></div>
   </main>
 
-  <script src="../../questions/website/website-01-10.js"></script>
-  <script src="../../questions/website/website-11-20.js"></script>
-  <script src="../../questions/website/website-21-30.js"></script>
-  <script src="../../questions/website/website-31-40.js"></script>
-  <script src="../../questions/website/website-41-50.js"></script>
-  <script src="../../questions/website/website-51-60.js"></script>
-  <script src="../../questions/website/website-61-70.js"></script>
-  <script src="../../questions/website/website-71-80.js"></script>
-  <script src="../../questions/website/website-81-90.js"></script>
-  <script src="../../questions/website/website-91-100.js"></script>
-  <script src="../../questions/website/website-101-110.js"></script>
-  <script src="../../questions/website/website-111-120.js"></script>
-  <script src="../../questions/website/website-121-130.js"></script>
-  <script src="../../questions/website/website-131-140.js"></script>
-  <script src="../../questions/website/website-141-150.js"></script>
-  <script src="../../questions/website/website-151.js"></script>
+  <script src="../../js/admin-toggle.js"></script>
+  <script src="../../js/supabase-client.js"></script>
+  <script src="../../js/auth-guard.js"></script>
   <script src="../../js/quiz.js"></script>
   <script>
-    const quiz = new Quiz('quiz-container');
-    quiz.loadQuestionsFromData([
-      QUIZ_DATA_website_01_10,
-      QUIZ_DATA_website_11_20,
-      QUIZ_DATA_website_21_30,
-      QUIZ_DATA_website_31_40,
-      QUIZ_DATA_website_41_50,
-      QUIZ_DATA_website_51_60,
-      QUIZ_DATA_website_61_70,
-      QUIZ_DATA_website_71_80,
-      QUIZ_DATA_website_81_90,
-      QUIZ_DATA_website_91_100,
-      QUIZ_DATA_website_101_110,
-      QUIZ_DATA_website_111_120,
-      QUIZ_DATA_website_121_130,
-      QUIZ_DATA_website_131_140,
-      QUIZ_DATA_website_141_150,
-      QUIZ_DATA_website_151
-    ]);
+    function onReady(fn) {
+      if (window.supabaseClient) { fn(); } else { window.addEventListener('supabaseReady', fn); }
+    }
+    onReady(function () {
+      var quiz = new Quiz('quiz-container');
+      quiz.loadFromSupabase({ exam: 'az-305', source: 'website', shuffle: true });
+    });
   </script>
 
   <footer style="background: #f7f9fb; border-top: 1px solid #e0e0e0; padding: 20px 48px; margin-top: 40px; text-align: center; font-size: 0.85rem; color: #888;">

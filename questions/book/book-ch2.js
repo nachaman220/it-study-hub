@@ -1,9 +1,9 @@
 var QUIZ_DATA_book_ch2 = {
-  "source": "book-az305",
+  "source": "original",
   "questions": [
     {
       "id": 1,
-      "question": "あなたはPremiumアクセス層で最高のパフォーマンスと最高の冗長性を持つストレージアカウントを構成する必要があります。どのストレージアカウントの種類と冗長性オプションを選択すべきですか？",
+      "question": "Premiumアクセス層で最高のパフォーマンスと最大限の冗長性を確保できるストレージアカウントを構成する必要があります。選択すべきストレージアカウントの種類と冗長性オプションの組み合わせはどれですか？",
       "choices": [
         "A. Premium BlockBlobStorage、LRS",
         "B. Premium BlockBlobStorage、ZRS",
@@ -11,7 +11,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. General Purpose v2 Premium、RA-GRS"
       ],
       "answer": 1,
-      "explanation": "Premiumストレージアカウントでは、冗長性オプションはLRSとZRSのみがサポートされます。GRSやRA-GRSはPremiumでは使用できません。最高の冗長性を実現するには、ZRS（ゾーン冗長ストレージ）を選択します。ZRSは3つの可用性ゾーンにデータをレプリケートし、LRS（単一データセンター内の3コピー）よりも高い冗長性を提供します。",
+      "explanation": "Premiumストレージアカウントで利用可能な冗長性オプションはLRSとZRSに限られます。GRSやRA-GRSはPremiumでは選択できません。より高い冗長性を得るにはZRS（ゾーン冗長ストレージ）が最適で、3つの可用性ゾーンにデータを複製します。LRSは単一データセンター内に3つのコピーを保持するだけなので、ZRSの方が冗長性で優れています。",
       "category": "data",
       "tags": [
         "azure-storage",
@@ -21,7 +21,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 2,
-      "question": "あなたは10GBのデータを保存し、読み取りパフォーマンスを向上させながら、ストレージコストを最小化する必要があります。どのAzureサービスを使用すべきですか？",
+      "question": "容量10GB程度のデータを格納し、読み取り速度を高めつつストレージ費用を最小限にしたいと考えています。どのAzureサービスが適切ですか？",
       "choices": [
         "A. Azure Files Premium",
         "B. Azure Blob Storage",
@@ -29,7 +29,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Table Storage"
       ],
       "answer": 1,
-      "explanation": "Azure Blob Storageは、非構造化データの保存に最適で、アクセス層（Hot/Cool/Cold/Archive）を選択することでストレージコストを最小化できます。10GBという比較的小さなデータ量に対して、読み取りパフォーマンスはHotアクセス層で十分に高速です。Azure Files Premiumはファイル共有向けでコストが高くなります。Managed Disksは仮想マシン用です。Table Storageは構造化データ向けです。",
+      "explanation": "Azure Blob Storageは非構造化データの格納に最適化されており、アクセス層（Hot/Cool/Cold/Archive）の選択によってストレージコストを調整できます。10GB程度のデータであれば、Hotアクセス層で十分高速な読み取りが可能です。Azure Files Premiumはファイル共有用途で割高になります。Managed Disksは仮想マシン専用のディスクサービスです。Table Storageは構造化されたKey-Valueデータ向けです。",
       "category": "data",
       "tags": [
         "blob-storage",
@@ -38,7 +38,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 3,
-      "question": "あなたはグローバルに分散されたアプリケーションを構築しています。マルチリージョン書き込みと99.999%の可用性SLAが必要です。どのAzureサービスを使用すべきですか？",
+      "question": "世界各地に分散するアプリケーションを開発しています。複数リージョンでの書き込みと99.999%の可用性SLAが求められます。どのAzureサービスを選ぶべきですか？",
       "choices": [
         "A. Azure SQL Database geo レプリケーション",
         "B. Azure Cosmos DB",
@@ -46,7 +46,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Cache for Redis"
       ],
       "answer": 1,
-      "explanation": "Azure Cosmos DBは、マルチリージョン書き込み（マルチマスター）をサポートし、マルチリージョン構成で99.999%の可用性SLAを提供します。これはAzureサービスの中で最も高い可用性SLAです。Azure SQL Databaseのgeoレプリケーションは読み取りレプリカであり、マルチリージョン書き込みはサポートしません。PostgreSQL HyperscaleはCitusベースの分散DBですが、99.999%のSLAは提供しません。Redis Cacheはキャッシュサービスであり、永続データストアではありません。",
+      "explanation": "Azure Cosmos DBはマルチリージョン書き込み（マルチマスター）に対応しており、複数リージョン構成で99.999%の可用性SLAを提供します。これはAzureサービスの中で最高水準のSLAです。Azure SQL Databaseのgeoレプリケーションは読み取りレプリカ方式のため、マルチリージョン書き込みには対応しません。PostgreSQL HyperscaleはCitusベースの分散DBですが、99.999%のSLA保証はありません。Redis Cacheはキャッシュ層であり、永続的なデータストアとしては設計されていません。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -58,7 +58,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 4,
-      "question": "あなたはAzure Cosmos DBでクエリのスケーリングを最適化する必要があります。クロスパーティションクエリを避け、効率的なデータアクセスを実現するために最も重要な設計要素はどれですか？",
+      "question": "Azure Cosmos DBでクエリのスケーラビリティを最適化したいと考えています。クロスパーティションクエリを回避し、効率的にデータへアクセスするために最も重要となる設計上の要素はどれですか？",
       "choices": [
         "A. インデックスポリシー",
         "B. 整合性レベル",
@@ -66,7 +66,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. スループット（RU/s）"
       ],
       "answer": 2,
-      "explanation": "パーティションキーの適切な選択は、Cosmos DBのスケーリングにおいて最も重要な設計要素です。適切なパーティションキーを選択することで、データが均等に分散され、クロスパーティションクエリを避けることができます。インデックスポリシーはクエリパフォーマンスに影響しますが、スケーリングの基本ではありません。整合性レベルはデータの一貫性に関する設定です。スループットはパフォーマンスの割り当てであり、データ分散の設計ではありません。",
+      "explanation": "適切なパーティションキーの選定は、Cosmos DBのスケーラビリティにおける最重要設計事項です。パーティションキーを正しく選ぶことで、データが均等に分散されクロスパーティションクエリを回避できます。インデックスポリシーはクエリ性能に影響を与えますが、スケーリングの根本的な要素ではありません。整合性レベルはデータの一貫性設定に関するものです。スループットはパフォーマンスの割り当て量であり、データ配置の設計とは別の観点です。",
       "category": "data",
       "tags": [
         "cosmosdb",
@@ -75,7 +75,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 5,
-      "question": "あなたはAzure SQLの展開オプションを検討しています。複数のデータベース間でクエリを実行する必要がある場合、どのオプションを選択すべきですか？",
+      "question": "Azure SQLのデプロイ形態を検討中です。複数のデータベースをまたいでクエリを実行する必要がある場合、どのオプションを選ぶべきですか？",
       "choices": [
         "A. Azure SQL Database 単一データベース",
         "B. Azure SQL Database エラスティックプール",
@@ -83,7 +83,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure SQL Database サーバーレス"
       ],
       "answer": 2,
-      "explanation": "Azure SQL Managed Instance（MI）は、クロスデータベースクエリをサポートしています。複数のデータベース間でJOINやトランザクションを実行できます。Azure SQL Database（単一DB、エラスティックプール、サーバーレス）ではクロスデータベースクエリはサポートされていません（エラスティッククエリという機能で限定的な読み取りは可能）。MIはSQL Serverとの高い互換性を持ち、オンプレミスからの移行にも適しています。",
+      "explanation": "Azure SQL Managed Instance（MI）はクロスデータベースクエリをネイティブにサポートしています。複数DB間でのJOINやトランザクション実行が可能です。Azure SQL Database（単一DB、エラスティックプール、サーバーレス）ではクロスデータベースクエリは基本的にサポートされません（エラスティッククエリによる限定的な読み取りは可能）。MIはSQL Serverとの高い互換性を備え、オンプレミスからの移行先としても適しています。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -93,7 +93,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 6,
-      "question": "あなたはデータウェアハウスとOLAP（オンライン分析処理）を実装する必要があります。大量の構造化データに対して複雑な分析クエリを実行します。どのサービスを使用すべきですか？",
+      "question": "データウェアハウスおよびOLAP（オンライン分析処理）の基盤を構築する必要があります。大規模な構造化データに対して高度な分析クエリを実行する場合、どのサービスが最適ですか？",
       "choices": [
         "A. Azure SQL Database",
         "B. Azure Synapse Analytics 専用SQLプール",
@@ -101,7 +101,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Database for PostgreSQL"
       ],
       "answer": 1,
-      "explanation": "Azure Synapse Analytics 専用SQLプールは、超並列処理（MPP）アーキテクチャを使用したエンタープライズデータウェアハウスです。大量のデータに対するOLAPクエリに最適化されており、列ストア圧縮やパーティション分割によって高速な分析を実現します。Azure SQL DatabaseはOLTPに適しており、大規模なOLAPには向きません。Cosmos DBはNoSQLデータベースです。PostgreSQLは汎用RDBMSですが、大規模DWHには専用SQLプールの方が適切です。",
+      "explanation": "Azure Synapse Analytics 専用SQLプールは、超並列処理（MPP）アーキテクチャを採用したエンタープライズ向けデータウェアハウスです。大量データに対するOLAPクエリ向けに最適化されており、列ストア圧縮やパーティション分割で高速な分析処理を実現します。Azure SQL DatabaseはOLTP用途に適しており、大規模OLAPには向きません。Cosmos DBはNoSQLデータベースです。PostgreSQLは汎用RDBMSですが、大規模DWH用途には専用SQLプールが適切です。",
       "category": "data",
       "tags": [
         "data-fundamentals",
@@ -112,7 +112,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 7,
-      "question": "あなたは複数のデータソースからデータを抽出・変換・読み込み（ETL）するパイプラインを構築する必要があります。どのAzureサービスを使用すべきですか？",
+      "question": "複数のデータソースからデータを抽出・変換・読み込み（ETL）するパイプラインを構築したいと考えています。最適なAzureサービスはどれですか？",
       "choices": [
         "A. Azure Stream Analytics",
         "B. Azure Data Factory",
@@ -120,7 +120,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Logic Apps"
       ],
       "answer": 1,
-      "explanation": "Azure Data Factoryは、ETL/ELTパイプラインの構築に特化したマネージドサービスです。90以上のデータソースに対応するコネクタを備え、コードなしでデータフローを設計できます。Stream Analyticsはリアルタイムストリーム処理向けです。Event Hubsはイベントの取り込みサービスであり、データ変換機能はありません。Logic Appsはワークフロー自動化ですが、大規模なETLパイプラインには適していません。",
+      "explanation": "Azure Data FactoryはETL/ELTパイプラインの構築に特化したフルマネージドサービスで、90種以上のコネクタを備えノーコードでデータフローを設計可能です。Stream Analyticsはリアルタイムのストリーム処理向けです。Event Hubsはイベント取り込みサービスであり、データ変換の機能は持ちません。Logic Appsはワークフロー自動化向けですが、大規模ETL処理には不向きです。",
       "category": "data",
       "tags": [
         "data-sources",
@@ -132,7 +132,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 8,
-      "question": "あなたはIoTデバイスからのリアルタイムデータストリームを処理する必要があります。毎秒数百万件のイベントを取り込めるサービスはどれですか？",
+      "question": "IoTデバイスが送信するリアルタイムのデータストリームを処理する必要があります。毎秒数百万件規模のイベントを受け入れ可能なサービスはどれですか？",
       "choices": [
         "A. Azure Service Bus",
         "B. Azure Event Hubs",
@@ -140,7 +140,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Notification Hubs"
       ],
       "answer": 1,
-      "explanation": "Azure Event Hubsは、毎秒数百万件のイベントを取り込めるビッグデータストリーミングプラットフォームです。IoTデバイスやアプリケーションからの大量のテレメトリデータのリアルタイム取り込みに最適です。Service Busはエンタープライズメッセージングに適していますが、大規模ストリーム処理向けではありません。Queue Storageは単純なキューイングです。Notification Hubsはプッシュ通知サービスです。",
+      "explanation": "Azure Event Hubsは毎秒数百万件のイベント取り込みが可能な大規模ストリーミングプラットフォームです。IoT端末やアプリケーションから送られる大量のテレメトリデータをリアルタイムで処理するのに最適です。Service Busはエンタープライズ向けメッセージングに強みがありますが、大規模ストリーム処理には不向きです。Queue Storageはシンプルなキュー機能です。Notification Hubsはモバイルプッシュ通知のサービスです。",
       "category": "data",
       "tags": [
         "messaging",
@@ -149,7 +149,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 9,
-      "question": "あなたは構造化データを保存し、ACID準拠のトランザクション処理が必要なアプリケーションを構築しています。どのAzureサービスを使用すべきですか？",
+      "question": "構造化データを保管し、ACID準拠のトランザクション処理を求めるアプリケーションを開発しています。どのAzureサービスが適していますか？",
       "choices": [
         "A. Azure Cosmos DB",
         "B. Azure SQL Database",
@@ -157,7 +157,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Table Storage"
       ],
       "answer": 1,
-      "explanation": "Azure SQL Databaseは、完全マネージドのリレーショナルデータベースであり、ACID準拠のトランザクション処理をサポートします。構造化データの保存とSQLクエリに最適です。Cosmos DBもトランザクションをサポートしますが、主にNoSQLワークロード向けです。Blob Storageは非構造化データ向けでトランザクション処理には対応しません。Table StorageはNoSQLキー/バリューストアであり、完全なACIDトランザクションはサポートしません。",
+      "explanation": "Azure SQL Databaseはフルマネージドのリレーショナルデータベースで、ACID準拠のトランザクション処理を完全にサポートします。構造化データの格納とSQLクエリに最適な選択肢です。Cosmos DBもトランザクション機能を備えていますが、主にNoSQLワークロード向けに設計されています。Blob Storageは非構造化データ用でトランザクション処理には対応しません。Table StorageはNoSQLのKey-Valueストアであり、完全なACIDトランザクションには対応していません。",
       "category": "data",
       "tags": [
         "data-fundamentals",
@@ -169,7 +169,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 10,
-      "question": "あなたは大量の非構造化データを長期間保存する必要があります。データへのアクセス頻度は非常に低く、コストを最小化したいと考えています。どのストレージオプションを使用すべきですか？",
+      "question": "大量の非構造化データを長期にわたって保管する必要があります。データへのアクセスはほとんど発生せず、ストレージ費用をできる限り抑えたいと考えています。どのストレージオプションが最適ですか？",
       "choices": [
         "A. Azure Blob Storage Hotアクセス層",
         "B. Azure Blob Storage Coolアクセス層",
@@ -177,7 +177,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Files Premium"
       ],
       "answer": 2,
-      "explanation": "Azure Blob Storage Archiveアクセス層は、ストレージコストが最も低く、アクセス頻度が非常に低い長期保存データに最適です。ただし、データの取得にはリハイドレーション（数時間）が必要です。Hotアクセス層はアクセスコストが低いがストレージコストが高く、Coolアクセス層はArchiveよりストレージコストが高くなります。Files Premiumはファイル共有向けで最もコストが高いオプションです。",
+      "explanation": "Azure Blob StorageのArchiveアクセス層はストレージ単価が最も低く、アクセス頻度が極めて低い長期保存データに適しています。ただしデータの読み出しにはリハイドレーション処理（数時間程度）が必要です。Hotアクセス層はアクセスコストが低い反面ストレージ単価が高く、Coolアクセス層はArchiveよりも保管コストが高くなります。Files Premiumはファイル共有向けで、最もコスト高な選択肢です。",
       "category": "data",
       "tags": [
         "blob-storage"
@@ -185,7 +185,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 11,
-      "question": "あなたはAzure SQL Databaseの保存データをサーバー側で暗号化する必要があります。どの機能を使用すべきですか？",
+      "question": "Azure SQL Databaseに保存されているデータをサーバー側で暗号化する必要があります。利用すべき機能はどれですか？",
       "choices": [
         "A. Always Encrypted",
         "B. Transparent Data Encryption（TDE）",
@@ -193,7 +193,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Information Protection"
       ],
       "answer": 1,
-      "explanation": "Transparent Data Encryption（TDE）は、Azure SQL Databaseの保存データ（Data at Rest）をサーバー側で自動的に暗号化します。データベースファイル、ログファイル、バックアップが暗号化されます。Azure SQL Databaseではデフォルトで有効になっています。Always Encryptedはクライアント側の暗号化です。動的データマスキングはデータの表示を制限する機能であり、暗号化ではありません。Azure Information Protectionはドキュメント保護サービスです。",
+      "explanation": "Transparent Data Encryption（TDE）はAzure SQL Databaseの保存データ（Data at Rest）をサーバー側で自動的に暗号化する機能です。データベースファイル、トランザクションログ、バックアップのすべてが暗号化対象となり、Azure SQL Databaseでは既定で有効化されています。Always Encryptedはクライアント側暗号化の仕組みです。動的データマスキングはデータ表示を制限する機能であり、暗号化とは異なります。Azure Information Protectionはドキュメント保護向けのサービスです。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -204,7 +204,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 12,
-      "question": "あなたはAzure SQL Database内の機密データをクライアント側で暗号化し、データベース管理者でさえ平文データを参照できないようにする必要があります。どの機能を使用すべきですか？",
+      "question": "Azure SQL Database内の機密データをクライアント側で暗号化し、DB管理者であっても平文のデータを閲覧できないようにする必要があります。どの機能を利用すべきですか？",
       "choices": [
         "A. Transparent Data Encryption（TDE）",
         "B. Always Encrypted",
@@ -212,7 +212,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. 列レベルの暗号化"
       ],
       "answer": 1,
-      "explanation": "Always Encryptedは、クライアント側でデータを暗号化し、暗号化キーはデータベースエンジンに公開されません。そのため、データベース管理者（DBA）でさえ平文データを参照できません。TDEはサーバー側の暗号化であり、DBAはデータを参照できます。行レベルセキュリティはアクセス制御であり暗号化ではありません。列レベルの暗号化はT-SQLの機能ですが、Always Encryptedほどの保護レベルはありません。",
+      "explanation": "Always Encryptedはクライアント側でデータを暗号化し、暗号鍵はデータベースエンジンには渡りません。そのためDB管理者（DBA）でさえ平文データを参照することが不可能です。TDEはサーバー側の暗号化であるため、DBAはデータにアクセスできます。行レベルセキュリティはアクセス制御の仕組みで暗号化ではありません。列レベルの暗号化はT-SQLで実装可能ですが、Always Encryptedほどの保護強度はありません。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -221,7 +221,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 13,
-      "question": "あなたは既存のMongoDBアプリケーションをAzureに移行する必要があります。コードの変更を最小限にしたいと考えています。Azure Cosmos DBのどのAPIを使用すべきですか？",
+      "question": "オンプレミスで稼働中のMongoDBアプリケーションをAzureへ移行する計画です。コード変更を最小限にとどめたい場合、Azure Cosmos DBのどのAPIを選択すべきですか？",
       "choices": [
         "A. NoSQL API",
         "B. MongoDB API",
@@ -229,7 +229,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Table API"
       ],
       "answer": 1,
-      "explanation": "Azure Cosmos DB for MongoDB（MongoDB API）を使用すると、既存のMongoDBアプリケーションのコードをほぼ変更せずにCosmos DBに移行できます。MongoDBのドライバーやツールをそのまま使用でき、MongoDBのクエリ構文も互換性があります。NoSQL APIはCosmos DBネイティブのAPIです。Cassandra APIはApache Cassandraワークロード向けです。Table APIはAzure Table Storage互換のAPIです。",
+      "explanation": "Azure Cosmos DB for MongoDB（MongoDB API）を利用すれば、既存のMongoDBアプリケーションのコードをほぼ変更せずにCosmos DBへ移行できます。MongoDBのドライバーやツールをそのまま活用でき、クエリ構文も互換性があります。NoSQL APIはCosmos DB独自のネイティブAPIです。Cassandra APIはApache Cassandraワークロード向けです。Table APIはAzure Table Storage互換のインターフェースです。",
       "category": "data",
       "tags": [
         "data-fundamentals",
@@ -239,7 +239,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 14,
-      "question": "あなたはAzure Cosmos DBで予約済みスループットのSLAを確保する必要があります。どのスループットモデルと単位を使用すべきですか？",
+      "question": "Azure Cosmos DBでSLAに基づく予約済みスループットを確保したいと考えています。適切なスループットモデルと課金単位の組み合わせはどれですか？",
       "choices": [
         "A. サーバーレススループット、DTU",
         "B. プロビジョニングスループット、RU（要求ユニット）",
@@ -247,7 +247,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. サーバーレススループット、RU（要求ユニット）"
       ],
       "answer": 1,
-      "explanation": "プロビジョニングスループットは、RU/s（要求ユニット/秒）で指定した固定のスループットを予約し、SLAで保証されたパフォーマンスを提供します。RU（Request Unit）はCosmos DBの課金・パフォーマンス単位です。サーバーレスは使用量ベースでSLAの保証レベルが異なります。DTUはAzure SQL Databaseの単位であり、Cosmos DBでは使用しません。IOPSはストレージの単位です。",
+      "explanation": "プロビジョニングスループットではRU/s（要求ユニット/秒）で固定のスループットを事前に確保し、SLAに裏付けされたパフォーマンスが保証されます。RU（Request Unit）はCosmos DB固有の課金・パフォーマンス指標です。サーバーレスは従量課金方式であり、SLA保証のレベルが異なります。DTUはAzure SQL Database固有の単位でCosmos DBでは使いません。IOPSはストレージのパフォーマンス指標です。",
       "category": "data",
       "tags": [
         "sql-database",
@@ -258,7 +258,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 15,
-      "question": "Azure Data Lake Storage Gen2の特徴として正しいものはどれですか？（2つ選択）",
+      "question": "Azure Data Lake Storage Gen2の特徴として正しいものを2つ選んでください。",
       "choices": [
         "A. 階層型名前空間をサポートする",
         "B. ACL（アクセス制御リスト）によるきめ細かなアクセス制御が可能",
@@ -270,7 +270,7 @@ var QUIZ_DATA_book_ch2 = {
         0,
         1
       ],
-      "explanation": "ADLS Gen2は階層型名前空間（Hierarchical Namespace: HNS）をサポートし、ディレクトリレベルでの操作が高速に行えます。また、POSIX互換のACLによるきめ細かなファイル・ディレクトリレベルのアクセス制御が可能です。ブロックBlobをサポートします。Standard StorageアカウントでもHNSを有効化してADLS Gen2として使用できます。Blob Storage APIとの互換性も維持されています。",
+      "explanation": "ADLS Gen2は階層型名前空間（Hierarchical Namespace: HNS）に対応しており、ディレクトリ単位の操作を高速に処理できます。さらにPOSIX準拠のACLにより、ファイルやディレクトリ単位できめ細かなアクセス制御を設定可能です。対応するBlobの種類はブロックBlobです。Standard StorageアカウントでもHNSを有効にすればADLS Gen2として利用できます。Blob Storage APIとの互換性も維持されています。",
       "category": "data",
       "tags": [
         "resource-locks",
@@ -280,7 +280,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 16,
-      "question": "Azure Blob Storageのライフサイクル管理ポリシーが適用されるBlobの種類はどれですか？",
+      "question": "Azure Blob Storageのライフサイクル管理ポリシーの適用対象となるBlobの種類はどれですか？",
       "choices": [
         "A. ブロックBlobのみ",
         "B. ページBlobのみ",
@@ -288,7 +288,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. すべてのBlobの種類"
       ],
       "answer": 0,
-      "explanation": "Azure Blob Storageのライフサイクル管理ポリシーは、ブロックBlobにのみ適用されます。ライフサイクル管理を使用すると、ブロックBlobのアクセス層の変更（Hot→Cool→Cold→Archive）や削除を自動化できます。ページBlob（VMディスクなど）や追加Blob（ログデータなど）には適用されません。",
+      "explanation": "Azure Blob Storageのライフサイクル管理ポリシーはブロックBlobのみを対象とします。この機能を使えば、ブロックBlobのアクセス層移行（Hot→Cool→Cold→Archive）や自動削除をルールベースで運用できます。ページBlob（VMディスク等）や追加Blob（ログ追記用等）はライフサイクル管理の対象外です。",
       "category": "data",
       "tags": [
         "resource-locks",
@@ -298,7 +298,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 17,
-      "question": "あなたはオンプレミスのHadoop環境で使用しているHDFS（Hadoop Distributed File System）をAzureに移行する必要があります。HDFSの代替として最適なAzureサービスはどれですか？",
+      "question": "オンプレミスのHadoop環境で利用しているHDFS（Hadoop Distributed File System）をAzureへ移行する計画です。HDFSの代わりとして最適なAzureサービスはどれですか？",
       "choices": [
         "A. Azure Blob Storage",
         "B. Azure Data Lake Storage Gen2",
@@ -306,7 +306,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. Azure Managed Disks"
       ],
       "answer": 1,
-      "explanation": "Azure Data Lake Storage Gen2（ADLS Gen2）は、HDFS互換のファイルシステムインターフェースを提供し、Hadoopエコシステム（Spark、Hiveなど）からシームレスにアクセスできます。階層型名前空間によりディレクトリ操作が高速で、ビッグデータ分析に最適化されています。Blob StorageもHDFSドライバー経由でアクセスできますが、ADLS Gen2の方がパフォーマンスと機能で優れています。Azure FilesはSMB/NFSファイル共有、Managed DisksはVM用ストレージです。",
+      "explanation": "Azure Data Lake Storage Gen2（ADLS Gen2）はHDFS互換のファイルシステムインターフェースを提供しており、SparkやHiveなどのHadoopエコシステムからシームレスに利用可能です。階層型名前空間により高速なディレクトリ操作が可能で、ビッグデータ分析向けに設計されています。Blob StorageもHDFSドライバー経由のアクセスは可能ですが、ADLS Gen2の方がパフォーマンスと機能面で優位です。Azure FilesはSMB/NFSファイル共有用、Managed DisksはVM用のディスクサービスです。",
       "category": "data",
       "tags": [
         "blob-storage",
@@ -316,7 +316,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 18,
-      "question": "あなたは規制要件により、Azure Blob Storage内のデータを一定期間変更・削除できないようにする必要があります。どの機能を使用すべきですか？",
+      "question": "規制上の要件により、Azure Blob Storage内のデータを一定期間にわたって変更も削除もできないようにする必要があります。どの機能を使うべきですか？",
       "choices": [
         "A. 論理的な削除",
         "B. 時間ベースの保持ポリシー（不変ストレージ）",
@@ -324,7 +324,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. ストレージアカウントのロック"
       ],
       "answer": 1,
-      "explanation": "時間ベースの保持ポリシー（不変ストレージ）を使用すると、指定した期間中はBlobの変更・削除が不可能になります。WORM（Write Once, Read Many）ストレージとして機能し、金融・医療などの規制要件に対応できます。論理的な削除は削除後の復元を可能にしますが、変更の防止はしません。バージョン管理は変更履歴の保持ですが、変更自体は許可されます。ストレージアカウントのロックはリソース自体の削除防止です。",
+      "explanation": "時間ベースの保持ポリシー（不変ストレージ）を適用すると、指定期間中はBlobの変更や削除が一切できなくなります。WORM（Write Once, Read Many）ストレージとして機能し、金融や医療分野などの規制要件に適合します。論理的な削除は削除後にデータを復元可能にする機能で、変更防止にはなりません。バージョン管理は変更履歴の追跡が目的であり、変更そのものは許可されます。ストレージアカウントのロックはリソース自体の削除防止用です。",
       "category": "data",
       "tags": [
         "resource-locks",
@@ -334,7 +334,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 19,
-      "question": "Azure Synapse Analyticsに関する以下の記述のうち、正しい組み合わせはどれですか？\n・ハッシュ分散テーブルは専用SQLプールで使用できる\n・Delta Lakeの更新操作にはSparkプールが必要",
+      "question": "Azure Synapse Analyticsについて、以下の2つの記述の正誤の組み合わせとして正しいものはどれですか？\n・ハッシュ分散テーブルは専用SQLプールで利用できる\n・Delta Lakeの更新操作にはSparkプールが必要である",
       "choices": [
         "A. 両方正しい",
         "B. ハッシュ分散テーブルの記述のみ正しい",
@@ -342,7 +342,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. 両方誤り"
       ],
       "answer": 0,
-      "explanation": "ハッシュ分散テーブルは、専用SQLプールのテーブル分散方式の1つであり、指定した列の値に基づいてデータを60のディストリビューションに分散します。大規模なファクトテーブルに適しています。Delta Lakeの更新操作（UPDATE/DELETE/MERGE）は、Apache Sparkエンジン上で動作するため、Synapse AnalyticsではSparkプールを使用する必要があります。専用SQLプールからDelta Lakeテーブルを読み取ることはできますが、更新操作にはSparkプールが必要です。",
+      "explanation": "ハッシュ分散テーブルは専用SQLプールにおけるテーブル分散方式の1つで、指定カラムの値をもとにデータを60のディストリビューションに振り分けます。大規模なファクトテーブルに向いています。Delta LakeのUPDATE/DELETE/MERGE操作はApache Sparkエンジン上で実行されるため、Synapse AnalyticsではSparkプールを使う必要があります。専用SQLプールからDelta Lakeテーブルの読み取りは可能ですが、更新処理にはSparkプールが不可欠です。",
       "category": "data",
       "tags": [
         "data-analytics"
@@ -350,7 +350,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 20,
-      "question": "あなたはAzure DatabricksでAzure Active Directoryの資格情報パススルーを使用したいと考えています。どのDatabricksの価格レベルが必要ですか？",
+      "question": "Azure DatabricksでAzure Active Directoryの資格情報パススルーを有効にしたい場合、どの価格レベルのDatabricksが必要ですか？",
       "choices": [
         "A. Standard",
         "B. Premium",
@@ -358,7 +358,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. StandardまたはPremium"
       ],
       "answer": 1,
-      "explanation": "Azure Active Directory（Microsoft Entra ID）の資格情報パススルーは、Azure Databricks Premiumプランでのみ利用可能な機能です。この機能により、ユーザーのEntra ID資格情報を使用してAzure Data Lake Storageなどのリソースにアクセスできます。Standardプランではこの機能は使用できません。Trialプランは評価用であり、本番利用には適しません。",
+      "explanation": "Azure Active Directory（Microsoft Entra ID）の資格情報パススルー機能は、Azure Databricks Premiumプラン限定の機能です。この機能により、ユーザーのEntra ID認証情報を使ってAzure Data Lake Storageなどのリソースにアクセスできるようになります。Standardプランでは利用できません。Trialプランは評価目的であり、本番環境での利用は想定されていません。",
       "category": "data",
       "tags": [
         "entra-id",
@@ -367,7 +367,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 21,
-      "question": "Azure Synapse Analyticsにおいて、Azure Cosmos DBのデータをETLなしでリアルタイムに分析するために使用する機能はどれですか？",
+      "question": "Azure Synapse Analyticsで、Azure Cosmos DBのデータをETLプロセスなしにリアルタイムで分析するために利用する機能はどれですか？",
       "choices": [
         "A. Azure Data Factory統合",
         "B. Synapse Link",
@@ -375,7 +375,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. COPY INTO ステートメント"
       ],
       "answer": 1,
-      "explanation": "Synapse Linkは、Azure Cosmos DBのデータをETLパイプラインなしでSynapse Analyticsにリアルタイムで同期する機能です。Cosmos DBの分析ストア（列ストア）を活用し、OLTPワークロードに影響を与えずに分析クエリを実行できます。Data FactoryはETLパイプラインであり、リアルタイムではありません。PolyBaseとCOPY INTOは外部データの読み込み方法ですが、Cosmos DBとのリアルタイム統合ではありません。",
+      "explanation": "Synapse Linkは、Azure Cosmos DBのデータをETLパイプラインを構築せずにSynapse Analyticsへリアルタイム同期する機能です。Cosmos DBの分析ストア（列ストア形式）を活用し、OLTPワークロードへの影響なく分析クエリを実行できます。Data FactoryはETLパイプラインを構築する方式でリアルタイムではありません。PolyBaseやCOPY INTOは外部データのロード手段であり、Cosmos DBとのリアルタイム連携機能ではありません。",
       "category": "data",
       "tags": [
         "entra-connect",
@@ -385,7 +385,7 @@ var QUIZ_DATA_book_ch2 = {
     },
     {
       "id": 22,
-      "question": "Azure Cosmos DB for PostgreSQLに関する記述として正しいものはどれですか？",
+      "question": "Azure Cosmos DB for PostgreSQLの機能に関する記述として正しいものはどれですか？",
       "choices": [
         "A. マルチリージョン分散とマルチマスター書き込みの両方をサポートする",
         "B. マルチリージョン分散をサポートするが、マルチマスター書き込みはサポートしない",
@@ -393,7 +393,7 @@ var QUIZ_DATA_book_ch2 = {
         "D. マルチリージョン分散もマルチマスター書き込みもサポートしない"
       ],
       "answer": 1,
-      "explanation": "Azure Cosmos DB for PostgreSQL（旧Hyperscale (Citus)）は、PostgreSQL互換の分散データベースであり、マルチリージョンへのデータ分散をサポートしますが、マルチマスター書き込み（マルチリージョン書き込み）はサポートしていません。書き込みはコーディネーターノードを通じて行われます。マルチマスター書き込みはCosmos DB（NoSQL APIなど）の機能です。",
+      "explanation": "Azure Cosmos DB for PostgreSQL（旧Hyperscale (Citus)）はPostgreSQL互換の分散データベースであり、データの複数リージョンへの分散配置をサポートします。ただしマルチマスター書き込み（マルチリージョン書き込み）には対応しておらず、書き込みはコーディネーターノード経由で行われます。マルチマスター書き込みはCosmos DBのNoSQL APIなどで提供される機能です。",
       "category": "data",
       "tags": [
         "data-fundamentals",

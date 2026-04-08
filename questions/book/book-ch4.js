@@ -1,9 +1,9 @@
 var QUIZ_DATA_book_ch4 = {
-  "source": "book-az305",
+  "source": "original",
   "questions": [
     {
       "id": 1,
-      "question": "あなたはSQL Serverをホストするための Azure VMを選択する必要があります。要件はSR-IOV対応、15,000 IOPSのサポート、コスト最小化です。適切なVMシリーズとディスクの種類の組み合わせはどれですか？",
+      "question": "SQL Serverを稼働させるAzure VMを選定する必要があります。条件はSR-IOV対応、15,000 IOPSの確保、そしてコストの最小化です。適切なVMシリーズとディスク種別の組み合わせはどれでしょうか。",
       "choices": [
         "A. NCシリーズ + Ultra Disk",
         "B. DSシリーズ + Premium SSD",
@@ -11,7 +11,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Fシリーズ + Premium SSD"
       ],
       "answer": 1,
-      "explanation": "DSシリーズはPremium Storageをサポートする汎用VMであり、SR-IOVに対応しています。Premium SSDは最大20,000 IOPSをサポートし、15,000 IOPSの要件を満たしながらUltra Diskよりもコストが低くなります。NCシリーズはGPUコンピューティング向け、NVシリーズはGPUビジュアライゼーション向けで、SQL Serverには過剰です。Fシリーズはコンピューティング最適化ですが、Premium Storageのサポートが限定的です。",
+      "explanation": "DSシリーズはPremium Storageに対応した汎用仮想マシンで、SR-IOVもサポートしています。Premium SSDは最大20,000 IOPSまで対応でき、15,000 IOPSの要件を満たしつつUltra Diskよりも費用を抑えられます。NCシリーズはGPUコンピューティング用途、NVシリーズはGPUによるビジュアライゼーション向けのため、SQL Serverにはオーバースペックです。FシリーズはCPU最適化型ですが、Premium Storageへの対応が限定的です。",
       "category": "compute",
       "tags": [
         "virtual-machines"
@@ -19,7 +19,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 2,
-      "question": "Azure VMでSQL Serverを実行する場合、ログファイルとデータファイルに推奨されるホストキャッシュの設定はどれですか？",
+      "question": "Azure VM上でSQL Serverを動かす場合、ログファイル用ディスクとデータファイル用ディスクそれぞれに推奨されるホストキャッシュの設定はどれですか。",
       "choices": [
         "A. ログ: Read-only、データ: Read/Write",
         "B. ログ: None、データ: Read-only",
@@ -27,7 +27,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. ログ: None、データ: None"
       ],
       "answer": 1,
-      "explanation": "SQL Server VMのベストプラクティスでは、ログファイルのディスクにはホストキャッシュをNoneに設定します。ログファイルは順次書き込みが中心であり、読み取りキャッシュは不要です。データファイルのディスクにはRead-onlyキャッシュを設定します。データファイルはランダム読み取りが頻繁に発生するため、キャッシュによりパフォーマンスが向上します。Read/Writeキャッシュはデータ破損のリスクがあるため推奨されません。",
+      "explanation": "SQL Server VMにおけるベストプラクティスとして、ログファイル用ディスクのホストキャッシュはNoneに設定します。ログは順次書き込みが主体であり、読み取りキャッシュのメリットがないためです。データファイル用ディスクにはRead-onlyキャッシュを設定します。データファイルはランダムな読み取りが頻繁に発生するため、キャッシュがパフォーマンス改善に寄与します。Read/Writeキャッシュはデータ破損を招くおそれがあるため推奨されません。",
       "category": "compute",
       "tags": [
         "caching"
@@ -35,7 +35,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 3,
-      "question": "Azure App Serviceでデプロイスロットを使用するために必要な最小のサービスプランはどれですか？",
+      "question": "Azure App Serviceでデプロイスロットを利用するには、最低でもどのサービスプランが必要ですか。",
       "choices": [
         "A. Free",
         "B. Basic",
@@ -43,7 +43,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Premium"
       ],
       "answer": 2,
-      "explanation": "デプロイスロットはAzure App ServiceのStandard以上のプランで利用可能です。デプロイスロットを使用すると、本番環境に影響を与えずにアプリケーションをテストし、スワップ操作で即座にデプロイできます。FreeおよびBasicプランではデプロイスロットはサポートされていません。Standardでは5つ、Premiumでは20のデプロイスロットが利用可能です。",
+      "explanation": "デプロイスロットはStandard以上のApp Serviceプランで使用できます。この機能を活用すると、本番環境に影響を及ぼさずにアプリをテストでき、スワップ操作で即時デプロイが可能になります。FreeプランやBasicプランではデプロイスロットは利用できません。Standardプランでは5スロット、Premiumプランでは20スロットまで作成できます。",
       "category": "compute",
       "tags": [
         "entra-license",
@@ -52,7 +52,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 4,
-      "question": "AKS（Azure Kubernetes Service）でWindowsコンテナーワークロードのオートスケーリングを行う必要があります。どのスケーリング方式を使用すべきですか？",
+      "question": "AKS（Azure Kubernetes Service）上でWindowsコンテナーのワークロードを自動スケーリングしたいと考えています。どのスケーリング方式を採用すべきでしょうか。",
       "choices": [
         "A. 仮想ノード",
         "B. クラスターオートスケーラー",
@@ -60,7 +60,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. KEDA"
       ],
       "answer": 1,
-      "explanation": "クラスターオートスケーラーは、ノードプールのノード数を自動的に増減させます。Windowsノードプールにも対応しています。仮想ノード（Virtual Nodes）はAzure Container Instancesと連携してスケーリングしますが、Linuxコンテナーのみサポートしており、Windowsコンテナーには対応していません。HPAはポッドレベルのスケーリングであり、ノードの追加は行いません。KEDAはイベントドリブンスケーリングですが、ノードの自動追加にはクラスターオートスケーラーが必要です。",
+      "explanation": "クラスターオートスケーラーはノードプール内のノード数を需要に応じて自動増減させる仕組みで、Windowsノードプールにも対応しています。仮想ノード（Virtual Nodes）はAzure Container Instancesと連携して拡張しますが、Linuxコンテナー限定のためWindowsには使えません。HPAはポッド単位のスケーリングであり、ノード自体の追加は行いません。KEDAはイベントドリブンのスケーリングを実現しますが、ノードの自動追加にはクラスターオートスケーラーとの併用が必要です。",
       "category": "compute",
       "tags": [
         "containers",
@@ -69,7 +69,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 5,
-      "question": "あなたはAzure Functionsで5分から20分かかる処理を実行する必要があります。どのプランを使用すべきですか？",
+      "question": "Azure Functionsを使って、実行に5分から20分を要する処理を動かす必要があります。どのホスティングプランを選ぶべきですか。",
       "choices": [
         "A. 従量課金プラン",
         "B. Premium プラン",
@@ -77,7 +77,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. 従量課金プラン（タイムアウト延長）"
       ],
       "answer": 1,
-      "explanation": "Azure Functions Premiumプランは、実行時間の制限がなく（既定は30分、最大で無制限に設定可能）、5〜20分の処理に対応できます。従量課金プランはデフォルトで5分、最大10分のタイムアウト制限があり、20分の処理には対応できません。App Service プランのFreeティアもタイムアウト制限があります。Premiumプランはさらに、VNET統合やウォームアップインスタンスなどの機能も提供します。",
+      "explanation": "Azure FunctionsのPremiumプランは実行時間の上限を柔軟に設定でき（既定30分、最大無制限）、5～20分の処理にも対応可能です。従量課金プランは既定5分、最大10分のタイムアウトがあり、20分の処理には対応できません。App ServiceプランのFreeティアにもタイムアウト制約があります。加えてPremiumプランではVNET統合やウォームアップインスタンスといった付加機能も利用できます。",
       "category": "compute",
       "tags": [
         "entra-license",
@@ -87,7 +87,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 6,
-      "question": "あなたは大規模な並列バッチ処理を実行する必要があります。ジョブの種類ごとに異なるVM構成を使用したいと考えています。どのAzureサービスを使用すべきですか？",
+      "question": "大量の並列バッチ処理を実行する計画があります。ジョブの特性に応じて異なるVM構成を使い分けたい場合、どのAzureサービスが最適でしょうか。",
       "choices": [
         "A. Azure Functions",
         "B. Azure Batch",
@@ -95,7 +95,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Azure Logic Apps"
       ],
       "answer": 1,
-      "explanation": "Azure Batchは大規模な並列バッチ処理に特化したサービスで、ジョブの種類ごとに異なるプール（VM構成）を作成できます。CPU集中型、GPU対応、メモリ最適化など、ジョブに最適なVM構成を選択できます。Azure Functionsはイベントドリブンの短時間処理向けです。Container Instancesは単一のコンテナー実行向けです。Logic Appsはワークフロー自動化サービスです。",
+      "explanation": "Azure Batchは大規模並列バッチ処理に特化しており、ジョブの特性ごとに異なるプール（VM構成）を構築できます。CPU集約型、GPU搭載型、メモリ最適化型など、ジョブに最も適した構成を柔軟に選択可能です。Azure Functionsはイベント駆動型の短時間処理向けです。Container Instancesは個別のコンテナー実行に適しています。Logic Appsはワークフロー自動化のためのサービスです。",
       "category": "compute",
       "tags": [
         "containers",
@@ -108,7 +108,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 7,
-      "question": "あなたはメッセージングシステムを設計しており、FIFO（先入先出）の順序保証が必要です。どのAzureサービスと機能を使用すべきですか？",
+      "question": "メッセージングシステムの設計において、FIFO（先入先出）での順序保証が求められています。どのAzureサービスおよび機能を利用すべきですか。",
       "choices": [
         "A. Azure Queue Storage",
         "B. Azure Event Hubs パーティション",
@@ -116,7 +116,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Azure Event Grid"
       ],
       "answer": 2,
-      "explanation": "Azure Service Busのセッション機能は、メッセージのFIFO順序保証を提供します。セッションIDに基づいてメッセージの順序を保証し、関連するメッセージを順番に処理できます。Queue Storageは基本的なキューイングサービスですが、厳密なFIFO保証はありません。Event Hubsはパーティション内で順序を保証しますが、メッセージングのFIFO保証にはService Busのセッションがより適切です。Event Gridはイベント配信サービスであり、順序保証はありません。",
+      "explanation": "Azure Service Busのセッション機能を使うと、メッセージのFIFO順序が保証されます。セッションIDを基にメッセージの順序が管理され、関連するメッセージを正しい順番で処理できます。Queue Storageは基本的なキュー機能を提供しますが、厳密なFIFO保証はありません。Event Hubsはパーティション内での順序を保ちますが、メッセージングにおけるFIFO保証にはService Busのセッションの方が適しています。Event Gridはイベント配信のサービスで、順序保証の仕組みはありません。",
       "category": "compute",
       "tags": [
         "messaging",
@@ -125,7 +125,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 8,
-      "question": "あなたはイベントドリブンアーキテクチャを設計しています。リソースの状態変更を検知して、複数のサブスクライバーに通知する必要があります。Azure Event GridとAzure Event Hubsのどちらを選択すべきですか？",
+      "question": "イベントドリブンアーキテクチャを構築中です。Azureリソースの状態変化を検知し、複数のサブスクライバーへ通知を送る必要があります。Azure Event GridとAzure Event Hubsのどちらが適していますか。",
       "choices": [
         "A. Event Grid（イベントの反応・ルーティングに特化）",
         "B. Event Hubs（イベントの反応・ルーティングに特化）",
@@ -133,7 +133,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Event Hubs（リソース状態変更の通知に特化）"
       ],
       "answer": 0,
-      "explanation": "Azure Event Gridは、イベントベースのアーキテクチャ向けに設計されており、Azureリソースの状態変更などのイベントを検知して、複数のサブスクライバー（Azure Functions、Logic Appsなど）にルーティングします。Event Hubsは大規模なデータストリームの取り込みに特化しており、IoTデータやログの大量取り込みに適しています。リソース状態変更の通知にはEvent Gridが適切です。",
+      "explanation": "Azure Event Gridはイベント駆動型アーキテクチャ向けに設計されており、Azureリソースの状態変化を検知して、Azure FunctionsやLogic Appsなどの複数サブスクライバーへルーティングします。Event Hubsは大量のデータストリーム取り込みを得意とし、IoTデータやログの大規模取り込みに向いています。リソースの状態変化に対する通知用途にはEvent Gridが最適です。",
       "category": "compute",
       "tags": [
         "azure-functions",
@@ -143,7 +143,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 9,
-      "question": "Azure API Managementで、仮想ネットワーク（VNet）統合を使用してバックエンドAPIをプライベートネットワーク内に配置する必要があります。どの価格レベルが必要ですか？",
+      "question": "Azure API Managementで仮想ネットワーク（VNet）統合を使い、バックエンドAPIをプライベートネットワーク内に配置したいと考えています。どの価格レベルが必要でしょうか。",
       "choices": [
         "A. Developer",
         "B. Basic",
@@ -151,7 +151,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Premium"
       ],
       "answer": 3,
-      "explanation": "Azure API ManagementのVNet統合（内部モードおよび外部モード）は、Premiumティアでのみサポートされます。Developer ティアもVNet統合をサポートしますが、SLAがなく本番環境には適しません。BasicおよびStandardティアはVNet統合をサポートしていません。PremiumティアはさらにマルチリージョンデプロイやAvailability Zonesもサポートします。",
+      "explanation": "Azure API ManagementにおけるVNet統合（内部モード・外部モード）は、Premiumティアで利用可能です。Developerティアでも技術的にはVNet統合に対応していますが、SLAが提供されず本番運用には不向きです。BasicおよびStandardティアではVNet統合がサポートされていません。PremiumティアではさらにマルチリージョンへのデプロイやAvailability Zonesへの対応も可能です。",
       "category": "network",
       "tags": [
         "availability-zones",
@@ -161,7 +161,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 10,
-      "question": "あなたはWebアプリケーションのパフォーマンスを向上させたいと考えています。静的コンテンツ（画像、CSS、JavaScript）のグローバル配信にはどのサービスを使用し、動的データ（セッション情報、データベースクエリ結果）のキャッシュにはどのサービスを使用すべきですか？",
+      "question": "Webアプリケーションの応答速度を改善したいと考えています。画像やCSS、JavaScriptなどの静的コンテンツを世界中に配信するサービスと、セッション情報やDBクエリ結果などの動的データをキャッシュするサービスは、それぞれどれを使うべきですか。",
       "choices": [
         "A. 静的コンテンツ: Azure CDN、動的データ: Azure CDN",
         "B. 静的コンテンツ: Azure Cache for Redis、動的データ: Azure CDN",
@@ -169,7 +169,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. 静的コンテンツ: Azure Front Door、動的データ: Azure Table Storage"
       ],
       "answer": 2,
-      "explanation": "Azure CDNはエッジサーバーのグローバルネットワークを使用して静的コンテンツを配信し、レイテンシを低減します。Azure Cache for Redisはインメモリデータストアであり、セッション情報やデータベースクエリ結果などの動的データのキャッシュに最適です。CDNは動的データのキャッシュには適していません。Redis Cacheは静的ファイルの配信には使用しません。",
+      "explanation": "Azure CDNは世界各地のエッジサーバーを通じて静的コンテンツを高速配信し、遅延を軽減します。Azure Cache for Redisはインメモリデータストアとして、セッション情報やデータベースクエリの結果など動的データのキャッシュに最適です。CDNは動的データのキャッシュには向いておらず、Redis Cacheは静的ファイルの配信用途には使いません。",
       "category": "compute",
       "tags": [
         "load-balancers",
@@ -178,7 +178,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 11,
-      "question": "あなたはインフラストラクチャのデプロイを自動化する必要があります。宣言的なテンプレートでリソースを定義し、冪等性のあるデプロイを行いたいと考えています。どのサービスを使用すべきですか？",
+      "question": "インフラのデプロイを自動化したいと考えています。宣言的なテンプレートでリソースを定義し、何度実行しても同じ結果になる冪等性のあるデプロイを実現するには、どのサービスが適切ですか。",
       "choices": [
         "A. Azure Automation Runbook",
         "B. ARM テンプレート / Bicep",
@@ -186,7 +186,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Azure PowerShell スクリプト"
       ],
       "answer": 1,
-      "explanation": "ARMテンプレート（およびBicep）は、Azureリソースを宣言的に定義するIaC（Infrastructure as Code）ツールです。冪等性があり、同じテンプレートを何度デプロイしても同じ結果になります。Azure Automation Runbookは手続き的なスクリプト実行であり、宣言的ではありません。Azure CLIやPowerShellスクリプトも手続き的なアプローチです。",
+      "explanation": "ARMテンプレートおよびBicepは、Azureリソースを宣言的に記述するIaC（Infrastructure as Code）ツールです。冪等性を備えており、同一テンプレートを複数回デプロイしても結果は変わりません。Azure Automation Runbookは手続き的にスクリプトを実行するもので、宣言的なアプローチとは異なります。Azure CLIやPowerShellのスクリプトも手続き型の手法に分類されます。",
       "category": "compute",
       "tags": [
         "automation-deploy"
@@ -194,7 +194,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 12,
-      "question": "あなたはオンプレミスネットワークとAzure VNetをインターネット経由で暗号化された接続で結ぶ必要があります。常時接続で複数のオンプレミスサイトを接続します。どのVPN接続方式を使用すべきですか？",
+      "question": "オンプレミスネットワークとAzure VNetをインターネット経由で暗号化された常時接続で結び、複数の拠点を接続する必要があります。どのVPN接続方式を選ぶべきでしょうか。",
       "choices": [
         "A. ポイント対サイト（P2S）VPN",
         "B. サイト間（S2S）VPN",
@@ -202,7 +202,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. ExpressRoute"
       ],
       "answer": 1,
-      "explanation": "サイト間（S2S）VPNは、オンプレミスのVPNデバイスとAzure VPN Gatewayの間にIPsecトンネルを確立し、常時接続の暗号化通信を提供します。複数のオンプレミスサイトを接続できます。ポイント対サイト（P2S）VPNは個々のクライアントPCからの接続用であり、サイト全体の接続には適しません。VNetピアリングはAzure VNet間の接続です。ExpressRouteはインターネットを経由しないプライベート接続です。",
+      "explanation": "サイト間（S2S）VPNは、オンプレミスのVPN機器とAzure VPN Gateway間にIPsecトンネルを構築し、暗号化された常時接続の通信を確立します。複数拠点の接続にも対応できます。ポイント対サイト（P2S）VPNは個々の端末からの接続に使うもので、拠点全体の接続には向きません。VNetピアリングはAzure内のVNet同士を結ぶサービスです。ExpressRouteはインターネットを経由しない専用回線接続です。",
       "category": "network",
       "tags": [
         "vnet",
@@ -211,7 +211,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 13,
-      "question": "あなたはオンプレミスとAzure間で高帯域幅・低レイテンシの専用接続が必要です。インターネットを経由しない接続を要求されています。どのサービスを使用すべきですか？",
+      "question": "オンプレミス環境とAzureの間に、高帯域・低遅延の専用接続を確保する必要があります。インターネットを通さない通信が求められています。どのサービスを選択すべきですか。",
       "choices": [
         "A. VPN Gateway（S2S）",
         "B. ExpressRoute",
@@ -219,7 +219,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. VPN Gateway（P2S）"
       ],
       "answer": 1,
-      "explanation": "ExpressRouteは、接続プロバイダーを通じてオンプレミスネットワークとAzureの間にプライベートな専用接続を提供します。インターネットを経由せず、高帯域幅（最大100Gbps）と低レイテンシを実現します。VPN GatewayはIPsecトンネルを使用しますが、インターネット経由の接続です。Front DoorはグローバルHTTPロードバランサーです。",
+      "explanation": "ExpressRouteは接続プロバイダーを介して、オンプレミスとAzure間にプライベートな専用回線を提供します。インターネットを経由しないため、最大100Gbpsの高帯域と低遅延を実現できます。VPN GatewayはIPsecトンネルによる接続ですが、インターネットを通る経路となります。Front DoorはグローバルHTTPロードバランサーであり、専用接続の用途ではありません。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -228,7 +228,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 14,
-      "question": "Azure Virtual WANにおけるBasic SKUとStandard SKUの違いとして正しいものはどれですか？",
+      "question": "Azure Virtual WANのBasic SKUとStandard SKUにはどのような違いがありますか。正しい記述を選んでください。",
       "choices": [
         "A. BasicはS2S VPNのみサポートし、StandardはS2S VPN、P2S VPN、ExpressRoute、VNet間接続をサポートする",
         "B. BasicはExpressRouteのみサポートし、StandardはVPNのみサポートする",
@@ -236,7 +236,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. BasicはP2S VPNのみサポートし、StandardはすべてのVPN種類をサポートする"
       ],
       "answer": 0,
-      "explanation": "Virtual WAN Basic SKUはサイト間（S2S）VPN接続のみをサポートします。Standard SKUはS2S VPN、ポイント対サイト（P2S）VPN、ExpressRoute、仮想ネットワーク間接続、ハブ間接続など、すべての接続タイプをサポートします。複数の接続タイプが必要な場合はStandard SKUを選択する必要があります。",
+      "explanation": "Virtual WANのBasic SKUが対応する接続タイプはサイト間（S2S）VPNのみです。Standard SKUではS2S VPN、ポイント対サイト（P2S）VPN、ExpressRoute、仮想ネットワーク間の接続、ハブ間接続など、すべての接続タイプが利用可能です。複数種類の接続を必要とする場合はStandard SKUを選択する必要があります。",
       "category": "network",
       "tags": [
         "vnet",
@@ -245,7 +245,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 15,
-      "question": "Azure Private Linkにおけるサービスエンドポイントとプライベートエンドポイントの違いとして正しいものはどれですか？",
+      "question": "Azure Private Linkに関して、サービスエンドポイントとプライベートエンドポイントの違いを正しく説明しているものはどれですか。",
       "choices": [
         "A. サービスエンドポイントはVNet内のプライベートIPを割り当て、プライベートエンドポイントはパブリックIPを使用する",
         "B. プライベートエンドポイントはVNet内のプライベートIPを割り当て、サービスエンドポイントはサービスへのルートを最適化する",
@@ -253,7 +253,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. 両方ともパブリックIPを使用する"
       ],
       "answer": 1,
-      "explanation": "プライベートエンドポイントは、VNet内のサブネットにプライベートIPアドレスを割り当て、Azureサービスにプライベート接続します。トラフィックはMicrosoftバックボーンネットワーク内に留まります。サービスエンドポイントは、VNetからAzureサービスへのルートを最適化し、トラフィックをAzureバックボーン経由で送信しますが、サービスのパブリックIPアドレスは保持されます。プライベートエンドポイントの方がセキュリティが高く、オンプレミスやピアリングVNetからのアクセスもサポートします。",
+      "explanation": "プライベートエンドポイントはVNet内のサブネットにプライベートIPアドレスを付与し、Azureサービスへのプライベート接続を実現します。通信はMicrosoftのバックボーンネットワーク内で完結します。サービスエンドポイントはVNetからAzureサービスへの経路をAzureバックボーン経由に最適化しますが、サービス側のパブリックIPアドレスはそのまま残ります。セキュリティ面ではプライベートエンドポイントの方が優れており、オンプレミスやピアリングVNetからの接続もサポートしています。",
       "category": "network",
       "tags": [
         "vnet",
@@ -262,7 +262,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 16,
-      "question": "あなたはAzure環境のネットワークセキュリティを設計しています。サブネットレベルでのトラフィックフィルタリングにはNSGを使用し、集中型のネットワークセキュリティ管理にはどのサービスを使用すべきですか？",
+      "question": "Azure環境のネットワークセキュリティを設計しています。サブネット単位のトラフィック制御にはNSGを使いますが、ネットワーク全体を集中管理できるセキュリティサービスとしてはどれを選ぶべきですか。",
       "choices": [
         "A. Azure DDoS Protection",
         "B. Azure Firewall",
@@ -270,7 +270,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Azure Front Door"
       ],
       "answer": 1,
-      "explanation": "Azure Firewallは、集中型のネットワークセキュリティ管理を提供するマネージドファイアウォールサービスです。L3-L7のフィルタリング、脅威インテリジェンス、FQDN フィルタリング、URLフィルタリングなどの機能を提供します。NSGはサブネット/NICレベルの基本的なフィルタリングに適していますが、高度なセキュリティ機能は限定的です。DDoS ProtectionはDDoS攻撃への防御に特化しています。WAFはWebアプリケーション層の保護です。",
+      "explanation": "Azure Firewallは集中型のネットワークセキュリティ管理を担うマネージドファイアウォールです。L3～L7のフィルタリング、脅威インテリジェンス連携、FQDNフィルタリング、URLフィルタリングなどの高度な機能を備えています。NSGはサブネットやNIC単位での基本的なフィルタリングに適していますが、高度なセキュリティ機能は限られます。DDoS ProtectionはDDoS攻撃への防御に特化したサービスです。WAFはWebアプリケーション層の防御を担います。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -280,7 +280,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 17,
-      "question": "あなたはAzure環境をDDoS攻撃から保護する必要があります。Azure DDoS Protectionのプランとして正しいものはどれですか？",
+      "question": "Azure環境をDDoS攻撃から守る必要があります。Azure DDoS Protectionのプランについて正しい説明はどれですか。",
       "choices": [
         "A. DDoS Protectionは無料で全リソースに自動適用される",
         "B. DDoS Network Protection（有料）はVNetに対して適用され、テレメトリとアラートを提供する",
@@ -288,7 +288,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. DDoS ProtectionはApplication Gatewayでのみ使用可能"
       ],
       "answer": 1,
-      "explanation": "Azure DDoS Network Protection（旧Standard）は、有料プランであり、仮想ネットワーク内のリソースに対して高度なDDoS軽減機能を提供します。DDoS攻撃のテレメトリ、診断ログ、アラート、コスト保護保証が含まれます。Azureプラットフォーム自体に基本的なDDoS保護（Infrastructure Protection）は無料で含まれていますが、高度な保護にはNetwork Protectionが必要です。",
+      "explanation": "Azure DDoS Network Protection（旧称Standard）は有料のプランで、仮想ネットワーク内のリソースに対し高度なDDoS軽減機能を提供します。攻撃に関するテレメトリ、診断ログ、アラート機能、コスト保護保証が含まれます。Azureプラットフォーム自体には無料の基本DDoS保護（Infrastructure Protection）が組み込まれていますが、より高度な防御を行うにはNetwork Protectionの導入が必要です。",
       "category": "network",
       "tags": [
         "diagnostic-settings",
@@ -300,7 +300,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 18,
-      "question": "Azure WAF（Web Application Firewall）をデプロイできるサービスはどれですか？（3つ選択）",
+      "question": "Azure WAF（Web Application Firewall）をデプロイ可能なサービスはどれですか。（3つ選択）",
       "choices": [
         "A. Azure Application Gateway",
         "B. Azure Front Door",
@@ -313,7 +313,7 @@ var QUIZ_DATA_book_ch4 = {
         1,
         2
       ],
-      "explanation": "Azure WAFは、Application Gateway、Front Door、CDN（Azure CDN from Microsoft）の3つのサービスにデプロイできます。WAFはOWASP Top 10の脆弱性（SQLインジェクション、XSSなど）からWebアプリケーションを保護します。Load BalancerはL4のロードバランサーでありWAFをサポートしません。Traffic ManagerはDNSベースの負荷分散でありWAFをサポートしません。",
+      "explanation": "Azure WAFのデプロイ先として対応しているのは、Application Gateway、Front Door、CDN（Azure CDN from Microsoft）の3つです。WAFはOWASP Top 10に含まれる脆弱性（SQLインジェクション、XSSなど）からWebアプリケーションを防御します。Load BalancerはL4レベルのロードバランサーであるためWAFには対応しません。Traffic ManagerはDNSベースの負荷分散サービスで、こちらもWAF非対応です。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -323,7 +323,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 19,
-      "question": "あなたはオンプレミスのサーバーとアプリケーションをAzureに移行する計画を立てています。移行の評価・計画・実行を一元的に管理するために使用すべきサービスはどれですか？",
+      "question": "オンプレミスで稼働中のサーバーやアプリケーションをAzureへ移行する計画を進めています。移行の評価・計画・実行を一つの場所で管理できるサービスはどれですか。",
       "choices": [
         "A. Azure Site Recovery",
         "B. Azure Migrate",
@@ -331,7 +331,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. Azure Advisor"
       ],
       "answer": 1,
-      "explanation": "Azure Migrateは、オンプレミスからAzureへの移行を一元的に管理するためのハブサービスです。サーバー、データベース、Webアプリケーションの検出・評価・移行を統合的に行えます。Site Recoveryは災害復旧と移行の実行ツールですが、評価機能はありません。Resource MoverはAzureリージョン間のリソース移動です。Advisorは推奨事項の提供であり、移行管理ではありません。",
+      "explanation": "Azure Migrateはオンプレミスからのクラウド移行を一元的に管理するハブサービスです。サーバー、データベース、Webアプリケーションの検出から評価、実際の移行までを統合的に実施できます。Site Recoveryは災害復旧や移行実行のツールですが、事前の評価機能は備えていません。Resource MoverはAzureのリージョン間でリソースを移動するためのサービスです。Advisorは運用上の推奨事項を提示するサービスであり、移行管理の機能はありません。",
       "category": "compute",
       "tags": [
         "site-recovery",
@@ -340,7 +340,7 @@ var QUIZ_DATA_book_ch4 = {
     },
     {
       "id": 20,
-      "question": "あなたはデータベースの移行を計画しています。DMS（Database Migration Service）、DMA（Data Migration Assistant）、SSMA（SQL Server Migration Assistant）の用途の違いとして正しいものはどれですか？",
+      "question": "データベースの移行を検討しています。DMS（Database Migration Service）、DMA（Data Migration Assistant）、SSMA（SQL Server Migration Assistant）の役割の違いについて、正しい説明はどれですか。",
       "choices": [
         "A. DMSはオンライン移行（最小ダウンタイム）をサポートし、DMAはSQL Serverの互換性評価を行い、SSMAは非SQL Server DBからSQL Serverへの移行を支援する",
         "B. DMAはオンライン移行をサポートし、DMSは互換性評価を行い、SSMAはSQL Server間の移行を支援する",
@@ -348,7 +348,7 @@ var QUIZ_DATA_book_ch4 = {
         "D. 3つとも同じ機能を提供する"
       ],
       "answer": 0,
-      "explanation": "DMS（Azure Database Migration Service）は、オンライン移行（最小ダウンタイム）をサポートし、SQL Server、MySQL、PostgreSQLなどのデータベースをAzureに移行します。DMA（Data Migration Assistant）は、SQL ServerからAzure SQL Database/MIへの移行前に互換性の評価と推奨事項を提供するツールです。SSMA（SQL Server Migration Assistant）は、Oracle、MySQL、AccessなどのNon-SQL ServerデータベースからSQL Serverへのスキーマとデータの移行を支援します。",
+      "explanation": "DMS（Azure Database Migration Service）はダウンタイムを最小限に抑えたオンライン移行に対応し、SQL Server、MySQL、PostgreSQLなどのデータベースをAzureへ移行できます。DMA（Data Migration Assistant）はSQL ServerからAzure SQL DatabaseやManaged Instanceへの移行に先立ち、互換性の評価や改善の提案を行うツールです。SSMA（SQL Server Migration Assistant）はOracle、MySQL、Accessなど、SQL Server以外のデータベースからSQL Serverへのスキーマ変換とデータ移行を支援します。",
       "category": "data",
       "tags": [
         "sql-database",

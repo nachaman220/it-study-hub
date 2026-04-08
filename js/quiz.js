@@ -17,6 +17,8 @@ class Quiz {
     var exam = options.exam || 'az-305';
     var shuffle = options.shuffle !== false;
     var limit = options.limit || 0;
+    var source = options.source || null;
+    var category = options.category || null;
 
     if (!window.supabaseClient) {
       this.container.innerHTML = '<p style="color:#d13438;">Supabase未接続</p>';
@@ -31,6 +33,12 @@ class Quiz {
         .select('id, question, choices, answer, explanation, category, tags')
         .eq('exam', exam);
 
+      if (source) {
+        query = query.eq('source', source);
+      }
+      if (category) {
+        query = query.eq('category', category);
+      }
       if (limit > 0) {
         query = query.limit(limit);
       }

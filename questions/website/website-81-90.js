@@ -1,16 +1,16 @@
 var QUIZ_DATA_website_81_90 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 81,
-      "question": "あなたは、従業員の個人識別情報 (PII) を保存する Azure Web アプリを構築しています。 Azure SQL を推奨する必要があります。 Web アプリ用のデータベース ソリューション。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 サービス階層とコンピューティング レベル:・ 単一のデータセンターが停止した場合でも可用性を維持する。・ PII を含む特定の列の暗号化をサポートする。・ 給与計算業務中に自動的にスケールアップする。・ コストを最小限に抑える。",
+      "question": "従業員の個人識別情報（PII）を格納するAzure Webアプリを構築中です。Azure SQL Databaseソリューションとして、次の要件を満たすサービス階層とコンピューティングレベルの組み合わせを選択してください。要件：単一データセンター障害時の可用性維持／PIIを含む特定列の暗号化対応／給与処理時の自動スケールアップ／コスト最小化。",
       "choices": [
         "Business Critical サービス レベルとサーバーレス コンピューティング レベル",
         "Hyperscale サービス レベルとプロビジョニング済みコンピューティング レベル",
         "General Purpose サービス レベルとサーバーレス コンピューティング レベル"
       ],
       "answer": 2,
-      "explanation": "General Purpose サービス レベルは、一般的なワークロード向けに設計されています。 予算重視のバランスの取れたコンピューティングおよびストレージ オプションが提供されます。サーバーレス コンピューティング レベル: ワークロード アクティビティに基づいてコンピューティング リソースを自動的にスケーリングし、1 秒あたりのコンピューティング使用量に対して請求します。 サーバーレス コンピューティング レベルは、General Purpose サービス レベルで一般提供されており、現在 Hyperscale サービス レベルがプレビュー段階です。https://learn.microsoft.com/ja-jp/azure/azure-sql/database/sql-database-paas-overview?view=azuresql#service-tiers",
+      "explanation": "General Purposeサービスレベルは標準的なワークロード向けに設計されており、コストとパフォーマンスのバランスに優れたコンピューティング・ストレージオプションを提供します。サーバーレスコンピューティングレベルはワークロードの負荷に応じてリソースを自動スケーリングし、秒単位の従量課金を行います。General Purposeで一般提供されており、Hyperscaleではプレビュー段階です。",
       "category": "",
       "tags": [
         "cost-management",
@@ -21,14 +21,14 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 82,
-      "question": "あなたは、従業員の個人識別情報 (PII) を保存する Azure Web アプリを構築しています。 Azure SQL を推奨する必要があります。 Web アプリ用のデータベース ソリューション。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。 暗号化方式:・ 単一のデータセンターが停止した場合でも可用性を維持する。・ PII を含む特定の列の暗号化をサポートする。・ 給与計算業務中に自動的にスケールアップする。・ コストを最小限に抑える。",
+      "question": "従業員のPIIを保存するAzure Webアプリ向けにAzure SQL Databaseを導入します。次の要件を満たす暗号化方式はどれですか？要件：単一データセンター停止時も可用性を維持／PIIを含む特定列の暗号化／給与計算時の自動スケールアップ／コスト最小化。",
       "choices": [
         "透過的なデータ暗号化 (TDE)",
         "Always Encrypted",
         "Microsoft SQLサービスとデータベース暗号化キー"
       ],
       "answer": 1,
-      "explanation": "Always Encrypted は、Azure SQL Database、Azure SQL Managed Instance や SQL Server データベースに格納された、クレジット カード番号や国民識別番号 (米国の社会保障番号など) のような機微なデータを保護することを目的とした機能です。 Always Encrypted では、クライアント内部で機密データが暗号化されるため、暗号化キーがデータベース エンジンに公開されることはありません。 これにより、データを所有し、それを表示できるユーザーと、データを管理するがアクセス権を持たないユーザー (オンプレミスのデータベース管理者、クラウド データベース オペレーター、またはその他の高い特権を持つ未承認のユーザー) が分離されます。 結果として、Always Encrypted を使用すると、顧客は自信を持って機密データをクラウドに格納し、悪意のある内部関係者によるデータ盗難の可能性を減らすことができます。https://learn.microsoft.com/ja-jp/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-ver16",
+      "explanation": "Always Encryptedは、クレジットカード番号や国民ID番号のような機微データの保護を目的とした機能です。クライアント側でデータを暗号化するため、暗号化キーがデータベースエンジンに渡ることはありません。これにより、データを閲覧できるユーザーと、管理するがアクセス権を持たないユーザー（DB管理者やクラウドオペレーターなど）を明確に分離できます。結果として、機密データをクラウドに保管しても内部不正によるデータ漏洩リスクを軽減できます。",
       "category": "",
       "tags": [
         "pim",
@@ -39,7 +39,7 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 83,
-      "question": "Microsoft Entra テナントがあります。 SQL API を使用する Azure Cosmos DB データベースをデプロイする予定です。 特定の Microsoft Entra ID ユーザー アカウントに Cosmos DB データベースへの読み取りアクセスを提供するソリューションを推奨する必要があります。 推奨事項には何を含めるべきですか。",
+      "question": "Microsoft Entraテナントを保有しており、SQL APIを使用するAzure Cosmos DBデータベースをデプロイ予定です。特定のEntra IDユーザーアカウントにCosmos DBの読み取りアクセスを付与するにはどうすべきですか？",
       "choices": [
         "証明書と Azure Key Vault",
         "共有アクセス署名 (SAS) と条件付きアクセス ポリシー",
@@ -47,7 +47,7 @@ var QUIZ_DATA_website_81_90 = {
         "マスター キーと Azure Information Protection ポリシー"
       ],
       "answer": 2,
-      "explanation": "Azure Cosmos DB の SQL API は、マスター キー トークンとリソース トークンという 2 種類の承認を提供します。マスター キー トークンは、すべてのデータとすべての権限へのアクセスを提供します。リソース トークンは、特定のコンテナーとアクセス許可へのアクセスを提供し、Microsoft Entra ID ユーザーの ID を使用してこれらのトークンを作成できます。Microsoft Entra ID ユーザーに Azure Cosmos DB へのアクセスを提供するには、ユーザーに特定の IAM ロールを割り当てます。 Azure Cosmos DB は、特定のアクセスを提供するために Azure ロールベースのアクセス制御 (Azure RBAC) を使用します。 Azure RBAC は、Azure Resource Manager 上に構築された認証システムで、Azure 内のリソースに対するきめ細かいアクセス管理を提供します。リソース トークンと IAM ロールの割り当てを組み合わせることで、Microsoft Entra ID ユーザー アカウントが Cosmos DB データベースへの読み取りアクセスを持つために必要なアクセス制御が提供されます。https://docs.microsoft.com/ja-jp/azure/cosmos-db/role-based-access-control",
+      "explanation": "Cosmos DBのSQL APIには、マスターキートークンとリソーストークンの2種類の認可方式があります。マスターキーは全データ・全権限へのフルアクセスを提供します。リソーストークンは特定のコンテナーと権限に限定したアクセスを付与でき、Entra IDユーザーのIDに基づいて生成可能です。Entra IDユーザーにCosmos DBへのアクセスを提供するには、IAMロール割り当てを使います。Azure RBACはResource Manager上に構築された認可システムで、リソースに対するきめ細かいアクセス制御を実現します。リソーストークンとIAMロール割り当てを組み合わせることで、必要な読み取りアクセス制御が得られます。",
       "category": "",
       "tags": [
         "entra-id",
@@ -61,7 +61,7 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 84,
-      "question": "App1 という名前の多層アプリと SQL1 という名前の Azure SQL データベースがあります。 App1 のバックエンド サービスは、データを SQL1 に書き込みます。ユーザーは App1 クライアントを使用して SQL1 からデータを読み取ります。 使用率が高い期間中、ユーザーはデータの取得に遅れを経験します。 データ要求にかかる時間を最小限に抑える必要があります。 ソリューションには何を含めるべきでしょうか。",
+      "question": "多層アプリApp1とAzure SQL DatabaseのSQL1があります。バックエンドサービスがSQL1にデータを書き込み、ユーザーはApp1クライアントを使ってSQL1からデータを読み取ります。高負荷時にユーザーのデータ取得が遅延する問題が発生しています。データリクエストの応答時間を短縮するには何を導入すべきですか？",
       "choices": [
         "Azure コンテンツ配信ネットワーク (CDN)",
         "Azure Cache for Redis",
@@ -69,7 +69,7 @@ var QUIZ_DATA_website_81_90 = {
         "Azure Data Factory"
       ],
       "answer": 1,
-      "explanation": "Azure Cache for Redis は、Redis ソフトウェアを基にしたインメモリ データ ストアを提供します。 Redis は、バックエンドでデータ ストアを酷使するアプリケーションのパフォーマンスとスケーラビリティを高めます。 高速に読み書きできるサーバーのメモリ内にアクセス頻度の高いデータを維持することで、大量のアプリケーション要求を処理することができます。 Redis によって、きわめて低遅延かつ高スループットのデータ ストレージ ソリューションがモダン アプリケーションにもたらされます。Azure コンテンツ配信ネットワーク (CDN): ネットワークに問題はありませんAzure Data Factory: このツールはオーケストレーション用であり、既存のものを強化するためのものではありませんAzure Synapse Analytics: 追加のデータ ウェアハウス機能を備えたオーケストレーション ツールでもありますが、この場合は関係ありませんhttps://learn.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-overview",
+      "explanation": "Azure Cache for RedisはRedisベースのインメモリデータストアです。バックエンドのデータストアに高い負荷がかかるアプリのパフォーマンスとスケーラビリティを向上させます。アクセス頻度の高いデータをサーバーメモリ上に保持し、高速な読み書きを実現することで、大量リクエストを効率的に処理します。極めて低いレイテンシと高スループットのデータストレージをアプリに提供します。CDNはネットワーク最適化であり本件の問題には該当しません。Data Factoryはデータオーケストレーション用ツールです。Synapse Analyticsはデータウェアハウス機能を持つ分析ツールであり、このケースには不適切です。",
       "category": "",
       "tags": [
         "sql-database",
@@ -79,7 +79,7 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 85,
-      "question": "Azure Event Grid にルーティングされたイベントに応答してカスタム C# コードを実行するソリューションを設計する必要があります。ソリューションは次の要件を満たす必要があります。 ソリューションには何を含めるべきでしょうか。・ 実行されるコードは、Azure 仮想マシン上で実行される Microsoft SQL Server インスタンスのプライベート IP アドレスにアクセスできる必要がある。・ コストは最小限に抑える必要がある。",
+      "question": "Azure Event Gridに配信されるイベントをトリガーにカスタムC#コードを実行するソリューションを設計中です。要件：実行コードからAzure VM上のMicrosoft SQL ServerのプライベートIPアドレスにアクセスできる／コストを最小限にする。どのサービスを選択すべきですか？",
       "choices": [
         "Azure Logic Apps の統合サービス環境 (ISE)",
         "Azure Logic Apps の 従量課金プラン",
@@ -87,7 +87,7 @@ var QUIZ_DATA_website_81_90 = {
         "Azure Functions の Premium プラン"
       ],
       "answer": 3,
-      "explanation": "プレミアム プランでは仮想ネットワーク接続が可能です。従量課金プランでは仮想ネットワーク統合機能にアクセスできません。https://learn.microsoft.com/ja-jp/azure/azure-functions/functions-scale#networking-features",
+      "explanation": "Azure FunctionsのPremiumプランは仮想ネットワーク統合に対応しており、VNet内のプライベートIPへのアクセスが可能です。従量課金プランでは仮想ネットワーク統合機能を利用できないため、プライベートIPへの到達要件を満たせません。",
       "category": "",
       "tags": [
         "virtual-machines",
@@ -99,7 +99,7 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 86,
-      "question": "従量課金プランでホストされている App1 という名前の Azure Functions マイクロサービス アプリがあります。 App1 は Azure Queue Storage トリガーを使用します。 App1 を Azure Kubernetes Service (AKS) クラスターに移行することを計画しています。 App1 をサポートするには、AKS クラスターを準備する必要があります。ソリューションは次の要件を満たす必要があります。 どの 2 つのアクションを実行する必要がありますか。・ 現在のデプロイメントと同じスケーリング メカニズムを使用する。・ kubenet および Azure Container Networking Interface (CNI) ネットワーキングをサポートする。",
+      "question": "従量課金プランで動作するAzure FunctionsアプリApp1がAzure Queue Storageトリガーを使用しています。App1をAKSクラスターに移行する計画で、現在のスケーリング方式を維持しつつ、kubenetおよびAzure CNIネットワークの両方に対応する必要があります。AKSクラスターの準備として実施すべき2つのアクションはどれですか？",
       "choices": [
         "Kubernetes Event-driven Autoscaling (KEDA をインストールする。",
         "ポッドの水平オートスケーラーを構成する。",
@@ -108,7 +108,7 @@ var QUIZ_DATA_website_81_90 = {
         "仮想ノード アドオンを構成する。"
       ],
       "answer": 1,
-      "explanation": "Kubernetes は、ポッドの水平オートスケーラー (HPA) を使用して、リソース需要を監視し、ポッドの数を自動的にスケーリングします。 既定では、HPA は、必要なレプリカ数の変更についてメトリック API を 15 秒ごとに確認します。メトリック API は、Kubelet からデータを 60 秒ごとに取得します。 つまり、HPA は 60 秒ごとに更新されます。 変更が必要な場合、それに応じてレプリカの数が増減されます。 HPA は、Kubernetes 1.8 以降用のメトリック サーバーをデプロイした AKS クラスターで動作します。https://learn.microsoft.com/ja-jp/azure/aks/concepts-scale#horizo%E2%80%8B%E2%80%8Bntal-pod-autoscalerKubernetes Event-driven Autoscaling (KEDA) は、アプリケーションの自動スケーリングをシンプルにすることを目指す単一目的の軽量コンポーネントであり、CNCF Graduated プロジェクトです。 イベント駆動型自動スケーリングを適用して、scale-to-zero で持続可能でコスト効率の高い方法で需要を満たすようにアプリケーションをスケーリングします。https://learn.microsoft.com/ja-jp/azure/aks/keda-about",
+      "explanation": "Kubernetesの水平ポッドオートスケーラー（HPA）はリソース需要を監視してPod数を自動調整します。デフォルトでHPAは15秒ごとにメトリックAPIを確認し、必要に応じてレプリカ数を増減させます。HPAはKubernetes 1.8以降のメトリックサーバーがデプロイされたAKSクラスターで動作します。Kubernetes Event-driven Autoscaling（KEDA）はイベント駆動型の自動スケーリングをシンプルにする軽量コンポーネントで、CNCFのGraduatedプロジェクトです。ゼロスケールに対応した持続可能でコスト効率の高いスケーリングを実現します。",
       "category": "",
       "tags": [
         "azure-monitor",
@@ -122,13 +122,13 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 87,
-      "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Traffic Manager を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+      "question": "Azure Webアプリの複数インスタンスを複数リージョンにデプロイする予定です。要件：レート制限に対応する／全インスタンス間でリクエストを均等分散する／リージョン障害時もアプリにアクセス可能にする。Azure Traffic Managerでアクセスを提供する案は要件を満たしますか？",
       "choices": [
         "はい",
         "いいえ"
       ],
       "answer": 1,
-      "explanation": "Azure Traffic Manager は、DNS ベースのトラフィック ロード バランサーです。このサービスを使用すると、グローバル Azure リージョン全体でパブリック向けアプリケーションにトラフィックを分散できます。 Traffic Manager は、パブリック エンドポイントに高可用性と迅速な応答性も提供します。レート制限はありません。https://learn.microsoft.com/ja-jp/azure/app-service/web-sites-traffic-manager",
+      "explanation": "Azure Traffic ManagerはDNSベースのトラフィックロードバランサーで、グローバルリージョン間でのトラフィック分散と高可用性を提供します。しかしレート制限機能は備えていないため、この要件を満たすことはできません。",
       "category": "",
       "tags": [
         "bcdr-fundamentals",
@@ -138,13 +138,13 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 88,
-      "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Load Balancer を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+      "question": "複数Azureリージョンに展開したWebアプリの複数インスタンスへのアクセスソリューションを検討中です。要件：レート制限対応／全インスタンスへの負荷分散／リージョン障害時のアクセス継続。Azure Load Balancerを利用する案で目標は達成できますか？",
       "choices": [
         "はい",
         "いいえ"
       ],
       "answer": 1,
-      "explanation": "Azure Load Balancer はリージョン内でロード バランシングを行います (リージョンの停止はサポートされません)。一方で、Azure Load Balancer は、レートまたは接続の制限をサポートしていません。https://docs.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/load-balancing-overview",
+      "explanation": "Azure Load Balancerはリージョン内でのみ負荷分散を行うサービスであり、リージョン障害への対応はできません。さらに、レート制限や接続制限もサポートしていないため、要件を満たしません。",
       "category": "",
       "tags": [
         "bcdr-fundamentals",
@@ -154,13 +154,13 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 89,
-      "question": "Azure Web アプリの複数のインスタンスを複数の Azure リージョンにデプロイすることを計画しています。 アプリのアクセス ソリューションを設計する必要があります。ソリューションは次のレプリケーション要件を満たしている必要があります。 解決策: Azure Application Gateway を使用して、アプリへのアクセスを提供します。 これは目標を達成していますか。・ レート制限をサポートする。・ すべてのインスタンス間でリクエストのバランスをとる。・ 地域的に停電が発生した場合でも、ユーザーがアプリにアクセスできるようにする。",
+      "question": "複数Azureリージョンに展開されたWebアプリインスタンスへのアクセスソリューションを設計しています。要件：レート制限をサポート／全インスタンスへのリクエスト分散／リージョン停止時のアクセス継続。Azure Application Gatewayを使う案で目標を達成できますか？",
       "choices": [
         "はい",
         "いいえ"
       ],
       "answer": 1,
-      "explanation": "Azure Application Gateway は、レートまたは接続の制限をサポートしていません。Azure Front Door は要件を満たします。 Azure Front Door の Azure Web アプリケーション ファイアウォール (WAF) レート制限ルールは、1 分間にクライアントから許可される要求の数を制御します。https://learn.microsoft.com/ja-jp/azure/application-gateway/overviewhttps://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-rate-limit-configure?pivots=portal",
+      "explanation": "Azure Application Gatewayにはレート制限や接続制限の機能がないため、要件を満たしません。この要件にはAzure Front Doorが適しています。Front DoorのWAFレート制限ルールを使えば、クライアントからの1分あたりのリクエスト数を制御できます。",
       "category": "",
       "tags": [
         "bcdr-fundamentals",
@@ -171,7 +171,7 @@ var QUIZ_DATA_website_81_90 = {
     },
     {
       "id": 90,
-      "question": "App1 という名前の Web アプリをオンプレミスのデータセンターから Azure に移動する予定です。 App1 は、ホスト サーバーにインストールされているカスタム COM コンポーネントに依存します。 Azure で App1 をホストするソリューションを推奨する必要があります。ソリューションは次の要件を満たす必要があります。 推奨事項には何を含めるべきですか。・ Azure データセンターが利用できなくなった場合、ユーザーは App1 を利用できる必要がある。・ コストは最小限に抑える必要がある。",
+      "question": "オンプレミスのWebアプリApp1をAzureへ移行する計画です。App1はホストサーバー上にインストールされたカスタムCOMコンポーネントに依存しています。要件：Azureデータセンターが利用不能になった場合でもApp1を継続利用できる／コストを最小化する。どの構成を推奨しますか？",
       "choices": [
         "2 つの Azure リージョンに、ロード バランサーと仮想マシン スケール セットをデプロイする。",
         "2 つの Azure リージョンに、Azure Traffic Manager プロファイルと Web Appをデプロイする。",
@@ -179,7 +179,7 @@ var QUIZ_DATA_website_81_90 = {
         "ロード バランサーと仮想マシン スケール セットを 2 つの可用性ゾーンにデプロイする。"
       ],
       "answer": 3,
-      "explanation": "Azure App Service では COM コンポーネントが許可されないため、仮想マシンを使用する必要があります。Azure データセンターの障害から保護するには 2 つの可用性ゾーンが必要です。Web Appは使用できません。Azure App Service では、プラットフォーム上で COM コンポーネントを登録することはできません。 アプリで COM コンポーネントを使用する場合は、それらのコンポーネントをマネージド コードで書き換えて、サイトまたはアプリケーショントと共にデプロイする必要があります。https://learn.microsoft.com/ja-jp/dotnet/azure/migration/app-service#com-and-com-components",
+      "explanation": "Azure App ServiceではCOMコンポーネントの登録が許可されていないため、仮想マシンを使用する必要があります。Azureデータセンター障害に備えるには2つの可用性ゾーンへのデプロイが必要です。Web Appの選択肢はCOMコンポーネントの制約により使用不可です。App Service上でCOMコンポーネントを利用するには、マネージドコードでの書き換えとアプリへの同梱が必要です。",
       "category": "",
       "tags": [
         "availability-zones",

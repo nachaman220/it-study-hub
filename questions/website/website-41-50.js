@@ -1,9 +1,9 @@
 var QUIZ_DATA_website_41_50 = {
-  "source": "it-concepts-japan.com",
+  "source": "original",
   "questions": [
     {
       "id": 41,
-      "question": "OracleデータベースからAzure Databricksで処理し、Azure Synapse Analyticsに格納するデータパイプラインを構築する必要があります。使用すべき2つのサービスはどれですか？（2つ選択）",
+      "question": "OracleデータベースからデータをAzure Databricksで処理し、Azure Synapse Analyticsへ格納するパイプラインを構築したいと考えています。利用すべき2つのサービスはどれですか？（2つ選択）",
       "choices": [
         "A. Azure Data Lake Storage (ADLS)",
         "B. Azure Data Box Gateway",
@@ -15,7 +15,7 @@ var QUIZ_DATA_website_41_50 = {
         0,
         4
       ],
-      "explanation": "Azure Data Factoryは、Oracleからのデータ抽出とパイプラインのオーケストレーションを提供します。Azure Data Lake Storage（ADLS）は、Databricksとの統合に最適な中間ストレージとして機能し、大量のデータを効率的に格納・処理できます。OracleからADLSにData Factoryでデータを取り込み、DatabricksでADLS上のデータを処理し、結果をSynapseに格納するアーキテクチャとなります。Data Box GatewayとData Box Edgeはオンプレミスからのデータ転送デバイスであり、このパイプラインには不要です。Import/Exportは物理ディスクによるデータ転送サービスです。",
+      "explanation": "Azure Data FactoryはOracleからのデータ抽出とパイプライン全体のオーケストレーションを担います。Azure Data Lake Storage（ADLS）はDatabricksとの連携に最適な中間ストレージとして機能し、大量データの効率的な格納・処理を可能にします。Data FactoryでOracleからADLSへデータを取り込み、Databricksで加工し、結果をSynapseへ格納するという構成になります。Data Box GatewayやData Box Edgeはオンプレミスからのデータ転送用デバイスであり、このパイプラインには不要です。Import/Exportは物理ディスクを使ったデータ転送サービスです。",
       "category": "data",
       "tags": [
         "data-analytics",
@@ -24,7 +24,7 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 42,
-      "question": "AKSでWindowsコンテナを使用しています。負荷に応じてノード数を自動的にスケールアウトし、リソースの未使用を最小化する機能はどれですか？",
+      "question": "AKSでWindowsコンテナを運用しています。負荷に応じてノード数を自動的にスケールアウトし、未使用リソースを最小限にできる機能はどれですか？",
       "choices": [
         "A. 水平ポッドオートスケーラー",
         "B. Kubernetes 1.20.2へのアップグレード",
@@ -32,7 +32,7 @@ var QUIZ_DATA_website_41_50 = {
         "D. 仮想ノード（ACI）"
       ],
       "answer": 2,
-      "explanation": "クラスターオートスケーラーは、ポッドのリソース要求に基づいてノード数を自動的にスケールアウト/スケールインします。未使用リソースの最小化にも貢献します。水平ポッドオートスケーラーはポッド数のスケーリングであり、ノード数は変更しません。Kubernetesのバージョンアップグレードはスケーリング機能とは無関係です。仮想ノード（ACI）はLinuxコンテナのみをサポートしており、Windowsコンテナでは使用できません。",
+      "explanation": "クラスターオートスケーラーは、ポッドのリソース要求に基づきノード数を自動でスケールアウト/スケールインし、未使用リソースの削減にも寄与します。水平ポッドオートスケーラーはポッド数の調整であり、ノード数の変更は行いません。Kubernetesバージョンのアップグレードはスケーリング機能とは無関係です。仮想ノード（ACI）はLinuxコンテナのみが対象で、Windowsコンテナには利用できません。",
       "category": "compute",
       "tags": [
         "containers"
@@ -40,14 +40,14 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 43,
-      "question": "Azure VMでSQL Serverを実行しています。トランザクションログディスクのホストキャッシュ設定はどれが適切ですか？",
+      "question": "Azure VM上でSQL Serverを稼働させています。トランザクションログ用ディスクに設定すべきホストキャッシュはどれですか？",
       "choices": [
         "A. Read/Write",
         "B. None",
         "C. Read-only"
       ],
       "answer": 1,
-      "explanation": "SQL Serverのトランザクションログディスクには、ホストキャッシュをNone（なし）に設定すべきです。トランザクションログは順次書き込みが主であり、書き込みの整合性が最も重要です。キャッシュを使用すると、障害時にキャッシュ内のデータが失われ、トランザクションの整合性が損なわれる可能性があります。Read/Writeキャッシュは書き込みキャッシュを含むため、ログの整合性リスクがあります。Read-onlyキャッシュはログの読み取りパターン（順次書き込み）には効果がありません。",
+      "explanation": "SQL Serverのトランザクションログディスクでは、ホストキャッシュをNone（無効）に設定するのが適切です。トランザクションログは順次書き込みが中心であり、書き込みの整合性が最も重視されます。キャッシュを有効にすると、障害時にキャッシュ内データが失われてトランザクションの整合性が損なわれるリスクがあります。Read/Writeキャッシュは書き込みキャッシュを含むため整合性上のリスクがあり、Read-onlyキャッシュはログの書き込み主体のパターンには効果がありません。",
       "category": "compute",
       "tags": [
         "caching"
@@ -55,14 +55,14 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 44,
-      "question": "同じSQL Server VMのデータディスクのホストキャッシュ設定はどれが適切ですか？",
+      "question": "同一SQL Server VMのデータディスクに設定すべきホストキャッシュはどれですか？",
       "choices": [
         "A. Read/Write",
         "B. None",
         "C. Read-only"
       ],
       "answer": 2,
-      "explanation": "SQL Serverのデータディスクには、Read-only（読み取り専用）キャッシュが推奨されます。データファイルは読み取りが多いワークロードであり、キャッシュにより読み取りパフォーマンスが向上します。Read-onlyキャッシュでは書き込みはキャッシュを経由せず直接ディスクに書き込まれるため、データの整合性も維持されます。Read/Writeキャッシュは書き込みキャッシュによるデータ損失リスクがあります。Noneはキャッシュの恩恵を受けられず、パフォーマンスが低下します。",
+      "explanation": "SQL Serverのデータディスクには、Read-only（読み取り専用）キャッシュの設定が推奨されます。データファイルへのアクセスは読み取りが主体のため、キャッシュによって読み取り性能が向上します。Read-onlyキャッシュでは書き込みはキャッシュを介さず直接ディスクに書き込まれるため、データ整合性も確保されます。Read/Writeキャッシュは書き込みキャッシュに起因するデータ損失リスクがあります。Noneではキャッシュの恩恵が得られず、パフォーマンスが低下します。",
       "category": "compute",
       "tags": [
         "caching"
@@ -70,13 +70,13 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 45,
-      "question": "2つのリージョンにVMをデプロイし、Azure Traffic Managerで負荷分散する構成は実現可能ですか？",
+      "question": "2つのリージョンそれぞれにVMをデプロイし、Azure Traffic Managerで負荷分散する構成は実現できますか？",
       "choices": [
         "A. はい",
         "B. いいえ"
       ],
       "answer": 0,
-      "explanation": "はい、実現可能です。Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数のリージョンに配置されたVMやサービスに対してトラフィックをルーティングできます。パフォーマンス、優先順位、加重などのルーティング方法を使用して、リージョン間の負荷分散やフェールオーバーを実現できます。",
+      "explanation": "はい、この構成は実現可能です。Azure Traffic ManagerはDNSベースのグローバルトラフィック分散サービスであり、複数リージョンに配置されたVMやサービスへトラフィックを振り分けることができます。パフォーマンス、優先順位、加重などのルーティング方式を活用して、リージョン間の負荷分散やフェールオーバーを実現できます。",
       "category": "network",
       "tags": [
         "site-recovery",
@@ -86,13 +86,13 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 46,
-      "question": "2つのリージョンにVMをデプロイし、Application Gatewayで負荷分散する構成は実現可能ですか？",
+      "question": "2つのリージョンにVMをデプロイし、Application Gatewayで負荷分散する構成は実現できますか？",
       "choices": [
         "A. はい",
         "B. いいえ"
       ],
       "answer": 1,
-      "explanation": "いいえ、Application Gatewayは単一リージョン内のサービスであり、複数リージョンにまたがる負荷分散はできません。Application Gatewayは特定のリージョンのVNet内にデプロイされ、そのリージョン内のバックエンドにのみトラフィックを分散します。リージョン間の負荷分散にはTraffic ManagerやAzure Front Doorを使用する必要があります。",
+      "explanation": "いいえ、Application Gatewayは単一リージョン内のサービスであり、リージョンをまたいだ負荷分散には対応していません。Application Gatewayは特定リージョンのVNet内にデプロイされ、同リージョン内のバックエンドにのみトラフィックを振り分けます。リージョン間の負荷分散が必要な場合はTraffic ManagerやAzure Front Doorを利用する必要があります。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -101,7 +101,7 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 47,
-      "question": "2つのリージョンにそれぞれ2つの可用性ゾーンを使用してVMをデプロイする場合、必要なVNetの数はいくつですか？",
+      "question": "2つのリージョンにそれぞれ2つの可用性ゾーンを使ってVMを展開する場合、必要となるVNetの数はいくつですか？",
       "choices": [
         "A. 1",
         "B. 2",
@@ -109,7 +109,7 @@ var QUIZ_DATA_website_41_50 = {
         "D. 4"
       ],
       "answer": 1,
-      "explanation": "VNet（仮想ネットワーク）はリージョンスコープのリソースであり、1つのVNetは1つのリージョンにのみ存在できます。ただし、VNet内のサブネットは同一リージョン内の複数の可用性ゾーンにまたがることができます。したがって、2つのリージョンには2つのVNetが必要です。各VNet内で可用性ゾーンにVMを分散させるため、VNetの数は可用性ゾーンの数に影響されません。",
+      "explanation": "VNet（仮想ネットワーク）はリージョン単位のリソースであり、1つのVNetは1つのリージョンにしか存在できません。ただし、VNet内のサブネットは同一リージョン内の複数の可用性ゾーンにまたがることが可能です。そのため、2リージョン構成では2つのVNetが必要となります。各VNet内で可用性ゾーンにVMを分散するため、VNet数は可用性ゾーンの数には左右されません。",
       "category": "network",
       "tags": [
         "availability-zones",
@@ -118,7 +118,7 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 48,
-      "question": "CPUクレジットモデルを使用するAzure VMシリーズはどれですか？",
+      "question": "CPUクレジットモデルを採用しているAzure VMシリーズはどれですか？",
       "choices": [
         "A. Aシリーズ",
         "B. Bシリーズ",
@@ -126,13 +126,13 @@ var QUIZ_DATA_website_41_50 = {
         "D. Mシリーズ"
       ],
       "answer": 1,
-      "explanation": "Bシリーズ（バースト可能）VMは、CPUクレジットモデルを使用します。ベースラインのCPU使用率を下回っている間はクレジットを蓄積し、負荷が高い時にクレジットを消費してベースラインを超えるパフォーマンスを発揮できます。コスト効率が高く、開発/テスト環境やCPU使用率が変動するワークロードに適しています。Aシリーズは基本的な開発/テスト向け、Dシリーズは汎用、Mシリーズはメモリ最適化であり、いずれもクレジットモデルは使用しません。",
+      "explanation": "Bシリーズ（バースト可能）VMがCPUクレジットモデルを採用しています。CPU使用率がベースラインを下回る間はクレジットを蓄え、負荷が高まった際にクレジットを消費してベースラインを超えるパフォーマンスを発揮します。コスト効率が高く、開発/テスト環境やCPU使用率に変動があるワークロードに向いています。Aシリーズは基本的な開発/テスト向け、Dシリーズは汎用向け、Mシリーズはメモリ最適化向けであり、いずれもクレジットモデルは使用していません。",
       "category": "compute",
       "tags": ["virtual-machines"]
     },
     {
       "id": 49,
-      "question": "SQLインジェクション攻撃からの保護とL7ロードバランシングを実現するために使用すべきサービスはどれですか？",
+      "question": "SQLインジェクション攻撃への防御とL7ロードバランシングの両方を実現するために選択すべきサービスはどれですか？",
       "choices": [
         "A. Azure Load Balancer",
         "B. WAF",
@@ -142,7 +142,7 @@ var QUIZ_DATA_website_41_50 = {
         "F. SSLオフロード"
       ],
       "answer": 2,
-      "explanation": "Application GatewayはL7（アプリケーション層）ロードバランサーであり、この問題のサービス選択としてはApplication Gatewayが正解です。Application GatewayにはWAF機能を統合でき、SQLインジェクション保護とL7ロードバランシングの両方を提供します。Azure Load BalancerはL4ロードバランサーであり、L7の機能は持ちません。Traffic ManagerはDNSベースのルーティングです。WAF、URLベースルーティング、SSLオフロードはApplication Gatewayの機能の一部です。",
+      "explanation": "Application GatewayはL7（アプリケーション層）のロードバランサーであり、この設問のサービス選択ではApplication Gatewayが正解です。Application GatewayにWAF機能を統合することで、SQLインジェクション防御とL7ロードバランシングの双方を提供できます。Azure Load BalancerはL4ロードバランサーでL7機能は持ちません。Traffic ManagerはDNSベースのルーティングです。WAF、URLベースルーティング、SSLオフロードはいずれもApplication Gatewayが持つ個別機能です。",
       "category": "network",
       "tags": [
         "load-balancers",
@@ -151,7 +151,7 @@ var QUIZ_DATA_website_41_50 = {
     },
     {
       "id": 50,
-      "question": "前問のシナリオで、SQLインジェクション保護を提供する具体的な機能はどれですか？",
+      "question": "前問のシナリオにおいて、SQLインジェクションからの保護を直接担う具体的な機能はどれですか？",
       "choices": [
         "A. Azure Load Balancer",
         "B. WAF",
@@ -161,7 +161,7 @@ var QUIZ_DATA_website_41_50 = {
         "F. SSLオフロード"
       ],
       "answer": 1,
-      "explanation": "WAF（Web Application Firewall）は、OWASPコアルールセットに基づいてSQLインジェクション、クロスサイトスクリプティング（XSS）などのWeb攻撃から保護する機能です。Application GatewayやFront DoorにWAFを統合して使用します。Application Gateway自体はL7ロードバランサーですが、SQLインジェクション保護の具体的な機能はWAFが担います。その他の選択肢（Load Balancer、URLルーティング、Traffic Manager、SSLオフロード）はセキュリティ保護の機能ではありません。",
+      "explanation": "WAF（Web Application Firewall）はOWASPコアルールセットに基づき、SQLインジェクションやクロスサイトスクリプティング（XSS）などのWeb攻撃を防御する機能です。Application GatewayやFront DoorにWAFを組み込んで利用します。Application Gateway自体はL7ロードバランサーですが、SQLインジェクション防御の具体的な機能を担うのはWAFです。他の選択肢（Load Balancer、URLルーティング、Traffic Manager、SSLオフロード）はセキュリティ防御の機能ではありません。",
       "category": "security",
       "tags": [
         "load-balancers",
