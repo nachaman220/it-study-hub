@@ -42,6 +42,19 @@
       }
 
       if (result.data && result.data.content_html) {
+        // Admin view mode: simulate different access levels
+        if (typeof window.adminViewMode === 'function') {
+          var viewMode = window.adminViewMode();
+          var contentAccess = result.data.access_level || (result.data.is_free ? 'guest' : 'premium');
+          if (viewMode === 'guest' && contentAccess !== 'guest') {
+            showPremiumWall(contentArea);
+            return;
+          }
+          if (viewMode === 'free' && contentAccess === 'premium') {
+            showPremiumWall(contentArea);
+            return;
+          }
+        }
         contentArea.innerHTML = result.data.content_html;
       }
     } catch (e) {

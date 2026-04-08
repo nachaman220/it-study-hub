@@ -22,3 +22,5 @@ Thumbs.db
 
 # Node modules (if added later)
 node_modules/
+kindle_screenshots/
+tag_questions_*.py

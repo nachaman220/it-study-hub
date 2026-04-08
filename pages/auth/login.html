@@ -175,13 +175,20 @@
         </div>
         <div class="form-group">
           <label for="register-password">パスワード</label>
-          <input type="password" id="register-password" name="new-password" required placeholder="8文字以上" minlength="8" autocomplete="new-password">
+          <input type="password" id="register-password" name="new-password" required placeholder="条件を満たすパスワード" minlength="8" autocomplete="new-password">
+          <ul id="pw-rules" style="list-style:none;padding:0;margin:8px 0 0;font-size:0.8rem;line-height:1.8;">
+            <li id="pw-length" style="color:#999;">&#10005; 8文字以上</li>
+            <li id="pw-upper" style="color:#999;">&#10005; 大文字（A-Z）を含む</li>
+            <li id="pw-lower" style="color:#999;">&#10005; 小文字（a-z）を含む</li>
+            <li id="pw-digit" style="color:#999;">&#10005; 数字（0-9）を含む</li>
+          </ul>
         </div>
         <div class="form-group">
           <label for="register-password-confirm">パスワード（確認）</label>
           <input type="password" id="register-password-confirm" name="new-password-confirm" required placeholder="もう一度入力" minlength="8" autocomplete="new-password">
+          <div id="pw-match" style="font-size:0.8rem;margin-top:4px;display:none;"></div>
         </div>
-        <button type="submit" class="auth-submit" id="register-submit">新規登録</button>
+        <button type="submit" class="auth-submit" id="register-submit" disabled>新規登録</button>
       </form>
 
       <div class="auth-footer">
@@ -190,6 +197,7 @@
     </div>
   </div>
 
+  <script src="../../js/admin-toggle.js"></script>
   <script src="../../js/supabase-client.js"></script>
   <script src="../../js/auth-guard.js"></script>
   <script>
@@ -291,21 +299,71 @@
         doLogin();
       });
 
+      // Password validation
+      var pwInput = document.getElementById('register-password');
+      var pwConfirm = document.getElementById('register-password-confirm');
+      var registerBtn = document.getElementById('register-submit');
+
+      var rules = {
+        length: { el: document.getElementById('pw-length'), test: function (p) { return p.length >= 8; } },
+        upper:  { el: document.getElementById('pw-upper'),  test: function (p) { return /[A-Z]/.test(p); } },
+        lower:  { el: document.getElementById('pw-lower'),  test: function (p) { return /[a-z]/.test(p); } },
+        digit:  { el: document.getElementById('pw-digit'),  test: function (p) { return /[0-9]/.test(p); } },
+      };
+
+      function checkPassword() {
+        var pw = pwInput.value;
+        var allPass = true;
+        Object.keys(rules).forEach(function (key) {
+          var r = rules[key];
+          if (r.test(pw)) {
+            r.el.style.color = '#107c10';
+            r.el.innerHTML = '&#10003; ' + r.el.textContent.replace(/^[✓✗]\s*/, '');
+          } else {
+            r.el.style.color = '#999';
+            r.el.innerHTML = '&#10005; ' + r.el.textContent.replace(/^[✓✗]\s*/, '');
+            allPass = false;
+          }
+        });
+
+        var matchEl = document.getElementById('pw-match');
+        var confirmVal = pwConfirm.value;
+        if (confirmVal.length > 0) {
+          matchEl.style.display = 'block';
+          if (pw === confirmVal) {
+            matchEl.style.color = '#107c10';
+            matchEl.textContent = '\u2713 パスワードが一致しています';
+          } else {
+            matchEl.style.color = '#d13438';
+            matchEl.textContent = '\u2717 パスワードが一致しません';
+            allPass = false;
+          }
+        } else {
+          matchEl.style.display = 'none';
+          allPass = false;
+        }
+
+        registerBtn.disabled = !allPass;
+      }
+
+      pwInput.addEventListener('input', checkPassword);
+      pwConfirm.addEventListener('input', checkPassword);
+
       // Register
       document.getElementById('register-form').addEventListener('submit', function (e) {
         e.preventDefault();
         hideError('register-error');
         var email = document.getElementById('register-email').value.trim();
-        var password = document.getElementById('register-password').value;
-        var confirm = document.getElementById('register-password-confirm').value;
-        var btn = document.getElementById('register-submit');
+        var password = pwInput.value;
+        var confirm = pwConfirm.value;
+        var btn = registerBtn;
 
         if (password !== confirm) {
           showError('register-error', 'パスワードが一致しません');
           return;
         }
-        if (password.length < 8) {
-          showError('register-error', 'パスワードは8文字以上で入力してください');
+        if (btn.disabled) {
+          showError('register-error', 'パスワードの条件を満たしてください');
           return;
         }
 

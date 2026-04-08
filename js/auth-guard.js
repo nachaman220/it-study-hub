@@ -19,6 +19,17 @@
     var subscription = session ? await window.getSubscriptionStatus() : null;
     var accessLevel = document.body.getAttribute('data-access') || 'free';
 
+    // Admin view mode: simulate different access levels
+    if (typeof window.adminViewMode === 'function') {
+      var viewMode = window.adminViewMode();
+      if (viewMode === 'free') {
+        subscription = null; // logged in but no subscription
+      } else if (viewMode === 'guest') {
+        session = null;      // not logged in at all
+        subscription = null;
+      }
+    }
+
     addUserMenu(session);
     enforceAccess(accessLevel, session, subscription);
     handleQuizPage(session, subscription);
