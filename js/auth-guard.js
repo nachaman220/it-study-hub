@@ -44,7 +44,9 @@
     // Admin view mode: simulate different access levels
     if (typeof window.adminViewMode === 'function') {
       var viewMode = window.adminViewMode();
-      if (viewMode === 'free') {
+      if (viewMode === 'premium') {
+        subscription = { status: 'active', plan: 'premium', expires_at: null };
+      } else if (viewMode === 'free') {
         subscription = null; // logged in but no subscription
       } else if (viewMode === 'guest') {
         session = null;      // not logged in at all
