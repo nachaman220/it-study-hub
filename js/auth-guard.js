@@ -1,5 +1,5 @@
 /**
- * Auth Guard - Azure Certification Study Hub
+ * Auth Guard - IT Study Hub
  * Checks access level on every page and manages user menu in header.
  */
 (function () {

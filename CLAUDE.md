@@ -1,4 +1,4 @@
-# Azure Certification Study Hub - プロジェクトルール
+# IT Study Hub - プロジェクトルール
 
 ## デプロイ手順
 サイトに変更を加えた場合、以下の両方を実行すること:

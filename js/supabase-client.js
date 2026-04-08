@@ -1,5 +1,5 @@
 /**
- * Supabase Client - Azure Certification Study Hub
+ * Supabase Client - IT Study Hub
  * Load Supabase JS SDK from CDN and initialize the client.
  */
 (function () {
