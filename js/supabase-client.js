@@ -105,12 +105,8 @@
    */
   function getRelativePath(target) {
     var path = window.location.pathname;
-    var depth = (path.match(/\//g) || []).length - 1;
-    // Heuristic: if we're in pages/something/, depth is 2 from root
-    // Detect based on known patterns
-    if (path.includes('/pages/auth/') || path.includes('/pages/quiz/') ||
-        path.includes('/pages/identity/') || path.includes('/pages/data/') ||
-        path.includes('/pages/business-continuity/') || path.includes('/pages/infrastructure/')) {
+    // Match /pages/xxx/ pattern (any subdirectory under pages/)
+    if (/\/pages\/[^\/]+\//.test(path)) {
       return '../../' + target;
     } else if (path.includes('/pages/')) {
       return '../' + target;
