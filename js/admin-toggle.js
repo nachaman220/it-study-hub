@@ -84,17 +84,23 @@
     var mode = getViewMode();
     panel.innerHTML =
       '<div style="position:fixed;bottom:16px;right:16px;background:#1a1a1a;color:#fff;padding:12px 16px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:99999;font-size:0.85rem;font-family:sans-serif;">' +
-        '<div style="margin-bottom:8px;font-weight:600;">管理者パネル</div>' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
+          '<span style="font-weight:600;">管理者パネル</span>' +
+          '<button id="admin-close" style="background:none;border:none;color:#aaa;font-size:1.2rem;cursor:pointer;padding:0 0 0 12px;line-height:1;">&times;</button>' +
+        '</div>' +
         '<div style="display:flex;gap:6px;">' +
           '<button id="admin-btn-premium" style="' + btnStyle('premium', mode) + '">有料会員</button>' +
           '<button id="admin-btn-free" style="' + btnStyle('free', mode) + '">無料会員</button>' +
           '<button id="admin-btn-guest" style="' + btnStyle('guest', mode) + '">非会員</button>' +
         '</div>' +
         '<div style="margin-top:6px;font-size:0.75rem;color:#888;">現在: ' + MODE_LABELS[mode] + 'として閲覧中</div>' +
-        '<div style="margin-top:4px;font-size:0.7rem;color:#666;">Ctrl+Shift+A で非表示</div>' +
       '</div>';
 
     document.body.appendChild(panel);
+
+    document.getElementById('admin-close').addEventListener('click', function () {
+      panel.remove();
+    });
 
     ['premium', 'free', 'guest'].forEach(function (m) {
       document.getElementById('admin-btn-' + m).addEventListener('click', function () {
