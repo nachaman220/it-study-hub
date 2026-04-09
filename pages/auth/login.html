@@ -6,6 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>ログイン - IT Study Hub</title>
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     .auth-container {
       max-width: 820px;
@@ -72,26 +73,6 @@
     }
     .captcha-box {
       margin-bottom: 20px;
-    }
-    .captcha-checkbox {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      padding: 12px 16px;
-      background: #fff;
-      cursor: pointer;
-      user-select: none;
-    }
-    .captcha-checkbox input[type="checkbox"] {
-      width: 22px;
-      height: 22px;
-      cursor: pointer;
-    }
-    .captcha-checkbox span {
-      font-size: 0.9rem;
-      color: #333;
     }
     .auth-submit {
       width: 100%;
@@ -173,10 +154,7 @@
               <label><input type="checkbox" id="remember-check"> ログイン情報を保存</label>
             </div>
             <div class="captcha-box">
-              <label class="captcha-checkbox">
-                <input type="checkbox" id="captcha-check">
-                <span>私はロボットではありません</span>
-              </label>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAC3N9mssUW5otxCX" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired"></div>
             </div>
             <button type="submit" class="auth-submit" id="login-submit">Log In</button>
           </form>
@@ -269,8 +247,9 @@
         e.preventDefault();
         hideError();
 
-        if (!document.getElementById('captcha-check').checked) {
-          showError('「私はロボットではありません」にチェックを入れてください。');
+        var turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+        if (!turnstileResponse || !turnstileResponse.value) {
+          showError('CAPTCHA認証を完了してください。');
           return;
         }
 
