@@ -62,6 +62,12 @@
           }
         }
         contentArea.innerHTML = result.data.content_html;
+        // Remove duplicate h1 if the loaded content starts with the same title as the page
+        var pageH1 = document.querySelector('.main-content > h1');
+        var contentH1 = contentArea.querySelector('h1');
+        if (pageH1 && contentH1 && pageH1.textContent.trim() === contentH1.textContent.trim()) {
+          contentH1.remove();
+        }
       }
     } catch (e) {
       console.error('Content loader error:', e);
