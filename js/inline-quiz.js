@@ -146,12 +146,15 @@ class InlineQuiz {
   }
 }
 
-// Auto-initialize
-document.addEventListener('DOMContentLoaded', () => {
+// Auto-initialize: run after content is loaded from Supabase or on DOMContentLoaded
+function initInlineQuiz() {
   if (typeof ALL_QUIZ_QUESTIONS === 'undefined') return;
 
   const mainContent = document.querySelector('.main-content');
   if (!mainContent) return;
+
+  // Skip if already initialized
+  if (mainContent.querySelector('.inline-quiz-container')) return;
 
   const shownIds = new Set();
 
@@ -192,4 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new InlineQuiz(container, matched);
   });
-});
+}
+document.addEventListener('DOMContentLoaded', initInlineQuiz);
+window.addEventListener('contentLoaded', initInlineQuiz);

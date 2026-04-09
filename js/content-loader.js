@@ -68,6 +68,8 @@
         if (pageH1 && contentH1 && pageH1.textContent.trim() === contentH1.textContent.trim()) {
           contentH1.remove();
         }
+        // Notify inline-quiz that content is ready
+        window.dispatchEvent(new Event('contentLoaded'));
       }
     } catch (e) {
       console.error('Content loader error:', e);
