@@ -46,7 +46,6 @@
     "explanation": "Azure Monitorのアクティビティログには、サブスクリプション内で発生したイベント（リソースの作成・更新・削除などARMのデプロイ操作）が記録されています。これを活用すれば、月次レポートに必要なデプロイ履歴が確認できます。\nA. Analysis Servicesはデータ分析向けのサービスであり、デプロイの追跡には関係がありません。\nB. アクショングループはアラート発報時の通知やアクションを構成するもので、履歴の記録機能ではありません。\nD. Azure Arcはハイブリッド環境のリソースを一元管理するサービスで、デプロイ履歴の記録用途とは異なります。",
     "category": "monitoring",
     "tags": [
-      "azure-monitor",
       "data-sources"
     ],
     "exam": "az-305",
@@ -280,7 +279,6 @@
     "explanation": "Azure Blob Storage はペタバイト規模の非構造化データ保存に対応しており、汎用 v2 アカウントは GB あたりの容量料金が最も安価です。階層名前空間を有効にすることで、ディレクトリやサブフォルダーの複数レベルの構造をサポートでき、さらに Azure Data Lake Storage Gen2 を通じてきめ細かい ACL ベースのアクセス制御が利用可能になります。\nA. ページ BLOB は VM ディスク用途向けで、フォルダー構造や ACL の要件には適しません。\nB. ブロック BLOB の Premium アカウントは高パフォーマンスですが、階層名前空間が標準では有効でなく、コストも高くなります。\nC. ファイル共有は BLOB ストレージ形式ではないため、BLOB での保持という条件を満たしません。\nhttps://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/azure-subscription-service-limits#storage-limits",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage"
     ],
     "exam": "az-305",
@@ -298,7 +296,6 @@
     "explanation": "Standard 汎用 v2 は、BLOB、ファイル共有、キュー、テーブルに対応する標準的なストレージアカウントです。ストレージ階層化（ホット/クール/アーカイブ）をサポートし、コストの観点でも最適な選択肢となります。\nB. Premium ブロック BLOB は高パフォーマンスですが、コストが Standard より大幅に高くなります。\nC. Standard 汎用 v1 はストレージ階層化に対応していないため、条件を満たしません。\nhttps://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage"
     ],
     "exam": "az-305",
@@ -353,7 +350,6 @@
     "explanation": "Azure SQL Managed Instance ではアクティブ geo レプリケーションがサポートされていないため、リージョン間の冗長性を確保するには自動フェールオーバーグループを使用する必要があります。自動フェールオーバーグループは管理作業を最小化しつつ、リージョン間の自動レプリケーションと自動フェールオーバーを実現します。\nB. アクティブ geo レプリケーションは Azure SQL Database では利用可能ですが、Managed Instance ではサポートされていません。\nC. ゾーン冗長デプロイメントは単一リージョン内の可用性ゾーン間での冗長化であり、リージョン間のレプリケーション要件を満たしません。\nhttps://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-sql-managed-instance/reliability",
     "category": "",
     "tags": [
-      "failover-groups",
       "sql-ha-architecture"
     ],
     "exam": "az-305",
@@ -449,7 +445,6 @@
     "explanation": "ゲートウェイサブネットとしては192.168.1.0/27が妥当です。Microsoftはゲートウェイサブネットに/27以上のサイズを推奨しています。\nB. 172.16.0.0/16はオンプレミス（172.16.0.0/16）との重複があるため使えません。\nC. 172.16.1.0/27も同様にオンプレミスと重複するため不可です。\nA. 192.168.0.0/24はSubnet1として既に利用中のため競合します。\nD. 192.168.1.0/27は/27サイズ（推奨最小）であり、オンプレミスやSubnet1のいずれとも重複しないため、ゲートウェイサブネットとして適切です。",
     "category": "network",
     "tags": [
-      "vnet",
       "on-premises-connectivity"
     ],
     "exam": "az-305",
@@ -527,7 +522,6 @@
     "explanation": "汎用（General Purpose）ティアはゾーン冗長高可用性（HA）に対応しており、データセンター障害からの保護が可能です。コスト最小化を考えると、ゾーン冗長HAをサポートする中で最も安価な汎用ティアが正解です。\nA. メモリ最適化ティアもゾーン冗長HAをサポートしていますが、汎用ティアよりコストが高くなります。\nB. バースト可能（Burstable）ティアはゾーン冗長HAに非対応のため、データセンター障害への保護を実現できません。",
     "category": "data",
     "tags": [
-      "mysql-service-levels",
       "mysql-ha"
     ],
     "exam": "az-305",
@@ -563,7 +557,6 @@
     "explanation": "この提案は目標を満たしません。App Service（Isolated プラン含む）は .NET Framework をサポートし、Isolated プランは専用環境を提供しますが、OS レベルの管理者アクセス権は提供されません。また、単一リージョン内のサービスであるため、リージョン全体の障害時の冗長性は確保できません。\n\n代替策として、2 つの Azure リージョンにそれぞれ Azure 仮想マシンをデプロイし、Azure Traffic Manager プロファイルを構成する方法が適切です。VMならOS レベルのフルアクセスが可能で、複数リージョンにデプロイすることでリージョン障害時の冗長性も確保できます。",
     "category": "",
     "tags": [
-      "virtual-machines",
       "app-service"
     ],
     "exam": "az-305",
@@ -617,7 +610,6 @@
     "explanation": "Azure CycleCloud は、Azure 上での HPC 環境の構築・管理に特化したエンタープライズ向けツールです。既存の HPC スケジューラとの連携が可能で、インフラの動的なプロビジョニングや自動スケーリングをサポートします。\n\nAzure Purview はデータガバナンスサービスであり、HPC クラスター管理には関係ありません。\nAzure Automation はランブックによるタスク自動化サービスであり、HPC クラスターのプロビジョニングに特化していません。\nAzure Lighthouse はマルチテナント管理向けであり、HPC クラスター管理には不適切です。",
     "category": "",
     "tags": [
-      "batch",
       "virtual-machines"
     ],
     "exam": "az-305",
@@ -636,7 +628,6 @@
     "explanation": "4 つの Azure リージョンすべてで ExpressRoute 回線への接続が必要であり、各リージョンにローカルなハブを配置することで、接続ポイントが確保されレイテンシが低減されます。そのため 4 つのハブが必要です。\n\n1 つや 2 つではすべてのリージョンの ExpressRoute 接続要件を満たせません。\n3 つでは 1 つのリージョンにローカルハブがなく、ExpressRoute 接続要件を満たせません。",
     "category": "",
     "tags": [
-      "on-premises-connectivity",
       "vnet"
     ],
     "exam": "az-305",
@@ -653,7 +644,6 @@
     "explanation": "ExpressRoute との接続が必要なため Standard SKU が必須です。Basic SKU はサイト間 VPN のみ対応であり、ExpressRoute、ユーザー VPN (P2S)、ハブ間トランジット、VNet 間トランジットなどはサポートしません。\n\nBasic SKU ではサイト間 VPN しかサポートされず、ExpressRoute 接続の要件を満たせません。",
     "category": "",
     "tags": [
-      "on-premises-connectivity",
       "vnet"
     ],
     "exam": "az-305",
@@ -832,7 +822,6 @@
     "explanation": "エンタイトルメント管理では、接続先組織を指定してそのユーザーがアクセス権を要求できるようにします。ディレクトリに未登録のユーザーがアクセスを要求し承認されると、自動的に B2B ゲストとして招待されアクセス権が付与されます。アクセス権の期限切れ後、他のアクセスパッケージが割り当てられていなければ B2B アカウントも自動削除されます。\n\nMicrosoft Entra ID Protection はリスクベースのサインイン保護であり、外部テナントのユーザーにアクセスを許可する機能ではありません。\n条件付きアクセスポリシーはアクセス条件を制御しますが、外部テナントのユーザーをアプリに招待・認証する機能は持ちません。\nプロビジョニングサービスは既存ユーザーの同期に使われ、外部テナントからのアクセス要求・承認ワークフローには対応しません。",
     "category": "",
     "tags": [
-      "external-users",
       "entra-governance"
     ],
     "exam": "az-305",
@@ -905,7 +894,6 @@
     "explanation": "Application1 には高トランザクションレートと低レイテンシが求められるため Premium パフォーマンスが必須です。データセンター障害時の可用性を確保するため ZRS レプリケーションが必要です。\n\nStandard + LRS は低レイテンシ要件を満たせず、LRS はデータセンター障害に耐えられません。\nStandard + RA-GRS は低レイテンシ要件を満たせません。\nPremium + LRS はパフォーマンスは満たしますが、LRS はデータセンター障害時の可用性を確保できません。",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage",
       "storage-redundancy"
     ],
@@ -925,7 +913,6 @@
     "explanation": "Application1 は高いトランザクションレートと低レイテンシを必要としているため Premium パフォーマンスが必須です。データセンター障害への耐性も必要なため、ZRS レプリケーションを備えたブロック BLOB ストレージが最適です。\n\nPremium + LRS はパフォーマンスは満たしますが、LRS はデータセンター障害に耐えられません。\nStandard + RA-GRS は低レイテンシ要件を満たせません。\nStandard + LRS は低レイテンシ要件もデータセンター障害耐性も満たせません。",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage",
       "storage-redundancy"
     ],
@@ -945,7 +932,6 @@
     "explanation": "汎用 v2 ストレージアカウントは Azure Storage の最新機能をすべてサポートし、GB あたりの容量単価が最も低く設定されています。クールアクセス層を使うことでストレージコストをさらに抑えられます。RA-GRS レプリケーションにより、データセンター障害時にも読み取りアクセスを維持できます。\n\nBLOB ストレージ（ホット層）は汎用 v2 のクール層よりも GB あたりのコストが高くなります。\nもう一方の BLOB ストレージ（ホット層）も同様にコスト最小化の要件を満たしません。\nPremium + ZRS は高パフォーマンスですが、GB あたりのコストが高く Application2 の要件には不適切です。",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage",
       "storage-redundancy"
     ],
@@ -1074,7 +1060,6 @@
     "explanation": "最低 2 つのサブネットが必要です。1 つは Azure App Service の VNet 統合用、もう 1 つは Azure Private Link のプライベートエンドポイント用です。VNet 統合は専用サブネットを必要とします。\n\n1 つのサブネットでは、VNet 統合とプライベートエンドポイントの両方を収容できません。VNet 統合には専用サブネットが必要です。\n3 つは不要です。VNet 統合用とプライベートエンドポイント用の 2 つで十分です。",
     "category": "",
     "tags": [
-      "vnet",
       "private-link"
     ],
     "exam": "az-305",
@@ -1092,7 +1077,6 @@
     "explanation": "プライベート DNS ゾーンを構成する必要があります。プライベートエンドポイントの FQDN をプライベート IP アドレスに解決するために、プライベート DNS ゾーンが不可欠です。\n\nAzure DNS Private Resolver はオンプレミスと Azure 間の DNS 転送に使用されるサービスであり、この VNet 内のプライベートエンドポイント名前解決には不要です。\nパブリック DNS ゾーンではプライベートエンドポイントのプライベート IP アドレスへの解決ができず、通信がプライベート経由になりません。",
     "category": "",
     "tags": [
-      "vnet",
       "private-link"
     ],
     "exam": "az-305",
@@ -1110,7 +1094,6 @@
     "explanation": "データに毎日アクセスするため、ホットアクセス層がデータアクセス料金の面で最適です。\nクール層はストレージ単価は安いですが、アクセスごとの料金が割高になるため、日常的にアクセスするシナリオには不向きです。\nPremium ブロック BLOB は高パフォーマンス向けであり、10 GB 未満の小規模データセットには過剰でコストが高くなります。\nhttps://azure.microsoft.com/ja-jp/pricing/details/storage/blobs/",
     "category": "",
     "tags": [
-      "blob-storage",
       "azure-storage"
     ],
     "exam": "az-305",
@@ -1128,7 +1111,6 @@
     "explanation": "不変ポリシーを使えば、読み取り専用のアクセス許可を設定し 5 年間の保持期間を指定できます。このポリシーにより、保持期間中はデータの変更・削除が防止されます。期間満了後はデータの削除は許可されますが変更は不可のままです。\nリソースロックはリソースの削除や変更を防止しますが、Blob データレベルの書き込み制御や保持期間の設定はできません。\nコンテナーのアクセスレベルはパブリックアクセスの制御であり、データの変更・削除を防止する機能ではありません。\nhttps://learn.microsoft.com/ja-jp/azure/storage/blobs/immutable-storage-overview",
     "category": "",
     "tags": [
-      "blob-storage",
       "azure-storage"
     ],
     "exam": "az-305",
@@ -1148,7 +1130,6 @@
     "explanation": "Sub1 には Recovery Services コンテナーを作成します。Azure Backup を使用してサブスクリプション内のリソースをバックアップするためのインフラストラクチャとして Recovery Services コンテナーが必要です。\nAzure Site Recovery ジョブはレプリケーションやフェールオーバーのためのもので、バックアップの保護要件には該当しません。\nMABS はオンプレミスのバックアップサーバーであり、Azure 上のリソース保護には Recovery Services コンテナーが適切です。\nMARS エージェントはファイルやフォルダーのバックアップ用であり、Azure リソース全体の保護基盤にはなりません。\nResource Guard はマルチユーザー認可のためのリソースであり、Sub2 に配置すべきものです。",
     "category": "",
     "tags": [
-      "azure-backup",
       "backup-restore"
     ],
     "exam": "az-305",
@@ -1223,7 +1204,6 @@
     "explanation": "販売アプリケーションには Azure Site Recovery が適しています。Site Recovery は仮想マシンや物理サーバーのレプリケーション、フェイルオーバー、フェイルバックを調整し、DR コピーは数秒から数分の遅延で維持されます。2 番目のデータセンターへの迅速なフェイルオーバーを実現でき、カスタマイズ可能な復旧計画とリモート監視機能を提供します。\nAzure Backup のみではリアルタイムのフェイルオーバーは実現できず、復元に時間がかかります。\nAzure Site Recovery と Azure Backup の両方は要件を満たしますが、フェイルオーバーだけが必要なため Backup は不要であり、コスト最小化の観点で過剰です。\nhttps://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-overview",
     "category": "",
     "tags": [
-      "site-recovery",
       "backup-vs-asr"
     ],
     "exam": "az-305",
@@ -1241,7 +1221,6 @@
     "explanation": "レポートアプリケーションには Azure Backup が適しています。Azure Backup はオンプレミスおよびクラウドのデータをバックアップし、VM バックアップは通常日次、データベースバックアップは最短 15 分間隔で取得可能です。コンプライアンス要件に応じて数年にわたるデータ保持にも対応できます。RTO が 8 時間と比較的長いため、バックアップからの復元で十分に対応可能です。\nAzure Site Recovery のみではポイントインタイムリカバリの日次粒度が得られず、リアルタイムレプリケーションはこの要件には過剰です。\nAzure Site Recovery と Azure Backup の両方はバックアップ要件を満たしますが、フェイルオーバーは不要なため Site Recovery は余分でコスト増になります。",
     "category": "",
     "tags": [
-      "azure-backup",
       "backup-vs-asr"
     ],
     "exam": "az-305",
@@ -1259,8 +1238,6 @@
     "explanation": "財務アプリケーションには Azure Site Recovery と Azure Backup の両方が必要です。Azure Backup により 7 年間のデータ保持要件を満たしつつデータの安全性と回復性を確保し、Site Recovery により災害発生時に Azure 上でのワークロード実行と 10 分という短い RTO を実現します。\nAzure Site Recovery のみでは 7 年間のデータ保持要件を満たすことができません。\nAzure Backup のみでは RTO 10 分という短い復旧時間を達成することが困難です。",
     "category": "",
     "tags": [
-      "azure-backup",
-      "site-recovery",
       "backup-vs-asr"
     ],
     "exam": "az-305",
@@ -1279,7 +1256,6 @@
     "explanation": "Azure Cosmos DB の PostgreSQL 用 API は、SQL クエリの完全サポート、geo レプリケーション対応、リレーショナル形式でのデータ保存・アクセスを提供し、すべての要件を満たします。自動的かつ即時のスケーラビリティとグローバル分散を備えています。\nMongoDB はドキュメント指向の NoSQL 型であり、リレーショナルデータモデルには非対応です。\nApache Cassandra は SQL をネイティブサポートせず、完全なリレーショナルモデルではありません。\nNoSQL（API for NoSQL）はドキュメントベースであり、リレーショナル形式でのデータ保存には対応しません。\nhttps://learn.microsoft.com/ja-jp/azure/cosmos-db/choose-api",
     "category": "",
     "tags": [
-      "cosmosdb",
       "cosmosdb-params"
     ],
     "exam": "az-305",
@@ -1317,7 +1293,6 @@
     "explanation": "Azure Blueprintsはデプロイ後もリソースとのリレーションシップ（接続）を保持し続けます。そのため、ブループリントを更新するとデプロイ済みのリソースにも反映されます。\nARMテンプレートはデプロイ完了後にリソースとの関連を持たず、テンプレートの変更が既存リソースに影響することはありません。\nARMテンプレートでもAzure Policyのデプロイは可能なため、選択肢CとDは正しくありません。",
     "category": "governance",
     "tags": [
-      "blueprints",
       "azure-policy"
     ],
     "exam": "az-305",
@@ -1669,7 +1644,6 @@
     "explanation": "Azure Database for MySQLの読み取りレプリカ機能を使えば、ペアリージョンに非同期レプリカを構成し、障害時にレプリカをスタンドアロンサーバーへ昇格させてフェールオーバーできます。\nA. Premiumファイル共有はAzure Filesの機能で、MySQLとは無関係です。\nC. ネイティブレプリケーションはマネージドサービスではサポートされない場合があります。\nD. Geoバックアップ復元でも復旧は可能ですが、読み取りレプリカの方がRPO（目標復旧時点）を短くでき、フェールオーバー所要時間も短縮されます。",
     "category": "business-continuity",
     "tags": [
-      "read-replicas",
       "mysql-ha"
     ],
     "exam": "az-305",
@@ -1874,7 +1848,6 @@
     "explanation": "Basic SKUのVirtual WANが対応しているのはサイト間VPN（S2S）のみです。ExpressRouteを利用するためには、Standard SKUへの昇格が必須となります。Standardティアでは、S2S VPNに加えてExpressRoute、P2S VPN、VNet間接続といった全種類の接続が利用可能です。\nA. ExpressRouteゲートウェイの追加はStandard化が完了した後の手順であり、Basic SKUのままでは不可能です。\nB. 新しいハブVNetを構築してもBasic SKUの制約は解消されません。\nD. ExpressRoute PremiumはリージョンをまたぐExpressRoute接続に関するもので、Virtual WANのSKUの問題とは異なります。",
     "category": "network",
     "tags": [
-      "on-premises-connectivity",
       "vnet"
     ],
     "exam": "az-305",
@@ -1928,7 +1901,6 @@
     "explanation": "リソースロックにはデプロイ先リージョンを制約する機能はありません。リソースロックの役割は、既存リソースに対する削除防止（CanNotDelete）や読み取り専用（ReadOnly）の設定であり、意図しない変更・削除から保護するものです。リソースのデプロイ先を制約するにはAzure Policyを利用する必要があります。\nA. リソースロックにリージョン制約機能はないため、「はい」は誤りです。",
     "category": "governance",
     "tags": [
-      "resource-locks",
       "azure-policy"
     ],
     "exam": "az-305",
@@ -2130,7 +2102,6 @@
     "explanation": "Azure Cosmos DB for NoSQLはSQLライクなクエリ対応、マルチマスター書き込み（マルチリージョン書き込み）、低レイテンシ読み取りを兼ね備えたグローバル分散データベースです。複数Azureリージョンにデータを自動複製・同期することで、高可用性と低レイテンシをグローバルに提供します。\nA. Azure SQL Database HyperscaleはリレーショナルDBであり、マルチマスター書き込みのネイティブサポートがありません。\nB. アクティブgeoレプリケーションを使用するAzure SQL Databaseはセカンダリが読み取り専用であり、マルチマスター書き込みには対応していません。\nC. PostgreSQL用Azure Cosmos DBはPostgreSQL互換のAPIですが、マルチマスター書き込みにはNoSQL APIの方が適しています。",
     "category": "data",
     "tags": [
-      "cosmosdb",
       "cosmosdb-params"
     ],
     "exam": "az-305",
@@ -2148,8 +2119,6 @@
     "explanation": "サービスプリンシパルは個人に紐付かないため、人事異動の影響を受けにくく管理負荷が低くなります。オンプレミスネットワーク環境では、認証にサービスプリンシパルまたは個人アクセストークンを用いるのが一般的です。\nA. 個人のアクセストークンは個人に紐付くため、スタッフの入退社に伴うトークンの発行・失効管理の運用負荷が高くなります。\nC. マネージドIDはAzureリソース間の認証に限られ、オンプレミスリソースからの認証には使えません。",
     "category": "identity",
     "tags": [
-      "app-registration",
-      "managed-identity",
       "app-vs-managed"
     ],
     "exam": "az-305",
@@ -2186,7 +2155,6 @@
     "explanation": "複数リージョンからの同時読み書きを実現できるのはAzure Cosmos DBのみです。Cosmos DBは自動スケールアウトに対応し、データセンター障害時にも高い可用性を確保でき、複数Azureリージョン間でのデータ読み書きを可能にするグローバル分散型のマルチモデルデータベースです。\nA. Azure SQL Databaseはアクティブgeoレプリケーションでもセカンダリは読み取り専用であり、複数リージョンからの書き込みには対応していません。\nC. Azure Blob Storageは複数リージョンからの同時読み書きをネイティブにサポートしていません。\nD. Azure Table Storageもグローバルな複数リージョン同時読み書きには対応していません。",
     "category": "data",
     "tags": [
-      "cosmosdb",
       "cosmosdb-params"
     ],
     "exam": "az-305",
@@ -2205,7 +2173,6 @@
     "explanation": "Azure Site Recoveryによるレプリケーションでは、RTOは通常15分以内を実現でき、リージョン全体の障害からの自動復旧をサポートします。RPOはアプリケーション整合性で1時間、クラッシュ整合性で5分程度であり、RPO 24時間の要件も満たします。\nA. Azure Virtual Machines可用性セットは単一リージョン内の障害ドメイン分散であり、リージョン全体の障害には対応できません。\nB. Always On可用性グループはSQL Serverの高可用性ソリューションですが、ASRと比較してコストが高くなります。\nD. Azureディスクバックアップでは復旧に時間がかかり、RTO 15分を達成できません。",
     "category": "business-continuity",
     "tags": [
-      "site-recovery",
       "backup-vs-asr",
       "virtual-machines"
     ],
@@ -2242,7 +2209,6 @@
     "explanation": "ブループリント定義の保存先として管理グループまたはサブスクリプションを指定できます。ルート管理グループは階層の最上位であり、全管理グループ・全サブスクリプションを包含します。このレベルでブループリントを定義することにより、グローバルなポリシーやロール割り当てをディレクトリ全体に適用でき、定義数を最小化できます。\n\nB. 子管理グループで定義すると10個の定義が必要になり、最小化の要件を満たしません。\nC. サブスクリプションで定義すると50個の定義が必要になり、さらに多くなります。",
     "category": "",
     "tags": [
-      "blueprints",
       "management-groups"
     ],
     "exam": "az-305",
@@ -2260,7 +2226,6 @@
     "explanation": "ブループリントの割り当ては管理グループまたはサブスクリプションに対して行えますが、実際のリソースデプロイはサブスクリプションレベルで適用されます。ポータル上ではデフォルトで直近の発行バージョンが選択されます。アーティファクトパラメーターやブループリントパラメーターがある場合は、割り当て時に値を定義します。\n\nA. ルート管理グループへの割り当ては可能ですが、サブスクリプション単位での割り当てが基本です。\nB. 子管理グループへの割り当ては可能ですが、最終的にはサブスクリプションに適用されます。",
     "category": "",
     "tags": [
-      "blueprints",
       "management-groups"
     ],
     "exam": "az-305",
@@ -2296,7 +2261,6 @@
     "explanation": "マネージドプライベートエンドポイントを使用するには、マネージドワークスペース仮想ネットワークが有効なSynapseワークスペースが必要です。専用のマネージド仮想ネットワークを構成することで、プライベートエンドポイントを通じた安全な通信が可能になります。\n\nA. Entra ID認証はID認証方式の設定であり、ネットワーク経路の制御には関係しません。\nB. パブリックネットワークアクセスの無効化だけでは、Microsoftバックボーン経由の通信経路は確保できません。",
     "category": "",
     "tags": [
-      "vnet",
       "private-link",
       "data-analytics"
     ],
@@ -2427,9 +2391,8 @@
     "explanation": "General Purposeサービスレベルは標準的なワークロード向けに設計されており、コストとパフォーマンスのバランスに優れたコンピューティング・ストレージオプションを提供します。サーバーレスコンピューティングレベルはワークロードの負荷に応じてリソースを自動スケーリングし、秒単位の従量課金を行うため、コスト最小化の要件を満たします。\n\nA. Business Criticalはサーバーレスコンピューティングレベルをサポートしておらず、コストも高くなります。\nB. Hyperscaleのプロビジョニング済みコンピューティングは自動スケーリングに対応せず、コストも高くなります。",
     "category": "",
     "tags": [
-      "sql-database",
-      "sql-service-levels",
-      "sql-security"
+      "sql-security",
+      "sql-service-levels"
     ],
     "exam": "az-305",
     "source": "website"
@@ -2446,7 +2409,6 @@
     "explanation": "Always Encryptedは、クレジットカード番号や国民ID番号のような機微データの保護を目的とした機能です。クライアント側でデータを暗号化するため、暗号化キーがデータベースエンジンに渡ることはありません。これにより、データを閲覧できるユーザーと、管理するがアクセス権を持たないユーザーを明確に分離でき、特定列の暗号化に対応します。\n\nA. TDEはデータベース全体の保存時暗号化であり、特定列のみの暗号化には対応していません。\nC. データベース暗号化キーもデータベース全体の暗号化に関するもので、列単位の暗号化は実現できません。",
     "category": "",
     "tags": [
-      "sql-database",
       "sql-security"
     ],
     "exam": "az-305",
@@ -2598,7 +2560,6 @@
     "category": "",
     "tags": [
       "virtual-machines",
-      "vmss",
       "availability-zones"
     ],
     "exam": "az-305",
@@ -2616,7 +2577,6 @@
     "explanation": "読み取りレイテンシの最小化にはPremiumブロックBLOBが最適です。Premiumレベルでは不変ストレージ（イミュータブルストレージ）もサポートされており、データの変更不可要件にも対応できます。\n\nA. Standard汎用v1は旧世代のストレージアカウントで、Premiumと比べ読み取りレイテンシが大きく、不変ストレージのサポートも限定的です。\nC. Standard汎用v2は不変ストレージに対応していますが、Premiumと比べ読み取りレイテンシが大きいため、最小化の要件を満たしません。",
     "category": "",
     "tags": [
-      "blob-storage",
       "azure-storage"
     ],
     "exam": "az-305",
@@ -2690,7 +2650,6 @@
     "explanation": "Standard汎用v2はブロックBLOBをサポートし、大容量のビデオファイル（最大数TBまで）に対応可能です。また、様々な冗長性オプションとネットワーク構成を柔軟に選択できます。\n\nA. PremiumページBLOBはVMディスク向けに最適化されており、大容量ビデオファイルの保存には不向きです。\nB. Premiumファイル共有はSMBプロトコルのファイル共有向けで、大容量ビデオファイルの格納には最適ではありません。",
     "category": "",
     "tags": [
-      "azure-storage",
       "blob-storage",
       "on-premises-connectivity"
     ],
@@ -2727,7 +2686,6 @@
     "explanation": "ExpressRouteはインターネットを経由せずAzureネットワークに直結するため、プライベートエンドポイントが適切です。Azure Private Linkを使えば、プライベートエンドポイントを介してAzure PaaSサービスを仮想ネットワークに安全に接続でき、ExpressRoute経由の通信を確実にします。\n\nA. サービスエンドポイントはVNet内からAzureサービスへのアクセスを最適化しますが、オンプレミスからExpressRoute経由のアクセスには対応していません。\nB. Azure Route Serverはルーティング情報の交換を容易にするサービスであり、ストレージへのアクセス経路の制御には直接使用しません。",
     "category": "",
     "tags": [
-      "private-link",
       "on-premises-connectivity"
     ],
     "exam": "az-305",
@@ -2817,7 +2775,6 @@
     "explanation": "Azure Monitorエージェント（AMA）をインストールすれば、Windows/Linuxのサーバーからログやパフォーマンス指標を収集してLog Analyticsワークスペースへ転送できます。データ収集ルール（DCR）によって取得するログの種類を自由に指定できるため、300台規模のシステムログ集中監視という要件にも対応可能です。\n「いいえ」は誤りです。AMAは大規模環境のログ収集に対応しており、DCRで柔軟にデータ収集を制御できます。",
     "category": "monitoring",
     "tags": [
-      "azure-monitor",
       "dcr"
     ],
     "exam": "az-305",
@@ -2836,7 +2793,6 @@
     "explanation": "基本ログ（Basic Logs）は分析ログ（Analytics Logs）と比べて取り込み単価がおよそ半額に抑えられます。大量のログを取り込むものの高度な分析が必要ない場面では、基本ログへの切り替えがコスト削減に効果的です。ただしKQLクエリに一部制約があり、クエリ実行ごとに課金が発生する点には注意が必要です。\n分析ログのままではコスト削減になりません。\n保持期間の短縮は取り込みコストには影響せず、十分な費用削減が見込めません。\nワークスペース分割はデータの取り込み単価を下げるものではなく、管理が複雑になるだけです。",
     "category": "monitoring",
     "tags": [
-      "log-analytics",
       "table-plans"
     ],
     "exam": "az-305",
@@ -2855,7 +2811,6 @@
     "explanation": "データ収集ルール（DCR）においてデータ収集エンドポイント（DCE）を利用してログを転送し、KQLクエリによるインジェスト時変換を適用できます。これにより、Log Analyticsへ取り込む前段階でデータのフィルタリングや加工が可能です。\nEvent Hubs経由ではLog Analyticsへの直接取り込みに適しておらず、Azure Functionsでの変換は構成が過大になります。\nストレージアカウント経由ではLog Analyticsへの直接取り込みに適しておらず、Logic Appsでの変換も冗長です。\nAzure Monitor APIとPowerShellの組み合わせはDCRベースのインジェスト時変換には該当しません。",
     "category": "monitoring",
     "tags": [
-      "dcr",
       "log-analytics"
     ],
     "exam": "az-305",
@@ -2874,7 +2829,6 @@
     "explanation": "Log Analyticsワークスペースでは、WindowsイベントログはEventテーブルに、Linux SyslogデータはSyslogテーブルに保存されます。\nWindowsEventやLinuxSyslogという名称のテーブルは標準では存在しません。\nSecurityEventテーブルはセキュリティ関連イベント専用であり、一般的なWindowsイベントログの格納先ではありません。\nEventLogやSyslogMessagesという名称のテーブルも実在しません。",
     "category": "monitoring",
     "tags": [
-      "log-analytics",
       "data-sources"
     ],
     "exam": "az-305",
@@ -2893,8 +2847,6 @@
     "explanation": "Network Insights、Application Insights、VM Insightsはいずれも同一のLog Analyticsワークスペースに集約可能です。したがって最低1つあれば運用できます。複数のInsightsを1つのワークスペースに統合することで、データ間の相関分析が容易になるだけでなく、運用コストも抑えられます。\n2つ以上のワークスペースは必須ではなく、不要な分割はコスト増と管理の複雑化を招きます。",
     "category": "monitoring",
     "tags": [
-      "log-analytics",
-      "app-insights",
       "monitor-insights"
     ],
     "exam": "az-305",
@@ -2913,7 +2865,6 @@
     "explanation": "アクティビティログにはサブスクリプション内のリソース操作（作成・変更・削除）の履歴が記録されます。Log Analyticsワークスペースへ転送すれば、KQLで集計・分析を行い、月次レポートに必要なデータを抽出できます。\nResource GraphとAzure Functionsはリアルタイムのリソースクエリ向けで、過去の変更履歴の分析には不向きです。\nAzure Advisorはベストプラクティスの提案サービスであり、リソース一覧の生成用途とは異なります。\nAzure Monitor メトリックとDashboardはパフォーマンス指標の可視化向けで、リソース一覧レポートには適しません。",
     "category": "monitoring",
     "tags": [
-      "log-analytics",
       "diagnostic-settings"
     ],
     "exam": "az-305",
@@ -2951,8 +2902,6 @@
     "explanation": "NSGフローログの診断データは、ストレージアカウントではデフォルトで最大90日まで保持されます。一方、Log Analyticsワークスペースでは最大730日（2年間）のデータ保持が可能です。\nストレージアカウント30日・Log Analytics 365日の組み合わせはどちらも実際の上限と異なります。\nストレージアカウント180日は実際の保持期間上限（90日）を超えており誤りです。\nストレージアカウント365日も実際の保持期間上限（90日）を大幅に超えており誤りです。",
     "category": "monitoring",
     "tags": [
-      "diagnostic-settings",
-      "log-analytics",
       "network-watcher"
     ],
     "exam": "az-305",
@@ -3007,7 +2956,6 @@
     "explanation": "Microsoft Entra IDのアクセスレビューでは、アプリケーションへのアクセス権とグループメンバーシップの両方を対象に定期的な見直しが可能です。さらに、Microsoft 365 E5ライセンスにはMicrosoft Entra ID P2が含まれるため、アクセスレビュー機能が利用できます。この機能にはMicrosoft Entra ID P2またはMicrosoft Entra ID Governanceライセンスが必要です。\nアプリケーションへのアクセス権とグループメンバーシップのみ正しいという選択肢は、M365 E5でも利用可能である点を見落としています。\nグループメンバーシップとM365 E5のみ正しいという選択肢は、アプリケーションへのアクセス権もレビュー対象である点を見落としています。\nアプリケーションへのアクセス権のみ正しいという選択肢は、グループメンバーシップのレビューとM365 E5対応を見落としています。",
     "category": "identity",
     "tags": [
-      "entra-governance",
       "entra-license"
     ],
     "exam": "az-305",
@@ -3064,7 +3012,6 @@
     "explanation": "管理単位（Administrative Unit）を活用すれば、特定のユーザー群に限定した管理権限を付与できます。ヘルプデスク管理者ロールにはパスワードリセット権限が含まれており、Accounting管理単位にスコープを限定することで最小権限の原則を満たせます。\nテナント全体のヘルプデスク管理者ロールでは権限範囲が広すぎ、最小権限の原則に反します。\nテナント全体のパスワード管理者ロールも権限範囲が広すぎます。\nAccounting管理単位のパスワード管理者でもリセットは行えますが、ヘルプデスク管理者はより限定的な権限セットのため、最小権限に適合します。",
     "category": "identity",
     "tags": [
-      "admin-units",
       "entra-roles"
     ],
     "exam": "az-305",
@@ -3102,7 +3049,6 @@
     "category": "monitoring",
     "tags": [
       "lighthouse",
-      "azure-monitor",
       "dcr"
     ],
     "exam": "az-305",
@@ -3159,7 +3105,6 @@
     "explanation": "ユーザー委任SASはMicrosoft Entra IDの認証情報を用いて署名されるため、ストレージアカウントの共有キーに依存しません。有効期限の指定も可能で、SASの中で最も安全性が高い方式です。\nサービスSASはストレージアカウントキーで署名されるため、共有キー不使用の要件を満たせません。\nアカウントSASもストレージアカウントキーで署名されるため、同様に要件を満たせません。\nストレージアクセスキーはキー自体を直接利用する手段であり、SASとは別の仕組みです。",
     "category": "identity",
     "tags": [
-      "sas",
       "storage-rbac"
     ],
     "exam": "az-305",
@@ -3178,7 +3123,6 @@
     "explanation": "システム割り当てマネージドIDはVMに自動でIDが付与され、コード内に資格情報を保存する必要がありません。VMのライフサイクルと連動して作成・削除が自動的に行われるため、運用負荷が最小限に抑えられます。\nサービスプリンシパルは認証情報（クライアントシークレットや証明書）の管理が別途必要です。\n接続文字列はコード中に記述することになり、セキュリティリスクがあります。\nユーザー割り当てマネージドIDも資格情報は不要ですが、VMが増えるたびにID割り当て管理が必要となり、システム割り当てに比べて手間がかかります。",
     "category": "identity",
     "tags": [
-      "managed-identity",
       "app-vs-managed"
     ],
     "exam": "az-305",
@@ -3197,7 +3141,6 @@
     "explanation": "ユーザー割り当てマネージドIDは独立したIDリソースとして作成でき、複数のVMに共有して紐づけることが可能です。1つのIDを作成して全VMに割り当てれば、SQL Databaseへのアクセス権を一元的に管理できます。\nシステム割り当てマネージドIDはVM個別のIDとなるため、複数VMでの共通管理にはユーザー割り当て方式の方が効率的です。\nサービスプリンシパルは認証情報の管理が発生します。\n接続文字列はコード内記述が必要であり、セキュリティ上の課題があります。",
     "category": "identity",
     "tags": [
-      "managed-identity",
       "app-vs-managed"
     ],
     "exam": "az-305",
@@ -3221,7 +3164,6 @@
     "explanation": "Azure Policyは管理グループ、サブスクリプション、リソースグループの3階層に対して割り当てが可能です。\nテナントレベルへの直接割り当てはできず、管理グループを介して間接的にカバーします。\n可用性ゾーンはインフラの物理的な構成要素であり、Policyの適用スコープとしては定義されていません。",
     "category": "governance",
     "tags": [
-      "azure-policy",
       "resource-hierarchy"
     ],
     "exam": "az-305",
@@ -3258,7 +3200,6 @@
     "explanation": "Modify効果を使えば、リソースの作成時や更新時にタグなどのプロパティを追加・変更・削除できます。また、修復タスクにより既存リソースのタグも自動修正が可能です。\nDenyはリソース作成の拒否のみでタグ継承はできません。\nAuditは非準拠リソースの記録だけで実際の修正は行いません。\nAppendは配列型フィールドへの追加用途であり、タグ管理にはModifyの使用が推奨されています。",
     "category": "governance",
     "tags": [
-      "azure-policy",
       "tagging"
     ],
     "exam": "az-305",
@@ -3314,7 +3255,6 @@
     "explanation": "Azure Blob Storageは非構造化データの格納に最適化されており、アクセス層（Hot/Cool/Cold/Archive）の選択によってストレージコストを調整できます。10GB程度のデータであれば、Hotアクセス層で十分高速な読み取りが可能です。\nAzure Files Premiumはファイル共有用途で割高になります。\nManaged Disksは仮想マシン専用のディスクサービスであり、汎用的なデータ格納には不向きです。\nTable Storageは構造化されたKey-Valueデータ向けであり、汎用的なデータ格納には適していません。",
     "category": "data",
     "tags": [
-      "blob-storage",
       "azure-storage"
     ],
     "exam": "az-305",
@@ -3441,7 +3381,6 @@
     "explanation": "Azure SQL Databaseはフルマネージドのリレーショナルデータベースで、ACID準拠のトランザクション処理を完全にサポートします。構造化データの格納とSQLクエリに最適な選択肢です。\n\nA. Cosmos DBもトランザクション機能を備えていますが、主にNoSQLワークロード向けに設計されています。\nC. Blob Storageは非構造化データ用でトランザクション処理には対応しません。\nD. Table StorageはNoSQLのKey-Valueストアであり、完全なACIDトランザクションには対応していません。",
     "category": "data",
     "tags": [
-      "sql-database",
       "relational-db"
     ],
     "exam": "az-305",
@@ -3703,8 +3642,6 @@
     "category": "bcdr",
     "tags": [
       "bcdr-strategies",
-      "azure-backup",
-      "site-recovery",
       "backup-vs-asr"
     ],
     "exam": "az-305",
@@ -3884,7 +3821,6 @@
     "explanation": "Key Vaultのフェールオーバー中は、読み取り系の操作（シークレットの取得、暗号化キーの利用、証明書の参照など）は引き続き使用可能ですが、書き込み系の操作（新規作成・更新・削除）は利用できません。フェールオーバー中のKey Vaultは読み取り専用の状態で稼働し、フェールバックが完了してから書き込み操作が再び有効になります。\n\nA. シークレットの読み取りはフェールオーバー中でも実行可能です。\nB. キーを使用した暗号化操作はフェールオーバー中でも実行可能です。\nD. 証明書の参照はフェールオーバー中でも実行可能です。",
     "category": "bcdr",
     "tags": [
-      "keyvault-replication",
       "keyvault-backup"
     ],
     "exam": "az-305",
@@ -3903,7 +3839,6 @@
     "explanation": "Azure Database for MySQLのフレキシブルサーバーでゾーン冗長高可用性を有効化するには、General Purpose以上のティアが必要です。Burstableティアではこの構成は利用できません。\nA. Burstable + 単一ゾーンでは高可用性の構成が有効化されず、障害時の自動フェールオーバーが提供されません。\nC. Business Criticalでもゾーン冗長高可用性は利用可能ですが、最低限のティアとしてはGeneral Purposeが該当し、geo冗長バックアップは災害復旧用途であって自動フェールオーバーを伴う高可用性とは異なります。\nD. Burstableティアではゾーン冗長高可用性を有効化できないため、この組み合わせは構成不可です。",
     "category": "bcdr",
     "tags": [
-      "mysql-service-levels",
       "mysql-ha"
     ],
     "exam": "az-305",
@@ -3941,7 +3876,6 @@
     "explanation": "自動フェールオーバーグループは、自動フェールオーバー機能に加えて、読み書き用と読み取り専用のリスナーエンドポイントを提供します。フェールオーバーが起きてもエンドポイントはそのまま維持されるため、アプリケーション側で接続文字列を変更する必要がありません。\nA. アクティブgeoレプリケーションでは手動での切り替えが必要であり、接続先の変更も伴います。\nC. geoバックアップは復元処理であって自動フェールオーバーではありません。\nD. ゾーン冗長は同一リージョン内での冗長性にとどまり、別リージョンへの自動フェールオーバーは提供しません。",
     "category": "bcdr",
     "tags": [
-      "failover-groups",
       "sql-ha-architecture"
     ],
     "exam": "az-305",
@@ -3960,7 +3894,6 @@
     "explanation": "Azure Resource Guardは、バックアップの削除やポリシーの変更、論理削除の無効化といったAzure Backupの重要操作に対して追加の保護層を設けます。Resource Guardを構成すると、こうした操作を行うには別サブスクリプションに配置されたResource Guardリソースへのアクセス権限が求められるようになります。\nA. Azure Policyはコンプライアンスの監査や強制が主な用途であり、バックアップ操作そのものの保護とは異なります。\nC. Azure Key Vaultは暗号化キーやシークレットの管理サービスであり、バックアップ操作の保護機能はありません。\nD. Microsoft Defender for Cloudはセキュリティ態勢管理と脅威保護のサービスであり、バックアップの重要操作を直接ブロックする仕組みではありません。",
     "category": "bcdr",
     "tags": [
-      "azure-backup",
       "backup-restore"
     ],
     "exam": "az-305",
@@ -4215,7 +4148,6 @@
     "explanation": "Virtual WANのBasic SKUが対応する接続タイプはサイト間（S2S）VPNのみです。Standard SKUではS2S VPN、ポイント対サイト（P2S）VPN、ExpressRoute、仮想ネットワーク間の接続、ハブ間接続など、すべての接続タイプが利用可能です。\nB. BasicはExpressRouteのみではなくS2S VPNのみをサポートし、StandardはVPN以外にもExpressRouteやVNet間接続に対応します。\nC. BasicとStandardでは対応する接続タイプが異なり、同じ機能ではありません。\nD. BasicはP2S VPNではなくS2S VPNのみをサポートします。",
     "category": "network",
     "tags": [
-      "on-premises-connectivity",
       "vnet"
     ],
     "exam": "az-305",
@@ -4234,7 +4166,6 @@
     "explanation": "プライベートエンドポイントはVNet内のサブネットにプライベートIPアドレスを付与し、Azureサービスへのプライベート接続を実現します。通信はMicrosoftのバックボーンネットワーク内で完結します。サービスエンドポイントはVNetからAzureサービスへの経路をAzureバックボーン経由に最適化しますが、サービス側のパブリックIPアドレスはそのまま残ります。\nA. 説明が逆であり、プライベートIPを割り当てるのはプライベートエンドポイントの方です。\nC. サービスエンドポイントはプライベートIPを割り当てず、ルートの最適化のみを行います。\nD. プライベートエンドポイントはプライベートIPを使用するため、両方ともパブリックIPという説明は誤りです。",
     "category": "network",
     "tags": [
-      "private-link",
       "vnet"
     ],
     "exam": "az-305",
@@ -4271,7 +4202,6 @@
     "explanation": "Azure DDoS Network Protection（旧称Standard）は有料のプランで、仮想ネットワーク内のリソースに対し高度なDDoS軽減機能を提供します。攻撃に関するテレメトリ、診断ログ、アラート機能、コスト保護保証が含まれます。\nA. Azureプラットフォームには無料の基本DDoS保護（Infrastructure Protection）が組み込まれていますが、高度な防御機能やテレメトリは含まれません。\nC. DDoS Network ProtectionはVNet単位で適用され、個別のVMだけに限定されるものではありません。\nD. DDoS ProtectionはApplication Gatewayだけでなく、VNet内のすべてのパブリックIPリソースに適用可能です。",
     "category": "network",
     "tags": [
-      "network-security",
       "vnet"
     ],
     "exam": "az-305",
@@ -4314,7 +4244,6 @@
     "explanation": "Azure Migrateはオンプレミスからのクラウド移行を一元的に管理するハブサービスです。サーバー、データベース、Webアプリケーションの検出から評価、実際の移行までを統合的に実施できます。\nA. Azure Site Recoveryは災害復旧や移行実行のツールですが、事前の評価機能は備えていません。\nC. Azure Resource MoverはAzureのリージョン間でリソースを移動するためのサービスであり、オンプレミスからの移行管理はできません。\nD. Azure Advisorは運用上の推奨事項を提示するサービスであり、移行の評価・計画・実行を管理する機能はありません。",
     "category": "compute",
     "tags": [
-      "resource-migration",
       "data-migration"
     ],
     "exam": "az-305",
