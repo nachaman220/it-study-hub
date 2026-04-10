@@ -10,7 +10,6 @@
     "explanation": "はい。Azureポータルはブラウザベースの管理ツールなので、AndroidOSのタブレットからでもブラウザを使って仮想マシンを作成できます。\n\n「いいえ」が不正解の理由：Azureポータルは特定のOSに依存せず、Webブラウザが動作するあらゆるデバイスからアクセス可能です。",
     "category": "",
     "tags": [
-      "virtual-machines",
       "azure-portal"
     ],
     "is_free": false,
@@ -29,7 +28,6 @@
     "explanation": "はい。Azure Cloud ShellはブラウザベースのCLI環境で、BashまたはPowerShellを選択できます。AndroidタブレットのブラウザからCloud Shellにアクセスし、Azure CLIコマンドで仮想マシンを作成することが可能です。\n\n「いいえ」が不正解の理由：Cloud Shellはブラウザ上で動作するため、OSの種類に関係なく利用できます。",
     "category": "",
     "tags": [
-      "virtual-machines",
       "cloud-shell"
     ],
     "is_free": false,
@@ -48,7 +46,6 @@
     "explanation": "いいえ。Power Appsポータルは、ビジネスアプリケーション（フォームやビューなど）を組み合わせてWebサイトを作成するためのサービスです。Azureインフラストラクチャの管理機能は含まれておらず、仮想マシンの作成はできません。\n\n「はい」が不正解の理由：仮想マシンの作成にはAzureポータル、Azure CLI、PowerShell、またはCloud Shellなどを使用する必要があります。",
     "category": "",
     "tags": [
-      "virtual-machines",
       "azure-portal"
     ],
     "is_free": false,
@@ -199,7 +196,7 @@
     "explanation": "はい。Service Trust Portalの一部のリソースにアクセスするには、Microsoftクラウドサービスアカウント（Microsoft Entra組織アカウント）での認証が必要です。また、コンプライアンス資料については機密保持契約（NDA）の確認と同意が求められます。\n\n「いいえ」が不正解の理由：機密性の高いコンプライアンス情報を扱うため、認証済みアカウントでのサインインが必要になります。",
     "category": "",
     "tags": [
-      "security-governance"
+      "purview"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -217,7 +214,7 @@
     "explanation": "はい。コンプライアンスマネージャーは、Microsoftクラウドサービスに関連するコンプライアンスアクティビティを追跡・管理するためのツールです。コントロール、評価、規制、改善アクションなどの要素を使って、組織のコンプライアンス状況を可視化し、改善に役立てることができます。\n\n「いいえ」が不正解の理由：コンプライアンスマネージャーはまさにこの目的のために設計されたツールです。",
     "category": "",
     "tags": [
-      "security-governance"
+      "purview"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -235,7 +232,7 @@
     "explanation": "はい。Service Trust Portalの「マイライブラリ」機能を使うと、ドキュメントを保存（ピン留め）して素早くアクセスできます。また、保存したドキュメントが更新された際に通知を受け取る設定も可能です。\n\n「いいえ」が不正解の理由：マイライブラリはService Trust Portalの標準機能として提供されています。",
     "category": "",
     "tags": [
-      "security-governance"
+      "purview"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -333,8 +330,7 @@
     "explanation": "正解は「リソースをまとめて削除する」と「リソースのアクセスを管理する」です。\n\nリソースグループを削除すると、その中のリソースもすべて削除されるため、関連リソースの一括管理に便利です。また、Azure RBAC（ロールベースのアクセス制御）をリソースグループ単位で割り当てることで、アクセス管理が可能です。\n\n不正解の選択肢：\n- 「異なるサブスクリプションにわたるリソースを管理する」→ リソースグループは1つのサブスクリプション内でのみ機能し、サブスクリプションをまたいだ管理はできません。\n- 「Microsoft Entra IDのロールを管理する」→ Entra IDのロール管理はリソースグループの機能ではなく、Entra IDの管理画面で行います。",
     "category": "",
     "tags": [
-      "resource-groups",
-      "rbac"
+      "resource-groups"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -510,7 +506,7 @@
     "explanation": "Azure Virtual MachinesはIaaS（Infrastructure as a Service）に分類されます。IaaSでは、クラウドプロバイダーが仮想マシンやストレージ、ネットワークなどのインフラを提供し、ユーザーがOSやアプリケーションを自分で管理します。\n\n不正解の選択肢：\n- 「Microsoft 365」→ メールやOfficeアプリなどのソフトウェアが完成品として提供されるSaaSです。\n- 「Azure Logic Apps」→ ワークフロー自動化のプラットフォームであり、PaaSに分類されます。\n- 「Azure App Service」→ Webアプリのホスティングサービスで、インフラ管理不要のPaaSです。",
     "category": "",
     "tags": [
-      "service-models"
+      "iaas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -605,8 +601,7 @@
     "explanation": "〇正解の理由\nAzure App Serviceは、Webアプリやモバイルアプリのホスティングを提供するフルマネージドのPaaS製品です。インフラの管理はAzureが行うため、開発者はアプリケーションの開発に集中できます。\n\n✅解き方のヒント\nAzure App ServiceはPaaSの代表例として頻出ですので、即答できるようにしましょう。\n\n「いいえ」が不正解の理由：App ServiceはOS・ランタイムの管理が不要なPaaSであり、この記述は正しいです。",
     "category": "",
     "tags": [
-      "paas",
-      "app-service"
+      "paas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -724,8 +719,7 @@
     "explanation": "〇正解の理由\nAzure Site Recoveryは、DRaaS（Disaster Recovery as a Service）として、仮想マシンのレプリケーションとフェイルオーバーを提供するサービスです。障害発生時にVMを別リージョンで復旧できます。\n\n✅解き方のヒント\nサービス名の「Recovery」という単語から、「復旧」＝「ディザスターリカバリー」と結びつけることができます。\n\n不正解の選択肢：\n・高弾性：需要変動に応じた柔軟なスケーリングのことで、復旧サービスとは異なります。\n・高可用性：障害を防ぐための冗長構成のことで、Site Recoveryの主目的は障害「後」の復旧です。\n・フォールトトレランス：障害中のサービス継続であり、復旧とは異なる概念です。",
     "category": "",
     "tags": [
-      "reliability",
-      "virtual-machines"
+      "reliability"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -811,7 +805,7 @@
     "explanation": "〇正解の理由\nAzure Policyでは、組み込みポリシーを使ってリソースのデプロイ先リージョンを制限したり、許可するVMサイズを制限したりできます。コンプライアンスや予算管理に活用されます。\n\n✅解き方のヒント\nAzure Policyは「リソースの構成やプロパティを制限」するサービスです。「操作の許可・拒否」はRBACの役割です。この違いを押さえましょう。\n\n不正解の選択肢：\n・仮想マシンの起動と停止のみを許可する：特定の操作の許可・拒否はAzure Policy ではなくRBAC（ロールベースのアクセス制御）で実現します。\n・サブスクリプションのキャンセルを許可する：サブスクリプションの管理操作はAzure Policyの制御対象ではありません。",
     "category": "",
     "tags": [
-      "rbac-vs-policy"
+      "azure-policy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -831,8 +825,7 @@
     "explanation": "〇正解の理由\nAzure仮想マシンが停止済み（割り当て解除）の状態でも、ストレージ（ディスク）とネットワーク（パブリックIPなど）の料金は引き続き発生します。コンピューティング容量の課金は停止されます。\n\n✅解き方のヒント\n割り当て解除状態ではCPU/メモリの課金は止まりますが、ディスクやパブリックIPなどVMの状態に依存しないリソースは課金が継続されることを覚えておきましょう。\n\n不正解の選択肢：\n・コンピューティング容量：割り当て解除によりCPU/メモリは解放されるため、課金されません。\n・I/O 操作：VMが停止中はI/O操作が発生しないため、課金対象になりません。\n・ストレージ：ストレージも課金されますが、この問題の正解はネットワークです。",
     "category": "",
     "tags": [
-      "cost-factors",
-      "virtual-machines"
+      "cost-factors"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -892,7 +885,7 @@
     "explanation": "〇正解の理由\nサイト間VPN（Site-to-Site VPN）は、オンプレミスのVPNデバイスとAzure VPNゲートウェイを接続する方式です。暗号化されたトンネルをインターネット経由で確立し、オンプレミスネットワーク全体とAzure仮想ネットワークを接続します。\n\nAzure仮想ネットワークとオンプレミスを接続する主な方法は3つあります：\n・ポイント対サイトVPN：個々のクライアントPCからAzureに接続する方式\n・サイト間VPN：オンプレミスのVPNデバイスとAzure VPNゲートウェイをリンクする方式\n・Azure ExpressRoute：インターネットを経由しない専用プライベート接続\n\n✅解き方のヒント\n「オンプレミスのVPNデバイスがAzure VPNゲートウェイにリンク」というキーワードから、サイト間VPNと判断できます。\n\n不正解の選択肢：\n・Azure ExpressRoute：インターネットを経由しない専用接続であり、VPNデバイスは使用しません。\n・ポイント対サイトVPN：個々のクライアントPCからの接続であり、VPNデバイス間の接続ではありません。\n・ゲートウェイ サブネット：VPNゲートウェイを配置するサブネットの名前であり、接続の種類ではありません。",
     "category": "",
     "tags": [
-      "virtual-network"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1023,8 +1016,7 @@
     "explanation": "〇正解の理由\nリソースは、サブスクリプションやリソースグループからタグを自動的に継承しません。あるレベルでタグを設定しても、下位レベルには自動で反映されないため、レベルごとに独自のタグ付けスキーマを設計できます。\n\n✅解き方のヒント\nタグは自動継承されないことを覚えておきましょう。Azure Policyを使えば継承を強制することは可能ですが、デフォルトの動作ではありません。\n\n「はい」が不正解の理由：リソースグループに割り当てたタグは、そのグループ内のリソースに自動的には継承されません。",
     "category": "",
     "tags": [
-      "tags",
-      "resource-groups"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1042,7 +1034,6 @@
     "explanation": "〇正解の理由\nリソースグループにアクセス許可を設定すると、そのグループ内のすべてのリソースに対してそのアクセス許可が適用されます。これはRBACのスコープの仕組みによるもので、上位スコープの権限は下位に継承されます。\n\n✅解き方のヒント\nリソースグループは一括管理の単位として機能し、アクセス許可の付与・拒否はグループ内のすべてのリソースに波及します。\n\n「いいえ」が不正解の理由：リソースグループへのアクセス許可は、そのグループ内の全リソースに適用されるため、この記述は正しいです。",
     "category": "",
     "tags": [
-      "resource-groups",
       "rbac"
     ],
     "is_free": false,
@@ -1097,7 +1088,7 @@
     "explanation": "〇正解の理由\nAzureには認証と承認（認可）の両方を提供する組み込みサービスがあります。\n\n認証サービス（Microsoft Entra ID）：\n・アプリケーションやリソースへのアクセス時のID検証\n・セルフサービスパスワードリセット、多要素認証、スマートロックアウト\n・シングルサインオン（SSO）\n\n承認サービス（Azure RBAC）：\n・ロールベースのアクセス制御でリソースへのアクセス範囲を管理\n・管理グループ、サブスクリプション、リソースグループなどのスコープに対してロールを割り当て\n\n✅解き方のヒント\nAzureでは認証＝Entra ID、承認（認可）＝RBACと、両方の仕組みが標準で提供されていることを覚えておきましょう。\n\n「いいえ」が不正解の理由：Microsoft Entra IDやAzure RBACなど、認証・承認の組み込みサービスが提供されているため、この記述は正しいです。",
     "category": "",
     "tags": [
-      "rbac"
+      "authn-authz"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1217,8 +1208,7 @@
     },
     "category": "",
     "tags": [
-      "hybrid-connectivity",
-      "ha-scalability"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1344,8 +1334,7 @@
     },
     "category": "",
     "tags": [
-      "cost-factors",
-      "azure-regions"
+      "cost-factors"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1370,7 +1359,7 @@
     },
     "category": "",
     "tags": [
-      "hierarchy"
+      "subscriptions"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1391,7 +1380,7 @@
     },
     "category": "",
     "tags": [
-      "azure-regions"
+      "availability-zones"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1466,8 +1455,7 @@
     },
     "category": "",
     "tags": [
-      "reliability",
-      "azure-regions"
+      "reliability"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -1492,8 +1480,7 @@
     },
     "category": "",
     "tags": [
-      "azure-advisor",
-      "cost-saving"
+      "azure-advisor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1535,7 +1522,7 @@
     },
     "category": "",
     "tags": [
-      "storage-services"
+      "redundancy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1556,7 +1543,7 @@
     },
     "category": "",
     "tags": [
-      "storage-services"
+      "redundancy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1577,7 +1564,7 @@
     },
     "category": "",
     "tags": [
-      "storage-services"
+      "storage-account"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1602,7 +1589,7 @@
     },
     "category": "",
     "tags": [
-      "cost-management"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1673,7 +1660,7 @@
     },
     "category": "",
     "tags": [
-      "cost-factors"
+      "cost-saving"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1694,7 +1681,6 @@
     },
     "category": "",
     "tags": [
-      "virtual-machines",
       "cost-factors"
     ],
     "is_free": false,
@@ -1716,7 +1702,6 @@
     },
     "category": "",
     "tags": [
-      "paas",
       "shared-responsibility"
     ],
     "is_free": true,
@@ -1738,8 +1723,7 @@
     },
     "category": "",
     "tags": [
-      "paas",
-      "pricing-model"
+      "paas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -1760,8 +1744,7 @@
     },
     "category": "",
     "tags": [
-      "paas",
-      "ha-scalability"
+      "paas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -1836,7 +1819,7 @@
     },
     "category": "",
     "tags": [
-      "hierarchy"
+      "management-groups"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1859,8 +1842,7 @@
     "explanation": "【正解】「2つ以上の可用性ゾーン」「2つ以上のリージョン」\n\n可用性ゾーンは同一リージョン内の物理的に分離されたデータセンター群であり、1つのデータセンターが停止しても別のゾーンで稼働を継続できます。また、複数リージョンへのデプロイはさらに広範な障害に備えられます。\n\n【不正解の選択肢】\n・「1つのサブスクリプションにデプロイ」→ サブスクリプションは課金やアクセス管理の論理的な単位であり、物理的な冗長性とは無関係です。\n・「2つ以上のリソースグループにデプロイ」→ リソースグループもリソースを整理するための論理コンテナーであり、可用性には影響しません。\n\nhttps://learn.microsoft.com/ja-jp/azure/reliability/availability-zones-overview",
     "category": "",
     "tags": [
-      "azure-regions",
-      "ha-scalability"
+      "availability-zones"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1878,8 +1860,7 @@
     "explanation": "【正解】いいえ\n\nサブスクリプションの所有権を譲渡できるのは、アカウントの課金管理者のみです。所有者ロール（Azure RBAC）はリソースの管理権限を持ちますが、サブスクリプションの課金や譲渡に関する操作はAzure Entraロール（課金管理者）の権限に属します。\n\n【不正解の選択肢】\n・「はい」→ 所有者ロールはAzure RBACのロールであり、リソース管理が対象です。課金管理はAzure Entraロールの領域であるため、所有者ロールでは譲渡操作ができません。\n\nhttps://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/billing-subscription-transfer",
     "category": "",
     "tags": [
-      "rbac",
-      "subscriptions"
+      "rbac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1897,8 +1878,7 @@
     "explanation": "【正解】はい\n\nAzure 無料アカウントは、Azure portal から従量課金制にアップグレードできます。多くのクラウドサービスと同様、Azureも無料枠から有料プランへのスムーズな移行をサポートしています。\n\n【不正解の選択肢】\n・「いいえ」→ Azure では無料試用版から従量課金制への移行は公式にサポートされている機能です。\n\nhttps://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/upgrade-azure-subscription",
     "category": "",
     "tags": [
-      "subscriptions",
-      "cost-factors"
+      "subscriptions"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -1916,8 +1896,7 @@
     "explanation": "【正解】はい\n\nAzure の使用制限はクレジット額と同額に固定されています。たとえば無料アカウントの場合、使用制限は200ドルで、この金額を変更することはできません。ただし、使用制限そのものを「削除」することは可能です。つまり選択肢は「クレジットと同額の制限」か「制限なし」のどちらかです。\n\n【不正解の選択肢】\n・「いいえ」→ 使用制限の金額自体を任意に増減することはできない仕様です。削除は可能ですが、金額の変更とは異なります。\n\nhttps://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/spending-limit",
     "category": "",
     "tags": [
-      "pricing-model",
-      "cost-factors"
+      "pricing-model"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -1955,7 +1934,6 @@
     "explanation": "【正解】はい\n\n1つのMicrosoft Entra IDテナントは、複数のAzureサブスクリプションと関連付けることができます。ただし、その逆（1つのサブスクリプションを複数のEntra IDテナントに関連付けること）はできません。この「多対一」の関係を理解しておくことが重要です。\n\n【不正解の選択肢】\n・「いいえ」→ Entra IDテナントとサブスクリプションの関係は「1テナント：複数サブスクリプション」が可能です。\n\nhttps://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory",
     "category": "",
     "tags": [
-      "entra-id",
       "subscriptions"
     ],
     "is_free": false,
@@ -1974,7 +1952,6 @@
     "explanation": "【正解】はい\n\nAzureサブスクリプションに関連付けられているMicrosoft Entra IDテナントは、後から別のテナントに変更できます。これにより、組織の統合やテナント移行といったシナリオに対応可能です。\n\n【不正解の選択肢】\n・「いいえ」→ テナントの変更は公式にサポートされている操作です。\n\nhttps://learn.microsoft.com/ja-jp/azure/devtest/offer/how-to-change-directory-tenants-visual-studio-azure",
     "category": "",
     "tags": [
-      "entra-id",
       "subscriptions"
     ],
     "is_free": false,
@@ -1993,7 +1970,6 @@
     "explanation": "【正解】いいえ\n\nサブスクリプションの有効期限が切れても、Microsoft Entra IDテナントが自動削除されることはありません。テナントはサブスクリプションとは独立して存在するリソースです。もし有効期限切れでテナントが消えてしまうと、ユーザー情報やディレクトリ設定がすべて失われ、非常に不便な動作となります。\n\n【不正解の選択肢】\n・「はい」→ サブスクリプションの期限切れとテナントの削除は連動しません。テナントは別途明示的に削除する必要があります。\n\nhttps://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory",
     "category": "",
     "tags": [
-      "entra-id",
       "subscriptions"
     ],
     "is_free": false,
@@ -2068,8 +2044,7 @@
     "explanation": "【正解】いいえ\n\nAzure Advisorのセキュリティ推奨事項を実装すると、セキュリティスコアは向上します（低下しません）。Advisorはセキュリティ改善の提案を行い、それらを適用することでスコアが改善される仕組みです。\n\n【不正解の選択肢】\n・「はい」→ 推奨事項はセキュリティ強化を目的としているため、実装によりスコアが下がることはありません。\n\nhttps://learn.microsoft.com/ja-jp/azure/advisor/azure-advisor-score",
     "category": "",
     "tags": [
-      "azure-advisor",
-      "security-services"
+      "azure-advisor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2181,8 +2156,7 @@
     "explanation": "【正解】Azure Monitor\n\nAzure Monitorは、VM可用性メトリックを使用してメトリックアラートルールを作成でき、仮想マシンの停止を自動検知して通知する仕組みを構築できます。\n\n【不正解の選択肢】\n・「Azure Advisor」→ コスト削減やパフォーマンス改善などの推奨事項を提示するサービスであり、リアルタイムのアラート通知機能はありません。\n・「Azure Service Health」→ Azureプラットフォーム全体のサービス正常性を監視するもので、個別のVMの停止を検知するサービスではありません。\n・「Azure Network Watcher」→ ネットワークの監視・診断ツールであり、VMの稼働状態の監視には使いません。\n\nhttps://learn.microsoft.com/ja-jp/azure/azure-monitor/vm/tutorial-monitor-vm-alert-availability",
     "category": "",
     "tags": [
-      "azure-monitor",
-      "virtual-machines"
+      "azure-monitor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2202,8 +2176,7 @@
     "explanation": "【正解】境界層\n\nAzureの多層防御モデルにおいて、DDoS Protectionは「境界層」に位置します。境界層では、大規模なDDoS攻撃がユーザーのサービスに到達する前にフィルタリングされます。\n\n多層防御の各層の役割は以下のとおりです。\n・物理セキュリティ層：データセンターのハードウェア保護\n・IDとアクセス層：インフラへのアクセス管理\n・境界層：DDoS保護による大規模攻撃のフィルタリング\n・ネットワーク層：セグメント化とアクセス制御\n・コンピューティング層：VMへのアクセス保護\n・アプリケーション層：アプリの脆弱性対策\n・データ層：ビジネスデータへのアクセス制御\n\n【不正解の選択肢】\n・「ネットワーク層」→ ネットワーク層はリソース間通信のセグメント化やアクセス制御を担当します。\n・「アプリケーション層」→ アプリケーション層はアプリのセキュリティ確保と脆弱性対策が対象です。\n・「コンピューティング層」→ コンピューティング層はVMへのアクセスを保護する層です。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/secure-network-connectivity-azure/2-what-is-defense-in-depth",
     "category": "",
     "tags": [
-      "defense-in-depth",
-      "network-services"
+      "defense-in-depth"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2263,8 +2236,7 @@
     "explanation": "【正解】Azure キー コンテナー（Azure Key Vault）\n\nAzure Disk Encryptionでは暗号化キーをAzure Key Vaultに格納します。そのため、ディスク暗号化を設定する前に、まずKey Vaultを作成する必要があります。\n\n【不正解の選択肢】\n・「Azure Information Protection ポリシー」→ ドキュメントやメールの分類・保護（編集・印刷・転送の制御）を行うポリシーであり、ディスク暗号化とは関係ありません。\n・「Azure Storage アカウント」→ Blobやファイルなどのストレージサービスのアカウントであり、VM暗号化の前提条件ではありません。\n・「暗号化キー」→ 暗号化キー自体はKey Vaultの中で管理されるため、先にKey Vaultの作成が必要です。\n\nhttps://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/disk-encryption-cli-quickstart",
     "category": "",
     "tags": [
-      "security-services",
-      "virtual-machines"
+      "security-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2284,8 +2256,7 @@
     "explanation": "【正解】Azure Key Vault\n\nAzure Key Vaultにパスワードやシークレットを格納し、ARMテンプレートからデプロイ時にKey Vault経由で安全に取得することができます。資格情報の暗号化・管理に最適なサービスです。\n\n【不正解の選択肢】\n・「Microsoft Entra Multi-Factor Authentication」→ ログイン時の多要素認証を提供するサービスであり、資格情報の暗号化保管とは用途が異なります。\n・「Microsoft Defender for Cloud」→ Azure環境全体のセキュリティ態勢管理や脅威検出を行うサービスであり、資格情報の暗号化には使いません。\n・「Azure Information Protection」→ 社外に共有するドキュメントやメールに対する分類・保護サービスであり、デプロイ時の資格情報管理には適しません。\n\nhttps://learn.microsoft.com/ja-jp/azure/key-vault/general/overview",
     "category": "",
     "tags": [
-      "security-services",
-      "arm"
+      "security-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2323,8 +2294,7 @@
     "explanation": "【正解】いいえ\n\nAzureの従量課金制は運用費（OpEx）に該当します。使った分だけ支払うモデルであり、初期投資としての資本的支出（CapEx）には当たりません。\n\n一般的な分類の目安：\n・クラウドの従量課金 → OpEx（運用費）\n・オンプレミスのハードウェア購入や建設 → CapEx（資本的支出）\n\n【不正解の選択肢】\n・「はい」→ 従量課金は利用量に応じた支払いであり、CapEx（設備投資）ではなくOpEx（運用費）です。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-compute/6-describe-consumption-based-model",
     "category": "",
     "tags": [
-      "pricing-model",
-      "cost-factors"
+      "pricing-model"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2342,8 +2312,7 @@
     "explanation": "【正解】はい\n\n電気料金は月々発生する運用コストであり、運用費（OpEx）に分類されます。データセンター自体の建設はCapExですが、日常的に発生する電気代などのランニングコストはOpExです。\n\n【不正解の選択肢】\n・「いいえ」→ 電気料金は資産の取得費用ではなく、継続的に発生する費用であるため、CapExではなくOpExに該当します。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-compute/6-describe-consumption-based-model",
     "category": "",
     "tags": [
-      "pricing-model",
-      "cost-factors"
+      "pricing-model"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2361,8 +2330,7 @@
     "explanation": "【正解】いいえ\n\nデータセンターの構築は大規模な設備投資であり、資本的支出（CapEx）に該当します。建物やサーバーハードウェアの購入は初期投資として計上されるため、OpExではありません。\n\n【不正解の選択肢】\n・「はい」→ データセンターの「構築」は一時的な大規模投資であり、月々のランニングコスト（OpEx）ではなくCapExに分類されます。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-compute/6-describe-consumption-based-model",
     "category": "",
     "tags": [
-      "pricing-model",
-      "cost-factors"
+      "pricing-model"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2381,8 +2349,7 @@
     "explanation": "【正解】IaaS\n\nAzure Virtual Machines（仮想マシン）はIaaSに分類されます。ユーザーがOSの選択・管理・パッチ適用を行い、その上でアプリケーションを動かす形態です。「VM = IaaS」と覚えておくと確実です。\n\n【不正解の選択肢】\n・「PaaS」→ PaaSではOS管理はプロバイダー側の担当であり、VMのようにOSを直接操作するサービスはPaaSに分類されません。\n・「SaaS」→ SaaSは完成されたアプリケーションを利用する形態（例：Microsoft 365）であり、VMとは全く異なります。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-service-types/",
     "category": "",
     "tags": [
-      "iaas",
-      "virtual-machines"
+      "iaas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2401,7 +2368,7 @@
     "explanation": "【正解】PaaS\n\nAzure SQL DatabaseはPaaSに分類されます。データベースエンジンの管理、パッチ適用、バックアップなどはAzureが自動で行い、ユーザーはデータベースの設計やクエリに集中できます。\n\n【不正解の選択肢】\n・「SaaS」→ SaaSは完成したアプリケーション（例：Microsoft 365）を利用する形態であり、SQL Databaseのようにクエリを自分で書いて使うサービスはSaaSには当たりません。\n・「IaaS」→ IaaSはVMなどのインフラを提供する形態です。SQL DatabaseはOS管理が不要な点でIaaSとは異なります。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-service-types/",
     "category": "",
     "tags": [
-      "service-models"
+      "comparison"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2425,9 +2392,7 @@
     "explanation": "【正解】「故障したサーバーハードウェアの交換」「物理サーバーのセキュリティ管理」\n\nAzure VM（IaaS）への移行により、物理的なインフラの管理はAzureが担当します。ハードウェアの交換やデータセンターの物理セキュリティはクラウドプロバイダーの責任となります。\n\n【不正解の選択肢】\n・「共有ドキュメントへのアクセス権限の管理」→ アクセス権限の管理は、クラウド移行後もユーザー側の責任として残ります（共同責任モデル）。\n・「アプリケーションデータのバックアップ」→ IaaSではデータのバックアップはユーザーの責任です。Azureはバックアップサービスを提供しますが、設定・運用はユーザーが行います。\n・「サーバーOSのアップデート」→ IaaSではOSの管理（アップデート含む）はユーザーの責任です。PaaSやSaaSでは不要になりますが、VMではユーザーが管理します。\n\nhttps://learn.microsoft.com/ja-jp/training/modules/describe-cloud-compute/4-describe-shared-responsibility-model",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "iaas",
-      "virtual-machines"
+      "shared-responsibility"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2465,8 +2430,7 @@
     "explanation": "【正解】プライベート クラウド\nプライベートクラウドは特定の組織が専有して利用する環境です。インフラ全体を自社で管理するため、セキュリティポリシーやアクセス制御を完全にコントロールでき、独自のセキュリティ要件を満たすことが可能です。\n\n【不正解の選択肢】\n・パブリック クラウド：プロバイダーがインフラを管理するため、利用者がセキュリティを完全に制御することはできません。\n・ハイブリッド クラウド：パブリッククラウド部分はプロバイダー管理となるため、全体を完全に制御することはできません。\n\n【ポイント】\nセキュリティの完全な制御が求められる場合はプライベートクラウドが適しています。金融機関や政府機関など厳格なコンプライアンス要件がある組織でよく採用されます。",
     "category": "",
     "tags": [
-      "cloud-models",
-      "security-governance"
+      "cloud-models"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2505,8 +2469,7 @@
     "explanation": "【正解】Azure App Service、Azure SQL Database\nAzure App ServiceとAzure SQL Databaseはどちらも PaaS サービスです。PaaS のみを使う計画なので、IaaS である仮想マシン（Virtual Machines）を含まない組み合わせを選ぶ必要があります。\n\n【不正解の選択肢】\n・Azure Storage Account、Azure Virtual Machines Web Server：Virtual MachinesはIaaSであり、PaaS限定の要件を満たしません。\n・Azure App Service、Microsoft SQL Server がインストールされた Azure Virtual Machines：App ServiceはPaaSですが、VM上のSQL ServerはIaaSです。\n・Azure Virtual Machines、Azure SQL Database、Azure Storage Account：Virtual MachinesはIaaSのため不適切です。\n\n【ポイント】\n「Virtual Machines（VM/仮想マシン）」が含まれる選択肢はIaaSを含むため、PaaS限定の要件では除外できます。",
     "category": "",
     "tags": [
-      "comparison",
-      "app-service"
+      "paas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2525,7 +2488,7 @@
     "explanation": "【正解】サービスとしてのプラットフォーム (PaaS)\nAzure SQL DatabaseはPaaSとして提供されるサービスです。PaaSでは、OS やミドルウェアの管理（ソフトウェアの自動更新を含む）はクラウドプロバイダーが行い、利用者はアプリケーション開発に集中できます。\n\n【不正解の選択肢】\n・IaaS：IaaSではOSやミドルウェアの管理は利用者の責任であり、ソフトウェアの自動更新はプロバイダーが行いません。\n・SaaS：SaaSは完成されたアプリケーションをそのまま利用する形態です。Azure SQL Databaseはデータベースプラットフォームであり、SaaSではありません。\n\n【ポイント】\n「ソフトウェアの自動更新をプロバイダーが管理」はPaaSの典型的な特徴です。Azure SQL DatabaseがPaaSであることは頻出なので覚えておきましょう。",
     "category": "",
     "tags": [
-      "comparison"
+      "paas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2543,8 +2506,7 @@
     "explanation": "【正解】はい\nAzureカスタムロールを作成することで、組み込みロールでは対応できない細かなアクセス権限をユーザーやグループに付与できます。必要なアクション（読み取り、書き込み、削除など）を自由に組み合わせて、独自のロールを定義できます。\n\n【不正解の選択肢】\n・いいえ：Azureでは組み込みロールに加えてカスタムロールの作成が可能です。カスタムロールにより、最小権限の原則に沿った柔軟なアクセス制御を実現できます。\n\n【ポイント】\nAzure RBACでは「組み込みロール」と「カスタムロール」の2種類があります。カスタムロールでは、Actions/NotActionsを指定して詳細な権限設定が可能です。",
     "category": "",
     "tags": [
-      "rbac",
-      "rbac-vs-policy"
+      "rbac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2580,8 +2542,7 @@
     "explanation": "【正解】いいえ\n1つのリソースグループの所有者ロールは、複数のユーザーに割り当てることができます。所有者ロールの割り当て数に制限はありません。\n\n【不正解の選択肢】\n・はい：所有者を1人に限定すると、その人が不在の場合にリソース管理ができなくなります。Azureでは運用上の柔軟性を確保するため、同一スコープに対して複数のユーザーにロールを付与できる設計になっています。\n\n【ポイント】\nAzure RBACでは、同一スコープ（管理グループ、サブスクリプション、リソースグループ、リソース）に対して、同じロールを複数のユーザーに割り当て可能です。",
     "category": "",
     "tags": [
-      "rbac",
-      "resource-groups"
+      "rbac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2601,7 +2562,7 @@
     "explanation": "【正解】Azure Policy\nAzure Policyを使用すると、特定のリソースの種類（この場合は仮想マシン）の作成を拒否するポリシーを設定できます。他のリソースの作成には影響を与えず、特定の操作だけを制限できるのがポイントです。\n\n【不正解の選択肢】\n・タグ：タグはリソースにメタデータを付与して分類・管理するための機能であり、リソースの作成を制限する機能はありません。\n・Azure 組み込みロール：ロール（RBAC）はユーザーに対する権限管理であり、「仮想マシンだけ作成禁止」のようなリソース種別ごとの制限には適していません。\n・ロック：ロックはリソースの削除や変更を防止する機能です。「削除ロック」と「読み取り専用ロック」の2種類があり、特定の種類のリソースだけ作成を禁止する用途には使えません。\n\n【ポイント】\n「特定のリソースの種類を制限したい」場合はAzure Policyが正解です。RBACは「誰が何をできるか」、Policyは「何が許可されるか」を制御します。",
     "category": "",
     "tags": [
-      "rbac-vs-policy"
+      "azure-policy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2621,7 +2582,7 @@
     "explanation": "【正解】すべての Active Directory ユーザー アカウントを Microsoft Entra ID に同期する\nMicrosoft Entra Connect（旧 Azure AD Connect）を使用してオンプレミスADとMicrosoft Entra IDを同期すれば、ユーザーは既存の資格情報をそのまま使えるため、影響を最小限に抑えられます。オンプレミスでの変更は自動的にEntra IDに反映されます。\n\n【不正解の選択肢】\n・Azure 多要素認証 (MFA) を実装する：MFAはセキュリティを強化する手段ですが、AD移行の影響を最小限にする目的には直接関係ありません。むしろ、新たな認証手順が増えてユーザーへの影響が出ます。\n・すべてのユーザーにパスワードを変更するよう指示する：パスワード変更はユーザーに負担をかけ、「影響を最小限にする」という要件に反します。\n・ユーザーごとに Microsoft Entra ID にゲスト ユーザー アカウントを作成する：ゲストアカウントは外部ユーザー向けの機能です。自社の従業員に対してゲストアカウントを作成するのは不適切であり、管理も煩雑になります。\n\n【ポイント】\n「ユーザーへの影響を最小限に」というキーワードが出たら、既存の資格情報をそのまま使える同期ソリューションを選びましょう。",
     "category": "",
     "tags": [
-      "identity-protection"
+      "entra-id"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2660,8 +2621,7 @@
     "explanation": "【正解】Azure Functions\nAzure Functionsはサーバーレスコンピューティングサービスです。サーバーのデプロイや管理を気にすることなく、コードの実行に集中できます。イベント駆動型で、必要なときだけ実行され、使用した分だけ課金されます。\n\n【不正解の選択肢】\n・Azure Pipelines：Azure DevOpsの一部で、CI/CD（継続的インテグレーション/継続的デリバリー）のためのサービスです。アプリケーションコードの実行環境ではありません。\n・Azure Resource Manager テンプレート：Azureリソースのデプロイを自動化するためのIaC（Infrastructure as Code）テンプレートです。アプリケーションの実行環境ではありません。\n・Azure Application Gateway：Webアプリケーション向けのロードバランサーです。トラフィックの分散やWAF機能を提供しますが、コードの実行環境ではありません。\n\n【ポイント】\n「サーバーレス」「サーバー管理不要」「コード実行」のキーワードが出たらAzure Functionsを選びましょう。",
     "category": "",
     "tags": [
-      "serverless-compute",
-      "serverless"
+      "serverless-compute"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2679,7 +2639,7 @@
     "explanation": "【正解】はい\nMicrosoft Intuneはクラウドベースのエンドポイント管理サービスで、SaaSとして提供されています。管理者はWebブラウザからコンソールにアクセスし、デバイスの管理やポリシーの設定、アプリケーションの配布を行えます。オンプレミスのインフラは不要です。\n\n【不正解の選択肢】\n・いいえ：IntuneはMicrosoft 365の一部としてクラウド上で完結するサービスであり、利用者がインストールやインフラ管理を行う必要がないため、SaaSの定義に合致します。\n\n【ポイント】\nSaaSの特徴は「インターネット経由でそのまま利用でき、ソフトウェアの管理が不要」な点です。IntuneはこのSaaSの典型例です。",
     "category": "",
     "tags": [
-      "comparison"
+      "saas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -2697,7 +2657,6 @@
     "explanation": "【正解】いいえ\nクラウドコンピューティングでは、プロバイダーが大規模なインフラを所有しており、必要に応じてリソースを迅速に追加・削減できます。一方、オンプレミスの拡張にはハードウェアの購入、設置スペースの確保、電力・冷却設備、運用人員などのコストがかかるため、一般的にクラウドのほうが低コストで容量を増やせます。\n\n【不正解の選択肢】\n・はい：規模の経済（スケールメリット）により、クラウドプロバイダーは効率的にリソースを提供できます。オンプレミスの物理的な拡張は初期投資が大きく、時間もかかるため、通常はクラウドの方がコスト効率に優れています。\n\n【ポイント】\nクラウドの主要なメリットの1つが「コスト効率の高いスケーリング」です。CapEx（設備投資）からOpEx（運用費）への転換も重要な概念です。",
     "category": "",
     "tags": [
-      "pricing-model",
       "ha-scalability"
     ],
     "is_free": true,
@@ -2716,8 +2675,7 @@
     "explanation": "【正解】いいえ\nAzureへのインバウンドトラフィック（データ受信）は基本的に無料ですが、アウトバウンドトラフィック（データ送信）には課金が発生します。この料金はリージョンによって異なり、すべてのリージョンで均一ではありません。\n\n【不正解の選択肢】\n・はい：データ転送の料金は送信先のリージョンやゾーンによって変動します。たとえば、北米リージョンからの送信とアジアリージョンからの送信では料金体系が異なる場合があります。\n\n【ポイント】\nAzureのネットワーク料金の基本ルールとして、「インバウンドは無料、アウトバウンドは有料かつリージョンにより料金が異なる」と覚えておきましょう。",
     "category": "",
     "tags": [
-      "cost-factors",
-      "azure-regions"
+      "cost-factors"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2818,7 +2776,7 @@
     "explanation": "【正解】Azure Monitor、Azure Advisor\nAzure Monitorは、クラウドおよびオンプレミス環境のメトリクスやログを収集・分析する包括的な監視サービスです。アプリケーションのパフォーマンスや可用性をリアルタイムで把握でき、アラートの設定も可能です。Azure Advisorはリソースの構成を分析し、可用性やパフォーマンスを含む推奨事項を提示するサービスです。\n\n【不正解の選択肢】\n・Azureサブスクリプション：Azureサービスを利用するための契約・課金の単位であり、監視機能は含まれていません。\n・Azure Marketplace：サードパーティやMicrosoftのソリューションを購入・デプロイできるストアであり、監視ソリューションそのものではありません。\n\n【ポイント】\nAzure Monitorは「データの収集・分析・可視化」、Azure Advisorは「ベストプラクティスに基づく推奨事項の提示」を行います。両者とも可用性とパフォーマンスの改善に役立ちます。",
     "category": "",
     "tags": [
-      "azure-advisor"
+      "azure-monitor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2880,8 +2838,7 @@
     "explanation": "【正解】はい\nNSG（ネットワークセキュリティグループ）は、仮想ネットワークのサブネットに関連付けることができます。これにより、サブネット内のすべてのリソースに対して共通のトラフィックフィルタリングルールを適用できます。\n\n【不正解の選択肢】\n・いいえ：NSGはサブネットまたはネットワークインターフェイス（NIC）に関連付け可能です。1つのサブネットに関連付けられるNSGは0個または1個で、1つのNSGは複数のサブネットに関連付けることができます。\n\n【ポイント】\nNSGの関連付け先は「サブネット」と「ネットワークインターフェイス（NIC）」の2つです。仮想ネットワーク全体には関連付けられません。",
     "category": "",
     "tags": [
-      "network-services",
-      "security-services"
+      "network-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2899,8 +2856,7 @@
     "explanation": "【正解】はい\nNSG（ネットワークセキュリティグループ）は、サブネットまたはネットワークインターフェイス（NIC）に関連付けることはできますが、仮想ネットワーク全体に直接関連付けることはできません。\n\n【不正解の選択肢】\n・いいえ：NSGの関連付け先はサブネットとNICに限定されています。仮想ネットワーク全体にNSGを適用したい場合は、各サブネットに個別に関連付ける必要があります。\n\n【ポイント】\n「仮想ネットワーク」と「サブネット」の区別が重要です。NSGはサブネットレベルまたはNICレベルで適用され、仮想ネットワーク全体には適用できません。",
     "category": "",
     "tags": [
-      "network-services",
-      "security-services"
+      "network-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2918,8 +2874,7 @@
     "explanation": "【正解】いいえ\nNSG（ネットワークセキュリティグループ）は、ネットワークインターフェイス（NIC）に関連付けることができます。これにより、特定の仮想マシンのネットワークトラフィックを個別にフィルタリングできます。\n\n【不正解の選択肢】\n・はい：NSGの関連付け先は「サブネット」と「ネットワークインターフェイス（NIC）」の2つです。NICへの関連付けが不可能というのは誤りです。\n\n【ポイント】\nNSGの関連付け先を整理しましょう。\n・サブネット → 関連付け可能\n・ネットワークインターフェイス（NIC） → 関連付け可能\n・仮想ネットワーク → 関連付け不可",
     "category": "",
     "tags": [
-      "network-services",
-      "security-services"
+      "network-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2940,8 +2895,7 @@
     "explanation": "【正解】ロック\nリソースグループにロックを設定すると、誤った削除や変更を防止できます。ロックには「CanNotDelete（削除ロック）」と「ReadOnly（読み取り専用ロック）」の2種類があり、削除ロックでは読み取りと変更は可能ですが削除はできなくなります。\n\n【不正解の選択肢】\n・デプロイ：リソースのデプロイ履歴を管理する機能であり、削除を防止する機能ではありません。\n・クイックスタート：テンプレートやガイドを使ってリソースを素早く作成するための機能であり、保護とは無関係です。\n・リソースコスト：リソースの費用を確認する機能であり、削除防止には使えません。\n・ポリシー：リソースの作成やプロパティに対するルールを定義できますが、「誤って削除されないようにする」目的にはロックの方が直接的で適切です。\n\n【ポイント】\n「誤削除の防止」にはロックが最も直接的なソリューションです。権限を持つユーザーでも、ロックが設定されていれば削除できません（ロックを解除しない限り）。",
     "category": "",
     "tags": [
-      "resource-locks",
-      "resource-groups"
+      "resource-locks"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -2983,7 +2937,7 @@
     "explanation": "【正解】Microsoft Defender for Cloud\nMicrosoft Defender for Cloudは、セキュリティ態勢管理と脅威保護を提供するサービスです。「セキュアスコア」という指標でサブスクリプション全体のセキュリティ状態を評価し、改善すべきポイントを推奨事項として提示します。\n\n【不正解の選択肢】\n・Azure Key Vault：シークレットや暗号化キーを管理するサービスであり、セキュリティスコアの表示機能はありません。\n・Microsoft Sentinel：SIEM/SOARサービスとして脅威の検出と対応を行いますが、セキュリティスコアの計算・表示はDefender for Cloudの機能です。\n・Microsoft Entra ID：ID管理・認証サービスであり、サブスクリプション全体のセキュリティスコア表示は行いません。\n・Azure Lighthouse：マルチテナント管理サービスであり、セキュリティスコアとは無関係です。\n\n【ポイント】\n「セキュリティスコア」というキーワードが出たら、Microsoft Defender for Cloudを選びましょう。",
     "category": "",
     "tags": [
-      "defense-in-depth"
+      "security-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3024,8 +2978,7 @@
     "explanation": "【正解】ネットワーク セキュリティ グループ (NSG)\nNSGを使用すると、仮想ネットワーク内のリソースに対するネットワークトラフィックをフィルタリングできます。セキュリティ規則で送信元IP、宛先IP、ポート番号、プロトコルを指定して、通信の許可または拒否を制御できます。\n\n【不正解の選択肢】\n・Microsoft Entra ID グループ：ユーザーやデバイスをグループ化して権限管理を行う機能です。ネットワークポートの制限には使えません。\n・Microsoft Entra ID：IDおよびアクセス管理サービスです。認証・認可は管理できますが、ネットワークレベルのポート制限は行えません。\n・Azure Key Vault：機密情報（パスワード、暗号化キーなど）を安全に管理するサービスです。ネットワークアクセスの制御機能はありません。\n\n【ポイント】\n「ポートの制限」「ネットワークトラフィックのフィルタリング」が求められる場合は、NSGが正解です。NSGはサブネットやNICに関連付けて使用します。",
     "category": "",
     "tags": [
-      "network-services",
-      "security-services"
+      "network-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3101,8 +3054,7 @@
     "explanation": "【正解】3→1→2\n\n顧客の管理責任が大きい順に並べると、IaaS（3）> PaaS（1）> SaaS（2）となります。\n・IaaS：OS・ミドルウェア・アプリなど幅広い管理が顧客側\n・PaaS：OS やインフラはプロバイダー管理、顧客はアプリ開発に集中\n・SaaS：ほぼすべてプロバイダー管理で、顧客の責任範囲は最小\n\n【不正解の選択肢】\n・他の並び順はいずれも、IaaS > PaaS > SaaS という責任範囲の大小関係を正しく反映していません。共有責任モデルにおける各サービスモデルの境界を整理すると正しい順序がわかります。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "comparison"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3121,7 +3073,7 @@
     "explanation": "【正解】サービスとしてのソフトウェア (SaaS)\n\nMicrosoft 365 はクラウド上でホストされたアプリケーション（Word、Excel、Teams など）をインターネット経由で利用できるサービスです。ユーザーはローカルにインストールせずにブラウザ等からアクセスするため、SaaS の代表例です。\n\n【不正解の選択肢】\n・IaaS：仮想マシンやストレージといったインフラを提供するモデルであり、完成されたアプリケーションを提供する Microsoft 365 とは異なります。\n・PaaS：開発者がアプリを構築・デプロイするためのプラットフォームを提供するモデルで、エンドユーザー向けのアプリケーションそのものではありません。",
     "category": "",
     "tags": [
-      "service-models"
+      "saas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3139,8 +3091,7 @@
     "explanation": "【正解】はい\n\nARM テンプレート（JSON 形式の IaC テンプレート）のリソース定義内で tags プロパティを指定すれば、リソースの作成と同時にタグを付与できます。これにより、デプロイの度に一貫したタグ付けが自動的に行われ、リソース管理の効率化につながります。\n\n【不正解の選択肢】\n・「いいえ」：ARM テンプレートはタグの割り当てを完全にサポートしています。ポータルや CLI だけでなく、テンプレートからもタグ設定が可能です。",
     "category": "",
     "tags": [
-      "tags",
-      "arm"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3158,7 +3109,7 @@
     "explanation": "【正解】いいえ\n\nAzure リソースには最大 50 個のタグ（キーと値のペア）を割り当てることができます。たとえば「部門: 営業」「環境: 本番」「コストセンター: 1234」のように複数のタグを付与して、コスト管理やリソース整理に活用できます。\n\n【不正解の選択肢】\n・「はい」：1 つに制限されていません。複数のタグを組み合わせることでリソースの分類・管理を柔軟に行えます。",
     "category": "",
     "tags": [
-      "cost-management"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3176,8 +3127,7 @@
     "explanation": "【正解】いいえ\n\nタグはリソースにメタデータ（分類情報）を付与するための仕組みであり、リソース名自体を制約したり強制したりする機能はありません。命名規則の強制には Azure Policy を使用します。Azure Policy であれば、リソース名のパターンをポリシーで定義し、準拠しないリソースの作成を拒否できます。\n\n【不正解の選択肢】\n・「はい」：タグはあくまでリソースの整理・フィルタリング用であり、命名標準の「適用（強制）」はできません。命名の強制は Azure Policy の役割です。",
     "category": "",
     "tags": [
-      "tags",
-      "azure-policy"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3197,8 +3147,7 @@
     "explanation": "【正解】毎月の使用料を支払う\n\nオンプレミスでは設備投資（CAPEX）が中心ですが、Azure に移行すると従量課金型の運用費（OPEX）に変わります。移行計画では、この支出モデルの変化を考慮し、月々の利用料金を見積もっておく必要があります。\n\n【不正解の選択肢】\n・可用性ゾーンを用意する：可用性ゾーンは高可用性のためのオプション構成であり、移行の前提条件ではありません。\n・すべてのデータを Azure に転送する：必ずしもすべてのデータを移行する必要はなく、ハイブリッド構成も選択肢です。\n・データへの接続数を減らす：接続数の調整は移行に必須の要件ではありません。",
     "category": "",
     "tags": [
-      "pricing-model",
-      "cost-factors"
+      "pricing-model"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3238,7 +3187,7 @@
     "explanation": "【正解】仮想プライベート ネットワーク (VPN)\n\nVPN ゲートウェイを使うと、オンプレミスと Azure の間でインターネットを経由しつつも IPsec/IKE で暗号化されたトンネルを確立できます。「ゲートウェイで暗号化」というキーワードが VPN の特徴と合致します。\n\n【不正解の選択肢】\n・Azure コンテナー：アプリケーションのコンテナ実行環境であり、ネットワーク暗号化の仕組みではありません。\n・Azure Virtual Desktop：仮想デスクトップサービスであり、オンプレミスとの間のトラフィック暗号化を目的とした機能ではありません。\n・Azure ExpressRoute：プロバイダー経由の専用回線で接続するサービスです。通常はインターネットを経由せず、暗号化はオプションであり前提ではありません。",
     "category": "",
     "tags": [
-      "network-services"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3258,7 +3207,7 @@
     "explanation": "【正解】Azure ExpressRoute\n\nExpressRoute は、接続プロバイダーを介してオンプレミスと Azure をインターネットを経由せず専用回線で結ぶサービスです。帯域幅が安定し、低遅延かつ高セキュリティの通信が実現できます。\n\n【不正解の選択肢】\n・Azure コンテナー：アプリケーションのコンテナ化・実行を行うサービスで、ネットワーク接続方式とは無関係です。\n・Azure Virtual Desktop：クラウド上の仮想デスクトップサービスであり、接続の種類を定義するものではありません。\n・VPN：暗号化されたセキュアな接続は可能ですが、インターネットを経由するため「インターネットを経由しない専用接続」には該当しません。",
     "category": "",
     "tags": [
-      "network-services"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3298,7 +3247,7 @@
     "explanation": "【正解】Azure Data Box\n\nAzure Data Box は、Microsoft から物理デバイスが送付され、ローカルでデータをコピーした後に返送することで大量データを Azure に取り込む移行サービスです。ネットワーク帯域が限られている場合や、テラバイト規模のデータを短期間で移行したい場合に有効です。\n\n【不正解の選択肢】\n・Azure Databricks：Apache Spark ベースのデータ分析プラットフォームであり、物理デバイスによるデータ移行サービスではありません。\n・Azure File Sync：オンプレミスのファイルサーバーと Azure Files を同期するサービスで、物理移行ではありません。\n・Azure Migrate：サーバーやデータベースの Azure 移行を支援するツールですが、物理デバイスを使った転送サービスではありません。",
     "category": "",
     "tags": [
-      "data-movement"
+      "data-migration"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3316,8 +3265,7 @@
     "explanation": "【正解】いいえ\n\n仮想ネットワークの作成・構成はインフラストラクチャ レベルの操作であり、IaaS（Infrastructure as a Service）に該当します。IaaS ではネットワーク・VM・ストレージなどのインフラ リソースをユーザーが直接管理します。PaaS はアプリケーション開発環境を提供するモデルで、ネットワークの詳細設定は通常プロバイダー側が管理します。\n\n【不正解の選択肢】\n・「はい」：仮想ネットワークはインフラ層のリソースであるため、PaaS ではなく IaaS に分類されます。",
     "category": "",
     "tags": [
-      "service-models",
-      "virtual-network"
+      "service-models"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3335,8 +3283,7 @@
     "explanation": "【正解】はい\n\nPaaS モデルでは、インフラやOSの管理はクラウドプロバイダーが担いますが、アプリケーションへのユーザー アクセス制御（誰がどの権限でアクセスできるか）は顧客の責任です。これは共有責任モデルにおいて、すべてのサービスモデル（IaaS/PaaS/SaaS）で共通して顧客側に求められる領域です。\n\n【不正解の選択肢】\n・「いいえ」：ユーザー アクセスの管理は、どのサービスモデルでも顧客の責任範囲に含まれます。プロバイダーは認証基盤を提供しますが、アクセス構成の設定は顧客が行います。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "paas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3354,8 +3301,7 @@
     "explanation": "【正解】はい\n\nPaaS モデルでは、インフラやランタイム環境の管理は Azure 側が行いますが、アプリケーション コードのデプロイ・更新は顧客自身の責任です。Azure App Service（Web アプリ）を利用する場合でも、コードの開発・テスト・デプロイは顧客側で実施します。\n\n【不正解の選択肢】\n・「いいえ」：PaaS ではプラットフォームの管理はプロバイダーが行いますが、アプリケーション コードの管理は明確に顧客の責任範囲です。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "paas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3373,8 +3319,7 @@
     "explanation": "【正解】いいえ\n\n同じリージョン内であっても、異なる仮想ネットワークはデフォルトでは互いに分離されています。通信を行うには、VNet ピアリングや VPN ゲートウェイなどを明示的に構成する必要があります。仮想ネットワークはそれぞれ独立したネットワーク境界を持つ設計です。\n\n【不正解の選択肢】\n・「はい」：同じリージョンでも VNet 間は自動接続されません。ピアリング等の設定が必要です。",
     "category": "",
     "tags": [
-      "virtual-network",
-      "azure-regions"
+      "virtual-network"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3392,8 +3337,7 @@
     "explanation": "【正解】はい\n\n同じリソース グループ内では、同じ種類のリソースに同一名は使用できません。仮想ネットワークも例外ではなく、リソース グループ内で一意の名前を付ける必要があります。異なるリソース グループであれば同じ名前の仮想ネットワークを作成することは可能です。\n\n【不正解の選択肢】\n・「いいえ」：Azure ではリソース グループ内のリソース名の一意性が要求されます。重複した名前でリソースを作成しようとするとエラーになります。",
     "category": "",
     "tags": [
-      "virtual-network",
-      "resource-groups"
+      "virtual-network"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3431,7 +3375,7 @@
     "explanation": "【正解】6\n\nGRS では、まずプライマリ リージョン内で LRS（ローカル冗長ストレージ）により 3 つのコピーが同期的に保持されます。さらに、数百キロ離れたセカンダリ リージョンにデータが非同期でレプリケートされ、そこでも LRS で 3 つのコピーが保持されます。合計で 6 つのコピーとなり、リージョン全体の障害にも対応できる高い耐久性を実現します。\n\n【不正解の選択肢】\n・3：LRS（ローカル冗長ストレージ）のコピー数です。GRS はこれに加えてセカンダリ リージョンにもレプリケートします。\n・4：該当する冗長オプションはありません。\n・9：GRS のコピー数を超えています。Azure ストレージの冗長オプションに 9 コピーの構成はありません。",
     "category": "",
     "tags": [
-      "storage-services"
+      "redundancy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3451,7 +3395,7 @@
     "explanation": "【正解】Azure Container Instances\n\nコンテナーは OS レベルの仮想化技術を使用しています。Azure Container Instances（ACI）では、ハイパーバイザーによるハードウェア仮想化（VM）ではなく、ホスト OS のカーネルを共有しながらアプリケーション環境を分離する「OS の仮想化」を提供します。VM より軽量で起動が高速な点が特徴です。\n\n【不正解の選択肢】\n・Azure App Service：Web アプリをホストする PaaS であり、OS 仮想化の機能自体を提供するサービスではありません。\n・Azure Functions：コード単位で実行されるサーバーレス サービスで、OS の仮想化とは異なる抽象化レベルです。\n・Azure 仮想マシン スケール セット：VM の自動スケーリングサービスであり、「物理コンピュータのエミュレーション（ハードウェア仮想化）」に分類されます。OS の仮想化とは区別されます。",
     "category": "",
     "tags": [
-      "serverless-compute"
+      "containers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3471,7 +3415,7 @@
     "explanation": "【正解】Azure 仮想マシン スケール セット\n\n仮想マシン（VM）は物理コンピュータをソフトウェアでエミュレートしたもので、OS・CPU・メモリ・ディスクを含む完全なコンピュータ環境を仮想的に再現します。Azure 仮想マシン スケール セットはこの VM を複数台まとめて管理・自動スケーリングするサービスです。\n\n【不正解の選択肢】\n・Azure App Service：Web アプリのホスティングに特化した PaaS であり、物理コンピュータのエミュレーションではありません。\n・Azure Container Instances：OS レベルの仮想化（コンテナー）を提供するサービスで、物理マシン全体のエミュレーションとは異なります。\n・Azure Functions：イベント駆動のサーバーレス実行環境で、コード単位の実行を目的としており、物理コンピュータのエミュレーションは行いません。",
     "category": "",
     "tags": [
-      "containers"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3489,9 +3433,7 @@
     "explanation": "【正解】はい\n\nSaaS モデルにおける ID 管理は共有責任です。Microsoft 側は Microsoft Entra ID などの認証基盤・セキュリティ機能を提供し、顧客側はユーザー アカウントの作成・削除、アクセス権限の設定、MFA の有効化といった運用管理を行います。どのサービスモデルでも ID 管理は常に共有責任に分類されます。\n\n【不正解の選択肢】\n・「いいえ」：共有責任モデルにおいて、ID とアクセス管理は IaaS/PaaS/SaaS いずれのモデルでも顧客とプロバイダーの共同責任です。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "saas",
-      "authn-authz"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3509,8 +3451,7 @@
     "explanation": "【正解】いいえ\n\nPaaS モデルでは、OS のパッチ適用やアップデートはクラウドプロバイダー（Microsoft）の責任です。PaaS の利点の一つは、顧客がインフラや OS の管理から解放され、アプリケーション開発に専念できることです。OS 管理が顧客責任となるのは IaaS モデルの場合です。\n\n【不正解の選択肢】\n・「はい」：PaaS では OS 管理はプロバイダーが担います。OS の更新まで顧客が管理する必要があるのは IaaS です。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "paas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3528,8 +3469,7 @@
     "explanation": "【正解】いいえ\n\nIaaS モデルでは、ネットワーク制御（NSG の設定、サブネット構成、ルーティングなど）は顧客の責任です。IaaS は最も顧客の管理範囲が広いモデルであり、OS・ネットワーク・ミドルウェア・アプリケーションの管理を顧客が行います。Microsoft が担うのは物理インフラ（データセンター、物理ネットワーク、ホスト）の管理です。\n\n【不正解の選択肢】\n・「はい」：IaaS ではネットワーク制御は顧客側の管理範囲に含まれます。Microsoft の責任は物理インフラの層までです。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "iaas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3549,8 +3489,7 @@
     "explanation": "【正解】可用性セット\n\n可用性セットは、VM を更新ドメイン（UD）と障害ドメイン（FD）に分散配置する機能です。更新ドメインにより計画メンテナンス時の同時再起動を防ぎ、障害ドメインにより物理的なラックやサーバーの障害の影響範囲を限定します。\n\n【不正解の選択肢】\n・可用性ゾーン：データセンター単位での分散を提供しますが、更新ドメイン・障害ドメインという概念とは別の仕組みです。\n・Azure Load Balancer：トラフィックの負荷分散を行うサービスであり、VM のドメイン配置には関与しません。\n・Azure 仮想マシン スケール セット：同一構成の VM を自動スケーリングするサービスで、更新ドメインや障害ドメインへの明示的なグループ化機能ではありません。",
     "category": "",
     "tags": [
-      "virtual-machines",
-      "ha-scalability"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3586,7 +3525,7 @@
     "explanation": "【正解】はい\n\nAzure プライベート DNS ゾーンの自動登録機能を有効にすると、仮想ネットワーク内の VM が作成・削除されるたびに DNS レコードが自動的に登録・削除されます。手動でレコードを管理する手間が省け、VM の名前解決がスムーズに行えます。\n\n【不正解の選択肢】\n・「いいえ」：プライベート DNS ゾーンの自動登録を利用すれば、VM の DNS 登録は自動で行われます。",
     "category": "",
     "tags": [
-      "virtual-machines"
+      "network-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3624,7 +3563,7 @@
     "explanation": "【正解】ウェブ ブラウザ\n\nAzure Cloud Shell はブラウザベースのシェル環境で、Azure portal（portal.azure.com）から直接起動できます。ローカルへのソフトウェアインストールなしに、Bash や PowerShell を使って Azure リソースを管理できます。\n\n【不正解の選択肢】\n・Microsoft Visual Studio：統合開発環境（IDE）であり、アプリケーション開発用のツールです。Cloud Shell を起動する機能は備えていません。\n・Azure Resource Manager (ARM)：Azure リソースのデプロイ・管理を行うバックエンドのサービス層であり、Cloud Shell のアクセス手段ではありません。\n・コマンド プロンプト：ローカル PC のシェル環境です。Azure CLI をインストールすれば Azure 操作は可能ですが、Cloud Shell そのものへのアクセスではありません。",
     "category": "",
     "tags": [
-      "azure-portal"
+      "cloud-shell"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3642,7 +3581,7 @@
     "explanation": "【正解】いいえ\n\nクール アクセス層は Azure Blob Storage 向けの機能であり、Premium ストレージのファイル共有には利用できません。Premium ファイル共有は SSD ベースの高パフォーマンスストレージで、ホット/クール/アーカイブといったアクセス層の概念は適用されません。\n\n【不正解の選択肢】\n・はい：クール アクセス層は Blob Storage 専用のオプションです。Premium ファイル共有では利用できないため、この記述は誤りです。",
     "category": "",
     "tags": [
-      "storage-services"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3660,7 +3599,7 @@
     "explanation": "【正解】いいえ\n\nクール アクセス層はストレージ アカウント作成時に既定のアクセス層として選択できますが、個々の Blob レベルでも設定が可能です。「ストレージ アカウント レベルで構成される」という表現は不正確で、正確にはストレージ アカウントの既定層として設定し、さらに Blob 単位で個別に上書きできる仕組みです。\n\n【不正解の選択肢】\n・はい：ストレージ アカウントで既定の層は設定できますが、Blob ごとに異なる層を割り当てることも可能なため、アカウントレベル「のみ」で構成されるわけではありません。",
     "category": "",
     "tags": [
-      "storage-account"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3678,7 +3617,7 @@
     "explanation": "【正解】はい\n\nホット アクセス層は、頻繁にアクセスされるデータ向けに最適化された層で、標準（Standard）の汎用 v2 ストレージ アカウントの Blob データに使用できます。ホット層はアクセスコストが低い一方、保存コストはクールやアーカイブ層より高くなります。\n\n【不正解の選択肢】\n・いいえ：標準ストレージの Blob データではホット・クール・コールド・アーカイブのアクセス層が利用可能です。ホット層は標準ストレージで問題なく使用できます。",
     "category": "",
     "tags": [
-      "storage-services"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3698,7 +3637,7 @@
     "explanation": "【正解】Azure Monitor の Application Insights\n\nApplication Insights は、Web アプリケーションのパフォーマンスや利用状況をリアルタイムに監視するサービスです。リクエストの応答時間、依存関係の遅延、例外の発生などを自動的にトレースし、ページ読み込みが遅い原因をピンポイントで特定できます。\n\n【不正解の選択肢】\n・Azure Monitor アラート：特定のメトリクスやログの条件に基づいて通知を送る機能です。問題発生時の通知には使えますが、遅延の「原因特定」に向いたツールではありません。\n・Azure Network Watcher：仮想ネットワークの接続診断やパケットキャプチャなど、ネットワークレベルの監視ツールです。Web ページのアプリケーション層の遅延分析には不向きです。\n・Log Analytics：各種ログデータを収集・クエリするサービスです。Application Insights ほどアプリケーションパフォーマンス分析に特化しておらず、Web ページの読み込み遅延の原因調査には最適ではありません。",
     "category": "",
     "tags": [
-      "service-health"
+      "azure-monitor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3738,8 +3677,7 @@
     "explanation": "【正解】ロールベースのアクセス制御 (RBAC) ロール\n\nAzure のリソースに対するアクセス許可は、RBAC（ロールベースのアクセス制御）を使って管理します。Azure Virtual Desktop も例外ではなく、ユーザーやグループに適切なロール（所有者、共同作成者、閲覧者など）を割り当てることでアクセス権限をきめ細かく制御できます。\n\n【不正解の選択肢】\n・タグ：リソースにキーと値のペアでメタデータを付与する機能です。コスト管理や整理に便利ですが、アクセス制御の仕組みではありません。\n・アプリケーションセキュリティグループ：仮想マシンをグループ化してネットワーク セキュリティ グループ（NSG）のルールを簡素化するための機能であり、リソースへのアクセス許可の付与には使われません。\n・リソースグループ：Azure リソースを論理的にまとめるコンテナです。RBAC のスコープとして利用できますが、リソースグループ自体がアクセス許可を付与するわけではありません。",
     "category": "",
     "tags": [
-      "rbac",
-      "virtual-desktop"
+      "rbac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -3814,7 +3752,7 @@
     "explanation": "【正解】Linux を実行し、Azure CLI ツールがインストールされているコンピューター\n\nAzure CLI は Python ベースのコマンドラインツールであり、PowerShell とは別のものです。Linux に Azure CLI だけをインストールしても PowerShell は含まれないため、PowerShell スクリプトは実行できません。PowerShell を別途インストールすれば実行可能になりますが、この選択肢の構成では不可です。\n\n【不正解の選択肢】\n・Windows 11 を実行し、Azure CLI ツールがインストールされているコンピューター：Windows には標準で PowerShell が搭載されているため、PowerShell スクリプトを実行できます。\n・Chrome OS を実行し、Azure Cloud Shell を使用するコンピューター：Azure Cloud Shell はブラウザベースで PowerShell 環境を提供するため、OS に関係なく PowerShell スクリプトを実行できます。\n・macOS を実行し、PowerShell Core v7.5.0 がインストールされているコンピューター：PowerShell Core がインストール済みのため、macOS でも PowerShell スクリプトを実行できます。\n・Windows 10 を実行し、Azure PowerShell モジュールがインストールされているコンピューター：Windows 10 には標準で PowerShell が含まれ、Azure PowerShell モジュールも追加されているため、問題なく実行可能です。",
     "category": "",
     "tags": [
-      "cloud-shell"
+      "powershell-cli"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3963,7 +3901,7 @@
     "explanation": "【正解】いいえ\n\nAzure Storage Explorer は、Azure ストレージアカウントのデータを操作するためのスタンドアロンのデスクトップアプリケーションです。「クラウドホスト型の移行サービス」ではなく、ローカル PC にインストールして使う GUI ツールです。大量データの移行には AzCopy や Azure Data Box が適しています。\n\n【不正解の選択肢】\n・はい：Storage Explorer はクラウドホスト型ではなくローカルにインストールするアプリです。また、大規模なデータ転送専用のサービスでもありません。",
     "category": "",
     "tags": [
-      "storage-services"
+      "data-movement"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -3987,8 +3925,7 @@
     "explanation": "【正解】ハードウェアのメンテナンス / データセンターインフラストラクチャの物理的セキュリティ\n\nIaaS モデルでは、クラウドプロバイダーが物理的なインフラ層を管理します。具体的には、サーバーやネットワーク機器などのハードウェア保守と、データセンター施設の物理セキュリティ（入退室管理、監視カメラなど）がプロバイダーの責任範囲です。\n\n【不正解の選択肢】\n・オペレーティング システムのインストールと構成：IaaS ではユーザーが仮想マシン上の OS を自分で選択・インストール・構成する責任を持ちます。\n・ストレージの構成とメンテナンス：IaaS で提供される仮想ディスクの構成や管理はユーザー側の作業です。物理ストレージの管理はプロバイダーですが、論理的な構成はユーザーが担います。\n・ネットワーク構成：仮想ネットワーク、サブネット、NSG などのネットワーク設定はユーザーの責任で行います。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "iaas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -4062,8 +3999,7 @@
     "explanation": "【正解】はい\n\nAzure Advisor では、サブスクリプションやリソースグループ単位で推奨事項をフィルタリングできます。複数のサブスクリプションを管理している場合でも、対象を絞り込んで効率的に最適化の推奨事項を確認・対応できます。\n\n【不正解の選択肢】\n・いいえ：Azure Advisor はサブスクリプション単位でのフィルタリング機能を備えており、Azure portal 上で簡単に切り替えて表示できます。",
     "category": "",
     "tags": [
-      "azure-advisor",
-      "subscriptions"
+      "azure-advisor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4141,7 +4077,7 @@
     "explanation": "【正解】はい\n\nMicrosoft Entra ID（旧称 Azure Active Directory）は、Azure と Microsoft 365 の両方に対して認証・認可サービスを提供するクラウドベースの ID プラットフォームです。シングルサインオン（SSO）、多要素認証（MFA）、条件付きアクセスなどの機能を備えています。\n\n【不正解の選択肢】\n・いいえ：Microsoft Entra ID は Azure と Microsoft 365 の共通基盤として認証を提供しており、この記述は正しいです。",
     "category": "",
     "tags": [
-      "authn-authz"
+      "entra-id"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4197,7 +4133,7 @@
     "explanation": "SLAで定められた可用性を下回った場合、MicrosoftはAzureアカウントにサービスクレジットを入金する形で補償します。返金やクーポンではなく、Azure利用料に充当できるクレジットとして付与される仕組みです。\n\n不正解の選択肢についてはこちらです。\n・リソースを別のサブスクリプションに移行 → サービス停止に対する補償手段ではありません。リソース移行は別の運用目的で行うものです。\n・銀行口座に返金 → Microsoftは現金での返金ではなく、Azureアカウントへのクレジット入金で補償を行います。\n・Azure クレジットと引き換えられるクーポン コードを送信 → クーポンコード方式ではなく、直接アカウントへクレジットが入金されます。",
     "category": "",
     "tags": [
-      "cost-management"
+      "sla"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4216,7 +4152,7 @@
     "explanation": "仮想ネットワークピアリングを使うと、複数のAzure仮想ネットワークをつなげて1つの論理的なネットワークとして扱えます。ピアリングされたネットワーク間のトラフィックはMicrosoftのバックボーンネットワークを通り、低遅延で通信できます。\n\n不正解の選択肢についてはこちらです。\n・ExpressRoute → オンプレミスとAzureを専用回線で接続するサービスです。仮想ネットワーク同士の結合には使いません。\n・VPN Gateway → インターネット経由でオンプレミスとAzure間を暗号化接続するためのサービスで、仮想ネットワークの結合用途とは異なります。",
     "category": "",
     "tags": [
-      "network-services"
+      "virtual-network"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4235,7 +4171,7 @@
     "explanation": "VPN Gatewayは、公共インターネットを経由してオンプレミスネットワークとAzure仮想ネットワーク間に暗号化されたトンネルを構築します。IPsecやIKEプロトコルにより安全な通信が確保されます。\n\n不正解の選択肢についてはこちらです。\n・ExpressRoute → 専用回線を使う接続サービスであり、公共インターネットは経由しません。\n・仮想ネットワーク ピアリング → Azure内の仮想ネットワーク同士を接続する仕組みで、オンプレミスとの接続には使えません。",
     "category": "",
     "tags": [
-      "network-services"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4254,7 +4190,7 @@
     "explanation": "ExpressRouteは、接続プロバイダーが提供する専用回線を使って、オンプレミスネットワークをMicrosoftクラウドにプライベート接続で拡張するサービスです。インターネットを通らないため、高い帯域幅と安定した接続が得られます。\n\n不正解の選択肢についてはこちらです。\n・仮想ネットワーク ピアリング → Azure上の仮想ネットワーク間を接続する機能で、オンプレミスからの接続には対応していません。\n・VPN Gateway → インターネット経由の暗号化接続を提供するサービスです。プライベート専用回線ではないため、ExpressRouteとは用途が異なります。",
     "category": "",
     "tags": [
-      "network-services"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4272,8 +4208,7 @@
     "explanation": "Azure Storageアカウントの名前はグローバルに一意でなければなりません。リージョンが異なっていても同じ名前は使えず、全Azure環境を通じて重複が許されない設計です。\n\n「はい」が不正解の理由：ストレージアカウント名はAzure全体で一意である必要があるため、異なるリージョンでも同じ名前を付けることはできません。",
     "category": "",
     "tags": [
-      "storage-account",
-      "azure-regions"
+      "storage-account"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4291,8 +4226,7 @@
     "explanation": "Storageアカウント名のグローバル一意性は、サブスクリプションの境界を超えて適用されます。別のサブスクリプションであっても同一名称のストレージアカウントは作成できません。\n\n「はい」が不正解の理由：ストレージアカウント名はサブスクリプション単位ではなくAzure全体で一意である必要があるため、サブスクリプションが異なっても同じ名前は使えません。",
     "category": "",
     "tags": [
-      "storage-account",
-      "subscriptions"
+      "storage-account"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4329,7 +4263,6 @@
     "explanation": "ソフトウェアアシュアランスは、Microsoftのボリュームライセンスに付随するオプションで、オンプレミスのWindows ServerやSQL ServerライセンスをAzure仮想マシンで再利用できる「Azure Hybrid Benefit」の前提条件です。これによりクラウド移行のコストを大幅に削減できます。\n\n不正解の選択肢についてはこちらです。\n・Microsoft ライフサイクル ポリシー → 製品のサポート期間やサポート終了日を定めるポリシーで、ライセンスの再利用とは関係がありません。\n・エンドユーザー使用許諾契約書 (EULA) → ソフトウェアの利用条件を定めた契約書ですが、ライセンス再利用の権利を付与するものではありません。",
     "category": "",
     "tags": [
-      "virtual-machines",
       "cost-saving"
     ],
     "is_free": false,
@@ -4350,8 +4283,7 @@
     "explanation": "Azure Functionsはサーバーレスコンピューティングサービスで、インフラの管理を意識せずにコードを実行できます。イベント駆動型で、必要なときだけリソースが割り当てられるため、サーバーのプロビジョニングが不要です。\n\n不正解の選択肢についてはこちらです。\n・Azure Resource Manager テンプレート → Azureリソースをコードとして定義・デプロイするためのJSONテンプレートで、コード実行環境ではありません。\n・Azure DevOps パイプライン → ビルド・テスト・デプロイを自動化するCI/CDツールであり、アプリケーションコードをサーバーレスで実行するサービスではありません。\n・Azure Application Gateway → Webアプリケーション向けのロードバランサーで、トラフィックの分散やWAF機能を提供しますが、コードの実行機能はありません。",
     "category": "",
     "tags": [
-      "serverless-compute",
-      "serverless"
+      "serverless-compute"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4371,8 +4303,7 @@
     "explanation": "SaaSモデルでは、IDとディレクトリのインフラストラクチャ管理がMicrosoftと顧客の共同責任となります。Microsoftが認証基盤やセキュリティ対策を提供・維持し、顧客側はユーザーアカウントの管理、アクセス権の設定、認証ポリシーの構成を担当します。\n\n不正解の選択肢についてはこちらです。\n・アプリケーション管理 → SaaSではアプリケーション自体の運用・保守はMicrosoftが担当するため、共同責任ではありません。\n・オペレーティングシステムのアップデート → SaaS環境ではOSの管理はすべてMicrosoftの責任です。\n・情報とデータの管理 → データの保護やアクセス管理は主に顧客側の責任であり、共同責任ではなく顧客の責任です。",
     "category": "",
     "tags": [
-      "shared-responsibility",
-      "saas"
+      "shared-responsibility"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -4390,7 +4321,7 @@
     "explanation": "Azure PowerShellはクロスプラットフォーム対応で、Windows、Linux、macOSのいずれでも動作します。PowerShell Core（PowerShell 7以降）の登場により、Windows以外のOSでも利用可能になりました。\n\n「いいえ」が不正解の理由：Azure PowerShellはWindows専用ではなく、主要なOS全てでサポートされています。",
     "category": "",
     "tags": [
-      "cloud-shell"
+      "powershell-cli"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4446,7 +4377,7 @@
     "explanation": "高可用性とは、障害が発生してもサービスの稼働を維持し、リソースへのアクセスを確保する仕組みです。Azureでは可用性ゾーンや可用性セットを活用して、特定の場所で障害が起きても別の場所でサービスを継続できるよう設計されています。\n\n不正解の選択肢についてはこちらです。\n・予測可能性 → コストやパフォーマンスの見通しが立つことを指す概念で、障害時のアクセス保証とは関係がありません。\n・スケーラビリティ → 需要の増減に合わせてリソースを拡縮する能力で、障害時の可用性確保とは異なる概念です。\n・信頼性 → システムが想定通りに動作し続ける性質を指しますが、特定の障害発生時にアクセスを保証するという文脈では「高可用性」がより適切です。",
     "category": "",
     "tags": [
-      "reliability"
+      "ha-scalability"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -4464,8 +4395,7 @@
     "explanation": "仮想マシンスケールセット（VMSS）では、自動スケーリングルールに基づいてインスタンス数が自動的に増減します。負荷が下がるとスケールイン（台数削減）が行われ、コストの最適化が図られます。\n\n「いいえ」が不正解の理由：VMSSの自動スケーリング機能はスケールアウト（増加）だけでなく、スケールイン（減少）にも対応しています。",
     "category": "",
     "tags": [
-      "virtual-machines",
-      "ha-scalability"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4483,8 +4413,7 @@
     "explanation": "VMSSでは、CPU使用率やメモリ使用量などのメトリクスに基づいた自動スケーリングルールを設定でき、負荷が高まるとインスタンス数が自動的にスケールアウト（増加）されます。\n\n「いいえ」が不正解の理由：VMSSはまさに自動スケーリングを実現するためのサービスであり、需要に応じてVM数を自動的に増やす機能を備えています。",
     "category": "",
     "tags": [
-      "virtual-machines",
-      "ha-scalability"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4522,7 +4451,6 @@
     "explanation": "外部アプリケーションからAzureをプログラム的に操作するにはREST APIを使います。AzureはRESTful APIを提供しており、HTTPリクエストを通じてリソースの作成・管理・削除などの操作をコードから実行できます。\n\n不正解の選択肢についてはこちらです。\n・ARM テンプレート → リソースの宣言的デプロイに使うJSONファイルで、外部アプリケーションからのプログラム的な対話には向いていません。\n・Azure Cloud Shell → ブラウザ上で操作するインタラクティブなシェル環境であり、外部アプリからの自動化には適していません。\n・Azure コマンドライン インターフェイス (CLI) → 人が対話的にコマンドを実行するツールで、外部アプリケーションからの自動的なやり取りにはAPIが適切です。",
     "category": "",
     "tags": [
-      "manageability",
       "arm"
     ],
     "is_free": false,
@@ -4562,7 +4490,7 @@
     "explanation": "リフトアンドシフトは、既存のオンプレミス環境をほぼそのままクラウドへ移行する方式です。アプリケーションの変更を最小限に抑えてVMやネットワーク構成をクラウド上に再現するため、IaaSが最も適しています。\n\n不正解の選択肢についてはこちらです。\n・サービスとしてのソフトウェア (SaaS) → 完成されたアプリケーションをそのまま利用するモデルで、既存サーバーの移行先としては適しません。\n・サービスとしてのプラットフォーム (PaaS) → アプリの開発・実行環境を提供するモデルで、利用するにはアプリケーションの改修が必要になることが多く、リフトアンドシフトには向きません。",
     "category": "",
     "tags": [
-      "service-models"
+      "iaas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -4598,8 +4526,7 @@
     "explanation": "VMにRAMを追加するのは垂直スケーリング（スケールアップ）です。既存のマシンの性能を高める操作は垂直方向にあたります。水平スケーリング（スケールアウト）はインスタンスの台数を増やして処理能力を拡張する方法です。\n\n「はい」が不正解の理由：RAM追加は1台のマシンのリソースを強化する操作であり、水平（台数を増やす）ではなく垂直（性能を上げる）のスケーリングに該当します。",
     "category": "",
     "tags": [
-      "ha-scalability",
-      "virtual-machines"
+      "ha-scalability"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4617,8 +4544,7 @@
     "explanation": "需要に応じてVMの台数を追加するのは水平スケーリング（スケールアウト）であり、垂直スケーリングではありません。垂直スケーリング（スケールアップ）は既存VMのCPUやメモリを増強する操作を指します。\n\n「はい」が不正解の理由：VM台数の追加はインスタンスを横に増やす水平スケーリングです。垂直スケーリングは1台のマシン性能を縦に引き上げることを意味します。",
     "category": "",
     "tags": [
-      "ha-scalability",
-      "virtual-machines"
+      "ha-scalability"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4658,8 +4584,7 @@
     "explanation": "削除ロック（CanNotDelete）をストレージアカウントに設定すると、リソースの削除は防止されますが、新しいコンテナーの作成や既存リソースの変更は引き続き可能です。「作成はOK、削除はNG」という要件に合致します。\n\n不正解の選択肢についてはこちらです。\n・storage-A の読み取り専用ロックを作成する → 読み取り専用ロック（ReadOnly）を設定すると、すべての変更操作が制限されるため、コンテナーの作成もできなくなってしまいます。\n・BLOB の論理的削除を有効にする → BLOBレベルの削除保護であり、削除されたBLOBを一定期間復元可能にする機能です。コンテナー自体の削除を防ぐものではありません。\n・コンテナーの論理的削除を有効にする → 削除されたコンテナーを復元できるようにする機能で、削除自体を防ぐものではありません。",
     "category": "",
     "tags": [
-      "resource-locks",
-      "storage-account"
+      "resource-locks"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4679,7 +4604,7 @@
     "explanation": "Azure Cost Managementの予算アラート機能を使うと、サブスクリプションのコストが設定した閾値に達したときにメール通知を受け取れます。予算の超過を事前に把握し、コスト管理に役立てることができます。\n\n不正解の選択肢についてはこちらです。\n・アクセス制御 (IAM) → RBACによるリソースへのアクセス権限管理機能であり、コスト監視やアラートの機能はありません。\n・アドバイザーの推奨事項 → コスト最適化を含む改善提案は行いますが、予算超過時のアラート送信機能は持っていません。\n・コンプライアンス → 規制やポリシーへの準拠状況を管理する機能で、請求額に関するアラートとは無関係です。",
     "category": "",
     "tags": [
-      "billing"
+      "cost-management"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4716,8 +4641,7 @@
     "explanation": "Azure Advisorはコスト、セキュリティ、信頼性、オペレーショナルエクセレンス、パフォーマンスの5カテゴリで推奨事項を提供します。コストカテゴリでは、使用率の低いVMのサイズ変更や未使用リソースの削除などを提案してくれます。\n\n「いいえ」が不正解の理由：Advisorはリソース使用状況を分析し、VMを含むあらゆるリソースについてコスト削減の推奨を行います。",
     "category": "",
     "tags": [
-      "azure-advisor",
-      "cost-saving"
+      "azure-advisor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4735,8 +4659,7 @@
     "explanation": "Azure Advisorは複数のサブスクリプションにまたがって推奨事項を集約・表示できます。Advisorダッシュボードでサブスクリプションをフィルタリングすることで、組織全体のリソース最適化を一元的に管理できます。\n\n「いいえ」が不正解の理由：Advisorは単一サブスクリプションに限定されず、アクセス権のある複数のサブスクリプションに対して横断的に推奨を提供します。",
     "category": "",
     "tags": [
-      "azure-advisor",
-      "subscriptions"
+      "azure-advisor"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4774,7 +4697,7 @@
     "explanation": "Azure Marketplace は、Azure 向けに構築されたソリューションを提供するオンラインストアです。IT プロフェッショナルや開発者は、Azure portal から直接アクセスでき、仮想マシンイメージやコンサルティングサービス、マネージドサービスなどを購入・利用できます。\n\n不正解の選択肢:\n・Azure Monitor … Azure リソースのパフォーマンスや正常性を監視するサービスであり、ソリューションの購入・構築用途ではありません。\n・Azure サブスクリプション … Azure リソースの利用と課金を管理する単位であり、マーケットプレイスのようなソリューション提供機能はありません。\n・Azure Advisor … リソースの最適化に関するベストプラクティスを推奨するサービスであり、ソリューションの提供や購入はできません。\n\nhttps://learn.microsoft.com/ja-jp/marketplace/azure-marketplace-overview",
     "category": "",
     "tags": [
-      "azure-portal"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4871,8 +4794,7 @@
     "explanation": "いいえ、誤った記述です。共有アクセス署名（SAS）の使用は任意です。Azure Files へのアクセスには、マネージド ID や Microsoft Entra ID を使った認証も利用でき、Microsoft はこちらを推奨しています。SAS を使用する場合でも、アカウント キーの代わりに Microsoft Entra 資格情報で保護されるユーザー委任 SAS が推奨されます。\n\n不正解の選択肢:\n・「はい」 … SAS は必須ではなく、複数の認証方法から選択できます。\n\nhttps://learn.microsoft.com/ja-jp/azure/storage/common/authorize-data-access",
     "category": "",
     "tags": [
-      "storage-services",
-      "authn-authz"
+      "storage-services"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -4950,7 +4872,7 @@
     "explanation": "はい、正しい記述です。ARM テンプレートは Azure portal を使用して作成・デプロイすることが可能です。portal 上でカスタムテンプレートのデプロイを選択し、JSON テンプレートを指定することでリソースを展開できます。\n\n不正解の選択肢:\n・「いいえ」 … Azure portal は ARM テンプレートのデプロイをサポートしています。\n\nhttps://learn.microsoft.com/ja-jp/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal",
     "category": "",
     "tags": [
-      "azure-portal"
+      "iac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5008,8 +4930,7 @@
     "explanation": "はい、正しい記述です。Azure Arc を使用すると、オンプレミスや他のクラウド環境で稼働する Kubernetes クラスターを含め、AKS クラスターを大規模に一元管理できます。ポリシーの適用や構成管理を統一的に行えるため、運用効率が向上します。\n\n不正解の選択肢:\n・「いいえ」 … Azure Arc は Kubernetes クラスターの大規模管理をサポートしています。\n\nhttps://learn.microsoft.com/ja-jp/azure/azure-arc/overview",
     "category": "",
     "tags": [
-      "azure-arc",
-      "containers"
+      "azure-arc"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5103,8 +5024,7 @@
     "explanation": "はい、正しい記述です。Azure 仮想マシンは IaaS の代表的な例です。IaaS では仮想化されたコンピュート・ストレージ・ネットワークなどのインフラストラクチャがサービスとして提供され、ユーザーは OS やアプリケーションのインストール・管理を自分で行います。\n\n不正解の選択肢:\n・「いいえ」 … Azure 仮想マシンは IaaS モデルの典型例です。\n\nhttps://learn.microsoft.com/ja-jp/azure/virtual-machines/overview",
     "category": "",
     "tags": [
-      "iaas",
-      "virtual-machines"
+      "iaas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5140,8 +5060,7 @@
     "explanation": "はい、正しい記述です。Azure Functions はサーバーレスコンピューティングサービスであり、PaaS の一例に分類されます。インフラストラクチャの管理はプラットフォーム側が自動で行い、ユーザーはアプリケーションコードの記述に集中できます。リソースのスケーリングも自動的に処理されます。\n\n不正解の選択肢:\n・「いいえ」 … Azure Functions は PaaS（またはサーバーレス）モデルの典型例です。\n\nhttps://learn.microsoft.com/ja-jp/azure/azure-functions/functions-overview",
     "category": "",
     "tags": [
-      "paas",
-      "serverless-compute"
+      "paas"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -5215,7 +5134,7 @@
     "explanation": "Azure IoT Hub は、IoT アプリケーションとデバイス間の通信を仲介する中央メッセージハブです。数百万台のデバイスの同時接続に対応し、device-to-cloud メッセージ、ファイルアップロード、cloud-to-device コマンドなど多様なメッセージングパターンをサポートします。\n\n不正解の選択肢:\n・Azure Sphere … IoT デバイスのセキュリティを強化するためのハードウェア+OS+クラウドセキュリティの統合プラットフォームであり、メッセージハブではありません。\n・IoT Central … IoT ソリューションの構築・管理を簡素化する aPaaS であり、メッセージハブとしての役割は IoT Hub が担います。\n\nhttps://learn.microsoft.com/ja-jp/azure/iot-hub/iot-concepts-and-iot-hub",
     "category": "",
     "tags": [
-      "serverless-compute"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5234,8 +5153,7 @@
     "explanation": "Azure IoT Central は、IoT ソリューションの開発・管理・保守のコストと負担を軽減する IoT aPaaS です。Web UI でデバイスの接続、状態監視、ルール作成、ライフサイクル管理が行え、複雑な IoT インフラの構築を効率化できます。\n\n不正解の選択肢:\n・Azure Sphere … IoT デバイスのハードウェアレベルのセキュリティを提供するプラットフォームであり、IoT ソリューション全体の管理ツールではありません。\n・IoT Hub … デバイスとクラウド間の通信を担うメッセージハブであり、aPaaS のような包括的な管理機能は提供しません。\n\nhttps://learn.microsoft.com/ja-jp/azure/iot-central/core/overview-iot-central",
     "category": "",
     "tags": [
-      "paas",
-      "serverless-compute"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5328,8 +5246,7 @@
     "explanation": "Azure DevTest Labs は、ラボ環境で IaaS の仮想マシンや PaaS の環境を効率的に作成・利用・管理するためのサービスです。ARM テンプレートをベースにした事前構成を使って、ラボ用 VM の一括デプロイと削除を簡単に自動化できます。\n\n不正解の選択肢:\n・Azure Reserved Virtual Machine Instances … VM のコンピューティングリソースを1年または3年の予約購入でコスト削減する仕組みであり、デプロイの自動化とは関係ありません。\n・仮想マシン スケールセット … 需要に応じて VM 数を自動増減させる負荷分散の仕組みであり、一時的なラボ環境の管理には適しません。\n・Azure Virtual Desktop … 仮想デスクトップとリモートアプリを配信するサービスであり、ラボ用 VM の一括管理には適しません。\n\nhttps://learn.microsoft.com/ja-jp/azure/devtest-labs/devtest-lab-guidance-get-started",
     "category": "",
     "tags": [
-      "virtual-machines",
-      "arm"
+      "virtual-machines"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5348,7 +5265,6 @@
     "explanation": "SaaS（Software as a Service）では、アプリケーションの実行からインフラストラクチャの管理までをクラウドプロバイダーが担うため、ユーザーの責任範囲が最も小さくなります。ユーザーはデータの入力や設定のカスタマイズ程度の管理を行うだけで済みます。\n\n不正解の選択肢：\n・IaaS：仮想マシンやOS、ミドルウェア、アプリケーションなど多くの部分をユーザーが管理する必要があり、3つのモデルの中で責任範囲が最大です。\n・PaaS：アプリケーションとデータの管理はユーザーが行いますが、OSやミドルウェアはプロバイダーが管理するため、IaaSより責任は少なくなります。ただしSaaSほど少なくはありません。",
     "category": "",
     "tags": [
-      "shared-responsibility",
       "comparison"
     ],
     "is_free": true,
@@ -5368,7 +5284,7 @@
     "explanation": "クールアクセス層は、アクセス頻度が低く最低30日間保存するデータに最適化されたオンライン層です。ホット層よりストレージコストが安い代わりに、アクセスコストは高くなります。\n\n不正解の選択肢：\n・「少なくとも180日間保存され、時間単位の遅延を許容するデータ」：これはアーカイブアクセス層の説明です。アーカイブ層はオフライン層であり、データの取得に数時間かかる場合があります。\n・「アクセス頻度の高いデータ」：これはホットアクセス層に該当します。ホット層はストレージコストが最も高い反面、アクセスコストは最も安くなります。",
     "category": "",
     "tags": [
-      "storage-services"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5387,7 +5303,7 @@
     "explanation": "ホットアクセス層は、頻繁にアクセスまたは変更するデータの保存に適したオンライン層です。ストレージコストは最も高いですが、アクセスコストが最も安いため、頻繁に読み書きするデータに向いています。\n\n不正解の選択肢：\n・「アクセス頻度が低く、30日以上保存されているデータ」：これはクールアクセス層の説明です。クール層はアクセス頻度が低いデータ向けで、ストレージコストがホット層より安くなります。\n・「少なくとも180日間保存され、時間単位の遅延を許容するデータ」：これはアーカイブアクセス層の説明です。アーカイブ層はオフラインで保存され、取得に時間がかかります。",
     "category": "",
     "tags": [
-      "storage-services"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5406,7 +5322,7 @@
     "explanation": "アーカイブアクセス層は、ほとんどアクセスせず最低180日間保存するデータ向けのオフライン層です。ストレージコストは最も安いですが、データの取り出しに数時間かかる場合があるため、即時アクセスが不要なバックアップやコンプライアンスデータなどに適しています。\n\n不正解の選択肢：\n・「アクセス頻度が低く、30日以上保存されているデータ」：これはクールアクセス層の説明です。クール層はオンライン層であり、データに即座にアクセスできます。\n・「アクセス頻度の高いデータ」：これはホットアクセス層に該当します。ホット層はアクセスコストが最も安い代わりに、ストレージコストが最も高くなります。",
     "category": "",
     "tags": [
-      "storage-services"
+      "access-tiers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5442,7 +5358,7 @@
     "explanation": "Azure Cloud Shell では、Bash と PowerShell の両方を既定のシェルとして選択できます。Cloud Shell は Azure Linux 上で動作しており、ブラウザーベースのシェル環境として両方のシェルをサポートしています。\n\n不正解の選択肢：\n・「はい」：PowerShell だけでなく Bash も使用可能です。Cloud Shell はどちらかを選択して利用できます。",
     "category": "",
     "tags": [
-      "powershell-cli"
+      "cloud-shell"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
@@ -5466,7 +5382,7 @@
     "explanation": "Azure Kubernetes Service（AKS）は、コンテナー化されたアプリケーションのデプロイ、スケーリング、管理を行うフルマネージドの Kubernetes サービスです。Azure Container Instances（ACI）は、サーバーを管理せずにコンテナーを迅速に実行できるサービスで、シンプルなコンテナー実行に適しています。どちらもコンテナー管理に直接関係するサービスです。\n\n不正解の選択肢：\n・Azure Virtual Desktop：仮想デスクトップやリモートアプリを配信するサービスであり、コンテナー管理の用途ではありません。\n・Azure Virtual Machines：仮想化されたOSを提供するコンピューティングリソースですが、コンテナー専用の管理機能は備えていません。\n・Azure Functions：イベント駆動型のサーバーレスコンピューティングサービスであり、コンテナーの管理とは目的が異なります。",
     "category": "",
     "tags": [
-      "serverless-compute"
+      "containers"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5486,7 +5402,7 @@
     "explanation": "Azure を利用するには、まずサブスクリプションを作成する必要があります。サブスクリプションはリソースの使用と課金の基本単位であり、すべての Azure リソースは必ず1つのサブスクリプションに紐づけられます。サブスクリプションがなければリソースグループもリソースも作成できません。\n\n不正解の選択肢：\n・リソース グループ：リソースを論理的にまとめるコンテナーですが、作成するにはまずサブスクリプションが必要です。\n・管理グループ：複数のサブスクリプションを階層的に管理するための仕組みであり、サブスクリプションの上位に位置します。最初に必要なものではありません。\n・Microsoft Entra テナント：ID管理の基盤ですが、Azure アカウント作成時に自動的にテナントが関連付けられるため、ユーザーが明示的に最初に作成するものはサブスクリプションです。",
     "category": "",
     "tags": [
-      "hierarchy"
+      "subscriptions"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5504,7 +5420,7 @@
     "explanation": "正解は「はい」です。パブリックプレビュー段階のサービスは SLA の対象外です。Azure のサービスは「プライベートプレビュー」→「パブリックプレビュー」→「一般提供開始（GA）」の順に公開されます。\n\n・プライベートプレビュー：限定ユーザーのみに公開され、NDA が必要な場合があります\n・パブリックプレビュー：すべてのユーザーが利用可能ですが、SLA は適用されません\n・一般提供開始（GA）：正式リリースされ、SLA が適用されて正式サポートを受けられます\n\n不正解の選択肢：\n・「いいえ」：プレビュー段階のサービスには SLA が提供されないため、この記述は正しいです。",
     "category": "",
     "tags": [
-      "sla"
+      "service-lifecycle"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5562,8 +5478,7 @@
     "explanation": "正解は「はい」です。Azure Cost Management では、管理グループ、サブスクリプション、リソースグループの3つのスコープでコスト分析を行えます。管理グループは Azure サブスクリプションを階層的に整理するためのコンテナーであり、配下のサブスクリプション全体のコストをまとめて確認できます。\n\n不正解の選択肢：\n・「いいえ」：Azure Cost Management は管理グループスコープに対応しており、コストの表示が可能です。",
     "category": "",
     "tags": [
-      "cost-management",
-      "management-groups"
+      "cost-management"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5581,8 +5496,7 @@
     "explanation": "正解は「はい」です。Azure Cost Management では、管理グループ、サブスクリプション、リソースグループの各スコープでコストを表示できます。リソースグループは関連する Azure リソースを論理的にグループ化したもので、グループ単位でのコスト確認が可能です。\n\n不正解の選択肢：\n・「いいえ」：リソースグループスコープでのコスト表示は Azure Cost Management の標準機能です。",
     "category": "",
     "tags": [
-      "cost-management",
-      "resource-groups"
+      "cost-management"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5675,7 +5589,7 @@
     "explanation": "正解は「はい」です。リソースグループ自体にはリージョン（メタデータの保存先）が設定されますが、グループ内に含めるリソースは異なるリージョンに配置できます。例えば、東日本リージョンの仮想マシンと西日本リージョンのストレージアカウントを同じリソースグループにまとめることが可能です。\n\n不正解の選択肢：\n・「いいえ」：リソースグループのリージョンはメタデータの保存先を決めるだけであり、中のリソースは複数リージョンにまたがることができます。",
     "category": "",
     "tags": [
-      "azure-regions"
+      "resource-groups"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5733,7 +5647,7 @@
     "explanation": "正解は「いいえ」です。Azure ExpressRoute は、オンプレミスネットワークと Azure クラウドの間をプライベート接続で結ぶサービスです。インターネットを経由せずに接続プロバイダーを通じて Azure や Microsoft 365 などに接続できます。仮想ネットワーク間のトラフィック保護には、ネットワークセキュリティグループ（NSG）やAzure Firewall などが使われます。\n\n不正解の選択肢：\n・「はい」：ExpressRoute はオンプレミスとクラウド間のプライベート接続サービスであり、仮想ネットワーク間のセキュリティ保護の目的では使用されません。",
     "category": "",
     "tags": [
-      "network-services"
+      "hybrid-connectivity"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5751,7 +5665,6 @@
     "explanation": "正解は「いいえ」です。サブスクリプションはリソースの管理や課金の単位であり、サブスクリプションの数を増やしても SLA で保証される可用性は変わりません。可用性を高めるには、可用性ゾーンや可用性セットの活用、リージョン間の冗長化などの設計が必要です。\n\n不正解の選択肢：\n・「はい」：サブスクリプションの追加購入は課金や管理の分離には有効ですが、サービスの可用性向上には直接つながりません。",
     "category": "",
     "tags": [
-      "subscriptions",
       "sla"
     ],
     "is_free": false,
@@ -5868,7 +5781,6 @@
     "explanation": "正解は「いいえ」です。Azure Files はフルマネージドのファイル共有サービスであり、PaaS（Platform as a Service）に分類されます。サーバーやストレージのインフラストラクチャを管理する必要がなく、SMB や NFS プロトコルで簡単にアクセスできます。IaaS では仮想マシンやネットワークなどのインフラをユーザーが管理しますが、Azure Files はプラットフォーム側で管理されるためPaaSです。\n\n不正解の選択肢：\n・「はい」：Azure Files はインフラストラクチャの管理が不要なマネージドサービスであるため、IaaS ではなく PaaS に該当します。",
     "category": "",
     "tags": [
-      "storage-services",
       "paas"
     ],
     "is_free": true,
@@ -5887,8 +5799,7 @@
     "explanation": "正解は「いいえ」です。Azure 仮想マシン上で実行される DNS サーバーは IaaS（Infrastructure as a Service）に該当します。仮想マシンではOS、ミドルウェア、アプリケーション（この場合DNS）のすべてをユーザーが管理する必要があります。PaaS であれば、プラットフォーム側がOSやミドルウェアを管理しますが、仮想マシン上に手動で構築した場合はユーザー責任となるためIaaSです。\n\n不正解の選択肢：\n・「はい」：仮想マシン上で実行されるサービスはユーザーがOS以上の管理を行うため、PaaS ではなく IaaS です。Azure DNS（マネージドサービス）であればPaaSに近い分類になります。",
     "category": "",
     "tags": [
-      "iaas",
-      "virtual-machines"
+      "iaas"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5906,7 +5817,7 @@
     "explanation": "正解は「いいえ」です。Microsoft Entra ID はクラウドベースのID管理サービスであり、PaaS（Platform as a Service）に分類されます。開発者はEntra IDのAPIやSDKを利用して認証・認可機能をアプリケーションに組み込みます。SaaS はエンドユーザーが直接使用する完成されたアプリケーション（例：Microsoft 365、Salesforce）を指しますが、Entra ID はアプリケーション構築のための認証基盤として利用されるためPaaSに該当します。\n\n不正解の選択肢：\n・「はい」：Entra ID は完成されたエンドユーザー向けアプリケーションではなく、認証・認可のプラットフォームとして他のアプリケーションに組み込まれるサービスであるため、SaaS ではなく PaaS です。",
     "category": "",
     "tags": [
-      "paas"
+      "entra-id"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5949,9 +5860,7 @@
     "explanation": "同一の可用性セットに 2 台以上の VM を配置すると、99.95% の SLA が適用されます。また、異なるアベイラビリティ ゾーンにそれぞれ VM を配置すれば 99.99% の SLA となり、いずれも要件を満たします。\n\n【不正解の選択肢】\n2 つの可用性セットのそれぞれに 1 つの仮想マシンをデプロイする：可用性セットの SLA は同一セット内に複数 VM がある場合に適用されるため、別々のセットに 1 台ずつでは要件を満たしません。\n1 つのアベイラビリティ ゾーンに 2 つの仮想マシンをデプロイする：同じゾーンに配置するだけではゾーン冗長にならず、99.95% 以上の SLA は保証されません。",
     "category": "",
     "tags": [
-      "sla",
-      "availability-zones",
-      "virtual-machines"
+      "sla-improvement"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5994,8 +5903,7 @@
     "explanation": "ソフトウェア アシュアランス (SA) で取得済みの Windows Server ライセンスを Azure に持ち込む「Azure ハイブリッド特典」を使えば、ライセンス費用を削減できます。また、1 年以上使う予定なので「リザーブドインスタンス（RI）」で 1 年または 3 年の予約購入をすることで、従量課金より大幅な割引が適用されます。\n\n【不正解の選択肢】\nAzure Advisor：既存リソースに対するコスト最適化のアドバイスを提供しますが、それ自体がコストを削減する仕組みではありません。\nMicrosoft Cost Management：コストの可視化や予算管理を行うツールですが、直接的にコストを下げるサービスではありません。",
     "category": "",
     "tags": [
-      "cost-saving",
-      "virtual-machines"
+      "cost-saving"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6035,7 +5943,6 @@
     "explanation": "リソース グループに対してアクセス許可（RBAC ロール）を割り当てると、そのグループ内のすべてのリソースに権限が継承されます。VM を同じリソース グループにまとめることで、一度の設定で全 VM に同じアクセス許可を適用できます。\n\n【不正解の選択肢】\n管理グループ：サブスクリプションを束ねる単位であり、個々の VM をグループ化する用途には適しません。\nネットワーク セキュリティ グループ (NSG)：ネットワークトラフィックのフィルタリングルールを管理するものであり、アクセス許可（RBAC）の割り当てとは関係ありません。\nMicrosoft Entra ID：ユーザーやグループの ID 管理サービスであり、リソース側のグループ化ではなくユーザー側の管理に使います。",
     "category": "",
     "tags": [
-      "resource-groups",
       "rbac"
     ],
     "is_free": false,
@@ -6094,8 +6001,7 @@
     "explanation": "いいえ。Azure サブスクリプションに設定できるサービス管理者は 1 人のみです。既定では、サブスクリプション作成時のアカウント管理者がサービス管理者も兼任します。サービス管理者はサブスクリプション スコープでの所有者ロール相当のアクセス権を持ちますが、複数人は設定できません。",
     "category": "",
     "tags": [
-      "subscriptions",
-      "rbac"
+      "subscriptions"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6113,8 +6019,7 @@
     "explanation": "はい。Azure サブスクリプションは Microsoft Entra ID（旧 Azure AD）の組織アカウントを使って管理できます。個人用の Microsoft アカウントがなくても、Entra ID で認証・管理が可能です。",
     "category": "",
     "tags": [
-      "subscriptions",
-      "entra-id"
+      "subscriptions"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6176,7 +6081,7 @@
     "explanation": "ARM テンプレートは宣言型の JSON 形式でリソース構成を記述する IaC ツールです。デプロイ前にコードが検証され、テンプレートに定義したリソースが並列的に作成されるため、効率的かつ再現性の高いインフラ管理が可能になります。\n\n【不正解の選択肢】\n管理グループ：サブスクリプションをまとめてポリシーやアクセス制御を適用する管理単位であり、IaC サービスではありません。\nVirtual Machine Scale Sets：VM の自動スケーリングを実現するコンピューティングサービスであり、インフラをコード管理する機能ではありません。\nAzure API Management サービス：API のゲートウェイ・管理・公開を行うサービスであり、IaC とは無関係です。",
     "category": "",
     "tags": [
-      "arm"
+      "iac"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6214,8 +6119,7 @@
     "explanation": "いいえ。Azure Policy はタグ付けに関するルールや規則を強制する（例：特定のタグがないリソースの作成を拒否する）ことはできますが、タグそのものをリソースに直接適用するのは PowerShell、Azure CLI、ARM テンプレート、REST API、Azure Portal などの手段です。Policy はあくまでガバナンスの仕組みであり、タグの直接適用とは区別されます。",
     "category": "",
     "tags": [
-      "azure-policy",
-      "tags"
+      "azure-policy"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6251,8 +6155,7 @@
     "explanation": "いいえ。Azure ではリソースがサブスクリプションやリソース グループからタグを自動的に継承することはありません。各レベルで個別にタグを設定する必要があります。この仕様により、リソース、リソース グループ、サブスクリプションそれぞれのレベルで独立したタグ付けスキーマを設計できます。",
     "category": "",
     "tags": [
-      "tags",
-      "resource-groups"
+      "tags"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -6341,7 +6244,7 @@
     "explanation": "パブリッククラウドでは、ユーザーが必要なリソースをセルフサービスで素早くプロビジョニングでき、使用量に応じた従量課金制で利用します。この 2 つはパブリッククラウドの代表的な特徴です。\n\n【不正解の選択肢】\n専用ハードウェア：物理的に専用のハードウェアを使うのはオンプレミスやプライベートクラウドの特徴であり、パブリッククラウドでは共有インフラが基本です。\n閉域網：パブリッククラウドはインターネット経由でアクセスする前提であり、閉域網はプライベートクラウドの特徴です。\n限られたストレージ：パブリッククラウドはほぼ無制限にスケールできるストレージを提供しており、ストレージが限られるということはありません。",
     "category": "",
     "tags": [
-      "pricing-model"
+      "cloud-models"
     ],
     "is_free": true,
     "source": "it-concepts-japan.com",
