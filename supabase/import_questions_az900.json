@@ -1105,7 +1105,6 @@
     "category": "",
     "tags": [
       "authn-authz",
-      "entra-id",
       "rbac"
     ],
     "is_free": false,
@@ -2651,7 +2650,6 @@
     "explanation": "【正解】すべての Active Directory ユーザー アカウントを Microsoft Entra ID に同期する\nMicrosoft Entra Connect（旧 Azure AD Connect）を使用してオンプレミスADとMicrosoft Entra IDを同期すれば、ユーザーは既存の資格情報をそのまま使えるため、影響を最小限に抑えられます。オンプレミスでの変更は自動的にEntra IDに反映されます。\n\n【不正解の選択肢】\n・Azure 多要素認証 (MFA) を実装する：MFAはセキュリティを強化する手段ですが、AD移行の影響を最小限にする目的には直接関係ありません。むしろ、新たな認証手順が増えてユーザーへの影響が出ます。\n・すべてのユーザーにパスワードを変更するよう指示する：パスワード変更はユーザーに負担をかけ、「影響を最小限にする」という要件に反します。\n・ユーザーごとに Microsoft Entra ID にゲスト ユーザー アカウントを作成する：ゲストアカウントは外部ユーザー向けの機能です。自社の従業員に対してゲストアカウントを作成するのは不適切であり、管理も煩雑になります。\n\n【ポイント】\n「ユーザーへの影響を最小限に」というキーワードが出たら、既存の資格情報をそのまま使える同期ソリューションを選びましょう。",
     "category": "",
     "tags": [
-      "entra-id",
       "identity-protection"
     ],
     "is_free": false,
@@ -4200,7 +4198,6 @@
     "explanation": "【正解】はい\n\nMicrosoft Entra ID（旧称 Azure Active Directory）は、Azure と Microsoft 365 の両方に対して認証・認可サービスを提供するクラウドベースの ID プラットフォームです。シングルサインオン（SSO）、多要素認証（MFA）、条件付きアクセスなどの機能を備えています。\n\n【不正解の選択肢】\n・いいえ：Microsoft Entra ID は Azure と Microsoft 365 の共通基盤として認証を提供しており、この記述は正しいです。",
     "category": "",
     "tags": [
-      "entra-id",
       "authn-authz"
     ],
     "is_free": false,
@@ -4767,8 +4764,7 @@
     "explanation": "条件付きアクセスは、ユーザーの場所、デバイスの状態、リスクレベルなどのシグナルを評価し、サインインの許可・拒否・追加認証の要求を動的に判断するMicrosoft Entra IDの機能です。\n\n不正解の選択肢についてはこちらです。\n・マネージド ID → AzureリソースがほかのAzureサービスに対して認証を行うための仕組みで、ユーザーのサインイン制御には使われません。\n・Microsoft Intune → デバイス管理やモバイルアプリケーション管理を行うサービスで、サインインの許可・拒否を直接評価する機能ではありません。",
     "category": "",
     "tags": [
-      "conditional-access",
-      "entra-id"
+      "conditional-access"
     ],
     "is_free": false,
     "source": "it-concepts-japan.com",
@@ -5990,7 +5986,6 @@
     "explanation": "正解は「いいえ」です。Microsoft Entra ID はクラウドベースのID管理サービスであり、PaaS（Platform as a Service）に分類されます。開発者はEntra IDのAPIやSDKを利用して認証・認可機能をアプリケーションに組み込みます。SaaS はエンドユーザーが直接使用する完成されたアプリケーション（例：Microsoft 365、Salesforce）を指しますが、Entra ID はアプリケーション構築のための認証基盤として利用されるためPaaSに該当します。\n\n不正解の選択肢：\n・「はい」：Entra ID は完成されたエンドユーザー向けアプリケーションではなく、認証・認可のプラットフォームとして他のアプリケーションに組み込まれるサービスであるため、SaaS ではなく PaaS です。",
     "category": "",
     "tags": [
-      "entra-id",
       "paas"
     ],
     "is_free": false,

@@ -689,8 +689,7 @@
     "explanation": "OAuth 2.0 では、認可サーバーがリソース所有者の承認に基づきアクセストークンを発行します。Microsoft Entra ID は OAuth 2.0 の認可サーバーとして機能し、アクセストークンの生成を担います。\n\nウェブアプリはクライアントとしてトークンを「要求」しますが、トークン自体を「生成」する役割は持ちません。\nWeb API はリソースサーバーとしてトークンを「検証」しますが、トークンの「生成」は行いません。",
     "category": "",
     "tags": [
-      "app-registration",
-      "entra-id"
+      "app-registration"
     ],
     "exam": "az-305",
     "source": "website"
@@ -707,8 +706,7 @@
     "explanation": "委任アクセスのパターンでは、Web API に送信されるベアラートークンにユーザー ID 情報が含まれています。Web API はこのユーザー ID をもとに、リソースへのアクセス可否を判断します。\n\nウェブアプリはリクエストを送る側であり、リソースへの認可判断を行う立場にはありません。\nMicrosoft Entra ID は認証（トークン発行）を担いますが、アプリケーション固有のリソースへの認可判断はリソースサーバー側で行います。",
     "category": "",
     "tags": [
-      "app-registration",
-      "entra-id"
+      "app-registration"
     ],
     "exam": "az-305",
     "source": "website"
@@ -2095,8 +2093,7 @@
     "explanation": "Microsoft Entra Domain Servicesはドメイン参加、グループポリシー、LDAP、Kerberos/NTLM認証といったマネージドドメインサービスを提供します。クラウド上でドメインコントローラーをデプロイ・管理・パッチ適用する手間なく、これらのサービスを利用できます。オンプレミスへの接続を必要とせずにLDAP機能が使えるため、セキュリティポリシーにも適合します。\nB. Azure VPN gatewayはオンプレミスへの接続を確立するため、セキュリティポリシーに違反します。\nC. VM上のAD DSロールはドメインコントローラーの管理・運用負荷が高く、マネージドサービスが利用可能な場合は推奨されません。\nD. EntraアプリケーションプロキシはオンプレミスのWebアプリへのリモートアクセスを提供するもので、LDAP機能は提供しません。",
     "category": "identity",
     "tags": [
-      "entra-family",
-      "entra-id"
+      "entra-family"
     ],
     "exam": "az-305",
     "source": "website"
@@ -2974,8 +2971,7 @@
     "explanation": "パスワードベースSSOは、独自のHTMLログインフォームを持つアプリケーションに適した方式です。Microsoft Entra IDがユーザーの認証情報を安全に管理し、ログイン画面へ自動入力します。\nSAMLはSAMLプロトコル対応のアプリケーション用であり、カスタムHTMLフォームには適合しません。\nリンクされたSSOは別のSSO基盤が既にある場合に使います。\n統合Windows認証はKerberosベースのオンプレミス環境向けです。",
     "category": "identity",
     "tags": [
-      "sso",
-      "entra-id"
+      "sso"
     ],
     "exam": "az-305",
     "source": "book-ch1"
@@ -3087,8 +3083,7 @@
     "explanation": "Microsoft Entra B2Bコラボレーションにより、fabrikam.comのユーザーをcontoso.comテナントへゲストとして招待できます。招待を受けたユーザーは自組織の認証情報でサインインし、contoso.com側のリソースを利用可能になります。\n異なるテナント間の直接同期は行えません。\nサブスクリプションの移動は影響範囲が大きく、最小限の変更とはいえません。\nVNetピアリングはネットワーク層の接続であり、認証やアクセス許可の課題は解決しません。",
     "category": "identity",
     "tags": [
-      "external-users",
-      "entra-id"
+      "external-users"
     ],
     "exam": "az-305",
     "source": "book-ch1"
